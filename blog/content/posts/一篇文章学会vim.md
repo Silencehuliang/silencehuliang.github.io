@@ -1,6 +1,7 @@
 ---
 title: "一篇文章学会Vim"
-date: 2020-01-08T15:58:54+08:00
+date: 2020-01-08
+update: 2020-01-09
 draft: false
 categories: ["工具"] 
 tags: ["一篇文章学会系列"]

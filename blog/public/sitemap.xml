@@ -72,26 +72,6 @@
     </url>
   
     <url>
-      <loc>http://49.235.231.121/2020/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Avim/</loc>
-      
-      <lastmod>2020-01-08T15:58:54+08:00</lastmod>
-      
-      
-      
-      
-    </url>
-  
-    <url>
-      <loc>http://49.235.231.121/categories/%E5%B7%A5%E5%85%B7/</loc>
-      
-      <lastmod>2020-01-08T15:58:54+08:00</lastmod>
-      
-      
-      
-      
-    </url>
-  
-    <url>
       <loc>http://49.235.231.121/about/</loc>
       
       <lastmod>2020-01-08T13:19:37+08:00</lastmod>
@@ -102,9 +82,29 @@
     </url>
   
     <url>
+      <loc>http://49.235.231.121/2020/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Avim/</loc>
+      
+      <lastmod>2020-01-08T00:00:00+00:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>http://49.235.231.121/categories/%E5%B7%A5%E5%85%B7/</loc>
+      
+      <lastmod>2020-01-08T00:00:00+00:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
       <loc>http://49.235.231.121/categories/django/</loc>
       
-      <lastmod>2019-01-17T15:58:54+08:00</lastmod>
+      <lastmod>2019-02-13T15:58:54+08:00</lastmod>
       
       
       
@@ -114,7 +114,7 @@
     <url>
       <loc>http://49.235.231.121/tags/django2.x/</loc>
       
-      <lastmod>2019-01-17T15:58:54+08:00</lastmod>
+      <lastmod>2019-02-13T15:58:54+08:00</lastmod>
       
       
       
@@ -122,9 +122,29 @@
     </url>
   
     <url>
-      <loc>http://49.235.231.121/2019/%E8%AE%B0django2.0%E9%85%8D%E7%BD%AEmysql/</loc>
+      <loc>http://49.235.231.121/2019/django2.0%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</loc>
       
-      <lastmod>2019-01-17T15:58:54+08:00</lastmod>
+      <lastmod>2019-02-13T15:58:54+08:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>http://49.235.231.121/2019/django%E5%88%9D%E4%BD%93%E9%AA%8C/</loc>
+      
+      <lastmod>2019-01-26T15:58:54+08:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>http://49.235.231.121/2019/%E8%AE%B0django2.x%E9%85%8D%E7%BD%AEmysql/</loc>
+      
+      <lastmod>2019-01-21T15:58:54+08:00</lastmod>
       
       
       
@@ -134,7 +154,7 @@
     <url>
       <loc>http://49.235.231.121/tags/pymsql/</loc>
       
-      <lastmod>2019-01-17T15:58:54+08:00</lastmod>
+      <lastmod>2019-01-21T15:58:54+08:00</lastmod>
       
       
       

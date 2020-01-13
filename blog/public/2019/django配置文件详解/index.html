@@ -254,8 +254,8 @@
 <h3 id="秘钥">秘钥</h3>
 <p><code>SECRET_KEY</code></p>
 <p>作用：校验，主要用于表单、session、csrf</p>
-<pre><code>  SECRET_KEY = &quot;adsasdasdsafdasfldasfklasdlfnlasdnfklnasdfklnasldfklkdasf&quot;
-</code></pre><h3 id="调试模式">调试模式</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">  SECRET_KEY <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">adsasdasdsafdasfldasfklasdlfnlasdnfklnasdfklnasldfklkdasf</span><span style="color:#e6db74">&#34;</span>
+</code></pre></div><h3 id="调试模式">调试模式</h3>
 <p><code>DEBUG</code></p>
 <p>作用：当开启时，运行出现bug会在前端直接显示，开发，测试过程可以开启</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">  DEBUG <span style="color:#f92672">=</span> True
@@ -408,17 +408,17 @@ urlpatterns <span style="color:#f92672">=</span> [
 <h3 id="数据库配置">数据库配置</h3>
 <p><code>DATABASES</code></p>
 <p>在mysite/mysite/settings.py中，默认的数据库为SQLite，还支持PostgreSQL、mysql、oracle等其他第三方（这些非官方后端支持的Django版本和ORM功能差异很大。有关这些非官方后端的具体功能的查询以及任何支持查询，应该针对每个第三方项目提供的支持渠道）</p>
-<pre><code>  DATABASES = {
-      'default': {
-          'ENGINE': 'django.db.backends.sqlite3',
-          'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">  DATABASES <span style="color:#f92672">=</span> {
+      <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">default</span><span style="color:#e6db74">&#39;</span>: {
+          <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">ENGINE</span><span style="color:#e6db74">&#39;</span>: <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">django.db.backends.sqlite3</span><span style="color:#e6db74">&#39;</span>,
+          <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">NAME</span><span style="color:#e6db74">&#39;</span>: os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(BASE_DIR, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">db.sqlite3</span><span style="color:#e6db74">&#39;</span>),
       }
   }
-</code></pre><ul>
+</code></pre></div><ul>
 <li>ENGINE，数据库引擎，可选的ENGINE还有</li>
 </ul>
-<pre><code>  django.db.backends.postgresql、django.db.backends.mysql、django.db.backends.oracle、第三方数据库
-</code></pre><ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">  django<span style="color:#f92672">.</span>db<span style="color:#f92672">.</span>backends<span style="color:#f92672">.</span>postgresql<span style="color:#960050;background-color:#1e0010">、</span>django<span style="color:#f92672">.</span>db<span style="color:#f92672">.</span>backends<span style="color:#f92672">.</span>mysql<span style="color:#960050;background-color:#1e0010">、</span>django<span style="color:#f92672">.</span>db<span style="color:#f92672">.</span>backends<span style="color:#f92672">.</span>oracle<span style="color:#960050;background-color:#1e0010">、</span><span style="color:#960050;background-color:#1e0010">第</span><span style="color:#960050;background-color:#1e0010">三</span><span style="color:#960050;background-color:#1e0010">方</span><span style="color:#960050;background-color:#1e0010">数</span><span style="color:#960050;background-color:#1e0010">据</span><span style="color:#960050;background-color:#1e0010">库</span>
+</code></pre></div><ul>
 <li>
 <p>NAME，数据库名称，如果使用SQLite,他会在根目录生成一个数据库文件</p>
 </li>

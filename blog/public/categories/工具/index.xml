@@ -6,7 +6,7 @@
     <description>Recent content in 工具 on SilenceHL Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 08 Jan 2020 15:58:54 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 08 Jan 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://49.235.231.121/categories/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>一篇文章学会Vim</title>
       <link>http://49.235.231.121/2020/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Avim/</link>
-      <pubDate>Wed, 08 Jan 2020 15:58:54 +0800</pubDate>
+      <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>http://49.235.231.121/2020/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Avim/</guid>
       <description>声明：以下内容均为我个人的理解，如果发现错误或者疑问可以联系我共同探讨 简介 Vim是一个高度可定制的终端文本编辑器，它可以很方便的创建和修改任</description>
