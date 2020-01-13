@@ -1,6 +1,6 @@
 ---
 title: "Windows10在此处打开cmd"
-date: 2019-01-08T15:58:54+08:00
+date: 2019-01-05T15:58:54+08:00
 draft: false
 categories: ["系统优化"] 
 tags: ["cmd"]
