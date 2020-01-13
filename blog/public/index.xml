@@ -1,0 +1,30 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SilenceHL Blog on SilenceHL Blog</title>
+    <link>http://49.235.231.121/</link>
+    <description>Recent content in SilenceHL Blog on SilenceHL Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 09 Jan 2020 15:58:54 +0800</lastBuildDate>
+    <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Posts</title>
+      <link>http://49.235.231.121/posts/</link>
+      <pubDate>Thu, 09 Jan 2020 15:58:54 +0800</pubDate>
+      
+      <guid>http://49.235.231.121/posts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>http://49.235.231.121/about/</link>
+      <pubDate>Wed, 08 Jan 2020 13:19:37 +0800</pubDate>
+      
+      <guid>http://49.235.231.121/about/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

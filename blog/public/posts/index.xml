@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on SilenceHL Blog</title>
+    <link>http://49.235.231.121/posts/</link>
+    <description>Recent content in Posts on SilenceHL Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 09 Jan 2020 15:58:54 +0800</lastBuildDate>
+    
+	<atom:link href="http://49.235.231.121/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>一篇文章学会Linux</title>
+      <link>http://49.235.231.121/2020/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Alinux/</link>
+      <pubDate>Thu, 09 Jan 2020 15:58:54 +0800</pubDate>
+      
+      <guid>http://49.235.231.121/2020/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Alinux/</guid>
+      <description>简介 Linux Linux是一种自由和开放源码的类UNIX操作系统。该操作系统的内核由林纳斯·托瓦兹在1991年10月5日首次发布，在加上用户空间的应</description>
+    </item>
+    
+    <item>
+      <title>一篇文章学会Vim</title>
+      <link>http://49.235.231.121/2020/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Avim/</link>
+      <pubDate>Wed, 08 Jan 2020 15:58:54 +0800</pubDate>
+      
+      <guid>http://49.235.231.121/2020/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Avim/</guid>
+      <description>简介 Vim是一个高度可定制的终端文本编辑器，它可以很方便的创建和修改任何类型的文本。作为vi的升级版，有许多新的特性(以下列出的特性为比较常</description>
+    </item>
+    
+  </channel>
+</rss>

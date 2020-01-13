@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>About on SilenceHL Blog</title>
+    <link>http://49.235.231.121/about/</link>
+    <description>Recent content in About on SilenceHL Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 08 Jan 2020 13:19:37 +0800</lastBuildDate>
+    
+	<atom:link href="http://49.235.231.121/about/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>

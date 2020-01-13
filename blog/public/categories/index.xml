@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on SilenceHL Blog</title>
+    <link>http://49.235.231.121/categories/</link>
+    <description>Recent content in Categories on SilenceHL Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 09 Jan 2020 15:58:54 +0800</lastBuildDate>
+    
+	<atom:link href="http://49.235.231.121/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>操作系统</title>
+      <link>http://49.235.231.121/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</link>
+      <pubDate>Thu, 09 Jan 2020 15:58:54 +0800</pubDate>
+      
+      <guid>http://49.235.231.121/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>工具</title>
+      <link>http://49.235.231.121/categories/%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Wed, 08 Jan 2020 15:58:54 +0800</pubDate>
+      
+      <guid>http://49.235.231.121/categories/%E5%B7%A5%E5%85%B7/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
