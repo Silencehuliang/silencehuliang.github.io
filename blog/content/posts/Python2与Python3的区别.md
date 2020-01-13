@@ -6,6 +6,8 @@ categories: ["Python"]
 tags: ["Python3"]
 ---
 
+**声明：以下内容均为我个人的理解，如果发现错误或者疑问可以联系我共同探讨**
+
 ## 简介
 
 目前用Python开发的项目有两个Python版本，分别是Python2.x与Python3.x，由于Python3相对于python2有着较大的升级，所以Python3将会是现在与未来的主流版本。

@@ -6,6 +6,8 @@ categories: ["工具"]
 tags: ["一篇文章学会系列"]
 ---
 
+**声明：以下内容均为我个人的理解，如果发现错误或者疑问可以联系我共同探讨**
+
 ## 简介
 
 **Vim**是一个高度可定制的终端文本编辑器，它可以很方便的创建和修改任何类型的文本。作为**vi**的升级版，有许多新的特性(以下列出的特性为比较常用的，详细特性可以查看[help vi_diff](http://vimdoc.sourceforge.net/cgi-bin/vim2html2.pl?page=vi_diff.txt#vi_diff.txt).)：
