@@ -50,7 +50,7 @@ Python3中字符串原生支持unicode，byte也变成了一个单独的字节�
 
 
 
-### import：
+### import
 
 Python2中import导包采用相对路径，导致标准库导入变困难。
 
