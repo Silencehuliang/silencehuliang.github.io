@@ -20,7 +20,7 @@ tags: ["虚拟环境"]
 
 - 不论是windows还是linux还是mac都可以直接通过pip 安装，需要注意的是系统中存在两个python的时候，注意pip的版本，选择对应的版本安装
 
-  ```
+  ```python
   pip install virtualenv
   ```
 
@@ -30,7 +30,7 @@ tags: ["虚拟环境"]
 
 进入到env文件夹中通过命令创建一个虚拟环境，名为first_env
 
-```
+```python
 virtualenv first_env
 ```
 
@@ -51,7 +51,7 @@ virtualenv first_env
 
   - 通过source激活使用，当命令提示符多了一个虚拟环境名字的前缀时即激活成功
 
-    ```
+    ```python
     source first_env/bin/activate
     ```
 

@@ -52,7 +52,7 @@ tags: ["配置文件"]
 
 作用：校验，主要用于表单、session、csrf
 
-```
+```python
   SECRET_KEY = "adsasdasdsafdasfldasfklasdlfnlasdnfklnasdfklnasldfklkdasf"
 ```
 
@@ -246,7 +246,7 @@ tags: ["配置文件"]
 
   在mysite/mysite/settings.py中，默认的数据库为SQLite，还支持PostgreSQL、mysql、oracle等其他第三方（这些非官方后端支持的Django版本和ORM功能差异很大。有关这些非官方后端的具体功能的查询以及任何支持查询，应该针对每个第三方项目提供的支持渠道）
 
-```
+```python
   DATABASES = {
       'default': {
           'ENGINE': 'django.db.backends.sqlite3',
@@ -257,7 +257,7 @@ tags: ["配置文件"]
 
   - ENGINE，数据库引擎，可选的ENGINE还有
 
-```
+```python
   django.db.backends.postgresql、django.db.backends.mysql、django.db.backends.oracle、第三方数据库
 ```
 

@@ -18,7 +18,7 @@ tags: ["pymsql","Django2.x"]
 
 ### 配置settings.py
 
-```
+```python
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -37,13 +37,13 @@ DATABASES = {
 
 由于安装mysqlclient不支持python3，所以使用pymysql包，安装pymysql并导入
 
-```
+```python
 pip install pymysql
 ```
 
 配置pymysql，在settings.py所在的目录下的\_\_init\_\_.py文件中导入
 
-```
+```python
 import pymysql
 pymysql.install_as_MySQLdb()
 ```
@@ -56,14 +56,14 @@ pymysql.install_as_MySQLdb()
 
   文件路径`django\db\backends\mysql\base.py`，将版本限制异常给注释掉在文件的第35-36行
 
-  ```
+  ```python
   # if version < (1, 3, 13):
   #     raise ImproperlyConfigured('mysqlclient 1.3.13 or newer is required; you have %s.' % Database.__version__)
   ```
 
 - 由于python2的str是字节流(类似于bytes类型)需要通过decode转换成unicode类型才能使用，但在python3中str默认unicode类型不需要转换且没有decode解码所以要将这里的代码修改。在最新的Django源码中已经将这里修改了(可以通过Django官网或github查看)，在最新的源码中使用django.utils.encoding中force_str方法解决了该问题，force_str方法实际上是force_text方法，force_text方法通过判断传入参数的类型后将类型转为unicode类型的str之后返回
 
-  ```
+  ```python
   \django\utils\encoding.py
   ······
   def force_text(s, encoding='utf-8', strings_only=False, errors='strict'):
@@ -90,7 +90,7 @@ pymysql.install_as_MySQLdb()
 
   最后修改\django\db\backends\mysql\operations.py文件中的last_executed_query方法（记得导入force_str）
 
-  ```
+  ```python
       from django.utils.encoding import force_str
       ···
       def last_executed_query(self, cursor, sql, params):
