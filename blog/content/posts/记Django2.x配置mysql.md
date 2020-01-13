@@ -1,6 +1,6 @@
 ---
 title: "Django2.x配置mysql"
-date: 2019-01-17T15:58:54+08:00
+date: 2019-01-21T15:58:54+08:00
 draft: false
 categories: ["Django"] 
 tags: ["pymsql","Django2.x"]
