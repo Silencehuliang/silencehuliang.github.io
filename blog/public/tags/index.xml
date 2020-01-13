@@ -20,5 +20,59 @@
       <description></description>
     </item>
     
+    <item>
+      <title>Django2.x</title>
+      <link>http://49.235.231.121/tags/django2.x/</link>
+      <pubDate>Thu, 17 Jan 2019 15:58:54 +0800</pubDate>
+      
+      <guid>http://49.235.231.121/tags/django2.x/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pymsql</title>
+      <link>http://49.235.231.121/tags/pymsql/</link>
+      <pubDate>Thu, 17 Jan 2019 15:58:54 +0800</pubDate>
+      
+      <guid>http://49.235.231.121/tags/pymsql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>虚拟环境</title>
+      <link>http://49.235.231.121/tags/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Thu, 17 Jan 2019 15:58:54 +0800</pubDate>
+      
+      <guid>http://49.235.231.121/tags/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python3</title>
+      <link>http://49.235.231.121/tags/python3/</link>
+      <pubDate>Wed, 09 Jan 2019 15:58:54 +0800</pubDate>
+      
+      <guid>http://49.235.231.121/tags/python3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>配置文件</title>
+      <link>http://49.235.231.121/tags/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Sun, 06 Jan 2019 15:58:54 +0800</pubDate>
+      
+      <guid>http://49.235.231.121/tags/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cmd</title>
+      <link>http://49.235.231.121/tags/cmd/</link>
+      <pubDate>Sat, 05 Jan 2019 15:58:54 +0800</pubDate>
+      
+      <guid>http://49.235.231.121/tags/cmd/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

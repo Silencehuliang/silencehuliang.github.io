@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="SilenceHL">
+  
+  
+  
+  <link rel="prev" href="http://49.235.231.121/2019/django%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%A6%E8%A7%A3/" />
+  <link rel="next" href="http://49.235.231.121/2019/python%E6%90%AD%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/" />
+  <link rel="canonical" href="http://49.235.231.121/2019/python2%E4%B8%8Epython3%E7%9A%84%E5%8C%BA%E5%88%AB/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <link href="//use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Python2与Python3的区别 | SilenceHL Blog
+       
+  </title>
+  <meta name="title" content="Python2与Python3的区别 | SilenceHL Blog">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "http:\/\/49.235.231.121\/"
+    },
+    "articleSection" : "posts",
+    "name" : "Python2与Python3的区别",
+    "headline" : "Python2与Python3的区别",
+    "description" : "声明：以下内容均为我个人的理解，如果发现错误或者疑问可以联系我共同探讨 简介 目前用Python开发的项目有两个Python版本，分别是Pyth",
+    "inLanguage" : "zh-cn",
+    "author" : "SilenceHL",
+    "creator" : "SilenceHL",
+    "publisher": "SilenceHL",
+    "accountablePerson" : "SilenceHL",
+    "copyrightHolder" : "SilenceHL",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-01-09 15:58:54 \x2b0800 CST",
+    "dateModified" : "2019-01-09 15:58:54 \x2b0800 CST",
+    "url" : "http:\/\/49.235.231.121\/2019\/python2%E4%B8%8Epython3%E7%9A%84%E5%8C%BA%E5%88%AB\/",
+    "wordCount" : "1602",
+    "keywords" : [ "Python3", "SilenceHL Blog"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    
+        <div class="top-scroll-bar"></div>
+    
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://49.235.231.121/">SilenceHL Blog</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+    
+        <div class="top-scroll-bar"></div>
+    
+	<div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://49.235.231.121/">SilenceHL Blog</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Python2与Python3的区别</h1>
+        <div class="post-meta">
+	    <i class="far fa-folder-open"></i>
+                <span class="post-category">
+                        <a href="http://49.235.231.121/categories/python/"> Python </a>
+                        
+                </span>
+          <span class="post-time">
+         <i class="far fa-calendar-alt"></i>  <time datetime=2019-01-09 itemprop="datePublished">2019-01-09</time>
+           </span>
+         <i class="far fa-file-word"></i> <span class="post-word-count"> 1602 字</span>
+         <i class="far fa-clock"></i> <span class="more-meta"> 4 分钟</span>
+        </div>
+    </header>
+    
+          <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title"></h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#简介">简介</a>
+      <ul>
+        <li><a href="#python3时间轴">Python3时间轴</a></li>
+      </ul>
+    </li>
+    <li><a href="#python30后的变化">Python3.0后的变化</a>
+      <ul>
+        <li><a href="#解释器名称">解释器名称</a></li>
+        <li><a href="#字符串">字符串</a></li>
+        <li><a href="#import">import</a></li>
+        <li><a href="#print">print</a></li>
+        <li><a href="#range函数与xrange函数">range函数与xrange函数</a></li>
+        <li><a href="#老式类与新式类">老式类与新式类</a></li>
+        <li><a href="#除法与取余">除法与取余</a></li>
+        <li><a href="#raw_input函数与input函数">raw_input函数与input函数</a></li>
+        <li><a href="#缩进">缩进</a></li>
+        <li><a href="#long">long</a></li>
+        <li><a href="#file">file</a></li>
+        <li><a href="#不等运算符">不等运算符</a></li>
+        <li><a href="#方法返回值">方法返回值</a></li>
+        <li><a href="#next函数">next()函数</a></li>
+        <li><a href="#exec">exec</a></li>
+        <li><a href="#has_key-函数">has_key 函数</a></li>
+        <li><a href="#round函数">round函数</a></li>
+        <li><a href="#比较操作符">比较操作符</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+<script type="text/javascript">
+  window.onload = function () {
+    var fix = $('.post-toc');
+    var end = $('.post-comment');
+    var fixTop = fix.offset().top, fixHeight = fix.height();
+    var endTop, miss;
+    var offsetTop = fix[0].offsetTop;
+    $(window).scroll(function () {
+      var docTop = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+      if (end.length > 0) {
+        endTop = end.offset().top;
+        miss = endTop - docTop - fixHeight;
+      }
+      if (fixTop < docTop) {
+        fix.css({ 'position': 'fixed' });
+        if ((end.length > 0) && (endTop < (docTop + fixHeight))) {
+          fix.css({ top: miss });
+        } else {
+          fix.css({ top: 0 });
+        }
+      } else {
+        fix.css({ 'position': 'absolute' });
+        fix.css({ top: offsetTop });
+      }
+    })
+  }
+</script> 
+
+    
+
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p><strong>声明：以下内容均为我个人的理解，如果发现错误或者疑问可以联系我共同探讨</strong></p>
+<h2 id="简介">简介</h2>
+<p>目前用Python开发的项目有两个Python版本，分别是Python2.x与Python3.x，由于Python3相对于python2有着较大的升级，所以Python3将会是现在与未来的主流版本。</p>
+<h3 id="python3时间轴">Python3时间轴</h3>
+<ul>
+<li>Python3.0发布于2008.12.3</li>
+<li>Python3.1发布于2009.6.27</li>
+<li>Python3.2发布于2011.2.20</li>
+<li>Python 3.3 发布于 2012.9.29</li>
+<li>Python 3.4 发布于 2014.3.16</li>
+<li>Python 3.5 发布于 2015.9.13</li>
+<li>Python 3.6 发布于 2016.12.23</li>
+</ul>
+<p>为了不带入过多的累赘，在Python3.0设计的时候没有考虑向下兼容，所以早期的项目都无法在Python3.0上正常运行。为了早期的项目可以逐步迁移到Python3.0，Python官方提供了Python2.6过度版本（基于Python2的语法与库，允许使用部分Python3的语法和函数），2010年中推出Python2.7为最后一个Python2.x版本。了解Python3版本的变化对我们日常开发与项目维护都十分重要</p>
+<h2 id="python30后的变化">Python3.0后的变化</h2>
+<h3 id="解释器名称">解释器名称</h3>
+<p>Python2.x的解释器为python，Python3.x的解释器为python3</p>
+<p>其他语言实现的解释器：</p>
+<table>
+<thead>
+<tr>
+<th>PyPy</th>
+<th>Python实现的Python解释器，支持 JIT 即时编译</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cpython</td>
+<td>C语言基于官方版本实现的Python解释器</td>
+</tr>
+<tr>
+<td>Jython</td>
+<td>运行在Java上的Python解释器</td>
+</tr>
+<tr>
+<td>IronPython</td>
+<td>运行在.NET与Mono平台的Python解释器</td>
+</tr>
+</tbody>
+</table>
+<h3 id="字符串">字符串</h3>
+<p>Python2中字符串是基于ASCII编码的str字符串，当调用字符串变量时会打印其bytes值（16进制表示的字符串内存地址）。 而unicode是一个单独的类型。</p>
+<p>Python3中字符串原生支持unicode，byte也变成了一个单独的字节类，并且Python3源码文件默认使用utf-8编码所以中文也可以做变量名。</p>
+<h3 id="import">import</h3>
+<p>Python2中import导包采用相对路径，导致标准库导入变困难。</p>
+<p>Python3中import导包采用绝对路径</p>
+<h3 id="print">print</h3>
+<p>Python2中的print是一种特殊的语句，在Python3中print变成了print函数</p>
+<h3 id="range函数与xrange函数">range函数与xrange函数</h3>
+<p>xrange函数在Python3中被废弃，range函数的机制进行修改实现了xrange函数返回可迭代对象的效果</p>
+<h3 id="老式类与新式类">老式类与新式类</h3>
+<p>Python2中存在老式类与新式类，在Python3中统一采用新式类（新式类申明要求继承object），且必须使用新式类应用多重继承</p>
+<h3 id="除法与取余">除法与取余</h3>
+<ul>
+<li>
+<p>Python2 中若两个整形进行运算，结果为整形，但若其中有一个浮点数类型，则结果为浮点数。python3为真除法，运算结果为float类型。</p>
+</li>
+<li>
+<p>Python2 中取余返回小于除法运算结果的最大整数，从类型上讲，与&rdquo;/&ldquo;运算符返回类型逻辑一致。Python3中与python2作用相同。</p>
+</li>
+</ul>
+<h3 id="raw_input函数与input函数">raw_input函数与input函数</h3>
+<p>raw_input函数在Python3中被废弃，统一使用input函数</p>
+<h3 id="缩进">缩进</h3>
+<p>Python3采用更严格的缩进方式，tab和space不能共存</p>
+<h3 id="long">long</h3>
+<p>long整型被Python3废弃，统一使用int，int具有long的特性</p>
+<h3 id="file">file</h3>
+<p>file函数被废弃，统一使用open函数</p>
+<h3 id="不等运算符">不等运算符</h3>
+<p>Python3废除&lt;&gt;，只有!=</p>
+<h3 id="方法返回值">方法返回值</h3>
+<p>Python3 中这些方法再不再返回 list 对象：dictionary 关联的 keys()、values()、items()，zip()，map()，filter()，但是可以通过 list 强行转换</p>
+<h3 id="next函数">next()函数</h3>
+<p>迭代器 iterator 的 next()函数被 Python3 废弃，统一使用 next(iterator)</p>
+<h3 id="exec">exec</h3>
+<p>exec 语句被 python3 废弃，统一使用 exec 函数</p>
+<h3 id="has_key-函数">has_key 函数</h3>
+<p>has_key 函数被 Python 废弃，统一使用 in 关键词</p>
+<h3 id="round函数">round函数</h3>
+<p>Python2中，round函数返回float类型值。Python3中，round函数返回int类型值。</p>
+<h3 id="比较操作符">比较操作符</h3>
+<p>Python2中任意两个对象都可以比较。Python3中只有同一类型数据的对象才可以进行比较。</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>SilenceHL </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=http://49.235.231.121/2019/python2%E4%B8%8Epython3%E7%9A%84%E5%8C%BA%E5%88%AB/>http://49.235.231.121/2019/python2%E4%B8%8Epython3%E7%9A%84%E5%8C%BA%E5%88%AB/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="http://49.235.231.121/tags/python3/">
+                    #Python3</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="http://49.235.231.121/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="http://49.235.231.121/2019/django%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%A6%E8%A7%A3/" class="prev" rel="prev" title="Django配置文件详解"><i class="iconfont icon-left"></i>&nbsp;Django配置文件详解</a>
+         
+        
+        <a href="http://49.235.231.121/2019/python%E6%90%AD%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/" class="next" rel="next" title="Python搭建虚拟环境">Python搭建虚拟环境&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+<div class="post-comment">
+       
+             
+             
+             <span id="/2019/python2%E4%B8%8Epython3%E7%9A%84%E5%8C%BA%E5%88%AB/" class="leancloud_visitors" data-flag-title="Python2与Python3的区别">
+                 <span class="post-meta-item-text">访问量 </span>
+                 <span class="leancloud-visitors-count"></span>
+                 <p></p>
+             </span>
+             <div id="vcomments"></div>
+             <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+             <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+             <script type="text/javascript">
+                 new Valine({
+                     el: '#vcomments' ,
+                     appId: 'CPUadU9FrUpQzf7dYqNF9gbT-gzGzoHsz',
+                     appKey: 'fsddpUyXPG7Nsn65o5bdydWH',
+                     notify:  true ,
+                     verify:  false ,
+                     avatar:'mm',
+                     placeholder: '说点什么吧...(邮箱不会显示,有回复可以收到提醒邮件!)',
+                     visitor:  true 
+                 });
+             </script>
+       
+ </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2017 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="http://49.235.231.121/">SilenceHL</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+     </div>
+  </body>
+</html>

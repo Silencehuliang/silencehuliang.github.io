@@ -29,5 +29,32 @@
       <description></description>
     </item>
     
+    <item>
+      <title>Django</title>
+      <link>http://49.235.231.121/categories/django/</link>
+      <pubDate>Thu, 17 Jan 2019 15:58:54 +0800</pubDate>
+      
+      <guid>http://49.235.231.121/categories/django/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>http://49.235.231.121/categories/python/</link>
+      <pubDate>Thu, 17 Jan 2019 15:58:54 +0800</pubDate>
+      
+      <guid>http://49.235.231.121/categories/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>系统优化</title>
+      <link>http://49.235.231.121/categories/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/</link>
+      <pubDate>Sat, 05 Jan 2019 15:58:54 +0800</pubDate>
+      
+      <guid>http://49.235.231.121/categories/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

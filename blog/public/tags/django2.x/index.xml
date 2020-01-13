@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Django2.x on SilenceHL Blog</title>
+    <link>http://49.235.231.121/tags/django2.x/</link>
+    <description>Recent content in Django2.x on SilenceHL Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 17 Jan 2019 15:58:54 +0800</lastBuildDate>
+    
+	<atom:link href="http://49.235.231.121/tags/django2.x/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Django2.x配置mysql</title>
+      <link>http://49.235.231.121/2019/%E8%AE%B0django2.0%E9%85%8D%E7%BD%AEmysql/</link>
+      <pubDate>Thu, 17 Jan 2019 15:58:54 +0800</pubDate>
+      
+      <guid>http://49.235.231.121/2019/%E8%AE%B0django2.0%E9%85%8D%E7%BD%AEmysql/</guid>
+      <description>声明：以下内容均为我个人的理解，如果发现错误或者疑问可以联系我共同探讨 简介 在Django中使用mysql数据库是很常见的,但是升级到Djan</description>
+    </item>
+    
+  </channel>
+</rss>
