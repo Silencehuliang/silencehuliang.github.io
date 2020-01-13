@@ -726,21 +726,21 @@ days=0, seconds=0, microseconds=0,milliseconds=0,     minutes=0, hours=0, weeks=
 
 时区信息类，他是一个抽象类，不能直接实例化，需要派生一个具体的子类。
 
-    ```python
-    >>> from datetime import tzinfo, datetime, timedelta
-    >>> class UTC(tzinfo):
-    ...     def __init__(self,offset = 0):
-    ...         self._offset = offset
-    ...     def utcoffset(self,dt):
-    ...         return timedelta(hours=self._offset)
-    ...     def tzname(self,dt):
-    ...         return "UTC +%s" % self._offset
-    ...     def dst(self, dt):
-    ...         return timedelta(hours=self._offset)
-    >>> sh = datetime(2017,6,12,0,0,0,tzinfo=UTC)
-    >>> sh
-    datetime.datetime(2017, 6, 12, 0, 0, tzinfo=<__main__.UTC_add_8 object at 0x0000021499624588>)
-    ```
+  ```python
+>>> from datetime import tzinfo, datetime, timedelta
+>>> class UTC(tzinfo):
+...     def __init__(self,offset = 0):
+...         self._offset = offset
+...     def utcoffset(self,dt):
+...         return timedelta(hours=self._offset)
+...     def tzname(self,dt):
+...         return "UTC +%s" % self._offset
+...     def dst(self, dt):
+...         return timedelta(hours=self._offset)
+>>> sh = datetime(2017,6,12,0,0,0,tzinfo=UTC)
+>>> sh
+datetime.datetime(2017, 6, 12, 0, 0, tzinfo=<__main__.UTC_add_8 object at 0x0000021499624588>)
+  ```
 
 
-​        
+​       
