@@ -1,6 +1,7 @@
 ---
 title: "Django初体验"
-date: 2019-01-26T15:58:54+08:00
+description: "Django初体验"
+date: 2019-01-26
 draft: false
 categories: ["Django"] 
 tags: ["Django2.x"]

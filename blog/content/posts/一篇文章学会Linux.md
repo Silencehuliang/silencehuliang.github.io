@@ -1,6 +1,7 @@
 ---
 title: "一篇文章学会Linux"
-date: 2020-01-09T15:58:54+08:00
+description: "一篇文章学会Linux"
+date: 2020-01-09
 draft: false
 categories: ["操作系统"]
 tags: ["一篇文章学会系列"]

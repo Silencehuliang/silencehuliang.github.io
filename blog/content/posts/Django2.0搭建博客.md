@@ -1,6 +1,7 @@
 ---
 title: "Django2.x搭建博客"
-date: 2019-02-13T15:58:54+08:00
+description: "Django2.x搭建博客"
+date: 2019-02-13
 draft: false
 categories: ["Django"] 
 tags: ["Django2.x"]

@@ -1,6 +1,7 @@
 ---
 title: "Django配置文件详解"
-date: 2019-01-06T15:58:54+08:00
+description: "Django配置文件详解"
+date: 2019-01-06
 draft: false
 categories: ["Django"] 
 tags: ["配置文件"]

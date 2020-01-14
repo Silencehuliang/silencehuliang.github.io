@@ -1,6 +1,7 @@
 ---
 title: "Python2与Python3的区别"
-date: 2019-01-09T15:58:54+08:00
+description: "Python2与Python3的区别"
+date: 2019-01-09
 draft: false
 categories: ["Python"] 
 tags: ["Python3"]

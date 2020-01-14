@@ -1,6 +1,7 @@
 ---
 title: "Python搭建虚拟环境"
-date: 2019-01-13T15:58:54+08:00
+description: "Python搭建虚拟环境"
+date: 2019-01-13
 draft: false
 categories: ["Python"] 
 tags: ["虚拟环境"]

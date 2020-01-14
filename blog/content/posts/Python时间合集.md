@@ -1,6 +1,7 @@
 ---
 title: "Python时间合集"
-date: 2019-01-17T15:58:54+08:00
+description: "Python时间合集"
+date: 2019-01-17
 draft: false
 categories: ["Python"] 
 tags: ["虚拟环境"]
