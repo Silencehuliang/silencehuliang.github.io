@@ -14,11 +14,11 @@ languageCode = "zh-cn"
 hasCJKLanguage = true
 
 # 主题 (需要自己下载)
-theme = "LeaveIt"
+theme = "Q/LeaveIt"
 
 # 每页的文章数
 
-paginate = 11
+paginate = 100
 
 # 支持 Emoji
 enableEmoji = true
@@ -64,7 +64,7 @@ preserveTaxonomyNames = true
     subtitle = "Life is too short"                  # Subtitle
     cdn_url = ""           # Base CDN URL
     home_mode = "" # post or other
-    enableGitalk = false # gitalk 评论系统
+    enableGitalk = true # gitalk 评论系统
 
     google_verification = ""
     description = "" # (Meta) 描述
@@ -88,16 +88,17 @@ preserveTaxonomyNames = true
  # Valine.
  # You can get your appid and appkey from https://leancloud.cn
  # more info please open https://valine.js.org
- [params.valine]
- enable = true
- appId = 'CPUadU9FrUpQzf7dYqNF9gbT-gzGzoHsz'
- appKey = 'fsddpUyXPG7Nsn65o5bdydWH'
- notify = true  # mail notifier , https://github.com/xCss/Valine/wiki
- verify = false # Verification code
- avatar = 'mm'
- placeholder = '说点什么吧...(邮箱不会显示,有回复可以收到提醒邮件!)'
- visitor = true
- meta = ['nick','mail']
+[params.valine]
+    enable = true
+    appId = 'CPUadU9FrUpQzf7dYqNF9gbT-gzGzoHsz'
+    appKey = 'fsddpUyXPG7Nsn65o5bdydWH'
+    notify = true  # mail notifier , https://github.com/xCss/Valine/wiki
+    verify = false # Verification code
+    avatar = 'mp'
+    placeholder = '说点什么吧...(邮箱不会显示,有回复可以收到提醒邮件!)'
+    visitor = true
+    meta = ['nick','mail']
+
 
 # 是否开启目录
 toc = true

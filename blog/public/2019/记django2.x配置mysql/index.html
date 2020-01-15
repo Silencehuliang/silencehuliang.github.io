@@ -17,7 +17,6 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-  <link href="//use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
   <title>
@@ -28,8 +27,6 @@
   </title>
   <meta name="title" content="Django2.x配置mysql | SilenceHL Blog">
     
-  
-  <link rel="stylesheet" href="/font/iconfont.css">
   <link rel="stylesheet" href="/css/main.min.css">
 
 
@@ -76,10 +73,17 @@
     
     <div class="container">
         <div class="navbar-header header-logo">
-        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://49.235.231.121/">SilenceHL Blog</a>
+            
+            <span class="logo_mark" >></span>
+            <a href="http://49.235.231.121/">
+                <span class="logo_text" >$ cd /home/ </span>
+                <span class="logo_cursor" ></span>
+            </a>
+            
         </div>
-        <div class="menu navbar-right">
+        <div class="navbar-right">
                 
+                <span class="menu">
                 
                 <a class="menu-item" href="/posts/" title="">Blog</a>
                 
@@ -89,18 +93,31 @@
                 
                 <a class="menu-item" href="/about/" title="">About</a>
                 
+                </span>
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-dark-mode"></i></a>
         </div>
     </div>
 </nav>
 <nav class="navbar-mobile" id="nav-mobile" style="display: none">
-    
-        <div class="top-scroll-bar"></div>
-    
-	<div class="container">
+     
+         <div class="top-scroll-bar"></div>
+     
+     <div class="container">
         <div class="navbar-header">
-            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="http://49.235.231.121/">SilenceHL Blog</a></div>
-            <div class="menu-toggle">
-                <span></span><span></span><span></span>
+            <div class="header-logo">
+                
+                    <span class="logo_mark">></span>
+                    <a href="http://49.235.231.121/">
+                        <span class="logo_text">$ cd /home/ </span>
+                        <span class="logo_cursor"></span>
+                </a>
+                
+            </div>
+            <div class="navbar-right">
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-dark-mode"></i></a>
+                <div class="menu-toggle">
+                    <span></span><span></span><span></span>
+                </div>
             </div>
         </div>
      
@@ -118,7 +135,6 @@
         </div>
     </div>
 </nav>
-
     	 <main class="main">
           <div class="container">
       		
@@ -126,71 +142,19 @@
     <header class="post-header">
         <h1 class="post-title" itemprop="name headline">Django2.x配置mysql</h1>
         <div class="post-meta">
-	    <i class="far fa-folder-open"></i>
+                Written by <a itemprop="name" href="http://49.235.231.121/" rel="author">SilenceHL</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2019-01-21 itemprop="datePublished">January 21, 2019</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
                 <span class="post-category">
                         <a href="http://49.235.231.121/categories/django/"> Django </a>
                         
                 </span>
-          <span class="post-time">
-         <i class="far fa-calendar-alt"></i>  <time datetime=2019-01-21 itemprop="datePublished">2019-01-21</time>
-           </span>
-        <span class="post-time">
-		<i class="fa fa-clock"></i>  <time datetime=2019-01-21 itemprop="datePublished">2019-01-21</time>
-           </span>
-
-	   <i class="far fa-file-word"></i> <span class="post-word-count"> 887 字</span>
-         <i class="far fa-clock"></i> <span class="more-meta"> 2 分钟</span>
+                <span class="post-word-count">, 887 words</span>
         </div>
     </header>
-    
-          <div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title"></h2>
-  
-  <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#简介">简介</a></li>
-    <li><a href="#配置">配置</a>
-      <ul>
-        <li><a href="#配置settingspy">配置settings.py</a></li>
-        <li><a href="#使用pymysql">使用pymysql</a></li>
-        <li><a href="#修改源码中的问题">修改源码中的问题</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-  </div>
-</div>
-<script type="text/javascript">
-  window.onload = function () {
-    var fix = $('.post-toc');
-    var end = $('.post-comment');
-    var fixTop = fix.offset().top, fixHeight = fix.height();
-    var endTop, miss;
-    var offsetTop = fix[0].offsetTop;
-    $(window).scroll(function () {
-      var docTop = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
-      if (end.length > 0) {
-        endTop = end.offset().top;
-        miss = endTop - docTop - fixHeight;
-      }
-      if (fixTop < docTop) {
-        fix.css({ 'position': 'fixed' });
-        if ((end.length > 0) && (endTop < (docTop + fixHeight))) {
-          fix.css({ top: miss });
-        } else {
-          fix.css({ top: 0 });
-        }
-      } else {
-        fix.css({ 'position': 'absolute' });
-        fix.css({ top: offsetTop });
-      }
-    })
-  }
-</script> 
-
-    
-
     <div class="post-content">
         
 
@@ -323,32 +287,31 @@ pymysql<span style="color:#f92672">.</span>install_as_MySQLdb()
         <a href="http://49.235.231.121/2019/django%E5%88%9D%E4%BD%93%E9%AA%8C/" class="next" rel="next" title="Django初体验">Django初体验&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
-<div class="post-comment">
-       
+
+    <div class="post-comment">
+	    
              
              
-             <span id="/2019/%E8%AE%B0django2.x%E9%85%8D%E7%BD%AEmysql/" class="leancloud_visitors" data-flag-title="Django2.x配置mysql">
-                 <span class="post-meta-item-text">访问量 </span>
-                 <span class="leancloud-visitors-count"></span>
-                 <p></p>
-             </span>
-             <div id="vcomments"></div>
-             <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-             <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-             <script type="text/javascript">
-                 new Valine({
-                     el: '#vcomments' ,
-                     appId: 'CPUadU9FrUpQzf7dYqNF9gbT-gzGzoHsz',
-                     appKey: 'fsddpUyXPG7Nsn65o5bdydWH',
-                     notify:  true ,
-                     verify:  false ,
-                     avatar:'mm',
-                     placeholder: '说点什么吧...(邮箱不会显示,有回复可以收到提醒邮件!)',
-                     visitor:  true 
-                 });
-             </script>
+
+<div id="vcomments"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+<script type="text/javascript">
+  new Valine({
+      el: '#vcomments' ,
+      appId: 'CPUadU9FrUpQzf7dYqNF9gbT-gzGzoHsz',
+      appKey: 'fsddpUyXPG7Nsn65o5bdydWH',
+      notify: 'true', 
+      verify: 'false', 
+      avatar:'mp', 
+      placeholder: '说点什么吧...(邮箱不会显示,有回复可以收到提醒邮件!)',
+      visitor: 'true'
+  });
+</script>
+
        
- </div>
+    </div>
 </article>
           </div>
 		   </main>
@@ -387,7 +350,6 @@ pymysql<span style="color:#f92672">.</span>install_as_MySQLdb()
     <script src="/js/vendor_no_gallery.min.js" async=""></script>
     
   
-
 
 
 

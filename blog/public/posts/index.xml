@@ -39,6 +39,15 @@
     </item>
     
     <item>
+      <title>Django教学系列之Django介绍</title>
+      <link>http://49.235.231.121/2019/django%E5%9F%BA%E7%A1%80%E6%95%99%E5%AD%A6%E4%B8%80/</link>
+      <pubDate>Thu, 14 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://49.235.231.121/2019/django%E5%9F%BA%E7%A1%80%E6%95%99%E5%AD%A6%E4%B8%80/</guid>
+      <description>声明：以下内容均为我个人的理解，如果发现错误或者疑问可以联系我共同探讨 前言 为什么网上有很多Django的学习资料，我还想自己写一个Djang</description>
+    </item>
+    
+    <item>
       <title>Django2.x搭建博客</title>
       <link>http://49.235.231.121/2019/django2.0%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</link>
       <pubDate>Wed, 13 Feb 2019 00:00:00 +0000</pubDate>
