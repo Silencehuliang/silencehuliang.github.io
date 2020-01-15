@@ -6,10 +6,19 @@
     <description>Recent content in Categories on SilenceHL Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 09 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jan 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://49.235.231.121/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>工具</title>
+      <link>http://49.235.231.121/categories/%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://49.235.231.121/categories/%E5%B7%A5%E5%85%B7/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>操作系统</title>
@@ -17,15 +26,6 @@
       <pubDate>Thu, 09 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>http://49.235.231.121/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>工具</title>
-      <link>http://49.235.231.121/categories/%E5%B7%A5%E5%85%B7/</link>
-      <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>http://49.235.231.121/categories/%E5%B7%A5%E5%85%B7/</guid>
       <description></description>
     </item>
     
