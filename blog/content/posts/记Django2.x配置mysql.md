@@ -3,7 +3,7 @@ title: "Django2.x配置mysql"
 description: "Django2.x配置mysql"
 date: 2019-01-21
 draft: false
-categories: ["Django"] 
+categories: ["Django杂项"] 
 tags: ["pymsql","Django2.x"]
 ---
 

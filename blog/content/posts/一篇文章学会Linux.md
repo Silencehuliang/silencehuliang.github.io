@@ -3,8 +3,8 @@ title: "一篇文章学会Linux"
 description: "一篇文章学会Linux"
 date: 2020-01-09
 draft: false
-categories: ["操作系统"]
-tags: ["一篇文章学会系列"]
+categories: ["一篇文章学会系列"]
+tags: ["操作系统"]
 ---
 
 **声明：以下内容均为我个人的理解，如果发现错误或者疑问可以联系我共同探讨**

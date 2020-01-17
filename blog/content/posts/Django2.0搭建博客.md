@@ -3,7 +3,7 @@ title: "Django2.x搭建博客"
 description: "Django2.x搭建博客"
 date: 2019-02-13
 draft: false
-categories: ["Django"] 
+categories: ["Django杂项"] 
 tags: ["Django2.x"]
 ---
 

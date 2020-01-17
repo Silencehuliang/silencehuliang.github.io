@@ -4,8 +4,8 @@ date: 2020-01-15
 description: "一篇文章学会Git"
 lastmod: 2020-01-15
 draft: false
-categories: ["工具"] 
-tags: ["一篇文章学会系列"]
+categories: ["一篇文章学会系列"] 
+tags: ["工具"]
 ---
 
 ## 简介

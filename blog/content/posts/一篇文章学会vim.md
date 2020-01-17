@@ -4,8 +4,8 @@ date: 2020-01-08
 description: "一篇文章学会Vim"
 lastmod: 2020-01-14
 draft: false
-categories: ["工具"] 
-tags: ["一篇文章学会系列"]
+categories: ["一篇文章学会系列"] 
+tags: ["工具"]
 ---
 
 **声明：以下内容均为我个人的理解，如果发现错误或者疑问可以联系我共同探讨**

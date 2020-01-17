@@ -4,7 +4,7 @@ description: "Python时间合集"
 date: 2019-01-17
 draft: false
 categories: ["Python"] 
-tags: ["虚拟环境"]
+tags: ["时间"]
 ---
 
 **声明：以下内容均为我个人的理解，如果发现错误或者疑问可以联系我共同探讨**

@@ -3,8 +3,8 @@ title: "Django基础教程之配置文件详解"
 description: "Django配置文件详解"
 date: 2019-02-22
 draft: false
-categories: ["Django"] 
-tags: ["Django教程"]
+categories: ["Django基础教程"] 
+tags: ["Django2.x","教程"]
 
 ---
 
@@ -28,11 +28,15 @@ tags: ["Django教程"]
 
 作用：将应用的模型字符串映射到采用模型对象并返回其url，基于get_absolute_url方法。无论实际模型类名称的大小写如何，此设置中使用的模型名称均应全部小写。
 
-### 绝对路径映射
+
+
+### 管理员
 
 `ADMINS`
 
 作用：用于接收代码错误的人员列表，列表中的元素格式为（全名，电子邮箱）
+
+
 
 ### Django项目根路径
 

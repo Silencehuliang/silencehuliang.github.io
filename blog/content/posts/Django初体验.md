@@ -3,7 +3,7 @@ title: "Django初体验"
 description: "Django初体验"
 date: 2019-01-26
 draft: false
-categories: ["Django"] 
+categories: ["Django杂项"] 
 tags: ["Django2.x"]
 ---
 
