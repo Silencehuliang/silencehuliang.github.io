@@ -1,13 +1,20 @@
 ---
-title: "Django配置文件详解"
+title: "Django基础教程之配置文件详解"
 description: "Django配置文件详解"
-date: 2019-01-06
+date: 2019-02-22
 draft: false
 categories: ["Django"] 
-tags: ["配置文件"]
+tags: ["Django教程"]
+
 ---
 
 **声明：以下内容均为我个人的理解，如果发现错误或者疑问可以联系我共同探讨**
+
+本教程为Django基础教程系列第三篇，前面篇章在以下链接：
+
+[Django基础教程之Django介绍]([http://49.235.231.121/2019/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B8%80/](http://49.235.231.121/2019/django基础教程一/))
+
+[Django基础教程之工程搭建]([http://49.235.231.121/2019/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%BA%8C/](http://49.235.231.121/2019/django基础教程二/))
 
 ## 简介
 

@@ -224,7 +224,7 @@ db.sqlite3  demo  manage.py  users
 
 ![](https://tva3.sinaimg.cn/large/006lmzsGgy1gazjj3xb2dj318s0pun2d.jpg)
 
-这些默认应用的作用可以看我之前那篇文章：[Django配置文件详解]([http://49.235.231.121/2019/django%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%A6%E8%A7%A3/#%E5%BA%94%E7%94%A8%E6%A8%A1%E5%9D%97%E6%B3%A8%E5%86%8C](http://49.235.231.121/2019/django配置文件详解/#应用模块注册))
+这些默认应用的作用可以看这篇文章：[Django配置文件详解]()
 
 **注册一个应用的方法是将应用的配置信息文件apps.py中的Config类添加到INSTALLED_APPS列表中。**
 
