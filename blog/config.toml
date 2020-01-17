@@ -109,3 +109,10 @@ autoCollapseToc = true
 # 更准确的统计字数
 hasCJKLanguage = true
 
+enableDarkMode = true
+
+defaultTheme = "dark"
+
+hideThemeToggle = false
+
+hideThemeToggleInHome = false

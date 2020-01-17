@@ -6,18 +6,36 @@
     <description>Recent content in Django on SilenceHL Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 14 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 22 Feb 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://49.235.231.121/categories/django/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Django教程之Django介绍</title>
+      <title>Django基础教程之配置文件详解</title>
+      <link>http://49.235.231.121/2019/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B8%89/</link>
+      <pubDate>Fri, 22 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://49.235.231.121/2019/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B8%89/</guid>
+      <description>声明：以下内容均为我个人的理解，如果发现错误或者疑问可以联系我共同探讨 本教程为Django基础教程系列第三篇，前面篇章在以下链接： Djang</description>
+    </item>
+    
+    <item>
+      <title>Django基础教程之工程搭建</title>
+      <link>http://49.235.231.121/2019/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%BA%8C/</link>
+      <pubDate>Sun, 17 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://49.235.231.121/2019/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%BA%8C/</guid>
+      <description>声明：以下内容均为我个人的理解，如果发现错误或者疑问可以联系我共同探讨 本教程为Django基础教程系列第二篇，前面篇章在以下链接： Djang</description>
+    </item>
+    
+    <item>
+      <title>Django基础教程之Django介绍</title>
       <link>http://49.235.231.121/2019/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B8%80/</link>
       <pubDate>Thu, 14 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>http://49.235.231.121/2019/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B8%80/</guid>
-      <description>声明：以下内容均为我个人的理解，如果发现错误或者疑问可以联系我共同探讨 前言 为什么网上有很多Django的学习资料，我还想自己写一个Djang</description>
+      <description>声明：以下内容均为我个人的理解，如果发现错误或者疑问可以联系我共同探讨 本教程为Django基础教程系列第一篇 前言 为什么网上有很多Django</description>
     </item>
     
     <item>
@@ -45,15 +63,6 @@
       
       <guid>http://49.235.231.121/2019/%E8%AE%B0django2.x%E9%85%8D%E7%BD%AEmysql/</guid>
       <description>声明：以下内容均为我个人的理解，如果发现错误或者疑问可以联系我共同探讨 简介 在Django中使用mysql数据库是很常见的,但是升级到Djan</description>
-    </item>
-    
-    <item>
-      <title>Django配置文件详解</title>
-      <link>http://49.235.231.121/2019/django%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%A6%E8%A7%A3/</link>
-      <pubDate>Sun, 06 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://49.235.231.121/2019/django%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%A6%E8%A7%A3/</guid>
-      <description>声明：以下内容均为我个人的理解，如果发现错误或者疑问可以联系我共同探讨 简介 学习Django可以从Django配置文件的各项开始，由简入深的了</description>
     </item>
     
   </channel>
