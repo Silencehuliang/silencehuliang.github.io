@@ -2,6 +2,7 @@
 title: "Django基础教程之工程搭建"
 description: "Django介绍"
 date: 2019-02-17
+lastmod: 2019-02-22
 draft: false
 categories: ["Django基础教程"] 
 tags: ["Django2.x","教程"]
