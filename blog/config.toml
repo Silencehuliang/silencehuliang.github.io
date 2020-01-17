@@ -14,7 +14,7 @@ languageCode = "zh-cn"
 hasCJKLanguage = true
 
 # 主题 (需要自己下载)
-theme = "Q/LeaveIt"
+theme = "LeaveIt"
 
 # 每页的文章数
 

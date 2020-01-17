@@ -44,7 +44,6 @@ Git是一个免费的开源分布式版本控制系统，也是目前为止世�
 
 ```bash
 $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
 ```
 
 2.安装git
