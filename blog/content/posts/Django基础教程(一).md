@@ -1,5 +1,5 @@
 ---
-title: "Django教程之Django介绍"
+title: "Django基础教程之Django介绍"
 description: "Django介绍"
 date: 2019-02-14
 draft: false
@@ -8,6 +8,10 @@ tags: ["Django教程"]
 ---
 
 **声明：以下内容均为我个人的理解，如果发现错误或者疑问可以联系我共同探讨**
+
+本教程为Django基础教程系列第一篇
+
+
 
 ## 前言
 
@@ -42,8 +46,8 @@ Django强调代码复用，多个组件可以以"插件"的形式服务于整个
 Django采用MVT程序设计模式
 
 - M全拼为Model，主要封装对数据库层的访问，对数据库中的数据进行增、删、改、查操作。
-- V全拼为View，用于接收请求，处理业务逻辑，与Model和View交互，返回结果。
-- T全拼为Template，与MVC中的V功能相同，负责封装构造要返回的html。
+- V全拼为View，用于接收请求，进行业务处理，返回应答。
+- T全拼为Template，用于封装结果，负责封装构造要返回的html。
 
 
 
