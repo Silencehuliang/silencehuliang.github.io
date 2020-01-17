@@ -11,7 +11,7 @@ tags: ["Django教程"]
 
 本教程为Django基础教程系列第二篇，前面篇章在以下链接：
 
-[Django基础教程之Django介绍]([http://49.235.231.121/2019/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B8%80/](http://49.235.231.121/2019/django基础教程一/))
+[Django基础教程之Django介绍](http://49.235.231.121/2019/django基础教程一/)
 
 
 
