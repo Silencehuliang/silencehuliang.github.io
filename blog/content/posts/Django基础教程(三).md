@@ -2,6 +2,7 @@
 title: "Django基础教程之配置文件详解"
 description: "Django配置文件详解"
 date: 2019-02-22
+lastmod: 2019-02-22
 draft: false
 categories: ["Django基础教程"] 
 tags: ["Django2.x","教程"]
