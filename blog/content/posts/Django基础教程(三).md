@@ -133,6 +133,8 @@ tags: ["Django2.x","教程"]
       ]
       ```
 
+      
+      
       可以使用django-admin createsuperuser创建管理员用户
 
   - django.contrib.auth：认证授权系统。主要负责校验用户信息与用户权限，由以下部分组成
