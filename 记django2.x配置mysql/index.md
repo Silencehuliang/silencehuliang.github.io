@@ -7,8 +7,6 @@
 
 在Django中使用mysql数据库是很常见的,但是升级到Django2.0以后，已经不支持Python2.x，mysql的配置也需要随之改变
 
-
-
 ## 配置
 
 ### 配置settings.py
