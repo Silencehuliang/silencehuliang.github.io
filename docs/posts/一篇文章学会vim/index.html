@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>一篇文章学会Vim - Silence Blog</title><meta name="Description" content="一篇文章学会Vim"><meta property="og:title" content="一篇文章学会Vim" />
+<meta property="og:description" content="一篇文章学会Vim" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://49.235.231.121/posts/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Avim/" />
+<meta property="article:published_time" content="2020-01-08T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-01-14T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="一篇文章学会Vim"/>
+<meta name="twitter:description" content="一篇文章学会Vim"/>
+<meta name="application-name" content="Silence Blog">
+<meta name="apple-mobile-web-app-title" content="Silence Blog"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://49.235.231.121/posts/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Avim/" /><link rel="prev" href="http://49.235.231.121/posts/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E6%A8%A1%E6%9D%BF/" /><link rel="next" href="http://49.235.231.121/posts/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Alinux/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "一篇文章学会Vim",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/49.235.231.121\/posts\/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Avim\/"
+        },"genre": "posts","keywords": "工具","wordcount":  2702 ,
+        "url": "http:\/\/49.235.231.121\/posts\/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Avim\/","datePublished": "2020-01-08T00:00:00+00:00","dateModified": "2020-01-14T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "作者"},"author": {
+                "@type": "Person",
+                "name": "作者"
+            },"description": "一篇文章学会Vim"
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Silence Blog">Silence Blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Silence Blog">Silence Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">一篇文章学会Vim</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>作者</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9A%E7%B3%BB%E5%88%97/"><i class="far fa-folder fa-fw"></i>一篇文章学会系列</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-01-08">2020-01-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2702 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#安装与卸载">安装与卸载</a>
+      <ul>
+        <li><a href="#安装">安装</a></li>
+        <li><a href="#卸载">卸载</a></li>
+      </ul>
+    </li>
+    <li><a href="#教程">教程</a>
+      <ul>
+        <li><a href="#vimtutor"><strong>vimtutor</strong></a></li>
+        <li><a href="#帮助">帮助</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p><strong>声明：以下内容均为我个人的理解，如果发现错误或者疑问可以联系我共同探讨</strong></p>
+<h2 id="简介">简介</h2>
+<p><strong>Vim</strong>是一个高度可定制的终端文本编辑器，它可以很方便的创建和修改任何类型的文本。作为<strong>vi</strong>的升级版，有许多新的特性(以下列出的特性为比较常用的，详细特性可以查看<a href="http://vimdoc.sourceforge.net/cgi-bin/vim2html2.pl?page=vi_diff.txt#vi_diff.txt" target="_blank" rel="noopener noreffer">help vi_diff</a>.)：</p>
+<ul>
+<li>无限撤销：可以无限制的撤销</li>
+<li>可移植性：Vi仅在Unix上可用，Vim还可以在Windows、Macintosh，Amiga，OS / 2，VMS，QNX和其他系统上运行。</li>
+<li>语法高亮：当用Vim进行编程的时候，他可以根据正在编辑的文件类型，使其以内容以不同的颜色或样式突出显示。Vim捆绑了数百种语法突出显示规则集。</li>
+<li>图形用户界面：Vim在控制台上运行良好，也可以在许多GUI中本地运行，包括Mac OS和Windows。它还可以操作剪贴板。</li>
+<li>vi兼容模式：紧要关头，您可以强制Vim像vi一样。使Vim与vi不兼容的所有改进和错误修复都已关闭，您将获得100％与vi兼容的编辑器。</li>
+</ul>
+<p><strong>Vim</strong>作为许多程序员最喜欢的文本编辑器之一，它具有像：多级撤销、代码补全、支持数百种编程语言和文本格式、强大的搜索和替换功能等。</p>
+<h2 id="安装与卸载">安装与卸载</h2>
+<h3 id="安装">安装</h3>
+<h4 id="windows">Windows</h4>
+<p>先把<a href="https://www.vim.org/download.php" target="_blank" rel="noopener noreffer">安装包</a>下载下来，然后根据提示安装。</p>
+<h4 id="unix">Unix</h4>
+<p>在<a href="https://github.com/vim/vim/releases" target="_blank" rel="noopener noreffer">Github</a>上下载源文件安装</p>
+<h4 id="mac">Mac</h4>
+<p>在<a href="https://www.vim.org/download.php" target="_blank" rel="noopener noreffer">github</a>下载，根据文件类型安装。</p>
+<h4 id="详细安装教程httpswwwvimorgdownloadphpunix"><a href="https://www.vim.org/download.php#unix" target="_blank" rel="noopener noreffer">详细安装教程</a></h4>
+<h3 id="卸载">卸载</h3>
+<h4 id="unix-or-mac">Unix or Mac</h4>
+<h5 id="源代码安装">源代码安装</h5>
+<p>在控制台输入</p>
+<pre><code> make uninstall
+</code></pre><h5 id="软件包管理器安装">软件包管理器安装</h5>
+<p>根据不同软件包管理器的卸载命令卸载</p>
+<h4 id="windows-1">Windows</h4>
+<p>找到安装目录下的 &ldquo;uninstall-gui&rdquo; 程序进行卸载</p>
+<h2 id="教程">教程</h2>
+<h3 id="vimtutor"><strong>vimtutor</strong></h3>
+<p>Vim自带教程<strong>vimtutor</strong>是你从零开始学习Vim最好的老师，教程包含了日常所需要的各个命令和功能，还有实操教学。如果你的系统语言是中文，那么打开<strong>vimtutor</strong>时默认是中文版的教程，中文版教程由<strong>梁昌泰</strong> 先生进行译制。在命令行中输入<code>vimtutor</code>，就可以打开该教程,学习完该教程大约需要30分钟左右。</p>
+<p>有一款游戏<a href="http://vim-adventures.com/" target="_blank" rel="noopener noreffer">Vim Adventure</a>，可以作为学习Vim的一种放松。</p>
+<h4 id="vimtutor章节小结">Vimtutor章节小结</h4>
+<h5 id="第一讲">第一讲</h5>
+<ol>
+<li>
+<p>光标在屏幕文本中的移动既可以用箭头键，也可以使用 hjkl 字母键。</p>
+<p>​     h (左移)    j (下行)    k (上行)   l (右移)</p>
+</li>
+<li>
+<p>欲进入 Vim 编辑器(从命令行提示符)，请输入：vim 文件名 &lt;回车&gt;</p>
+</li>
+<li>
+<p>欲退出 Vim 编辑器，请输入 <!-- raw HTML omitted -->  :q!  &lt;回车&gt; 放弃所有改动。或者输入 <!-- raw HTML omitted -->  :wq  &lt;回车&gt; 保存改动。</p>
+</li>
+<li>
+<p>在正常模式下删除光标所在位置的字符，请按： x</p>
+</li>
+<li>
+<p>欲插入或添加文本，请输入：</p>
+<p>​     i  输入欲插入文本  <!-- raw HTML omitted -->       在光标前插入文本</p>
+<p>​     A  输入欲添加文本  <!-- raw HTML omitted -->       在一行后添加文本</p>
+</li>
+</ol>
+<p>特别提示：按下 <!-- raw HTML omitted --> 键会带您回到正常模式或者撤消一个不想输入或部分完整的命令。</p>
+<h5 id="第二讲">第二讲</h5>
+<ol>
+<li>
+<p>欲从当前光标删除至下一个单词，请输入：dw</p>
+</li>
+<li>
+<p>欲从当前光标删除至当前行末尾，请输入：d$</p>
+</li>
+<li>
+<p>欲删除整行，请输入：dd</p>
+</li>
+<li>
+<p>欲重复一个动作，请在它前面加上一个数字：2w</p>
+</li>
+<li>
+<p>在正常模式下修改命令的格式是：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">operator  <span class="o">[</span>number<span class="o">]</span>  motion
+</code></pre></div><p>其中：</p>
+<p>​      operator - 操作符，代表要做的事情，比如 d 代表删除</p>
+<p>​      [number] - 可以附加的数字，代表动作重复的次数</p>
+<p>​      motion  - 动作，代表在所操作的文本上的移动，例如 w 代表单词(word)，$ 代表行末等等。</p>
+</li>
+<li>
+<p>欲移动光标到行首，请按数字0键：0</p>
+</li>
+<li>
+<p>欲撤消以前的操作，请输入：u (小写的u)，欲撤消在一行中所做的改动，请输入：U (大写的U)，欲撤消以前的撤消命令，恢复以前的操作结果，请输入：CTRL-R</p>
+</li>
+</ol>
+<h5 id="第三讲">第三讲</h5>
+<ol>
+<li>
+<p>要重新置入已经删除的文本内容，请按小写字母 p 键。该操作可以将已删除的文本内容置于光标之后。如果最后一次删除的是一个整行，那么该行将置于当前光标所在行的下一行。</p>
+</li>
+<li>
+<p>要替换光标所在位置的字符，请输入小写的 r 和要替换掉原位置字符的新字符即可。</p>
+</li>
+<li>
+<p>更改类命令允许您改变从当前光标所在位置直到动作指示的位置中间的文本。比如输入 ce 可以替换当前光标到单词的末尾的内容；输入 c$ 可以替换当前光标到行末的内容。</p>
+</li>
+<li>
+<p>更改类命令的格式是：</p>
+<p><code> c  [number]  motion</code></p>
+</li>
+</ol>
+<h5 id="第四讲">第四讲</h5>
+<ol>
+<li>
+<p>CTRL-G 用于显示当前光标所在位置和文件状态信息。 G 用于将光标跳转至文件最后一行。先敲入一个行号然后输入大写 G 则是将光标移动至该行号代表的行。gg 用于将光标跳转至文件第一行。</p>
+</li>
+<li>
+<p>输入 / 然后紧随一个字符串是在当前所编辑的文档中正向查找该字符串。输入 ? 然后紧随一个字符串则是在当前所编辑的文档中反向查找该字符串。完成一次查找之后按 n 键是重复上一次的命令，可在同一方向上查找下一个匹配字符串所在；或者按大写 N 向相反方向查找下一匹配字符串所在。CTRL-O 带您跳转回较旧的位置，CTRL-I 则带您到较新的位置。</p>
+</li>
+<li>
+<p>如果光标当前位置是括号(、)、[、]、{、}，按 % 会将光标移动到配对的括号上。</p>
+</li>
+<li>
+<p>在一行内替换头一个字符串 old 为新的字符串 new，请输入 :s/old/new</p>
+<p>在一行内替换所有的字符串 old 为新的字符串 new，请输入 :s/old/new/g</p>
+<p>在两行内替换所有的字符串 old 为新的字符串 new，请输入 :#,#s/old/new/g</p>
+<p>在文件内替换所有的字符串 old 为新的字符串 new，请输入 :%s/old/new/g</p>
+<p>进行全文替换时询问用户确认每个替换需添加 c 标志    :%s/old/new/gc</p>
+</li>
+</ol>
+<h5 id="第五讲">第五讲</h5>
+<ol>
+<li>
+<p>:!command 用于执行一个外部命令 command。</p>
+<p>请看一些实际例子：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">(</span>MS-DOS<span class="o">)</span>     <span class="o">(</span>Unix<span class="o">)</span>
+   
+:!dir      :!ls      <span class="c1"># 用于显示当前目录的内容。</span>
+   
+:!del FILENAME  :!rm FILENAME  <span class="c1"># 用于删除名为 FILENAME 的文件。</span>
+</code></pre></div></li>
+<li>
+<p>:w FILENAME 可将当前 VIM 中正在编辑的文件保存到名为 FILENAME 的文件中。</p>
+</li>
+<li>
+<p>v motion :w FILENAME 可将当前编辑文件中可视模式下选中的内容保存到文件FILENAME 中。</p>
+</li>
+<li>
+<p>:r FILENAME 可提取磁盘文件 FILENAME 并将其插入到当前文件的光标位置后面。</p>
+</li>
+<li>
+<p>:r !dir 可以读取 dir 命令的输出并将其放置到当前文件的光标位置后面。</p>
+</li>
+</ol>
+<h5 id="第六讲">第六讲</h5>
+<ol>
+<li>
+<p>输入小写的 o 可以在光标下方打开新的一行并进入插入模式。输入大写的 O 可以在光标上方打开新的一行。</p>
+</li>
+<li>
+<p>输入小写的 a 可以在光标所在位置之后插入文本。输入大写的 A 可以在光标所在行的行末之后插入文本。</p>
+</li>
+<li>
+<p>e 命令可以使光标移动到单词末尾。</p>
+</li>
+<li>
+<p>操作符 y 复制文本，p 粘贴先前复制的文本。</p>
+</li>
+<li>
+<p>输入大写的 R 将进入替换模式，直至按 <!-- raw HTML omitted --> 键回到正常模式。</p>
+</li>
+<li>
+<p>输入 :set xxx 可以设置 xxx 选项。一些有用的选项如下：</p>
+<p>&lsquo;ic&rsquo; &lsquo;ignorecase&rsquo;    查找时忽略字母大小写</p>
+<p>&lsquo;is&rsquo; &lsquo;incsearch&rsquo;    查找短语时显示部分匹配</p>
+<p>&lsquo;hls&rsquo; &lsquo;hlsearch&rsquo;    高亮显示所有的匹配短语</p>
+<p>选项名可以用完整版本，也可以用缩略版本。</p>
+</li>
+<li>
+<p>在选项前加上 no 可以关闭选项： :set noic</p>
+</li>
+</ol>
+<h5 id="第七讲">第七讲</h5>
+<ol>
+<li>
+<p>输入 :help 或者按 <!-- raw HTML omitted --> 键或 <!-- raw HTML omitted --> 键可以打开帮助窗口。</p>
+</li>
+<li>
+<p>输入 :help cmd 可以找到关于 cmd 命令的帮助。</p>
+</li>
+<li>
+<p>输入 CTRL-W CTRL-W 可以使您在窗口之间跳转。</p>
+</li>
+<li>
+<p>输入 :q 以关闭帮助窗口</p>
+</li>
+<li>
+<p>您可以创建一个 vimrc 启动脚本文件用来保存您偏好的设置。</p>
+</li>
+<li>
+<p>当输入 : 命令时，按 CTRL-D 可以查看可能的补全结果。</p>
+<p>按 <!-- raw HTML omitted --> 可以使用一个补全。</p>
+</li>
+</ol>
+<h3 id="帮助">帮助</h3>
+<p>在控制台中输入vim就可以查看Vim的相关信息</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tvax2.sinaimg.cn/large/006lmzsGgy1gaq8qqqumnj30va0iotag.jpg"
+        data-srcset="https://tvax2.sinaimg.cn/large/006lmzsGgy1gaq8qqqumnj30va0iotag.jpg, https://tvax2.sinaimg.cn/large/006lmzsGgy1gaq8qqqumnj30va0iotag.jpg 1.5x, https://tvax2.sinaimg.cn/large/006lmzsGgy1gaq8qqqumnj30va0iotag.jpg 2x"
+        data-sizes="auto"
+        alt="https://tvax2.sinaimg.cn/large/006lmzsGgy1gaq8qqqumnj30va0iotag.jpg"
+        title="https://tvax2.sinaimg.cn/large/006lmzsGgy1gaq8qqqumnj30va0iotag.jpg" /></p>
+<p>根据图片所示我们可以知道，当前VIM的版本为8.0.1365，想退出需要输入&rdquo;:q&rdquo;，查看在线帮助文档可以输入&rdquo;:help&rdquo;，查看版本信息可以输入&rdquo;:help version8&rdquo;</p>
+<p>在英文模式下输入&rdquo;:help&quot;回车后便可以看到</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tva4.sinaimg.cn/large/006lmzsGgy1gaq90e91hcj30vc0iu43p.jpg"
+        data-srcset="https://tva4.sinaimg.cn/large/006lmzsGgy1gaq90e91hcj30vc0iu43p.jpg, https://tva4.sinaimg.cn/large/006lmzsGgy1gaq90e91hcj30vc0iu43p.jpg 1.5x, https://tva4.sinaimg.cn/large/006lmzsGgy1gaq90e91hcj30vc0iu43p.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva4.sinaimg.cn/large/006lmzsGgy1gaq90e91hcj30vc0iu43p.jpg"
+        title="https://tva4.sinaimg.cn/large/006lmzsGgy1gaq90e91hcj30vc0iu43p.jpg" /></p>
+<p>在这里有详细的Vim教程，教你玩转Vim。</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-01-14</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E5%B7%A5%E5%85%B7/">工具</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E6%A8%A1%E6%9D%BF/" class="prev" rel="prev" title="Django基础教程之模板"><i class="fas fa-angle-left fa-fw"></i>Django基础教程之模板</a>
+            <a href="/posts/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Alinux/" class="next" rel="next" title="一篇文章学会Linux">一篇文章学会Linux<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.74.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

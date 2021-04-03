@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>一篇文章学会Linux - Silence Blog</title><meta name="Description" content="一篇文章学会Linux"><meta property="og:title" content="一篇文章学会Linux" />
+<meta property="og:description" content="一篇文章学会Linux" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://49.235.231.121/posts/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Alinux/" />
+<meta property="article:published_time" content="2020-01-09T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-01-09T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="一篇文章学会Linux"/>
+<meta name="twitter:description" content="一篇文章学会Linux"/>
+<meta name="application-name" content="Silence Blog">
+<meta name="apple-mobile-web-app-title" content="Silence Blog"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://49.235.231.121/posts/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Alinux/" /><link rel="prev" href="http://49.235.231.121/posts/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Avim/" /><link rel="next" href="http://49.235.231.121/posts/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Agit/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "一篇文章学会Linux",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/49.235.231.121\/posts\/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Alinux\/"
+        },"genre": "posts","keywords": "操作系统","wordcount":  1266 ,
+        "url": "http:\/\/49.235.231.121\/posts\/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Alinux\/","datePublished": "2020-01-09T00:00:00+00:00","dateModified": "2020-01-09T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "作者"},"author": {
+                "@type": "Person",
+                "name": "作者"
+            },"description": "一篇文章学会Linux"
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Silence Blog">Silence Blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Silence Blog">Silence Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">一篇文章学会Linux</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>作者</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9A%E7%B3%BB%E5%88%97/"><i class="far fa-folder fa-fw"></i>一篇文章学会系列</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-01-09">2020-01-09</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1266 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#简介">简介</a>
+      <ul>
+        <li><a href="#linux">Linux</a></li>
+        <li><a href="#linux发行版">linux发行版</a></li>
+      </ul>
+    </li>
+    <li><a href="#安装">安装</a>
+      <ul>
+        <li><a href="#下载">下载</a></li>
+        <li><a href="#安装-1">安装</a></li>
+      </ul>
+    </li>
+    <li><a href="#linux-根目录">linux 根目录</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p><strong>声明：以下内容均为我个人的理解，如果发现错误或者疑问可以联系我共同探讨</strong></p>
+<h2 id="简介">简介</h2>
+<h3 id="linux">Linux</h3>
+<p><strong>Linux</strong>是一种自由和开放源码的类UNIX操作系统。该操作系统的内核由林纳斯·托瓦兹在1991年10月5日首次发布，在加上用户空间的应用程序之后，成为Linux操作系统。只要遵循GNU 通用公共许可证（GPL），任何个人和机构都可以自由地使用Linux的所有底层源代码，也可以自由地修改和再发布。大多数Linux系统还包括像提供GUI的X Window之类的程序。除了一部分专家之外，大多数人都是直接使用Linux 发行版，而不是自己选择每一样组件或自行设置。<a href="https://zh.wikipedia.org/wiki/Linux" target="_blank" rel="noopener noreffer">详细介绍</a></p>
+<h3 id="linux发行版">linux发行版</h3>
+<p><strong>Linux发行版</strong>指的就是通常所说的“Linux操作系统”，它一般是由一些组织、团体、公司或者个人将Linux内核作为发行版的一部分制作并发行的。通常来讲，一个Linux发行版包括Linux内核，以及将整个软件安装到电脑上的一套安装工具，还有各种GNU软件，和其他的一些自由软件，在一些Linux发行版中可能会包含一些专有软件。当前，超过三百个发行版被积极的开发，最普遍被使用的发行版有大约十二个。较为知名的有Debian、Ubuntu、Fedora和openSUSE等。</p>
+<p><a href="http://7z.cx/dsc/" target="_blank" rel="noopener noreffer"><strong>Linux发行版</strong>份额排名</a>，也可以在Linux终端用命令查看：<code>wget -qO - 7z.cx/o|sh</code>，Ubuntu以39.1%的占比遥遥领先，中国武汉深之度科技有限公司开发的deepin是国产<strong>Linux发行版</strong>中排名最高的，占比12.6%在排行榜中排名第三（截止于2020-01-10 13:54:19）</p>
+<h2 id="安装">安装</h2>
+<p>如果是初次安装系统建议先通过在虚拟机上安装。</p>
+<h3 id="下载">下载</h3>
+<p>下面提供较为知名的<strong>Linux发行版</strong>下载地址</p>
+<p><a href="https://ubuntu.com/download" target="_blank" rel="noopener noreffer">Ubuntu</a>、<a href="https://manjaro.org/download/" target="_blank" rel="noopener noreffer">manjaro</a>、<a href="https://www.deepin.org/download/" target="_blank" rel="noopener noreffer">deepin</a>、<a href="https://www.centos.org/download/" target="_blank" rel="noopener noreffer">CentOS</a>、<a href="https://www.archlinux.org/download/" target="_blank" rel="noopener noreffer">Arch</a>、<a href="https://www.debian.org/CD/http-ftp/" target="_blank" rel="noopener noreffer">Debian</a>、<a href="https://linuxmint.com/download.php" target="_blank" rel="noopener noreffer">Mint</a>、<a href="https://getfedora.org/en/workstation/download/" target="_blank" rel="noopener noreffer">Fedora</a></p>
+<p><strong>Linux发行版</strong>提供了Server版和Desktop版，初次使用建议直接安装Server版。</p>
+<h3 id="安装-1">安装</h3>
+<p>以Ubuntu Server 16.10为例</p>
+<p>将镜像写入U盘后，开机以U盘为第一启动项启动，可以看到以下界面</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tvax3.sinaimg.cn/large/006lmzsGgy1garfy9umhyj32lc1gitf0.jpg"
+        data-srcset="https://tvax3.sinaimg.cn/large/006lmzsGgy1garfy9umhyj32lc1gitf0.jpg, https://tvax3.sinaimg.cn/large/006lmzsGgy1garfy9umhyj32lc1gitf0.jpg 1.5x, https://tvax3.sinaimg.cn/large/006lmzsGgy1garfy9umhyj32lc1gitf0.jpg 2x"
+        data-sizes="auto"
+        alt="https://tvax3.sinaimg.cn/large/006lmzsGgy1garfy9umhyj32lc1gitf0.jpg"
+        title="https://tvax3.sinaimg.cn/large/006lmzsGgy1garfy9umhyj32lc1gitf0.jpg" /></p>
+<p>选择第一项安装Ubuntu Server</p>
+<p>下一步选择语言，这里选择英语，防止乱码与文件名是中文的问题</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tva1.sinaimg.cn/large/006lmzsGgy1garg0vpw3aj32lc1gin9h.jpg"
+        data-srcset="https://tva1.sinaimg.cn/large/006lmzsGgy1garg0vpw3aj32lc1gin9h.jpg, https://tva1.sinaimg.cn/large/006lmzsGgy1garg0vpw3aj32lc1gin9h.jpg 1.5x, https://tva1.sinaimg.cn/large/006lmzsGgy1garg0vpw3aj32lc1gin9h.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva1.sinaimg.cn/large/006lmzsGgy1garg0vpw3aj32lc1gin9h.jpg"
+        title="https://tva1.sinaimg.cn/large/006lmzsGgy1garg0vpw3aj32lc1gin9h.jpg" /></p>
+<p>下一步选择区域，没有中国，所以先选其他</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tvax3.sinaimg.cn/large/006lmzsGgy1garg3lx7z7j32lc1gi47j.jpg"
+        data-srcset="https://tvax3.sinaimg.cn/large/006lmzsGgy1garg3lx7z7j32lc1gi47j.jpg, https://tvax3.sinaimg.cn/large/006lmzsGgy1garg3lx7z7j32lc1gi47j.jpg 1.5x, https://tvax3.sinaimg.cn/large/006lmzsGgy1garg3lx7z7j32lc1gi47j.jpg 2x"
+        data-sizes="auto"
+        alt="https://tvax3.sinaimg.cn/large/006lmzsGgy1garg3lx7z7j32lc1gi47j.jpg"
+        title="https://tvax3.sinaimg.cn/large/006lmzsGgy1garg3lx7z7j32lc1gi47j.jpg" /></p>
+<p>接下来选择亚洲Asia</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tvax3.sinaimg.cn/large/006lmzsGgy1garg53j1esj32lc1gi7c9.jpg"
+        data-srcset="https://tvax3.sinaimg.cn/large/006lmzsGgy1garg53j1esj32lc1gi7c9.jpg, https://tvax3.sinaimg.cn/large/006lmzsGgy1garg53j1esj32lc1gi7c9.jpg 1.5x, https://tvax3.sinaimg.cn/large/006lmzsGgy1garg53j1esj32lc1gi7c9.jpg 2x"
+        data-sizes="auto"
+        alt="https://tvax3.sinaimg.cn/large/006lmzsGgy1garg53j1esj32lc1gi7c9.jpg"
+        title="https://tvax3.sinaimg.cn/large/006lmzsGgy1garg53j1esj32lc1gi7c9.jpg" /></p>
+<p>接着选这中国</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tvax2.sinaimg.cn/large/006lmzsGgy1garg6dwrcgj32lc1gi146.jpg"
+        data-srcset="https://tvax2.sinaimg.cn/large/006lmzsGgy1garg6dwrcgj32lc1gi146.jpg, https://tvax2.sinaimg.cn/large/006lmzsGgy1garg6dwrcgj32lc1gi146.jpg 1.5x, https://tvax2.sinaimg.cn/large/006lmzsGgy1garg6dwrcgj32lc1gi146.jpg 2x"
+        data-sizes="auto"
+        alt="https://tvax2.sinaimg.cn/large/006lmzsGgy1garg6dwrcgj32lc1gi146.jpg"
+        title="https://tvax2.sinaimg.cn/large/006lmzsGgy1garg6dwrcgj32lc1gi146.jpg" /></p>
+<p>下一步选择字符集，这里选择美国的UTF-8字符集，即en_US.UTF-8</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tva4.sinaimg.cn/large/006lmzsGgy1garg86wyw6j32lc1giaka.jpg"
+        data-srcset="https://tva4.sinaimg.cn/large/006lmzsGgy1garg86wyw6j32lc1giaka.jpg, https://tva4.sinaimg.cn/large/006lmzsGgy1garg86wyw6j32lc1giaka.jpg 1.5x, https://tva4.sinaimg.cn/large/006lmzsGgy1garg86wyw6j32lc1giaka.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva4.sinaimg.cn/large/006lmzsGgy1garg86wyw6j32lc1giaka.jpg"
+        title="https://tva4.sinaimg.cn/large/006lmzsGgy1garg86wyw6j32lc1giaka.jpg" /></p>
+<p>下一步检测键盘，选择否</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tva1.sinaimg.cn/large/006lmzsGgy1gargbbgpkvj32lc1gidma.jpg"
+        data-srcset="https://tva1.sinaimg.cn/large/006lmzsGgy1gargbbgpkvj32lc1gidma.jpg, https://tva1.sinaimg.cn/large/006lmzsGgy1gargbbgpkvj32lc1gidma.jpg 1.5x, https://tva1.sinaimg.cn/large/006lmzsGgy1gargbbgpkvj32lc1gidma.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva1.sinaimg.cn/large/006lmzsGgy1gargbbgpkvj32lc1gidma.jpg"
+        title="https://tva1.sinaimg.cn/large/006lmzsGgy1gargbbgpkvj32lc1gidma.jpg" /></p>
+<p>接着让我们设置键盘的类型与布局</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tvax4.sinaimg.cn/large/006lmzsGgy1gargc4ptctj32lc1giakp.jpg"
+        data-srcset="https://tvax4.sinaimg.cn/large/006lmzsGgy1gargc4ptctj32lc1giakp.jpg, https://tvax4.sinaimg.cn/large/006lmzsGgy1gargc4ptctj32lc1giakp.jpg 1.5x, https://tvax4.sinaimg.cn/large/006lmzsGgy1gargc4ptctj32lc1giakp.jpg 2x"
+        data-sizes="auto"
+        alt="https://tvax4.sinaimg.cn/large/006lmzsGgy1gargc4ptctj32lc1giakp.jpg"
+        title="https://tvax4.sinaimg.cn/large/006lmzsGgy1gargc4ptctj32lc1giakp.jpg" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tva1.sinaimg.cn/large/006lmzsGgy1gargcii9fjj32lc1gin9c.jpg"
+        data-srcset="https://tva1.sinaimg.cn/large/006lmzsGgy1gargcii9fjj32lc1gin9c.jpg, https://tva1.sinaimg.cn/large/006lmzsGgy1gargcii9fjj32lc1gin9c.jpg 1.5x, https://tva1.sinaimg.cn/large/006lmzsGgy1gargcii9fjj32lc1gin9c.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva1.sinaimg.cn/large/006lmzsGgy1gargcii9fjj32lc1gin9c.jpg"
+        title="https://tva1.sinaimg.cn/large/006lmzsGgy1gargcii9fjj32lc1gin9c.jpg" /></p>
+<p>下一步是设置主机名称，默认为ubuntu，可以改为你喜欢的名称</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tva3.sinaimg.cn/large/006lmzsGgy1gargeb4ovtj32lc1gi10d.jpg"
+        data-srcset="https://tva3.sinaimg.cn/large/006lmzsGgy1gargeb4ovtj32lc1gi10d.jpg, https://tva3.sinaimg.cn/large/006lmzsGgy1gargeb4ovtj32lc1gi10d.jpg 1.5x, https://tva3.sinaimg.cn/large/006lmzsGgy1gargeb4ovtj32lc1gi10d.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva3.sinaimg.cn/large/006lmzsGgy1gargeb4ovtj32lc1gi10d.jpg"
+        title="https://tva3.sinaimg.cn/large/006lmzsGgy1gargeb4ovtj32lc1gi10d.jpg" /></p>
+<p>设置用户名</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tva3.sinaimg.cn/large/006lmzsGgy1gargg9wwiwj32lc1gido1.jpg"
+        data-srcset="https://tva3.sinaimg.cn/large/006lmzsGgy1gargg9wwiwj32lc1gido1.jpg, https://tva3.sinaimg.cn/large/006lmzsGgy1gargg9wwiwj32lc1gido1.jpg 1.5x, https://tva3.sinaimg.cn/large/006lmzsGgy1gargg9wwiwj32lc1gido1.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva3.sinaimg.cn/large/006lmzsGgy1gargg9wwiwj32lc1gido1.jpg"
+        title="https://tva3.sinaimg.cn/large/006lmzsGgy1gargg9wwiwj32lc1gido1.jpg" /></p>
+<p>下一步设置登陆账号</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tvax4.sinaimg.cn/large/006lmzsGgy1gargjunehkj32lc1gidna.jpg"
+        data-srcset="https://tvax4.sinaimg.cn/large/006lmzsGgy1gargjunehkj32lc1gidna.jpg, https://tvax4.sinaimg.cn/large/006lmzsGgy1gargjunehkj32lc1gidna.jpg 1.5x, https://tvax4.sinaimg.cn/large/006lmzsGgy1gargjunehkj32lc1gidna.jpg 2x"
+        data-sizes="auto"
+        alt="https://tvax4.sinaimg.cn/large/006lmzsGgy1gargjunehkj32lc1gidna.jpg"
+        title="https://tvax4.sinaimg.cn/large/006lmzsGgy1gargjunehkj32lc1gidna.jpg" /></p>
+<p>设置密码，可以在下面选择显示密码，可以确认一次</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tva4.sinaimg.cn/large/006lmzsGgy1garglfwh0zj32lc1gi7bb.jpg"
+        data-srcset="https://tva4.sinaimg.cn/large/006lmzsGgy1garglfwh0zj32lc1gi7bb.jpg, https://tva4.sinaimg.cn/large/006lmzsGgy1garglfwh0zj32lc1gi7bb.jpg 1.5x, https://tva4.sinaimg.cn/large/006lmzsGgy1garglfwh0zj32lc1gi7bb.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva4.sinaimg.cn/large/006lmzsGgy1garglfwh0zj32lc1gi7bb.jpg"
+        title="https://tva4.sinaimg.cn/large/006lmzsGgy1garglfwh0zj32lc1gi7bb.jpg" /></p>
+<p>再次输入，确认密码</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tvax3.sinaimg.cn/large/006lmzsGgy1gargodu0a4j32lc1gidm7.jpg"
+        data-srcset="https://tvax3.sinaimg.cn/large/006lmzsGgy1gargodu0a4j32lc1gidm7.jpg, https://tvax3.sinaimg.cn/large/006lmzsGgy1gargodu0a4j32lc1gidm7.jpg 1.5x, https://tvax3.sinaimg.cn/large/006lmzsGgy1gargodu0a4j32lc1gidm7.jpg 2x"
+        data-sizes="auto"
+        alt="https://tvax3.sinaimg.cn/large/006lmzsGgy1gargodu0a4j32lc1gidm7.jpg"
+        title="https://tvax3.sinaimg.cn/large/006lmzsGgy1gargodu0a4j32lc1gidm7.jpg" /></p>
+<p>是否加密home文件夹，选择否</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tva4.sinaimg.cn/large/006lmzsGgy1gargpfimajj32lc1gi0zz.jpg"
+        data-srcset="https://tva4.sinaimg.cn/large/006lmzsGgy1gargpfimajj32lc1gi0zz.jpg, https://tva4.sinaimg.cn/large/006lmzsGgy1gargpfimajj32lc1gi0zz.jpg 1.5x, https://tva4.sinaimg.cn/large/006lmzsGgy1gargpfimajj32lc1gi0zz.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva4.sinaimg.cn/large/006lmzsGgy1gargpfimajj32lc1gi0zz.jpg"
+        title="https://tva4.sinaimg.cn/large/006lmzsGgy1gargpfimajj32lc1gi0zz.jpg" /></p>
+<p>下一步系统根据区域推断出我们的市区是上海，没有问题，所以选择是</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tva4.sinaimg.cn/large/006lmzsGgy1gargu0lqf0j32lc1gijxb.jpg"
+        data-srcset="https://tva4.sinaimg.cn/large/006lmzsGgy1gargu0lqf0j32lc1gijxb.jpg, https://tva4.sinaimg.cn/large/006lmzsGgy1gargu0lqf0j32lc1gijxb.jpg 1.5x, https://tva4.sinaimg.cn/large/006lmzsGgy1gargu0lqf0j32lc1gijxb.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva4.sinaimg.cn/large/006lmzsGgy1gargu0lqf0j32lc1gijxb.jpg"
+        title="https://tva4.sinaimg.cn/large/006lmzsGgy1gargu0lqf0j32lc1gijxb.jpg" /></p>
+<p>选择分区方式，这里选择Guided - use entire disk and set up LVM</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tva2.sinaimg.cn/large/006lmzsGgy1gargvdgj5oj32lc1gik05.jpg"
+        data-srcset="https://tva2.sinaimg.cn/large/006lmzsGgy1gargvdgj5oj32lc1gik05.jpg, https://tva2.sinaimg.cn/large/006lmzsGgy1gargvdgj5oj32lc1gik05.jpg 1.5x, https://tva2.sinaimg.cn/large/006lmzsGgy1gargvdgj5oj32lc1gik05.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva2.sinaimg.cn/large/006lmzsGgy1gargvdgj5oj32lc1gik05.jpg"
+        title="https://tva2.sinaimg.cn/large/006lmzsGgy1gargvdgj5oj32lc1gik05.jpg" /></p>
+<p>选择安装的硬盘</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tvax2.sinaimg.cn/large/006lmzsGgy1gargx0vgedj32lc1giqbb.jpg"
+        data-srcset="https://tvax2.sinaimg.cn/large/006lmzsGgy1gargx0vgedj32lc1giqbb.jpg, https://tvax2.sinaimg.cn/large/006lmzsGgy1gargx0vgedj32lc1giqbb.jpg 1.5x, https://tvax2.sinaimg.cn/large/006lmzsGgy1gargx0vgedj32lc1giqbb.jpg 2x"
+        data-sizes="auto"
+        alt="https://tvax2.sinaimg.cn/large/006lmzsGgy1gargx0vgedj32lc1giqbb.jpg"
+        title="https://tvax2.sinaimg.cn/large/006lmzsGgy1gargx0vgedj32lc1giqbb.jpg" /></p>
+<p>这里告诉我们会格式化这个盘确认选择</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tvax2.sinaimg.cn/large/006lmzsGgy1gargycrtkdj32lc1gi7b8.jpg"
+        data-srcset="https://tvax2.sinaimg.cn/large/006lmzsGgy1gargycrtkdj32lc1gi7b8.jpg, https://tvax2.sinaimg.cn/large/006lmzsGgy1gargycrtkdj32lc1gi7b8.jpg 1.5x, https://tvax2.sinaimg.cn/large/006lmzsGgy1gargycrtkdj32lc1gi7b8.jpg 2x"
+        data-sizes="auto"
+        alt="https://tvax2.sinaimg.cn/large/006lmzsGgy1gargycrtkdj32lc1gi7b8.jpg"
+        title="https://tvax2.sinaimg.cn/large/006lmzsGgy1gargycrtkdj32lc1gi7b8.jpg" /></p>
+<p>选择自动安装</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tva3.sinaimg.cn/large/006lmzsGgy1garhjbqigij32lc1gin2q.jpg"
+        data-srcset="https://tva3.sinaimg.cn/large/006lmzsGgy1garhjbqigij32lc1gin2q.jpg, https://tva3.sinaimg.cn/large/006lmzsGgy1garhjbqigij32lc1gin2q.jpg 1.5x, https://tva3.sinaimg.cn/large/006lmzsGgy1garhjbqigij32lc1gin2q.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva3.sinaimg.cn/large/006lmzsGgy1garhjbqigij32lc1gin2q.jpg"
+        title="https://tva3.sinaimg.cn/large/006lmzsGgy1garhjbqigij32lc1gin2q.jpg" /></p>
+<p>确认分区</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tvax3.sinaimg.cn/large/006lmzsGgy1garhkbocmdj32lc1giwob.jpg"
+        data-srcset="https://tvax3.sinaimg.cn/large/006lmzsGgy1garhkbocmdj32lc1giwob.jpg, https://tvax3.sinaimg.cn/large/006lmzsGgy1garhkbocmdj32lc1giwob.jpg 1.5x, https://tvax3.sinaimg.cn/large/006lmzsGgy1garhkbocmdj32lc1giwob.jpg 2x"
+        data-sizes="auto"
+        alt="https://tvax3.sinaimg.cn/large/006lmzsGgy1garhkbocmdj32lc1giwob.jpg"
+        title="https://tvax3.sinaimg.cn/large/006lmzsGgy1garhkbocmdj32lc1giwob.jpg" /></p>
+<p>确认安装</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tva4.sinaimg.cn/large/006lmzsGgy1garhleuym5j32lc1gin5f.jpg"
+        data-srcset="https://tva4.sinaimg.cn/large/006lmzsGgy1garhleuym5j32lc1gin5f.jpg, https://tva4.sinaimg.cn/large/006lmzsGgy1garhleuym5j32lc1gin5f.jpg 1.5x, https://tva4.sinaimg.cn/large/006lmzsGgy1garhleuym5j32lc1gin5f.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva4.sinaimg.cn/large/006lmzsGgy1garhleuym5j32lc1gin5f.jpg"
+        title="https://tva4.sinaimg.cn/large/006lmzsGgy1garhleuym5j32lc1gin5f.jpg" /></p>
+<p>选择代理，没有就跳过</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tvax2.sinaimg.cn/large/006lmzsGgy1garhr55hyrj32lc1giwm2.jpg"
+        data-srcset="https://tvax2.sinaimg.cn/large/006lmzsGgy1garhr55hyrj32lc1giwm2.jpg, https://tvax2.sinaimg.cn/large/006lmzsGgy1garhr55hyrj32lc1giwm2.jpg 1.5x, https://tvax2.sinaimg.cn/large/006lmzsGgy1garhr55hyrj32lc1giwm2.jpg 2x"
+        data-sizes="auto"
+        alt="https://tvax2.sinaimg.cn/large/006lmzsGgy1garhr55hyrj32lc1giwm2.jpg"
+        title="https://tvax2.sinaimg.cn/large/006lmzsGgy1garhr55hyrj32lc1giwm2.jpg" /></p>
+<p>选择升级方式，这里选择不自动升级No automatic updates</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tva1.sinaimg.cn/large/006lmzsGgy1garhogo0lkj32lc1giqbw.jpg"
+        data-srcset="https://tva1.sinaimg.cn/large/006lmzsGgy1garhogo0lkj32lc1giqbw.jpg, https://tva1.sinaimg.cn/large/006lmzsGgy1garhogo0lkj32lc1giqbw.jpg 1.5x, https://tva1.sinaimg.cn/large/006lmzsGgy1garhogo0lkj32lc1giqbw.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva1.sinaimg.cn/large/006lmzsGgy1garhogo0lkj32lc1giqbw.jpg"
+        title="https://tva1.sinaimg.cn/large/006lmzsGgy1garhogo0lkj32lc1giqbw.jpg" /></p>
+<p>安装完成后会重启，选择ubuntu启动即可</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tva3.sinaimg.cn/large/006lmzsGgy1gari7smoekj32lc1giwkc.jpg"
+        data-srcset="https://tva3.sinaimg.cn/large/006lmzsGgy1gari7smoekj32lc1giwkc.jpg, https://tva3.sinaimg.cn/large/006lmzsGgy1gari7smoekj32lc1giwkc.jpg 1.5x, https://tva3.sinaimg.cn/large/006lmzsGgy1gari7smoekj32lc1giwkc.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva3.sinaimg.cn/large/006lmzsGgy1gari7smoekj32lc1giwkc.jpg"
+        title="https://tva3.sinaimg.cn/large/006lmzsGgy1gari7smoekj32lc1giwkc.jpg" /></p>
+<p>进入系统后输入用户名密码就可以登录上ubuntu了，到此安装完毕</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tva4.sinaimg.cn/large/006lmzsGgy1gari9dj5bgj32lc1gijyt.jpg"
+        data-srcset="https://tva4.sinaimg.cn/large/006lmzsGgy1gari9dj5bgj32lc1gijyt.jpg, https://tva4.sinaimg.cn/large/006lmzsGgy1gari9dj5bgj32lc1gijyt.jpg 1.5x, https://tva4.sinaimg.cn/large/006lmzsGgy1gari9dj5bgj32lc1gijyt.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva4.sinaimg.cn/large/006lmzsGgy1gari9dj5bgj32lc1gijyt.jpg"
+        title="https://tva4.sinaimg.cn/large/006lmzsGgy1gari9dj5bgj32lc1gijyt.jpg" /></p>
+<h2 id="linux-根目录">linux 根目录</h2>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-01-09</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Avim/" class="prev" rel="prev" title="一篇文章学会Vim"><i class="fas fa-angle-left fa-fw"></i>一篇文章学会Vim</a>
+            <a href="/posts/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Agit/" class="next" rel="next" title="一篇文章学会Git">一篇文章学会Git<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.74.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

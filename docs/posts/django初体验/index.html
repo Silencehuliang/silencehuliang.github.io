@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Django初体验 - Silence Blog</title><meta name="Description" content="Django初体验"><meta property="og:title" content="Django初体验" />
+<meta property="og:description" content="Django初体验" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://49.235.231.121/posts/django%E5%88%9D%E4%BD%93%E9%AA%8C/" />
+<meta property="article:published_time" content="2019-01-26T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-01-26T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Django初体验"/>
+<meta name="twitter:description" content="Django初体验"/>
+<meta name="application-name" content="Silence Blog">
+<meta name="apple-mobile-web-app-title" content="Silence Blog"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://49.235.231.121/posts/django%E5%88%9D%E4%BD%93%E9%AA%8C/" /><link rel="prev" href="http://49.235.231.121/posts/%E8%AE%B0django2.x%E9%85%8D%E7%BD%AEmysql/" /><link rel="next" href="http://49.235.231.121/posts/django2.x%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Django初体验",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/49.235.231.121\/posts\/django%E5%88%9D%E4%BD%93%E9%AA%8C\/"
+        },"genre": "posts","keywords": "Django2.x","wordcount":  4562 ,
+        "url": "http:\/\/49.235.231.121\/posts\/django%E5%88%9D%E4%BD%93%E9%AA%8C\/","datePublished": "2019-01-26T00:00:00+00:00","dateModified": "2019-01-26T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "作者"},"author": {
+                "@type": "Person",
+                "name": "作者"
+            },"description": "Django初体验"
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Silence Blog">Silence Blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Silence Blog">Silence Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Django初体验</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>作者</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/django%E6%9D%82%E9%A1%B9/"><i class="far fa-folder fa-fw"></i>Django杂项</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-01-26">2019-01-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4562 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 10 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#安装django">安装Django</a>
+      <ul>
+        <li><a href="#三种方式安装">三种方式安装</a></li>
+      </ul>
+    </li>
+    <li><a href="#django初体验">Django初体验</a>
+      <ul>
+        <li><a href="#安装并使用virtualenv">安装并使用virtualenv</a></li>
+        <li><a href="#创建django项目">创建Django项目</a></li>
+        <li><a href="#创建一个应用">创建一个应用</a></li>
+        <li><a href="#编写第一个视图">编写第一个视图</a></li>
+        <li><a href="#数据库">数据库</a></li>
+        <li><a href="#视图与模板">视图与模板</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p><strong>声明：以下内容均为我个人的理解，如果发现错误或者疑问可以联系我共同探讨</strong></p>
+<h2 id="简介">简介</h2>
+<p>在Django2.0以后，Django已经不支持python2.7，所以我们需要一个由python3的系统环境，这里一python3.6为例</p>
+<h2 id="安装django">安装Django</h2>
+<h3 id="三种方式安装">三种方式安装</h3>
+<h4 id="pip安装">pip安装</h4>
+<ul>
+<li>
+<p>一般情况下安装python后会帮你安装好pip，当你没安装时使用这个<a href="https://pip.pypa.io/en/latest/installing/#installing-with-get-pip-py" target="_blank" rel="noopener noreffer">链接</a>安装,记得更新到最新版本</p>
+</li>
+<li>
+<p>安装并使用virtualenv</p>
+</li>
+<li>
+<p>在创建好并激活的虚拟环境中输入一下命令</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="err">$</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">Django</span>
+</code></pre></div></li>
+</ul>
+<h4 id="通过第三方软件包">通过第三方软件包</h4>
+<p>管理系统集成的Django</p>
+<h4 id="安装开发版本">安装开发版本</h4>
+<ul>
+<li>
+<p>安装好<a href="https://git-scm.com/" target="_blank" rel="noopener noreffer">git</a></p>
+</li>
+<li>
+<p>输入一下命令下载Django</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">$ git clone https://github.com/django/django.git
+</code></pre></div></li>
+<li>
+<p>安装并使用virtualenv</p>
+</li>
+<li>
+<p>在创建好并激活的虚拟环境中输入一下命令</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="err">$</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="n">django</span><span class="o">/</span>
+</code></pre></div></li>
+</ul>
+<p>安装好Django后可以通过一下命令查看当前Django版本</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="err">$</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">django</span> <span class="o">--</span><span class="n">version</span>
+</code></pre></div><h2 id="django初体验">Django初体验</h2>
+<h3 id="安装并使用virtualenv">安装并使用virtualenv</h3>
+<p>详细过程见<a href="http://49.235.231.121/2019/python%e6%90%ad%e5%bb%ba%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83/" target="_blank" rel="noopener noreffer">这个链接</a></p>
+<h3 id="创建django项目">创建Django项目</h3>
+<p>在项目存放目录打开命令行运行一下命令：</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="err">$</span> <span class="n">django</span><span class="o">-</span><span class="n">admin</span> <span class="n">startproject</span> <span class="n">mysite</span>
+</code></pre></div><p>这句话执行过后会在当前目录生成一个名字为mysite的Django项目，目录结构为下</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mysite/
+    manage.py
+    mysite/
+        __init__.py
+        settings.py
+        urls.py
+        wsgi.py
+</code></pre></div><p>这些目录和文件的作用：</p>
+<ul>
+<li>
+<p>mysite/目录：存放项目的容器，他的名字不重要可以更换为你喜欢的任何名字</p>
+</li>
+<li>
+<p>manage.py：Django项目的启动文件，他可以让你通过各种方式管理Django项目。</p>
+</li>
+<li>
+<p>mysite/mysite/目录：项目目录，里面存放项目相关的文件</p>
+</li>
+<li>
+<p>mysite/mysite/settings.py：Django项目的配置文件</p>
+</li>
+<li>
+<p>mysite/mysite/urls.py：Django项目的url声明文件,他将url对应相关的app的视图</p>
+</li>
+<li>
+<p>mysite/mysite/wsgi.py：Django项目wsgi服务器的入口</p>
+</li>
+<li>
+<p>当输入以下命令，并进入浏览器输入：http://127.0.0.1:8000/看到Django启动成功</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="err">$</span> <span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">runserver</span>
+</code></pre></div><p>这里能启动成功是因为Django自带一个简易的服务器（用纯 Python 写的轻量级的 Web 服务器）。他能帮助我们快速开发。</p>
+</li>
+</ul>
+<h3 id="创建一个应用">创建一个应用</h3>
+<ul>
+<li>
+<p>将当前目录切换到manage.py所在的目录，输入下面的命令创建一个应用:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="err">$</span> <span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">startapp</span> <span class="n">demo</span>
+</code></pre></div><p>该应用的目录结构大致如下</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">demo/
+    __init__.py
+    admin.py
+    apps.py
+    migrations/
+        __init__.py
+    models.py
+    tests.py
+    views.py
+</code></pre></div><p>这些目录和文件的作用：</p>
+<ul>
+<li>admin.py：管理admin后台相关数据库模型</li>
+<li>apps.py：该应用的相关配置</li>
+<li>migrations/文件夹及其内容：数据库迁移相关的文件夹，里面存放着迁移版本，迁移信息等</li>
+<li>models.py：编写模型类的文件</li>
+<li>tests.py：用于测试的文件</li>
+<li>view.py：编写视图的文件</li>
+</ul>
+<p>我们还要在项目配置文件中注册该app，打开settings.py文件，找到INSTALLED_APPS，在列表的最后添加demoapp</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">mysite</span><span class="o">/</span><span class="n">settings</span><span class="o">.</span><span class="n">py</span>
+<span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;django.contrib.admin&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.auth&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.contenttypes&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.sessions&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.messages&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.staticfiles&#39;</span><span class="p">,</span>
+    <span class="c1"># 注册demo</span>
+    <span class="s1">&#39;demo.apps.DemoConfig&#39;</span>
+<span class="p">]</span>
+    
+</code></pre></div></li>
+</ul>
+<h3 id="编写第一个视图">编写第一个视图</h3>
+<p>视图在应用的views.py中编写</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">demo</span><span class="o">/</span><span class="n">views</span><span class="o">.</span><span class="n">py</span>
+
+<span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
+
+<span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s2">&#34;Hello, world!&#34;</span><span class="p">)</span>
+</code></pre></div><p>为了能看到效果我们还需要配置一下url，在demo目录下创建一个urls.py，并输入一下代码</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">/</span><span class="n">demo</span><span class="o">/</span><span class="n">urls</span><span class="o">.</span><span class="n">py</span>
+
+<span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">views</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="n">path</span><span class="p">(</span><span class="s2">&#34;&#34;</span><span class="p">,</span><span class="n">views</span><span class="o">.</span><span class="n">index</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">),</span>
+<span class="p">]</span>
+</code></pre></div><p>更改项目url，通过修改项目urls.py文件修改路由</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">/</span><span class="n">mysite</span><span class="o">/</span><span class="n">urls</span><span class="o">.</span><span class="n">py</span>
+
+<span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+<span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">include</span><span class="p">,</span> <span class="n">path</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;demo/&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s1">&#39;demo.urls&#39;</span><span class="p">)),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;admin/&#39;</span><span class="p">,</span> <span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">urls</span><span class="p">),</span>
+<span class="p">]</span>
+</code></pre></div><p>这里include是将demo/的路由转发到demo应用的urls.py里。每当 Django 遇到 include时，它会截断与此项匹配的 URL 的部分，并将剩余的字符串发送到 对应urls.py以供进一步处理。</p>
+<p>path有五个参数：route、view、kwargs、name、Pattern，其中route、view是必须传入的参数</p>
+<ul>
+<li>route：匹配url的准则（类似于正则表达式）。当Django响应一个请求时，他会从urlpatterns的第一项开始，按顺序依次匹配，知道找到匹配的项</li>
+<li>view：目标视图函数。当route找到匹配的项后，会调用当前的视图函数，并传入一个HttpRequest对象作为第一个参数，route中的参数一关键字参数的形式传入</li>
+<li>kwargs：关键字参数。任意个关键字参数可以作为一个字典传递给目标视图函数。</li>
+<li>name：为url取的名字。他可以使Django在任意地方引用他</li>
+<li>Pattern：匹配模式</li>
+</ul>
+<p>现在可以启动Django程序来看是否正常工作</p>
+<h3 id="数据库">数据库</h3>
+<h4 id="创建数据库">创建数据库</h4>
+<p>进入mysql并创建一个test数据库，字符设置为utf8</p>
+<div class="highlight"><pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="err">$</span> <span class="n">mysql</span> <span class="o">-</span><span class="n">uroot</span> <span class="o">-</span><span class="n">p</span>
+<span class="n">mysql</span><span class="o">&gt;</span> <span class="k">create</span> <span class="k">database</span> <span class="n">test</span> <span class="kp">charset</span><span class="o">=</span><span class="n">utf8</span><span class="p">;</span>
+<span class="n">Query</span> <span class="n">OK</span><span class="p">,</span> <span class="mi">1</span> <span class="n">row</span> <span class="nf">affected</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
+</code></pre></div><h4 id="数据库配置">数据库配置</h4>
+<p>首先我们需要配置mysite/setting.py中的数据库DATABASES选项，Django默认是sqlite数据库，如果个人项目不大的情况下可以使用这个，也可以使用自己熟悉的数据库，Django不仅支持sqlite，postgresql，mysql，或oracle，还支持很多有第三方插件的数据库，我使用mysql数据库</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">/</span><span class="n">mysite</span><span class="o">/</span><span class="n">settings</span><span class="o">.</span><span class="n">py</span>
+<span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;ENGINE&#39;</span><span class="p">:</span> <span class="s1">&#39;django.db.backends.mysql&#39;</span><span class="p">,</span>
+        <span class="c1"># 数据库名</span>
+        <span class="s1">&#39;NAME&#39;</span><span class="p">:</span> <span class="s1">&#39;test&#39;</span><span class="p">,</span> 
+        <span class="c1"># 用户名</span>
+        <span class="s1">&#39;USER&#39;</span><span class="p">:</span> <span class="s1">&#39;root&#39;</span><span class="p">,</span> 
+        <span class="c1"># 密码</span>
+        <span class="s1">&#39;PASSWORD&#39;</span><span class="p">:</span> <span class="s1">&#39;mysql&#39;</span>
+        <span class="c1"># 主机,默认为localhost</span>
+        <span class="s1">&#39;HOST&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span>
+        <span class="c1"># 端口号，默认为3306</span>
+        <span class="s1">&#39;PORT&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><h4 id="数据库迁移">数据库迁移</h4>
+<p>因为Django自带应用已经为我们编写了一些数据模型，即时我们不编写任何模型也可以直接使用数据库迁移命令进行迁移</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="err">$</span> <span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">migrate</span>
+</code></pre></div><p>会看到初始化了很多用户、权限相关的表</p>
+<p>创建一个管理员账号，依次输入用户名、邮箱、密码、确认密码，建议密码设置复杂点</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="err">$</span> <span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">createsuperuser</span>
+<span class="err">用户名</span> <span class="p">(</span><span class="n">leave</span> <span class="n">blank</span> <span class="n">to</span> <span class="n">use</span> <span class="s1">&#39;02&#39;</span><span class="p">):</span> <span class="n">admin</span>
+<span class="err">电子邮件地址</span><span class="p">:</span> <span class="mi">1</span><span class="nd">@gmail.com</span>
+<span class="n">Password</span><span class="p">:</span>
+<span class="n">Password</span> <span class="p">(</span><span class="n">again</span><span class="p">):</span>
+<span class="err">密码跟</span> <span class="err">用户名</span> <span class="err">太相似了。</span>
+<span class="err">密码长度太短。密码必须包含至少</span> <span class="mi">8</span> <span class="err">个字符。</span>
+<span class="err">这个密码太常见了。</span>
+<span class="n">Bypass</span> <span class="n">password</span> <span class="n">validation</span> <span class="ow">and</span> <span class="n">create</span> <span class="n">user</span> <span class="n">anyway</span><span class="err">?</span> <span class="p">[</span><span class="n">y</span><span class="o">/</span><span class="n">N</span><span class="p">]:</span> <span class="n">y</span>
+<span class="n">Superuser</span> <span class="n">created</span> <span class="n">successfully</span><span class="o">.</span>
+
+</code></pre></div><p>接下来启动项目，并在浏览器中输入http://127.0.0.1:8000/admin，进入后台管理界面</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tvax2.sinaimg.cn/large/006lmzsGgy1gav1o59elyj31h90s7dgw.jpg"
+        data-srcset="https://tvax2.sinaimg.cn/large/006lmzsGgy1gav1o59elyj31h90s7dgw.jpg, https://tvax2.sinaimg.cn/large/006lmzsGgy1gav1o59elyj31h90s7dgw.jpg 1.5x, https://tvax2.sinaimg.cn/large/006lmzsGgy1gav1o59elyj31h90s7dgw.jpg 2x"
+        data-sizes="auto"
+        alt="https://tvax2.sinaimg.cn/large/006lmzsGgy1gav1o59elyj31h90s7dgw.jpg"
+        title="https://tvax2.sinaimg.cn/large/006lmzsGgy1gav1o59elyj31h90s7dgw.jpg" /></p>
+<p>输入账号密码，点击登录即可</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tvax4.sinaimg.cn/large/006lmzsGgy1gav1on3qmaj31h70s9js7.jpg"
+        data-srcset="https://tvax4.sinaimg.cn/large/006lmzsGgy1gav1on3qmaj31h70s9js7.jpg, https://tvax4.sinaimg.cn/large/006lmzsGgy1gav1on3qmaj31h70s9js7.jpg 1.5x, https://tvax4.sinaimg.cn/large/006lmzsGgy1gav1on3qmaj31h70s9js7.jpg 2x"
+        data-sizes="auto"
+        alt="https://tvax4.sinaimg.cn/large/006lmzsGgy1gav1on3qmaj31h70s9js7.jpg"
+        title="https://tvax4.sinaimg.cn/large/006lmzsGgy1gav1on3qmaj31h70s9js7.jpg" /></p>
+<p>数据库迁移，需要三步</p>
+<ul>
+<li>
+<p>编写models.py文件，改变模型。</p>
+</li>
+<li>
+<p>运行 python manage.py makemigrations为模型的改变生成迁移文件。</p>
+</li>
+<li>
+<p>运行 python manage.py migrate 来应用数据库迁移。</p>
+</li>
+</ul>
+<h4 id="创建一个图书模型">创建一个图书模型</h4>
+<p>在demo应用下创建一个图书模型</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">/</span><span class="n">demo</span><span class="o">/</span><span class="n">models</span><span class="o">.</span><span class="n">py</span>
+
+<span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+
+<span class="k">class</span> <span class="nc">Books</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="c1"># 书名</span>
+    <span class="n">book_name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+    <span class="c1"># 作者</span>
+    <span class="n">author</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+</code></pre></div><p>建立的模型有两个字段，书名和作者，使用了字符类型，增加了长度限制（<strong>注意在使用CharField时必须要添加max_length限制</strong>）</p>
+<p>创建迁移模型并生成迁移文件</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="err">$</span> <span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">makemigrations</span> <span class="n">demo</span>
+<span class="n">Migrations</span> <span class="k">for</span> <span class="s1">&#39;demo&#39;</span><span class="p">:</span>
+  <span class="n">demo</span>\<span class="n">migrations</span>\<span class="mo">0001</span><span class="n">_initial</span><span class="o">.</span><span class="n">py</span>
+    <span class="o">-</span> <span class="n">Create</span> <span class="n">model</span> <span class="n">Books</span>
+</code></pre></div><p>会出现创建了Books这个模型，在demo应用的migrations文件夹下会多一个0001_initila.py的迁移文件，可以使用python manage.py sqlmigrate demo 0001可以查看这次数据库迁移的操作与具体的SQL语句</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="err">$</span> <span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">sqlmigrate</span> <span class="n">demo</span> <span class="mo">0001</span>
+<span class="n">BEGIN</span><span class="p">;</span>
+<span class="o">--</span>
+<span class="o">--</span> <span class="n">Create</span> <span class="n">model</span> <span class="n">Books</span>
+<span class="o">--</span>
+<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="sb">`demo_books`</span> <span class="p">(</span><span class="sb">`id`</span> <span class="n">integer</span> <span class="n">AUTO_INCREMENT</span> <span class="n">NOT</span> <span class="n">NULL</span> <span class="n">PRIMARY</span> <span class="n">KEY</span><span class="p">,</span> <span class="sb">`book_name`</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span> <span class="sb">`auhtor`</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">);</span>
+<span class="n">COMMIT</span><span class="p">;</span>
+</code></pre></div><p>需要注意一下几点：</p>
+<ul>
+<li>输出的内容与使用的数据库有关。</li>
+<li>数据库的表名默认是“应用名_模型名的小写”，也可以自定义表名。</li>
+<li>主键会默认自动创建，也可以自定义主键。</li>
+<li>Django会为使用的数据库定制相关SQL语句，例如主键：integer AUTO_INCREMENT NOT NULL PRIMARY KEY，varchar：NOT NULL</li>
+<li>sqlmigrate命令并没有真正执行迁移命令，他只是将迁移命令执行的流程输出到屏幕上，供你查看</li>
+</ul>
+<p>执行check命令对项目做检查</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="err">$</span> <span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">check</span>
+<span class="n">System</span> <span class="n">check</span> <span class="n">identified</span> <span class="n">no</span> <span class="n">issues</span> <span class="p">(</span><span class="mi">0</span> <span class="n">silenced</span><span class="p">)</span><span class="o">.</span>
+</code></pre></div><p>没有问题后执行迁移命令</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="err">$</span> <span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">migrate</span>
+<span class="n">Operations</span> <span class="n">to</span> <span class="n">perform</span><span class="p">:</span>
+  <span class="n">Apply</span> <span class="nb">all</span> <span class="n">migrations</span><span class="p">:</span> <span class="n">admin</span><span class="p">,</span> <span class="n">auth</span><span class="p">,</span> <span class="n">contenttypes</span><span class="p">,</span> <span class="n">demo</span><span class="p">,</span> <span class="n">sessions</span>
+<span class="n">Running</span> <span class="n">migrations</span><span class="p">:</span>
+  <span class="n">Applying</span> <span class="n">demo</span><span class="o">.</span><span class="mo">0001</span><span class="n">_initial</span><span class="o">...</span> <span class="n">OK</span>
+</code></pre></div><p>看到以上内容即完成了数据库迁移</p>
+<p>通过Python命令行尝试</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="err">$</span> <span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">shell</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">demo.models</span> <span class="kn">import</span> <span class="n">Books</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ggzh</span> <span class="o">=</span> <span class="n">Books</span><span class="p">(</span><span class="n">book_name</span><span class="o">=</span><span class="s2">&#34;硅谷之火&#34;</span><span class="p">,</span><span class="n">author</span><span class="o">=</span><span class="s2">&#34;迈克尔.斯韦因&#34;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ggzh</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ggzh</span><span class="o">.</span><span class="n">id</span>
+<span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ggzh</span><span class="o">.</span><span class="n">book_name</span>
+<span class="s1">&#39;硅谷之火&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ggzh</span><span class="o">.</span><span class="n">author</span>
+<span class="s1">&#39;迈克尔.斯韦因&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Books</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<span class="o">&lt;</span><span class="n">QuerySet</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">Books</span><span class="p">:</span> <span class="n">Books</span> <span class="nb">object</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">&gt;</span><span class="p">]</span><span class="o">&gt;</span>
+</code></pre></div><p>这里我们看到&lt;QuerySet [&lt;Books: Books object (1)&gt;]&gt;这个并不能让我们知道这个对象的细节，通过修改Books模型来修复这个问题</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">/</span><span class="n">demo</span><span class="o">/</span><span class="n">models</span><span class="o">.</span><span class="n">py</span>
+
+<span class="k">class</span> <span class="nc">Books</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="c1"># 书名</span>
+    <span class="n">book_name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+    <span class="c1"># 作者</span>
+    <span class="n">author</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+    
+	<span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">book_name</span>
+
+</code></pre></div><p>修改完成后重新进入交互终端，再次查询就可以显示书名了，这里可以自己定义想显示的字段或内容</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="err">$</span> <span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">shell</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">demo.models</span> <span class="kn">import</span> <span class="n">Books</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Books</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<span class="o">&lt;</span><span class="n">QuerySet</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">Books</span><span class="p">:</span> <span class="err">硅谷之火</span><span class="o">&gt;</span><span class="p">]</span><span class="o">&gt;</span>
+</code></pre></div><p>再添加一本书，聚合函数</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">qbsz</span> <span class="o">=</span> <span class="n">Books</span><span class="p">(</span><span class="n">book_name</span><span class="o">=</span><span class="s2">&#34;史蒂夫*乔布斯传&#34;</span><span class="p">,</span><span class="n">author</span><span class="o">=</span><span class="s2">&#34;沃尔特·艾萨克森&#34;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">qbsz</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Books</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<span class="o">&lt;</span><span class="n">QuerySet</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">Books</span><span class="p">:</span> <span class="err">硅谷之火</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">Books</span><span class="p">:</span> <span class="err">史蒂夫</span><span class="o">*</span><span class="err">乔布斯传</span><span class="o">&gt;</span><span class="p">]</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Books</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="mi">2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Books</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">book_name</span><span class="o">=</span><span class="s2">&#34;硅谷之火&#34;</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">QuerySet</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">Books</span><span class="p">:</span> <span class="err">硅谷之火</span><span class="o">&gt;</span><span class="p">]</span><span class="o">&gt;</span>
+</code></pre></div><p>接下来我们将Books模型添加到admin管理，通过register方法，将Books交给admin管理</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">/</span><span class="n">demo</span><span class="o">/</span><span class="n">admin</span>
+
+<span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Books</span>
+
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Books</span><span class="p">)</span>
+</code></pre></div><p>重新运行项目，在地址栏输入：http://127.0.0.1:8000/admin/，输入账号密码登录即可查看到这个模型</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tva4.sinaimg.cn/large/006lmzsGgy1gav1r45uowj31h70s9wfe.jpg"
+        data-srcset="https://tva4.sinaimg.cn/large/006lmzsGgy1gav1r45uowj31h70s9wfe.jpg, https://tva4.sinaimg.cn/large/006lmzsGgy1gav1r45uowj31h70s9wfe.jpg 1.5x, https://tva4.sinaimg.cn/large/006lmzsGgy1gav1r45uowj31h70s9wfe.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva4.sinaimg.cn/large/006lmzsGgy1gav1r45uowj31h70s9wfe.jpg"
+        title="https://tva4.sinaimg.cn/large/006lmzsGgy1gav1r45uowj31h70s9wfe.jpg" /></p>
+<p>点进去可以查看该模型的数据，右上角可以添加，动作可以删除，点图书名可以看到更多细节</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tvax3.sinaimg.cn/large/006lmzsGgy1gav1rig51bj31hb0s83zk.jpg"
+        data-srcset="https://tvax3.sinaimg.cn/large/006lmzsGgy1gav1rig51bj31hb0s83zk.jpg, https://tvax3.sinaimg.cn/large/006lmzsGgy1gav1rig51bj31hb0s83zk.jpg 1.5x, https://tvax3.sinaimg.cn/large/006lmzsGgy1gav1rig51bj31hb0s83zk.jpg 2x"
+        data-sizes="auto"
+        alt="https://tvax3.sinaimg.cn/large/006lmzsGgy1gav1rig51bj31hb0s83zk.jpg"
+        title="后台管理图书" /></p>
+<h3 id="视图与模板">视图与模板</h3>
+<p>在models.py中添加一个图书模型</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">/</span><span class="n">demo</span><span class="o">/</span><span class="n">models</span><span class="o">.</span><span class="n">py</span>
+
+<span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+
+
+<span class="k">class</span> <span class="nc">Books</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="c1"># 书名</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="s1">&#39;书名&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+    <span class="c1"># 作者</span>
+    <span class="n">author</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="s1">&#39;作者&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+    <span class="n">publish_house</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="s1">&#39;出版社&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+    <span class="n">publish_date</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="s1">&#39;出版日期&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+    <span class="n">price</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">(</span><span class="s1">&#39;价格&#39;</span><span class="p">)</span>
+    <span class="n">synopsis</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="s1">&#39;简介&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+</code></pre></div><p>在admin.py中注册Books</p>
+<p>迁移数据库</p>
+<p>在Django后台中添加图书数据</p>
+<p>在应用的views.py中编写一个展示图书的视图</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">/</span><span class="n">demo</span><span class="o">/</span><span class="n">views</span><span class="o">.</span><span class="n">py</span>
+
+<span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Books</span>
+
+
+<span class="k">def</span> <span class="nf">book_list</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="n">book_list</span> <span class="o">=</span> <span class="n">Books</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="n">books</span> <span class="o">=</span> <span class="p">{</span><span class="n">book</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="n">book</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="n">book_list</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;index.html&#39;</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;books&#39;</span><span class="p">:</span> <span class="n">books</span><span class="p">})</span>
+</code></pre></div><p>通过模板渲染</p>
+<p>在templates目录下新建一个index.html文件</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">/tempaltes/index.html
+
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Title<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>图书管理系统：<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    {% for key,value in books.items  %}
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{% url &#39;detail&#39; value %}/&#34;</span><span class="p">&gt;</span>{{ key }}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    {% endfor %}
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div><p>在项目的urls.py文件中添加一个关于图书的路由</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">/</span><span class="n">mysite</span><span class="o">/</span><span class="n">urls</span><span class="o">.</span><span class="n">py</span>
+
+<span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+<span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
+
+<span class="kn">from</span> <span class="nn">demo</span> <span class="kn">import</span> <span class="n">views</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;admin/&#39;</span><span class="p">,</span> <span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">urls</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;book/&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s1">&#39;demo.urls&#39;</span><span class="p">)),</span>
+<span class="p">]</span>
+</code></pre></div><p>在demo目录中新建一个urls.py文件，并添加一个路由</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">/</span><span class="n">demo</span><span class="o">/</span><span class="n">urls</span><span class="o">.</span><span class="n">py</span>
+
+<span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
+
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">views</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">book_list</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">),</span>
+<span class="p">]</span>
+
+</code></pre></div><p>启动项目，访问：http://127.0.0.1:8000/book/</p>
+<p>图书列表页完成了，接下来编写图书详情页</p>
+<p>在demo项目中的urls.py文件中添加一个详情页的路由</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">/</span><span class="n">demo</span><span class="o">/</span><span class="n">urls</span><span class="o">.</span><span class="n">py</span>
+
+<span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
+
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">views</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">book_list</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;&lt;int:id&gt;/&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">detail</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;detail&#39;</span><span class="p">),</span>
+<span class="p">]</span>
+</code></pre></div><p>在demo项目中的views.py文件中编写详情页相关视图函数</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">/</span><span class="n">demo</span><span class="o">/</span><span class="n">views</span><span class="o">.</span><span class="n">py</span>
+
+<span class="k">def</span> <span class="nf">detail</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+    <span class="n">book</span> <span class="o">=</span> <span class="n">Books</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&#34;name&#34;</span><span class="p">:</span> <span class="n">book</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+        <span class="s2">&#34;author&#34;</span><span class="p">:</span> <span class="n">book</span><span class="o">.</span><span class="n">author</span><span class="p">,</span>
+        <span class="s1">&#39;publish_house&#39;</span><span class="p">:</span> <span class="n">book</span><span class="o">.</span><span class="n">publish_house</span><span class="p">,</span>
+        <span class="s1">&#39;publish_date&#39;</span><span class="p">:</span> <span class="n">book</span><span class="o">.</span><span class="n">publish_date</span><span class="p">,</span>
+        <span class="s1">&#39;price&#39;</span><span class="p">:</span> <span class="n">book</span><span class="o">.</span><span class="n">price</span><span class="p">,</span>
+        <span class="s1">&#39;synopsis&#39;</span><span class="p">:</span> <span class="n">book</span><span class="o">.</span><span class="n">synopsis</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;detail.html&#39;</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="n">content</span><span class="p">)</span>
+</code></pre></div><p>在templates文件夹里新建一个detail.html文件,并写入一下代码</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html">/templates/detail.html
+
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Title<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>书名<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>作者<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>出版社<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>出版日期<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>价格<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>简介<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ name }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ author }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ publish_house }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ publish_date }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ price }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ synopsis }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div><p>启动项目，访问：http://127.0.0.1:8000/book/，点击其中一个图书就可以看到详情页，或者直接选择一个id访问详情页，这时候就会出现一个问题，当访问一个不存在的id时就会出错，我们需要定制一下错误页面，修改detail视图函数。</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">/</span><span class="n">demo</span><span class="o">/</span><span class="n">views</span><span class="o">.</span><span class="n">py</span>
+<span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">Http404</span>
+<span class="o">...</span>
+<span class="k">def</span> <span class="nf">detail</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+    <span class="n">books</span> <span class="o">=</span> <span class="n">Books</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">books</span><span class="p">):</span>
+        <span class="n">book</span> <span class="o">=</span> <span class="n">books</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">content</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&#34;name&#34;</span><span class="p">:</span> <span class="n">book</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+            <span class="s2">&#34;author&#34;</span><span class="p">:</span> <span class="n">book</span><span class="o">.</span><span class="n">author</span><span class="p">,</span>
+            <span class="s1">&#39;publish_house&#39;</span><span class="p">:</span> <span class="n">book</span><span class="o">.</span><span class="n">publish_house</span><span class="p">,</span>
+            <span class="s1">&#39;publish_date&#39;</span><span class="p">:</span> <span class="n">book</span><span class="o">.</span><span class="n">publish_date</span><span class="p">,</span>
+            <span class="s1">&#39;price&#39;</span><span class="p">:</span> <span class="n">book</span><span class="o">.</span><span class="n">price</span><span class="p">,</span>
+            <span class="s1">&#39;synopsis&#39;</span><span class="p">:</span> <span class="n">book</span><span class="o">.</span><span class="n">synopsis</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;detail.html&#39;</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="n">content</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s2">&#34;图书不存在&#34;</span><span class="p">)</span>
+</code></pre></div><p>这里调用的是Django自带的404错误页面，我们需要返回错误说明</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2019-01-26</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/django2.x/">Django2.x</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/%E8%AE%B0django2.x%E9%85%8D%E7%BD%AEmysql/" class="prev" rel="prev" title="Django2.x配置mysql"><i class="fas fa-angle-left fa-fw"></i>Django2.x配置mysql</a>
+            <a href="/posts/django2.x%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" class="next" rel="next" title="Django2.x搭建博客">Django2.x搭建博客<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.74.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
