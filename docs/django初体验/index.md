@@ -476,7 +476,7 @@ def book_list(request):
 
 在templates目录下新建一个index.html文件
 
-```python
+```jinja2
 /tempaltes/index.html
 
 <!DOCTYPE html>
