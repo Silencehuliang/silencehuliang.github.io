@@ -1,0 +1,29 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Python - 分类 - Silence Blog</title>
+        <link>https://silencehuliang.github.io/categories/python/</link>
+        <description>Python - 分类 - Silence Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>silencehuliang@gmail.com (Silence)</managingEditor>
+            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Thu, 17 Jan 2019 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://silencehuliang.github.io/categories/python/" rel="self" type="application/rss+xml" /><item>
+    <title>Python时间合集</title>
+    <link>https://silencehuliang.github.io/python%E6%97%B6%E9%97%B4%E5%90%88%E9%9B%86/</link>
+    <pubDate>Thu, 17 Jan 2019 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E6%97%B6%E9%97%B4%E5%90%88%E9%9B%86/</guid>
+    <description><![CDATA[格式化时间字符串（string_time）,指格式化输出指定输出参数的格式与相对位置的字符串参数，与python中的format作用类似，常见的格式化时间字符串：]]></description>
+</item><item>
+    <title>Python搭建虚拟环境</title>
+    <link>https://silencehuliang.github.io/python%E6%90%AD%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/</link>
+    <pubDate>Sun, 13 Jan 2019 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E6%90%AD%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/</guid>
+    <description><![CDATA[平时开发的过程中会遇到不同的项目，往往不同的项目之间需要的第三方包会有所差异，如果我们都在系统的python环境中会导致遇到很多问题，通过虚拟环境搭建一套独立的python运行环境，可以让项目之间互不干扰。]]></description>
+</item><item>
+    <title>Python2与Python3的区别</title>
+    <link>https://silencehuliang.github.io/python2%E4%B8%8Epython3%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+    <pubDate>Wed, 09 Jan 2019 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python2%E4%B8%8Epython3%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+    <description><![CDATA[目前用Python开发的项目有两个Python版本，分别是Python2.x与Python3.x，由于Python3相对于python2有着较大的升级，所以Python3将会是现在与未来的主流版本。]]></description>
+</item></channel>
+</rss>

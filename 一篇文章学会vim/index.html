@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>一篇文章学会Vim - Silence Blog</title><meta name="Description" content="一篇文章学会Vim"><meta property="og:title" content="一篇文章学会Vim" />
+<meta property="og:description" content="一篇文章学会Vim" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://silencehuliang.github.io/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Avim/" />
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
+<meta property="article:published_time" content="2020-01-08T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-01-14T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
+
+<meta name="twitter:title" content="一篇文章学会Vim"/>
+<meta name="twitter:description" content="一篇文章学会Vim"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://silencehuliang.github.io/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Avim/" /><link rel="prev" href="https://silencehuliang.github.io/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E6%A8%A1%E6%9D%BF/" /><link rel="next" href="https://silencehuliang.github.io/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Alinux/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.2e7125082ec8de83a87adc70253c9c23.css" integrity="md5-LnElCC7I3oOoetxwJTycIw=="><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.76cb46c10b6c0293433b371bae2414b2.css" integrity="md5-dstGwQtsApNDOzcbriQUsg=="><link rel="stylesheet" href="/lib/animate/animate.min.bc1a6a99c43f5ccc97d2d350bde13f74.css" integrity="md5-vBpqmcQ/XMyX0tNQveE/dA=="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "一篇文章学会Vim",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/silencehuliang.github.io\/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Avim\/"
+        },"genre": "posts","keywords": "工具","wordcount":  2709 ,
+        "url": "https:\/\/silencehuliang.github.io\/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Avim\/","datePublished": "2020-01-08T00:00:00+00:00","dateModified": "2020-01-14T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "Silence"},"author": {
+                "@type": "Person",
+                "name": "Silence"
+            },"description": "一篇文章学会Vim"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Silence Blog"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+        data-srcset="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg, https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg 1.5x, https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+        title="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg" /><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Silence Blog"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+        data-srcset="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg, https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg 1.5x, https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+        title="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg" /><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">一篇文章学会Vim</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Silence</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9A%E7%B3%BB%E5%88%97/"><i class="far fa-folder fa-fw"></i>一篇文章学会系列</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-01-08">2020-01-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2709 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;<span id="/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Avim/" class="leancloud_visitors" data-flag-title="一篇文章学会Vim">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#安装与卸载">安装与卸载</a>
+      <ul>
+        <li><a href="#安装">安装</a>
+          <ul>
+            <li><a href="#windows">Windows</a></li>
+            <li><a href="#unix">Unix</a></li>
+            <li><a href="#mac">Mac</a></li>
+            <li><a href="#详细安装教程httpswwwvimorgdownloadphpunix"><a href="https://www.vim.org/download.php#unix">详细安装教程</a></a></li>
+          </ul>
+        </li>
+        <li><a href="#卸载">卸载</a>
+          <ul>
+            <li><a href="#unix-or-mac">Unix or Mac</a>
+              <ul>
+                <li><a href="#源代码安装">源代码安装</a></li>
+                <li><a href="#软件包管理器安装">软件包管理器安装</a></li>
+              </ul>
+            </li>
+            <li><a href="#windows-1">Windows</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#教程">教程</a>
+      <ul>
+        <li><a href="#vimtutor"><strong>vimtutor</strong></a>
+          <ul>
+            <li><a href="#vimtutor章节小结">Vimtutor章节小结</a>
+              <ul>
+                <li><a href="#第一讲">第一讲</a></li>
+                <li><a href="#第二讲">第二讲</a></li>
+                <li><a href="#第三讲">第三讲</a></li>
+                <li><a href="#第四讲">第四讲</a></li>
+                <li><a href="#第五讲">第五讲</a></li>
+                <li><a href="#第六讲">第六讲</a></li>
+                <li><a href="#第七讲">第七讲</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#帮助">帮助</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p><strong>声明：以下内容均为我个人的理解，如果发现错误或者疑问可以联系我共同探讨</strong></p>
+<h2 id="简介">简介</h2>
+<p><strong>Vim</strong>是一个高度可定制的终端文本编辑器，它可以很方便的创建和修改任何类型的文本。作为<strong>vi</strong>的升级版，有许多新的特性(以下列出的特性为比较常用的，详细特性可以查看<a href="http://vimdoc.sourceforge.net/cgi-bin/vim2html2.pl?page=vi_diff.txt#vi_diff.txt" target="_blank" rel="noopener noreffer">help vi_diff</a>.)：</p>
+<ul>
+<li>无限撤销：可以无限制的撤销</li>
+<li>可移植性：Vi仅在Unix上可用，Vim还可以在Windows、Macintosh，Amiga，OS / 2，VMS，QNX和其他系统上运行。</li>
+<li>语法高亮：当用Vim进行编程的时候，他可以根据正在编辑的文件类型，使其以内容以不同的颜色或样式突出显示。Vim捆绑了数百种语法突出显示规则集。</li>
+<li>图形用户界面：Vim在控制台上运行良好，也可以在许多GUI中本地运行，包括Mac OS和Windows。它还可以操作剪贴板。</li>
+<li>vi兼容模式：紧要关头，您可以强制Vim像vi一样。使Vim与vi不兼容的所有改进和错误修复都已关闭，您将获得100％与vi兼容的编辑器。</li>
+</ul>
+<p><strong>Vim</strong>作为许多程序员最喜欢的文本编辑器之一，它具有像：多级撤销、代码补全、支持数百种编程语言和文本格式、强大的搜索和替换功能等。</p>
+<h2 id="安装与卸载">安装与卸载</h2>
+<h3 id="安装">安装</h3>
+<h4 id="windows">Windows</h4>
+<p>先把<a href="https://www.vim.org/download.php" target="_blank" rel="noopener noreffer">安装包</a>下载下来，然后根据提示安装。</p>
+<h4 id="unix">Unix</h4>
+<p>在<a href="https://github.com/vim/vim/releases" target="_blank" rel="noopener noreffer">Github</a>上下载源文件安装</p>
+<h4 id="mac">Mac</h4>
+<p>在<a href="https://www.vim.org/download.php" target="_blank" rel="noopener noreffer">github</a>下载，根据文件类型安装。</p>
+<h4 id="详细安装教程httpswwwvimorgdownloadphpunix"><a href="https://www.vim.org/download.php#unix" target="_blank" rel="noopener noreffer">详细安装教程</a></h4>
+<h3 id="卸载">卸载</h3>
+<h4 id="unix-or-mac">Unix or Mac</h4>
+<h5 id="源代码安装">源代码安装</h5>
+<p>在控制台输入</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"> make uninstall
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="软件包管理器安装">软件包管理器安装</h5>
+<p>根据不同软件包管理器的卸载命令卸载</p>
+<h4 id="windows-1">Windows</h4>
+<p>找到安装目录下的 &ldquo;uninstall-gui&rdquo; 程序进行卸载</p>
+<h2 id="教程">教程</h2>
+<h3 id="vimtutor"><strong>vimtutor</strong></h3>
+<p>Vim自带教程<strong>vimtutor</strong>是你从零开始学习Vim最好的老师，教程包含了日常所需要的各个命令和功能，还有实操教学。如果你的系统语言是中文，那么打开<strong>vimtutor</strong>时默认是中文版的教程，中文版教程由<strong>梁昌泰</strong> 先生进行译制。在命令行中输入<code>vimtutor</code>，就可以打开该教程,学习完该教程大约需要30分钟左右。</p>
+<p>有一款游戏<a href="http://vim-adventures.com/" target="_blank" rel="noopener noreffer">Vim Adventure</a>，可以作为学习Vim的一种放松。</p>
+<h4 id="vimtutor章节小结">Vimtutor章节小结</h4>
+<h5 id="第一讲">第一讲</h5>
+<ol>
+<li>
+<p>光标在屏幕文本中的移动既可以用箭头键，也可以使用 hjkl 字母键。</p>
+<p>​     h (左移)    j (下行)    k (上行)   l (右移)</p>
+</li>
+<li>
+<p>欲进入 Vim 编辑器(从命令行提示符)，请输入：vim 文件名 &lt;回车&gt;</p>
+</li>
+<li>
+<p>欲退出 Vim 编辑器，请输入 <ESC>  :q!  &lt;回车&gt; 放弃所有改动。或者输入 <ESC>  :wq  &lt;回车&gt; 保存改动。</p>
+</li>
+<li>
+<p>在正常模式下删除光标所在位置的字符，请按： x</p>
+</li>
+<li>
+<p>欲插入或添加文本，请输入：</p>
+<p>​     i  输入欲插入文本  <ESC>       在光标前插入文本</p>
+<p>​     A  输入欲添加文本  <ESC>       在一行后添加文本</p>
+</li>
+</ol>
+<p>特别提示：按下 <ESC> 键会带您回到正常模式或者撤消一个不想输入或部分完整的命令。</p>
+<h5 id="第二讲">第二讲</h5>
+<ol>
+<li>
+<p>欲从当前光标删除至下一个单词，请输入：dw</p>
+</li>
+<li>
+<p>欲从当前光标删除至当前行末尾，请输入：d$</p>
+</li>
+<li>
+<p>欲删除整行，请输入：dd</p>
+</li>
+<li>
+<p>欲重复一个动作，请在它前面加上一个数字：2w</p>
+</li>
+<li>
+<p>在正常模式下修改命令的格式是：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">operator  <span class="o">[</span>number<span class="o">]</span>  motion
+</code></pre></td></tr></table>
+</div>
+</div><p>其中：</p>
+<p>​      operator - 操作符，代表要做的事情，比如 d 代表删除</p>
+<p>​      [number] - 可以附加的数字，代表动作重复的次数</p>
+<p>​      motion  - 动作，代表在所操作的文本上的移动，例如 w 代表单词(word)，$ 代表行末等等。</p>
+</li>
+<li>
+<p>欲移动光标到行首，请按数字0键：0</p>
+</li>
+<li>
+<p>欲撤消以前的操作，请输入：u (小写的u)，欲撤消在一行中所做的改动，请输入：U (大写的U)，欲撤消以前的撤消命令，恢复以前的操作结果，请输入：CTRL-R</p>
+</li>
+</ol>
+<h5 id="第三讲">第三讲</h5>
+<ol>
+<li>
+<p>要重新置入已经删除的文本内容，请按小写字母 p 键。该操作可以将已删除的文本内容置于光标之后。如果最后一次删除的是一个整行，那么该行将置于当前光标所在行的下一行。</p>
+</li>
+<li>
+<p>要替换光标所在位置的字符，请输入小写的 r 和要替换掉原位置字符的新字符即可。</p>
+</li>
+<li>
+<p>更改类命令允许您改变从当前光标所在位置直到动作指示的位置中间的文本。比如输入 ce 可以替换当前光标到单词的末尾的内容；输入 c$ 可以替换当前光标到行末的内容。</p>
+</li>
+<li>
+<p>更改类命令的格式是：</p>
+<p><code> c  [number]  motion</code></p>
+</li>
+</ol>
+<h5 id="第四讲">第四讲</h5>
+<ol>
+<li>
+<p>CTRL-G 用于显示当前光标所在位置和文件状态信息。 G 用于将光标跳转至文件最后一行。先敲入一个行号然后输入大写 G 则是将光标移动至该行号代表的行。gg 用于将光标跳转至文件第一行。</p>
+</li>
+<li>
+<p>输入 / 然后紧随一个字符串是在当前所编辑的文档中正向查找该字符串。输入 ? 然后紧随一个字符串则是在当前所编辑的文档中反向查找该字符串。完成一次查找之后按 n 键是重复上一次的命令，可在同一方向上查找下一个匹配字符串所在；或者按大写 N 向相反方向查找下一匹配字符串所在。CTRL-O 带您跳转回较旧的位置，CTRL-I 则带您到较新的位置。</p>
+</li>
+<li>
+<p>如果光标当前位置是括号(、)、[、]、{、}，按 % 会将光标移动到配对的括号上。</p>
+</li>
+<li>
+<p>在一行内替换头一个字符串 old 为新的字符串 new，请输入 :s/old/new</p>
+<p>在一行内替换所有的字符串 old 为新的字符串 new，请输入 :s/old/new/g</p>
+<p>在两行内替换所有的字符串 old 为新的字符串 new，请输入 :#,#s/old/new/g</p>
+<p>在文件内替换所有的字符串 old 为新的字符串 new，请输入 :%s/old/new/g</p>
+<p>进行全文替换时询问用户确认每个替换需添加 c 标志    :%s/old/new/gc</p>
+</li>
+</ol>
+<h5 id="第五讲">第五讲</h5>
+<ol>
+<li>
+<p>:!command 用于执行一个外部命令 command。</p>
+<p>请看一些实际例子：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">(</span>MS-DOS<span class="o">)</span>     <span class="o">(</span>Unix<span class="o">)</span>
+   
+:!dir      :!ls      <span class="c1"># 用于显示当前目录的内容。</span>
+   
+:!del FILENAME  :!rm FILENAME  <span class="c1"># 用于删除名为 FILENAME 的文件。</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>:w FILENAME 可将当前 VIM 中正在编辑的文件保存到名为 FILENAME 的文件中。</p>
+</li>
+<li>
+<p>v motion :w FILENAME 可将当前编辑文件中可视模式下选中的内容保存到文件FILENAME 中。</p>
+</li>
+<li>
+<p>:r FILENAME 可提取磁盘文件 FILENAME 并将其插入到当前文件的光标位置后面。</p>
+</li>
+<li>
+<p>:r !dir 可以读取 dir 命令的输出并将其放置到当前文件的光标位置后面。</p>
+</li>
+</ol>
+<h5 id="第六讲">第六讲</h5>
+<ol>
+<li>
+<p>输入小写的 o 可以在光标下方打开新的一行并进入插入模式。输入大写的 O 可以在光标上方打开新的一行。</p>
+</li>
+<li>
+<p>输入小写的 a 可以在光标所在位置之后插入文本。输入大写的 A 可以在光标所在行的行末之后插入文本。</p>
+</li>
+<li>
+<p>e 命令可以使光标移动到单词末尾。</p>
+</li>
+<li>
+<p>操作符 y 复制文本，p 粘贴先前复制的文本。</p>
+</li>
+<li>
+<p>输入大写的 R 将进入替换模式，直至按 <ESC> 键回到正常模式。</p>
+</li>
+<li>
+<p>输入 :set xxx 可以设置 xxx 选项。一些有用的选项如下：</p>
+<p>&lsquo;ic&rsquo; &lsquo;ignorecase&rsquo;    查找时忽略字母大小写</p>
+<p>&lsquo;is&rsquo; &lsquo;incsearch&rsquo;    查找短语时显示部分匹配</p>
+<p>&lsquo;hls&rsquo; &lsquo;hlsearch&rsquo;    高亮显示所有的匹配短语</p>
+<p>选项名可以用完整版本，也可以用缩略版本。</p>
+</li>
+<li>
+<p>在选项前加上 no 可以关闭选项： :set noic</p>
+</li>
+</ol>
+<h5 id="第七讲">第七讲</h5>
+<ol>
+<li>
+<p>输入 :help 或者按 <F1> 键或 <Help> 键可以打开帮助窗口。</p>
+</li>
+<li>
+<p>输入 :help cmd 可以找到关于 cmd 命令的帮助。</p>
+</li>
+<li>
+<p>输入 CTRL-W CTRL-W 可以使您在窗口之间跳转。</p>
+</li>
+<li>
+<p>输入 :q 以关闭帮助窗口</p>
+</li>
+<li>
+<p>您可以创建一个 vimrc 启动脚本文件用来保存您偏好的设置。</p>
+</li>
+<li>
+<p>当输入 : 命令时，按 CTRL-D 可以查看可能的补全结果。</p>
+<p>按 <TAB> 可以使用一个补全。</p>
+</li>
+</ol>
+<h3 id="帮助">帮助</h3>
+<p>在控制台中输入vim就可以查看Vim的相关信息</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tvax2.sinaimg.cn/large/006lmzsGgy1gaq8qqqumnj30va0iotag.jpg"
+        data-srcset="https://tvax2.sinaimg.cn/large/006lmzsGgy1gaq8qqqumnj30va0iotag.jpg, https://tvax2.sinaimg.cn/large/006lmzsGgy1gaq8qqqumnj30va0iotag.jpg 1.5x, https://tvax2.sinaimg.cn/large/006lmzsGgy1gaq8qqqumnj30va0iotag.jpg 2x"
+        data-sizes="auto"
+        alt="https://tvax2.sinaimg.cn/large/006lmzsGgy1gaq8qqqumnj30va0iotag.jpg"
+        title="https://tvax2.sinaimg.cn/large/006lmzsGgy1gaq8qqqumnj30va0iotag.jpg" /></p>
+<p>根据图片所示我们可以知道，当前VIM的版本为8.0.1365，想退出需要输入&rdquo;:q&rdquo;，查看在线帮助文档可以输入&rdquo;:help&rdquo;，查看版本信息可以输入&rdquo;:help version8&rdquo;</p>
+<p>在英文模式下输入&rdquo;:help&quot;回车后便可以看到</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tva4.sinaimg.cn/large/006lmzsGgy1gaq90e91hcj30vc0iu43p.jpg"
+        data-srcset="https://tva4.sinaimg.cn/large/006lmzsGgy1gaq90e91hcj30vc0iu43p.jpg, https://tva4.sinaimg.cn/large/006lmzsGgy1gaq90e91hcj30vc0iu43p.jpg 1.5x, https://tva4.sinaimg.cn/large/006lmzsGgy1gaq90e91hcj30vc0iu43p.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva4.sinaimg.cn/large/006lmzsGgy1gaq90e91hcj30vc0iu43p.jpg"
+        title="https://tva4.sinaimg.cn/large/006lmzsGgy1gaq90e91hcj30vc0iu43p.jpg" /></p>
+<p>在这里有详细的Vim教程，教你玩转Vim。</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-01-14</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Avim/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://silencehuliang.github.io/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Avim/" data-title="一篇文章学会Vim" data-hashtags="工具"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://silencehuliang.github.io/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Avim/" data-hashtag="工具"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://silencehuliang.github.io/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Avim/" data-title="一篇文章学会Vim" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://silencehuliang.github.io/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Avim/" data-title="一篇文章学会Vim"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://silencehuliang.github.io/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Avim/" data-title="一篇文章学会Vim"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://silencehuliang.github.io/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Avim/" data-title="一篇文章学会Vim" data-description="一篇文章学会Vim"><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://silencehuliang.github.io/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Avim/" data-title="一篇文章学会Vim" data-description="一篇文章学会Vim"><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://silencehuliang.github.io/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Avim/" data-title="一篇文章学会Vim"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E5%B7%A5%E5%85%B7/">工具</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E6%A8%A1%E6%9D%BF/" class="prev" rel="prev" title="Django基础教程之模板"><i class="fas fa-angle-left fa-fw"></i>Django基础教程之模板</a>
+            <a href="/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Alinux/" class="next" rel="next" title="一篇文章学会Linux">一篇文章学会Linux<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.74.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Silence</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.4afae7d446ba01ebf7fff19893eaf3a1.css" integrity="md5-Svrn1Ea6Aev3//GYk&#43;rzoQ=="><link rel="stylesheet" href="/lib/katex/copy-tex.min.b1994d1b9785dd8801dbf655df7bf6d9.css" integrity="md5-sZlNG5eF3YgB2/ZV33v22Q=="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.acf82ee47549fdc386d02768992a49ad.css" integrity="md5-rPgu5HVJ/cOG0CdomSpJrQ=="><script type="text/javascript" src="/lib/valine/Valine.min.b1d2c9b89c70dbf0a8541bfd36afafa1.js" integrity="md5-sdLJuJxw2/CoVBv9Nq&#43;voQ=="></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.100efdceabf7a138f3297e437d078f74.js" integrity="md5-EA79zqv3oTjzKX5DfQePdA=="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.ae7c5011def46b283696baf367586b5d.js" integrity="md5-rnxQEd70ayg2lrrzZ1hrXQ=="></script><script type="text/javascript" src="/lib/lunr/lunr.min.a08f2562fde4550269dfc13028ed2502.js" integrity="md5-oI8lYv3kVQJp38EwKO0lAg=="></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.b82fb8d93ce0ea6a485dfa3a0b1e7573.js" integrity="md5-uC&#43;42Tzg6mpIXfo6Cx51cw=="></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.f1ba3e22560e2eb7474f28feb4507617.js" integrity="md5-8bo&#43;IlYOLrdHTyj&#43;tFB2Fw=="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.b80e49640d4794d4333d00db76ea22f7.js" integrity="md5-uA5JZA1HlNQzPQDbduoi9w=="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.af8ab36589315582ccdd82f22e84bffb.js" integrity="md5-r4qzZYkxVYLM3YLyLoS/&#43;w=="></script><script type="text/javascript" src="/lib/sharer/sharer.min.c3c3372b4cf5c56dd4e5a4be8ada86c9.js" integrity="md5-w8M3K0z1xW3U5aS&#43;itqGyQ=="></script><script type="text/javascript" src="/lib/typeit/typeit.min.b5f3481ebeaa3e56a2f5f96ea648bf69.js" integrity="md5-tfNIHr6qPlai9flupki/aQ=="></script><script type="text/javascript" src="/lib/katex/katex.min.c158c9e823b681cf535f46596b5e4eac.js" integrity="md5-wVjJ6CO2gc9TX0ZZa15OrA=="></script><script type="text/javascript" src="/lib/katex/auto-render.min.28cd0b98cd3f4fa37d52f3ffe47ad9d4.js" integrity="md5-KM0LmM0/T6N9UvP/5HrZ1A=="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.bfaec7d1dea915d74a7a6d833f0ff62e.js" integrity="md5-v67H0d6pFddKem2DPw/2Lg=="></script><script type="text/javascript" src="/lib/katex/mhchem.min.1bbb252363e83547d4b2186a41eaca28.js" integrity="md5-G7slI2PoNUfUshhqQerKKA=="></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.4a48532bf0b17c058b8b6854f49de23f.js" integrity="md5-SkhTK/CxfAWLi2hU9J3iPw=="></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"c4VA4R1Xg3drBKSQzNfWnWlF-gzGzoHsz","appKey":"upEyt7esgWCbm0L7EPDH6bhV","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","meta":["nick","mail"],"pageSize":10,"placeholder":"说点什么吧...","recordIP":true,"visitor":true}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"id-1":"Silence’s Blog","id-2":"Silence’s Blog"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.7bc7989e979c4a19d97db3ab311a80fe.js" integrity="md5-e8eYnpecShnZfbOrMRqA/g=="></script></body>
+</html>
