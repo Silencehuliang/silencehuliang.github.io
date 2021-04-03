@@ -467,7 +467,7 @@ class Article(models.Model):
 
  首先在urls.py中配置路由
 
-```
+```python
 DjangoBlog/u rls.py
 ...
 from blog import views
@@ -482,7 +482,7 @@ urlpatterns = [
 
 接下来在blog应用的views.py中编写视图函数
 
-```
+```python
 blog/views.py
 ...
 def index(request):
@@ -495,7 +495,7 @@ def index(request):
 
 接下来我们实现将分类加载,将index视图修改为一下代码
 
-```
+```python
 blog/views.py
 ...
 from .models import Category
@@ -515,7 +515,7 @@ def index(request):
 
 在前端代码中渲染，我们找到base.html,将ul标签中的除首页以外的代码改为一下代码
 
-```
+```html
 <header class="header-navigation" id="header">
     <nav>
         <div class="logo"><a href="/">胡亮个人博客</a></div>

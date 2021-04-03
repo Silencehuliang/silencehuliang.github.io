@@ -1043,14 +1043,14 @@ mkdir editor
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">DjangoBlog/u rls.py
-...
-from blog import views
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">DjangoBlog</span><span class="o">/</span><span class="n">u</span> <span class="n">rls</span><span class="o">.</span><span class="n">py</span>
+<span class="o">...</span>
+<span class="kn">from</span> <span class="nn">blog</span> <span class="kn">import</span> <span class="n">views</span>
 
-urlpatterns = [
- 	...
-  path(&#39;&#39;, views.index, name=&#39;index&#39;)
-]
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+ 	<span class="o">...</span>
+  <span class="n">path</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">)</span>
+<span class="p">]</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>这里path里第一个参数为访问的url，匹配采用正则表达式，第二个参数为视图函数，第三个为取的名字</p>
@@ -1063,10 +1063,10 @@ urlpatterns = [
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">blog/views.py
-...
-def index(request):
-    return render(request, &#39;index.html&#39;)
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">blog</span><span class="o">/</span><span class="n">views</span><span class="o">.</span><span class="n">py</span>
+<span class="o">...</span>
+<span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;index.html&#39;</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>这样当我们重新访问127.0.0.1:8000时，我们修改的前端代码就被加载了</p>
@@ -1088,19 +1088,19 @@ def index(request):
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">blog/views.py
-...
-from .models import Category
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">blog</span><span class="o">/</span><span class="n">views</span><span class="o">.</span><span class="n">py</span>
+<span class="o">...</span>
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Category</span>
 
-# 从models里导入Category类
-def index(request):
-    categorys = Category.objects.all()
-    # 把查询出来的分类封装到上下文里
-    context = {
-        &#39;categorys&#39;: categorys,
-    }
-    print(context)
-    return render(request, &#39;index.html&#39;, context)
+<span class="c1"># 从models里导入Category类</span>
+<span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="n">categorys</span> <span class="o">=</span> <span class="n">Category</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="c1"># 把查询出来的分类封装到上下文里</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;categorys&#39;</span><span class="p">:</span> <span class="n">categorys</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;index.html&#39;</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>在前端代码中渲染，我们找到base.html,将ul标签中的除首页以外的代码改为一下代码</p>
@@ -1121,19 +1121,19 @@ def index(request):
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;header class=&#34;header-navigation&#34; id=&#34;header&#34;&gt;
-    &lt;nav&gt;
-        &lt;div class=&#34;logo&#34;&gt;&lt;a href=&#34;/&#34;&gt;胡亮个人博客&lt;/a&gt;&lt;/div&gt;
-        &lt;h2 id=&#34;mnavh&#34;&gt;&lt;span class=&#34;navicon&#34;&gt;&lt;/span&gt;&lt;/h2&gt;
-        &lt;ul id=&#34;starlist&#34;&gt;
-            &lt;li&gt;&lt;a href=&#34;index.html&#34;&gt;首页&lt;/a&gt;&lt;/li&gt;
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">header</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;header-navigation&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;header&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">nav</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;logo&#34;</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;/&#34;</span><span class="p">&gt;</span>胡亮个人博客<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h2</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;mnavh&#34;</span><span class="p">&gt;&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;navicon&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;starlist&#34;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;index.html&#34;</span><span class="p">&gt;</span>首页<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
             {% for category in categorys %}
-                &lt;li&gt;&lt;a href=&#34;{% url &#39;index&#39; %}list-{{ category.id }}.html&#34;&gt;{{ category.name }}&lt;/a&gt;&lt;/li&gt;
+                <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{% url &#39;index&#39; %}list-{{ category.id }}.html&#34;</span><span class="p">&gt;</span>{{ category.name }}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
             {% endfor %}
 
-        &lt;/ul&gt;
-    &lt;/nav&gt;
-&lt;/header&gt;
+        <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>这样分类栏就加载出来了，如果没有数据可以通过admin添加数据</p>
