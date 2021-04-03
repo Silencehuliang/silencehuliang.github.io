@@ -4,7 +4,14 @@
         <link>https://silencehuliang.github.io/posts/</link>
         <description>所有文章 | Silence Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>silencehuliang@gmail.com (Silence)</managingEditor>
-            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Thu, 05 Mar 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://silencehuliang.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Fri, 03 Apr 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://silencehuliang.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>使用Hugo搭建自己的博客并通过GitHub Pages部署</title>
+    <link>https://silencehuliang.github.io/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%80%9A%E8%BF%87github/</link>
+    <pubDate>Fri, 03 Apr 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%80%9A%E8%BF%87github/</guid>
+    <description><![CDATA[由于最近在学习Golang，在网上查阅相关资料的时候发现了Hugo这个用Go语言编写的静态网站生成器，根据网站的介绍它有着速度快，易用，可配置程度高等特点，而且文章依赖于Markdown生成，非常适合作为博客、文档、个人简历这类型的网站。]]></description>
+</item><item>
     <title>Python爬虫实战之bilibili</title>
     <link>https://silencehuliang.github.io/python%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%E4%B9%8Bbilibili/</link>
     <pubDate>Thu, 05 Mar 2020 00:00:00 &#43;0000</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://silencehuliang.github.io/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E6%A8%A1%E6%9D%BF/</guid>
     <description><![CDATA[由于发现目前网上有很多大神的教学文章都比较出色，我就不班门弄斧继续出Django相关教程，以后会继续跟大家分享在使用Django中遇到的问题与解决方案，下面推荐几个比较好的学习Django的博客，大家可以根据自己情况选择学习]]></description>
-</item><item>
-    <title>Django基础教程之类视图与中间件</title>
-    <link>https://silencehuliang.github.io/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E7%B1%BB%E8%A7%86%E5%9B%BE%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/</link>
-    <pubDate>Sun, 03 Mar 2019 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E7%B1%BB%E8%A7%86%E5%9B%BE%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/</guid>
-    <description><![CDATA[以函数的方式定义的视图称为函数视图，函数视图便于理解。但是遇到一个视图对应的路径提供了多种不同HTTP请求方式的支持时，便需要在一个函数中编写不同的业务逻辑，代码可读性与复用性都不佳。在Django中也可以使用类来定义一个视图，称为类视图。使用类视图可以将视图对应的不同请求方式以类中的不同方法来区别定义。]]></description>
 </item></channel>
 </rss>
