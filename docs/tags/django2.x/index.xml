@@ -47,13 +47,6 @@
     <guid>https://silencehuliang.github.io/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8Bdjango%E4%BB%8B%E7%BB%8D/</guid>
     <description><![CDATA[为什么网上有很多Django的学习资料，我还想自己写一个Django的教程呢，一是想通过写教程发现自己的不足，二是想通过自己的总结让那些想学习Django的小伙伴们少走一些弯路，当然我写的内容有可能也是错的，欢迎大家纠正，我们可以共同探讨，共同进步。]]></description>
 </item><item>
-    <title>Django初体验</title>
-    <link>https://silencehuliang.github.io/django%E5%88%9D%E4%BD%93%E9%AA%8C/</link>
-    <pubDate>Sat, 26 Jan 2019 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/django%E5%88%9D%E4%BD%93%E9%AA%8C/</guid>
-    <description><![CDATA[在Django2.0以后，Django已经不支持python2.7，所以我们需要一个python3的系统环境，这里一python3.6为例]]></description>
-</item><item>
     <title>Django2.x配置mysql</title>
     <link>https://silencehuliang.github.io/%E8%AE%B0django2.x%E9%85%8D%E7%BD%AEmysql/</link>
     <pubDate>Mon, 21 Jan 2019 00:00:00 &#43;0000</pubDate>
