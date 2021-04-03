@@ -196,7 +196,7 @@ Superuser created successfully.
 
   ![](http://tvax3.sinaimg.cn/large/00729CCqgy1g96luuhzosj30tx0iy3zp.jpg)
 
-  配置完成后点击pycharm中的运行按钮，在浏览器中输入127.0.0.1:8000访问，出现小火箭升空表示Django安装成功， 访问Django-admin界面， 在浏览器中输入127.0.0.1:8000/admin，看到Django管理，需要输入用户名密码，输入用户名密码后可以跳转到Django管理页面表示Django-admin设置成功
+  配置完成后点击pycharm中的运行按钮，在浏览器中输入127.0.0.1:8000访问，出现小火箭升空表示Django安装成功， 访问Django-admin界面， 在浏览器中输入`127.0.0.1:8000/admin`，看到Django管理，需要输入用户名密码，输入用户名密码后可以跳转到Django管理页面表示Django-admin设置成功
 
 ### 数据库表分析
 
@@ -459,9 +459,7 @@ class Article(models.Model):
 
 将重复出现的部分提取出来，这个根据自己的模版抽取，每个都不相同，静态文件加载
 
-如果一次没有提取好，可以慢慢一点点的抽取，对于一个后端程序员来说这个是一个慢工出细活的过程，这里我推荐一个模版下载的网站，里面的模板都比较好改，还帮我们做好了seo之类的：https://www.yangqq.com/
-
-可以写一个简单的视图，然后开着Django一边抽取一遍调试
+如果一次没有提取好，可以慢慢一点点的抽取，对于一个后端程序员来说这个是一个慢工出细活的过程.可以写一个简单的视图，然后开着Django一边抽取一遍调试
 
 
 
