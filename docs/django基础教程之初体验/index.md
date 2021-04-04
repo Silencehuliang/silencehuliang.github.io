@@ -489,10 +489,6 @@ def book_list(request):
 
 <div>图书管理系统：</div>
 <ul>
-   # 由于GitHub Pages不支持该语法，所以将其注释，实际需要
-   # {% for key,value in books.items  %}
-   #     <li><a href="{% url 'detail' value %}/">{{ key }}</a> </li>
-   # {% endfor %}
 </ul>
 </body>
 </html>
