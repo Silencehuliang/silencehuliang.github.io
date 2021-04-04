@@ -533,7 +533,7 @@ def index(request):
 
 **{% for category in categorys %}**
 
-**<li><a href="{% url 'index' %}list-{{ category.id }}.html">{{ category.name }}</a></li>**
+**<li>/</a href="{% url 'index' %}list-{{ category.id }}.html">{{ category.name }}</a></li>**
 
 **{% endfor %}**
 
