@@ -1,37 +1,35 @@
 # Flask入门教程
 
 
-Flask
-
-简介
+## 简介
 
 Flask是由Armin ronacher于2010年用Python语言基于 Werkzeug 工具箱编写的轻量级Web开发框架。
 
-特点
+## 特点
 
 Flask只提供核心功能，其他几乎所有的功能都需要用到拓展，比如可以通过Flask-SQLAlchemy拓展对数据库进行操作等等。
 
-核心
+## 核心
 
 由[Werkzeug](https://werkzeug.palletsprojects.com/en/0.15.x/)与[Jinja2](https://jinja.palletsprojects.com/en/2.10.x/)组成，Werkzeug是一个全面的[WSGI](https://wsgi.readthedocs.io/en/latest/) Web应用程序库，Jinja是一种现代且设计友好的Python模板语言。
 
-Flask常用扩展
+## Flask常用扩展
 
 - [Flask-SQLalchemy](https://flask-sqlalchemy.palletsprojects.com/en/2.x/)：操作数据库
 - [Flask-script](https://flask-script.readthedocs.io/en/latest/)：插入脚本
 - [Flask-migrate](https://flask-migrate.readthedocs.io/en/latest/)：管理迁移数据库
 - Flask-Session：Session存储方式指定
 
-相关文档
+## 相关文档
 
 1. [中文文档](http://docs.jinkan.org/docs/flask/)
 2. [英文文档](https://flask.palletsprojects.com/en/1.0.x/)
 
- Flask初体验
+##  Flask初体验
 
-1.安装并使用虚拟环境
+### 安装并使用虚拟环境
 
-virtualenv 创建和管理虚拟环境
+#### virtualenv 创建和管理虚拟环境
 
 ```bash
 # 安装
@@ -42,7 +40,7 @@ virtualenv flask_env
 source flask_env/bin/activate
 ```
 
-Pipenv 创建和管理虚拟环境
+#### Pipenv 创建和管理虚拟环境
 
 ```bash
 # 安装
@@ -53,13 +51,13 @@ pipenv install
 pipenv shell
 ```
 
-2.安装指定版本flask框架
+### 安装指定版本flask框架
 
 ```bash
 sudo pip install flask==1.0.2
 ```
 
-3.创建一个文件，并带入编写第一个Flask程序
+### 创建一个文件，并带入编写第一个Flask程序
 
 ```bash
 touch helloflask.py
@@ -103,9 +101,9 @@ python helloflask.py
 
 
 
-相关配置参数
+## 相关配置参数
 
-初始化参数
+### 初始化参数
 
 创建Flask项目的第一步就是实例化Flask对象，以下是实例化对象需要的参数详解
 
@@ -123,7 +121,7 @@ python helloflask.py
 
 
 
-程序加载配置
+### 程序加载配置
 
 在Flask程序运行前，我们可以给Flask设置相关配置，例如ENV(应用程序在什么环境中运行)，DEBUG(是否启用调试模式)TESTING(启用测试模式)等配置，常见的有两种方式来实现.
 - 从配置文件中加载：`app.config.from_pyfile()`
@@ -167,7 +165,7 @@ python helloflask.py
 
 
 
-程序运行配置
+### 程序运行配置
 
 这个demo中Flask项目程序启动的入口是app.run()。常见的配置选项有host, port,debug，分别是设置运行主机的ip地址，端口号，是否打开调试模式，当配置文件与这里都有debug时，最终会以这里的debug为准。
 

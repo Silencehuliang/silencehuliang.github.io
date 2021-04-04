@@ -5,18 +5,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>Django基础教程之类视图与中间件 - Silence Blog</title><meta name="Description" content="Django配置文件详解"><meta property="og:title" content="Django基础教程之类视图与中间件" />
-<meta property="og:description" content="Django配置文件详解" />
+        <title>Django基础教程之类视图与中间件 - Silence Blog</title><meta name="Description" content="Django基础教程之类视图与中间件"><meta property="og:title" content="Django基础教程之类视图与中间件" />
+<meta property="og:description" content="Django基础教程之类视图与中间件" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://silencehuliang.github.io/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E7%B1%BB%E8%A7%86%E5%9B%BE%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/" />
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
-<meta property="article:published_time" content="2019-03-03T00:00:00+00:00" />
-<meta property="article:modified_time" content="2019-03-03T00:00:00+00:00" />
+<meta property="article:published_time" content="2019-03-30T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-03-31T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
 
 <meta name="twitter:title" content="Django基础教程之类视图与中间件"/>
-<meta name="twitter:description" content="Django配置文件详解"/>
+<meta name="twitter:description" content="Django基础教程之类视图与中间件"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -30,12 +30,12 @@
             "@type": "WebPage",
             "@id": "https:\/\/silencehuliang.github.io\/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E7%B1%BB%E8%A7%86%E5%9B%BE%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6\/"
         },"genre": "posts","keywords": "Django2.x, 教程","wordcount":  812 ,
-        "url": "https:\/\/silencehuliang.github.io\/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E7%B1%BB%E8%A7%86%E5%9B%BE%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6\/","datePublished": "2019-03-03T00:00:00+00:00","dateModified": "2019-03-03T00:00:00+00:00","publisher": {
+        "url": "https:\/\/silencehuliang.github.io\/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E7%B1%BB%E8%A7%86%E5%9B%BE%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6\/","datePublished": "2019-03-30T00:00:00+00:00","dateModified": "2019-03-31T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Silence"},"author": {
                 "@type": "Person",
                 "name": "Silence"
-            },"description": "Django配置文件详解"
+            },"description": "Django基础教程之类视图与中间件"
     }
     </script></head>
     <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
@@ -120,8 +120,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Django基础教程之类视图与中间件</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Silence</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/"><i class="far fa-folder fa-fw"></i>Django基础教程</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-03-03">2019-03-03</time>&nbsp;<i class="fa fa-history" aria-hidden="true"></i>
-                2019-03-03
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-03-30">2019-03-30</time>&nbsp;<i class="fa fa-history" aria-hidden="true"></i>
+                2019-03-31
                 <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 812 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E7%B1%BB%E8%A7%86%E5%9B%BE%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/" class="leancloud_visitors" data-flag-title="Django基础教程之类视图与中间件">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
@@ -194,7 +194,7 @@
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2019-03-03</span>
+                <span>更新于 2019-03-31</span>
             </div>
             <div class="post-info-license"></div>
         </div>
@@ -203,7 +203,7 @@
                             <a class="link-to-markdown" href="/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E7%B1%BB%E8%A7%86%E5%9B%BE%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://silencehuliang.github.io/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E7%B1%BB%E8%A7%86%E5%9B%BE%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/" data-title="Django基础教程之类视图与中间件" data-hashtags="Django2.x,教程"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://silencehuliang.github.io/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E7%B1%BB%E8%A7%86%E5%9B%BE%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/" data-hashtag="Django2.x"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://silencehuliang.github.io/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E7%B1%BB%E8%A7%86%E5%9B%BE%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/" data-title="Django基础教程之类视图与中间件" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://silencehuliang.github.io/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E7%B1%BB%E8%A7%86%E5%9B%BE%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/" data-title="Django基础教程之类视图与中间件"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://silencehuliang.github.io/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E7%B1%BB%E8%A7%86%E5%9B%BE%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/" data-title="Django基础教程之类视图与中间件"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://silencehuliang.github.io/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E7%B1%BB%E8%A7%86%E5%9B%BE%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/" data-title="Django基础教程之类视图与中间件" data-description="Django配置文件详解"><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://silencehuliang.github.io/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E7%B1%BB%E8%A7%86%E5%9B%BE%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/" data-title="Django基础教程之类视图与中间件" data-description="Django配置文件详解"><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://silencehuliang.github.io/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E7%B1%BB%E8%A7%86%E5%9B%BE%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/" data-title="Django基础教程之类视图与中间件"><i class="fab fa-evernote fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://silencehuliang.github.io/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E7%B1%BB%E8%A7%86%E5%9B%BE%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/" data-title="Django基础教程之类视图与中间件" data-hashtags="Django2.x,教程"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://silencehuliang.github.io/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E7%B1%BB%E8%A7%86%E5%9B%BE%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/" data-hashtag="Django2.x"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://silencehuliang.github.io/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E7%B1%BB%E8%A7%86%E5%9B%BE%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/" data-title="Django基础教程之类视图与中间件" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://silencehuliang.github.io/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E7%B1%BB%E8%A7%86%E5%9B%BE%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/" data-title="Django基础教程之类视图与中间件"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://silencehuliang.github.io/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E7%B1%BB%E8%A7%86%E5%9B%BE%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/" data-title="Django基础教程之类视图与中间件"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://silencehuliang.github.io/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E7%B1%BB%E8%A7%86%E5%9B%BE%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/" data-title="Django基础教程之类视图与中间件" data-description="Django基础教程之类视图与中间件"><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://silencehuliang.github.io/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E7%B1%BB%E8%A7%86%E5%9B%BE%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/" data-title="Django基础教程之类视图与中间件" data-description="Django基础教程之类视图与中间件"><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://silencehuliang.github.io/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E7%B1%BB%E8%A7%86%E5%9B%BE%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/" data-title="Django基础教程之类视图与中间件"><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>
