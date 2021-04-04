@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/silencehuliang.github.io\/django2.x%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2\/"
-        },"genre": "posts","keywords": "Django2.x","wordcount":  3726 ,
+        },"genre": "posts","keywords": "Django2.x","wordcount":  3727 ,
         "url": "https:\/\/silencehuliang.github.io\/django2.x%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2\/","datePublished": "2019-04-20T00:00:00+00:00","dateModified": "2019-04-28T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Silence"},"author": {
@@ -122,7 +122,7 @@
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Silence</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/django%E6%9D%82%E9%A1%B9/"><i class="far fa-folder fa-fw"></i>Django杂项</a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-04-20">2019-04-20</time>&nbsp;<i class="fa fa-history" aria-hidden="true"></i>
                 2019-04-28
-                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3726 字&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3727 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 8 分钟&nbsp;<span id="/django2.x%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" class="leancloud_visitors" data-flag-title="Django2.x搭建博客">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -1119,8 +1119,6 @@ mkdir editor
 </span><span class="lnt"> 9
 </span><span class="lnt">10
 </span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-django" data-lang="django"><span class="x">&lt;header class=&#34;header-navigation&#34; id=&#34;header&#34;&gt;
@@ -1129,16 +1127,18 @@ mkdir editor
 </span><span class="x">        &lt;h2 id=&#34;mnavh&#34;&gt;&lt;span class=&#34;navicon&#34;&gt;&lt;/span&gt;&lt;/h2&gt;
 </span><span class="x">        &lt;ul id=&#34;starlist&#34;&gt;
 </span><span class="x">            &lt;li&gt;&lt;a href=&#34;index.html&#34;&gt;首页&lt;/a&gt;&lt;/li&gt;
-</span><span class="x">            # </span><span class="cp">{%</span> <span class="k">for</span> <span class="nv">category</span> <span class="k">in</span> <span class="nv">categorys</span> <span class="cp">%}</span><span class="x">
-</span><span class="x">            #    &lt;li&gt;&lt;a href=&#34;</span><span class="cp">{%</span> <span class="k">url</span> <span class="s1">&#39;index&#39;</span> <span class="cp">%}</span><span class="x">list-</span><span class="cp">{{</span> <span class="nv">category.id</span> <span class="cp">}}</span><span class="x">.html&#34;&gt;</span><span class="cp">{{</span> <span class="nv">category.name</span> <span class="cp">}}</span><span class="x">&lt;/a&gt;&lt;/li&gt;
-</span><span class="x">            # </span><span class="cp">{%</span> <span class="k">endfor</span> <span class="cp">%}</span><span class="x">
-</span><span class="x">
+</span><span class="x">  					+++
+</span><span class="x">						+++
 </span><span class="x">        &lt;/ul&gt;
 </span><span class="x">    &lt;/nav&gt;
 </span><span class="x">&lt;/header&gt;
 </span></code></pre></td></tr></table>
 </div>
-</div><p>这样分类栏就加载出来了，如果没有数据可以通过admin添加数据</p>
+</div><p>+号中间的内容为</p>
+<p><strong>{% for category in categorys %}</strong></p>
+<p><strong><li><a href="{% url 'index' %}list-{{ category.id }}.html">{{ category.name }}</a></li></strong></p>
+<p><strong>{% endfor %}</strong></p>
+<p>这样分类栏就加载出来了，如果没有数据可以通过admin添加数据</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">

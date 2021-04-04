@@ -522,14 +522,20 @@ def index(request):
         <h2 id="mnavh"><span class="navicon"></span></h2>
         <ul id="starlist">
             <li><a href="index.html">首页</a></li>
-            # {% for category in categorys %}
-            #    <li><a href="{% url 'index' %}list-{{ category.id }}.html">{{ category.name }}</a></li>
-            # {% endfor %}
-
+  					+++
+						+++
         </ul>
     </nav>
 </header>
 ```
+
++号中间的内容为          
+
+**{% for category in categorys %}**
+
+**<li><a href="{% url 'index' %}list-{{ category.id }}.html">{{ category.name }}</a></li>**
+
+**{% endfor %}**
 
 这样分类栏就加载出来了，如果没有数据可以通过admin添加数据
 
