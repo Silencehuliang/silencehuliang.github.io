@@ -533,8 +533,6 @@ def index(request):
 
 **{% for category in categorys %}**
 
-**<li>/</a href="{% url 'index' %}list-{{ category.id }}.html">{{ category.name }}</a></li>**
-
 **{% endfor %}**
 
 这样分类栏就加载出来了，如果没有数据可以通过admin添加数据
