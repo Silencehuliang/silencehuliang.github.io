@@ -522,9 +522,9 @@ def index(request):
         <h2 id="mnavh"><span class="navicon"></span></h2>
         <ul id="starlist">
             <li><a href="index.html">首页</a></li>
-            {% for category in categorys %}
-                <li><a href="{% url 'index' %}list-{{ category.id }}.html">{{ category.name }}</a></li>
-            {% endfor %}
+            # {% for category in categorys %}
+            #    <li><a href="{% url 'index' %}list-{{ category.id }}.html">{{ category.name }}</a></li>
+            # {% endfor %}
 
         </ul>
     </nav>
