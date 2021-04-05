@@ -4,7 +4,28 @@
         <link>https://silencehuliang.github.io/categories/python/</link>
         <description>Python - 分类 - Silence Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>silencehuliang@gmail.com (Silence)</managingEditor>
-            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 26 Jan 2019 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://silencehuliang.github.io/categories/python/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 14 Sep 2019 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://silencehuliang.github.io/categories/python/" rel="self" type="application/rss+xml" /><item>
+    <title>Python学习之路-HelloPython</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-hellopython/</link>
+    <pubDate>Sat, 14 Sep 2019 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-hellopython/</guid>
+    <description><![CDATA[安装Python 接下来通过编写一个Python程序来认识Python程序 步骤 首先打开一个文本，在文本内写入print('HelloPytho]]></description>
+</item><item>
+    <title>Python学习之路-认识Python</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%AE%A4%E8%AF%86python/</link>
+    <pubDate>Sat, 07 Sep 2019 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%AE%A4%E8%AF%86python/</guid>
+    <description><![CDATA[本篇文章由我归纳总结而来，为想要了解学习Python的朋友提供参考。大部分内容参考维基百科]]></description>
+</item><item>
+    <title>Python学习之路-文档说明</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E/</link>
+    <pubDate>Sun, 01 Sep 2019 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E/</guid>
+    <description><![CDATA[Python 是一种易于学习又功能强大的编程语言。目前网上有许多Python相关文档，质量参差不齐，更新时间也都非常久远。也没有看到有相关系统全面的文档，所以我想通过我的努力打造一个全面且及时更新的Python教程。]]></description>
+</item><item>
     <title>Python时间合集</title>
     <link>https://silencehuliang.github.io/python%E6%97%B6%E9%97%B4%E5%90%88%E9%9B%86/</link>
     <pubDate>Sat, 26 Jan 2019 00:00:00 &#43;0000</pubDate>

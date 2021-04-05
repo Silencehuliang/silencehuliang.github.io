@@ -15,12 +15,12 @@
 
 ### 熟练
 
-语言：Python
+语言：Python、Go
 
 技术栈：Django、Flask、Redis、MySQL、MongoDB、Scrapy、Selenium、Linux
 
 ### 了解
 
-语言：Java、Go、JavaScript、
+语言：Java、JavaScript、
 
 技术栈：Docker、Vue.js、Bootstrap、ECharts、TensorFlow、

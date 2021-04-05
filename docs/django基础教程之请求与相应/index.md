@@ -1,5 +1,10 @@
 # Django基础教程之请求与相应
 
+[Django基础教程之Django介绍](https://learnku.com/articles/55971)
+
+[Django基础教程之工程搭建](https://learnku.com/articles/55972)
+
+[Django基础教程之配置文件详解](https://learnku.com/articles/55973)
 
 **声明：以下内容均为我个人的理解，如果发现错误或者疑问可以联系我共同探讨**
 

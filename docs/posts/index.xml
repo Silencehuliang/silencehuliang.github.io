@@ -4,14 +4,7 @@
         <link>https://silencehuliang.github.io/posts/</link>
         <description>所有文章 | Silence Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>silencehuliang@gmail.com (Silence)</managingEditor>
-            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Mon, 20 Jul 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://silencehuliang.github.io/posts/" rel="self" type="application/rss+xml" /><item>
-    <title>Python爬虫实战之bilibili</title>
-    <link>https://silencehuliang.github.io/python%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%E4%B9%8Bbilibili/</link>
-    <pubDate>Mon, 20 Jul 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/python%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%E4%B9%8Bbilibili/</guid>
-    <description><![CDATA[本次要爬取的网站为<em>bilibili</em>，它是国内知名的视频弹幕网站,这里有及时的动漫新番,活跃的ACG氛围,有创意的Up主。可以在这里找到许多欢乐。]]></description>
-</item><item>
+            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Fri, 03 Apr 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://silencehuliang.github.io/posts/" rel="self" type="application/rss+xml" /><item>
     <title>使用Hugo搭建自己的博客并通过GitHub Pages部署</title>
     <link>https://silencehuliang.github.io/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%80%9A%E8%BF%87github/</link>
     <pubDate>Fri, 03 Apr 2020 00:00:00 &#43;0000</pubDate>
@@ -19,12 +12,33 @@
     <guid>https://silencehuliang.github.io/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%80%9A%E8%BF%87github/</guid>
     <description><![CDATA[由于最近在学习Golang，在网上查阅相关资料的时候发现了Hugo这个用Go语言编写的静态网站生成器，根据网站的介绍它有着速度快，易用，可配置程度高等特点，而且文章依赖于Markdown生成，非常适合作为博客、文档、个人简历这类型的网站。]]></description>
 </item><item>
-    <title>使用Hugo搭建自己的博客并通过GitHub Pages部署</title>
-    <link>https://silencehuliang.github.io/go%E8%AF%AD%E8%A8%80%E4%B9%8B%E6%97%85/</link>
-    <pubDate>Sat, 03 Aug 2019 00:00:00 &#43;0000</pubDate>
+    <title>Python学习之路-HelloPython</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-hellopython/</link>
+    <pubDate>Sat, 14 Sep 2019 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://silencehuliang.github.io/go%E8%AF%AD%E8%A8%80%E4%B9%8B%E6%97%85/</guid>
-    <description><![CDATA[由于最近在学习Golang，在网上查阅相关资料的时候发现了Hugo这个用Go语言编写的静态网站生成器，根据网站的介绍它有着速度快，易用，可配置程度高等特点，而且文章依赖于Markdown生成，非常适合作为博客、文档、个人简历这类型的网站。]]></description>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-hellopython/</guid>
+    <description><![CDATA[安装Python 接下来通过编写一个Python程序来认识Python程序 步骤 首先打开一个文本，在文本内写入print('HelloPytho]]></description>
+</item><item>
+    <title>Python学习之路-认识Python</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%AE%A4%E8%AF%86python/</link>
+    <pubDate>Sat, 07 Sep 2019 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%AE%A4%E8%AF%86python/</guid>
+    <description><![CDATA[本篇文章由我归纳总结而来，为想要了解学习Python的朋友提供参考。大部分内容参考维基百科]]></description>
+</item><item>
+    <title>Python学习之路-文档说明</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E/</link>
+    <pubDate>Sun, 01 Sep 2019 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E/</guid>
+    <description><![CDATA[Python 是一种易于学习又功能强大的编程语言。目前网上有许多Python相关文档，质量参差不齐，更新时间也都非常久远。也没有看到有相关系统全面的文档，所以我想通过我的努力打造一个全面且及时更新的Python教程。]]></description>
+</item><item>
+    <title>Python爬虫实战之bilibili</title>
+    <link>https://silencehuliang.github.io/python%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%E4%B9%8Bbilibili/</link>
+    <pubDate>Sat, 20 Jul 2019 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%E4%B9%8Bbilibili/</guid>
+    <description><![CDATA[本次要爬取的网站为<em>bilibili</em>，它是国内知名的视频弹幕网站,这里有及时的动漫新番,活跃的ACG氛围,有创意的Up主。可以在这里找到许多欢乐。]]></description>
 </item><item>
     <title>Python爬虫实战之萝卜投研</title>
     <link>https://silencehuliang.github.io/python%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%E4%B9%8B%E8%90%9D%E5%8D%9C%E6%8A%95%E7%A0%94/</link>
@@ -60,19 +74,5 @@
     <author>作者</author>
     <guid>https://silencehuliang.github.io/flask%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
     <description><![CDATA[本教程中我们将从0开始搭建一个完整的个人博客。]]></description>
-</item><item>
-    <title>Flask入门教程</title>
-    <link>https://silencehuliang.github.io/flask%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/</link>
-    <pubDate>Sun, 19 May 2019 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/flask%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/</guid>
-    <description><![CDATA[Flask是由Armin ronacher于2010年用Python语言基于 Werkzeug 工具箱编写的轻量级Web开发框架。]]></description>
-</item><item>
-    <title>一篇文章学会Git</title>
-    <link>https://silencehuliang.github.io/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Agit/</link>
-    <pubDate>Sat, 11 May 2019 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Agit/</guid>
-    <description><![CDATA[Git是一个免费的开源分布式版本控制系统，也是目前为止世界上最先进的分布式版本控制系统。Git官方有一个视频介绍，]]></description>
 </item></channel>
 </rss>

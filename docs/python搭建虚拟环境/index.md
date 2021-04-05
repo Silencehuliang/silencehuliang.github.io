@@ -40,7 +40,7 @@ virtualenv first_env
 
   - 进入虚拟环境的Scripts目录
   - 在此处打开命令行工具
-  - 输入activate，当命令提示符多了一个虚拟环境名字的前缀时即激活成功![](F:\我的坚果云\图片\虚拟环境激活.png)
+  - 输入activate，当命令提示符多了一个虚拟环境名字的前缀时即激活成功
 
 - Linux or Mac
 
@@ -50,9 +50,6 @@ virtualenv first_env
     source first_env/bin/activate
     ```
 
-  
-
-  
 
 
 ### 退出虚拟环境
@@ -62,3 +59,40 @@ virtualenv first_env
 ### 删除虚拟环境
 
 在我们不需要这个虚拟环境的时候只需要将该虚拟环境的整个包删除即可
+
+## Pipenv
+
+### 简介
+
+Pipenv是Kenneth Reitz在2017年1月发布的Python依赖管理工具，现在由PyPA维护。可以把它看做是pip和virtualenv的组合。
+
+### 为什么使用Pipenv
+
+Pipenv会自动帮你管理虚拟环境和依赖文件，并且提供了一系列命令和选项来帮助你实现各种依赖和环境管理相关的操作。简而言之，它更方便、完善和安全。
+
+### 如何使用Pipenv
+
+#### 安装
+
+```bash
+pip install pipenv
+```
+
+#### 创建
+
+在项目根目录下执行`pipenv install`，Pipenv会根据项目文件夹的名称创建一个虚拟环境，并且会在项目根目录下生成 Pipfile 和 Pipfile.lock 用于管理项目依赖（以后使用 Pipenv 安装的依赖会自动写入 Pipfile 文件，无需再手动维护 requirements.txt 文件)
+
+{{< admonition tip "提示" true >}}
+
+默认情况下Pipenv会将虚拟环境创建在~/.virtualenvs 目录下，在项目根目录下执行 `pipenv --venv` 可以查看到项目对应的虚拟环境的具体位置
+
+{{< /admonition >}}
+
+#### 激活使用
+
+两种方式
+
+- 在项目根目录下执行`pipenv shell`
+- 在项目根目录下执行`pipenv run + 命令`
+
+
