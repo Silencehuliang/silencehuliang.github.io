@@ -72,3 +72,17 @@ Python开发者的哲学是“用一种方法，最好是只有一种方法来�
 Life is short, you need Python。
 
 
+
+## 参考
+
+{{< admonition tip "提示" true >}}
+
+以下顺序不分先后
+
+{{< /admonition >}}
+
+[Python维基百科](https://zh.wikipedia.org/wiki/Python)
+
+[解释型语言](https://zh.wikipedia.org/wiki/%E7%9B%B4%E8%AD%AF%E8%AA%9E%E8%A8%80)
+
+[编译型语言](https://zh.wikipedia.org/wiki/%E7%B7%A8%E8%AD%AF%E8%AA%9E%E8%A8%80)

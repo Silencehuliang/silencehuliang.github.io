@@ -17,7 +17,7 @@
     <pubDate>Sat, 14 Sep 2019 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
     <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-hellopython/</guid>
-    <description><![CDATA[安装Python 接下来通过编写一个Python程序来认识Python程序 步骤 首先打开一个文本，在文本内写入print('HelloPytho]]></description>
+    <description><![CDATA[前面说到Python是解释型语言，Python解释器的作用就是用于翻译Python程序。Python规定了一个Python语法规则，根据该规则可编写Python解释器。]]></description>
 </item><item>
     <title>Python学习之路-认识Python</title>
     <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%AE%A4%E8%AF%86python/</link>
