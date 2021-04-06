@@ -68,3 +68,11 @@ Python有一种独一无二的的注释方式: 使用文档注释。文档注释
 ### 类
 
 类应该在其定义下有一个用于描述该类的文档字符串. 如果你的类有公共属性(Attributes), 那么文档中应该有一个属性(Attributes)段. 并且应该遵守和函数参数相同的格式.
+
+{{< admonition quote "参考" true >}}
+
+[Python风格规范-注释](https://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/python_style_rules/#comments)
+
+{{< /admonition >}}
+
+

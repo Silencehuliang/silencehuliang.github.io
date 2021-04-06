@@ -4,7 +4,28 @@
         <link>https://silencehuliang.github.io/categories/python/</link>
         <description>Python - 分类 - Silence Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>silencehuliang@gmail.com (Silence)</managingEditor>
-            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 28 Sep 2019 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://silencehuliang.github.io/categories/python/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 19 Oct 2019 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://silencehuliang.github.io/categories/python/" rel="self" type="application/rss+xml" /><item>
+    <title>Python学习之路-运算符</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97%E7%AC%A6/</link>
+    <pubDate>Sat, 19 Oct 2019 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97%E7%AC%A6/</guid>
+    <description><![CDATA[算数运算符是运算符的一种，是完成基本的算术运算使用的符号，用来处理四则运算。]]></description>
+</item><item>
+    <title>Python学习之路-判断语句</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/</link>
+    <pubDate>Sat, 12 Oct 2019 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Python学习之路-常量与变量</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%B8%B8%E9%87%8F%E4%B8%8E%E5%8F%98%E9%87%8F/</link>
+    <pubDate>Sat, 05 Oct 2019 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%B8%B8%E9%87%8F%E4%B8%8E%E5%8F%98%E9%87%8F/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
     <title>Python学习之路-注释</title>
     <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B9%8B%E6%B3%A8%E9%87%8A/</link>
     <pubDate>Sat, 28 Sep 2019 00:00:00 &#43;0000</pubDate>
@@ -53,12 +74,5 @@
     <author>作者</author>
     <guid>https://silencehuliang.github.io/python%E6%90%AD%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/</guid>
     <description><![CDATA[平时开发的过程中会遇到不同的项目，往往不同的项目之间需要的第三方包会有所差异，如果我们都在系统的python环境中会导致遇到很多问题，通过虚拟环境搭建一套独立的python运行环境，可以让项目之间互不干扰。]]></description>
-</item><item>
-    <title>Python2与Python3的区别</title>
-    <link>https://silencehuliang.github.io/python2%E4%B8%8Epython3%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
-    <pubDate>Sun, 13 Jan 2019 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/python2%E4%B8%8Epython3%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
-    <description><![CDATA[目前用Python开发的项目有两个Python版本，分别是Python2.x与Python3.x，由于Python3相对于python2有着较大的升级，所以Python3将会是现在与未来的主流版本。]]></description>
 </item></channel>
 </rss>
