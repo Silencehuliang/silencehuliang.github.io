@@ -30,7 +30,7 @@ Python开发的哲学是“用一种方法，最好是只有一种方法来做�
 
 ## 编码规范
 
-PEP 8是由Guido van Rossum , Barry Warsaw , Nick Coghlan三位共同编写的一个Python代码风格规范。可以在[这里](https://www.python.org/dev/peps/pep-0008/)查看具体内容，如果英文不好可以在[菜鸟教程](https://www.runoob.com/w3cnote/google-python-styleguide.html)中查看主要的内容
+PEP 8是由Guido van Rossum , Barry Warsaw , Nick Coghlan三位共同编写的一个Python代码风格规范。可以在[这里](https://www.python.org/dev/peps/pep-0008/)查看具体内容，如果英文不好可以在[Python风格指南](https://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/python_style_rules/)中查看主要的内容
 
 ### 检查工具
 
@@ -55,7 +55,6 @@ pylint的最大优势在于其高度的可配置化和可定制化，你可以�
 - 检查的结果被输出到了lint_result.txt中。
 
 {{< admonition tip "提示" true >}}
-
-PEP 20和PEP 8应该陪伴我们整个学习和使用Python的过程，在编码前多思考。
+任何语言的程序员，编写出符合规范的代码，是开始程序生涯的第一步。PEP 20和PEP 8陪伴我们整个学习和使用Python的过程。
 
 {{< /admonition >}}

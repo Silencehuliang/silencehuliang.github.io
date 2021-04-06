@@ -5,32 +5,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>Python学习之路之注释 - Silence Blog</title><meta name="Description" content="Silence‘s blog"><meta property="og:title" content="Python学习之路之注释" />
-<meta property="og:description" content="重要性 将注释放在Python语法的前面足以提现它在我心中的重要性。一个好的Python程序中注释是不可缺失的一环。注释可以增强程序的可读性，" />
+        <title>Python学习之路-注释 - Silence Blog</title><meta name="Description" content="Silence‘s blog"><meta property="og:title" content="Python学习之路-注释" />
+<meta property="og:description" content="将注释放在Python语法的前面足以提现它在我心中的重要性。一个好的Python程序中注释是不可缺失的一环。注释可以增强程序的可读性，在团队协作当中，为程序添加注释可以提高开发效率。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B9%8B%E6%B3%A8%E9%87%8A/" />
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
-<meta property="article:published_time" content="2021-04-06T19:55:56+08:00" />
-<meta property="article:modified_time" content="2021-04-06T19:55:56+08:00" />
+<meta property="article:published_time" content="2019-09-28T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-09-29T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
 
-<meta name="twitter:title" content="Python学习之路之注释"/>
-<meta name="twitter:description" content="重要性 将注释放在Python语法的前面足以提现它在我心中的重要性。一个好的Python程序中注释是不可缺失的一环。注释可以增强程序的可读性，"/>
+<meta name="twitter:title" content="Python学习之路-注释"/>
+<meta name="twitter:description" content="将注释放在Python语法的前面足以提现它在我心中的重要性。一个好的Python程序中注释是不可缺失的一环。注释可以增强程序的可读性，在团队协作当中，为程序添加注释可以提高开发效率。"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B9%8B%E6%B3%A8%E9%87%8A/" /><link rel="prev" href="https://silencehuliang.github.io/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%80%9A%E8%BF%87github/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.2e7125082ec8de83a87adc70253c9c23.css" integrity="md5-LnElCC7I3oOoetxwJTycIw=="><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.76cb46c10b6c0293433b371bae2414b2.css" integrity="md5-dstGwQtsApNDOzcbriQUsg=="><link rel="stylesheet" href="/lib/animate/animate.min.bc1a6a99c43f5ccc97d2d350bde13f74.css" integrity="md5-vBpqmcQ/XMyX0tNQveE/dA=="><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B9%8B%E6%B3%A8%E9%87%8A/" /><link rel="prev" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%BC%96%E7%A0%81%E9%A3%8E%E6%A0%BC/" /><link rel="next" href="https://silencehuliang.github.io/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%80%9A%E8%BF%87github/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.2e7125082ec8de83a87adc70253c9c23.css" integrity="md5-LnElCC7I3oOoetxwJTycIw=="><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.76cb46c10b6c0293433b371bae2414b2.css" integrity="md5-dstGwQtsApNDOzcbriQUsg=="><link rel="stylesheet" href="/lib/animate/animate.min.bc1a6a99c43f5ccc97d2d350bde13f74.css" integrity="md5-vBpqmcQ/XMyX0tNQveE/dA=="><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "Python学习之路之注释",
+        "headline": "Python学习之路-注释",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/silencehuliang.github.io\/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B9%8B%E6%B3%A8%E9%87%8A\/"
-        },"genre": "posts","keywords": "","wordcount":  102 ,
-        "url": "https:\/\/silencehuliang.github.io\/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B9%8B%E6%B3%A8%E9%87%8A\/","datePublished": "2021-04-06T19:55:56+08:00","dateModified": "2021-04-06T19:55:56+08:00","publisher": {
+        },"genre": "posts","keywords": "Python学习之路","wordcount":  1303 ,
+        "url": "https:\/\/silencehuliang.github.io\/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B9%8B%E6%B3%A8%E9%87%8A\/","datePublished": "2019-09-28T00:00:00+00:00","dateModified": "2019-09-29T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Silence"},"author": {
                 "@type": "Person",
@@ -118,12 +118,12 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">Python学习之路之注释</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Silence</a></span>&nbsp;<span class="post-category">收录于 <a href=""><i class="far fa-folder fa-fw"></i></a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-06">2021-04-06</time>&nbsp;<i class="fa fa-history" aria-hidden="true"></i>
-                2021-04-06
-                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 102 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B9%8B%E6%B3%A8%E9%87%8A/" class="leancloud_visitors" data-flag-title="Python学习之路之注释">
+        </div><article class="page single"><h1 class="single-title animated flipInX">Python学习之路-注释</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Silence</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/python/"><i class="far fa-folder fa-fw"></i>Python</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-09-28">2019-09-28</time>&nbsp;<i class="fa fa-history" aria-hidden="true"></i>
+                2019-09-29
+                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1303 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B9%8B%E6%B3%A8%E9%87%8A/" class="leancloud_visitors" data-flag-title="Python学习之路-注释">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
@@ -133,23 +133,87 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#重要性">重要性</a></li>
+    <li><a href="#注释的作用">注释的作用</a></li>
+    <li><a href="#什么时候需要使用注释">什么时候需要使用注释？</a></li>
     <li><a href="#注释类型">注释类型</a>
       <ul>
         <li><a href="#单行注释">单行注释</a></li>
+        <li><a href="#多行注释">多行注释</a></li>
+        <li><a href="#文档">文档</a></li>
+        <li><a href="#模块">模块</a></li>
+        <li><a href="#函数和方法">函数和方法</a></li>
+        <li><a href="#类">类</a></li>
       </ul>
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h2 id="重要性">重要性</h2>
-<p>将注释放在Python语法的前面足以提现它在我心中的重要性。一个好的Python程序中注释是不可缺失的一环。注释可以增强程序的可读性，在团队协作当中，为程序添加注释可以提高开发效率。</p>
+            </div><div class="content" id="content"><h2 id="注释的作用">注释的作用</h2>
+<p>一个好的程序中注释是不可缺失的一环。在程序中对某些代码进行标注说明，可以增强程序的可读性。在团队中，注释可以提高协同开发效率。</p>
+<h2 id="什么时候需要使用注释">什么时候需要使用注释？</h2>
+<ul>
+<li>
+<p><strong>注释不是越多越好</strong>，对于一目了然的代码，不需要添加注释</p>
+</li>
+<li>
+<p>对于 <strong>复杂的操作</strong>，应该在操作开始前写上思路的注释</p>
+</li>
+<li>
+<p>对于 <strong>不是一目了然的代码</strong>，应在其行尾添加注释(为了提高可读性，注释应该至少离开代码 2 个空格)</p>
+</li>
+<li>
+<p>绝不要描述代码，假设阅读代码的人比你更懂 Python，他只是不知道你的代码要做什么</p>
+</li>
+</ul>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>提示<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">在一些正规的开发团队，通常会有 <strong>代码审核</strong> 的惯例，就是一个团队中彼此阅读对方的代码</div>
+        </div>
+    </div>
 <h2 id="注释类型">注释类型</h2>
 <h3 id="单行注释">单行注释</h3>
+<p>以 <code>#</code> 开头，<code>#</code> 右边的所有东西都被当做说明文字，而不是真正要执行的程序，只起到辅助说明作用</p>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>提示<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">*为了保证代码的可读性，*<code>#</code> <em>后面建议先添加一个空格，然后再编写相应的说明文字</em>。需要注意的是，<strong>为了保证代码的可读性</strong>，<strong>注释和代码之间</strong> 至少要有 <strong>两个空格</strong></div>
+        </div>
+    </div>
+<h3 id="多行注释">多行注释</h3>
+<p>如果要写的注释信息很多，一行无法写完，就可以使用多行注释。在Python程序中使用多行注释，可以用<strong>一对连续的三个引号</strong>(单引号和双引号都可以)。</p>
+<h3 id="文档">文档</h3>
+<p>Python有一种独一无二的的注释方式: 使用文档注释。文档注释是包、模块、 类或函数里的第一个语句。这些注释可以通过对象的__doc__成员被自动提取, 并且被pydoc所用.对文档注释的惯例是使用三重双引号&rdquo;&quot;&quot;( <a href="http://www.python.org/dev/peps/pep-0257/" target="_blank" rel="noopener noreffer">PEP-257</a> )。一个文档注释应该这样组织: 首先是一行以句号，问号或惊叹号结尾的概述(或者该文档注释单纯只有一行)。接着是一个空行，接着是文档注释剩下的部分，它应该与文档注释的第一行的第一个引号对齐。</p>
+<h3 id="模块">模块</h3>
+<p>每个文件应该包含一个许可样板. 根据项目使用的许可(例如, Apache 2.0, BSD, LGPL, GPL), 选择合适的样板.</p>
+<h3 id="函数和方法">函数和方法</h3>
+<p>下文所指的函数,包括函数、方法以及生成器。一个函数必须要有文档字符串, 除非它满足以下条件:</p>
+<ul>
+<li>
+<p>外部不可见</p>
+</li>
+<li>
+<p>非常短小</p>
+</li>
+<li>
+<p>简单明了</p>
+</li>
+</ul>
+<p>注释应该包含函数做什么，以及输入和输出的详细描述。通常不应该描述”怎么做”，除非是一些复杂的算法.。注释应该提供足够的信息，当别人编写代码调用该函数时，他不需要看一行代码，只要看文档字符串就可以了。 对于复杂的代码, 在代码旁边加注释会比使用函数注释更有意义.</p>
+<p>关于函数的几个方面应该在特定的小节中进行描述记录，这几个方面如下文所述.。每节应该以一个标题行开始，标题行以冒号结尾， 除标题行外。节的其他内容应被缩进2个空格。</p>
+<p><strong>Args</strong>：列出每个参数的名字, 并在名字后使用一个冒号和一个空格。分隔对该参数的描述，如果描述太长超过了单行80字符，使用2或者4个空格的悬挂缩进(与文件其他部分保持一致)。描述应该包括所需的类型和含义。 如果一个函数接受<em>foo(可变长度参数列表)或者**bar (任意关键字参数), 应该详细列出</em>foo和**bar.</p>
+<p><strong>Returns(或者 Yields: 用于生成器)</strong>： 描述返回值的类型和语义。如果函数返回None，这一部分可以省略。</p>
+<p><strong>Raises</strong>：列出与接口有关的所有异常。</p>
+<h3 id="类">类</h3>
+<p>类应该在其定义下有一个用于描述该类的文档字符串. 如果你的类有公共属性(Attributes), 那么文档中应该有一个属性(Attributes)段. 并且应该遵守和函数参数相同的格式.</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2021-04-06</span>
+                <span>更新于 2019-09-29</span>
             </div>
             <div class="post-info-license"></div>
         </div>
@@ -158,19 +222,20 @@
                             <a class="link-to-markdown" href="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B9%8B%E6%B3%A8%E9%87%8A/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B9%8B%E6%B3%A8%E9%87%8A/" data-title="Python学习之路之注释" data-hashtags=""><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B9%8B%E6%B3%A8%E9%87%8A/" data-hashtag=""><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B9%8B%E6%B3%A8%E9%87%8A/" data-title="Python学习之路之注释" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B9%8B%E6%B3%A8%E9%87%8A/" data-title="Python学习之路之注释"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B9%8B%E6%B3%A8%E9%87%8A/" data-title="Python学习之路之注释"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B9%8B%E6%B3%A8%E9%87%8A/" data-title="Python学习之路之注释" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B9%8B%E6%B3%A8%E9%87%8A/" data-title="Python学习之路之注释" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B9%8B%E6%B3%A8%E9%87%8A/" data-title="Python学习之路之注释"><i class="fab fa-evernote fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B9%8B%E6%B3%A8%E9%87%8A/" data-title="Python学习之路-注释" data-hashtags="Python学习之路"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B9%8B%E6%B3%A8%E9%87%8A/" data-hashtag="Python学习之路"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B9%8B%E6%B3%A8%E9%87%8A/" data-title="Python学习之路-注释" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B9%8B%E6%B3%A8%E9%87%8A/" data-title="Python学习之路-注释"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B9%8B%E6%B3%A8%E9%87%8A/" data-title="Python学习之路-注释"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B9%8B%E6%B3%A8%E9%87%8A/" data-title="Python学习之路-注释" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B9%8B%E6%B3%A8%E9%87%8A/" data-title="Python学习之路-注释" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B9%8B%E6%B3%A8%E9%87%8A/" data-title="Python学习之路-注释"><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=""></a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/">Python学习之路</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%80%9A%E8%BF%87github/" class="prev" rel="prev" title="使用Hugo搭建自己的博客并通过GitHub Pages部署"><i class="fas fa-angle-left fa-fw"></i>使用Hugo搭建自己的博客并通过GitHub Pages部署</a></div>
+    <div class="post-nav"><a href="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%BC%96%E7%A0%81%E9%A3%8E%E6%A0%BC/" class="prev" rel="prev" title="Python学习之路-编码风格"><i class="fas fa-angle-left fa-fw"></i>Python学习之路-编码风格</a>
+            <a href="/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%80%9A%E8%BF%87github/" class="next" rel="next" title="使用Hugo搭建自己的博客并通过GitHub Pages部署">使用Hugo搭建自己的博客并通过GitHub Pages部署<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
