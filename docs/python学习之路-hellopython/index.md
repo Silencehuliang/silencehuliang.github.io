@@ -132,13 +132,13 @@ Python 3.7.7
 
 
 
-## 第一个Python程序
+## 执行程序的方式
 
 ### 交互式命令行
 
 #### 简介
 
-在控制台输入Python3即可进入Python3解释器集成的一个交互式命令行。
+在控制台输入Python3即可进入Python3解释器集成的一个交互式命令行，可以在交互式命令行中执行程序。
 
 ```bash
 python3
@@ -161,7 +161,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 这里使用了Python一个内置的print()方法，其作用是将传入的对象在控制台打印出来。就这么简单的完成了学习Python的第一个程序，可以看到Python的语法非常简单易懂。
 
-由于在交互式命令行中编写的Python代码无法保存，当需要保存代码的时候可以用文本编辑器或集成开发环境来编写Python代码。
+
 
 {{< admonition tip "提示" true >}}
 
@@ -169,11 +169,11 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 {{< /admonition >}}
 
-
-
-### 文本编辑器和集成开发环境
+### 通过Python解释器
 
 #### 简介
+
+由于在交互式命令行中编写的Python代码无法保存，当需要保存代码的时候可以用文本编辑器或集成开发环境来编写Python代码。这时候就可以用Python解释器来执行Python程序。
 
 **文本编辑器**是计算机软件中的一种。主要用于用来编写和查看文本文件。有一些特殊的文本编辑器支持增加自有的格式来丰富文档的表现形式。操作系统或者集成开发环境通常会带有可以查看和编辑纯文本的编辑器，可增加格式的文本编辑器通常是个人用户或者公司在制作需要格式的文件中使用。因为程序和程序的配置文件通常是以纯文本形式储存，所以程序员也需要使用纯文本编辑器来编辑程序和配置文件。
 
@@ -198,7 +198,7 @@ Type "help", "copyright", "credits" or "license" for more information.
   Hello Python!
   ```
 
-  看到`Hello Python!`代码第一个程序执行成功。
+  看到`Hello Python!`则第一个程序执行成功。
 
   {{< admonition info "说明" true >}}
 

@@ -5,32 +5,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>Python学习之路-文档说明 - Silence Blog</title><meta name="Description" content="Silence‘s blog"><meta property="og:title" content="Python学习之路-文档说明" />
-<meta property="og:description" content="Python 是一种易于学习又功能强大的编程语言。目前网上有许多Python相关文档，质量参差不齐，更新时间也都非常久远。也没有看到有相关系统全面的文档，所以我想通过我的努力打造一个全面且及时更新的Python教程。" />
+        <title>Python学习之路-编码风格 - Silence Blog</title><meta name="Description" content="Silence‘s blog"><meta property="og:title" content="Python学习之路-编码风格" />
+<meta property="og:description" content="Python的设计哲学是“优雅”、“明确”、“简单”。它的重要准则被称为“Python之禅”。Python之禅又名PEP 20，在Python解释器内运行import this可以获得完整的列表，下面是中文翻译与我的解读" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E/" />
+<meta property="og:url" content="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%BC%96%E7%A0%81%E9%A3%8E%E6%A0%BC/" />
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
-<meta property="article:published_time" content="2019-09-01T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-01-01T00:00:00+00:00" />
+<meta property="article:published_time" content="2019-09-21T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-09-22T17:10:00+08:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
 
-<meta name="twitter:title" content="Python学习之路-文档说明"/>
-<meta name="twitter:description" content="Python 是一种易于学习又功能强大的编程语言。目前网上有许多Python相关文档，质量参差不齐，更新时间也都非常久远。也没有看到有相关系统全面的文档，所以我想通过我的努力打造一个全面且及时更新的Python教程。"/>
+<meta name="twitter:title" content="Python学习之路-编码风格"/>
+<meta name="twitter:description" content="Python的设计哲学是“优雅”、“明确”、“简单”。它的重要准则被称为“Python之禅”。Python之禅又名PEP 20，在Python解释器内运行import this可以获得完整的列表，下面是中文翻译与我的解读"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E/" /><link rel="prev" href="https://silencehuliang.github.io/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%97%85/" /><link rel="next" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%AE%A4%E8%AF%86python/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.2e7125082ec8de83a87adc70253c9c23.css" integrity="md5-LnElCC7I3oOoetxwJTycIw=="><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.76cb46c10b6c0293433b371bae2414b2.css" integrity="md5-dstGwQtsApNDOzcbriQUsg=="><link rel="stylesheet" href="/lib/animate/animate.min.bc1a6a99c43f5ccc97d2d350bde13f74.css" integrity="md5-vBpqmcQ/XMyX0tNQveE/dA=="><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%BC%96%E7%A0%81%E9%A3%8E%E6%A0%BC/" /><link rel="prev" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-hellopython/" /><link rel="next" href="https://silencehuliang.github.io/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%80%9A%E8%BF%87github/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.2e7125082ec8de83a87adc70253c9c23.css" integrity="md5-LnElCC7I3oOoetxwJTycIw=="><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.76cb46c10b6c0293433b371bae2414b2.css" integrity="md5-dstGwQtsApNDOzcbriQUsg=="><link rel="stylesheet" href="/lib/animate/animate.min.bc1a6a99c43f5ccc97d2d350bde13f74.css" integrity="md5-vBpqmcQ/XMyX0tNQveE/dA=="><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "Python学习之路-文档说明",
+        "headline": "Python学习之路-编码风格",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/silencehuliang.github.io\/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E\/"
-        },"genre": "posts","keywords": "Python学习之路","wordcount":  348 ,
-        "url": "https:\/\/silencehuliang.github.io\/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E\/","datePublished": "2019-09-01T00:00:00+00:00","dateModified": "2020-01-01T00:00:00+00:00","publisher": {
+            "@id": "https:\/\/silencehuliang.github.io\/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%BC%96%E7%A0%81%E9%A3%8E%E6%A0%BC\/"
+        },"genre": "posts","keywords": "Python学习之路-设计哲学","wordcount":  1147 ,
+        "url": "https:\/\/silencehuliang.github.io\/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%BC%96%E7%A0%81%E9%A3%8E%E6%A0%BC\/","datePublished": "2019-09-21T00:00:00+00:00","dateModified": "2019-09-22T17:10:00+08:00","publisher": {
             "@type": "Organization",
             "name": "Silence"},"author": {
                 "@type": "Person",
@@ -118,12 +118,12 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">Python学习之路-文档说明</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">Python学习之路-编码风格</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Silence</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/python/"><i class="far fa-folder fa-fw"></i>Python</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-09-01">2019-09-01</time>&nbsp;<i class="fa fa-history" aria-hidden="true"></i>
-                2020-01-01
-                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 348 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E/" class="leancloud_visitors" data-flag-title="Python学习之路-文档说明">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-09-21">2019-09-21</time>&nbsp;<i class="fa fa-history" aria-hidden="true"></i>
+                2019-09-22
+                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1147 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%BC%96%E7%A0%81%E9%A3%8E%E6%A0%BC/" class="leancloud_visitors" data-flag-title="Python学习之路-编码风格">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
@@ -133,41 +133,114 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#python学习之路">Python学习之路</a></li>
+    <li><a href="#设计哲学">设计哲学</a></li>
+    <li><a href="#编码规范">编码规范</a>
+      <ul>
+        <li><a href="#检查工具">检查工具</a></li>
+        <li><a href="#用法示例">用法示例</a></li>
+      </ul>
+    </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h2 id="python学习之路">Python学习之路</h2>
-<p>Python 是一种易于学习又功能强大的编程语言。目前网上有许多Python相关文档，质量参差不齐，更新时间也都非常久远。也没有看到有相关系统全面的文档，所以我想通过我的努力打造一个全面且及时更新的Python教程。</p>
-<p>由于本人能力有限，所以本文档仅适用于想系统的学习Python的朋友。如果发现文档中存在错误，请联系我修正；如果发现文档中存在侵权情况，请联系我删除相关内容。感谢您对Python社区的贡献。</p>
-<p>通过本文档你能了解到从Python基础到Python标准库、Web开发、爬虫、数据分析、机器学习等方面的内容。由于Python2.7已于2020年1月1日起停止维护，本文档中的内容全部针对Python3.X版本。</p>
-<p>Life is short, you need Python。接下来就让我们开始遨游在Python的世界中吧！</p>
+            </div><div class="content" id="content"><h2 id="设计哲学">设计哲学</h2>
+<p>Python的设计哲学是“优雅”、“明确”、“简单”。它的重要准则被称为“Python之禅”。<strong>Python之禅</strong>又名<a href="https://www.python.org/dev/peps/pep-0020/" target="_blank" rel="noopener noreffer">PEP 20</a>，在Python解释器内运行<code>import this</code>可以获得完整的列表，下面是我的翻译与解读：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">提姆·彼得斯（Tim Peters）撰写的《 Python之禅 》
+优雅胜于丑陋（以编写优雅的代码为目标）
+明确胜于晦涩（明确的代码增强了程序的可读性）
+简单胜于复杂（简单的代码能解决复杂的问题）
+复杂胜于凌乱（如果项目变得复杂，那代码间也要保持简洁）
+扁平胜于嵌套（优雅的代码应该是扁平的，不能有太多嵌套）
+间隔胜于紧凑（优雅的代码应当有适当的间隔，不要写一些为了缩减代码丢失了可读性）
+可读性很重要（代码的可读的非常重要）
+即便假借特例的实用性之名，也不可违背这些规则（这些规则是写Python程序的必备条件）
+不要包容所有错误，除非你确定需要这样做（代码中不能存在错误，要善于使用捕获异常）
+当存在多种可能，不要尝试去猜测
+而是尽量找一种，最好是唯一一种明显的解决方案
+虽然这并不容易，因为你不是 Python 之父（虽然你不是Guido，在设计程序时应该多思考，找出最好的解决方案）
+做也许好过不做，但不假思索就动手还不如不做（要思考好之后再开始写代码）
+如果你无法向人描述你的方案，那肯定不是一个好方案；反之亦然（好的方案是人人都能懂得方案）
+命名空间是一种绝妙的理念，我们应当多加利用（要善于利用命令空间）
+</code></pre></td></tr></table>
+</div>
+</div><p>Python开发的哲学是“用一种方法，最好是只有一种方法来做一件事”。在设计Python程序时，如果面临多种选择，一般会拒绝花俏的语法，而选择明确没有或者很少有歧义的语法。</p>
+<h2 id="编码规范">编码规范</h2>
+<p>PEP 8是由Guido van Rossum , Barry Warsaw , Nick Coghlan三位共同编写的一个Python代码风格规范。可以在<a href="https://www.python.org/dev/peps/pep-0008/" target="_blank" rel="noopener noreffer">这里</a>查看具体内容，如果英文不好可以在<a href="https://www.runoob.com/w3cnote/google-python-styleguide.html" target="_blank" rel="noopener noreffer">菜鸟教程</a>中查看主要的内容</p>
+<h3 id="检查工具">检查工具</h3>
+<p><strong>pylint</strong>是一个Python代码风格的检查工具, 它依据的标准是Guido van Rossum的<a href="https://www.python.org/dev/peps/pep-0008/" target="_blank" rel="noopener noreffer">PEP 8</a>。</p>
+<p>pylint类似于PyChecker, 但提供了更多的功能, 如检查代码行的长度, 检查变量命名是否符合编码规范, 或检查声明的接口是否被真正的实现, 完整的检查功能请参见http://www.logilab.org/card/pylintfeatures。</p>
+<p>pylint的最大优势在于其高度的可配置化和可定制化，你可以很容易地写一个小插件添加个人功能。</p>
+<h3 id="用法示例">用法示例</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"> pylint.bat --reports=n --include-ids=y --disable-msg=W0122,W0702 xlsconverter.py &gt; lint_result.txt
+</code></pre></td></tr></table>
+</div>
+</div><p>其中：</p>
+<ul>
+<li>&ndash;reports=n 表示不产生输出报告</li>
+<li>&ndash;include-ids=y 表示输出的错误信息包含错误编号</li>
+<li>&ndash;disable-msg=W0122,W0702 表示W0122和W0702这两个警告信息被过滤掉了</li>
+<li>xlsconverter.py 是被检查的脚本</li>
+<li>检查的结果被输出到了lint_result.txt中。</li>
+</ul>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>提示<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">PEP 20和PEP 8应该陪伴我们整个学习和使用Python的过程，在编码前多思考。</div>
+        </div>
+    </div>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2020-01-01</span>
+                <span>更新于 2019-09-22</span>
             </div>
             <div class="post-info-license"></div>
         </div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E/index.md" target="_blank">阅读原始文档</a>
+                            <a class="link-to-markdown" href="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%BC%96%E7%A0%81%E9%A3%8E%E6%A0%BC/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E/" data-title="Python学习之路-文档说明" data-hashtags="Python学习之路"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E/" data-hashtag="Python学习之路"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E/" data-title="Python学习之路-文档说明" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E/" data-title="Python学习之路-文档说明"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E/" data-title="Python学习之路-文档说明"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E/" data-title="Python学习之路-文档说明" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E/" data-title="Python学习之路-文档说明" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E/" data-title="Python学习之路-文档说明"><i class="fab fa-evernote fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%BC%96%E7%A0%81%E9%A3%8E%E6%A0%BC/" data-title="Python学习之路-编码风格" data-hashtags="Python学习之路-设计哲学"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%BC%96%E7%A0%81%E9%A3%8E%E6%A0%BC/" data-hashtag="Python学习之路-设计哲学"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%BC%96%E7%A0%81%E9%A3%8E%E6%A0%BC/" data-title="Python学习之路-编码风格" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%BC%96%E7%A0%81%E9%A3%8E%E6%A0%BC/" data-title="Python学习之路-编码风格"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%BC%96%E7%A0%81%E9%A3%8E%E6%A0%BC/" data-title="Python学习之路-编码风格"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%BC%96%E7%A0%81%E9%A3%8E%E6%A0%BC/" data-title="Python学习之路-编码风格" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%BC%96%E7%A0%81%E9%A3%8E%E6%A0%BC/" data-title="Python学习之路-编码风格" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%BC%96%E7%A0%81%E9%A3%8E%E6%A0%BC/" data-title="Python学习之路-编码风格"><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/">Python学习之路</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%AE%BE%E8%AE%A1%E5%93%B2%E5%AD%A6/">Python学习之路-设计哲学</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/go%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%97%85/" class="prev" rel="prev" title="Go语言学习之旅"><i class="fas fa-angle-left fa-fw"></i>Go语言学习之旅</a>
-            <a href="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%AE%A4%E8%AF%86python/" class="next" rel="next" title="Python学习之路-认识Python">Python学习之路-认识Python<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-hellopython/" class="prev" rel="prev" title="Python学习之路-HelloPython"><i class="fas fa-angle-left fa-fw"></i>Python学习之路-HelloPython</a>
+            <a href="/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%80%9A%E8%BF%87github/" class="next" rel="next" title="使用Hugo搭建自己的博客并通过GitHub Pages部署">使用Hugo搭建自己的博客并通过GitHub Pages部署<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.

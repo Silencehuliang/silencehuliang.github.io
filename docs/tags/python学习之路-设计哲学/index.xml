@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Python学习之路-设计哲学 - 标签 - Silence Blog</title>
+        <link>https://silencehuliang.github.io/tags/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%AE%BE%E8%AE%A1%E5%93%B2%E5%AD%A6/</link>
+        <description>Python学习之路-设计哲学 - 标签 - Silence Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>silencehuliang@gmail.com (Silence)</managingEditor>
+            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 21 Sep 2019 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://silencehuliang.github.io/tags/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%AE%BE%E8%AE%A1%E5%93%B2%E5%AD%A6/" rel="self" type="application/rss+xml" /><item>
+    <title>Python学习之路-编码风格</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%BC%96%E7%A0%81%E9%A3%8E%E6%A0%BC/</link>
+    <pubDate>Sat, 21 Sep 2019 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%BC%96%E7%A0%81%E9%A3%8E%E6%A0%BC/</guid>
+    <description><![CDATA[Python的设计哲学是“优雅”、“明确”、“简单”。它的重要准则被称为“Python之禅”。<strong>Python之禅</strong>又名PEP 20，在Python解释器内运行<code>import this</code>可以获得完整的列表，下面是中文翻译与我的解读]]></description>
+</item></channel>
+</rss>
