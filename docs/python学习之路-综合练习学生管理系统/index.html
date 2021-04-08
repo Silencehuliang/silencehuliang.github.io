@@ -5,32 +5,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>Python学习之路-函数进阶 - Silence Blog</title><meta name="Description" content="Silence‘s blog"><meta property="og:title" content="Python学习之路-函数进阶" />
-<meta property="og:description" content="函数根据有没有参数以及有没有返回值，可以相互组合，一共有4 种组合形式：无参数，无返回值；无参数，有返回值；有参数，无返回值；有参数，有返回值。" />
+        <title>Python学习之路-综合练习:学生管理系统 - Silence Blog</title><meta name="Description" content="Silence‘s blog"><meta property="og:title" content="Python学习之路-综合练习:学生管理系统" />
+<meta property="og:description" content="目前已经学习了变量、流程控制、函数、模块，可以利用已学习的知识开发一个学生管理系统" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6/" />
+<meta property="og:url" content="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" />
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
-<meta property="article:published_time" content="2019-11-02T00:00:00+00:00" />
-<meta property="article:modified_time" content="2019-11-03T00:00:00+00:00" />
+<meta property="article:published_time" content="2019-11-09T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-11-10T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
 
-<meta name="twitter:title" content="Python学习之路-函数进阶"/>
-<meta name="twitter:description" content="函数根据有没有参数以及有没有返回值，可以相互组合，一共有4 种组合形式：无参数，无返回值；无参数，有返回值；有参数，无返回值；有参数，有返回值。"/>
+<meta name="twitter:title" content="Python学习之路-综合练习:学生管理系统"/>
+<meta name="twitter:description" content="目前已经学习了变量、流程控制、函数、模块，可以利用已学习的知识开发一个学生管理系统"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6/" /><link rel="prev" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%87%BD%E6%95%B0%E5%9F%BA%E7%A1%80/" /><link rel="next" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.2e7125082ec8de83a87adc70253c9c23.css" integrity="md5-LnElCC7I3oOoetxwJTycIw=="><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.76cb46c10b6c0293433b371bae2414b2.css" integrity="md5-dstGwQtsApNDOzcbriQUsg=="><link rel="stylesheet" href="/lib/animate/animate.min.bc1a6a99c43f5ccc97d2d350bde13f74.css" integrity="md5-vBpqmcQ/XMyX0tNQveE/dA=="><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" /><link rel="prev" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6/" /><link rel="next" href="https://silencehuliang.github.io/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%80%9A%E8%BF%87github/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.2e7125082ec8de83a87adc70253c9c23.css" integrity="md5-LnElCC7I3oOoetxwJTycIw=="><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.76cb46c10b6c0293433b371bae2414b2.css" integrity="md5-dstGwQtsApNDOzcbriQUsg=="><link rel="stylesheet" href="/lib/animate/animate.min.bc1a6a99c43f5ccc97d2d350bde13f74.css" integrity="md5-vBpqmcQ/XMyX0tNQveE/dA=="><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "Python学习之路-函数进阶",
+        "headline": "Python学习之路-综合练习:学生管理系统",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/silencehuliang.github.io\/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6\/"
-        },"genre": "posts","keywords": "Python学习之路","wordcount":  1074 ,
-        "url": "https:\/\/silencehuliang.github.io\/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6\/","datePublished": "2019-11-02T00:00:00+00:00","dateModified": "2019-11-03T00:00:00+00:00","publisher": {
+            "@id": "https:\/\/silencehuliang.github.io\/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F\/"
+        },"genre": "posts","keywords": "Python学习之路","wordcount":  114 ,
+        "url": "https:\/\/silencehuliang.github.io\/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F\/","datePublished": "2019-11-09T00:00:00+00:00","dateModified": "2019-11-10T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Silence"},"author": {
                 "@type": "Person",
@@ -118,12 +118,12 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">Python学习之路-函数进阶</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">Python学习之路-综合练习:学生管理系统</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Silence</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/python/"><i class="far fa-folder fa-fw"></i>Python</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-11-02">2019-11-02</time>&nbsp;<i class="fa fa-history" aria-hidden="true"></i>
-                2019-11-03
-                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1074 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6/" class="leancloud_visitors" data-flag-title="Python学习之路-函数进阶">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-11-09">2019-11-09</time>&nbsp;<i class="fa fa-history" aria-hidden="true"></i>
+                2019-11-10
+                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 114 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" class="leancloud_visitors" data-flag-title="Python学习之路-综合练习:学生管理系统">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
@@ -133,128 +133,33 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#参数和返回值的作用">参数和返回值的作用</a></li>
-    <li><a href="#不可变和可变的参数">不可变和可变的参数</a></li>
-    <li><a href="#缺省参数">缺省参数</a>
-      <ul>
-        <li><a href="#缺省参数的注意事项">缺省参数的注意事项</a>
-          <ul>
-            <li><a href="#缺省参数的定义位置">缺省参数的定义位置</a></li>
-            <li><a href="#调用带有多个缺省参数的函数">调用带有多个缺省参数的函数</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#多值参数">多值参数</a>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#元组和字典的拆包">元组和字典的拆包</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#递归">递归</a>
-      <ul>
-        <li><a href="#简介">简介</a></li>
-        <li><a href="#特点">特点</a></li>
-        <li><a href="#代码特点">代码特点</a></li>
-      </ul>
-    </li>
+    <li><a href="#项目需求">项目需求</a></li>
+    <li><a href="#项目搭建">项目搭建</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h2 id="参数和返回值的作用">参数和返回值的作用</h2>
-<p>函数根据有没有参数以及有没有返回值，可以相互组合，一共有4 种组合形式：无参数，无返回值；无参数，有返回值；有参数，无返回值；有参数，有返回值。</p>
-<div class="details admonition tip open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw"></i>提示<i class="details-icon fas fa-angle-right fa-fw"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content">定义函数时，是否接收参数，或者是否返回结果，是根据实际的功能需求来决定的！如果函数内部处理的数据不确定，就可以将外界的数据以参数传递到函数内部。如果希望一个函数执行完成后，向外界汇报执行结果，就可以增加函数的返回值</div>
-        </div>
-    </div>
-<h2 id="不可变和可变的参数">不可变和可变的参数</h2>
-<p>无论传递的参数是可变还是不可变只要针对参数使用赋值语句，会在函数内部修改局部变量的引用**，**不会影响到 外部变量的引用。如果传递的参数是可变类型，在函数内部，使用方法修改了数据的内容，同样会影响到外部的数据</p>
-<h2 id="缺省参数">缺省参数</h2>
-<p>定义函数时，可以给某个参数指定一个默认值，具有默认值的参数就叫做缺省参数调用函数时，如果没有传入缺省参数的值，则在函数内部使用定义函数时指定的参数默认值。函数的缺省参数，将常见的值设置为参数的缺省值，从而简化函数的调用</p>
-<div class="details admonition tip open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw"></i>提示<i class="details-icon fas fa-angle-right fa-fw"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content">缺省参数需要使用最常见的值作为默认值！如果一个参数的值不能确定，则不应该设置默认值，具体的数值在调用函数时，由外界传递！</div>
-        </div>
-    </div>
-<h3 id="缺省参数的注意事项">缺省参数的注意事项</h3>
-<h4 id="缺省参数的定义位置">缺省参数的定义位置</h4>
-<p>必须保证带有默认值的缺省参数在参数列表末尾</p>
-<h4 id="调用带有多个缺省参数的函数">调用带有多个缺省参数的函数</h4>
-<p>在调用函数时，如果有多个缺省参数，需要指定参数名，这样解释器才能够知道参数的对应关系！</p>
-<h2 id="多值参数">多值参数</h2>
-<p>定义支持多值参数的函数，有时可能需要一个函数能够处理的参数个数是不确定的，这个时候就可以使用多值参数。python中有两种多值参数：</p>
+            </div><div class="content" id="content"><p>目前已经学习了变量、流程控制、函数、模块，可以利用已学习的知识开发一个学生管理系统</p>
+<h2 id="项目需求">项目需求</h2>
 <ul>
-<li>参数名前增加 一个 <code>*</code> 可以接收元组</li>
-<li>参数名前增加 两个<code>*</code> 可以接收字典</li>
+<li>系统有首页介绍页面与功能菜单</li>
+<li>系统功能由查询、显示、修改与删除功能</li>
+<li>可以使用数字选择不同的功能</li>
+<li>学生信息需要记录：姓名、性别、年龄、班级</li>
 </ul>
-<p>一般在给多值参数命名时，习惯使用以下两个名字:</p>
-<ul>
-<li>
-<p><code>*args</code> —— 存放 <strong>元组</strong> 参数，前面有一个 <code>*</code></p>
-</li>
-<li>
-<p><code>**kwargs</code> —— 存放 <strong>字典</strong> 参数，前面有两个 <code>*</code></p>
-</li>
-</ul>
-<div class="details admonition tip open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw"></i>提示<i class="details-icon fas fa-angle-right fa-fw"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><code>args</code>是<code>arguments</code>的缩写，有变量的含义，<code>kw</code> 是 <code>keyword</code> 的缩写，<code>kwargs</code> 可以记忆键值对参数</div>
-        </div>
-    </div>
-<h4 id="元组和字典的拆包">元组和字典的拆包</h4>
-<p>在调用带有多值参数的函数时，如果希望：将一个元组变量，直接传递给 <code>args</code>将一个 字典变量，直接传递给 <code>kwargs</code>就可以使用拆包，简化参数的传递，拆包的方式是：在元组变量前，增加一个<code>*</code>在字典变量前，增加两个 <code>*</code>。</p>
-<h2 id="递归">递归</h2>
-<h3 id="简介">简介</h3>
-<p>函数调用自身的编程技巧称为递归</p>
-<h3 id="特点">特点</h3>
-<p>一个函数内部调用自己。函数内部可以调用其他函数，当然在函数内部也可以调用自己</p>
-<h3 id="代码特点">代码特点</h3>
-<ol>
-<li>函数内部的代码是相同的，只是针对参数不同，处理的结果不同</li>
-<li>当参数满足一个条件时，函数不再执行</li>
-</ol>
-<div class="details admonition warning open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-exclamation-triangle fa-fw"></i>警告<i class="details-icon fas fa-angle-right fa-fw"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content">这个非常重要，通常被称为递归的出口，否则会出现死循环！</div>
-        </div>
-    </div>
-<div class="details admonition tip open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw"></i>提示<i class="details-icon fas fa-angle-right fa-fw"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content">初次接触递归会感觉有些吃力！在处理不确定的循环条件时，格外的有用，例如：遍历整个文件目录的结构</div>
-        </div>
-    </div>
+<h2 id="项目搭建">项目搭建</h2>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2019-11-03</span>
+                <span>更新于 2019-11-10</span>
             </div>
             <div class="post-info-license"></div>
         </div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6/index.md" target="_blank">阅读原始文档</a>
+                            <a class="link-to-markdown" href="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6/" data-title="Python学习之路-函数进阶" data-hashtags="Python学习之路"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6/" data-hashtag="Python学习之路"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6/" data-title="Python学习之路-函数进阶" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6/" data-title="Python学习之路-函数进阶"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6/" data-title="Python学习之路-函数进阶"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6/" data-title="Python学习之路-函数进阶" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6/" data-title="Python学习之路-函数进阶" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6/" data-title="Python学习之路-函数进阶"><i class="fab fa-evernote fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" data-title="Python学习之路-综合练习:学生管理系统" data-hashtags="Python学习之路"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" data-hashtag="Python学习之路"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" data-title="Python学习之路-综合练习:学生管理系统" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" data-title="Python学习之路-综合练习:学生管理系统"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" data-title="Python学习之路-综合练习:学生管理系统"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" data-title="Python学习之路-综合练习:学生管理系统" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" data-title="Python学习之路-综合练习:学生管理系统" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" data-title="Python学习之路-综合练习:学生管理系统"><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>
@@ -266,8 +171,8 @@
         </section>
     </div>
 
-    <div class="post-nav"><a href="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%87%BD%E6%95%B0%E5%9F%BA%E7%A1%80/" class="prev" rel="prev" title="Python学习之路-函数基础"><i class="fas fa-angle-left fa-fw"></i>Python学习之路-函数基础</a>
-            <a href="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" class="next" rel="next" title="Python学习之路-综合练习:学生管理系统">Python学习之路-综合练习:学生管理系统<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6/" class="prev" rel="prev" title="Python学习之路-函数进阶"><i class="fas fa-angle-left fa-fw"></i>Python学习之路-函数进阶</a>
+            <a href="/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%80%9A%E8%BF%87github/" class="next" rel="next" title="使用Hugo搭建自己的博客并通过GitHub Pages部署">使用Hugo搭建自己的博客并通过GitHub Pages部署<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
