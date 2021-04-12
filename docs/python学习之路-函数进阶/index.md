@@ -85,4 +85,8 @@
 
 {{< /admonition >}}
 
+## 内置函数
+
+Python 解释器内置了很多函数，可以在任何时候使用，在[这里](https://docs.python.org/zh-cn/3.7/library/functions.html)查看具体包含哪些与使用方法。
+
 

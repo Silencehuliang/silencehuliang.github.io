@@ -14,6 +14,27 @@
     <guid>https://silencehuliang.github.io/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%80%9A%E8%BF%87github/</guid>
     <description><![CDATA[由于最近在学习Golang，在网上查阅相关资料的时候发现了Hugo这个用Go语言编写的静态网站生成器，根据网站的介绍它有着速度快，易用，可配置程度高等特点，而且文章依赖于Markdown生成，非常适合作为博客、文档、个人简历这类型的网站。]]></description>
 </item><item>
+    <title>Python学习之路 面向对象:封装</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%B0%81%E8%A3%85/</link>
+    <pubDate>Sat, 30 Nov 2019 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%B0%81%E8%A3%85/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Python学习之路-初识面向对象</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%88%9D%E8%AF%86%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</link>
+    <pubDate>Sat, 23 Nov 2019 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%88%9D%E8%AF%86%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</guid>
+    <description><![CDATA[面向对象编程(英语：Object-oriented programming，缩写：OOP)是种具有对象概念的编程典范，同时也是一种程序开发的抽象方针。]]></description>
+</item><item>
+    <title>入职一年有感</title>
+    <link>https://silencehuliang.github.io/%E5%85%A5%E8%81%8C%E4%B8%80%E5%B9%B4%E6%9C%89%E6%84%9F/</link>
+    <pubDate>Sat, 16 Nov 2019 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/%E5%85%A5%E8%81%8C%E4%B8%80%E5%B9%B4%E6%9C%89%E6%84%9F/</guid>
+    <description><![CDATA[未完待续 不知不觉来上海已经一年多了，已经逐渐融入上海这座大都市，我的故事还在继续。。。。 公司 在公司的这一年学习的东西]]></description>
+</item><item>
     <title>Python学习之路-综合练习:学生管理系统</title>
     <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</link>
     <pubDate>Sat, 09 Nov 2019 00:00:00 &#43;0000</pubDate>
@@ -55,26 +76,5 @@
     <author>作者</author>
     <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%AF%AD%E6%B3%95/</guid>
     <description><![CDATA[Python的设计目标之一是让代码具备高度的可阅读性。在设计时尽量使用经常使用的标点符号和英文单字，让代码看起来整洁美观。]]></description>
-</item><item>
-    <title>Python学习之路-注释</title>
-    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B9%8B%E6%B3%A8%E9%87%8A/</link>
-    <pubDate>Sat, 28 Sep 2019 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B9%8B%E6%B3%A8%E9%87%8A/</guid>
-    <description><![CDATA[将注释放在Python语法前面足以提现它在我心中的重要性。一个好的Python程序中注释是不可缺失的一环。在程序中对某些代码进行标注说明，可以增强程序的可读性。在团队协同开发中，良好的注释可以提高开发效率。]]></description>
-</item><item>
-    <title>Python学习之路-编码风格</title>
-    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%BC%96%E7%A0%81%E9%A3%8E%E6%A0%BC/</link>
-    <pubDate>Sat, 21 Sep 2019 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%BC%96%E7%A0%81%E9%A3%8E%E6%A0%BC/</guid>
-    <description><![CDATA[Python的设计哲学是“优雅”、“明确”、“简单”。它的重要准则被称为“Python之禅”。<strong>Python之禅</strong>又名PEP 20，在Python解释器内运行<code>import this</code>可以获得完整的列表，下面是中文翻译与我的解读]]></description>
-</item><item>
-    <title>Python学习之路-HelloPython</title>
-    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-hellopython/</link>
-    <pubDate>Sat, 14 Sep 2019 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-hellopython/</guid>
-    <description><![CDATA[前面说到Python是解释型语言，Python解释器的作用就是用于翻译Python程序。Python规定了一个Python语法规则，根据该规则可编写Python解释器。]]></description>
 </item></channel>
 </rss>
