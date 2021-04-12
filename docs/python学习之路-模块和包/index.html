@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/silencehuliang.github.io\/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85\/"
-        },"genre": "posts","keywords": "Python学习之路","wordcount":  1313 ,
+        },"genre": "posts","keywords": "Python学习之路","wordcount":  1494 ,
         "url": "https:\/\/silencehuliang.github.io\/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85\/","datePublished": "2019-12-21T00:00:00+00:00","dateModified": "2019-12-22T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Silence"},"author": {
@@ -122,7 +122,7 @@
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Silence</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/python/"><i class="far fa-folder fa-fw"></i>Python</a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-12-21">2019-12-21</time>&nbsp;<i class="fa fa-history" aria-hidden="true"></i>
                 2019-12-22
-                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1313 字&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1494 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/" class="leancloud_visitors" data-flag-title="Python学习之路-模块和包">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -220,6 +220,27 @@
 </ul>
 <h3 id="模块的搜索顺序">模块的搜索顺序</h3>
 <p><code>Python</code> 的解释器在导入模块时，会先搜索当前目录指定模块名的文件，如果有就直接导入，如果没有，再搜索系统目录。</p>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>补充<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>可以通过<code>sys.path</code>给出的列表查看目录里依次查找要导入的模块文件，列表中的路径的先后顺序代表了python解释器在搜索模块时的先后顺序。</p>
+<p>可以通过<code>sys.path.append('xxx')</code>的方式添加路径，通过<code>sys.path.insert(0, 'xxx')</code>可以确保先搜索这个路径</p>
+<p>想重新导入模块可以reload导入,语法如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">imp</span> <span class="kn">import</span> <span class="nb">reload</span>
+<span class="nb">reload</span><span class="p">(</span><span class="err">模块名</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></div>
+        </div>
+    </div>
 <div class="details admonition warning open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-exclamation-triangle fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
@@ -238,9 +259,9 @@
     </div>
 <h3 id="__name__-属性"><code>__name__</code> 属性</h3>
 <p><code>__name__</code> 是 <code>Python</code> 的一个内置属性，记录着一个字符串。如果是被其他文件导入的，<code>__name__</code>就是模块名。如果 是当前执行的程序<code>__name__</code>是<code>__main__</code>。<code>__name__</code>属性可以做到，测试模块的代码只在测试情况下被运行，而在被导入时不会被执行！</p>
-<div class="details admonition tip open">
+<div class="details admonition note open">
         <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw"></i>补充<i class="details-icon fas fa-angle-right fa-fw"></i>
+            <i class="icon fas fa-pencil-alt fa-fw"></i>补充<i class="details-icon fas fa-angle-right fa-fw"></i>
         </div>
         <div class="details-content">
             <div class="admonition-content">在导入时，模块中所有没有任何缩进的代码都会被执行一遍！在实际开发中通常会在模块下方增加一些测试代码仅在模块内使用，被导入到其他文件中不需要执行。可以在<code>if __name__ == &quot;__main__&quot;:</code>下方缩进中编写测试代码，从而不会被执行</div>
@@ -251,8 +272,8 @@
 <h2 id="发布模块">发布模块</h2>
 <p>如果希望自己开发的模块，分享给其他人，可以按照以下步骤操作：</p>
 <ul>
-<li>创建 setup.py</li>
-</ul>
+<li>
+<p>创建 setup.py</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -266,7 +287,6 @@
 </span><span class="lnt"> 9
 </span><span class="lnt">10
 </span><span class="lnt">11
-</span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">distutils.core</span> <span class="kn">import</span> <span class="n">setup</span>
@@ -280,18 +300,17 @@
       <span class="n">url</span><span class="o">=</span><span class="s2">&#34;www.itheima.com&#34;</span><span class="p">,</span>  <span class="c1"># 主页</span>
       <span class="n">py_modules</span><span class="o">=</span><span class="p">[</span><span class="s2">&#34;hm_message.send_message&#34;</span><span class="p">,</span>
                   <span class="s2">&#34;hm_message.receive_message&#34;</span><span class="p">])</span>
-
 </code></pre></td></tr></table>
 </div>
-</div><div class="details admonition tip open">
+</div><div class="details admonition note open">
         <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw"></i>补充<i class="details-icon fas fa-angle-right fa-fw"></i>
+            <i class="icon fas fa-pencil-alt fa-fw"></i>补充<i class="details-icon fas fa-angle-right fa-fw"></i>
         </div>
         <div class="details-content">
             <div class="admonition-content">有关字典参数的详细信息，可以参阅<a href="https://docs.python.org/2/distutils/apiref.html" target="_blank" rel="noopener noreffer">官方网站</a></div>
         </div>
     </div>
-<ul>
+</li>
 <li>
 <p>构建模块</p>
 <div class="highlight"><div class="chroma">
@@ -334,9 +353,9 @@
 $ sudo python3 setup.py install
 </code></pre></td></tr></table>
 </div>
-</div><div class="details admonition tip open">
+</div><div class="details admonition note open">
         <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw"></i>提示<i class="details-icon fas fa-angle-right fa-fw"></i>
+            <i class="icon fas fa-pencil-alt fa-fw"></i>补充<i class="details-icon fas fa-angle-right fa-fw"></i>
         </div>
         <div class="details-content">
             <div class="admonition-content"><p><strong>卸载模块</strong></p>

@@ -58,6 +58,21 @@
 
 `Python` 的解释器在导入模块时，会先搜索当前目录指定模块名的文件，如果有就直接导入，如果没有，再搜索系统目录。
 
+{{< admonition note "补充" true >}}
+
+可以通过`sys.path`给出的列表查看目录里依次查找要导入的模块文件，列表中的路径的先后顺序代表了python解释器在搜索模块时的先后顺序。
+
+可以通过`sys.path.append('xxx')`的方式添加路径，通过`sys.path.insert(0, 'xxx')`可以确保先搜索这个路径
+
+想重新导入模块可以reload导入,语法如下
+
+```python
+from imp import reload
+reload(模块名)
+```
+
+{{< /admonition >}}
+
 {{< admonition warning "注意" true >}}
 
 在开发时，给文件起名，不要和系统的模块文件重名。
@@ -76,7 +91,7 @@
 
 `__name__` 是 `Python` 的一个内置属性，记录着一个字符串。如果是被其他文件导入的，`__name__`就是模块名。如果 是当前执行的程序`__name__`是`__main__`。`__name__`属性可以做到，测试模块的代码只在测试情况下被运行，而在被导入时不会被执行！
 
-{{< admonition tip "补充" true >}}
+{{< admonition note "补充" true >}}
 
 在导入时，模块中所有没有任何缩进的代码都会被执行一遍！在实际开发中通常会在模块下方增加一些测试代码仅在模块内使用，被导入到其他文件中不需要执行。可以在`if __name__ == "__main__":`下方缩进中编写测试代码，从而不会被执行
 
@@ -92,26 +107,25 @@
 
 - 创建 setup.py
 
-```python
-from distutils.core import setup
+  ```python
+  from distutils.core import setup
 
-setup(name="hm_message",  # 包名
-      version="1.0",  # 版本
-      description="itheima's 发送和接收消息模块",  # 描述信息
-      long_description="完整的发送和接收消息模块",  # 完整描述信息
-      author="itheima",  # 作者
-      author_email="itheima@itheima.com",  # 作者邮箱
-      url="www.itheima.com",  # 主页
-      py_modules=["hm_message.send_message",
-                  "hm_message.receive_message"])
+  setup(name="hm_message",  # 包名
+        version="1.0",  # 版本
+        description="itheima's 发送和接收消息模块",  # 描述信息
+        long_description="完整的发送和接收消息模块",  # 完整描述信息
+        author="itheima",  # 作者
+        author_email="itheima@itheima.com",  # 作者邮箱
+        url="www.itheima.com",  # 主页
+        py_modules=["hm_message.send_message",
+                    "hm_message.receive_message"])
+  ```
 
-```
+  {{< admonition note "补充" true >}}
 
-{{< admonition tip "补充" true >}}
+  有关字典参数的详细信息，可以参阅[官方网站](https://docs.python.org/2/distutils/apiref.html)
 
-有关字典参数的详细信息，可以参阅[官方网站](https://docs.python.org/2/distutils/apiref.html)
-
-{{< /admonition >}}
+  {{< /admonition >}}
 
 - 构建模块
 
@@ -138,7 +152,7 @@ setup(name="hm_message",  # 包名
   $ sudo python3 setup.py install
   ```
 
-  {{< admonition tip "提示" true >}}
+  {{< admonition note "补充" true >}}
 
   **卸载模块**
 

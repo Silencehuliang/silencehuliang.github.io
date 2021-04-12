@@ -10,7 +10,7 @@
     <pubDate>Sat, 28 Dec 2019 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
     <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E4%BB%B6/</guid>
-    <description><![CDATA[提示 开发时 import 代码应该统一写在代码的顶部，更容易及时发现冲突。一旦发现冲突，可以使用 as关键字给其中一个工具起一个别名：import 模块名 as 模]]></description>
+    <description><![CDATA[基本操作 在 Python 中要操作文件需要记住 1 个函数和 3 个方法 函数/方法 说明 open 打开文件，并且返回文件操作对象 read 将文件内容读取到内存 write 将指定内容写入文件 close]]></description>
 </item><item>
     <title>Python学习之路-模块和包</title>
     <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/</link>

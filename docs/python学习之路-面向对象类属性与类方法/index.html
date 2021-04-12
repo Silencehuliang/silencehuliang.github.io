@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/silencehuliang.github.io\/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%B1%9E%E6%80%A7%E4%B8%8E%E7%B1%BB%E6%96%B9%E6%B3%95\/"
-        },"genre": "posts","keywords": "Python学习之路","wordcount":  1539 ,
+        },"genre": "posts","keywords": "Python学习之路","wordcount":  2682 ,
         "url": "https:\/\/silencehuliang.github.io\/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%B1%9E%E6%80%A7%E4%B8%8E%E7%B1%BB%E6%96%B9%E6%B3%95\/","datePublished": "2019-12-07T00:00:00+00:00","dateModified": "2019-12-08T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Silence"},"author": {
@@ -122,8 +122,8 @@
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Silence</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/python/"><i class="far fa-folder fa-fw"></i>Python</a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-12-07">2019-12-07</time>&nbsp;<i class="fa fa-history" aria-hidden="true"></i>
                 2019-12-08
-                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1539 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%B1%9E%E6%80%A7%E4%B8%8E%E7%B1%BB%E6%96%B9%E6%B3%95/" class="leancloud_visitors" data-flag-title="Python学习之路 面向对象:类属性与类方法">
+                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2682 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;<span id="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%B1%9E%E6%80%A7%E4%B8%8E%E7%B1%BB%E6%96%B9%E6%B3%95/" class="leancloud_visitors" data-flag-title="Python学习之路 面向对象:类属性与类方法">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
@@ -158,6 +158,16 @@
             <li><a href="#python-中的单例">Python 中的单例</a></li>
           </ul>
         </li>
+        <li><a href="#property属性">property属性</a>
+          <ul>
+            <li><a href="#定义">定义</a></li>
+            <li><a href="#注意事项">注意事项</a></li>
+            <li><a href="#两种方式">两种方式</a></li>
+            <li><a href="#类属性访问方式">类属性访问方式</a></li>
+            <li><a href="#参数">参数</a></li>
+          </ul>
+        </li>
+        <li><a href="#魔法属性">魔法属性</a></li>
       </ul>
     </li>
   </ul>
@@ -186,6 +196,14 @@
 </div>
         </div>
     </div>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>补充<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">类属性在内存中只保存一份。实例属性在每个对象中都要保存一份。通过类创建实例对象时，如果每个对象需要具有相同名字的属性，那么就使用类属性，用一份既可</div>
+        </div>
+    </div>
 <h2 id="类方法">类方法</h2>
 <p>类方法就是针对类对象定义的方法，在类方法内部可以直接访问类属性或者调用其他的类方法。</p>
 <h3 id="语法">语法</h3>
@@ -202,9 +220,9 @@
 </code></pre></td></tr></table>
 </div>
 </div><p>类方法需要用修饰器 <code>@classmethod</code>来标识，告诉解释器这是一个类方法类方法。类方法的第一个参数应该是<code>cls</code>。由哪一个类调用的方法，方法内的 <code>cls</code> 就是哪一个类的引用。这个参数和实例方法的第一个参数是 <code>self</code> 类似，通过<code>类名.</code> 调用类方法，调用方法时，不需要传递 <code>cls</code> 参数。在方法内部可以通过 <code>cls.</code> 访问类的属性，也可以通过 <code>cls.</code> 调用其他的类方法。</p>
-<div class="details admonition tip open">
+<div class="details admonition note open">
         <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw"></i>提示<i class="details-icon fas fa-angle-right fa-fw"></i>
+            <i class="icon fas fa-pencil-alt fa-fw"></i>提示<i class="details-icon fas fa-angle-right fa-fw"></i>
         </div>
         <div class="details-content">
             <div class="admonition-content">使用其他名称也可以，不过习惯使用 <code>cls</code></div>
@@ -227,12 +245,38 @@
 </code></pre></td></tr></table>
 </div>
 </div><p>静态方法需要用修饰器<code>@staticmethod</code>来标识，告诉解释器这是一个静态方法。通过<code>类名.</code>调用静态方法。</p>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>补充<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>实例方法、静态方法和类方法，三种方法在内存中都归属于类，区别在于调用方式不同。</p>
+<ul>
+<li>
+<p>实例方法：由对象调用；至少一个self参数；执行实例方法时，自动将调用该方法的对象赋值给self；</p>
+</li>
+<li>
+<p>类方法：由类调用； 至少一个cls参数；执行类方法时，自动将调用该方法的类赋值给cls；</p>
+</li>
+<li>
+<p>静态方法：由类调用；无默认参数；</p>
+</li>
+<li>
+<p>相同点：对于所有的方法而言，均属于类，所以 在内存中也只保存一份</p>
+</li>
+<li>
+<p>不同点：方法调用者不同、调用方法时自动传入的参数不同。</p>
+</li>
+</ul>
+</div>
+        </div>
+    </div>
 <h3 id="单例">单例</h3>
 <h4 id="单例设计模式">单例设计模式</h4>
 <p>目的：让类创建的对象，在系统中只有唯一的一个实例，每一次执行 <code>类名()</code> 返回的对象，内存地址是相同的。</p>
-<div class="details admonition tip open">
+<div class="details admonition note open">
         <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw"></i>补充<i class="details-icon fas fa-angle-right fa-fw"></i>
+            <i class="icon fas fa-pencil-alt fa-fw"></i>补充<i class="details-icon fas fa-angle-right fa-fw"></i>
         </div>
         <div class="details-content">
             <div class="admonition-content">设计模式是前人工作的总结和提炼，通常，被人们广泛流传的设计模式都是针对某一特定问题的成熟的解决方案。使用设计模式是为了可重用代码、让代码更容易被他人理解、保证代码可靠性</div>
@@ -248,9 +292,9 @@
 <p>返回对象的引用</p>
 </li>
 </ol>
-<div class="details admonition tip open">
+<div class="details admonition note open">
         <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw"></i>补充<i class="details-icon fas fa-angle-right fa-fw"></i>
+            <i class="icon fas fa-pencil-alt fa-fw"></i>补充<i class="details-icon fas fa-angle-right fa-fw"></i>
         </div>
         <div class="details-content">
             <div class="admonition-content"><code>Python</code> 的解释器获得对象的引用后，将引用作为第一个参数，传递给 <code>__init__</code> 方法</div>
@@ -378,7 +422,65 @@
 <span class="k">print</span><span class="p">(</span><span class="n">singleton2</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div></div><div class="post-footer" id="post-footer">
+</div><h3 id="property属性">property属性</h3>
+<h4 id="定义">定义</h4>
+<p>一种用起来像是使用的实例属性一样的特殊属性。property属性内部进行一系列的逻辑计算，最终将计算结果返回。</p>
+<h4 id="注意事项">注意事项</h4>
+<ul>
+<li>
+<p>定义时，在实例方法的基础上添加 @property 装饰器；并且仅有一个self参数</p>
+</li>
+<li>
+<p>调用时，无需括号</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python">  <span class="err">方法：</span><span class="n">foo_obj</span><span class="o">.</span><span class="n">func</span><span class="p">()</span>
+  <span class="n">property属性</span><span class="err">：</span><span class="n">foo_obj</span><span class="o">.</span><span class="n">prop</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h4 id="两种方式">两种方式</h4>
+<ul>
+<li>装饰器，即：在方法上应用装饰器</li>
+<li>类属性，即：在类中定义值为property对象的类属性</li>
+</ul>
+<h4 id="类属性访问方式">类属性访问方式</h4>
+<p>老式类中的属性只有一种访问方式，其对应被 @property 修饰的方法。新式类中的属性有三种访问方式，并分别对应了三个被@property、@方法名.setter、@方法名.deleter修饰的方法，我们可以根据它们几个属性的访问特点，分别将三个方法定义为对同一个属性：获取、修改、删除。</p>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>提示<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">当使用类属性的方式创建property属性时，<code>经典类</code>和<code>新式类</code>无区别</div>
+        </div>
+    </div>
+<h4 id="参数">参数</h4>
+<p>property方法中有个四个参数</p>
+<ul>
+<li>第一个参数是方法名，调用 对象.属性 时自动触发执行方法</li>
+<li>第二个参数是方法名，调用 对象.属性 ＝ XXX 时自动触发执行方法</li>
+<li>第三个参数是方法名，调用 <code>del</code> 对象.属性 时自动触发执行方法</li>
+<li>第四个参数是字符串，调用 对象.属性<code>.__doc__</code> ，此参数是该属性的描述信息</li>
+</ul>
+<h3 id="魔法属性">魔法属性</h3>
+<ul>
+<li><code>__init__</code>：初始化方法，通过类创建对象时，自动触发执行</li>
+<li><code>__doc__</code>：表示类的描述信息</li>
+<li><code>__module__</code>：表示当前操作的对象在那个模块</li>
+<li><code>__class__</code>：表示当前操作的对象的类是什么</li>
+<li><code>__del__</code>：当对象在内存中被释放时，自动触发执行</li>
+<li><code>__call__</code>：对象后面加括号，触发执行，即：<code>对象()</code> 或者 <code>类()()</code></li>
+<li><code>__dict__</code>：类或对象中的所有属性(类的实例属性属于对象；类中的类属性和方法等属于类)</li>
+<li><code>__str__</code>：如果一个类中定义了<code>__str__</code>方法，那么在打印 对象 时，默认输出该方法的返回值</li>
+<li><code>__getitem__</code>、<code>__setitem__</code>、<code>__delitem__</code>：用于索引操作，如字典</li>
+<li><code>__getslice__</code>、<code>__setslice__</code>、<code>__delslice__</code>：用于切片操作，如列表</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
