@@ -4,13 +4,27 @@
         <link>https://silencehuliang.github.io/categories/python/</link>
         <description>Python - 分类 - Silence Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>silencehuliang@gmail.com (Silence)</managingEditor>
-            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 14 Dec 2019 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://silencehuliang.github.io/categories/python/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 28 Dec 2019 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://silencehuliang.github.io/categories/python/" rel="self" type="application/rss+xml" /><item>
+    <title>Python学习之路-文件</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E4%BB%B6/</link>
+    <pubDate>Sat, 28 Dec 2019 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E4%BB%B6/</guid>
+    <description><![CDATA[提示 开发时 import 代码应该统一写在代码的顶部，更容易及时发现冲突。一旦发现冲突，可以使用 as关键字给其中一个工具起一个别名：import 模块名 as 模]]></description>
+</item><item>
+    <title>Python学习之路-模块和包</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/</link>
+    <pubDate>Sat, 21 Dec 2019 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/</guid>
+    <description><![CDATA[模块是 Python 程序架构的一个核心概念。每一个以扩展名 <code>py</code> 结尾的 <code>Python</code> 源代码文件都是一个模块，模块名同样也是一个标识符，需要符合标识符的命名规则。在模块中定义的全局变量、函数、类都是提供给外界直接使用的工具。模块就好比是工具包，要想使用这个工具包中的工具，就需要先导入这个模块。]]></description>
+</item><item>
     <title>Python学习之路-异常</title>
     <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%BC%82%E5%B8%B8/</link>
     <pubDate>Sat, 14 Dec 2019 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
     <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%BC%82%E5%B8%B8/</guid>
-    <description><![CDATA[]]></description>
+    <description><![CDATA[程序在运行时，如果 <code>Python 解释器</code> 遇到到一个错误，会停止程序的执行，并且提示一些错误信息，这就是异常。程序停止执行并且提示错误信息这个动作，我们通常称之为：抛出(raise)异常。]]></description>
 </item><item>
     <title>Python学习之路 面向对象:类属性与类方法</title>
     <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%B1%9E%E6%80%A7%E4%B8%8E%E7%B1%BB%E6%96%B9%E6%B3%95/</link>
@@ -60,19 +74,5 @@
     <author>作者</author>
     <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%B8%B8%E9%87%8F%E4%B8%8E%E5%8F%98%E9%87%8F/</guid>
     <description><![CDATA[程序就是用来处理数据的，而常量和变量就是最简单用来存储数据的]]></description>
-</item><item>
-    <title>Python学习之路-运算符</title>
-    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%BF%90%E7%AE%97%E7%AC%A6/</link>
-    <pubDate>Sat, 12 Oct 2019 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%BF%90%E7%AE%97%E7%AC%A6/</guid>
-    <description><![CDATA[上一篇讲到Python中的语句提到很多运算符，本篇来总结一下各类运算符的作用与用法。]]></description>
-</item><item>
-    <title>Python学习之路-语法</title>
-    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%AF%AD%E6%B3%95/</link>
-    <pubDate>Sat, 05 Oct 2019 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%AF%AD%E6%B3%95/</guid>
-    <description><![CDATA[Python的设计目标之一是让代码具备高度的可阅读性。在设计时尽量使用经常使用的标点符号和英文单字，让代码看起来整洁美观。]]></description>
 </item></channel>
 </rss>
