@@ -5,32 +5,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>Python学习之路-文件 - Silence Blog</title><meta name="Description" content="Silence‘s blog"><meta property="og:title" content="Python学习之路-文件" />
-<meta property="og:description" content="基本操作 在 Python 中要操作文件需要记住 1 个函数和 3 个方法 函数/方法 说明 open 打开文件，并且返回文件操作对象 read 将文件内容读取到内存 write 将指定内容写入文件 close" />
+        <title>Python学习之路-多任务:线程 - Silence Blog</title><meta name="Description" content="Silence‘s blog"><meta property="og:title" content="Python学习之路-多任务:线程" />
+<meta property="og:description" content="什么叫“多任务”呢？简单地说，就是操作系统可以同时运行多个任务。操作系统轮流让各个任务交替执行，表面上看，每个任务都是交替执行的，但是，由于CPU的执行速度实在是太快了，我们感觉就像所有任务都在同时执行一样。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E4%BB%B6/" />
+<meta property="og:url" content="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%A4%9A%E4%BB%BB%E5%8A%A1%E7%BA%BF%E7%A8%8B/" />
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
-<meta property="article:published_time" content="2019-12-28T00:00:00+00:00" />
-<meta property="article:modified_time" content="2019-12-29T00:00:00+00:00" />
+<meta property="article:published_time" content="2020-01-04T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-01-05T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
 
-<meta name="twitter:title" content="Python学习之路-文件"/>
-<meta name="twitter:description" content="基本操作 在 Python 中要操作文件需要记住 1 个函数和 3 个方法 函数/方法 说明 open 打开文件，并且返回文件操作对象 read 将文件内容读取到内存 write 将指定内容写入文件 close"/>
+<meta name="twitter:title" content="Python学习之路-多任务:线程"/>
+<meta name="twitter:description" content="什么叫“多任务”呢？简单地说，就是操作系统可以同时运行多个任务。操作系统轮流让各个任务交替执行，表面上看，每个任务都是交替执行的，但是，由于CPU的执行速度实在是太快了，我们感觉就像所有任务都在同时执行一样。"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E4%BB%B6/" /><link rel="prev" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/" /><link rel="next" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%A4%9A%E4%BB%BB%E5%8A%A1%E7%BA%BF%E7%A8%8B/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.2e7125082ec8de83a87adc70253c9c23.css" integrity="md5-LnElCC7I3oOoetxwJTycIw=="><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.76cb46c10b6c0293433b371bae2414b2.css" integrity="md5-dstGwQtsApNDOzcbriQUsg=="><link rel="stylesheet" href="/lib/animate/animate.min.bc1a6a99c43f5ccc97d2d350bde13f74.css" integrity="md5-vBpqmcQ/XMyX0tNQveE/dA=="><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%A4%9A%E4%BB%BB%E5%8A%A1%E7%BA%BF%E7%A8%8B/" /><link rel="prev" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E4%BB%B6/" /><link rel="next" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%A4%9A%E4%BB%BB%E5%8A%A1%E8%BF%9B%E7%A8%8B/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.2e7125082ec8de83a87adc70253c9c23.css" integrity="md5-LnElCC7I3oOoetxwJTycIw=="><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.76cb46c10b6c0293433b371bae2414b2.css" integrity="md5-dstGwQtsApNDOzcbriQUsg=="><link rel="stylesheet" href="/lib/animate/animate.min.bc1a6a99c43f5ccc97d2d350bde13f74.css" integrity="md5-vBpqmcQ/XMyX0tNQveE/dA=="><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "Python学习之路-文件",
+        "headline": "Python学习之路-多任务:线程",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/silencehuliang.github.io\/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E4%BB%B6\/"
-        },"genre": "posts","keywords": "Python学习之路","wordcount":  1383 ,
-        "url": "https:\/\/silencehuliang.github.io\/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E4%BB%B6\/","datePublished": "2019-12-28T00:00:00+00:00","dateModified": "2019-12-29T00:00:00+00:00","publisher": {
+            "@id": "https:\/\/silencehuliang.github.io\/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%A4%9A%E4%BB%BB%E5%8A%A1%E7%BA%BF%E7%A8%8B\/"
+        },"genre": "posts","keywords": "Python学习之路","wordcount":  2276 ,
+        "url": "https:\/\/silencehuliang.github.io\/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%A4%9A%E4%BB%BB%E5%8A%A1%E7%BA%BF%E7%A8%8B\/","datePublished": "2020-01-04T00:00:00+00:00","dateModified": "2020-01-05T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Silence"},"author": {
                 "@type": "Person",
@@ -118,12 +118,12 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">Python学习之路-文件</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">Python学习之路-多任务:线程</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Silence</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/python/"><i class="far fa-folder fa-fw"></i>Python</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-12-28">2019-12-28</time>&nbsp;<i class="fa fa-history" aria-hidden="true"></i>
-                2019-12-29
-                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1383 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E4%BB%B6/" class="leancloud_visitors" data-flag-title="Python学习之路-文件">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-01-04">2020-01-04</time>&nbsp;<i class="fa fa-history" aria-hidden="true"></i>
+                2020-01-05
+                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2276 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;<span id="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%A4%9A%E4%BB%BB%E5%8A%A1%E7%BA%BF%E7%A8%8B/" class="leancloud_visitors" data-flag-title="Python学习之路-多任务:线程">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
@@ -133,274 +133,178 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#基本操作">基本操作</a>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#线程">线程</a>
       <ul>
-        <li><a href="#打开文件">打开文件</a></li>
-        <li><a href="#关闭文件">关闭文件</a></li>
-        <li><a href="#读取文件">读取文件</a>
+        <li><a href="#简介-1">简介</a></li>
+        <li><a href="#threading模块">threading模块</a>
           <ul>
-            <li><a href="#补充">补充</a></li>
+            <li><a href="#语法">语法</a></li>
+            <li><a href="#查看线程数量">查看线程数量</a></li>
+            <li><a href="#注意点">注意点</a>
+              <ul>
+                <li><a href="#线程执行代码的封装">线程执行代码的封装</a></li>
+                <li><a href="#线程的执行顺序">线程的执行顺序</a></li>
+              </ul>
+            </li>
+            <li><a href="#共享全局变量">共享全局变量</a></li>
+            <li><a href="#多线程开发可能遇到的问题">多线程开发可能遇到的问题</a></li>
+            <li><a href="#互斥锁">互斥锁</a>
+              <ul>
+                <li><a href="#简介-2">简介</a></li>
+                <li><a href="#上锁解锁过程">上锁解锁过程</a></li>
+                <li><a href="#优缺点">优缺点</a></li>
+                <li><a href="#死锁">死锁</a>
+                  <ul>
+                    <li><a href="#如何避免死锁">如何避免死锁</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
           </ul>
         </li>
-        <li><a href="#写入文件">写入文件</a></li>
       </ul>
     </li>
-    <li><a href="#管理操作">管理操作</a>
-      <ul>
-        <li><a href="#文件操作">文件操作</a></li>
-        <li><a href="#目录操作">目录操作</a></li>
-      </ul>
-    </li>
-    <li><a href="#编码格式">编码格式</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h2 id="基本操作">基本操作</h2>
-<p>在 <code>Python</code> 中要操作文件需要记住 1 个函数和 3 个方法</p>
-<table>
-<thead>
-<tr>
-<th align="center">函数/方法</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">open</td>
-<td align="center">打开文件，并且返回文件操作对象</td>
-</tr>
-<tr>
-<td align="center">read</td>
-<td align="center">将文件内容读取到内存</td>
-</tr>
-<tr>
-<td align="center">write</td>
-<td align="center">将指定内容写入文件</td>
-</tr>
-<tr>
-<td align="center">close</td>
-<td align="center">关闭文件</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><code>open</code> 函数负责打开文件，并且返回文件对象</li>
-<li><code>read</code>/<code>write</code>/<code>close</code> 三个方法都需要通过文件对象来调用</li>
-</ul>
-<h3 id="打开文件">打开文件</h3>
-<p><code>open</code> 函数默认以只读方式打开文件，并且返回文件对象。语法如下：</p>
+            </div><div class="content" id="content"><h2 id="简介">简介</h2>
+<p>什么叫“多任务”呢？简单地说，就是操作系统可以同时运行多个任务。操作系统轮流让各个任务交替执行，表面上看，每个任务都是交替执行的，但是，由于CPU的执行速度实在是太快了，我们感觉就像所有任务都在同时执行一样。真正的并行执行多任务只能在多核CPU上实现，但是，由于任务数量远远多于CPU的核心数量，所以，操作系统也会自动把很多任务轮流调度到每个核心上执行。</p>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>拓展<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">并发：指的是任务数多余cpu核数，通过操作系统的各种任务调度算法，实现用多个任务“一起”执行（实际上总有一些任务不在执行，因为切换任务的速度相当快，看上去一起执行而已）。
+并行：指的是任务数小于等于cpu核数，即任务真的是一起执行的。</div>
+        </div>
+    </div>
+<h2 id="线程">线程</h2>
+<h3 id="简介-1">简介</h3>
+<p>线程是程序的最小执行流单元，是程序中一个单一的顺序控制流程</p>
+<h3 id="threading模块">threading模块</h3>
+<p>python的thread模块是比较底层的模块，python的threading模块是对thread做了一些包装的，可以更加方便的被使用</p>
+<h4 id="语法">语法</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;文件名&#34;</span><span class="p">,</span> <span class="s2">&#34;访问方式&#34;</span><span class="p">)</span>
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">threading</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="s2">&#34;函数名&#34;</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 </code></pre></td></tr></table>
 </div>
-</div><p><code>open</code>函数的第一个参数是要打开的文件名(文件名区分大小写)，如果文件存在返回文件操作对象，如果文件不存在，会抛出异常。</p>
-<table>
-<thead>
-<tr>
-<th align="center">访问方式</th>
-<th align="left">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">r</td>
-<td align="left">以<strong>只读</strong>方式打开文件。文件的指针将会放在文件的开头，这是默认模式。如果文件不存在，抛出异常</td>
-</tr>
-<tr>
-<td align="center">w</td>
-<td align="left">以<strong>只写</strong>方式打开文件。如果文件存在会被覆盖。如果文件不存在，创建新文件</td>
-</tr>
-<tr>
-<td align="center">a</td>
-<td align="left">以<strong>追加</strong>方式打开文件。如果该文件已存在，文件指针将会放在文件的结尾。如果文件不存在，创建新文件进行写入</td>
-</tr>
-<tr>
-<td align="center">r+</td>
-<td align="left">以<strong>读写</strong>方式打开文件。文件的指针将会放在文件的开头。如果文件不存在，抛出异常</td>
-</tr>
-<tr>
-<td align="center">w+</td>
-<td align="left">以<strong>读写</strong>方式打开文件。如果文件存在会被覆盖。如果文件不存在，创建新文件</td>
-</tr>
-<tr>
-<td align="center">a+</td>
-<td align="left">以<strong>读写</strong>方式打开文件。如果该文件已存在，文件指针将会放在文件的结尾。如果文件不存在，创建新文件进行写入</td>
-</tr>
-</tbody>
-</table>
-<div class="details admonition tip open">
+</div><p>当调用<code>start()</code>时，才会真正的创建线程，并且开始执行。主线程会等待所有的子线程结束后才结束</p>
+<h4 id="查看线程数量">查看线程数量</h4>
+<p>可以通过<code>len(threading.enumerate())</code>查看当前线程数量</p>
+<h4 id="注意点">注意点</h4>
+<h5 id="线程执行代码的封装">线程执行代码的封装</h5>
+<p>通过使用threading模块能完成多任务的程序开发，为了让每个线程的封装性更完美，所以使用threading模块时，往往会定义一个新的子类class，只要继承<code>threading.Thread</code>就可以了，然后重写<code>run</code>方法。</p>
+<div class="details admonition note open">
         <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw"></i>提示<i class="details-icon fas fa-angle-right fa-fw"></i>
+            <i class="icon fas fa-pencil-alt fa-fw"></i>拓展<i class="details-icon fas fa-angle-right fa-fw"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content">文件指针标记从哪个位置开始读取数据。第一次打开文件时，通常文件指针会指向文件的开始位置。</div>
+            <div class="admonition-content">python的threading.Thread类有一个run方法，用于定义线程的功能函数，可以在自己的线程类中覆盖该方法。而创建自己的线程实例后，通过Thread类的start方法，可以启动该线程，交给python虚拟机进行调度，当该线程获得执行的机会时，就会调用run方法执行线程。</div>
         </div>
     </div>
-<h3 id="关闭文件">关闭文件</h3>
-<p><code>close</code>方法负责关闭文件。如果忘记关闭文件，会造成系统资源消耗，而且会影响到后续对文件的访问。语法如下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">file_name</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</code></pre></td></tr></table>
+<h5 id="线程的执行顺序">线程的执行顺序</h5>
+<p>多线程程序的执行顺序是不确定的。当执行到sleep语句时，线程将被阻塞（Blocked），到sleep结束后，线程进入就绪（Runnable）状态，等待调度。而线程调度将自行选择一个线程执行。上面的代码中只能保证每个线程都运行完整个run函数，但是线程的启动顺序、run函数中每次循环的执行顺序都不能确定。</p>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>拓展<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ol>
+<li>每个线程默认有一个名字，尽管上面的例子中没有指定线程对象的name，但是python会自动为线程指定一个名字。</li>
+<li>当线程的run()方法结束时该线程完成。</li>
+<li>无法控制线程调度程序，但可以通过别的方式来影响线程调度的方式。</li>
+</ol>
 </div>
-</div><div class="details admonition tip open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw"></i>提示<i class="details-icon fas fa-angle-right fa-fw"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content">在开发中，通常会先编写打开和关闭的代码，再编写中间针对文件的读/写操作！</div>
         </div>
     </div>
-<h3 id="读取文件">读取文件</h3>
-<p><code>read</code> 方法可以一次性读入并返回文件的所有内容。当执行了<code>read</code>方法后，文件指针会移动到读取内容的末尾。</p>
-<div class="details admonition tip open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw"></i>提示<i class="details-icon fas fa-angle-right fa-fw"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content">如果执行了一次 <code>read</code> 方法，读取了所有内容，那么再次调用 <code>read</code> 方法不会读取到任何的内容</div>
-        </div>
-    </div>
-<h4 id="补充">补充</h4>
-<p><code>read</code> 方法默认会把文件的所有内容一次性读取到内存，如果文件太大，对内存的占用会非常严重。使用<code>readline</code> 方法可以一次读取一行内容，方法执行后，会把文件指针移动到下一行，准备再次读取。</p>
-<h3 id="写入文件">写入文件</h3>
-<p><code>write</code>方法负责写入文件。语法如下：</p>
+<h4 id="共享全局变量">共享全局变量</h4>
+<p>在一个进程内的所有线程共享全局变量，很方便在多个线程间共享数据，缺点就是线程是对全局变量随意遂改可能造成多线程之间对全局变量的混乱（即线程非安全）。</p>
+<h4 id="多线程开发可能遇到的问题">多线程开发可能遇到的问题</h4>
+<p>假设两个线程t1和t2都要对全局变量g_num(默认是0)进行加1运算，t1和t2都各对g_num加10次，g_num的最终的结果应该为20。</p>
+<p>但是由于是多线程同时操作，有可能出现下面情况：</p>
+<ol>
+<li>在g_num=0时，t1取得g_num=0。此时系统把t1调度为”sleeping”状态，把t2转换为”running”状态，t2也获得g_num=0</li>
+<li>然后t2对得到的值进行加1并赋给g_num，使得g_num=1</li>
+<li>然后系统又把t2调度为”sleeping”，把t1转为”running”。线程t1又把它之前得到的0加1后赋值给g_num。</li>
+<li>这样导致虽然t1和t2都对g_num加1，但结果仍然是g_num=1</li>
+</ol>
+<p>如果多个线程同时对同一个全局变量操作，会出现资源竞争问题，从而数据结果会不正确</p>
+<h4 id="互斥锁">互斥锁</h4>
+<h5 id="简介-2">简介</h5>
+<p>当多个线程几乎同时修改某一个共享数据的时候，需要进行同步控制，线程同步能够保证多个线程安全访问竞争资源，最简单的同步机制是引入互斥锁。</p>
+<p>互斥锁为资源引入一个状态：锁定/非锁定</p>
+<p>某个线程要更改共享数据时，先将其锁定，此时资源的状态为“锁定”，其他线程不能更改；直到该线程释放资源，将资源的状态变成“非锁定”，其他的线程才能再次锁定该资源。互斥锁保证了每次只有一个线程进行写入操作，从而保证了多线程情况下数据的正确性。</p>
+<p>threading模块中定义了Lock类，可以方便的处理锁定：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback"># 打开文件
-f = open(&#34;file_name&#34;, &#34;w&#34;)
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 创建锁</span>
+<span class="n">mutex</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
 
-f.write(&#34;hello python！\n&#34;)
+<span class="c1"># 锁定</span>
+<span class="n">mutex</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>
+
+<span class="c1"># 释放</span>
+<span class="n">mutex</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
 </code></pre></td></tr></table>
 </div>
-</div><div class="details admonition tip open">
+</div><div class="details admonition warning open">
         <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw"></i>提示<i class="details-icon fas fa-angle-right fa-fw"></i>
+            <i class="icon fas fa-exclamation-triangle fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content">频繁的移动文件指针，会影响文件的读写效率，开发中更多的时候会以只读、只写的方式来操作文件。</div>
+            <div class="admonition-content"><ol>
+<li>如果这个锁之前是没有上锁的，那么acquire不会堵塞</li>
+<li>如果在调用acquire对这个锁上锁之前 它已经被 其他线程上了锁，那么此时acquire会堵塞，直到这个锁被解锁为止</li>
+</ol>
+</div>
         </div>
     </div>
-<h2 id="管理操作">管理操作</h2>
-<p>在终端与文件浏览器中可以执行常规的文件/目录的管理操作，例如：创建、重命名、删除、改变路径、查看目录内容等等，在 <code>Python</code> 中，如果希望通过程序实现上述功能，需要导入 <code>os</code> 模块</p>
-<h3 id="文件操作">文件操作</h3>
-<table>
-<thead>
-<tr>
-<th align="left">序号</th>
-<th align="left">方法名</th>
-<th align="left">说明</th>
-<th align="left">示例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">01</td>
-<td align="left">rename</td>
-<td align="left">重命名文件</td>
-<td align="left"><code>os.rename(源文件名, 目标文件名)</code></td>
-</tr>
-<tr>
-<td align="left">02</td>
-<td align="left">remove</td>
-<td align="left">删除文件</td>
-<td align="left"><code>os.remove(文件名)</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="目录操作">目录操作</h3>
-<table>
-<thead>
-<tr>
-<th align="left">序号</th>
-<th align="left">方法名</th>
-<th align="left">说明</th>
-<th align="left">示例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">01</td>
-<td align="left">listdir</td>
-<td align="left">目录列表</td>
-<td align="left"><code>os.listdir(目录名)</code></td>
-</tr>
-<tr>
-<td align="left">02</td>
-<td align="left">mkdir</td>
-<td align="left">创建目录</td>
-<td align="left"><code>os.mkdir(目录名)</code></td>
-</tr>
-<tr>
-<td align="left">03</td>
-<td align="left">rmdir</td>
-<td align="left">删除目录</td>
-<td align="left"><code>os.rmdir(目录名)</code></td>
-</tr>
-<tr>
-<td align="left">04</td>
-<td align="left">getcwd</td>
-<td align="left">获取当前目录</td>
-<td align="left"><code>os.getcwd()</code></td>
-</tr>
-<tr>
-<td align="left">05</td>
-<td align="left">chdir</td>
-<td align="left">修改工作目录</td>
-<td align="left"><code>os.chdir(目标目录)</code></td>
-</tr>
-<tr>
-<td align="left">06</td>
-<td align="left">path.isdir</td>
-<td align="left">判断是否是文件</td>
-<td align="left"><code>os.path.isdir(文件路径)</code></td>
-</tr>
-</tbody>
-</table>
-<div class="details admonition tip open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw"></i>提示<i class="details-icon fas fa-angle-right fa-fw"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><em>文件或者目录操作都支持</em> 相对路径和绝对路径</div>
-        </div>
-    </div>
-<h2 id="编码格式">编码格式</h2>
-<p>文本文件存储的内容是基于字符编码的文件，常见的编码有 <code>ASCII</code> 编码，<code>UNICODE</code> 编码等。Python 2.x 默认使用 <code>ASCII</code> 编码格式，Python 3.x 默认使用 <code>UTF-8</code> 编码格式。</p>
-<div class="details admonition tip open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw"></i>提示<i class="details-icon fas fa-angle-right fa-fw"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><code>UTF-8</code> 编码格式：<code>UTF-8</code> 是 <code>UNICODE</code> 编码的一种编码格式。计算机中使用1~6 个字节来表示一个 <code>UTF-8</code> 字符，涵盖了地球上几乎所有地区的文字。大多数汉字会使用3个字节表示。</div>
-        </div>
-    </div>
+<h5 id="上锁解锁过程">上锁解锁过程</h5>
+<p>当一个线程调用锁的acquire()方法获得锁时，锁就进入“locked”状态。</p>
+<p>每次只有一个线程可以获得锁。如果此时另一个线程试图获得这个锁，该线程就会变为“blocked”状态，称为“阻塞”，直到拥有锁的线程调用锁的release()方法释放锁之后，锁进入“unlocked”状态。</p>
+<p>线程调度程序从处于同步阻塞状态的线程中选择一个来获得锁，并使得该线程进入运行（running）状态。</p>
+<h5 id="优缺点">优缺点</h5>
+<p>优点：确保了某段关键代码只能由一个线程从头到尾完整地执行</p>
+<p>缺点：阻止了多线程并发执行，包含锁的某段代码实际上只能以单线程模式执行，效率就大大地下降了；由于可以存在多个锁，不同的线程持有不同的锁，并试图获取对方持有的锁时，可能会造成死锁</p>
+<h5 id="死锁">死锁</h5>
+<p>在线程间共享多个资源的时候，如果两个线程分别占有一部分资源并且同时等待对方的资源，就会造成死锁。尽管死锁很少发生，但一旦发生就会造成应用的停止响应。</p>
+<h6 id="如何避免死锁">如何避免死锁</h6>
+<ul>
+<li>程序设计时要尽量避免</li>
+<li>添加超时时间等</li>
+</ul>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2019-12-29</span>
+                <span>更新于 2020-01-05</span>
             </div>
             <div class="post-info-license"></div>
         </div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E4%BB%B6/index.md" target="_blank">阅读原始文档</a>
+                            <a class="link-to-markdown" href="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%A4%9A%E4%BB%BB%E5%8A%A1%E7%BA%BF%E7%A8%8B/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E4%BB%B6/" data-title="Python学习之路-文件" data-hashtags="Python学习之路"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E4%BB%B6/" data-hashtag="Python学习之路"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E4%BB%B6/" data-title="Python学习之路-文件" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E4%BB%B6/" data-title="Python学习之路-文件"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E4%BB%B6/" data-title="Python学习之路-文件"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E4%BB%B6/" data-title="Python学习之路-文件" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E4%BB%B6/" data-title="Python学习之路-文件" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E4%BB%B6/" data-title="Python学习之路-文件"><i class="fab fa-evernote fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%A4%9A%E4%BB%BB%E5%8A%A1%E7%BA%BF%E7%A8%8B/" data-title="Python学习之路-多任务:线程" data-hashtags="Python学习之路"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%A4%9A%E4%BB%BB%E5%8A%A1%E7%BA%BF%E7%A8%8B/" data-hashtag="Python学习之路"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%A4%9A%E4%BB%BB%E5%8A%A1%E7%BA%BF%E7%A8%8B/" data-title="Python学习之路-多任务:线程" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%A4%9A%E4%BB%BB%E5%8A%A1%E7%BA%BF%E7%A8%8B/" data-title="Python学习之路-多任务:线程"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%A4%9A%E4%BB%BB%E5%8A%A1%E7%BA%BF%E7%A8%8B/" data-title="Python学习之路-多任务:线程"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%A4%9A%E4%BB%BB%E5%8A%A1%E7%BA%BF%E7%A8%8B/" data-title="Python学习之路-多任务:线程" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%A4%9A%E4%BB%BB%E5%8A%A1%E7%BA%BF%E7%A8%8B/" data-title="Python学习之路-多任务:线程" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%A4%9A%E4%BB%BB%E5%8A%A1%E7%BA%BF%E7%A8%8B/" data-title="Python学习之路-多任务:线程"><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>
@@ -412,8 +316,8 @@ f.write(&#34;hello python！\n&#34;)
         </section>
     </div>
 
-    <div class="post-nav"><a href="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/" class="prev" rel="prev" title="Python学习之路-模块和包"><i class="fas fa-angle-left fa-fw"></i>Python学习之路-模块和包</a>
-            <a href="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%A4%9A%E4%BB%BB%E5%8A%A1%E7%BA%BF%E7%A8%8B/" class="next" rel="next" title="Python学习之路-多任务:线程">Python学习之路-多任务:线程<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E4%BB%B6/" class="prev" rel="prev" title="Python学习之路-文件"><i class="fas fa-angle-left fa-fw"></i>Python学习之路-文件</a>
+            <a href="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%A4%9A%E4%BB%BB%E5%8A%A1%E8%BF%9B%E7%A8%8B/" class="next" rel="next" title="Python学习之路 多任务:进程">Python学习之路 多任务:进程<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.

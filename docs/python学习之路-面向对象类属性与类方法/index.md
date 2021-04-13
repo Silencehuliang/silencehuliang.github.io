@@ -232,4 +232,16 @@ property方法中有个四个参数
 - `__getitem__`、`__setitem__`、`__delitem__`：用于索引操作，如字典
 - `__getslice__`、`__setslice__`、`__delslice__`：用于切片操作，如列表
 
+### 元类
+
+元类就是用来创建类的“东西”，就是类的类。使用函数type对类查看类型是type类型，这是因为函数type实际上是一个元类。type就是Python在背后用来创建所有类的元类。
+
+{{< admonition note "补充" true >}}
+
+type函数还有一种完全不同的功能，动态的创建类。type可以接受一个类的描述作为参数，然后返回一个类。
+
+{{< /admonition >}}
+
+
+
 

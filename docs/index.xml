@@ -14,6 +14,27 @@
     <guid>https://silencehuliang.github.io/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%80%9A%E8%BF%87github/</guid>
     <description><![CDATA[由于最近在学习Golang，在网上查阅相关资料的时候发现了Hugo这个用Go语言编写的静态网站生成器，根据网站的介绍它有着速度快，易用，可配置程度高等特点，而且文章依赖于Markdown生成，非常适合作为博客、文档、个人简历这类型的网站。]]></description>
 </item><item>
+    <title>Python学习之路-多任务:协程</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%A4%9A%E4%BB%BB%E5%8A%A1%E5%8D%8F%E7%A8%8B/</link>
+    <pubDate>Sat, 18 Jan 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%A4%9A%E4%BB%BB%E5%8A%A1%E5%8D%8F%E7%A8%8B/</guid>
+    <description><![CDATA[协程，又称微线程，纤程。英文名Coroutine。协程是python个中另外一种实现多任务的方式，只不过比线程更小占用更小执行单元（理解为需要的资源）。]]></description>
+</item><item>
+    <title>Python学习之路 多任务:进程</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%A4%9A%E4%BB%BB%E5%8A%A1%E8%BF%9B%E7%A8%8B/</link>
+    <pubDate>Sat, 11 Jan 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%A4%9A%E4%BB%BB%E5%8A%A1%E8%BF%9B%E7%A8%8B/</guid>
+    <description><![CDATA[一个程序运行起来后，代码+用到的资源 称之为进程，它是操作系统分配资源的基本单元。不仅可以通过线程完成多任务，进程也是可以的。]]></description>
+</item><item>
+    <title>Python学习之路-多任务:线程</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%A4%9A%E4%BB%BB%E5%8A%A1%E7%BA%BF%E7%A8%8B/</link>
+    <pubDate>Sat, 04 Jan 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%A4%9A%E4%BB%BB%E5%8A%A1%E7%BA%BF%E7%A8%8B/</guid>
+    <description><![CDATA[什么叫“多任务”呢？简单地说，就是操作系统可以同时运行多个任务。操作系统轮流让各个任务交替执行，表面上看，每个任务都是交替执行的，但是，由于CPU的执行速度实在是太快了，我们感觉就像所有任务都在同时执行一样。]]></description>
+</item><item>
     <title>Python学习之路-文件</title>
     <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E4%BB%B6/</link>
     <pubDate>Sat, 28 Dec 2019 00:00:00 &#43;0000</pubDate>
@@ -55,26 +76,5 @@
     <author>作者</author>
     <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%88%9D%E8%AF%86%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</guid>
     <description><![CDATA[面向对象编程(英语：Object-oriented programming，缩写：OOP)是种具有对象概念的编程典范，同时也是一种程序开发的抽象方针。]]></description>
-</item><item>
-    <title>入职一年有感</title>
-    <link>https://silencehuliang.github.io/%E5%85%A5%E8%81%8C%E4%B8%80%E5%B9%B4%E6%9C%89%E6%84%9F/</link>
-    <pubDate>Sat, 16 Nov 2019 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/%E5%85%A5%E8%81%8C%E4%B8%80%E5%B9%B4%E6%9C%89%E6%84%9F/</guid>
-    <description><![CDATA[未完待续 不知不觉来上海已经一年多了，已经逐渐融入上海这座大都市，我的故事还在继续。。。。 公司 在公司的这一年学习的东西]]></description>
-</item><item>
-    <title>Python学习之路-综合练习:学生管理系统</title>
-    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</link>
-    <pubDate>Sat, 09 Nov 2019 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</guid>
-    <description><![CDATA[目前已经学习了变量、流程控制、函数、模块，可以利用已学习的知识开发一个学生管理系统]]></description>
-</item><item>
-    <title>Python学习之路-函数进阶</title>
-    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6/</link>
-    <pubDate>Sat, 02 Nov 2019 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%87%BD%E6%95%B0%E8%BF%9B%E9%98%B6/</guid>
-    <description><![CDATA[函数根据有没有参数以及有没有返回值，可以相互组合，一共有4 种组合形式：无参数，无返回值；无参数，有返回值；有参数，无返回值；有参数，有返回值。]]></description>
 </item></channel>
 </rss>
