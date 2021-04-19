@@ -4,75 +4,75 @@
         <link>https://silencehuliang.github.io/categories/python/</link>
         <description>Python - 分类 - Silence Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>silencehuliang@gmail.com (Silence)</managingEditor>
-            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 18 Jan 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://silencehuliang.github.io/categories/python/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 25 Apr 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://silencehuliang.github.io/categories/python/" rel="self" type="application/rss+xml" /><item>
+    <title>Python学习之路-深拷贝与浅拷贝</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/</link>
+    <pubDate>Sat, 25 Apr 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/</guid>
+    <description><![CDATA[Python中的拷贝机制有两种，一种是深拷贝一种是浅拷贝，下面深入学习一下]]></description>
+</item><item>
+    <title>Python学习之路-内存管理</title>
+    <link>https://silencehuliang.github.io/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E4%B8%8E%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/</link>
+    <pubDate>Sat, 18 Apr 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E4%B8%8E%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/</guid>
+    <description><![CDATA[Python的内存管理机制可以总结为：引用计数、垃圾回收、内存池]]></description>
+</item><item>
+    <title>Python学习之路-Redis进阶</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-redis%E8%BF%9B%E9%98%B6/</link>
+    <pubDate>Sat, 11 Apr 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-redis%E8%BF%9B%E9%98%B6/</guid>
+    <description><![CDATA[⼀个master可以拥有多个slave，⼀个slave⼜可以拥有多个slave，如此下去，形成了强⼤的多级服务器集群架构。master用来写数据，slave用来读数据]]></description>
+</item><item>
+    <title>Python学习之路-Python操作redis</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-python%E6%93%8D%E4%BD%9Credis/</link>
+    <pubDate>Sat, 28 Mar 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-python%E6%93%8D%E4%BD%9Credis/</guid>
+    <description><![CDATA[前言 在Python中操作Redis可以直接用redis模块 安装 安装Redis的有3种方式https://github.com/andymcc]]></description>
+</item><item>
+    <title>Python学习之路-Redis基础</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-redis%E5%9F%BA%E7%A1%80/</link>
+    <pubDate>Sat, 21 Mar 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-redis%E5%9F%BA%E7%A1%80/</guid>
+    <description><![CDATA[前面学习数据库的时候学习了用的最多的关系型数据库<code>MySQL</code>，这次来学习用的最多的非关系型数据库<code>Redis</code>。]]></description>
+</item><item>
+    <title>Python学习之路-MySQL进阶</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-mysql%E8%BF%9B%E9%98%B6/</link>
+    <pubDate>Wed, 05 Feb 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-mysql%E8%BF%9B%E9%98%B6/</guid>
+    <description><![CDATA[对于复杂的查询，往往是有多个数据表进行关联查询而得到，如果数据库因为需求等原因发生了改变，为了保证查询出来的数据与之前相同，则需要在多个地方进行修改，维护起来非常麻烦。可以通过定义视图来解决]]></description>
+</item><item>
+    <title>Python学习之路-Python操作MySQL</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-python%E6%93%8D%E4%BD%9Cmysql/</link>
+    <pubDate>Sun, 02 Feb 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-python%E6%93%8D%E4%BD%9Cmysql/</guid>
+    <description><![CDATA[<code>PyMySQL</code>是在 <code>Python3.x </code>版本中用于连接<code>MySQL</code>服务器的一个库，<code>PyMySQL</code>遵循<code>Python</code>数据库 API v2.0 规范，并包含了 pure-Python MySQL 客户端库。]]></description>
+</item><item>
+    <title>Python学习之路-数据库入门</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8/</link>
+    <pubDate>Fri, 31 Jan 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8/</guid>
+    <description><![CDATA[数据库就是一种特殊的文件，其中存储着需要的数据。当前主要使用两种类型的数据库：关系型数据库、非关系型数据库，本篇主要讨论关系型数据库]]></description>
+</item><item>
+    <title>Python学习之路-正则表达式</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</link>
+    <pubDate>Tue, 28 Jan 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</guid>
+    <description><![CDATA[正则表达式是计算机科学的一个概念。正则表达式使用单个字符串来描述、匹配一系列匹配某个句法规则的字符串。在很多文本编辑器里，正则表达式通常被用来检索、替换那些匹配某个模式的文本。]]></description>
+</item><item>
     <title>Python学习之路-多任务:协程</title>
     <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%A4%9A%E4%BB%BB%E5%8A%A1%E5%8D%8F%E7%A8%8B/</link>
     <pubDate>Sat, 18 Jan 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
     <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%A4%9A%E4%BB%BB%E5%8A%A1%E5%8D%8F%E7%A8%8B/</guid>
     <description><![CDATA[协程，又称微线程，纤程。英文名Coroutine。协程是python个中另外一种实现多任务的方式，只不过比线程更小占用更小执行单元（理解为需要的资源）。]]></description>
-</item><item>
-    <title>Python学习之路 多任务:进程</title>
-    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%A4%9A%E4%BB%BB%E5%8A%A1%E8%BF%9B%E7%A8%8B/</link>
-    <pubDate>Sat, 11 Jan 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%A4%9A%E4%BB%BB%E5%8A%A1%E8%BF%9B%E7%A8%8B/</guid>
-    <description><![CDATA[一个程序运行起来后，代码+用到的资源 称之为进程，它是操作系统分配资源的基本单元。不仅可以通过线程完成多任务，进程也是可以的。]]></description>
-</item><item>
-    <title>Python学习之路-多任务:线程</title>
-    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%A4%9A%E4%BB%BB%E5%8A%A1%E7%BA%BF%E7%A8%8B/</link>
-    <pubDate>Sat, 04 Jan 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%A4%9A%E4%BB%BB%E5%8A%A1%E7%BA%BF%E7%A8%8B/</guid>
-    <description><![CDATA[什么叫“多任务”呢？简单地说，就是操作系统可以同时运行多个任务。操作系统轮流让各个任务交替执行，表面上看，每个任务都是交替执行的，但是，由于CPU的执行速度实在是太快了，我们感觉就像所有任务都在同时执行一样。]]></description>
-</item><item>
-    <title>Python学习之路-文件</title>
-    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E4%BB%B6/</link>
-    <pubDate>Sat, 28 Dec 2019 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E4%BB%B6/</guid>
-    <description><![CDATA[基本操作 在 Python 中要操作文件需要记住 1 个函数和 3 个方法 函数/方法 说明 open 打开文件，并且返回文件操作对象 read 将文件内容读取到内存 write 将指定内容写入文件 close]]></description>
-</item><item>
-    <title>Python学习之路-模块和包</title>
-    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/</link>
-    <pubDate>Sat, 21 Dec 2019 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/</guid>
-    <description><![CDATA[模块是 Python 程序架构的一个核心概念。每一个以扩展名 <code>py</code> 结尾的 <code>Python</code> 源代码文件都是一个模块，模块名同样也是一个标识符，需要符合标识符的命名规则。在模块中定义的全局变量、函数、类都是提供给外界直接使用的工具。模块就好比是工具包，要想使用这个工具包中的工具，就需要先导入这个模块。]]></description>
-</item><item>
-    <title>Python学习之路-异常</title>
-    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%BC%82%E5%B8%B8/</link>
-    <pubDate>Sat, 14 Dec 2019 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%BC%82%E5%B8%B8/</guid>
-    <description><![CDATA[程序在运行时，如果 <code>Python 解释器</code> 遇到到一个错误，会停止程序的执行，并且提示一些错误信息，这就是异常。程序停止执行并且提示错误信息这个动作，我们通常称之为：抛出(raise)异常。]]></description>
-</item><item>
-    <title>Python学习之路 面向对象:类属性与类方法</title>
-    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%B1%9E%E6%80%A7%E4%B8%8E%E7%B1%BB%E6%96%B9%E6%B3%95/</link>
-    <pubDate>Sat, 07 Dec 2019 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%B1%9E%E6%80%A7%E4%B8%8E%E7%B1%BB%E6%96%B9%E6%B3%95/</guid>
-    <description><![CDATA[类是一个特殊的对象<code>Python</code>中一切皆对象：<code>class A:</code> 定义的类属于类对象，<code>obj1 = A()</code> 属于实例对象。除了封装实例的属性和方法外，类对象还可以拥有自己的属性和方法成为：类属性和类方法，通过<code>类名.</code>的方式可以访问类的属性或者调用类的方法。]]></description>
-</item><item>
-    <title>Python学习之路-面向对象:三个基本特征</title>
-    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E4%B8%89%E4%B8%AA%E5%9F%BA%E6%9C%AC%E7%89%B9%E5%BE%81/</link>
-    <pubDate>Sat, 30 Nov 2019 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E4%B8%89%E4%B8%AA%E5%9F%BA%E6%9C%AC%E7%89%B9%E5%BE%81/</guid>
-    <description><![CDATA[三个基本特征 封装：根据职责将属性和方法封装到一个抽象的类中 继承：实现代码的重用，相同的代码不需要重复的编写 多态：不同的对象调用相同的方法，产]]></description>
-</item><item>
-    <title>Python学习之路-初识面向对象</title>
-    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%88%9D%E8%AF%86%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</link>
-    <pubDate>Sat, 23 Nov 2019 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%88%9D%E8%AF%86%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</guid>
-    <description><![CDATA[面向对象编程(英语：Object-oriented programming，缩写：OOP)是种具有对象概念的编程典范，同时也是一种程序开发的抽象方针。]]></description>
-</item><item>
-    <title>Python学习之路-综合练习:学生管理系统</title>
-    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</link>
-    <pubDate>Sat, 09 Nov 2019 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</guid>
-    <description><![CDATA[目前已经学习了变量、流程控制、函数、模块，可以利用已学习的知识开发一个学生管理系统]]></description>
 </item></channel>
 </rss>
