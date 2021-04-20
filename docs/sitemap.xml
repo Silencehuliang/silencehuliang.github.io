@@ -2,7 +2,6 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://silencehuliang.github.io/about/</loc><lastmod>2021-03-30T10:25:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
             <loc>https://silencehuliang.github.io/categories/</loc><lastmod>2021-11-24T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>4.1</priority></url><url>
             <loc>https://silencehuliang.github.io/posts/</loc><lastmod>2021-11-24T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>4.1</priority></url><url>
             <loc>https://silencehuliang.github.io/categories/python/</loc><lastmod>2021-11-24T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>4.1</priority></url><url>
@@ -74,9 +73,9 @@
             <loc>https://silencehuliang.github.io/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Alinux/</loc><lastmod>2019-06-09T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://silencehuliang.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc><lastmod>2019-06-09T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</loc><lastmod>2019-12-29T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://silencehuliang.github.io/tags/flask/</loc><lastmod>2019-05-19T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://silencehuliang.github.io/categories/flask/</loc><lastmod>2019-05-19T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://silencehuliang.github.io/flask%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/</loc><lastmod>2019-05-19T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://silencehuliang.github.io/tags/flask/</loc><lastmod>2019-05-20T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://silencehuliang.github.io/categories/flask/</loc><lastmod>2019-05-20T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://silencehuliang.github.io/flask%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/</loc><lastmod>2019-05-20T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://silencehuliang.github.io/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Agit/</loc><lastmod>2019-05-12T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://silencehuliang.github.io/tags/django/</loc><lastmod>2019-04-28T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://silencehuliang.github.io/categories/django/</loc><lastmod>2019-04-28T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -101,4 +100,5 @@
             <loc>https://silencehuliang.github.io/categories/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/</loc><lastmod>2019-01-05T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://silencehuliang.github.io/2018%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</loc><lastmod>2018-12-31T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://silencehuliang.github.io/tags/%E4%B8%8A%E6%B5%B7/</loc><lastmod>2018-12-16T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://silencehuliang.github.io/%E4%B8%8A%E6%B5%B7%E6%88%91%E6%9D%A5%E4%BA%86/</loc><lastmod>2018-12-16T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>
+            <loc>https://silencehuliang.github.io/%E4%B8%8A%E6%B5%B7%E6%88%91%E6%9D%A5%E4%BA%86/</loc><lastmod>2018-12-16T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://silencehuliang.github.io/about/</loc><lastmod>2019-05-20T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>
