@@ -5,26 +5,26 @@
         <description>Python - 分类 - Silence Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>silencehuliang@gmail.com (Silence)</managingEditor>
             <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 06 Jun 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://silencehuliang.github.io/categories/python/" rel="self" type="application/rss+xml" /><item>
-    <title>Python学习之路-Flask基础:蓝图和单元测试</title>
-    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80%E8%93%9D%E5%9B%BE%E5%92%8C%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
+    <title>Python学习之路-Flask基础:蓝图</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80%E8%93%9D%E5%9B%BE/</link>
     <pubDate>Sat, 06 Jun 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80%E8%93%9D%E5%9B%BE%E5%92%8C%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
-    <description><![CDATA[提示 这里指定int，尖括号中的内容是动态的，在此暂时可以理解为接受 int 类型的值，实际上 int 代表使用 IntegerConverter 去处理 url 传入的参数]]></description>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80%E8%93%9D%E5%9B%BE/</guid>
+    <description><![CDATA[随着flask程序越来越复杂,我们需要对程序进行模块化的处理,之前学习过python的模块化管理,于是针对一个简单的flask程序进行模块化处理]]></description>
 </item><item>
     <title>Python学习之路 Flask基础:数据库</title>
     <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
     <pubDate>Sat, 30 May 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
     <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
-    <description><![CDATA[提示 这里指定int，尖括号中的内容是动态的，在此暂时可以理解为接受 int 类型的值，实际上 int 代表使用 IntegerConverter 去处理 url 传入的参数]]></description>
+    <description><![CDATA[<code>ORM</code>全拼<code>Object-Relation Mapping</code>，中文意为 <code>对象-关系映射</code>。主要实现模型对象到关系数据库数据的映射.]]></description>
 </item><item>
     <title>Python学习之路-Flask基础:模板</title>
     <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80%E6%A8%A1%E6%9D%BF/</link>
     <pubDate>Tue, 26 May 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
     <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80%E6%A8%A1%E6%9D%BF/</guid>
-    <description><![CDATA[前言 在前面的学习中，视图函数的主要作用是生成请求的响应，这是最简单的请求。实际上，视图函数有两个作用：处理业务逻辑和返回响应内容。在大型应用]]></description>
+    <description><![CDATA[在前面的学习中，视图函数的主要作用是生成请求的响应，这是最简单的请求。实际上，视图函数有两个作用：处理业务逻辑和返回响应内容。]]></description>
 </item><item>
     <title>Python学习之路-Flask基础:视图及路由</title>
     <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80%E8%A7%86%E5%9B%BE%E5%8F%8A%E8%B7%AF%E7%94%B1/</link>
