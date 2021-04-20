@@ -87,7 +87,7 @@ admin = Blueprint('admin',__name__,template_folder='my_templates')
 
 {{< admonition warning "注意" true >}}
 
-如果在 templates 中存在和 my_templates 同名文件,则系统会优先使用 templates 中的文件
+如果在 templates 中存在和 my_templates 同名文件，则系统会优先使用 templates 中的文件
 
 {{< /admonition >}}
 
