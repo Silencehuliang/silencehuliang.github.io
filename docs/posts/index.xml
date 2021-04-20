@@ -12,13 +12,6 @@
     <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80%E8%93%9D%E5%9B%BE/</guid>
     <description><![CDATA[随着flask程序越来越复杂,我们需要对程序进行模块化的处理,之前学习过python的模块化管理,于是针对一个简单的flask程序进行模块化处理]]></description>
 </item><item>
-    <title>Python学习之路-Flask基础:模板</title>
-    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80%E6%A8%A1%E6%9D%BF/</link>
-    <pubDate>Tue, 26 May 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80%E6%A8%A1%E6%9D%BF/</guid>
-    <description><![CDATA[在前面的学习中，视图函数的主要作用是生成请求的响应，这是最简单的请求。实际上，视图函数有两个作用：处理业务逻辑和返回响应内容。]]></description>
-</item><item>
     <title>Python学习之路-Flask基础:视图及路由</title>
     <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80%E8%A7%86%E5%9B%BE%E5%8F%8A%E8%B7%AF%E7%94%B1/</link>
     <pubDate>Sat, 16 May 2020 00:00:00 &#43;0000</pubDate>
@@ -74,5 +67,12 @@
     <author>作者</author>
     <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-mysql%E8%BF%9B%E9%98%B6/</guid>
     <description><![CDATA[对于复杂的查询，往往是有多个数据表进行关联查询而得到，如果数据库因为需求等原因发生了改变，为了保证查询出来的数据与之前相同，则需要在多个地方进行修改，维护起来非常麻烦。可以通过定义视图来解决]]></description>
+</item><item>
+    <title>Python学习之路-Python操作MySQL</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-python%E6%93%8D%E4%BD%9Cmysql/</link>
+    <pubDate>Sun, 02 Feb 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-python%E6%93%8D%E4%BD%9Cmysql/</guid>
+    <description><![CDATA[<code>PyMySQL</code>是在 <code>Python3.x </code>版本中用于连接<code>MySQL</code>服务器的一个库，<code>PyMySQL</code>遵循<code>Python</code>数据库 API v2.0 规范，并包含了 pure-Python MySQL 客户端库。]]></description>
 </item></channel>
 </rss>
