@@ -12,13 +12,6 @@
     <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80%E8%93%9D%E5%9B%BE/</guid>
     <description><![CDATA[随着flask程序越来越复杂,我们需要对程序进行模块化的处理,之前学习过python的模块化管理,于是针对一个简单的flask程序进行模块化处理]]></description>
 </item><item>
-    <title>Python学习之路 Flask基础:数据库</title>
-    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
-    <pubDate>Sat, 30 May 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
-    <description><![CDATA[<code>ORM</code>全拼<code>Object-Relation Mapping</code>，中文意为 <code>对象-关系映射</code>。主要实现模型对象到关系数据库数据的映射.]]></description>
-</item><item>
     <title>Python学习之路-Flask基础:模板</title>
     <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80%E6%A8%A1%E6%9D%BF/</link>
     <pubDate>Tue, 26 May 2020 00:00:00 &#43;0000</pubDate>
@@ -32,13 +25,6 @@
     <author>作者</author>
     <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80%E8%A7%86%E5%9B%BE%E5%8F%8A%E8%B7%AF%E7%94%B1/</guid>
     <description><![CDATA[有时我们需要将同一类 URL 映射到同一个视图函数处理，比如：使用同一个视图函数来显示不同用户的个人信息。]]></description>
-</item><item>
-    <title>Python学习之路-Flask基础:HelloFlask</title>
-    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80helloflask/</link>
-    <pubDate>Sat, 09 May 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80helloflask/</guid>
-    <description><![CDATA[Web(World Wide Web)诞生最初的目的，是为了利用互联网交流工作文档。web网站发展至今，特别是服务器端，涉及到的知识、内容，非常广泛。这对程序员的要求会越来越高。]]></description>
 </item><item>
     <title>Python学习之路-深拷贝与浅拷贝</title>
     <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/</link>
@@ -66,7 +52,7 @@
     <pubDate>Sat, 28 Mar 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
     <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-python%E6%93%8D%E4%BD%9Credis/</guid>
-    <description><![CDATA[前言 在Python中操作Redis可以直接用redis模块 安装 安装Redis的有3种方式https://github.com/andymcc]]></description>
+    <description><![CDATA[在Python中操作<code>Redis</code>可以直接用<code>redis</code>模块]]></description>
 </item><item>
     <title>Python学习之路-Redis基础</title>
     <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-redis%E5%9F%BA%E7%A1%80/</link>
@@ -74,5 +60,19 @@
     <author>作者</author>
     <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-redis%E5%9F%BA%E7%A1%80/</guid>
     <description><![CDATA[前面学习数据库的时候学习了用的最多的关系型数据库<code>MySQL</code>，这次来学习用的最多的非关系型数据库<code>Redis</code>。]]></description>
+</item><item>
+    <title>Python学习之路-MySQL进阶</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-mysql%E8%BF%9B%E9%98%B6/</link>
+    <pubDate>Wed, 05 Feb 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-mysql%E8%BF%9B%E9%98%B6/</guid>
+    <description><![CDATA[对于复杂的查询，往往是有多个数据表进行关联查询而得到，如果数据库因为需求等原因发生了改变，为了保证查询出来的数据与之前相同，则需要在多个地方进行修改，维护起来非常麻烦。可以通过定义视图来解决]]></description>
+</item><item>
+    <title>Python学习之路-Python操作MySQL</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-python%E6%93%8D%E4%BD%9Cmysql/</link>
+    <pubDate>Sun, 02 Feb 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-python%E6%93%8D%E4%BD%9Cmysql/</guid>
+    <description><![CDATA[<code>PyMySQL</code>是在 <code>Python3.x </code>版本中用于连接<code>MySQL</code>服务器的一个库，<code>PyMySQL</code>遵循<code>Python</code>数据库 API v2.0 规范，并包含了 pure-Python MySQL 客户端库。]]></description>
 </item></channel>
 </rss>

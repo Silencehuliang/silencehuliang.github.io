@@ -36,7 +36,7 @@ def user_info(user_id):
 
 {{< admonition tip "提示" true >}}
 
-这里指定int，尖括号中的内容是动态的，在此暂时可以理解为接受 int 类型的值，实际上 int 代表使用 IntegerConverter 去处理 url 传入的参数
+这里指定`int`，尖括号中的内容是动态的，在此暂时可以理解为接受`int`类型的值，实际上`int`代表使用`IntegerConverter`去处理 url 传入的参数
 
 {{< /admonition >}}
 
@@ -195,7 +195,7 @@ def demo3():
 
 {{< admonition tip "提示" true >}}
 
-不推荐使用 json.dumps 转成 JSON 字符串直接返回，因为返回的数据要符合 HTTP 协议规范，如果是 JSON 需要指定 content-type:application/json
+不推荐使用`json.dumps`转成 JSON 字符串直接返回，因为返回的数据要符合`HTTP`协议规范，如果是`JSON`需要指定 `content-type:application/json`
 
 {{< /admonition >}}
 
