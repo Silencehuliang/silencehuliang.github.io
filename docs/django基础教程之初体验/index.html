@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Django基础教程之初体验 - Silence Blog</title><meta name="Description" content="Django初体验"><meta property="og:title" content="Django基础教程之初体验" />
+<meta property="og:description" content="Django初体验" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://silencehuliang.github.io/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E5%88%9D%E4%BD%93%E9%AA%8C/" />
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
+<meta property="article:published_time" content="2019-03-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-03-02T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
+
+<meta name="twitter:title" content="Django基础教程之初体验"/>
+<meta name="twitter:description" content="Django初体验"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://silencehuliang.github.io/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E5%88%9D%E4%BD%93%E9%AA%8C/" /><link rel="prev" href="https://silencehuliang.github.io/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E4%BB%8B%E7%BB%8D/" /><link rel="next" href="https://silencehuliang.github.io/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E5%B7%A5%E7%A8%8B%E6%90%AD%E5%BB%BA/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.2e7125082ec8de83a87adc70253c9c23.css" integrity="md5-LnElCC7I3oOoetxwJTycIw=="><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.76cb46c10b6c0293433b371bae2414b2.css" integrity="md5-dstGwQtsApNDOzcbriQUsg=="><link rel="stylesheet" href="/lib/animate/animate.min.bc1a6a99c43f5ccc97d2d350bde13f74.css" integrity="md5-vBpqmcQ/XMyX0tNQveE/dA=="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Django基础教程之初体验",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/silencehuliang.github.io\/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E5%88%9D%E4%BD%93%E9%AA%8C\/"
+        },"genre": "posts","keywords": "Django, 教程","wordcount":  4836 ,
+        "url": "https:\/\/silencehuliang.github.io\/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E5%88%9D%E4%BD%93%E9%AA%8C\/","datePublished": "2019-03-02T00:00:00+00:00","dateModified": "2019-03-02T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "Silence"},"author": {
+                "@type": "Person",
+                "name": "Silence"
+            },"description": "Django初体验"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Silence Blog"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+        data-srcset="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg, https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg 1.5x, https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+        title="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg" /><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Silence Blog"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+        data-srcset="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg, https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg 1.5x, https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+        title="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg" /><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Django基础教程之初体验</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Silence</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/django/"><i class="far fa-folder fa-fw"></i>Django</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-03-02">2019-03-02</time>&nbsp;<i class="fa fa-history" aria-hidden="true"></i>
+                2019-03-02
+                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4836 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 10 分钟&nbsp;<span id="/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E5%88%9D%E4%BD%93%E9%AA%8C/" class="leancloud_visitors" data-flag-title="Django基础教程之初体验">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#安装django">安装Django</a>
+      <ul>
+        <li><a href="#三种方式安装">三种方式安装</a>
+          <ul>
+            <li><a href="#pip安装">pip安装</a></li>
+            <li><a href="#通过第三方软件包">通过第三方软件包</a></li>
+            <li><a href="#安装开发版本">安装开发版本</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#django初体验">Django初体验</a>
+      <ul>
+        <li><a href="#安装并使用virtualenv">安装并使用virtualenv</a></li>
+        <li><a href="#创建django项目">创建Django项目</a></li>
+        <li><a href="#创建一个应用">创建一个应用</a></li>
+        <li><a href="#编写第一个视图">编写第一个视图</a></li>
+        <li><a href="#数据库">数据库</a>
+          <ul>
+            <li><a href="#创建数据库">创建数据库</a></li>
+            <li><a href="#数据库配置">数据库配置</a></li>
+            <li><a href="#数据库迁移">数据库迁移</a></li>
+            <li><a href="#创建一个图书模型">创建一个图书模型</a></li>
+          </ul>
+        </li>
+        <li><a href="#视图与模板">视图与模板</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p><strong>声明：以下内容均为我个人的理解，如果发现错误或者疑问可以联系我共同探讨</strong></p>
+<h2 id="简介">简介</h2>
+<p>在Django2.0以后，Django已经不支持python2.7，所以我们需要一个python3的系统环境，这里一python3.6为例</p>
+<h2 id="安装django">安装Django</h2>
+<h3 id="三种方式安装">三种方式安装</h3>
+<h4 id="pip安装">pip安装</h4>
+<ul>
+<li>
+<p>一般情况下安装python后会帮你安装好pip，当你没安装时使用这个<a href="https://pip.pypa.io/en/latest/installing/#installing-with-get-pip-py" target="_blank" rel="noopener noreffer">链接</a>安装,记得更新到最新版本</p>
+</li>
+<li>
+<p>安装并使用virtualenv</p>
+</li>
+<li>
+<p>在创建好并激活的虚拟环境中输入一下命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">$</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">Django</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h4 id="通过第三方软件包">通过第三方软件包</h4>
+<p>管理系统集成的Django</p>
+<h4 id="安装开发版本">安装开发版本</h4>
+<ul>
+<li>
+<p>安装好<a href="https://git-scm.com/" target="_blank" rel="noopener noreffer">git</a></p>
+</li>
+<li>
+<p>输入一下命令下载Django</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ git clone https://github.com/django/django.git
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>安装并使用virtualenv</p>
+</li>
+<li>
+<p>在创建好并激活的虚拟环境中输入一下命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">$</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="n">django</span><span class="o">/</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<p>安装好Django后可以通过一下命令查看当前Django版本</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">$</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">django</span> <span class="o">--</span><span class="n">version</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="django初体验">Django初体验</h2>
+<h3 id="安装并使用virtualenv">安装并使用virtualenv</h3>
+<p>详细过程见<a href="http://49.235.231.121/2019/python%e6%90%ad%e5%bb%ba%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83/" target="_blank" rel="noopener noreffer">这个链接</a></p>
+<h3 id="创建django项目">创建Django项目</h3>
+<p>在项目存放目录打开命令行运行一下命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">$</span> <span class="n">django</span><span class="o">-</span><span class="n">admin</span> <span class="n">startproject</span> <span class="n">mysite</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这句话执行过后会在当前目录生成一个名字为mysite的Django项目，目录结构为下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">mysite/
+    manage.py
+    mysite/
+        __init__.py
+        settings.py
+        urls.py
+        wsgi.py
+</code></pre></td></tr></table>
+</div>
+</div><p>这些目录和文件的作用：</p>
+<ul>
+<li>
+<p>mysite/目录：存放项目的容器，他的名字不重要可以更换为你喜欢的任何名字</p>
+</li>
+<li>
+<p>manage.py：Django项目的启动文件，他可以让你通过各种方式管理Django项目。</p>
+</li>
+<li>
+<p>mysite/mysite/目录：项目目录，里面存放项目相关的文件</p>
+</li>
+<li>
+<p>mysite/mysite/settings.py：Django项目的配置文件</p>
+</li>
+<li>
+<p>mysite/mysite/urls.py：Django项目的url声明文件,他将url对应相关的app的视图</p>
+</li>
+<li>
+<p>mysite/mysite/wsgi.py：Django项目wsgi服务器的入口</p>
+</li>
+<li>
+<p>当输入以下命令，并进入浏览器输入：http://127.0.0.1:8000/看到Django启动成功</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">$</span> <span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">runserver</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这里能启动成功是因为Django自带一个简易的服务器（用纯 Python 写的轻量级的 Web 服务器）。他能帮助我们快速开发。</p>
+</li>
+</ul>
+<h3 id="创建一个应用">创建一个应用</h3>
+<ul>
+<li>
+<p>将当前目录切换到manage.py所在的目录，输入下面的命令创建一个应用:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">$</span> <span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">startapp</span> <span class="n">demo</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>该应用的目录结构大致如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">demo/
+    __init__.py
+    admin.py
+    apps.py
+    migrations/
+        __init__.py
+    models.py
+    tests.py
+    views.py
+</code></pre></td></tr></table>
+</div>
+</div><p>这些目录和文件的作用：</p>
+<ul>
+<li>admin.py：管理admin后台相关数据库模型</li>
+<li>apps.py：该应用的相关配置</li>
+<li>migrations/文件夹及其内容：数据库迁移相关的文件夹，里面存放着迁移版本，迁移信息等</li>
+<li>models.py：编写模型类的文件</li>
+<li>tests.py：用于测试的文件</li>
+<li>view.py：编写视图的文件</li>
+</ul>
+<p>我们还要在项目配置文件中注册该app，打开settings.py文件，找到INSTALLED_APPS，在列表的最后添加demoapp</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">mysite</span><span class="o">/</span><span class="n">settings</span><span class="o">.</span><span class="n">py</span>
+<span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;django.contrib.admin&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.auth&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.contenttypes&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.sessions&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.messages&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.staticfiles&#39;</span><span class="p">,</span>
+    <span class="c1"># 注册demo</span>
+    <span class="s1">&#39;demo.apps.DemoConfig&#39;</span>
+<span class="p">]</span>
+    
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h3 id="编写第一个视图">编写第一个视图</h3>
+<p>视图在应用的views.py中编写</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">demo</span><span class="o">/</span><span class="n">views</span><span class="o">.</span><span class="n">py</span>
+
+<span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
+
+<span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s2">&#34;Hello, world!&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>为了能看到效果我们还需要配置一下url，在demo目录下创建一个urls.py，并输入一下代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">/</span><span class="n">demo</span><span class="o">/</span><span class="n">urls</span><span class="o">.</span><span class="n">py</span>
+
+<span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">views</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="n">path</span><span class="p">(</span><span class="s2">&#34;&#34;</span><span class="p">,</span><span class="n">views</span><span class="o">.</span><span class="n">index</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">),</span>
+<span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>更改项目url，通过修改项目urls.py文件修改路由</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">/</span><span class="n">mysite</span><span class="o">/</span><span class="n">urls</span><span class="o">.</span><span class="n">py</span>
+
+<span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+<span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">include</span><span class="p">,</span> <span class="n">path</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;demo/&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s1">&#39;demo.urls&#39;</span><span class="p">)),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;admin/&#39;</span><span class="p">,</span> <span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">urls</span><span class="p">),</span>
+<span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这里include是将demo/的路由转发到demo应用的urls.py里。每当 Django 遇到 include时，它会截断与此项匹配的 URL 的部分，并将剩余的字符串发送到 对应urls.py以供进一步处理。</p>
+<p>path有五个参数：route、view、kwargs、name、Pattern，其中route、view是必须传入的参数</p>
+<ul>
+<li>route：匹配url的准则（类似于正则表达式）。当Django响应一个请求时，他会从urlpatterns的第一项开始，按顺序依次匹配，知道找到匹配的项</li>
+<li>view：目标视图函数。当route找到匹配的项后，会调用当前的视图函数，并传入一个HttpRequest对象作为第一个参数，route中的参数一关键字参数的形式传入</li>
+<li>kwargs：关键字参数。任意个关键字参数可以作为一个字典传递给目标视图函数。</li>
+<li>name：为url取的名字。他可以使Django在任意地方引用他</li>
+<li>Pattern：匹配模式</li>
+</ul>
+<p>现在可以启动Django程序来看是否正常工作</p>
+<h3 id="数据库">数据库</h3>
+<h4 id="创建数据库">创建数据库</h4>
+<p>进入mysql并创建一个test数据库，字符设置为utf8</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-mysql" data-lang="mysql"><span class="err">$</span> <span class="n">mysql</span> <span class="o">-</span><span class="n">uroot</span> <span class="o">-</span><span class="n">p</span>
+<span class="n">mysql</span><span class="o">&gt;</span> <span class="k">create</span> <span class="k">database</span> <span class="n">test</span> <span class="kp">charset</span><span class="o">=</span><span class="n">utf8</span><span class="p">;</span>
+<span class="n">Query</span> <span class="n">OK</span><span class="p">,</span> <span class="mi">1</span> <span class="n">row</span> <span class="nf">affected</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span> <span class="n">sec</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="数据库配置">数据库配置</h4>
+<p>首先我们需要配置mysite/setting.py中的数据库DATABASES选项，Django默认是sqlite数据库，如果个人项目不大的情况下可以使用这个，也可以使用自己熟悉的数据库，Django不仅支持sqlite，postgresql，mysql，或oracle，还支持很多有第三方插件的数据库，我使用mysql数据库</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">/</span><span class="n">mysite</span><span class="o">/</span><span class="n">settings</span><span class="o">.</span><span class="n">py</span>
+<span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;ENGINE&#39;</span><span class="p">:</span> <span class="s1">&#39;django.db.backends.mysql&#39;</span><span class="p">,</span>
+        <span class="c1"># 数据库名</span>
+        <span class="s1">&#39;NAME&#39;</span><span class="p">:</span> <span class="s1">&#39;test&#39;</span><span class="p">,</span> 
+        <span class="c1"># 用户名</span>
+        <span class="s1">&#39;USER&#39;</span><span class="p">:</span> <span class="s1">&#39;root&#39;</span><span class="p">,</span> 
+        <span class="c1"># 密码</span>
+        <span class="s1">&#39;PASSWORD&#39;</span><span class="p">:</span> <span class="s1">&#39;mysql&#39;</span>
+        <span class="c1"># 主机,默认为localhost</span>
+        <span class="s1">&#39;HOST&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span>
+        <span class="c1"># 端口号，默认为3306</span>
+        <span class="s1">&#39;PORT&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="数据库迁移">数据库迁移</h4>
+<p>因为Django自带应用已经为我们编写了一些数据模型，即时我们不编写任何模型也可以直接使用数据库迁移命令进行迁移</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">$</span> <span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">migrate</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>会看到初始化了很多用户、权限相关的表</p>
+<p>创建一个管理员账号，依次输入用户名、邮箱、密码、确认密码，建议密码设置复杂点</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">$</span> <span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">createsuperuser</span>
+<span class="err">用户名</span> <span class="p">(</span><span class="n">leave</span> <span class="n">blank</span> <span class="n">to</span> <span class="n">use</span> <span class="s1">&#39;02&#39;</span><span class="p">):</span> <span class="n">admin</span>
+<span class="err">电子邮件地址</span><span class="p">:</span> <span class="mi">1</span><span class="nd">@gmail.com</span>
+<span class="n">Password</span><span class="p">:</span>
+<span class="n">Password</span> <span class="p">(</span><span class="n">again</span><span class="p">):</span>
+<span class="err">密码跟</span> <span class="err">用户名</span> <span class="err">太相似了。</span>
+<span class="err">密码长度太短。密码必须包含至少</span> <span class="mi">8</span> <span class="err">个字符。</span>
+<span class="err">这个密码太常见了。</span>
+<span class="n">Bypass</span> <span class="n">password</span> <span class="n">validation</span> <span class="ow">and</span> <span class="n">create</span> <span class="n">user</span> <span class="n">anyway</span><span class="err">?</span> <span class="p">[</span><span class="n">y</span><span class="o">/</span><span class="n">N</span><span class="p">]:</span> <span class="n">y</span>
+<span class="n">Superuser</span> <span class="n">created</span> <span class="n">successfully</span><span class="o">.</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>接下来启动项目，并在浏览器中输入http://127.0.0.1:8000/admin，进入后台管理界面</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tvax2.sinaimg.cn/large/006lmzsGgy1gav1o59elyj31h90s7dgw.jpg"
+        data-srcset="https://tvax2.sinaimg.cn/large/006lmzsGgy1gav1o59elyj31h90s7dgw.jpg, https://tvax2.sinaimg.cn/large/006lmzsGgy1gav1o59elyj31h90s7dgw.jpg 1.5x, https://tvax2.sinaimg.cn/large/006lmzsGgy1gav1o59elyj31h90s7dgw.jpg 2x"
+        data-sizes="auto"
+        alt="https://tvax2.sinaimg.cn/large/006lmzsGgy1gav1o59elyj31h90s7dgw.jpg"
+        title="https://tvax2.sinaimg.cn/large/006lmzsGgy1gav1o59elyj31h90s7dgw.jpg" /></p>
+<p>输入账号密码，点击登录即可</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tvax4.sinaimg.cn/large/006lmzsGgy1gav1on3qmaj31h70s9js7.jpg"
+        data-srcset="https://tvax4.sinaimg.cn/large/006lmzsGgy1gav1on3qmaj31h70s9js7.jpg, https://tvax4.sinaimg.cn/large/006lmzsGgy1gav1on3qmaj31h70s9js7.jpg 1.5x, https://tvax4.sinaimg.cn/large/006lmzsGgy1gav1on3qmaj31h70s9js7.jpg 2x"
+        data-sizes="auto"
+        alt="https://tvax4.sinaimg.cn/large/006lmzsGgy1gav1on3qmaj31h70s9js7.jpg"
+        title="https://tvax4.sinaimg.cn/large/006lmzsGgy1gav1on3qmaj31h70s9js7.jpg" /></p>
+<p>数据库迁移，需要三步</p>
+<ul>
+<li>
+<p>编写models.py文件，改变模型。</p>
+</li>
+<li>
+<p>运行 python manage.py makemigrations为模型的改变生成迁移文件。</p>
+</li>
+<li>
+<p>运行 python manage.py migrate 来应用数据库迁移。</p>
+</li>
+</ul>
+<h4 id="创建一个图书模型">创建一个图书模型</h4>
+<p>在demo应用下创建一个图书模型</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">/</span><span class="n">demo</span><span class="o">/</span><span class="n">models</span><span class="o">.</span><span class="n">py</span>
+
+<span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+
+<span class="k">class</span> <span class="nc">Books</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="c1"># 书名</span>
+    <span class="n">book_name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+    <span class="c1"># 作者</span>
+    <span class="n">author</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>建立的模型有两个字段，书名和作者，使用了字符类型，增加了长度限制（<strong>注意在使用CharField时必须要添加max_length限制</strong>）</p>
+<p>创建迁移模型并生成迁移文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">$</span> <span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">makemigrations</span> <span class="n">demo</span>
+<span class="n">Migrations</span> <span class="k">for</span> <span class="s1">&#39;demo&#39;</span><span class="p">:</span>
+  <span class="n">demo</span>\<span class="n">migrations</span>\<span class="mo">0001</span><span class="n">_initial</span><span class="o">.</span><span class="n">py</span>
+    <span class="o">-</span> <span class="n">Create</span> <span class="n">model</span> <span class="n">Books</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>会出现创建了Books这个模型，在demo应用的migrations文件夹下会多一个0001_initila.py的迁移文件，可以使用python manage.py sqlmigrate demo 0001可以查看这次数据库迁移的操作与具体的SQL语句</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">$</span> <span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">sqlmigrate</span> <span class="n">demo</span> <span class="mo">0001</span>
+<span class="n">BEGIN</span><span class="p">;</span>
+<span class="o">--</span>
+<span class="o">--</span> <span class="n">Create</span> <span class="n">model</span> <span class="n">Books</span>
+<span class="o">--</span>
+<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="sb">`demo_books`</span> <span class="p">(</span><span class="sb">`id`</span> <span class="n">integer</span> <span class="n">AUTO_INCREMENT</span> <span class="n">NOT</span> <span class="n">NULL</span> <span class="n">PRIMARY</span> <span class="n">KEY</span><span class="p">,</span> <span class="sb">`book_name`</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span> <span class="sb">`auhtor`</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="n">NOT</span> <span class="n">NULL</span><span class="p">);</span>
+<span class="n">COMMIT</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>需要注意一下几点：</p>
+<ul>
+<li>输出的内容与使用的数据库有关。</li>
+<li>数据库的表名默认是“应用名_模型名的小写”，也可以自定义表名。</li>
+<li>主键会默认自动创建，也可以自定义主键。</li>
+<li>Django会为使用的数据库定制相关SQL语句，例如主键：integer AUTO_INCREMENT NOT NULL PRIMARY KEY，varchar：NOT NULL</li>
+<li>sqlmigrate命令并没有真正执行迁移命令，他只是将迁移命令执行的流程输出到屏幕上，供你查看</li>
+</ul>
+<p>执行check命令对项目做检查</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">$</span> <span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">check</span>
+<span class="n">System</span> <span class="n">check</span> <span class="n">identified</span> <span class="n">no</span> <span class="n">issues</span> <span class="p">(</span><span class="mi">0</span> <span class="n">silenced</span><span class="p">)</span><span class="o">.</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>没有问题后执行迁移命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">$</span> <span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">migrate</span>
+<span class="n">Operations</span> <span class="n">to</span> <span class="n">perform</span><span class="p">:</span>
+  <span class="n">Apply</span> <span class="nb">all</span> <span class="n">migrations</span><span class="p">:</span> <span class="n">admin</span><span class="p">,</span> <span class="n">auth</span><span class="p">,</span> <span class="n">contenttypes</span><span class="p">,</span> <span class="n">demo</span><span class="p">,</span> <span class="n">sessions</span>
+<span class="n">Running</span> <span class="n">migrations</span><span class="p">:</span>
+  <span class="n">Applying</span> <span class="n">demo</span><span class="o">.</span><span class="mo">0001</span><span class="n">_initial</span><span class="o">...</span> <span class="n">OK</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>看到以上内容即完成了数据库迁移</p>
+<p>通过Python命令行尝试</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">$</span> <span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">shell</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">demo.models</span> <span class="kn">import</span> <span class="n">Books</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ggzh</span> <span class="o">=</span> <span class="n">Books</span><span class="p">(</span><span class="n">book_name</span><span class="o">=</span><span class="s2">&#34;硅谷之火&#34;</span><span class="p">,</span><span class="n">author</span><span class="o">=</span><span class="s2">&#34;迈克尔.斯韦因&#34;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ggzh</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ggzh</span><span class="o">.</span><span class="n">id</span>
+<span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ggzh</span><span class="o">.</span><span class="n">book_name</span>
+<span class="s1">&#39;硅谷之火&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ggzh</span><span class="o">.</span><span class="n">author</span>
+<span class="s1">&#39;迈克尔.斯韦因&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Books</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<span class="o">&lt;</span><span class="n">QuerySet</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">Books</span><span class="p">:</span> <span class="n">Books</span> <span class="nb">object</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">&gt;</span><span class="p">]</span><span class="o">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这里我们看到&lt;QuerySet [&lt;Books: Books object (1)&gt;]&gt;这个并不能让我们知道这个对象的细节，通过修改Books模型来修复这个问题</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">/</span><span class="n">demo</span><span class="o">/</span><span class="n">models</span><span class="o">.</span><span class="n">py</span>
+
+<span class="k">class</span> <span class="nc">Books</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="c1"># 书名</span>
+    <span class="n">book_name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+    <span class="c1"># 作者</span>
+    <span class="n">author</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+    
+	<span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">book_name</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>修改完成后重新进入交互终端，再次查询就可以显示书名了，这里可以自己定义想显示的字段或内容</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">$</span> <span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">shell</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">demo.models</span> <span class="kn">import</span> <span class="n">Books</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Books</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<span class="o">&lt;</span><span class="n">QuerySet</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">Books</span><span class="p">:</span> <span class="err">硅谷之火</span><span class="o">&gt;</span><span class="p">]</span><span class="o">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>再添加一本书，聚合函数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">qbsz</span> <span class="o">=</span> <span class="n">Books</span><span class="p">(</span><span class="n">book_name</span><span class="o">=</span><span class="s2">&#34;史蒂夫*乔布斯传&#34;</span><span class="p">,</span><span class="n">author</span><span class="o">=</span><span class="s2">&#34;沃尔特·艾萨克森&#34;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">qbsz</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Books</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<span class="o">&lt;</span><span class="n">QuerySet</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">Books</span><span class="p">:</span> <span class="err">硅谷之火</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">Books</span><span class="p">:</span> <span class="err">史蒂夫</span><span class="o">*</span><span class="err">乔布斯传</span><span class="o">&gt;</span><span class="p">]</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Books</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="mi">2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Books</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">book_name</span><span class="o">=</span><span class="s2">&#34;硅谷之火&#34;</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">QuerySet</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">Books</span><span class="p">:</span> <span class="err">硅谷之火</span><span class="o">&gt;</span><span class="p">]</span><span class="o">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>接下来我们将Books模型添加到admin管理，通过register方法，将Books交给admin管理</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">/</span><span class="n">demo</span><span class="o">/</span><span class="n">admin</span>
+
+<span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Books</span>
+
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Books</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>重新运行项目，在地址栏输入：http://127.0.0.1:8000/admin/，输入账号密码登录即可查看到这个模型</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tva4.sinaimg.cn/large/006lmzsGgy1gav1r45uowj31h70s9wfe.jpg"
+        data-srcset="https://tva4.sinaimg.cn/large/006lmzsGgy1gav1r45uowj31h70s9wfe.jpg, https://tva4.sinaimg.cn/large/006lmzsGgy1gav1r45uowj31h70s9wfe.jpg 1.5x, https://tva4.sinaimg.cn/large/006lmzsGgy1gav1r45uowj31h70s9wfe.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva4.sinaimg.cn/large/006lmzsGgy1gav1r45uowj31h70s9wfe.jpg"
+        title="https://tva4.sinaimg.cn/large/006lmzsGgy1gav1r45uowj31h70s9wfe.jpg" /></p>
+<p>点进去可以查看该模型的数据，右上角可以添加，动作可以删除，点图书名可以看到更多细节</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tvax3.sinaimg.cn/large/006lmzsGgy1gav1rig51bj31hb0s83zk.jpg"
+        data-srcset="https://tvax3.sinaimg.cn/large/006lmzsGgy1gav1rig51bj31hb0s83zk.jpg, https://tvax3.sinaimg.cn/large/006lmzsGgy1gav1rig51bj31hb0s83zk.jpg 1.5x, https://tvax3.sinaimg.cn/large/006lmzsGgy1gav1rig51bj31hb0s83zk.jpg 2x"
+        data-sizes="auto"
+        alt="https://tvax3.sinaimg.cn/large/006lmzsGgy1gav1rig51bj31hb0s83zk.jpg"
+        title="后台管理图书" /></p>
+<h3 id="视图与模板">视图与模板</h3>
+<p>在models.py中添加一个图书模型</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">/</span><span class="n">demo</span><span class="o">/</span><span class="n">models</span><span class="o">.</span><span class="n">py</span>
+
+<span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+
+
+<span class="k">class</span> <span class="nc">Books</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="c1"># 书名</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="s1">&#39;书名&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+    <span class="c1"># 作者</span>
+    <span class="n">author</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="s1">&#39;作者&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+    <span class="n">publish_house</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="s1">&#39;出版社&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+    <span class="n">publish_date</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="s1">&#39;出版日期&#39;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+    <span class="n">price</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">(</span><span class="s1">&#39;价格&#39;</span><span class="p">)</span>
+    <span class="n">synopsis</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="s1">&#39;简介&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>在admin.py中注册Books</p>
+<p>迁移数据库</p>
+<p>在Django后台中添加图书数据</p>
+<p>在应用的views.py中编写一个展示图书的视图</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">/</span><span class="n">demo</span><span class="o">/</span><span class="n">views</span><span class="o">.</span><span class="n">py</span>
+
+<span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Books</span>
+
+
+<span class="k">def</span> <span class="nf">book_list</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="n">book_list</span> <span class="o">=</span> <span class="n">Books</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="n">books</span> <span class="o">=</span> <span class="p">{</span><span class="n">book</span><span class="o">.</span><span class="n">name</span> <span class="p">:</span> <span class="n">book</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="n">book_list</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;index.html&#39;</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;books&#39;</span><span class="p">:</span> <span class="n">books</span><span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>通过模板渲染</p>
+<p>在templates目录下新建一个index.html文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-django" data-lang="django"><span class="x">/tempaltes/index.html
+</span><span class="x">
+</span><span class="x">&lt;!DOCTYPE html&gt;
+</span><span class="x">&lt;html lang=&#34;en&#34;&gt;
+</span><span class="x">&lt;head&gt;
+</span><span class="x">    &lt;meta charset=&#34;UTF-8&#34;&gt;
+</span><span class="x">    &lt;title&gt;Title&lt;/title&gt;
+</span><span class="x">&lt;/head&gt;
+</span><span class="x">&lt;body&gt;
+</span><span class="x">
+</span><span class="x">&lt;div&gt;图书管理系统：&lt;/div&gt;
+</span><span class="x">&lt;ul&gt;
+</span><span class="x">&lt;/ul&gt;
+</span><span class="x">&lt;/body&gt;
+</span><span class="x">&lt;/html&gt;
+</span></code></pre></td></tr></table>
+</div>
+</div><p>在项目的urls.py文件中添加一个关于图书的路由</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">/</span><span class="n">mysite</span><span class="o">/</span><span class="n">urls</span><span class="o">.</span><span class="n">py</span>
+
+<span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+<span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
+
+<span class="kn">from</span> <span class="nn">demo</span> <span class="kn">import</span> <span class="n">views</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;admin/&#39;</span><span class="p">,</span> <span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">urls</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;book/&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s1">&#39;demo.urls&#39;</span><span class="p">)),</span>
+<span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>在demo目录中新建一个urls.py文件，并添加一个路由</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">/</span><span class="n">demo</span><span class="o">/</span><span class="n">urls</span><span class="o">.</span><span class="n">py</span>
+
+<span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
+
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">views</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">book_list</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">),</span>
+<span class="p">]</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>启动项目，访问：http://127.0.0.1:8000/book/</p>
+<p>图书列表页完成了，接下来编写图书详情页</p>
+<p>在demo项目中的urls.py文件中添加一个详情页的路由</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">/</span><span class="n">demo</span><span class="o">/</span><span class="n">urls</span><span class="o">.</span><span class="n">py</span>
+
+<span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
+
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">views</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">book_list</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;&lt;int:id&gt;/&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">detail</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;detail&#39;</span><span class="p">),</span>
+<span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>在demo项目中的views.py文件中编写详情页相关视图函数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">/</span><span class="n">demo</span><span class="o">/</span><span class="n">views</span><span class="o">.</span><span class="n">py</span>
+
+<span class="k">def</span> <span class="nf">detail</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+    <span class="n">book</span> <span class="o">=</span> <span class="n">Books</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&#34;name&#34;</span><span class="p">:</span> <span class="n">book</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+        <span class="s2">&#34;author&#34;</span><span class="p">:</span> <span class="n">book</span><span class="o">.</span><span class="n">author</span><span class="p">,</span>
+        <span class="s1">&#39;publish_house&#39;</span><span class="p">:</span> <span class="n">book</span><span class="o">.</span><span class="n">publish_house</span><span class="p">,</span>
+        <span class="s1">&#39;publish_date&#39;</span><span class="p">:</span> <span class="n">book</span><span class="o">.</span><span class="n">publish_date</span><span class="p">,</span>
+        <span class="s1">&#39;price&#39;</span><span class="p">:</span> <span class="n">book</span><span class="o">.</span><span class="n">price</span><span class="p">,</span>
+        <span class="s1">&#39;synopsis&#39;</span><span class="p">:</span> <span class="n">book</span><span class="o">.</span><span class="n">synopsis</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;detail.html&#39;</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="n">content</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>在templates文件夹里新建一个detail.html文件,并写入一下代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-django" data-lang="django"><span class="x">/templates/detail.html
+</span><span class="x">
+</span><span class="x">&lt;!DOCTYPE html&gt;
+</span><span class="x">&lt;html lang=&#34;en&#34;&gt;
+</span><span class="x">&lt;head&gt;
+</span><span class="x">    &lt;meta charset=&#34;UTF-8&#34;&gt;
+</span><span class="x">    &lt;title&gt;Title&lt;/title&gt;
+</span><span class="x">&lt;/head&gt;
+</span><span class="x">&lt;body&gt;
+</span><span class="x">&lt;table&gt;
+</span><span class="x">    &lt;tr&gt;
+</span><span class="x">        &lt;td&gt;书名&lt;/td&gt;
+</span><span class="x">        &lt;td&gt;作者&lt;/td&gt;
+</span><span class="x">        &lt;td&gt;出版社&lt;/td&gt;
+</span><span class="x">        &lt;td&gt;出版日期&lt;/td&gt;
+</span><span class="x">        &lt;td&gt;价格&lt;/td&gt;
+</span><span class="x">        &lt;td&gt;简介&lt;/td&gt;
+</span><span class="x">    &lt;/tr&gt;
+</span><span class="x">    &lt;tr&gt;
+</span><span class="x">        &lt;td&gt;</span><span class="cp">{{</span> <span class="nv">name</span> <span class="cp">}}</span><span class="x">&lt;/td&gt;
+</span><span class="x">        &lt;td&gt;</span><span class="cp">{{</span> <span class="nv">author</span> <span class="cp">}}</span><span class="x">&lt;/td&gt;
+</span><span class="x">        &lt;td&gt;</span><span class="cp">{{</span> <span class="nv">publish_house</span> <span class="cp">}}</span><span class="x">&lt;/td&gt;
+</span><span class="x">        &lt;td&gt;</span><span class="cp">{{</span> <span class="nv">publish_date</span> <span class="cp">}}</span><span class="x">&lt;/td&gt;
+</span><span class="x">        &lt;td&gt;</span><span class="cp">{{</span> <span class="nv">price</span> <span class="cp">}}</span><span class="x">&lt;/td&gt;
+</span><span class="x">        &lt;td&gt;</span><span class="cp">{{</span> <span class="nv">synopsis</span> <span class="cp">}}</span><span class="x">&lt;/td&gt;
+</span><span class="x">    &lt;/tr&gt;
+</span><span class="x">&lt;/table&gt;
+</span><span class="x">
+</span><span class="x">&lt;/body&gt;
+</span><span class="x">&lt;/html&gt;
+</span></code></pre></td></tr></table>
+</div>
+</div><p>启动项目，访问：http://127.0.0.1:8000/book/，点击其中一个图书就可以看到详情页，或者直接选择一个id访问详情页，这时候就会出现一个问题，当访问一个不存在的id时就会出错，我们需要定制一下错误页面，修改detail视图函数。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">/</span><span class="n">demo</span><span class="o">/</span><span class="n">views</span><span class="o">.</span><span class="n">py</span>
+<span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">Http404</span>
+<span class="o">...</span>
+<span class="k">def</span> <span class="nf">detail</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+    <span class="n">books</span> <span class="o">=</span> <span class="n">Books</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">books</span><span class="p">):</span>
+        <span class="n">book</span> <span class="o">=</span> <span class="n">books</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">content</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&#34;name&#34;</span><span class="p">:</span> <span class="n">book</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+            <span class="s2">&#34;author&#34;</span><span class="p">:</span> <span class="n">book</span><span class="o">.</span><span class="n">author</span><span class="p">,</span>
+            <span class="s1">&#39;publish_house&#39;</span><span class="p">:</span> <span class="n">book</span><span class="o">.</span><span class="n">publish_house</span><span class="p">,</span>
+            <span class="s1">&#39;publish_date&#39;</span><span class="p">:</span> <span class="n">book</span><span class="o">.</span><span class="n">publish_date</span><span class="p">,</span>
+            <span class="s1">&#39;price&#39;</span><span class="p">:</span> <span class="n">book</span><span class="o">.</span><span class="n">price</span><span class="p">,</span>
+            <span class="s1">&#39;synopsis&#39;</span><span class="p">:</span> <span class="n">book</span><span class="o">.</span><span class="n">synopsis</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;detail.html&#39;</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="n">content</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s2">&#34;图书不存在&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这里调用的是Django自带的404错误页面，我们需要返回错误说明</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2019-03-02</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E5%88%9D%E4%BD%93%E9%AA%8C/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://silencehuliang.github.io/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E5%88%9D%E4%BD%93%E9%AA%8C/" data-title="Django基础教程之初体验" data-hashtags="Django,教程"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://silencehuliang.github.io/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E5%88%9D%E4%BD%93%E9%AA%8C/" data-hashtag="Django"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://silencehuliang.github.io/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E5%88%9D%E4%BD%93%E9%AA%8C/" data-title="Django基础教程之初体验" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://silencehuliang.github.io/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E5%88%9D%E4%BD%93%E9%AA%8C/" data-title="Django基础教程之初体验"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://silencehuliang.github.io/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E5%88%9D%E4%BD%93%E9%AA%8C/" data-title="Django基础教程之初体验"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://silencehuliang.github.io/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E5%88%9D%E4%BD%93%E9%AA%8C/" data-title="Django基础教程之初体验" data-description="Django初体验"><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://silencehuliang.github.io/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E5%88%9D%E4%BD%93%E9%AA%8C/" data-title="Django基础教程之初体验" data-description="Django初体验"><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://silencehuliang.github.io/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E5%88%9D%E4%BD%93%E9%AA%8C/" data-title="Django基础教程之初体验"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/django/">Django</a>,&nbsp;<a href="/tags/%E6%95%99%E7%A8%8B/">教程</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E4%BB%8B%E7%BB%8D/" class="prev" rel="prev" title="Django基础教程之介绍"><i class="fas fa-angle-left fa-fw"></i>Django基础教程之介绍</a>
+            <a href="/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E5%B7%A5%E7%A8%8B%E6%90%AD%E5%BB%BA/" class="next" rel="next" title="Django基础教程之工程搭建">Django基础教程之工程搭建<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.74.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2018 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Silence</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.4afae7d446ba01ebf7fff19893eaf3a1.css" integrity="md5-Svrn1Ea6Aev3//GYk&#43;rzoQ=="><link rel="stylesheet" href="/lib/katex/copy-tex.min.b1994d1b9785dd8801dbf655df7bf6d9.css" integrity="md5-sZlNG5eF3YgB2/ZV33v22Q=="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.acf82ee47549fdc386d02768992a49ad.css" integrity="md5-rPgu5HVJ/cOG0CdomSpJrQ=="><script type="text/javascript" src="/lib/valine/Valine.min.b1d2c9b89c70dbf0a8541bfd36afafa1.js" integrity="md5-sdLJuJxw2/CoVBv9Nq&#43;voQ=="></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.100efdceabf7a138f3297e437d078f74.js" integrity="md5-EA79zqv3oTjzKX5DfQePdA=="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.ae7c5011def46b283696baf367586b5d.js" integrity="md5-rnxQEd70ayg2lrrzZ1hrXQ=="></script><script type="text/javascript" src="/lib/lunr/lunr.min.a08f2562fde4550269dfc13028ed2502.js" integrity="md5-oI8lYv3kVQJp38EwKO0lAg=="></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.b82fb8d93ce0ea6a485dfa3a0b1e7573.js" integrity="md5-uC&#43;42Tzg6mpIXfo6Cx51cw=="></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.f1ba3e22560e2eb7474f28feb4507617.js" integrity="md5-8bo&#43;IlYOLrdHTyj&#43;tFB2Fw=="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.b80e49640d4794d4333d00db76ea22f7.js" integrity="md5-uA5JZA1HlNQzPQDbduoi9w=="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.af8ab36589315582ccdd82f22e84bffb.js" integrity="md5-r4qzZYkxVYLM3YLyLoS/&#43;w=="></script><script type="text/javascript" src="/lib/sharer/sharer.min.c3c3372b4cf5c56dd4e5a4be8ada86c9.js" integrity="md5-w8M3K0z1xW3U5aS&#43;itqGyQ=="></script><script type="text/javascript" src="/lib/typeit/typeit.min.b5f3481ebeaa3e56a2f5f96ea648bf69.js" integrity="md5-tfNIHr6qPlai9flupki/aQ=="></script><script type="text/javascript" src="/lib/katex/katex.min.c158c9e823b681cf535f46596b5e4eac.js" integrity="md5-wVjJ6CO2gc9TX0ZZa15OrA=="></script><script type="text/javascript" src="/lib/katex/auto-render.min.28cd0b98cd3f4fa37d52f3ffe47ad9d4.js" integrity="md5-KM0LmM0/T6N9UvP/5HrZ1A=="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.bfaec7d1dea915d74a7a6d833f0ff62e.js" integrity="md5-v67H0d6pFddKem2DPw/2Lg=="></script><script type="text/javascript" src="/lib/katex/mhchem.min.1bbb252363e83547d4b2186a41eaca28.js" integrity="md5-G7slI2PoNUfUshhqQerKKA=="></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.4a48532bf0b17c058b8b6854f49de23f.js" integrity="md5-SkhTK/CxfAWLi2hU9J3iPw=="></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"c4VA4R1Xg3drBKSQzNfWnWlF-gzGzoHsz","appKey":"upEyt7esgWCbm0L7EPDH6bhV","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","meta":["nick","mail"],"pageSize":10,"placeholder":"说点什么吧...","recordIP":true,"visitor":true}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"id-1":"Silence’s Blog","id-2":"Silence’s Blog"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.7bc7989e979c4a19d97db3ab311a80fe.js" integrity="md5-e8eYnpecShnZfbOrMRqA/g=="></script></body>
+</html>

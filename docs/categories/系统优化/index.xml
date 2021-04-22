@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>系统优化 - 分类 - Silence Blog</title>
+        <link>https://silencehuliang.github.io/categories/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/</link>
+        <description>系统优化 - 分类 - Silence Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>silencehuliang@gmail.com (Silence)</managingEditor>
+            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 05 Jan 2019 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://silencehuliang.github.io/categories/%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96/" rel="self" type="application/rss+xml" /><item>
+    <title>Windows10在此处打开cmd</title>
+    <link>https://silencehuliang.github.io/windows10%E5%9C%A8%E6%AD%A4%E5%A4%84%E6%89%93%E5%BC%80cmd/</link>
+    <pubDate>Sat, 05 Jan 2019 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/windows10%E5%9C%A8%E6%AD%A4%E5%A4%84%E6%89%93%E5%BC%80cmd/</guid>
+    <description><![CDATA[在Windows10中我们经常需要在某个文件夹下打开cmd窗口，虽然可以在地址栏输入cmd打开，但还是比较麻烦，可以修改注册表添加一个右键菜单来解决这个问题。]]></description>
+</item></channel>
+</rss>
