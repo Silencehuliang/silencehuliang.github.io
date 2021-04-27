@@ -4,7 +4,14 @@
         <link>https://silencehuliang.github.io/tags/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/</link>
         <description>Python学习之路 - 标签 - Silence Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>silencehuliang@gmail.com (Silence)</managingEditor>
-            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 13 Jun 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://silencehuliang.github.io/tags/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 04 Jul 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://silencehuliang.github.io/tags/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/" rel="self" type="application/rss+xml" /><item>
+    <title>Python学习之路-Flask项目:项目部署</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E9%A1%B9%E7%9B%AE%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/</link>
+    <pubDate>Sat, 04 Jul 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E9%A1%B9%E7%9B%AE%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
     <title>Python学习之路-Flask项目:开发准备</title>
     <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E5%87%86%E5%A4%87/</link>
     <pubDate>Sat, 13 Jun 2020 00:00:00 &#43;0000</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-python%E6%93%8D%E4%BD%9Credis/</guid>
     <description><![CDATA[在Python中操作<code>Redis</code>可以直接用<code>redis</code>模块]]></description>
-</item><item>
-    <title>Python学习之路-Redis基础</title>
-    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-redis%E5%9F%BA%E7%A1%80/</link>
-    <pubDate>Sat, 21 Mar 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-redis%E5%9F%BA%E7%A1%80/</guid>
-    <description><![CDATA[前面学习数据库的时候学习了用的最多的关系型数据库<code>MySQL</code>，这次来学习用的最多的非关系型数据库<code>Redis</code>。]]></description>
 </item></channel>
 </rss>
