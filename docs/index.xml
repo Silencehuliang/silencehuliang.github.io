@@ -4,16 +4,9 @@
         <link>https://silencehuliang.github.io/</link>
         <description>Silence‘s blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>silencehuliang@gmail.com (Silence)</managingEditor>
-            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 20 Jun 2020 00:00:00 &#43;0000</lastBuildDate>
+            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 13 Jun 2020 00:00:00 &#43;0000</lastBuildDate>
             <atom:link href="https://silencehuliang.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
-    <title>Python学习之路-Flask项目:博客前台</title>
-    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E9%A1%B9%E7%9B%AE%E5%8D%9A%E5%AE%A2%E5%89%8D%E5%8F%B0/</link>
-    <pubDate>Sat, 20 Jun 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E9%A1%B9%E7%9B%AE%E5%8D%9A%E5%AE%A2%E5%89%8D%E5%8F%B0/</guid>
-    <description><![CDATA[前一篇完成了项目开发前的所有准备工作，本篇将完成整个博客的前台相关工作。]]></description>
-</item><item>
     <title>Python学习之路-Flask项目:开发准备</title>
     <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E5%87%86%E5%A4%87/</link>
     <pubDate>Sat, 13 Jun 2020 00:00:00 &#43;0000</pubDate>
@@ -76,5 +69,12 @@
     <author>作者</author>
     <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-python%E6%93%8D%E4%BD%9Credis/</guid>
     <description><![CDATA[在Python中操作<code>Redis</code>可以直接用<code>redis</code>模块]]></description>
+</item><item>
+    <title>Python学习之路-Redis基础</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-redis%E5%9F%BA%E7%A1%80/</link>
+    <pubDate>Sat, 21 Mar 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-redis%E5%9F%BA%E7%A1%80/</guid>
+    <description><![CDATA[前面学习数据库的时候学习了用的最多的关系型数据库<code>MySQL</code>，这次来学习用的最多的非关系型数据库<code>Redis</code>。]]></description>
 </item></channel>
 </rss>
