@@ -4,7 +4,14 @@
         <link>https://silencehuliang.github.io/tags/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/</link>
         <description>Python学习之路 - 标签 - Silence Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>silencehuliang@gmail.com (Silence)</managingEditor>
-            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 13 Jun 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://silencehuliang.github.io/tags/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 20 Jun 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://silencehuliang.github.io/tags/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/" rel="self" type="application/rss+xml" /><item>
+    <title>Python学习之路-Flask项目:博客前台</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E9%A1%B9%E7%9B%AE%E5%8D%9A%E5%AE%A2%E5%89%8D%E5%8F%B0/</link>
+    <pubDate>Sat, 20 Jun 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E9%A1%B9%E7%9B%AE%E5%8D%9A%E5%AE%A2%E5%89%8D%E5%8F%B0/</guid>
+    <description><![CDATA[前一篇完成了项目开发前的所有准备工作，本篇将完成整个博客的前台相关工作。]]></description>
+</item><item>
     <title>Python学习之路-Flask项目:开发准备</title>
     <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E5%87%86%E5%A4%87/</link>
     <pubDate>Sat, 13 Jun 2020 00:00:00 &#43;0000</pubDate>
@@ -33,6 +40,13 @@
     <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80%E8%A7%86%E5%9B%BE%E5%8F%8A%E8%B7%AF%E7%94%B1/</guid>
     <description><![CDATA[有时我们需要将同一类 URL 映射到同一个视图函数处理，比如：使用同一个视图函数来显示不同用户的个人信息。]]></description>
 </item><item>
+    <title>Python学习之路-Flask基础:HelloFlask</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80helloflask/</link>
+    <pubDate>Sat, 09 May 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80helloflask/</guid>
+    <description><![CDATA[Web(World Wide Web)诞生最初的目的，是为了利用互联网交流工作文档。web网站发展至今，特别是服务器端，涉及到的知识、内容，非常广泛。这对程序员的要求会越来越高。]]></description>
+</item><item>
     <title>Python学习之路-深拷贝与浅拷贝</title>
     <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/</link>
     <pubDate>Sat, 25 Apr 2020 00:00:00 &#43;0000</pubDate>
@@ -60,19 +74,5 @@
     <author>作者</author>
     <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-python%E6%93%8D%E4%BD%9Credis/</guid>
     <description><![CDATA[在Python中操作<code>Redis</code>可以直接用<code>redis</code>模块]]></description>
-</item><item>
-    <title>Python学习之路-Redis基础</title>
-    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-redis%E5%9F%BA%E7%A1%80/</link>
-    <pubDate>Sat, 21 Mar 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-redis%E5%9F%BA%E7%A1%80/</guid>
-    <description><![CDATA[前面学习数据库的时候学习了用的最多的关系型数据库<code>MySQL</code>，这次来学习用的最多的非关系型数据库<code>Redis</code>。]]></description>
-</item><item>
-    <title>Python学习之路-MySQL进阶</title>
-    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-mysql%E8%BF%9B%E9%98%B6/</link>
-    <pubDate>Wed, 05 Feb 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-mysql%E8%BF%9B%E9%98%B6/</guid>
-    <description><![CDATA[对于复杂的查询，往往是有多个数据表进行关联查询而得到，如果数据库因为需求等原因发生了改变，为了保证查询出来的数据与之前相同，则需要在多个地方进行修改，维护起来非常麻烦。可以通过定义视图来解决]]></description>
 </item></channel>
 </rss>

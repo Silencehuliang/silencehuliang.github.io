@@ -4,9 +4,16 @@
         <link>https://silencehuliang.github.io/</link>
         <description>Silence‘s blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>silencehuliang@gmail.com (Silence)</managingEditor>
-            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 13 Jun 2020 00:00:00 &#43;0000</lastBuildDate>
+            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 20 Jun 2020 00:00:00 &#43;0000</lastBuildDate>
             <atom:link href="https://silencehuliang.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Python学习之路-Flask项目:博客前台</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E9%A1%B9%E7%9B%AE%E5%8D%9A%E5%AE%A2%E5%89%8D%E5%8F%B0/</link>
+    <pubDate>Sat, 20 Jun 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E9%A1%B9%E7%9B%AE%E5%8D%9A%E5%AE%A2%E5%89%8D%E5%8F%B0/</guid>
+    <description><![CDATA[前一篇完成了项目开发前的所有准备工作，本篇将完成整个博客的前台相关工作。]]></description>
+</item><item>
     <title>Python学习之路-Flask项目:开发准备</title>
     <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E5%87%86%E5%A4%87/</link>
     <pubDate>Sat, 13 Jun 2020 00:00:00 &#43;0000</pubDate>
@@ -35,6 +42,13 @@
     <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80%E8%A7%86%E5%9B%BE%E5%8F%8A%E8%B7%AF%E7%94%B1/</guid>
     <description><![CDATA[有时我们需要将同一类 URL 映射到同一个视图函数处理，比如：使用同一个视图函数来显示不同用户的个人信息。]]></description>
 </item><item>
+    <title>Python学习之路-Flask基础:HelloFlask</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80helloflask/</link>
+    <pubDate>Sat, 09 May 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80helloflask/</guid>
+    <description><![CDATA[Web(World Wide Web)诞生最初的目的，是为了利用互联网交流工作文档。web网站发展至今，特别是服务器端，涉及到的知识、内容，非常广泛。这对程序员的要求会越来越高。]]></description>
+</item><item>
     <title>Python学习之路-深拷贝与浅拷贝</title>
     <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/</link>
     <pubDate>Sat, 25 Apr 2020 00:00:00 &#43;0000</pubDate>
@@ -62,19 +76,5 @@
     <author>作者</author>
     <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-python%E6%93%8D%E4%BD%9Credis/</guid>
     <description><![CDATA[在Python中操作<code>Redis</code>可以直接用<code>redis</code>模块]]></description>
-</item><item>
-    <title>Python学习之路-Redis基础</title>
-    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-redis%E5%9F%BA%E7%A1%80/</link>
-    <pubDate>Sat, 21 Mar 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-redis%E5%9F%BA%E7%A1%80/</guid>
-    <description><![CDATA[前面学习数据库的时候学习了用的最多的关系型数据库<code>MySQL</code>，这次来学习用的最多的非关系型数据库<code>Redis</code>。]]></description>
-</item><item>
-    <title>使用Hugo搭建自己的博客并通过GitHub Pages部署</title>
-    <link>https://silencehuliang.github.io/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%80%9A%E8%BF%87github/</link>
-    <pubDate>Fri, 07 Feb 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%80%9A%E8%BF%87github/</guid>
-    <description><![CDATA[由于前一段时间学习了Golang，在家查阅相关资料的时候发现了<a href="https://gohugo.io/" target="_blank" rel="noopener noreffer"><strong>Hugo</strong></a>这个用Go语言编写的静态网站生成器，根据网站的介绍它有着速度快，易用，可配置程度高等<a href="https://gohugo.io/about/features/" target="_blank" rel="noopener noreffer">特点</a>，而且文章依赖于Markdown生成，非常适合作为博客、文档、个人简历这类型的网站]]></description>
 </item></channel>
 </rss>
