@@ -108,39 +108,6 @@ def index():
 |   blogList.create_time   | string |    是    |         时间         |
 | blogList.index_image_url | string |    是    |        索引图        |
 
-- 返回示例：
-
-```json
-{
-    "cid": "0",
-    "currentPage": 1,
-    "errmsg": "OK",
-    "errno": "0",
-    "blogList": [
-        {
-            "clicks": 105,
-            "create_time": "2020-06-13 06:51:31",
-            "digest": "前面几篇学习了`Flask`的基础知识，从今天开始开发一个个人博客项目来练练手。",
-            "id": 54,
-            "index_image_url": "https://tvax1.sinaimg.cn/large/00729CCqgy1gp1q41no6dj306k0a9q35.jpg",
-            "source": "Silence",
-            "status": 0,
-            "title": "Python学习之路-Flask项目:开发准备"
-        },
-        {
-            "clicks": 99,
-            "create_time": "2020-05-30 07:21:55",
-            "digest": "`ORM`全拼`Object-Relation Mapping`，中文意为 `对象-关系映射`。主要实现模型对象到关系数据库数据的映射.",
-            "id": 53,
-            "index_image_url": "https://tva4.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg",
-            "source": "Silence",
-            "status": 0,
-            "title": "Python学习之路-Flask基础:数据库"
-        }
-    ],
-    "totalPage": 6
-}
-```
 
 #### 后端实现
 
@@ -508,29 +475,6 @@ def set_comment_like():
 可以使用 app.errorhandle(code_or_exception) 装饰器
 
 ### 代码实现
-
-因为404页面没有底部的内容，所以在 `templates/blog/base.html` 里面将底部的内容设置成为一个 block
-
-```html
-{% block bottomBlock %}
-    <div class="footer">
-        <div class="footer_links">
-            <a href="">关于我们</a>
-            <span>|</span>
-            <a href="">联系我们</a>
-            <span>|</span>
-            <a href="">招聘人才</a>
-            <span>|</span>
-            <a href="">友情链接</a>
-        </div>
-        <p class="copyright">
-            CopyRight © 2020 Silence All Rights Reserved<br />
-          电话：010-****888    京ICP备*******8号
-        </p>
-    </div>
-{% endblock %}
-```
-
 - 将 `static/blog/404.html` 文件拖到 `templates/blog/` 目录下，并继承于基类模板
 
 - 在 `blog/__init__.py` 文件中的 `create_app` 函数中添加以下逻辑
