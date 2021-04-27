@@ -35,36 +35,28 @@ Flask提供的 **render_template** 函数封装了该模板引擎，**render_tem
 
 - {{}} 来表示变量名，这种 {{}} 语法叫做**变量代码块**
 
-  `<h1>{{ post.title }}</h1>`
-  
   Jinja2 模版中的变量代码块可以是任意 Python 类型或者对象，只要它能够被 Python 的 str() 方法转换为一个字符串就可以，比如，可以通过下面的方式显示一个字典或者列表中的某个元素：
-`{{your_dict['key']}}{{your_list[0]}}`
+  
   
 - 用 {**%%**} 定义的**控制代码块**，可以实现一些语言层次的功能，比如循环或者if语句
-`<ul>{% if user %}{{ user }}{% else %}hello!{% for index in indexs %}<li> {{ index }} </li>{% endfor %}</ul>`
-
 
 
 ### 注释
 
 - 使用 {# #} 进行注释，注释的内容不会在html中被渲染出来
 
-  `{# {{ name }} #}`
-
-## 实操
+  实操
 
 - 在项目下创建 `templates` 文件夹，用于存放所有的模板文件，并在目录下创建一个模板html文件 `temp_demo1.html`
 
-  `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Title</title></head><body>我的模板html内容</body></html>`
+  创建视图函数，将该模板内容进行渲染返回
   
-- 创建视图函数，将该模板内容进行渲染返回
-
   ```python
   @app.route('/')
   def index():
       return render_template('temp_demo1.html')
   ```
-
+  
 - 代码中传入字符串，列表，字典到模板中
 
   ```python
@@ -88,22 +80,11 @@ Flask提供的 **render_template** 函数封装了该模板引擎，**render_tem
 
 - 模板中代码
 
-  `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Title</title></head><body>我的模板html内容<br/>{{ my_str }}<br/>{{ my_int }}<br/>{{ my_array }}<br/>{{ my_dict }}</body></html>`
-
 - 运行效果
 
   `<!DOCTYPE html>我的模板html内容Hello 模板1101[1, 2, 3, 4, 5, 6]{'name': 'xiaoliang', 'age': 18}`
   
 - 相关运算，取值
-
-  ```html
-  <br/> my_int + 10 的和为：{{ my_int + 10 }}
-  <br/> my_int + my_array第0个值的和为：{{ my_int + my_array[0] }}
-  <br/> my_array 第0个值为：{{ my_array[0] }}
-  <br/> my_array 第1个值为：{{ my_array.1 }}
-  <br/> my_dict 中 name 的值为：{{ my_dict['name'] }}
-  <br/> my_dict 中 age 的值为：{{ my_dict.age }}
-  ```
 
 - 结果
 
@@ -125,23 +106,11 @@ Flask提供的 **render_template** 函数封装了该模板引擎，**render_tem
 
 - 过滤器的使用方式为：变量名 | 过滤器。
 
-```python
-{{variable | filter_name(*args)}}
-```
-
 - 如果没有任何参数传给过滤器,则可以把括号省略掉
-
-```python
-{{variable | filter_name}}
-```
 
 ### 链式调用
 
 在 jinja2 中，过滤器是可以支持链式调用的，示例如下：
-
-```python
-{{ "hello world" | reverse | upper }}
-```
 
 ### 常见内建过滤器
 
@@ -149,97 +118,35 @@ Flask提供的 **render_template** 函数封装了该模板引擎，**render_tem
 
 - safe：禁用转义
 
-```python
-<p>{{ '<em>hello</em>' | safe }}</p>
-```
-
 - capitalize：把变量值的首字母转成大写，其余字母转小写
-
-```python
-<p>{{ 'hello' | capitalize }}</p>
-```
 
 - lower：把值转成小写
 
-```python
-<p>{{ 'HELLO' | lower }}</p>
-```
-
 - upper：把值转成大写
-
-```python
-<p>{{ 'hello' | upper }}</p>
-```
 
 - title：把值中的每个单词的首字母都转成大写
 
-```python
-<p>{{ 'hello' | title }}</p>
-```
-
 - reverse：字符串反转
-
-```python
-<p>{{ 'olleh' | reverse }}</p>
-```
 
 - format：格式化输出
 
-```python
-<p>{{ '%s is %d' | format('name',17) }}</p>
-```
-
 - striptags：渲染之前把值中所有的HTML标签都删掉
 
-```python
-<p>{{ '<em>hello</em>' | striptags }}</p>
-```
-
 - truncate: 字符串截断
-
-```python
-<p>{{ 'hello every one' | truncate(9)}}</p>
-```
 
 #### 列表操作
 
 - first：取第一个元素
 
-```python
-<p>{{ [1,2,3,4,5,6] | first }}</p>
-```
-
 - last：取最后一个元素
-
-```python
-<p>{{ [1,2,3,4,5,6] | last }}</p>
-```
 
 - length：获取列表长度
 
-```python
-<p>{{ [1,2,3,4,5,6] | length }}</p>
-```
-
 - sum：列表求和
-
-```python
-<p>{{ [1,2,3,4,5,6] | sum }}</p>
-```
 
 - sort：列表排序
 
-```
-<p>{{ [6,2,3,1,5,4] | sort }}</p>
-```
-
 #### 语句块过滤
-
-```pyhton
-{% filter upper %}
-    #一大堆文字#
-{% endfilter %}
-```
 
 ### 自定义过滤器
 
@@ -265,47 +172,17 @@ Flask提供的 **render_template** 函数封装了该模板引擎，**render_tem
 
 Jinja2 语法中的if语句跟 Python 中的 if 语句相似,后面的布尔值或返回布尔值的表达式将决定代码中的哪个流程会被执行:
 
-```python
-{%if user.is_logged_in() %}
-    <a href='/logout'>Logout</a>
-{% else %}
-    <a href='/login'>Login</a>
-{% endif %}
-```
-
 过滤器可以被用在 if 语句中:
 
-```python
-{% if comments | length > 0 %}
-    There are {{ comments | length }} comments
-{% else %}
-    There are no comments
-{% endif %}
-```
+
 
 #### 循环
 
 - 我们可以在 Jinja2 中使用循环来迭代任何列表或者生成器函数
 
-```python
-{% for post in posts %}
-    <div>
-        <h1>{{ post.title }}</h1>
-        <p>{{ post.text | safe }}</p>
-    </div>
-{% endfor %}
-```
-
 - 循环和if语句可以组合使用，以模拟 Python 循环中的 continue 功能，下面这个循环将只会渲染post.text不为None的那些post：
 
-```python
-{% for post in posts if post.text %}
-    <div>
-        <h1>{{ post.title }}</h1>
-        <p>{{ post.text | safe }}</p>
-    </div>
-{% endfor %}
-```
+
 
 - 在一个 for 循环块中你可以访问这些特殊的变量:
 
@@ -322,12 +199,6 @@ Jinja2 语法中的if语句跟 Python 中的 if 语句相似,后面的布尔值�
 
 - 在循环内部,你可以使用一个叫做loop的特殊变量来获得关于for循环的一些信息，比如：要是我们想知道当前被迭代的元素序号，并模拟Python中的enumerate函数做的事情，则可以使用loop变量的index属性,例如:
 
-  ```python
-  {% for post in posts%}
-  {{loop.index}}, {{post.title}}
-  {% endfor %}
-  ```
-
 - 会输出这样的结果
 
   ```python
@@ -336,12 +207,6 @@ Jinja2 语法中的if语句跟 Python 中的 if 语句相似,后面的布尔值�
   ```
 
 - cycle函数会在每次循环的时候,返回其参数中的下一个元素,可以拿上面的例子来说明:
-
-  ```python
-  {% for post in posts%}
-  {{loop.cycle('odd','even')}} {{post.title}}
-  {% endfor %}
-  ```
 
 - 会输出这样的结果：
 
@@ -372,42 +237,15 @@ Jinja2 语法中的if语句跟 Python 中的 if 语句相似,后面的布尔值�
 
 - 定义宏
 
-```python
-{% macro input(name,value='',type='text') %}
-    <input type="{{type}}" name="{{name}}"
-        value="{{value}}" class="form-control">
-{% endmacro %}
-```
-
 - 调用宏
-
-```python
-{{ input('name' value='xiaoliang')}}
-```
 
 - 这会输出
 
-```python
-<input type="text" name="name"
-    value="zs" class="form-control">
-```
-
 - 把宏单独抽取出来，封装成html文件，其它模板中导入使用，文件名可以自定义macro.html
-
-```python
-{% macro function(type='text', name='', value='') %}
-<input type="{{type}}" name="{{name}}"
-value="{{value}}" class="form-control">
-
-{% endmacro %}
-```
 
 - 在其它模板文件中先导入，再调用
 
-```python
-{% import 'macro.html' as func %}
-{% func.function() %}
-```
+
 
 ### 继承
 
@@ -419,10 +257,6 @@ value="{{value}}" class="form-control">
 
 - 标签定义的内容
 
-```python
-{% block top %} {% endblock %}
-```
-
 - 相当于在父模板中挖个坑，当子模板继承父模板时，可以进行填充。
 - 子模板使用 extends 指令声明这个模板继承自哪个模板
 - 父模板中定义的块在子模板中被重新定义，在子模板中调用父模板的内容可以使用super()
@@ -431,29 +265,9 @@ value="{{value}}" class="form-control">
 
 - base.html
 
-```python
-{% block top %}
-  顶部菜单
-{% endblock top %}
-
-{% block content %}
-{% endblock content %}
-
-{% block bottom %}
-  底部
-{% endblock bottom %}
-```
-
 #### 子模板
 
 - extends指令声明这个模板继承自哪
-
-```python
-{% extends 'base.html' %}
-{% block content %}
- 需要填充的内容
-{% endblock content %}
-```
 
  #### 注意点
 
@@ -472,17 +286,9 @@ Jinja2模板中，除了宏和继承，还支持一种代码重用的功能，�
 
 - include的使用
 
-```python
-{% include 'hello.html' %}
-```
-
 包含在使用时，如果包含的模板文件不存在时，程序会抛出**TemplateNotFound**异常，可以加上 `ignore missing` 关键字。如果包含的模板文件不存在，会忽略这条include语句。
 
 - include 的使用加上关键字ignore missing
-
-```python
-{% include 'hello.html' ignore missing %}
-```
 
 ## 特有的变量和函数
 
@@ -494,62 +300,27 @@ Jinja2模板中，除了宏和继承，还支持一种代码重用的功能，�
 
 你可以从模板中直接访问Flask当前的config对象:
 
-```python
-{{config.SQLALCHEMY_DATABASE_URI}}
-sqlite:///database.db
-```
-
 ### request
 
 就是flask中代表当前请求的request对象：
-
-```python
-{{request.url}}
-http://127.0.0.1
-```
 
 ### session
 
 为Flask的session对象
 
-```python
-{{session.new}}
-True
-```
-
 ### g变量
 
 在视图函数中设置g变量的 name 属性的值，然后在模板中直接可以取出
-
-```python
-{{ g.name }}
-```
 
 ### url_for()
 
 url_for会根据传入的路由器函数名,返回该路由对应的URL,在模板中始终使用url_for()就可以安全的修改路由绑定的URL,则不比担心模板中渲染出错的链接:
 
-```python
-{{url_for('home')}}
-/
-```
-
 如果我们定义的路由URL是带有参数的,则可以把它们作为关键字参数传入url_for(),Flask会把他们填充进最终生成的URL中:
-
-```python
-{{ url_for('post', post_id=1)}}
-/post/1
-```
 
 ### get_flashed_messages()
 
 这个函数会返回之前在flask中通过flask()传入的消息的列表，flash函数的作用很简单,可以把由Python字符串表示的消息加入一个消息队列中，再使用get_flashed_message()函数取出它们并消费掉：
-
-```python
-{%for message in get_flashed_messages()%}
-    {{message}}
-{%endfor%}
-```
 
 ## Web表单
 
@@ -626,16 +397,6 @@ app.secret_key = "#此处可以写随机字符串#"
 
 - 在模板的表单中添加以下代码
 
-```html
-<form method="post">
-    {{ form.csrf_token() }}
-    {{ form.username.label }} {{ form.username }}<br/>
-    {{ form.password.label }} {{ form.password }}<br/>
-    {{ form.password2.label }} {{ form.password2 }}<br/>
-    {{ form.submit }}
-</form>
-```
-
 **设置完毕，cookie 中的 csrf_token 不需要我们关心，会自动帮我们设置**
 
 #### 单独使用
@@ -655,19 +416,8 @@ CSRFProtect(app)
 
 - 如果模板中有表单，不需要做任何事。与之前一样:
 
-```html
-<form method="post">
-    {{ form.csrf_token }}
-    ...
-</form>
-```
-
 - 但如果模板中没有表单，你仍需要 CSRF 令牌:
 
-```html
-<form method="post" action="/">
-    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
-</form>
-```
+
 
 
