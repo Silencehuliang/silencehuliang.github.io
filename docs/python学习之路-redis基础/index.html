@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/silencehuliang.github.io\/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-redis%E5%9F%BA%E7%A1%80\/"
-        },"genre": "posts","keywords": "Python学习之路","wordcount":  3126 ,
+        },"genre": "posts","keywords": "Python学习之路","wordcount":  3118 ,
         "url": "https:\/\/silencehuliang.github.io\/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-redis%E5%9F%BA%E7%A1%80\/","datePublished": "2020-03-21T00:00:00+00:00","dateModified": "2020-03-22T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Silence"},"author": {
@@ -119,10 +119,10 @@
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Python学习之路-Redis基础</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Silence</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/python/"><i class="far fa-folder fa-fw"></i>Python</a></span></div>
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Silence</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/redis/"><i class="far fa-folder fa-fw"></i>Redis</a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-21">2020-03-21</time>&nbsp;<i class="fa fa-history" aria-hidden="true"></i>
                 2020-03-22
-                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3126 字&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3118 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 7 分钟&nbsp;<span id="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-redis%E5%9F%BA%E7%A1%80/" class="leancloud_visitors" data-flag-title="Python学习之路-Redis基础">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -581,22 +581,23 @@ string
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-fallback" data-lang="fallback">
-
-- 设置过期时间，以秒为单位：`expire key seconds`，例
-
-```redis
-127.0.0.1:6379[2]&gt; expire name 10
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>设置过期时间，以秒为单位：<code>expire key seconds</code>，例</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">127.0.0.1:6379[2]&gt; expire name 10
 (integer) 1
 127.0.0.1:6379[2]&gt; ttl name
 (integer) 4
@@ -610,6 +611,8 @@ string
             <div class="admonition-content">如果没有指定过期时间则⼀直存在，直到使⽤DEL移除</div>
         </div>
     </div>
+</li>
+</ul>
 <h3 id="hash">hash</h3>
 <h4 id="存储-1">存储</h4>
 <ul>

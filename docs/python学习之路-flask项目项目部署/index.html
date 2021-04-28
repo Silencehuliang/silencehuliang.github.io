@@ -6,7 +6,7 @@
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>Python学习之路-Flask项目:项目部署 - Silence Blog</title><meta name="Description" content="Silence‘s blog"><meta property="og:title" content="Python学习之路-Flask项目:项目部署" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="部署环境 基于MacOS 10.15.4系统，使用 Gunicorn &#43; Nginx 进行布署，云服务器为阿里云 服务器选择 阿里云服务器 地址 个人免费试用 进入控制台,查看实例创建" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E9%A1%B9%E7%9B%AE%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/" />
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
@@ -16,11 +16,11 @@
 <meta name="twitter:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
 
 <meta name="twitter:title" content="Python学习之路-Flask项目:项目部署"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content="部署环境 基于MacOS 10.15.4系统，使用 Gunicorn &#43; Nginx 进行布署，云服务器为阿里云 服务器选择 阿里云服务器 地址 个人免费试用 进入控制台,查看实例创建"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E9%A1%B9%E7%9B%AE%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/" /><link rel="prev" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E9%A1%B9%E7%9B%AE%E5%8D%9A%E5%AE%A2%E5%90%8E%E5%8F%B0/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.2e7125082ec8de83a87adc70253c9c23.css" integrity="md5-LnElCC7I3oOoetxwJTycIw=="><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.76cb46c10b6c0293433b371bae2414b2.css" integrity="md5-dstGwQtsApNDOzcbriQUsg=="><link rel="stylesheet" href="/lib/animate/animate.min.bc1a6a99c43f5ccc97d2d350bde13f74.css" integrity="md5-vBpqmcQ/XMyX0tNQveE/dA=="><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E9%A1%B9%E7%9B%AE%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/" /><link rel="prev" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E9%A1%B9%E7%9B%AE%E5%8D%9A%E5%AE%A2%E5%90%8E%E5%8F%B0/" /><link rel="next" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-pythonweb/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.2e7125082ec8de83a87adc70253c9c23.css" integrity="md5-LnElCC7I3oOoetxwJTycIw=="><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.76cb46c10b6c0293433b371bae2414b2.css" integrity="md5-dstGwQtsApNDOzcbriQUsg=="><link rel="stylesheet" href="/lib/animate/animate.min.bc1a6a99c43f5ccc97d2d350bde13f74.css" integrity="md5-vBpqmcQ/XMyX0tNQveE/dA=="><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/silencehuliang.github.io\/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E9%A1%B9%E7%9B%AE%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2\/"
-        },"genre": "posts","keywords": "Python学习之路","wordcount":  0 ,
+        },"genre": "posts","keywords": "Python学习之路","wordcount":  1041 ,
         "url": "https:\/\/silencehuliang.github.io\/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E9%A1%B9%E7%9B%AE%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2\/","datePublished": "2020-07-04T00:00:00+00:00","dateModified": "2020-06-05T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Silence"},"author": {
@@ -119,11 +119,11 @@
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Python学习之路-Flask项目:项目部署</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Silence</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/python/"><i class="far fa-folder fa-fw"></i>Python</a></span></div>
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Silence</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/flask/"><i class="far fa-folder fa-fw"></i>Flask</a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-07-04">2020-07-04</time>&nbsp;<i class="fa fa-history" aria-hidden="true"></i>
                 2020-06-05
-                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 0 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 0 分钟&nbsp;<span id="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E9%A1%B9%E7%9B%AE%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/" class="leancloud_visitors" data-flag-title="Python学习之路-Flask项目:项目部署">
+                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1041 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E9%A1%B9%E7%9B%AE%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/" class="leancloud_visitors" data-flag-title="Python学习之路-Flask项目:项目部署">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
@@ -131,8 +131,330 @@
                     <span>目录</span>
                     <span><i class="details-icon fas fa-angle-right"></i></span>
                 </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
-            </div><div class="content" id="content"></div><div class="post-footer" id="post-footer">
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#部署环境">部署环境</a></li>
+    <li><a href="#服务器选择">服务器选择</a>
+      <ul>
+        <li><a href="#阿里云服务器">阿里云服务器</a></li>
+      </ul>
+    </li>
+    <li><a href="#相关环境安装">相关环境安装</a></li>
+    <li><a href="#requirements文件">requirements文件</a></li>
+    <li><a href="#nginx">Nginx</a>
+      <ul>
+        <li><a href="#相关操作">相关操作</a></li>
+      </ul>
+    </li>
+    <li><a href="#gunicorn">Gunicorn</a>
+      <ul>
+        <li><a href="#相关操作-1">相关操作</a></li>
+      </ul>
+    </li>
+    <li><a href="#其他操作">其他操作</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="部署环境">部署环境</h2>
+<p>基于MacOS 10.15.4系统，使用 Gunicorn + Nginx 进行布署，云服务器为阿里云</p>
+<h2 id="服务器选择">服务器选择</h2>
+<h3 id="阿里云服务器">阿里云服务器</h3>
+<ul>
+<li>
+<p><a href="https://www.aliyun.com" target="_blank" rel="noopener noreffer">地址</a></p>
+</li>
+<li>
+<p><a href="https://free.aliyun.com/" target="_blank" rel="noopener noreffer">个人免费试用</a></p>
+</li>
+<li>
+<p>进入控制台,查看实例创建情况</p>
+</li>
+<li>
+<p>给安全组配置规则，添加5000端口(一并加上5001端口)</p>
+</li>
+<li>
+<p>利用命令行进行远程服务器登录</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">ssh 用户名@ip地址
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h2 id="相关环境安装">相关环境安装</h2>
+<p>以下操作都在远程服务器上进行操作</p>
+<ul>
+<li>
+<p>先更新 apt 相关源</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt-get update
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>mysql安装</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">apt-get install mysql-server
+apt-get install libmysqlclient-dev
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>redis安装</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt-get install redis-server
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>安装虚拟环境</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">pip install virtualenv
+pip install virtualenvwrapper
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>使得安装的virtualenvwrapper生效，编辑~/.bashrc文件，内容如下:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">export</span> <span class="nv">WORKON_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/.virtualenvs
+<span class="nb">export</span> <span class="nv">PROJECT_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/workspace
+<span class="nb">source</span> /usr/local/bin/virtualenvwrapper.sh
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>使编辑后的文件生效</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">source</span> ~/.bashrc
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h2 id="requirements文件">requirements文件</h2>
+<p>Python 项目中可以包含一个 requirements.txt 文件，用于记录所有依赖包及其精确的版本号，以便在新环境中进行部署操作。</p>
+<ul>
+<li>
+<p>在虚拟环境使用以下命令将当前虚拟环境中的依赖包以版本号生成至文件中：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">pip freeze &gt; requirements.txt
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>当需要创建这个虚拟环境的完全副本，可以创建一个新的虚拟环境，并在其上运行以下命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">pip install -r requirements.txt
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>在安装 Flask-MySQLdb 的时候可能会报错，可能是依赖包没有安装，执行以下命令安装依赖包：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt-get build-dep python-mysqldb
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h2 id="nginx">Nginx</h2>
+<ul>
+<li>采用 C 语言编写</li>
+<li>实现分流、转发、负载均衡</li>
+</ul>
+<h3 id="相关操作">相关操作</h3>
+<ul>
+<li>
+<p>安装</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo apt-get install nginx
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>运行及停止</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">/etc/init.d/nginx start <span class="c1">#启动</span>
+/etc/init.d/nginx stop  <span class="c1">#停止</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>配置文件</p>
+<p>编辑文件:/etc/nginx/sites-available/default</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 如果是多台服务器的话，则在此配置，并修改 location 节点下面的 proxy_pass </span>
+<span class="n">upstream</span> <span class="n">flask</span> <span class="p">{</span>
+        <span class="n">server</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">5000</span><span class="p">;</span>
+        <span class="n">server</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">5001</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">server</span> <span class="p">{</span>
+        <span class="c1"># 监听80端口</span>
+        <span class="n">listen</span> <span class="mi">80</span> <span class="n">default_server</span><span class="p">;</span>
+        <span class="n">listen</span> <span class="p">[::]:</span><span class="mi">80</span> <span class="n">default_server</span><span class="p">;</span>
+  
+        <span class="n">root</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">html</span><span class="p">;</span>
+  
+        <span class="n">index</span> <span class="n">index</span><span class="o">.</span><span class="n">html</span> <span class="n">index</span><span class="o">.</span><span class="n">htm</span> <span class="n">index</span><span class="o">.</span><span class="n">nginx</span><span class="o">-</span><span class="n">debian</span><span class="o">.</span><span class="n">html</span><span class="p">;</span>
+  
+        <span class="n">server_name</span> <span class="n">_</span><span class="p">;</span>
+  
+        <span class="n">location</span> <span class="o">/</span> <span class="p">{</span>
+                <span class="c1"># 请求转发到gunicorn服务器</span>
+                <span class="n">proxy_pass</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">5000</span><span class="p">;</span>
+                <span class="c1"># 请求转发到多个gunicorn服务器</span>
+                <span class="c1"># proxy_pass http://flask;</span>
+                <span class="c1"># 设置请求头，并将头信息传递给服务器端 </span>
+                <span class="n">proxy_set_header</span> <span class="n">Host</span> <span class="err">$</span><span class="n">host</span><span class="p">;</span>
+                <span class="c1"># 设置请求头，传递原始请求ip给 gunicorn 服务器</span>
+                <span class="n">proxy_set_header</span> <span class="n">X</span><span class="o">-</span><span class="n">Real</span><span class="o">-</span><span class="n">IP</span> <span class="err">$</span><span class="n">remote_addr</span><span class="p">;</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h2 id="gunicorn">Gunicorn</h2>
+<ul>
+<li>Gunicorn（绿色独角兽）是一个Python WSGI的HTTP服务器</li>
+<li>从Ruby的独角兽（Unicorn ）项目移植</li>
+<li>该Gunicorn服务器与各种Web框架兼容，实现非常简单，轻量级的资源消耗</li>
+<li>Gunicorn直接用命令启动，不需要编写配置文件</li>
+</ul>
+<h3 id="相关操作-1">相关操作</h3>
+<ul>
+<li>
+<p>安装</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">pip install gunicorn
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>查看选项</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">gunicorn -h
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>运行</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># -w: 表示进程（worker） -b：表示绑定ip地址和端口号（bind）</span>
+gunicorn -w <span class="m">2</span> -b 127.0.0.1:5000 运行文件名称:Flask程序实例名
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<p>参考阅读： Gunicorn相关配置：https://blog.csdn.net/y472360651/article/details/78538188</p>
+<h2 id="其他操作">其他操作</h2>
+<ul>
+<li>
+<p>拷贝本地代码到远程</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">scp -r 本地文件路径 root@39.106.21.198:远程保存路径
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
@@ -157,7 +479,8 @@
         </section>
     </div>
 
-    <div class="post-nav"><a href="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E9%A1%B9%E7%9B%AE%E5%8D%9A%E5%AE%A2%E5%90%8E%E5%8F%B0/" class="prev" rel="prev" title="Python学习之路 Flask项目:博客后台"><i class="fas fa-angle-left fa-fw"></i>Python学习之路 Flask项目:博客后台</a></div>
+    <div class="post-nav"><a href="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E9%A1%B9%E7%9B%AE%E5%8D%9A%E5%AE%A2%E5%90%8E%E5%8F%B0/" class="prev" rel="prev" title="Python学习之路-Flask项目:博客后台"><i class="fas fa-angle-left fa-fw"></i>Python学习之路-Flask项目:博客后台</a>
+            <a href="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-pythonweb/" class="next" rel="next" title="Python学习之路-PythonWeb">Python学习之路-PythonWeb<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.

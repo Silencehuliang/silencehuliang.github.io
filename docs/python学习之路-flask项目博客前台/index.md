@@ -492,4 +492,4 @@ def create_app(config_name):
         return app
 ```
 
-> 在浏览器里面输入网址进行测试
+在浏览器里面输入网址进行测试

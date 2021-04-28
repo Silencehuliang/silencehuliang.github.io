@@ -252,9 +252,13 @@ redis是key-value的数据结构，每条数据都是⼀个键值对，键的类
   ```redis
   del name age
   (integer) 2
+  ```
 > mget name age
   1) (nil)
   2) (nil)
+  
+  ```
+  
   ```
 
 
