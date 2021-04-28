@@ -4,13 +4,13 @@
         <link>https://silencehuliang.github.io/posts/</link>
         <description>所有文章 | Silence Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>silencehuliang@gmail.com (Silence)</managingEditor>
-            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Wed, 28 Apr 2021 13:54:09 &#43;0800</lastBuildDate><atom:link href="https://silencehuliang.github.io/posts/" rel="self" type="application/rss+xml" /><item>
-    <title>Python学习之路 HelloDjango</title>
+            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 18 Jul 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://silencehuliang.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Python学习之路-HelloDjango</title>
     <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-hellodjango/</link>
-    <pubDate>Wed, 28 Apr 2021 13:54:09 &#43;0800</pubDate>
+    <pubDate>Sat, 18 Jul 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
     <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-hellodjango/</guid>
-    <description><![CDATA[]]></description>
+    <description><![CDATA[简介 Django，发音为[`dʒæŋɡəʊ]，是用python语言写的开源web开发框架，并遵循MVC设计。劳伦斯出版集团为了开发以新闻内容]]></description>
 </item><item>
     <title>Python学习之路-PythonWeb</title>
     <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-pythonweb/</link>
