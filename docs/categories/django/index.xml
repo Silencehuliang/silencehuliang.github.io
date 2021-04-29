@@ -4,7 +4,14 @@
         <link>https://silencehuliang.github.io/categories/django/</link>
         <description>Django - 分类 - Silence Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>silencehuliang@gmail.com (Silence)</managingEditor>
-            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 01 Aug 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://silencehuliang.github.io/categories/django/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 08 Aug 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://silencehuliang.github.io/categories/django/" rel="self" type="application/rss+xml" /><item>
+    <title>Python学习之路-请求与响应</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%AF%B7%E6%B1%82%E4%B8%8E%E5%93%8D%E5%BA%94/</link>
+    <pubDate>Sat, 08 Aug 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%AF%B7%E6%B1%82%E4%B8%8E%E5%93%8D%E5%BA%94/</guid>
+    <description><![CDATA[请求 简介 回想一下，利用HTTP协议向服务器传参有几种途径？ 提取URL的特定部分，如/weather/beijing/2018，可以在服务器端]]></description>
+</item><item>
     <title>Python学习之路-配置、静态文件与路由</title>
     <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6%E4%B8%8E%E8%B7%AF%E7%94%B1/</link>
     <pubDate>Sat, 01 Aug 2020 00:00:00 &#43;0000</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://silencehuliang.github.io/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E5%B7%A5%E7%A8%8B%E6%90%AD%E5%BB%BA/</guid>
     <description><![CDATA[每个工程项目的开始阶段往往决定了项目的大致走向，在工程搭建的过程中要为后面的项目开发做好准备。为了不受Python环境的影响，最好建立虚拟环境，在虚拟环境中搭建项目]]></description>
-</item><item>
-    <title>Django基础教程之初体验</title>
-    <link>https://silencehuliang.github.io/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E5%88%9D%E4%BD%93%E9%AA%8C/</link>
-    <pubDate>Sat, 02 Mar 2019 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E5%88%9D%E4%BD%93%E9%AA%8C/</guid>
-    <description><![CDATA[在Django2.0以后，Django已经不支持python2.7，所以我们需要一个python3的系统环境，这里一python3.6为例]]></description>
 </item></channel>
 </rss>
