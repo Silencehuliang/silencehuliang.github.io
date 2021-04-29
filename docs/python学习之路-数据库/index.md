@@ -618,7 +618,7 @@ HeroInfo.objects.filter(hbook__bread__gt=30)
   HeroInfo.objects.filter(hname='沙悟净').update(hname='沙僧')
   ```
 
-#### 4 删除
+#### 删除
 
 删除有两种方法
 
