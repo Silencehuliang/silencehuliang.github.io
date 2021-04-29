@@ -4,7 +4,14 @@
         <link>https://silencehuliang.github.io/categories/django/</link>
         <description>Django - 分类 - Silence Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>silencehuliang@gmail.com (Silence)</managingEditor>
-            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 08 Aug 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://silencehuliang.github.io/categories/django/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 15 Aug 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://silencehuliang.github.io/categories/django/" rel="self" type="application/rss+xml" /><item>
+    <title>Python学习之路-类视图与中间件</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%B1%BB%E8%A7%86%E5%9B%BE%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/</link>
+    <pubDate>Sat, 15 Aug 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%B1%BB%E8%A7%86%E5%9B%BE%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/</guid>
+    <description><![CDATA[类视图 引入 以函数的方式定义的视图称为函数视图，函数视图便于理解。但是遇到一个视图对应的路径提供了多种不同HTTP请求方式的支持时，便需要在一]]></description>
+</item><item>
     <title>Python学习之路-请求与响应</title>
     <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%AF%B7%E6%B1%82%E4%B8%8E%E5%93%8D%E5%BA%94/</link>
     <pubDate>Sat, 08 Aug 2020 00:00:00 &#43;0000</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://silencehuliang.github.io/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%A6%E8%A7%A3/</guid>
     <description><![CDATA[学习Django可以从Django配置文件的各项开始，由简入深的了解其作用，从而一步一步学习。本篇文章主要是介绍各项的作用以及如何配置，可以根据需求按需配置。]]></description>
-</item><item>
-    <title>Django基础教程之工程搭建</title>
-    <link>https://silencehuliang.github.io/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E5%B7%A5%E7%A8%8B%E6%90%AD%E5%BB%BA/</link>
-    <pubDate>Sat, 09 Mar 2019 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/django%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E4%B9%8B%E5%B7%A5%E7%A8%8B%E6%90%AD%E5%BB%BA/</guid>
-    <description><![CDATA[每个工程项目的开始阶段往往决定了项目的大致走向，在工程搭建的过程中要为后面的项目开发做好准备。为了不受Python环境的影响，最好建立虚拟环境，在虚拟环境中搭建项目]]></description>
 </item></channel>
 </rss>

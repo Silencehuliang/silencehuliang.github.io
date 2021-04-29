@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Python学习之路-类视图与中间件 - Silence Blog</title><meta name="Description" content="Silence‘s blog"><meta property="og:title" content="Python学习之路-类视图与中间件" />
+<meta property="og:description" content="类视图 引入 以函数的方式定义的视图称为函数视图，函数视图便于理解。但是遇到一个视图对应的路径提供了多种不同HTTP请求方式的支持时，便需要在一" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%B1%BB%E8%A7%86%E5%9B%BE%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/" />
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
+<meta property="article:published_time" content="2020-08-15T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-08-16T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
+
+<meta name="twitter:title" content="Python学习之路-类视图与中间件"/>
+<meta name="twitter:description" content="类视图 引入 以函数的方式定义的视图称为函数视图，函数视图便于理解。但是遇到一个视图对应的路径提供了多种不同HTTP请求方式的支持时，便需要在一"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%B1%BB%E8%A7%86%E5%9B%BE%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/" /><link rel="prev" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%AF%B7%E6%B1%82%E4%B8%8E%E5%93%8D%E5%BA%94/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.2e7125082ec8de83a87adc70253c9c23.css" integrity="md5-LnElCC7I3oOoetxwJTycIw=="><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.76cb46c10b6c0293433b371bae2414b2.css" integrity="md5-dstGwQtsApNDOzcbriQUsg=="><link rel="stylesheet" href="/lib/animate/animate.min.bc1a6a99c43f5ccc97d2d350bde13f74.css" integrity="md5-vBpqmcQ/XMyX0tNQveE/dA=="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Python学习之路-类视图与中间件",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/silencehuliang.github.io\/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%B1%BB%E8%A7%86%E5%9B%BE%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6\/"
+        },"genre": "posts","keywords": "Python学习之路","wordcount":  2841 ,
+        "url": "https:\/\/silencehuliang.github.io\/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%B1%BB%E8%A7%86%E5%9B%BE%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6\/","datePublished": "2020-08-15T00:00:00+00:00","dateModified": "2020-08-16T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "Silence"},"author": {
+                "@type": "Person",
+                "name": "Silence"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Silence Blog"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+        data-srcset="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg, https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg 1.5x, https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+        title="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg" /><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Silence Blog"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+        data-srcset="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg, https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg 1.5x, https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+        title="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg" /><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Python学习之路-类视图与中间件</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Silence</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/django/"><i class="far fa-folder fa-fw"></i>Django</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-15">2020-08-15</time>&nbsp;<i class="fa fa-history" aria-hidden="true"></i>
+                2020-08-16
+                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2841 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;<span id="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%B1%BB%E8%A7%86%E5%9B%BE%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/" class="leancloud_visitors" data-flag-title="Python学习之路-类视图与中间件">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#类视图">类视图</a>
+      <ul>
+        <li><a href="#引入">引入</a></li>
+        <li><a href="#简介">简介</a></li>
+        <li><a href="#实例">实例</a></li>
+        <li><a href="#好处">好处</a></li>
+        <li><a href="#使用">使用</a></li>
+        <li><a href="#原理">原理</a></li>
+        <li><a href="#使用装饰器">使用装饰器</a></li>
+        <li><a href="#在url配置中装饰">在URL配置中装饰</a></li>
+        <li><a href="#在类视图中装饰">在类视图中装饰</a></li>
+        <li><a href="#mixin扩展类">Mixin扩展类</a></li>
+      </ul>
+    </li>
+    <li><a href="#中间件">中间件</a>
+      <ul>
+        <li><a href="#简介-1">简介</a></li>
+        <li><a href="#定义方法">定义方法</a></li>
+        <li><a href="#多个中间件的执行顺序">多个中间件的执行顺序</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="类视图">类视图</h2>
+<h3 id="引入">引入</h3>
+<p>以函数的方式定义的视图称为<strong>函数视图</strong>，函数视图便于理解。但是遇到一个视图对应的路径提供了多种不同HTTP请求方式的支持时，便需要在一个函数中编写不同的业务逻辑，代码可读性与复用性都不佳。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"> <span class="k">def</span> <span class="nf">register</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;处理注册&#34;&#34;&#34;</span>
+
+    <span class="c1"># 获取请求方法，判断是GET/POST请求</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;GET&#39;</span><span class="p">:</span>
+        <span class="c1"># 处理GET请求，返回注册页面</span>
+        <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;register.html&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># 处理POST请求，实现注册逻辑</span>
+        <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s1">&#39;这里实现注册逻辑&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="简介">简介</h3>
+<p>在Django中也可以使用类来定义一个视图，称为<strong>类视图</strong>。</p>
+<h3 id="实例">实例</h3>
+<p>使用类视图可以将视图对应的不同请求方式以类中的不同方法来区别定义。如下所示</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">django.views.generic</span> <span class="kn">import</span> <span class="n">View</span>
+
+<span class="k">class</span> <span class="nc">RegisterView</span><span class="p">(</span><span class="n">View</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;类视图：处理注册&#34;&#34;&#34;</span>
+
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="s2">&#34;&#34;&#34;处理GET请求，返回注册页面&#34;&#34;&#34;</span>
+        <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;register.html&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="s2">&#34;&#34;&#34;处理POST请求，实现注册逻辑&#34;&#34;&#34;</span>
+        <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s1">&#39;这里实现注册逻辑&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="好处">好处</h3>
+<p>代码可读性好，类视图相对于函数视图有更高的复用性， 如果其他地方需要用到某个类视图的某个特定逻辑，直接继承该类视图即可</p>
+<h3 id="使用">使用</h3>
+<p>定义类视图需要继承自Django提供的父类<strong>View</strong>，可使用<code>from django.views.generic import View</code>或者<code>from django.views.generic.base import View</code> 导入，定义方式如上所示。</p>
+<p><strong>配置路由时，使用类视图的<code>as_view()</code>方法来添加</strong>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># 视图函数：注册</span>
+    <span class="c1"># url(r&#39;^register/$&#39;, views.register, name=&#39;register&#39;),</span>
+    <span class="c1"># 类视图：注册</span>
+    <span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^register/$&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">RegisterView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;register&#39;</span><span class="p">),</span>
+<span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="原理">原理</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python">    <span class="nd">@classonlymethod</span>
+    <span class="k">def</span> <span class="nf">as_view</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">**</span><span class="n">initkwargs</span><span class="p">):</span>
+        <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">        Main entry point for a request-response process.
+</span><span class="s2">        &#34;&#34;&#34;</span>
+        <span class="o">...</span><span class="err">省略代码</span><span class="o">...</span>
+
+        <span class="k">def</span> <span class="nf">view</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="bp">self</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="o">**</span><span class="n">initkwargs</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;get&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;head&#39;</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">request</span> <span class="o">=</span> <span class="n">request</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">args</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span> <span class="o">=</span> <span class="n">kwargs</span>
+            <span class="c1"># 调用dispatch方法，按照不同请求方式调用不同请求方法</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="o">...</span><span class="err">省略代码</span><span class="o">...</span>
+
+        <span class="c1"># 返回真正的函数视图</span>
+        <span class="k">return</span> <span class="n">view</span>
+
+
+    <span class="k">def</span> <span class="nf">dispatch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="c1"># Try to dispatch to the right method; if a method doesn&#39;t exist,</span>
+        <span class="c1"># defer to the error handler. Also defer to the error handler if the</span>
+        <span class="c1"># request method isn&#39;t on the approved list.</span>
+        <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">http_method_names</span><span class="p">:</span>
+            <span class="n">handler</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">http_method_not_allowed</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">handler</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">http_method_not_allowed</span>
+        <span class="k">return</span> <span class="n">handler</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="使用装饰器">使用装饰器</h3>
+<p>为类视图添加装饰器，可以使用两种方法。</p>
+<p>为了理解方便，我们先来定义一个<strong>为函数视图准备的装饰器</strong>（在设计装饰器时基本都以函数视图作为考虑的被装饰对象），及一个要被装饰的类视图。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">my_decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;自定义装饰器被调用了&#39;</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;请求路径</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">request</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="k">class</span> <span class="nc">DemoView</span><span class="p">(</span><span class="n">View</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;get方法&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s1">&#39;ok&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;post方法&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s1">&#39;ok&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="在url配置中装饰">在URL配置中装饰</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^demo/$&#39;</span><span class="p">,</span> <span class="n">my_decorate</span><span class="p">(</span><span class="n">DemoView</span><span class="o">.</span><span class="n">as_view</span><span class="p">()))</span>
+<span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>此种方式最简单，但因装饰行为被放置到了url配置中，单看视图的时候无法知道此视图还被添加了装饰器，不利于代码的完整性，不建议使用。</p>
+<div class="details admonition warning open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-exclamation-triangle fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">此种方式会为类视图中的所有请求方法都加上装饰器行为（因为是在视图入口处，分发请求方式前）。</div>
+        </div>
+    </div>
+<h3 id="在类视图中装饰">在类视图中装饰</h3>
+<p>在类视图中使用为函数视图准备的装饰器时，不能直接添加装饰器，需要使用<strong>method_decorator</strong>将其转换为适用于类视图方法的装饰器。method_decorator装饰器使用name参数指明被装饰的方法</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 为全部请求方法添加装饰器</span>
+<span class="nd">@method_decorator</span><span class="p">(</span><span class="n">my_decorator</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;dispatch&#39;</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">DemoView</span><span class="p">(</span><span class="n">View</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;get方法&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s1">&#39;ok&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;post方法&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s1">&#39;ok&#39;</span><span class="p">)</span>
+
+
+<span class="c1"># 为特定请求方法添加装饰器</span>
+<span class="nd">@method_decorator</span><span class="p">(</span><span class="n">my_decorator</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;get&#39;</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">DemoView</span><span class="p">(</span><span class="n">View</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;get方法&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s1">&#39;ok&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;post方法&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s1">&#39;ok&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>如果需要为类视图的多个方法添加装饰器，但又不是所有的方法（为所有方法添加装饰器参考上面例子），可以直接在需要添加装饰器的方法上使用method_decorator，如下所示</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">django.utils.decorators</span> <span class="kn">import</span> <span class="n">method_decorator</span>
+
+<span class="c1"># 为特定请求方法添加装饰器</span>
+<span class="k">class</span> <span class="nc">DemoView</span><span class="p">(</span><span class="n">View</span><span class="p">):</span>
+
+    <span class="nd">@method_decorator</span><span class="p">(</span><span class="n">my_decorator</span><span class="p">)</span>  <span class="c1"># 为get方法添加了装饰器</span>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;get方法&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s1">&#39;ok&#39;</span><span class="p">)</span>
+
+    <span class="nd">@method_decorator</span><span class="p">(</span><span class="n">my_decorator</span><span class="p">)</span>  <span class="c1"># 为post方法添加了装饰器</span>
+    <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;post方法&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s1">&#39;ok&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>  <span class="c1"># 没有为put方法添加装饰器</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;put方法&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s1">&#39;ok&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="mixin扩展类">Mixin扩展类</h3>
+<p>使用面向对象多继承的特性，可以通过定义父类（作为扩展类），在父类中定义想要向类视图补充的方法，类视图继承这些扩展父类，便可实现代码复用。</p>
+<p>定义的扩展父类名称通常以Mixin结尾。</p>
+<p>举例如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">ListModelMixin</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">    list扩展类
+</span><span class="s2">    &#34;&#34;&#34;</span>
+    <span class="k">def</span> <span class="nf">list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="o">...</span>
+
+<span class="k">class</span> <span class="nc">CreateModelMixin</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">    create扩展类
+</span><span class="s2">    &#34;&#34;&#34;</span>
+    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="o">...</span>
+
+<span class="k">class</span> <span class="nc">BooksView</span><span class="p">(</span><span class="n">CreateModelMixin</span><span class="p">,</span> <span class="n">ListModelMixin</span><span class="p">,</span> <span class="n">View</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">    同时继承两个扩展类，复用list和create方法
+</span><span class="s2">    &#34;&#34;&#34;</span>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">list</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+        <span class="o">...</span>
+
+<span class="k">class</span> <span class="nc">SaveOrderView</span><span class="p">(</span><span class="n">CreateModelMixin</span><span class="p">,</span> <span class="n">View</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">    继承CreateModelMixin扩展类，复用create方法
+</span><span class="s2">    &#34;&#34;&#34;</span>
+    <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+        <span class="o">...</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="中间件">中间件</h2>
+<h3 id="简介-1">简介</h3>
+<p>Django中的中间件是一个轻量级、底层的插件系统，可以介入Django的请求和响应处理过程，修改Django的输入或输出。中间件的设计为开发者提供了一种无侵入式的开发方式，增强了Django框架的健壮性。</p>
+<p>我们可以使用中间件，在Django处理视图的不同阶段对输入或输出进行干预。</p>
+<h3 id="定义方法">定义方法</h3>
+<p>定义一个中间件工厂函数，然后返回一个可以别调用的中间件。中间件工厂函数需要接收一个可以调用的get_response对象。返回的中间件也是一个可以被调用的对象，并且像视图一样需要接收一个request对象参数，返回一个response对象。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">simple_middleware</span><span class="p">(</span><span class="n">get_response</span><span class="p">):</span>
+    <span class="c1"># 此处编写的代码仅在Django第一次配置和初始化的时候执行一次。</span>
+
+    <span class="k">def</span> <span class="nf">middleware</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+        <span class="c1"># 此处编写的代码会在每个请求处理视图前被调用。</span>
+
+        <span class="n">response</span> <span class="o">=</span> <span class="n">get_response</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+
+        <span class="c1"># 此处编写的代码会在每个请求处理视图之后被调用。</span>
+
+        <span class="k">return</span> <span class="n">response</span>
+
+    <span class="k">return</span> <span class="n">middleware</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>例如，在users应用中新建一个middleware.py文件，</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">my_middleware</span><span class="p">(</span><span class="n">get_response</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;init 被调用&#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">middleware</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;before request 被调用&#39;</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">get_response</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;after response 被调用&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">response</span>
+    <span class="k">return</span> <span class="n">middleware</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>定义好中间件后，需要在settings.py 文件中添加注册中间件</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">MIDDLEWARE</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;django.middleware.security.SecurityMiddleware&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.sessions.middleware.SessionMiddleware&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.middleware.common.CommonMiddleware&#39;</span><span class="p">,</span>
+    <span class="c1"># &#39;django.middleware.csrf.CsrfViewMiddleware&#39;,</span>
+    <span class="s1">&#39;django.contrib.auth.middleware.AuthenticationMiddleware&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.messages.middleware.MessageMiddleware&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.middleware.clickjacking.XFrameOptionsMiddleware&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;users.middleware.my_middleware&#39;</span><span class="p">,</span>  <span class="c1"># 添加中间件</span>
+<span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>定义一个视图进行测试</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">demo_view</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;view 视图被调用&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s1">&#39;OK&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>执行结果</p>
+<div class="details admonition warning open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-exclamation-triangle fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">Django运行在调试模式下，中间件init部分有可能被调用两次。</div>
+        </div>
+    </div>
+<h3 id="多个中间件的执行顺序">多个中间件的执行顺序</h3>
+<ul>
+<li>在请求视图被处理<strong>前</strong>，中间件<strong>由上至下</strong>依次执行</li>
+<li>在请求视图被处理<strong>后</strong>，中间件<strong>由下至上</strong>依次执行</li>
+</ul>
+<p>定义两个中间件，示例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">my_middleware</span><span class="p">(</span><span class="n">get_response</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;init 被调用&#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">middleware</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;before request 被调用&#39;</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">get_response</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;after response 被调用&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">response</span>
+    <span class="k">return</span> <span class="n">middleware</span>
+
+<span class="k">def</span> <span class="nf">my_middleware2</span><span class="p">(</span><span class="n">get_response</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;init2 被调用&#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">middleware</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;before request 2 被调用&#39;</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">get_response</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;after response 2 被调用&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">response</span>
+    <span class="k">return</span> <span class="n">middleware</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>注册添加两个中间件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">MIDDLEWARE</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;django.middleware.security.SecurityMiddleware&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.sessions.middleware.SessionMiddleware&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.middleware.common.CommonMiddleware&#39;</span><span class="p">,</span>
+    <span class="c1"># &#39;django.middleware.csrf.CsrfViewMiddleware&#39;,</span>
+    <span class="s1">&#39;django.contrib.auth.middleware.AuthenticationMiddleware&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.messages.middleware.MessageMiddleware&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.middleware.clickjacking.XFrameOptionsMiddleware&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;users.middleware.my_middleware&#39;</span><span class="p">,</span>  <span class="c1"># 添加</span>
+    <span class="s1">&#39;users.middleware.my_middleware2&#39;</span><span class="p">,</span>  <span class="c1"># 添加</span>
+<span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>执行结果</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">init2</span> <span class="err">被调用</span>
+<span class="n">init</span> <span class="err">被调用</span>
+<span class="n">before</span> <span class="n">request</span> <span class="err">被调用</span>
+<span class="n">before</span> <span class="n">request</span> <span class="mi">2</span> <span class="err">被调用</span>
+<span class="n">view</span> <span class="err">视图被调用</span>
+<span class="n">after</span> <span class="n">response</span> <span class="mi">2</span> <span class="err">被调用</span>
+<span class="n">after</span> <span class="n">response</span> <span class="err">被调用</span>
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-08-16</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%B1%BB%E8%A7%86%E5%9B%BE%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%B1%BB%E8%A7%86%E5%9B%BE%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/" data-title="Python学习之路-类视图与中间件" data-hashtags="Python学习之路"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%B1%BB%E8%A7%86%E5%9B%BE%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/" data-hashtag="Python学习之路"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%B1%BB%E8%A7%86%E5%9B%BE%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/" data-title="Python学习之路-类视图与中间件" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%B1%BB%E8%A7%86%E5%9B%BE%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/" data-title="Python学习之路-类视图与中间件"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%B1%BB%E8%A7%86%E5%9B%BE%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/" data-title="Python学习之路-类视图与中间件"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%B1%BB%E8%A7%86%E5%9B%BE%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/" data-title="Python学习之路-类视图与中间件" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%B1%BB%E8%A7%86%E5%9B%BE%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/" data-title="Python学习之路-类视图与中间件" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%B1%BB%E8%A7%86%E5%9B%BE%E4%B8%8E%E4%B8%AD%E9%97%B4%E4%BB%B6/" data-title="Python学习之路-类视图与中间件"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/">Python学习之路</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%AF%B7%E6%B1%82%E4%B8%8E%E5%93%8D%E5%BA%94/" class="prev" rel="prev" title="Python学习之路-请求与响应"><i class="fas fa-angle-left fa-fw"></i>Python学习之路-请求与响应</a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.74.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2018 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Silence</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.4afae7d446ba01ebf7fff19893eaf3a1.css" integrity="md5-Svrn1Ea6Aev3//GYk&#43;rzoQ=="><link rel="stylesheet" href="/lib/katex/copy-tex.min.b1994d1b9785dd8801dbf655df7bf6d9.css" integrity="md5-sZlNG5eF3YgB2/ZV33v22Q=="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.acf82ee47549fdc386d02768992a49ad.css" integrity="md5-rPgu5HVJ/cOG0CdomSpJrQ=="><script type="text/javascript" src="/lib/valine/Valine.min.b1d2c9b89c70dbf0a8541bfd36afafa1.js" integrity="md5-sdLJuJxw2/CoVBv9Nq&#43;voQ=="></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.100efdceabf7a138f3297e437d078f74.js" integrity="md5-EA79zqv3oTjzKX5DfQePdA=="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.ae7c5011def46b283696baf367586b5d.js" integrity="md5-rnxQEd70ayg2lrrzZ1hrXQ=="></script><script type="text/javascript" src="/lib/lunr/lunr.min.a08f2562fde4550269dfc13028ed2502.js" integrity="md5-oI8lYv3kVQJp38EwKO0lAg=="></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.b82fb8d93ce0ea6a485dfa3a0b1e7573.js" integrity="md5-uC&#43;42Tzg6mpIXfo6Cx51cw=="></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.f1ba3e22560e2eb7474f28feb4507617.js" integrity="md5-8bo&#43;IlYOLrdHTyj&#43;tFB2Fw=="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.b80e49640d4794d4333d00db76ea22f7.js" integrity="md5-uA5JZA1HlNQzPQDbduoi9w=="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.af8ab36589315582ccdd82f22e84bffb.js" integrity="md5-r4qzZYkxVYLM3YLyLoS/&#43;w=="></script><script type="text/javascript" src="/lib/sharer/sharer.min.c3c3372b4cf5c56dd4e5a4be8ada86c9.js" integrity="md5-w8M3K0z1xW3U5aS&#43;itqGyQ=="></script><script type="text/javascript" src="/lib/typeit/typeit.min.b5f3481ebeaa3e56a2f5f96ea648bf69.js" integrity="md5-tfNIHr6qPlai9flupki/aQ=="></script><script type="text/javascript" src="/lib/katex/katex.min.c158c9e823b681cf535f46596b5e4eac.js" integrity="md5-wVjJ6CO2gc9TX0ZZa15OrA=="></script><script type="text/javascript" src="/lib/katex/auto-render.min.28cd0b98cd3f4fa37d52f3ffe47ad9d4.js" integrity="md5-KM0LmM0/T6N9UvP/5HrZ1A=="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.bfaec7d1dea915d74a7a6d833f0ff62e.js" integrity="md5-v67H0d6pFddKem2DPw/2Lg=="></script><script type="text/javascript" src="/lib/katex/mhchem.min.1bbb252363e83547d4b2186a41eaca28.js" integrity="md5-G7slI2PoNUfUshhqQerKKA=="></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.4a48532bf0b17c058b8b6854f49de23f.js" integrity="md5-SkhTK/CxfAWLi2hU9J3iPw=="></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"c4VA4R1Xg3drBKSQzNfWnWlF-gzGzoHsz","appKey":"upEyt7esgWCbm0L7EPDH6bhV","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","meta":["nick","mail"],"pageSize":10,"placeholder":"说点什么吧...","recordIP":true,"visitor":true}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"id-1":"Silence’s Blog","id-2":"Silence’s Blog"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.7bc7989e979c4a19d97db3ab311a80fe.js" integrity="md5-e8eYnpecShnZfbOrMRqA/g=="></script></body>
+</html>
