@@ -4,9 +4,16 @@
         <link>https://silencehuliang.github.io/</link>
         <description>Silence‘s blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>silencehuliang@gmail.com (Silence)</managingEditor>
-            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 18 Jul 2020 00:00:00 &#43;0000</lastBuildDate>
+            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 25 Jul 2020 00:00:00 &#43;0000</lastBuildDate>
             <atom:link href="https://silencehuliang.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Python学习之路-工程搭建</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%B7%A5%E7%A8%8B%E6%90%AD%E5%BB%BA/</link>
+    <pubDate>Sat, 25 Jul 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%B7%A5%E7%A8%8B%E6%90%AD%E5%BB%BA/</guid>
+    <description><![CDATA[环境安装 创建虚拟环境 1 mkvirtualenv django_1.11.10 -p python3 安装Django 使用Django 1.11.10版本 1 pip install django==1.11.10 创建工程 在使用Flask框架时，项目工程目录的组织与]]></description>
+</item><item>
     <title>Python学习之路-HelloDjango</title>
     <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-hellodjango/</link>
     <pubDate>Sat, 18 Jul 2020 00:00:00 &#43;0000</pubDate>
@@ -69,12 +76,5 @@
     <author>作者</author>
     <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80%E6%A8%A1%E6%9D%BF/</guid>
     <description><![CDATA[在前面的学习中，视图函数的主要作用是生成请求的响应，这是最简单的请求。实际上，视图函数有两个作用：处理业务逻辑和返回响应内容。]]></description>
-</item><item>
-    <title>Python学习之路-Flask基础:视图及路由</title>
-    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80%E8%A7%86%E5%9B%BE%E5%8F%8A%E8%B7%AF%E7%94%B1/</link>
-    <pubDate>Sat, 16 May 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80%E8%A7%86%E5%9B%BE%E5%8F%8A%E8%B7%AF%E7%94%B1/</guid>
-    <description><![CDATA[有时我们需要将同一类 URL 映射到同一个视图函数处理，比如：使用同一个视图函数来显示不同用户的个人信息。]]></description>
 </item></channel>
 </rss>
