@@ -212,16 +212,16 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Title<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>{{ city }}<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&lt;</span><span class="err">!</span><span class="n">DOCTYPE</span> <span class="n">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">html</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&#34;en&#34;</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">head</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">meta</span> <span class="n">charset</span><span class="o">=</span><span class="s2">&#34;UTF-8&#34;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;</span><span class="n">Title</span><span class="o">&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">head</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="p">{{</span> <span class="n">city</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="模板渲染">模板渲染</h3>
@@ -402,12 +402,12 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">==
-!=
-&lt;
-&gt;
-&lt;=
-&gt;=
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">==</span>
+<span class="o">!=</span>
+<span class="o">&lt;</span>
+<span class="o">&gt;</span>
+<span class="o">&lt;=</span>
+<span class="o">&gt;=</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -420,9 +420,9 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">and
-or
-not
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="ow">and</span>
+<span class="ow">or</span>
+<span class="ow">not</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="details admonition warning open">
@@ -478,7 +478,7 @@ not
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">data|default:&#39;默认值&#39;
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">data</span><span class="o">|</span><span class="n">default</span><span class="p">:</span><span class="s1">&#39;默认值&#39;</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -498,7 +498,7 @@ not
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">value|date:&#34;Y年m月j日  H时i分s秒&#34;
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">value</span><span class="o">|</span><span class="n">date</span><span class="p">:</span><span class="s2">&#34;Y年m月j日  H时i分s秒&#34;</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -512,7 +512,7 @@ not
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">{#...#}
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="p">{</span><span class="c1">#...#}</span>
 </code></pre></td></tr></table>
 </div>
 </div></li>
@@ -557,7 +557,7 @@ not
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">{% extends &#34;父模板路径&#34;%}
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="p">{</span><span class="o">%</span> <span class="n">extends</span> <span class="s2">&#34;父模板路径&#34;</span><span class="o">%</span><span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>子模版不用填充父模版中的所有预留区域，如果子模版没有填充，则使用父模版定义的默认值。</p>
@@ -570,10 +570,10 @@ not
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">{% block 名称 %}
-实际填充内容
-{{ block.super }}用于获取父模板中block的内容
-{% endblock 名称 %}
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="p">{</span><span class="o">%</span> <span class="n">block</span> <span class="err">名称</span> <span class="o">%</span><span class="p">}</span>
+<span class="err">实际填充内容</span>
+<span class="p">{{</span> <span class="n">block</span><span class="o">.</span><span class="n">super</span> <span class="p">}}</span><span class="err">用于获取父模板中</span><span class="n">block的内容</span>
+<span class="p">{</span><span class="o">%</span> <span class="n">endblock</span> <span class="err">名称</span> <span class="o">%</span><span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
 </div></div><div class="post-footer" id="post-footer">

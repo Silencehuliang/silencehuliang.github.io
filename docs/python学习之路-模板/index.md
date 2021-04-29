@@ -31,7 +31,7 @@ TEMPLATES = [
 
 在templates目录中新建一个模板文件，如index.html
 
-```html
+```python
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -147,7 +147,7 @@ def index(request):
 
 - 比较运算符如下：
 
-  ```
+  ```python
   ==
   !=
   <
@@ -158,7 +158,7 @@ def index(request):
 
 - 布尔运算符如下：
 
-  ```
+  ```python
   and
   or
   not
@@ -195,7 +195,7 @@ def index(request):
 
 - **default**，默认值，如果变量不存在时则返回默认值。
 
-  ```
+  ```python
   data|default:'默认值'
   ```
 
@@ -209,7 +209,7 @@ def index(request):
   - i表示分，为0-59。
   - s表示秒，为0-59。
 
-  ```
+  ```python
   value|date:"Y年m月j日  H时i分s秒"
   ```
 
@@ -217,7 +217,7 @@ def index(request):
 
 - 单行注释语法如下：
 
-  ```
+  ```python
   {#...#}
   ```
 
@@ -251,7 +251,7 @@ def index(request):
 
 标签extends：继承，写在子模板文件的第一行。
 
-```
+```python
 {% extends "父模板路径"%}
 ```
 
@@ -259,7 +259,7 @@ def index(request):
 
 填充父模板中指定名称的预留区域。
 
-```
+```python
 {% block 名称 %}
 实际填充内容
 {{ block.super }}用于获取父模板中block的内容
