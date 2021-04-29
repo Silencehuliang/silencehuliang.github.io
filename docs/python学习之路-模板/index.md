@@ -9,7 +9,7 @@
 
 在工程中创建模板目录templates。在settings.py配置文件中修改**TEMPLATES**配置项的DIRS值：
 
-```python
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -25,13 +25,13 @@ TEMPLATES = [
         },
     },
 ]
-```
+
 
 ### 定义
 
 在templates目录中新建一个模板文件，如index.html
 
-```python
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,10 +39,10 @@ TEMPLATES = [
     <title>Title</title>
 </head>
 <body>
-    <h1>{{ city }}</h1>
+    <h1>双花括号 city 双花括号</h1>
 </body>
 </html>
-```
+
 
 ### 模板渲染
 
@@ -53,7 +53,7 @@ TEMPLATES = [
 
 例如，定义一个视图
 
-```python
+
 from django.http import HttpResponse
 from django.template import loader
 
@@ -64,19 +64,19 @@ def index(request):
     context={'city': '北京'}
     # 2.渲染模板
     return HttpResponse(template.render(context))
-```
+
 
 **Django提供了一个函数render可以简写上述代码。**
 
 render(request对象, 模板文件路径, 模板数据字典)
 
-```python
+
 from django.shortcuts import render
 
 def index(request):
     context={'city': '北京'}
     return render(request,'index.html',context)
-```
+
 
 ### 模板语法
 
@@ -86,13 +86,13 @@ def index(request):
 
 语法如下：
 
-```python
+
 {{变量}}
-```
+
 
 模板变量可以使python的内建类型，也可以是对象。
 
-```python
+
 def index(request):
     context = {
         'city': '北京',
@@ -117,13 +117,12 @@ def index(request):
     <h1>{{ alist.0 }}</h1>  注意列表的取值方法
 </body>
 </html>
-```
 
 #### 模板语句
 
 - for循环：
 
-  ```python
+  
   {% for item in 列表 %}
 
   循环逻辑
@@ -131,11 +130,10 @@ def index(request):
   {%empty%} 列表为空或不存在时执行此逻辑
 
   {% endfor %}
-  ```
-
+  
 - if条件：
 
-  ```python
+  
   {% if ... %}
   逻辑1
   {% elif ... %}
@@ -143,26 +141,24 @@ def index(request):
   {% else %}
   逻辑3
   {% endif %}
-  ```
-
+  
 - 比较运算符如下：
 
-  ```python
+  
   ==
   !=
   <
   >
   <=
   >=
-  ```
-
+  
 - 布尔运算符如下：
 
-  ```python
+  
   and
   or
   not
-  ```
+  
 
   {{< admonition warning "注意" true >}}
 
@@ -170,10 +166,10 @@ def index(request):
 
   {{< /admonition >}}
 
-  ```python
+  
   {% if a == 1 %}  # 正确
   {% if a==1 %}  # 错误
-  ```
+  
 
 #### 过滤器
 
@@ -183,9 +179,9 @@ def index(request):
 
 - 如果过滤器需要参数，则使用冒号:传递参数。
 
-  ```python
+  
   变量|过滤器:参数
-  ```
+
 
 列举几个如下：
 
@@ -195,9 +191,9 @@ def index(request):
 
 - **default**，默认值，如果变量不存在时则返回默认值。
 
-  ```python
+  
   data|default:'默认值'
-  ```
+
 
 - **date**，日期，用于对日期类型的值进行字符串格式化，常用的格式化字符如下：
 
@@ -209,25 +205,24 @@ def index(request):
   - i表示分，为0-59。
   - s表示秒，为0-59。
 
-  ```python
+  
   value|date:"Y年m月j日  H时i分s秒"
-  ```
+  
 
 #### 注释
 
 - 单行注释语法如下：
 
-  ```python
+  
   {#...#}
-  ```
-
+  
 - 多行注释使用comment标签，语法如下：
 
-  ```python
+  
   {% comment %}
   ...
   {% endcomment %}
-  ```
+
 
 #### 继承
 
@@ -241,27 +236,25 @@ def index(request):
 
 标签block：用于在父模板中预留区域，留给子模板填充差异性的内容，名字不能相同。 为了更好的可读性，建议给endblock标签写上名字，这个名字与对应的block名字相同。父模板中也可以使用上下文中传递过来的数据。
 
-```python
+
 {% block 名称 %}
 预留区域，可以编写默认内容，也可以没有默认内容
 {% endblock  名称 %}
-```
+
 
 ##### 子模板
 
 标签extends：继承，写在子模板文件的第一行。
 
-```python
+
 {% extends "父模板路径"%}
-```
+
 
 子模版不用填充父模版中的所有预留区域，如果子模版没有填充，则使用父模版定义的默认值。
 
 填充父模板中指定名称的预留区域。
 
-```python
 {% block 名称 %}
 实际填充内容
 {{ block.super }}用于获取父模板中block的内容
 {% endblock 名称 %}
-```

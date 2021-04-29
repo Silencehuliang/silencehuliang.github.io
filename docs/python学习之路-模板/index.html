@@ -6,7 +6,7 @@
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>Python学习之路-模板 - Silence Blog</title><meta name="Description" content="Silence‘s blog"><meta property="og:title" content="Python学习之路-模板" />
-<meta property="og:description" content="模板 配置 在工程中创建模板目录templates。在settings.py配置文件中修改TEMPLATES配置项的DIRS值： 1 2 3 4 5 6 7 8" />
+<meta property="og:description" content="模板 配置 在工程中创建模板目录templates。在settings.py配置文件中修改TEMPLATES配置项的DIRS值： TEMPLATES = [ { &lsquo;BACKEND&rsquo;: &lsquo;django.template.backends.django.DjangoTemplates&rsquo;, &lsquo;DIRS&rsquo;: [os.path.join(BASE_DIR," />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%A8%A1%E6%9D%BF/" />
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
@@ -16,7 +16,7 @@
 <meta name="twitter:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
 
 <meta name="twitter:title" content="Python学习之路-模板"/>
-<meta name="twitter:description" content="模板 配置 在工程中创建模板目录templates。在settings.py配置文件中修改TEMPLATES配置项的DIRS值： 1 2 3 4 5 6 7 8"/>
+<meta name="twitter:description" content="模板 配置 在工程中创建模板目录templates。在settings.py配置文件中修改TEMPLATES配置项的DIRS值： TEMPLATES = [ { &lsquo;BACKEND&rsquo;: &lsquo;django.template.backends.django.DjangoTemplates&rsquo;, &lsquo;DIRS&rsquo;: [os.path.join(BASE_DIR,"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/silencehuliang.github.io\/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%A8%A1%E6%9D%BF\/"
-        },"genre": "posts","keywords": "Python学习之路","wordcount":  1643 ,
+        },"genre": "posts","keywords": "Python学习之路","wordcount":  1541 ,
         "url": "https:\/\/silencehuliang.github.io\/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%A8%A1%E6%9D%BF\/","datePublished": "2020-08-22T00:00:00+00:00","dateModified": "2020-08-23T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "Silence"},"author": {
@@ -122,7 +122,7 @@
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Silence</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/django/"><i class="far fa-folder fa-fw"></i>Django</a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-22">2020-08-22</time>&nbsp;<i class="fa fa-history" aria-hidden="true"></i>
                 2020-08-23
-                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1643 字&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1541 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%A8%A1%E6%9D%BF/" class="leancloud_visitors" data-flag-title="Python学习之路-模板">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -160,272 +160,123 @@
             </div><div class="content" id="content"><h2 id="模板">模板</h2>
 <h3 id="配置">配置</h3>
 <p>在工程中创建模板目录templates。在settings.py配置文件中修改<strong>TEMPLATES</strong>配置项的DIRS值：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">TEMPLATES</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span>
-        <span class="s1">&#39;BACKEND&#39;</span><span class="p">:</span> <span class="s1">&#39;django.template.backends.django.DjangoTemplates&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;DIRS&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s1">&#39;templates&#39;</span><span class="p">)],</span>  <span class="c1"># 此处修改</span>
-        <span class="s1">&#39;APP_DIRS&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
-        <span class="s1">&#39;OPTIONS&#39;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s1">&#39;context_processors&#39;</span><span class="p">:</span> <span class="p">[</span>
-                <span class="s1">&#39;django.template.context_processors.debug&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;django.template.context_processors.request&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;django.contrib.auth.context_processors.auth&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;django.contrib.messages.context_processors.messages&#39;</span><span class="p">,</span>
-            <span class="p">],</span>
-        <span class="p">},</span>
-    <span class="p">},</span>
-<span class="p">]</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="定义">定义</h3>
+<p>TEMPLATES = [
+{
+&lsquo;BACKEND&rsquo;: &lsquo;django.template.backends.django.DjangoTemplates&rsquo;,
+&lsquo;DIRS&rsquo;: [os.path.join(BASE_DIR, &lsquo;templates&rsquo;)],  # 此处修改
+&lsquo;APP_DIRS&rsquo;: True,
+&lsquo;OPTIONS&rsquo;: {
+&lsquo;context_processors&rsquo;: [
+&lsquo;django.template.context_processors.debug&rsquo;,
+&lsquo;django.template.context_processors.request&rsquo;,
+&lsquo;django.contrib.auth.context_processors.auth&rsquo;,
+&lsquo;django.contrib.messages.context_processors.messages&rsquo;,
+],
+},
+},
+]</p>
+<h3 id="定义">定义</h3>
 <p>在templates目录中新建一个模板文件，如index.html</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&lt;</span><span class="err">!</span><span class="n">DOCTYPE</span> <span class="n">html</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">html</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&#34;en&#34;</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">head</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">meta</span> <span class="n">charset</span><span class="o">=</span><span class="s2">&#34;UTF-8&#34;</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;</span><span class="n">Title</span><span class="o">&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">head</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="p">{{</span> <span class="n">city</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="模板渲染">模板渲染</h3>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>双花括号 city 双花括号</h1>
+</body>
+</html>
+<h3 id="模板渲染">模板渲染</h3>
 <p>调用模板分为两步骤：</p>
 <ol>
 <li>找到模板 loader.get_template(模板文件在模板目录中的相对路径) -&gt; 返回模板对象</li>
 <li>渲染模板 模板对象.render(context=None, request=None) -&gt; 返回渲染后的html文本字符串 context 为模板变量字典，默认值为None request 为请求对象，默认值为None</li>
 </ol>
 <p>例如，定义一个视图</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
-<span class="kn">from</span> <span class="nn">django.template</span> <span class="kn">import</span> <span class="n">loader</span>
-
-<span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
-    <span class="c1"># 1.获取模板</span>
-    <span class="n">template</span><span class="o">=</span><span class="n">loader</span><span class="o">.</span><span class="n">get_template</span><span class="p">(</span><span class="s1">&#39;index.html&#39;</span><span class="p">)</span>
-
-    <span class="n">context</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;北京&#39;</span><span class="p">}</span>
-    <span class="c1"># 2.渲染模板</span>
-    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="n">template</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">context</span><span class="p">))</span>
-</code></pre></td></tr></table>
-</div>
-</div><p><strong>Django提供了一个函数render可以简写上述代码。</strong></p>
+<p>from django.http import HttpResponse
+from django.template import loader</p>
+<p>def index(request):
+# 1.获取模板
+template=loader.get_template(&lsquo;index.html&rsquo;)</p>
+<pre><code>context={'city': '北京'}
+# 2.渲染模板
+return HttpResponse(template.render(context))
+</code></pre>
+<p><strong>Django提供了一个函数render可以简写上述代码。</strong></p>
 <p>render(request对象, 模板文件路径, 模板数据字典)</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span>
-
-<span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
-    <span class="n">context</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;北京&#39;</span><span class="p">}</span>
-    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="s1">&#39;index.html&#39;</span><span class="p">,</span><span class="n">context</span><span class="p">)</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="模板语法">模板语法</h3>
+<p>from django.shortcuts import render</p>
+<p>def index(request):
+context={&lsquo;city&rsquo;: &lsquo;北京&rsquo;}
+return render(request,&lsquo;index.html&rsquo;,context)</p>
+<h3 id="模板语法">模板语法</h3>
 <h4 id="变量">变量</h4>
 <p>变量名必须由字母、数字、下划线（不能以下划线开头）和点组成。</p>
 <p>语法如下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="p">{{</span><span class="err">变量</span><span class="p">}}</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>模板变量可以使python的内建类型，也可以是对象。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
-    <span class="n">context</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;北京&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;adict&#39;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;西游记&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;author&#39;</span><span class="p">:</span> <span class="s1">&#39;吴承恩&#39;</span>
-        <span class="p">},</span>
-        <span class="s1">&#39;alist&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;index.html&#39;</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
-<span class="o">&lt;</span><span class="err">!</span><span class="n">DOCTYPE</span> <span class="n">html</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">html</span> <span class="n">lang</span><span class="o">=</span><span class="s2">&#34;en&#34;</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">head</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">meta</span> <span class="n">charset</span><span class="o">=</span><span class="s2">&#34;UTF-8&#34;</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;</span><span class="n">Title</span><span class="o">&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">head</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="p">{{</span> <span class="n">city</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="p">{{</span> <span class="n">adict</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="p">{{</span> <span class="n">adict</span><span class="o">.</span><span class="n">name</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>  <span class="err">注意字典的取值方法</span>
-    <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="p">{{</span> <span class="n">alist</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>  
-    <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="p">{{</span> <span class="n">alist</span><span class="o">.</span><span class="mi">0</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>  <span class="err">注意列表的取值方法</span>
-<span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
-</code></pre></td></tr></table>
-</div>
-</div><h4 id="模板语句">模板语句</h4>
+<p>{{变量}}</p>
+<p>模板变量可以使python的内建类型，也可以是对象。</p>
+<p>def index(request):
+context = {
+&lsquo;city&rsquo;: &lsquo;北京&rsquo;,
+&lsquo;adict&rsquo;: {
+&lsquo;name&rsquo;: &lsquo;西游记&rsquo;,
+&lsquo;author&rsquo;: &lsquo;吴承恩&rsquo;
+},
+&lsquo;alist&rsquo;: [1, 2, 3, 4, 5]
+}
+return render(request, &lsquo;index.html&rsquo;, context)</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>{{ city }}</h1>
+    <h1>{{ adict }}</h1>
+    <h1>{{ adict.name }}</h1>  注意字典的取值方法
+    <h1>{{ alist }}</h1>  
+    <h1>{{ alist.0 }}</h1>  注意列表的取值方法
+</body>
+</html>
+<h4 id="模板语句">模板语句</h4>
 <ul>
 <li>
 <p>for循环：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="p">{</span><span class="o">%</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="err">列表</span> <span class="o">%</span><span class="p">}</span>
-
-<span class="err">循环逻辑</span>
-<span class="p">{{</span><span class="n">forloop</span><span class="o">.</span><span class="n">counter</span><span class="p">}}</span><span class="err">表示当前是第几次循环，从</span><span class="mi">1</span><span class="err">开始</span>
-<span class="p">{</span><span class="o">%</span><span class="n">empty</span><span class="o">%</span><span class="p">}</span> <span class="err">列表为空或不存在时执行此逻辑</span>
-
-<span class="p">{</span><span class="o">%</span> <span class="n">endfor</span> <span class="o">%</span><span class="p">}</span>
-</code></pre></td></tr></table>
-</div>
-</div></li>
+<p>{% for item in 列表 %}</p>
+<p>循环逻辑
+{{forloop.counter}}表示当前是第几次循环，从1开始
+{%empty%} 列表为空或不存在时执行此逻辑</p>
+<p>{% endfor %}</p>
+</li>
 <li>
 <p>if条件：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="o">...</span> <span class="o">%</span><span class="p">}</span>
-<span class="err">逻辑</span><span class="mi">1</span>
-<span class="p">{</span><span class="o">%</span> <span class="k">elif</span> <span class="o">...</span> <span class="o">%</span><span class="p">}</span>
-<span class="err">逻辑</span><span class="mi">2</span>
-<span class="p">{</span><span class="o">%</span> <span class="k">else</span> <span class="o">%</span><span class="p">}</span>
-<span class="err">逻辑</span><span class="mi">3</span>
-<span class="p">{</span><span class="o">%</span> <span class="n">endif</span> <span class="o">%</span><span class="p">}</span>
-</code></pre></td></tr></table>
-</div>
-</div></li>
+<p>{% if &hellip; %}
+逻辑1
+{% elif &hellip; %}
+逻辑2
+{% else %}
+逻辑3
+{% endif %}</p>
+</li>
 <li>
 <p>比较运算符如下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">==</span>
-<span class="o">!=</span>
-<span class="o">&lt;</span>
-<span class="o">&gt;</span>
-<span class="o">&lt;=</span>
-<span class="o">&gt;=</span>
-</code></pre></td></tr></table>
-</div>
-</div></li>
+<p>==
+!=
+&lt;</p>
+<blockquote>
+</blockquote>
+<p>&lt;=</p>
+<blockquote>
+<p>=</p>
+</blockquote>
+</li>
 <li>
 <p>布尔运算符如下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="ow">and</span>
-<span class="ow">or</span>
-<span class="ow">not</span>
-</code></pre></td></tr></table>
-</div>
-</div><div class="details admonition warning open">
+<p>and
+or
+not</p>
+<div class="details admonition warning open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-exclamation-triangle fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
         </div>
@@ -433,17 +284,9 @@
             <div class="admonition-content">运算符左右两侧不能紧挨变量或常量，必须有空格。</div>
         </div>
     </div>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">%</span><span class="p">}</span>  <span class="c1"># 正确</span>
-<span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="n">a</span><span class="o">==</span><span class="mi">1</span> <span class="o">%</span><span class="p">}</span>  <span class="c1"># 错误</span>
-</code></pre></td></tr></table>
-</div>
-</div></li>
+<p>{% if a == 1 %}  # 正确
+{% if a==1 %}  # 错误</p>
+</li>
 </ul>
 <h4 id="过滤器">过滤器</h4>
 <p>语法如下:</p>
@@ -453,15 +296,8 @@
 </li>
 <li>
 <p>如果过滤器需要参数，则使用冒号:传递参数。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">变量</span><span class="o">|</span><span class="err">过滤器</span><span class="p">:</span><span class="err">参数</span>
-</code></pre></td></tr></table>
-</div>
-</div></li>
+<p>变量|过滤器:参数</p>
+</li>
 </ul>
 <p>列举几个如下：</p>
 <ul>
@@ -473,15 +309,8 @@
 </li>
 <li>
 <p><strong>default</strong>，默认值，如果变量不存在时则返回默认值。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">data</span><span class="o">|</span><span class="n">default</span><span class="p">:</span><span class="s1">&#39;默认值&#39;</span>
-</code></pre></td></tr></table>
-</div>
-</div></li>
+<p>data|default:&lsquo;默认值&rsquo;</p>
+</li>
 <li>
 <p><strong>date</strong>，日期，用于对日期类型的值进行字符串格式化，常用的格式化字符如下：</p>
 <ul>
@@ -493,44 +322,21 @@
 <li>i表示分，为0-59。</li>
 <li>s表示秒，为0-59。</li>
 </ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">value</span><span class="o">|</span><span class="n">date</span><span class="p">:</span><span class="s2">&#34;Y年m月j日  H时i分s秒&#34;</span>
-</code></pre></td></tr></table>
-</div>
-</div></li>
+<p>value|date:&ldquo;Y年m月j日  H时i分s秒&rdquo;</p>
+</li>
 </ul>
 <h4 id="注释">注释</h4>
 <ul>
 <li>
 <p>单行注释语法如下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="p">{</span><span class="c1">#...#}</span>
-</code></pre></td></tr></table>
-</div>
-</div></li>
+<p>{#&hellip;#}</p>
+</li>
 <li>
 <p>多行注释使用comment标签，语法如下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="p">{</span><span class="o">%</span> <span class="n">comment</span> <span class="o">%</span><span class="p">}</span>
-<span class="o">...</span>
-<span class="p">{</span><span class="o">%</span> <span class="n">endcomment</span> <span class="o">%</span><span class="p">}</span>
-</code></pre></td></tr></table>
-</div>
-</div></li>
+<p>{% comment %}
+&hellip;
+{% endcomment %}</p>
+</li>
 </ul>
 <h4 id="继承">继承</h4>
 <h5 id="简介">简介</h5>
@@ -538,45 +344,19 @@
 <h5 id="父模板">父模板</h5>
 <p>如果发现在多个模板中某些内容相同，那就应该把这段内容定义到父模板中。</p>
 <p>标签block：用于在父模板中预留区域，留给子模板填充差异性的内容，名字不能相同。 为了更好的可读性，建议给endblock标签写上名字，这个名字与对应的block名字相同。父模板中也可以使用上下文中传递过来的数据。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="p">{</span><span class="o">%</span> <span class="n">block</span> <span class="err">名称</span> <span class="o">%</span><span class="p">}</span>
-<span class="err">预留区域，可以编写默认内容，也可以没有默认内容</span>
-<span class="p">{</span><span class="o">%</span> <span class="n">endblock</span>  <span class="err">名称</span> <span class="o">%</span><span class="p">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><h5 id="子模板">子模板</h5>
+<p>{% block 名称 %}
+预留区域，可以编写默认内容，也可以没有默认内容
+{% endblock  名称 %}</p>
+<h5 id="子模板">子模板</h5>
 <p>标签extends：继承，写在子模板文件的第一行。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="p">{</span><span class="o">%</span> <span class="n">extends</span> <span class="s2">&#34;父模板路径&#34;</span><span class="o">%</span><span class="p">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>子模版不用填充父模版中的所有预留区域，如果子模版没有填充，则使用父模版定义的默认值。</p>
+<p>{% extends &ldquo;父模板路径&rdquo;%}</p>
+<p>子模版不用填充父模版中的所有预留区域，如果子模版没有填充，则使用父模版定义的默认值。</p>
 <p>填充父模板中指定名称的预留区域。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="p">{</span><span class="o">%</span> <span class="n">block</span> <span class="err">名称</span> <span class="o">%</span><span class="p">}</span>
-<span class="err">实际填充内容</span>
-<span class="p">{{</span> <span class="n">block</span><span class="o">.</span><span class="n">super</span> <span class="p">}}</span><span class="err">用于获取父模板中</span><span class="n">block的内容</span>
-<span class="p">{</span><span class="o">%</span> <span class="n">endblock</span> <span class="err">名称</span> <span class="o">%</span><span class="p">}</span>
-</code></pre></td></tr></table>
-</div>
-</div></div><div class="post-footer" id="post-footer">
+<p>{% block 名称 %}
+实际填充内容
+{{ block.super }}用于获取父模板中block的内容
+{% endblock 名称 %}</p>
+</div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
