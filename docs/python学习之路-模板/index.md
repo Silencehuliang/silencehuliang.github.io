@@ -9,7 +9,7 @@
 
 在工程中创建模板目录templates。在settings.py配置文件中修改**TEMPLATES**配置项的DIRS值：
 
-
+```python
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -25,24 +25,12 @@ TEMPLATES = [
         },
     },
 ]
+```
 
 
 ### 定义
 
 在templates目录中新建一个模板文件，如index.html
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <h1>双花括号 city 双花括号</h1>
-</body>
-</html>
-
 
 ### 模板渲染
 
@@ -53,7 +41,7 @@ TEMPLATES = [
 
 例如，定义一个视图
 
-
+```python
 from django.http import HttpResponse
 from django.template import loader
 
@@ -64,18 +52,23 @@ def index(request):
     context={'city': '北京'}
     # 2.渲染模板
     return HttpResponse(template.render(context))
-
+```
 
 **Django提供了一个函数render可以简写上述代码。**
 
 render(request对象, 模板文件路径, 模板数据字典)
 
-
+```python
 from django.shortcuts import render
 
 def index(request):
     context={'city': '北京'}
     return render(request,'index.html',context)
+```
+
+
+
+
 
 
 ### 模板语法
@@ -91,7 +84,7 @@ def index(request):
 
 
 模板变量可以使python的内建类型，也可以是对象。
-
+```python
 
 def index(request):
     context = {
@@ -103,62 +96,15 @@ def index(request):
         'alist': [1, 2, 3, 4, 5]
     }
     return render(request, 'index.html', context)
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <h1>{{ city }}</h1>
-    <h1>{{ adict }}</h1>
-    <h1>{{ adict.name }}</h1>  注意字典的取值方法
-    <h1>{{ alist }}</h1>  
-    <h1>{{ alist.0 }}</h1>  注意列表的取值方法
-</body>
-</html>
+```
+
 
 #### 模板语句
 
 - for循环：
-
-  
-  {% for item in 列表 %}
-
-  循环逻辑
-  {{forloop.counter}}表示当前是第几次循环，从1开始
-  {%empty%} 列表为空或不存在时执行此逻辑
-
-  {% endfor %}
-  
 - if条件：
-
-  
-  {% if ... %}
-  逻辑1
-  {% elif ... %}
-  逻辑2
-  {% else %}
-  逻辑3
-  {% endif %}
-  
-- 比较运算符如下：
-
-  
-  ==
-  !=
-  <
-  >
-  <=
-  >=
-  
-- 布尔运算符如下：
-
-  
-  and
-  or
-  not
-  
+- 比较运算符：
+- 布尔运算符：
 
   {{< admonition warning "注意" true >}}
 
@@ -166,10 +112,6 @@ def index(request):
 
   {{< /admonition >}}
 
-  
-  {% if a == 1 %}  # 正确
-  {% if a==1 %}  # 错误
-  
 
 #### 过滤器
 
@@ -178,8 +120,6 @@ def index(request):
 - 使用管道符号|来应用过滤器，用于进行计算、转换操作，可以使用在变量、标签中。
 
 - 如果过滤器需要参数，则使用冒号:传递参数。
-
-  
   变量|过滤器:参数
 
 
@@ -212,16 +152,8 @@ def index(request):
 #### 注释
 
 - 单行注释语法如下：
-
-  
-  {#...#}
   
 - 多行注释使用comment标签，语法如下：
-
-  
-  {% comment %}
-  ...
-  {% endcomment %}
 
 
 #### 继承
@@ -236,25 +168,14 @@ def index(request):
 
 标签block：用于在父模板中预留区域，留给子模板填充差异性的内容，名字不能相同。 为了更好的可读性，建议给endblock标签写上名字，这个名字与对应的block名字相同。父模板中也可以使用上下文中传递过来的数据。
 
-
-{% block 名称 %}
-预留区域，可以编写默认内容，也可以没有默认内容
-{% endblock  名称 %}
-
-
 ##### 子模板
 
 标签extends：继承，写在子模板文件的第一行。
-
-
-{% extends "父模板路径"%}
 
 
 子模版不用填充父模版中的所有预留区域，如果子模版没有填充，则使用父模版定义的默认值。
 
 填充父模板中指定名称的预留区域。
 
-{% block 名称 %}
 实际填充内容
-{{ block.super }}用于获取父模板中block的内容
-{% endblock 名称 %}
+
