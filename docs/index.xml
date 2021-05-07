@@ -4,9 +4,16 @@
         <link>https://silencehuliang.github.io/</link>
         <description>Silence‘s blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>silencehuliang@gmail.com (Silence)</managingEditor>
-            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 10 Oct 2020 00:00:00 &#43;0000</lastBuildDate>
+            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 17 Oct 2020 00:00:00 &#43;0000</lastBuildDate>
             <atom:link href="https://silencehuliang.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Python学习之路-DRF基础:其他功能</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%85%B6%E4%BB%96%E5%8A%9F%E8%83%BD/</link>
+    <pubDate>Sat, 17 Oct 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%85%B6%E4%BB%96%E5%8A%9F%E8%83%BD/</guid>
+    <description><![CDATA[认证 使用 可以在配置文件中配置全局默认的认证方案 1 2 3 4 5 6 REST_FRAMEWORK = { &#39;DEFAULT_AUTHENTICATION_CLASSES&#39;: ( &#39;rest_framework.authentication.BasicAuthentication&#39;, # 基本认证 &#39;rest_framework.authentication.SessionAuthentication&#39;, # session认证 ) } 也可以在每个视图中通过设置auth]]></description>
+</item><item>
     <title>Python学习之路-DRF基础:视图</title>
     <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%A7%86%E5%9B%BE/</link>
     <pubDate>Sat, 10 Oct 2020 00:00:00 &#43;0000</pubDate>
@@ -69,12 +76,5 @@
     <author>作者</author>
     <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%AF%B7%E6%B1%82%E4%B8%8E%E5%93%8D%E5%BA%94/</guid>
     <description><![CDATA[请求 简介 回想一下，利用HTTP协议向服务器传参有几种途径？ 提取URL的特定部分，如/weather/beijing/2018，可以在服务器端]]></description>
-</item><item>
-    <title>Python学习之路-Django基础:配置、静态文件与路由</title>
-    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6%E4%B8%8E%E8%B7%AF%E7%94%B1/</link>
-    <pubDate>Sat, 01 Aug 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6%E4%B8%8E%E8%B7%AF%E7%94%B1/</guid>
-    <description><![CDATA[配置文件 BASE_DIR 1 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) 当前工程的根目录，Django会依此来定位工程内的相关文件，我们也可以使用该参数来构造文件路径。 DEBUG 调试模式，创建工程后初始]]></description>
 </item></channel>
 </rss>
