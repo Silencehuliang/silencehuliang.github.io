@@ -4,7 +4,14 @@
         <link>https://silencehuliang.github.io/posts/</link>
         <description>所有文章 | Silence Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>silencehuliang@gmail.com (Silence)</managingEditor>
-            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 19 Sep 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://silencehuliang.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 26 Sep 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://silencehuliang.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Python学习之路-Serializer序列化器</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-serializer%E5%BA%8F%E5%88%97%E5%8C%96%E5%99%A8/</link>
+    <pubDate>Sat, 26 Sep 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-serializer%E5%BA%8F%E5%88%97%E5%8C%96%E5%99%A8/</guid>
+    <description><![CDATA[序列化器的作用 进行数据的校验 对数据对象进行转换 定义Serializer 定义方法 Django REST framework中的Serializer使用类来定义，须]]></description>
+</item><item>
     <title>Python学习之路-DRF工程搭建</title>
     <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-drf%E5%B7%A5%E7%A8%8B%E6%90%AD%E5%BB%BA/</link>
     <pubDate>Sat, 19 Sep 2020 00:00:00 &#43;0000</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%B7%A5%E7%A8%8B%E6%90%AD%E5%BB%BA/</guid>
     <description><![CDATA[环境安装 创建虚拟环境 1 mkvirtualenv django_1.11.10 -p python3 安装Django 使用Django 1.11.10版本 1 pip install django==1.11.10 创建工程 在使用Flask框架时，项目工程目录的组织与]]></description>
-</item><item>
-    <title>Python学习之路-HelloDjango</title>
-    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-hellodjango/</link>
-    <pubDate>Sat, 18 Jul 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-hellodjango/</guid>
-    <description><![CDATA[简介 Django，发音为[`dʒæŋɡəʊ]，是用python语言写的开源web开发框架，并遵循MVC设计。劳伦斯出版集团为了开发以新闻内容]]></description>
 </item></channel>
 </rss>
