@@ -1,4 +1,4 @@
-# Python学习之路-PythonWeb
+# Python学习之路-Django基础:PythonWeb
 
 
 ## Python Web 框架要点

@@ -1,4 +1,4 @@
-# Python学习之路-模板
+# Python学习之路-Django基础:模板
 
 
 ## 模板

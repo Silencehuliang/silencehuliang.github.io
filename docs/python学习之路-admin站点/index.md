@@ -1,4 +1,4 @@
-# Python学习之路-Admin站点
+# Python学习之路-Django基础:Admin站点
 
 
 

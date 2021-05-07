@@ -1,4 +1,4 @@
-# Python学习之路-HelloDjango
+# Python学习之路-Django基础:HelloDjango
 
 
 ## 简介

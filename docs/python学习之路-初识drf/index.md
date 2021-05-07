@@ -1,4 +1,4 @@
-# Python学习之路-初识DRF
+# Python学习之路-DRF基础:初识DRF
 
 
 ## Web应用模式
