@@ -4,9 +4,16 @@
         <link>https://silencehuliang.github.io/</link>
         <description>Silence‘s blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>silencehuliang@gmail.com (Silence)</managingEditor>
-            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 19 Dec 2020 00:00:00 &#43;0000</lastBuildDate>
+            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 26 Dec 2020 00:00:00 &#43;0000</lastBuildDate>
             <atom:link href="https://silencehuliang.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Python学习之路-Tornado基础:模板</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-tornado%E5%9F%BA%E7%A1%80%E6%A8%A1%E6%9D%BF/</link>
+    <pubDate>Sat, 26 Dec 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-tornado%E5%9F%BA%E7%A1%80%E6%A8%A1%E6%9D%BF/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
     <title>Python学习之路-Tornado基础:深入Tornado</title>
     <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-tornado%E5%9F%BA%E7%A1%80%E6%B7%B1%E5%85%A5tornado/</link>
     <pubDate>Sat, 19 Dec 2020 00:00:00 &#43;0000</pubDate>
@@ -69,12 +76,5 @@
     <author>作者</author>
     <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-admin%E7%AB%99%E7%82%B9/</guid>
     <description><![CDATA[简介 假设我们要设计一个新闻网站，我们需要编写展示给用户的页面，网页上展示的新闻信息是从哪里来的呢？是从数据库中查找到新闻的信息，然后把它展]]></description>
-</item><item>
-    <title>Python学习之路-Django基础:数据库</title>
-    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
-    <pubDate>Sat, 29 Aug 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
-    <description><![CDATA[ORM框架 简介 O是object，也就类对象的意思，R是relation，翻译成中文是关系，也就是关系数据库中数据表的意思，M是mapping]]></description>
 </item></channel>
 </rss>
