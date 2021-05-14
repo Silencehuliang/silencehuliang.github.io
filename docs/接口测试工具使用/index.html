@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Python学习之路-接口测试:工具使用 - Silence Blog</title><meta name="Description" content="Silence‘s blog"><meta property="og:title" content="Python学习之路-接口测试:工具使用" />
+<meta property="og:description" content="Jmeter 概念 Jmeter：是Apche公司使用Java平台开发的一款测试工具。 作用 接口测试 性能测试 压力测试 Web自动化测试 数据库测试 JAVA程序测" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://silencehuliang.github.io/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" />
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
+<meta property="article:published_time" content="2021-02-07T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-02-07T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
+
+<meta name="twitter:title" content="Python学习之路-接口测试:工具使用"/>
+<meta name="twitter:description" content="Jmeter 概念 Jmeter：是Apche公司使用Java平台开发的一款测试工具。 作用 接口测试 性能测试 压力测试 Web自动化测试 数据库测试 JAVA程序测"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://silencehuliang.github.io/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" /><link rel="prev" href="https://silencehuliang.github.io/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.2e7125082ec8de83a87adc70253c9c23.css" integrity="md5-LnElCC7I3oOoetxwJTycIw=="><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.76cb46c10b6c0293433b371bae2414b2.css" integrity="md5-dstGwQtsApNDOzcbriQUsg=="><link rel="stylesheet" href="/lib/animate/animate.min.bc1a6a99c43f5ccc97d2d350bde13f74.css" integrity="md5-vBpqmcQ/XMyX0tNQveE/dA=="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Python学习之路-接口测试:工具使用",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/silencehuliang.github.io\/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8\/"
+        },"genre": "posts","keywords": "Python学习之路","wordcount":  2413 ,
+        "url": "https:\/\/silencehuliang.github.io\/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8\/","datePublished": "2021-02-07T00:00:00+00:00","dateModified": "2021-02-07T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "Silence"},"author": {
+                "@type": "Person",
+                "name": "Silence"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Silence Blog"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+        data-srcset="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg, https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg 1.5x, https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+        title="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg" /><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Silence Blog"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+        data-srcset="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg, https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg 1.5x, https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+        title="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg" /><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Python学习之路-接口测试:工具使用</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Silence</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/tornado/"><i class="far fa-folder fa-fw"></i>Tornado</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="0001-01-01">0001-01-01</time>&nbsp;<i class="fa fa-history" aria-hidden="true"></i>
+                2021-02-07
+                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2413 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;<span id="/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" class="leancloud_visitors" data-flag-title="Python学习之路-接口测试:工具使用">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#jmeter">Jmeter</a>
+      <ul>
+        <li><a href="#概念">概念</a></li>
+        <li><a href="#作用">作用</a></li>
+        <li><a href="#优点">优点：</a></li>
+        <li><a href="#缺点">缺点</a></li>
+      </ul>
+    </li>
+    <li><a href="#jmeter工具安装">Jmeter工具安装</a>
+      <ul>
+        <li><a href="#下载">下载</a>
+          <ul>
+            <li><a href="#官网下载地址">官网下载地址</a></li>
+          </ul>
+        </li>
+        <li><a href="#启动jmeter的两种方式">启动JMeter的两种方式</a></li>
+        <li><a href="#常用目录文件介绍">常用目录文件介绍</a>
+          <ul>
+            <li><a href="#bin目录">Bin目录</a></li>
+            <li><a href="#docs目录">docs目录</a></li>
+            <li><a href="#printable_docs目录">printable_docs目录</a></li>
+          </ul>
+        </li>
+        <li><a href="#工具功能界面布局">工具功能界面布局</a>
+          <ul>
+            <li><a href="#界面布局">界面布局</a></li>
+            <li><a href="#使用jmeter进行接口测试">使用JMeter进行接口测试</a>
+              <ul>
+                <li><a href="#遗留的问题">遗留的问题：</a></li>
+                <li><a href="#使用jmeter的解决方案">使用JMeter的解决方案</a></li>
+              </ul>
+            </li>
+            <li><a href="#test-plan">Test Plan</a>
+              <ul>
+                <li><a href="#作用-1">作用：</a></li>
+              </ul>
+            </li>
+            <li><a href="#选项">选项</a></li>
+            <li><a href="#threadsuser线程组">Threads(User)线程组</a>
+              <ul>
+                <li><a href="#thread-group线程组">thread group(线程组)</a>
+                  <ul>
+                    <li><a href="#作用-2">作用</a></li>
+                    <li><a href="#线程属性">线程属性</a></li>
+                    <li><a href="#调度器配置">调度器配置</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#组件详解">组件详解</a>
+              <ul>
+                <li><a href="#http请求">HTTP请求</a>
+                  <ul>
+                    <li><a href="#作用-3">作用</a></li>
+                    <li><a href="#参数详解">参数详解</a></li>
+                    <li><a href="#body-data选项作用">Body Data选项作用：</a></li>
+                  </ul>
+                </li>
+                <li><a href="#察看结果树">察看结果树</a>
+                  <ul>
+                    <li><a href="#作用-4">作用：</a></li>
+                    <li><a href="#说明">说明：</a></li>
+                    <li><a href="#察看结果树总结">察看结果树总结：</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#元件">元件</a>
+      <ul>
+        <li><a href="#概念-1">概念</a></li>
+        <li><a href="#元件结论">元件结论</a></li>
+        <li><a href="#各元件中需要掌握元件">各元件中需要掌握元件</a>
+          <ul>
+            <li><a href="#配置元件config-element">配置元件（config Element）</a></li>
+            <li><a href="#前置处理器per-processors">前置处理器（Per Processors）</a></li>
+            <li><a href="#定时器timer">定时器（Timer）</a></li>
+            <li><a href="#取样器sample">取样器（sample）</a></li>
+            <li><a href="#后置处理器post-processors">后置处理器（Post Processors）</a></li>
+            <li><a href="#监听器listener">监听器（Listener）</a></li>
+            <li><a href="#逻辑控制器">逻辑控制器</a></li>
+            <li><a href="#总结">总结：</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="jmeter">Jmeter</h2>
+<h3 id="概念">概念</h3>
+<p>Jmeter：是Apche公司使用Java平台开发的一款测试工具。</p>
+<h3 id="作用">作用</h3>
+<ul>
+<li>接口测试</li>
+<li>性能测试</li>
+<li>压力测试</li>
+<li>Web自动化测试</li>
+<li>数据库测试</li>
+<li>JAVA程序测试</li>
+</ul>
+<h3 id="优点">优点：</h3>
+<ul>
+<li>开源、免费</li>
+<li>支持多协议</li>
+<li>小巧</li>
+<li>功能强大</li>
+</ul>
+<h3 id="缺点">缺点</h3>
+<ul>
+<li>不支持IP欺骗</li>
+<li>使用JMeter无法验证JS程序，也无法验证页面UI，所以要须要和Selenium配合来完成Web2.0应用的测试</li>
+</ul>
+<h2 id="jmeter工具安装">Jmeter工具安装</h2>
+<h3 id="下载">下载</h3>
+<h4 id="官网下载地址">官网下载地址</h4>
+<p><a href="http://jmeter.apache.org/download_jmeter.cgi">http://jmeter.apache.org/download_jmeter.cgi</a></p>
+<p>注意：下载后，解压文件到任意目录，避免在一个有空格的路径安装Jmeter，这将导致远程测试出现问题。</p>
+<h3 id="启动jmeter的两种方式">启动JMeter的两种方式</h3>
+<p>进入bin目录</p>
+<ul>
+<li>
+<p>双击 ApacheJMeter.jar文件;</p>
+</li>
+<li>
+<p>双击 Jmeter.bat文件;</p>
+</li>
+<li>
+<p>两种打开方式的区别</p>
+</li>
+<li>
+<p>发送桌面快捷方式</p>
+</li>
+</ul>
+<h3 id="常用目录文件介绍">常用目录文件介绍</h3>
+<h4 id="bin目录">Bin目录</h4>
+<p>存放可执行文件和配置文件</p>
+<ul>
+<li>Jmeter.bat：windows系统中JMeter的启动文件</li>
+<li>ApacheJMeter.jar Java环境下的JMeter启动文件</li>
+<li>Jmeter.log：日志文件</li>
+<li>Jmeter.sh：linux系统中JMeter的启动文件</li>
+<li>Jmeter.properties：系统配置文件</li>
+<li>Jmeter-server.bat：windows分布式测试要用到的服务器配置</li>
+<li>Jmeter-serve：linux分布式测试要用到的服务器配置</li>
+</ul>
+<h4 id="docs目录">docs目录</h4>
+<p>docs：是JMeter的java Doc，可打开api\index.html页面来查看;</p>
+<h4 id="printable_docs目录">printable_docs目录</h4>
+<p>printable_docs的usermanual子目录下的内容是JMeter的用户手册文档，其中usermanual下<strong>component_reference.html</strong>是最常用到的核心元件帮助文档。</p>
+<h3 id="工具功能界面布局">工具功能界面布局</h3>
+<h4 id="界面布局">界面布局</h4>
+<p>JMeter的主界面布局分为标题栏、菜单栏、工具栏、树形标签栏和内容栏</p>
+<p>标题栏：主要显示计划信息及JMeter版本。
+菜单栏：全部的功能的都包含在菜单栏中。
+工具栏：工具栏中的按钮在菜单栏都可以找到，工具栏就相当于菜单栏常用功能的快捷按钮
+树形标签栏：树形标签栏通常用来显示测试用例（计划）相关的标签。
+内容栏：配合树形标签栏显示，树形标签中点击哪个标签，内容栏中就显示相应的内容和操作。</p>
+<h4 id="使用jmeter进行接口测试">使用JMeter进行接口测试</h4>
+<h5 id="遗留的问题">遗留的问题：</h5>
+<ul>
+<li>需求对我们学院查询执行100次，如何去做？</li>
+<li>50个请求同时请求如何操作？</li>
+</ul>
+<h5 id="使用jmeter的解决方案">使用JMeter的解决方案</h5>
+<ul>
+<li>添加【<strong>测试计划</strong>】</li>
+<li>基于添加的测试计划添加【<strong>线程组</strong>】，循环次数设置为100次</li>
+<li>在【取样器】中基于线程组添加<strong>HTTP请求</strong></li>
+<li>在【监听器】基于线程组添加【察看结果树】</li>
+<li>在监听器基于线程组添加【聚合报告】</li>
+</ul>
+<h4 id="test-plan">Test Plan</h4>
+<h5 id="作用-1">作用：</h5>
+<ul>
+<li>本次测试所需要的【组件】都是基于测试计划添加；</li>
+<li>本次测试所有组件的设置与执行都基于测试计划；</li>
+</ul>
+<p>组件：完成指定功能代码段的封装；</p>
+<h4 id="选项">选项</h4>
+<ul>
+<li>
+<p><strong>独立运行每个线程组：</strong></p>
+<p>进程：是每个正在运行的应用程序。
+线程：按照进程的指令去执行指定的代码。
+线程组（多线程）：多个线程的组合。
+线程组（多线程）的执行顺序是并行的。</p>
+<p>勾选：让本次测试计划中所有线程组保持从上到下顺序执行</p>
+</li>
+<li>
+<p><strong>Add directory or jar to classpath：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">加载第三方jar包；比如：测试数据库时使用，加载数据库驱动jar包。
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h4 id="threadsuser线程组">Threads(User)线程组</h4>
+<h5 id="thread-group线程组">thread group(线程组)</h5>
+<h6 id="作用-2">作用</h6>
+<p>添加测试中使用的大多数组件</p>
+<h6 id="线程属性">线程属性</h6>
+<ul>
+<li>线程数：虚拟用户数</li>
+<li>Ramp-Up Period(in serconds)：启动虚拟全部用户数所需要的时间</li>
+<li>循环次数 ：指定次数或勾线永远</li>
+<li>调度器：勾选后，调度器配置才能使用；</li>
+</ul>
+<h6 id="调度器配置">调度器配置</h6>
+<ul>
+<li>持续时间（秒）：设置脚本压测持续时间</li>
+<li>启动延迟（秒）：启动延迟时间</li>
+</ul>
+<h4 id="组件详解">组件详解</h4>
+<h5 id="http请求">HTTP请求</h5>
+<h6 id="作用-3">作用</h6>
+<ul>
+<li>模拟前端或第三方软件向服务器发送请求;</li>
+<li>设置请求时的方法和参数数据;</li>
+</ul>
+<h6 id="参数详解">参数详解</h6>
+<ul>
+<li>名称：本属性用于标识一个取样器，建议使用一个有意义的名称。</li>
+<li>服务器名称或IP ：HTTP请求发送的目标服务器名称或IP地址。</li>
+<li>端口号：目标服务器的端口号，默认值为80 。</li>
+<li>协议：向目标服务器发送HTTP请求时的协议,可以是http或者是https ,默认值为http 。</li>
+<li>方法：发送HTTP请求的方法，可用方法包括GET、POST、PUT、DELETE。</li>
+<li>Content encoding ：内容的编码方式，默认值为iso8859；一般设置【UTF-8】</li>
+<li>路径：目标URL路径（不包括服务器地址和端口）</li>
+<li>同请求一起发送参数:请求时需要传递参数</li>
+</ul>
+<h6 id="body-data选项作用">Body Data选项作用：</h6>
+<ul>
+<li>
+<p>新增或更新时需要传递JSON报文；</p>
+</li>
+<li>
+<p>新增和更新时传入报文也需要设置Content-Type:application/json，告诉服务器我传的数据格式为JSON格式；设置地点：配置元件&ndash;&gt;HTTP信息头管理器</p>
+</li>
+</ul>
+<h5 id="察看结果树">察看结果树</h5>
+<h6 id="作用-4">作用：</h6>
+<ul>
+<li>查看请求服务器时的请求信息;</li>
+<li>查看服务器响应数据;</li>
+<li>记录信息到指定文件;</li>
+</ul>
+<h6 id="说明">说明：</h6>
+<ul>
+<li>文件名：存放服务器响应后的状态信息； 如：e:\查询所有response.txt</li>
+<li>取样结果：服务器响应的信息头信息；比如：响应代码，响应数据大小</li>
+<li>请求：查看向服务器请求时的信息；比如：请求地址、方法、数据等</li>
+<li>响应数据：查看服务器响应的数据；比如：获取资源时，返回的JSON数据</li>
+</ul>
+<h6 id="察看结果树总结">察看结果树总结：</h6>
+<ul>
+<li>查看请求</li>
+<li>查看响应</li>
+<li>存储请求状态信息</li>
+</ul>
+<h2 id="元件">元件</h2>
+<h3 id="概念-1">概念</h3>
+<p>相同类似功能组件的集合称之为元件</p>
+<ol>
+<li>逻辑控制器</li>
+<li>配置元件</li>
+<li>定时器</li>
+<li>前置处理器</li>
+<li>Sampler</li>
+<li>后置处理器</li>
+<li>断言</li>
+<li>监听器</li>
+</ol>
+<h3 id="元件结论">元件结论</h3>
+<p>只学重要的、常用的</p>
+<h3 id="各元件中需要掌握元件">各元件中需要掌握元件</h3>
+<h4 id="配置元件config-element">配置元件（config Element）</h4>
+<ul>
+<li>CSV Data Set Config</li>
+<li>HTTP请求默认值</li>
+<li>HTTP信息头管理器</li>
+</ul>
+<h4 id="前置处理器per-processors">前置处理器（Per Processors）</h4>
+<p>用户参数</p>
+<h4 id="定时器timer">定时器（Timer）</h4>
+<p>Synchronizing Timer</p>
+<h4 id="取样器sample">取样器（sample）</h4>
+<ul>
+<li>HTTP请求</li>
+<li>JDBC Request</li>
+<li>Debug Sampler</li>
+</ul>
+<h4 id="后置处理器post-processors">后置处理器（Post Processors）</h4>
+<ul>
+<li>正则表达式提取器</li>
+<li>XPath Extractor</li>
+</ul>
+<p>####断言（Assertions）
+响应断言</p>
+<h4 id="监听器listener">监听器（Listener）</h4>
+<ul>
+<li>察看结果树</li>
+<li>聚合报告</li>
+<li>断言结果</li>
+</ul>
+<h4 id="逻辑控制器">逻辑控制器</h4>
+<ul>
+<li>如果（If）控制器</li>
+<li>ForEach控制器</li>
+<li>循环控制器</li>
+<li>Include Controller</li>
+<li>模块控制器</li>
+</ul>
+<h4 id="总结">总结：</h4>
+<p>正常来说，应该开始按照顺序一个组件一个组件的进行讲解。
+问题：每个组件都不能独立执行。都需要多个组件进行配合，才能够解决实际问题。
+解决方案：按照JMeter主要解决的问题点来讲解组件。</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-02-07</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://silencehuliang.github.io/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" data-title="Python学习之路-接口测试:工具使用" data-hashtags="Python学习之路"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://silencehuliang.github.io/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" data-hashtag="Python学习之路"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://silencehuliang.github.io/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" data-title="Python学习之路-接口测试:工具使用" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://silencehuliang.github.io/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" data-title="Python学习之路-接口测试:工具使用"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://silencehuliang.github.io/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" data-title="Python学习之路-接口测试:工具使用"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://silencehuliang.github.io/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" data-title="Python学习之路-接口测试:工具使用" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://silencehuliang.github.io/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" data-title="Python学习之路-接口测试:工具使用" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://silencehuliang.github.io/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" data-title="Python学习之路-接口测试:工具使用"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/">Python学习之路</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="prev" rel="prev" title="Python学习之路-接口测试:基础知识"><i class="fas fa-angle-left fa-fw"></i>Python学习之路-接口测试:基础知识</a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.74.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2018 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Silence</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.4afae7d446ba01ebf7fff19893eaf3a1.css" integrity="md5-Svrn1Ea6Aev3//GYk&#43;rzoQ=="><link rel="stylesheet" href="/lib/katex/copy-tex.min.b1994d1b9785dd8801dbf655df7bf6d9.css" integrity="md5-sZlNG5eF3YgB2/ZV33v22Q=="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.acf82ee47549fdc386d02768992a49ad.css" integrity="md5-rPgu5HVJ/cOG0CdomSpJrQ=="><script type="text/javascript" src="/lib/valine/Valine.min.b1d2c9b89c70dbf0a8541bfd36afafa1.js" integrity="md5-sdLJuJxw2/CoVBv9Nq&#43;voQ=="></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.100efdceabf7a138f3297e437d078f74.js" integrity="md5-EA79zqv3oTjzKX5DfQePdA=="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.ae7c5011def46b283696baf367586b5d.js" integrity="md5-rnxQEd70ayg2lrrzZ1hrXQ=="></script><script type="text/javascript" src="/lib/lunr/lunr.min.a08f2562fde4550269dfc13028ed2502.js" integrity="md5-oI8lYv3kVQJp38EwKO0lAg=="></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.b82fb8d93ce0ea6a485dfa3a0b1e7573.js" integrity="md5-uC&#43;42Tzg6mpIXfo6Cx51cw=="></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.f1ba3e22560e2eb7474f28feb4507617.js" integrity="md5-8bo&#43;IlYOLrdHTyj&#43;tFB2Fw=="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.b80e49640d4794d4333d00db76ea22f7.js" integrity="md5-uA5JZA1HlNQzPQDbduoi9w=="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.af8ab36589315582ccdd82f22e84bffb.js" integrity="md5-r4qzZYkxVYLM3YLyLoS/&#43;w=="></script><script type="text/javascript" src="/lib/sharer/sharer.min.c3c3372b4cf5c56dd4e5a4be8ada86c9.js" integrity="md5-w8M3K0z1xW3U5aS&#43;itqGyQ=="></script><script type="text/javascript" src="/lib/typeit/typeit.min.b5f3481ebeaa3e56a2f5f96ea648bf69.js" integrity="md5-tfNIHr6qPlai9flupki/aQ=="></script><script type="text/javascript" src="/lib/katex/katex.min.c158c9e823b681cf535f46596b5e4eac.js" integrity="md5-wVjJ6CO2gc9TX0ZZa15OrA=="></script><script type="text/javascript" src="/lib/katex/auto-render.min.28cd0b98cd3f4fa37d52f3ffe47ad9d4.js" integrity="md5-KM0LmM0/T6N9UvP/5HrZ1A=="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.bfaec7d1dea915d74a7a6d833f0ff62e.js" integrity="md5-v67H0d6pFddKem2DPw/2Lg=="></script><script type="text/javascript" src="/lib/katex/mhchem.min.1bbb252363e83547d4b2186a41eaca28.js" integrity="md5-G7slI2PoNUfUshhqQerKKA=="></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.4a48532bf0b17c058b8b6854f49de23f.js" integrity="md5-SkhTK/CxfAWLi2hU9J3iPw=="></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"c4VA4R1Xg3drBKSQzNfWnWlF-gzGzoHsz","appKey":"upEyt7esgWCbm0L7EPDH6bhV","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","meta":["nick","mail"],"pageSize":10,"placeholder":"说点什么吧...","recordIP":true,"visitor":true}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"id-1":"Silence’s Blog","id-2":"Silence’s Blog"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.7bc7989e979c4a19d97db3ab311a80fe.js" integrity="md5-e8eYnpecShnZfbOrMRqA/g=="></script></body>
+</html>
