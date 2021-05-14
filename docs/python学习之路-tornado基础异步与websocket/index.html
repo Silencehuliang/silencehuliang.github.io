@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Python学习之路-Tornado基础:异步与WebSocket - Silence Blog</title><meta name="Description" content="Silence‘s blog"><meta property="og:title" content="Python学习之路-Tornado基础:异步与WebSocket" />
+<meta property="og:description" content="认识异步 同步 我们用两个函数来模拟两个客户端请求，并依次进行处理： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 # coding:utf-8 def req_a(): &#34;&#34;&#34;" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-tornado%E5%9F%BA%E7%A1%80%E5%BC%82%E6%AD%A5%E4%B8%8Ewebsocket/" />
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
+<meta property="article:published_time" content="2021-01-17T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-01-17T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
+
+<meta name="twitter:title" content="Python学习之路-Tornado基础:异步与WebSocket"/>
+<meta name="twitter:description" content="认识异步 同步 我们用两个函数来模拟两个客户端请求，并依次进行处理： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 # coding:utf-8 def req_a(): &#34;&#34;&#34;"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-tornado%E5%9F%BA%E7%A1%80%E5%BC%82%E6%AD%A5%E4%B8%8Ewebsocket/" /><link rel="prev" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-tornado%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E5%BA%93/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.2e7125082ec8de83a87adc70253c9c23.css" integrity="md5-LnElCC7I3oOoetxwJTycIw=="><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.76cb46c10b6c0293433b371bae2414b2.css" integrity="md5-dstGwQtsApNDOzcbriQUsg=="><link rel="stylesheet" href="/lib/animate/animate.min.bc1a6a99c43f5ccc97d2d350bde13f74.css" integrity="md5-vBpqmcQ/XMyX0tNQveE/dA=="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Python学习之路-Tornado基础:异步与WebSocket",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/silencehuliang.github.io\/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-tornado%E5%9F%BA%E7%A1%80%E5%BC%82%E6%AD%A5%E4%B8%8Ewebsocket\/"
+        },"genre": "posts","keywords": "Python学习之路","wordcount":  6290 ,
+        "url": "https:\/\/silencehuliang.github.io\/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-tornado%E5%9F%BA%E7%A1%80%E5%BC%82%E6%AD%A5%E4%B8%8Ewebsocket\/","datePublished": "2021-01-17T00:00:00+00:00","dateModified": "2021-01-17T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "Silence"},"author": {
+                "@type": "Person",
+                "name": "Silence"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Silence Blog"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+        data-srcset="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg, https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg 1.5x, https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+        title="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg" /><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Silence Blog"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+        data-srcset="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg, https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg 1.5x, https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+        title="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg" /><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Python学习之路-Tornado基础:异步与WebSocket</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Silence</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/tornado/"><i class="far fa-folder fa-fw"></i>Tornado</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="0001-01-01">0001-01-01</time>&nbsp;<i class="fa fa-history" aria-hidden="true"></i>
+                2021-01-17
+                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 6290 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 13 分钟&nbsp;<span id="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-tornado%E5%9F%BA%E7%A1%80%E5%BC%82%E6%AD%A5%E4%B8%8Ewebsocket/" class="leancloud_visitors" data-flag-title="Python学习之路-Tornado基础:异步与WebSocket">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#认识异步">认识异步</a>
+      <ul>
+        <li><a href="#同步">同步</a></li>
+        <li><a href="#异步">异步</a>
+          <ul>
+            <li><a href="#简介">简介</a></li>
+            <li><a href="#回调写法实现原理">回调写法实现原理</a></li>
+            <li><a href="#协程写法实现原理">协程写法实现原理</a></li>
+            <li><a href="#升级版本">升级版本</a></li>
+            <li><a href="#最终版本">最终版本</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#tornado异步">Tornado异步</a>
+      <ul>
+        <li><a href="#简介-1">简介</a></li>
+        <li><a href="#tornadohttpclientasynchttpclient">tornado.httpclient.AsyncHTTPClient</a>
+          <ul>
+            <li><a href="#fetchrequest-callbacknone">fetch(request, callback=None)</a></li>
+            <li><a href="#httprequest">HTTPRequest</a></li>
+            <li><a href="#httpresponse">HTTPResponse</a></li>
+          </ul>
+        </li>
+        <li><a href="#测试接口">测试接口</a></li>
+        <li><a href="#回调异步">回调异步</a>
+          <ul>
+            <li><a href="#tornadowebasynchronous">tornado.web.asynchronous</a></li>
+          </ul>
+        </li>
+        <li><a href="#协程异步">协程异步</a></li>
+        <li><a href="#并行协程">并行协程</a></li>
+        <li><a href="#关于数据库的异步说明">关于数据库的异步说明</a></li>
+      </ul>
+    </li>
+    <li><a href="#websocket">WebSocket</a>
+      <ul>
+        <li><a href="#简介-2">简介</a></li>
+        <li><a href="#tornado的websocket模块">Tornado的WebSocket模块</a>
+          <ul>
+            <li><a href="#websockethandleropen">WebSocketHandler.open()</a></li>
+            <li><a href="#websockethandleron_messagemessage">WebSocketHandler.on_message(message)</a></li>
+            <li><a href="#websockethandleron_close">WebSocketHandler.on_close()</a></li>
+            <li><a href="#websockethandlerwrite_messagemessage-binaryfalse">WebSocketHandler.write_message(message, binary=False)</a></li>
+            <li><a href="#websockethandlerclose">WebSocketHandler.close()</a></li>
+            <li><a href="#websockethandlercheck_originorigin">WebSocketHandler.check_origin(origin)</a></li>
+          </ul>
+        </li>
+        <li><a href="#前端javascript编写">前端JavaScript编写</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="认识异步">认识异步</h2>
+<h3 id="同步">同步</h3>
+<p>我们用两个函数来模拟两个客户端请求，并依次进行处理：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># coding:utf-8</span>
+
+<span class="k">def</span> <span class="nf">req_a</span><span class="p">():</span>
+    <span class="s2">&#34;&#34;&#34;模拟请求a&#34;&#34;&#34;</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;开始处理请求req_a&#39;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;完成处理请求req_a&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">req_b</span><span class="p">():</span>
+    <span class="s2">&#34;&#34;&#34;模拟请求b&#34;&#34;&#34;</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;开始处理请求req_b&#39;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;完成处理请求req_b&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="s2">&#34;&#34;&#34;模拟tornado框架，处理两个请求&#34;&#34;&#34;</span>
+    <span class="n">req_a</span><span class="p">()</span>
+    <span class="n">req_b</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>执行结果：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">开始处理请求</span><span class="n">req_a</span>
+<span class="err">完成处理请求</span><span class="n">req_a</span>
+<span class="err">开始处理请求</span><span class="n">req_b</span>
+<span class="err">完成处理请求</span><span class="n">req_b</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>同步是按部就班的依次执行，始终按照同一个步调执行，上一个步骤未执行完不会执行下一步。</strong></p>
+<p>如果在处理请求req_a时需要执行一个耗时的工作（如IO），其执行过程如何？</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># coding:utf-8</span>
+
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">def</span> <span class="nf">long_io</span><span class="p">():</span>
+    <span class="s2">&#34;&#34;&#34;模拟耗时IO操作&#34;&#34;&#34;</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;开始执行IO操作&#34;</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;完成IO操作&#34;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s2">&#34;io result&#34;</span>
+
+<span class="k">def</span> <span class="nf">req_a</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;开始处理请求req_a&#34;</span><span class="p">)</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">long_io</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;ret: </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">ret</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;完成处理请求req_a&#34;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">req_b</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;开始处理请求req_b&#34;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;完成处理请求req_b&#34;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">req_a</span><span class="p">()</span>
+    <span class="n">req_b</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>执行过程：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">开始处理请求</span><span class="n">req_a</span>
+<span class="err">开始执行</span><span class="n">IO操作</span>
+<span class="err">完成</span><span class="n">IO操作</span>
+<span class="err">完成处理请求</span><span class="n">req_a</span>
+<span class="err">开始处理请求</span><span class="n">req_b</span>
+<span class="err">完成处理请求</span><span class="n">req_b</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>在上面的测试中，我们看到耗时的操作会将代码执行阻塞住，即req_a未处理完req_b是无法执行的。</p>
+<h3 id="异步">异步</h3>
+<h4 id="简介">简介</h4>
+<p>对于耗时的过程，我们将其交给别人（如其另外一个线程）去执行，而我们继续往下处理，当别人执行完耗时操作后再将结果反馈给我们，这就是我们所说的异步。我们用容易理解的线程机制来实现异步。</p>
+<h4 id="回调写法实现原理">回调写法实现原理</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">thread</span>
+
+<span class="k">def</span> <span class="nf">long_io</span><span class="p">(</span><span class="n">callback</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;将耗时的操作交给另一线程来处理&#34;&#34;&#34;</span>
+    <span class="k">def</span> <span class="nf">fun</span><span class="p">(</span><span class="n">cb</span><span class="p">):</span> <span class="c1"># 回调函数作为参数</span>
+        <span class="s2">&#34;&#34;&#34;耗时操作&#34;&#34;&#34;</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&#34;开始执行IO操作&#34;</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&#34;完成IO操作，并执行回调函数&#34;</span><span class="p">)</span>
+        <span class="n">cb</span><span class="p">(</span><span class="s2">&#34;io result&#34;</span><span class="p">)</span>  <span class="c1"># 执行回调函数</span>
+    <span class="n">thread</span><span class="o">.</span><span class="n">start_new_thread</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="p">(</span><span class="n">callback</span><span class="p">,))</span>  <span class="c1"># 开启线程执行耗时操作</span>
+
+<span class="k">def</span> <span class="nf">on_finish</span><span class="p">(</span><span class="n">ret</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;回调函数&#34;&#34;&#34;</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;开始执行回调函数on_finish&#34;</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s2">&#34;ret: </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">ret</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;完成执行回调函数on_finish&#34;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">req_a</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;开始处理请求req_a&#34;</span><span class="p">)</span>
+    <span class="n">long_io</span><span class="p">(</span><span class="n">on_finish</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;离开处理请求req_a&#34;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">req_b</span><span class="p">():</span>
+    <span class="k">print</span> <span class="s2">&#34;开始处理请求req_b&#34;</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># 添加此句来突出显示程序执行的过程</span>
+    <span class="k">print</span> <span class="s2">&#34;完成处理请求req_b&#34;</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">req_a</span><span class="p">()</span>
+    <span class="n">req_b</span><span class="p">()</span>
+    <span class="k">while</span> <span class="mi">1</span><span class="p">:</span> <span class="c1"># 添加此句防止程序退出，保证线程可以执行完</span>
+        <span class="k">pass</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>执行过程:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">开始处理请求</span><span class="n">req_a</span>
+<span class="err">离开处理请求</span><span class="n">req_a</span>
+<span class="err">开始处理请求</span><span class="n">req_b</span>
+<span class="err">开始执行</span><span class="n">IO操作</span>
+<span class="err">完成处理请求</span><span class="n">req_b</span>
+<span class="err">完成</span><span class="n">IO操作</span><span class="err">，并执行回调函数</span>
+<span class="err">开始执行回调函数</span><span class="n">on_finish</span>
+<span class="n">ret</span><span class="p">:</span> <span class="n">io</span> <span class="n">result</span>
+<span class="err">完成执行回调函数</span><span class="n">on_finish</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>异步的特点是程序存在多个步调，即本属于同一个过程的代码可能在不同的步调上同时执行。</strong></p>
+<h4 id="协程写法实现原理">协程写法实现原理</h4>
+<p>在使用回调函数写异步程序时，需将本属于一个执行逻辑（处理请求a）的代码拆分成两个函数req_a和on_finish，这与同步程序的写法相差很大。而同步程序更便于理解业务逻辑，所以我们能否用同步代码的写法来编写异步程序？</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">thread</span>
+
+<span class="n">gen</span> <span class="o">=</span> <span class="bp">None</span> <span class="c1"># 全局生成器，供long_io使用</span>
+
+<span class="k">def</span> <span class="nf">long_io</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">fun</span><span class="p">():</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&#34;开始执行IO操作&#34;</span><span class="p">)</span>
+        <span class="k">global</span> <span class="n">gen</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">&#34;完成IO操作，并send结果唤醒挂起程序继续执行&#34;</span><span class="p">)</span>
+            <span class="n">gen</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&#34;io result&#34;</span><span class="p">)</span>  <span class="c1"># 使用send返回结果并唤醒程序继续执行</span>
+        <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span> <span class="c1"># 捕获生成器完成迭代，防止程序退出</span>
+            <span class="k">pass</span>
+    <span class="n">thread</span><span class="o">.</span><span class="n">start_new_thread</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="p">())</span>
+
+<span class="k">def</span> <span class="nf">req_a</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;开始处理请求req_a&#34;</span><span class="p">)</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="k">yield</span> <span class="n">long_io</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;ret: </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">ret</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;完成处理请求req_a&#34;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">req_b</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;开始处理请求req_b&#34;</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;完成处理请求req_b&#34;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">gen</span>
+    <span class="n">gen</span> <span class="o">=</span> <span class="n">req_a</span><span class="p">()</span>
+    <span class="n">gen</span><span class="o">.</span><span class="n">next</span><span class="p">()</span> <span class="c1"># 开启生成器req_a的执行</span>
+    <span class="n">req_b</span><span class="p">()</span>
+    <span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>执行过程：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">开始处理请求</span><span class="n">req_a</span>
+<span class="err">开始处理请求</span><span class="n">req_b</span>
+<span class="err">开始执行</span><span class="n">IO操作</span>
+<span class="err">完成处理请求</span><span class="n">req_b</span>
+<span class="err">完成</span><span class="n">IO操作</span><span class="err">，并</span><span class="n">send结果唤醒挂起程序继续执行</span>
+<span class="n">ret</span><span class="p">:</span> <span class="n">io</span> <span class="n">result</span>
+<span class="err">完成处理请求</span><span class="n">req_a</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="升级版本">升级版本</h4>
+<p>我们在上面编写出的版本虽然req_a的编写方式很类似与同步代码，但是在main中调用req_a的时候却不能将其简单的视为普通函数，而是需要作为生成器对待。</p>
+<p>现在，我们试图尝试修改，让req_a与main的编写都类似与同步代码。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># coding:utf-8</span>
+
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">thread</span>
+
+<span class="n">gen</span> <span class="o">=</span> <span class="bp">None</span> <span class="c1"># 全局生成器，供long_io使用</span>
+
+<span class="k">def</span> <span class="nf">gen_coroutine</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">global</span> <span class="n">gen</span>
+        <span class="n">gen</span> <span class="o">=</span> <span class="n">f</span><span class="p">()</span>
+        <span class="n">gen</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="k">def</span> <span class="nf">long_io</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">fun</span><span class="p">():</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&#34;开始执行IO操作&#34;</span><span class="p">)</span>
+        <span class="k">global</span> <span class="n">gen</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">&#34;完成IO操作，并send结果唤醒挂起程序继续执行&#34;</span><span class="p">)</span>
+            <span class="n">gen</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s2">&#34;io result&#34;</span><span class="p">)</span>  <span class="c1"># 使用send返回结果并唤醒程序继续执行</span>
+        <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span> <span class="c1"># 捕获生成器完成迭代，防止程序退出</span>
+            <span class="k">pass</span>
+    <span class="n">thread</span><span class="o">.</span><span class="n">start_new_thread</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="p">())</span>
+
+<span class="nd">@gen_coroutine</span>
+<span class="k">def</span> <span class="nf">req_a</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;开始处理请求req_a&#34;</span><span class="p">)</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="k">yield</span> <span class="n">long_io</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;ret: </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">ret</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;完成处理请求req_a&#34;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">req_b</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;开始处理请求req_b&#34;</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;完成处理请求req_b&#34;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">req_a</span><span class="p">()</span>
+    <span class="n">req_b</span><span class="p">()</span>
+    <span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>执行过程：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">开始处理请求</span><span class="n">req_a</span>
+<span class="err">开始处理请求</span><span class="n">req_b</span>
+<span class="err">开始执行</span><span class="n">IO操作</span>
+<span class="err">完成处理请求</span><span class="n">req_b</span>
+<span class="err">完成</span><span class="n">IO操作</span><span class="err">，并</span><span class="n">send结果唤醒挂起程序继续执行</span>
+<span class="n">ret</span><span class="p">:</span> <span class="n">io</span> <span class="n">result</span>
+<span class="err">完成处理请求</span><span class="n">req_a</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="最终版本">最终版本</h4>
+<p>刚刚完成的版本依然不理想，因为存在一个全局变量gen来供long_io使用。我们现在再次改写程序，消除全局变量gen。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># coding:utf-8</span>
+
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">thread</span>
+
+<span class="k">def</span> <span class="nf">gen_coroutine</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">gen_f</span> <span class="o">=</span> <span class="n">f</span><span class="p">()</span>  <span class="c1"># gen_f为生成器req_a</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">gen_f</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>  <span class="c1"># r为生成器long_io</span>
+        <span class="k">def</span> <span class="nf">fun</span><span class="p">(</span><span class="n">g</span><span class="p">):</span>
+            <span class="n">ret</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">next</span><span class="p">()</span> <span class="c1"># 执行生成器long_io</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">gen_f</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span> <span class="c1"># 将结果返回给req_a并使其继续执行</span>
+            <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
+                <span class="k">pass</span>
+        <span class="n">thread</span><span class="o">.</span><span class="n">start_new_thread</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="p">(</span><span class="n">r</span><span class="p">,))</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="k">def</span> <span class="nf">long_io</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;开始执行IO操作&#34;</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;完成IO操作，yield回操作结果&#34;</span><span class="p">)</span>
+    <span class="k">yield</span> <span class="s2">&#34;io result&#34;</span>
+
+<span class="nd">@gen_coroutine</span>
+<span class="k">def</span> <span class="nf">req_a</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;开始处理请求req_a&#34;</span><span class="p">)</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="k">yield</span> <span class="n">long_io</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;ret: </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">ret</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;完成处理请求req_a&#34;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">req_b</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;开始处理请求req_b&#34;</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;完成处理请求req_b&#34;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">req_a</span><span class="p">()</span>
+    <span class="n">req_b</span><span class="p">()</span>
+    <span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>执行过程：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="err">开始处理请求</span><span class="n">req_a</span>
+<span class="err">开始处理请求</span><span class="n">req_b</span>
+<span class="err">开始执行</span><span class="n">IO操作</span>
+<span class="err">完成处理请求</span><span class="n">req_b</span>
+<span class="err">完成</span><span class="n">IO操作</span><span class="err">，</span><span class="n">yield回操作结果</span>
+<span class="n">ret</span><span class="p">:</span> <span class="n">io</span> <span class="n">result</span>
+<span class="err">完成处理请求</span><span class="n">req_a</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>这个最终版本就是理解Tornado异步编程原理的最简易模型，但是，Tornado实现异步的机制不是线程，而是epoll，即将异步过程交给epoll执行并进行监视回调。</strong></p>
+<p><strong>需要注意的一点是，我们实现的版本严格意义上来说不能算是协程，因为两个程序的挂起与唤醒是在两个线程上实现的，而Tornado利用epoll来实现异步，程序的挂起与唤醒始终在一个线程上，由Tornado自己来调度，属于真正意义上的协程。虽如此，并不妨碍我们理解Tornado异步编程的原理。</strong></p>
+<h2 id="tornado异步">Tornado异步</h2>
+<h3 id="简介-1">简介</h3>
+<p>因为epoll主要是用来解决网络IO的并发问题，所以Tornado的异步编程也主要体现在网络IO的异步上，即异步Web请求。</p>
+<h3 id="tornadohttpclientasynchttpclient">tornado.httpclient.AsyncHTTPClient</h3>
+<p>Tornado提供了一个异步Web请求客户端tornado.httpclient.AsyncHTTPClient用来进行异步Web请求。</p>
+<h4 id="fetchrequest-callbacknone">fetch(request, callback=None)</h4>
+<p>用于执行一个web请求request，并异步返回一个tornado.httpclient.HTTPResponse响应。</p>
+<p>request可以是一个url，也可以是一个tornado.httpclient.HTTPRequest对象。如果是url，fetch会自己构造一个HTTPRequest对象。</p>
+<h4 id="httprequest">HTTPRequest</h4>
+<p>HTTP请求类，HTTPRequest的构造函数可以接收众多构造参数，最常用的如下：</p>
+<ul>
+<li><strong>url</strong> (string) – 要访问的url，此参数必传，除此之外均为可选参数</li>
+<li><strong>method</strong> (string) – HTTP访问方式，如“GET”或“POST”，默认为GET方式</li>
+<li><strong>headers</strong> (HTTPHeaders or dict) – 附加的HTTP协议头</li>
+<li><strong>body</strong> – HTTP请求的请求体</li>
+</ul>
+<h4 id="httpresponse">HTTPResponse</h4>
+<p>HTTP响应类，其常用属性如下：</p>
+<ul>
+<li><strong>code</strong>: HTTP状态码，如 200 或 404</li>
+<li><strong>reason</strong>: 状态码描述信息</li>
+<li><strong>body</strong>: 响应体字符串</li>
+<li><strong>error</strong>: 异常（可有可无）</li>
+</ul>
+<h3 id="测试接口">测试接口</h3>
+<p>新浪IP地址库</p>
+<p>接口说明</p>
+<p>1.请求接口（GET）：</p>
+<p><a href="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=json&amp;ip=%5Bip">http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=json&amp;ip=[ip</a>地址字串]</p>
+<p>2.响应信息：</p>
+<p>（json格式的）国家 、省（自治区或直辖市）、市（县）、运营商</p>
+<p>3.返回数据格式：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span><span class="nt">&#34;ret&#34;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">&#34;start&#34;</span><span class="p">:</span><span class="mi">-1</span><span class="p">,</span><span class="nt">&#34;end&#34;</span><span class="p">:</span><span class="mi">-1</span><span class="p">,</span><span class="nt">&#34;country&#34;</span><span class="p">:</span><span class="s2">&#34;\u4e2d\u56fd&#34;</span><span class="p">,</span><span class="nt">&#34;province&#34;</span><span class="p">:</span><span class="s2">&#34;\u5317\u4eac&#34;</span><span class="p">,</span><span class="nt">&#34;city&#34;</span><span class="p">:</span><span class="s2">&#34;\u5317\u4eac&#34;</span><span class="p">,</span><span class="nt">&#34;district&#34;</span><span class="p">:</span><span class="s2">&#34;&#34;</span><span class="p">,</span><span class="nt">&#34;isp&#34;</span><span class="p">:</span><span class="s2">&#34;&#34;</span><span class="p">,</span><span class="nt">&#34;type&#34;</span><span class="p">:</span><span class="s2">&#34;&#34;</span><span class="p">,</span><span class="nt">&#34;desc&#34;</span><span class="p">:</span><span class="s2">&#34;&#34;</span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="回调异步">回调异步</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">IndexHandler</span><span class="p">(</span><span class="n">tornado</span><span class="o">.</span><span class="n">web</span><span class="o">.</span><span class="n">RequestHandler</span><span class="p">):</span>
+    <span class="nd">@tornado.web.asynchronous</span>  <span class="c1"># 不关闭连接，也不发送响应</span>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">http</span> <span class="o">=</span> <span class="n">tornado</span><span class="o">.</span><span class="n">httpclient</span><span class="o">.</span><span class="n">AsyncHTTPClient</span><span class="p">()</span>
+        <span class="n">http</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s2">&#34;http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=json&amp;ip=14.130.112.24&#34;</span><span class="p">,</span>
+                   <span class="n">callback</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">on_response</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">on_response</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">error</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">send_error</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
+            <span class="k">if</span> <span class="mi">1</span> <span class="o">==</span> <span class="n">data</span><span class="p">[</span><span class="s2">&#34;ret&#34;</span><span class="p">]:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">u</span><span class="s2">&#34;国家：</span><span class="si">%s</span><span class="s2"> 省份: </span><span class="si">%s</span><span class="s2"> 城市: </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&#34;country&#34;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s2">&#34;province&#34;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s2">&#34;city&#34;</span><span class="p">]))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;查询IP信息错误&#34;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">finish</span><span class="p">()</span> <span class="c1"># 发送响应信息，结束请求处理</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="tornadowebasynchronous">tornado.web.asynchronous</h4>
+<p>此装饰器用于回调形式的异步方法，并且应该仅用于HTTP的方法上（如get、post等）。</p>
+<p>此装饰器不会让被装饰的方法变为异步，而只是告诉框架被装饰的方法是异步的，当方法返回时响应尚未完成。只有在request handler调用了finish方法后，才会结束本次请求处理，发送响应。</p>
+<p>不带此装饰器的请求在get、post等方法返回时自动完成结束请求处理。</p>
+<h3 id="协程异步">协程异步</h3>
+<p>在上一节中我们自己封装的装饰器get_coroutine在Tornado中对应的是tornado.gen.coroutine。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">IndexHandler</span><span class="p">(</span><span class="n">tornado</span><span class="o">.</span><span class="n">web</span><span class="o">.</span><span class="n">RequestHandler</span><span class="p">):</span>
+    <span class="nd">@tornado.gen.coroutine</span>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">http</span> <span class="o">=</span> <span class="n">tornado</span><span class="o">.</span><span class="n">httpclient</span><span class="o">.</span><span class="n">AsyncHTTPClient</span><span class="p">()</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="k">yield</span> <span class="n">http</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s2">&#34;http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=json&amp;ip=14.130.112.24&#34;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">error</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">send_error</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
+            <span class="k">if</span> <span class="mi">1</span> <span class="o">==</span> <span class="n">data</span><span class="p">[</span><span class="s2">&#34;ret&#34;</span><span class="p">]:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">u</span><span class="s2">&#34;国家：</span><span class="si">%s</span><span class="s2"> 省份: </span><span class="si">%s</span><span class="s2"> 城市: </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&#34;country&#34;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s2">&#34;province&#34;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s2">&#34;city&#34;</span><span class="p">]))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;查询IP信息错误&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>也可以将异步Web请求单独出来：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">IndexHandler</span><span class="p">(</span><span class="n">tornado</span><span class="o">.</span><span class="n">web</span><span class="o">.</span><span class="n">RequestHandler</span><span class="p">):</span>
+    <span class="nd">@tornado.gen.coroutine</span>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">rep</span> <span class="o">=</span> <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_ip_info</span><span class="p">(</span><span class="s2">&#34;14.130.112.24&#34;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="mi">1</span> <span class="o">==</span> <span class="n">rep</span><span class="p">[</span><span class="s2">&#34;ret&#34;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">u</span><span class="s2">&#34;国家：</span><span class="si">%s</span><span class="s2"> 省份: </span><span class="si">%s</span><span class="s2"> 城市: </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">rep</span><span class="p">[</span><span class="s2">&#34;country&#34;</span><span class="p">],</span> <span class="n">rep</span><span class="p">[</span><span class="s2">&#34;province&#34;</span><span class="p">],</span> <span class="n">rep</span><span class="p">[</span><span class="s2">&#34;city&#34;</span><span class="p">]))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;查询IP信息错误&#34;</span><span class="p">)</span>
+
+    <span class="nd">@tornado.gen.coroutine</span>
+    <span class="k">def</span> <span class="nf">get_ip_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ip</span><span class="p">):</span>
+        <span class="n">http</span> <span class="o">=</span> <span class="n">tornado</span><span class="o">.</span><span class="n">httpclient</span><span class="o">.</span><span class="n">AsyncHTTPClient</span><span class="p">()</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="k">yield</span> <span class="n">http</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s2">&#34;http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=json&amp;ip=&#34;</span> <span class="o">+</span> <span class="n">ip</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">error</span><span class="p">:</span>
+            <span class="n">rep</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;ret:0&#34;</span><span class="p">}</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">rep</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="n">tornado</span><span class="o">.</span><span class="n">gen</span><span class="o">.</span><span class="n">Return</span><span class="p">(</span><span class="n">rep</span><span class="p">)</span>  <span class="c1"># 此处需要注意</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>代码中我们需要注意的地方是get_ip_info返回值的方式，在python 2中，使用了yield的生成器可以使用不返回任何值的return，但不能return value，因此Tornado为我们封装了用于在生成器中返回值的特殊异常tornado.gen.Return，并用raise来返回此返回值。</strong></p>
+<h3 id="并行协程">并行协程</h3>
+<p>Tornado可以同时执行多个异步，并发的异步可以使用列表或字典，如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">IndexHandler</span><span class="p">(</span><span class="n">tornado</span><span class="o">.</span><span class="n">web</span><span class="o">.</span><span class="n">RequestHandler</span><span class="p">):</span>
+    <span class="nd">@tornado.gen.coroutine</span>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">ips</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;14.130.112.24&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;15.130.112.24&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;16.130.112.24&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;17.130.112.24&#34;</span><span class="p">]</span>
+        <span class="n">rep1</span><span class="p">,</span> <span class="n">rep2</span> <span class="o">=</span> <span class="k">yield</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">get_ip_info</span><span class="p">(</span><span class="n">ips</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_ip_info</span><span class="p">(</span><span class="n">ips</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+        <span class="n">rep34_dict</span> <span class="o">=</span> <span class="k">yield</span> <span class="nb">dict</span><span class="p">(</span><span class="n">rep3</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">get_ip_info</span><span class="p">(</span><span class="n">ips</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span> <span class="n">rep4</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">get_ip_info</span><span class="p">(</span><span class="n">ips</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write_response</span><span class="p">(</span><span class="n">ips</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">rep1</span><span class="p">)</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">write_response</span><span class="p">(</span><span class="n">ips</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">rep2</span><span class="p">)</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">write_response</span><span class="p">(</span><span class="n">ips</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">rep34_dict</span><span class="p">[</span><span class="s1">&#39;rep3&#39;</span><span class="p">])</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">write_response</span><span class="p">(</span><span class="n">ips</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">rep34_dict</span><span class="p">[</span><span class="s1">&#39;rep4&#39;</span><span class="p">])</span> 
+
+    <span class="k">def</span> <span class="nf">write_response</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ip</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">ip</span><span class="p">)</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;:&lt;br/&gt;&#34;</span><span class="p">)</span> 
+        <span class="k">if</span> <span class="mi">1</span> <span class="o">==</span> <span class="n">response</span><span class="p">[</span><span class="s2">&#34;ret&#34;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">u</span><span class="s2">&#34;国家：</span><span class="si">%s</span><span class="s2"> 省份: </span><span class="si">%s</span><span class="s2"> 城市: </span><span class="si">%s</span><span class="s2">&lt;br/&gt;&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">response</span><span class="p">[</span><span class="s2">&#34;country&#34;</span><span class="p">],</span> <span class="n">response</span><span class="p">[</span><span class="s2">&#34;province&#34;</span><span class="p">],</span> <span class="n">response</span><span class="p">[</span><span class="s2">&#34;city&#34;</span><span class="p">]))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;查询IP信息错误&lt;br/&gt;&#34;</span><span class="p">)</span>
+
+    <span class="nd">@tornado.gen.coroutine</span>
+    <span class="k">def</span> <span class="nf">get_ip_info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ip</span><span class="p">):</span>
+        <span class="n">http</span> <span class="o">=</span> <span class="n">tornado</span><span class="o">.</span><span class="n">httpclient</span><span class="o">.</span><span class="n">AsyncHTTPClient</span><span class="p">()</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="k">yield</span> <span class="n">http</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s2">&#34;http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=json&amp;ip=&#34;</span> <span class="o">+</span> <span class="n">ip</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">error</span><span class="p">:</span>
+            <span class="n">rep</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;ret:1&#34;</span><span class="p">}</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">rep</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="n">tornado</span><span class="o">.</span><span class="n">gen</span><span class="o">.</span><span class="n">Return</span><span class="p">(</span><span class="n">rep</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="关于数据库的异步说明">关于数据库的异步说明</h3>
+<p>网站基本都会有数据库操作，而Tornado是单线程的，这意味着如果数据库查询返回过慢，整个服务器响应会被堵塞。</p>
+<p>数据库查询，实质上也是远程的网络调用；理想情况下，是将这些操作也封装成为异步的；但Tornado对此并<strong>没有</strong>提供任何支持。</p>
+<p>这是Tornado的<strong>设计</strong>，而不是缺陷。</p>
+<p>一个系统，要满足高流量；是必须解决数据库查询速度问题的！</p>
+<p>数据库若存在查询性能问题，整个系统无论如何优化，数据库都会是瓶颈，拖慢整个系统！</p>
+<p>异步并<strong>不能</strong>从本质上提到系统的性能；它仅仅是避免多余的网络响应等待，以及切换线程的CPU耗费。</p>
+<p>如果数据库查询响应太慢，需要解决的是数据库的性能问题；而不是调用数据库的前端Web应用。</p>
+<p>对于实时返回的数据查询，理想情况下需要确保所有数据都在内存中，数据库硬盘IO应该为0；这样的查询才能足够快；而如果数据库查询足够快，那么前端web应用也就无将数据查询封装为异步的必要。</p>
+<p>就算是使用协程，异步程序对于同步程序始终还是会提高复杂性；需要衡量的是处理这些额外复杂性是否值得。</p>
+<p><strong>如果后端有查询实在是太慢，无法绕过，Tornaod的建议是将这些查询在后端封装独立封装成为HTTP接口，然后使用Tornado内置的异步HTTP客户端进行调用。</strong></p>
+<h2 id="websocket">WebSocket</h2>
+<h3 id="简介-2">简介</h3>
+<p>WebSocket是HTML5规范中新提出的客户端-服务器通讯协议，协议本身使用新的ws://URL格式。</p>
+<p>WebSocket 是独立的、创建在 TCP 上的协议，和 HTTP 的唯一关联是使用 HTTP 协议的101状态码进行协议切换，使用的 TCP 端口是80，可以用于绕过大多数防火墙的限制。</p>
+<p>WebSocket 使得客户端和服务器之间的数据交换变得更加简单，允许服务端直接向客户端推送数据而不需要客户端进行请求，两者之间可以创建持久性的连接，并允许数据进行双向传送。</p>
+<p>目前常见的浏览器如 Chrome、IE、Firefox、Safari、Opera 等都支持 WebSocket，同时需要服务端程序支持 WebSocket。</p>
+<h3 id="tornado的websocket模块">Tornado的WebSocket模块</h3>
+<p>Tornado提供支持WebSocket的模块是tornado.websocket，其中提供了一个WebSocketHandler类用来处理通讯。</p>
+<h4 id="websockethandleropen">WebSocketHandler.open()</h4>
+<p>当一个WebSocket连接建立后被调用。</p>
+<h4 id="websockethandleron_messagemessage">WebSocketHandler.on_message(message)</h4>
+<p>当客户端发送消息message过来时被调用，<strong>注意此方法必须被重写</strong>。</p>
+<h4 id="websockethandleron_close">WebSocketHandler.on_close()</h4>
+<p>当WebSocket连接关闭后被调用。</p>
+<h4 id="websockethandlerwrite_messagemessage-binaryfalse">WebSocketHandler.write_message(message, binary=False)</h4>
+<p>向客户端发送消息messagea，message可以是字符串或字典（字典会被转为json字符串）。若binary为False，则message以utf8编码发送；二进制模式（binary=True）时，可发送任何字节码。</p>
+<h4 id="websockethandlerclose">WebSocketHandler.close()</h4>
+<p>关闭WebSocket连接。</p>
+<h4 id="websockethandlercheck_originorigin">WebSocketHandler.check_origin(origin)</h4>
+<p>判断源origin，对于符合条件（返回判断结果为True）的请求源origin允许其连接，否则返回403。可以重写此方法来解决WebSocket的跨域请求（如始终return True）。</p>
+<h3 id="前端javascript编写">前端JavaScript编写</h3>
+<p>在前端JS中使用WebSocket与服务器通讯的常用方法如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">ws</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">WebSocket</span><span class="p">(</span><span class="s2">&#34;ws://127.0.0.1:8888/websocket&#34;</span><span class="p">);</span> <span class="c1">// 新建一个ws连接
+</span><span class="c1"></span><span class="nx">ws</span><span class="p">.</span><span class="nx">onopen</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>  <span class="c1">// 连接建立好后的回调
+</span><span class="c1"></span>   <span class="nx">ws</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s2">&#34;Hello, world&#34;</span><span class="p">);</span>  <span class="c1">// 向建立的连接发送消息
+</span><span class="c1"></span><span class="p">};</span>
+<span class="nx">ws</span><span class="p">.</span><span class="nx">onmessage</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">evt</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// 收到服务器发送的消息后执行的回调
+</span><span class="c1"></span>   <span class="nx">alert</span><span class="p">(</span><span class="nx">evt</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>  <span class="c1">// 接收的消息内容在事件参数evt的data属性中
+</span><span class="c1"></span><span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-01-17</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-tornado%E5%9F%BA%E7%A1%80%E5%BC%82%E6%AD%A5%E4%B8%8Ewebsocket/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-tornado%E5%9F%BA%E7%A1%80%E5%BC%82%E6%AD%A5%E4%B8%8Ewebsocket/" data-title="Python学习之路-Tornado基础:异步与WebSocket" data-hashtags="Python学习之路"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-tornado%E5%9F%BA%E7%A1%80%E5%BC%82%E6%AD%A5%E4%B8%8Ewebsocket/" data-hashtag="Python学习之路"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-tornado%E5%9F%BA%E7%A1%80%E5%BC%82%E6%AD%A5%E4%B8%8Ewebsocket/" data-title="Python学习之路-Tornado基础:异步与WebSocket" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-tornado%E5%9F%BA%E7%A1%80%E5%BC%82%E6%AD%A5%E4%B8%8Ewebsocket/" data-title="Python学习之路-Tornado基础:异步与WebSocket"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-tornado%E5%9F%BA%E7%A1%80%E5%BC%82%E6%AD%A5%E4%B8%8Ewebsocket/" data-title="Python学习之路-Tornado基础:异步与WebSocket"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-tornado%E5%9F%BA%E7%A1%80%E5%BC%82%E6%AD%A5%E4%B8%8Ewebsocket/" data-title="Python学习之路-Tornado基础:异步与WebSocket" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-tornado%E5%9F%BA%E7%A1%80%E5%BC%82%E6%AD%A5%E4%B8%8Ewebsocket/" data-title="Python学习之路-Tornado基础:异步与WebSocket" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-tornado%E5%9F%BA%E7%A1%80%E5%BC%82%E6%AD%A5%E4%B8%8Ewebsocket/" data-title="Python学习之路-Tornado基础:异步与WebSocket"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/">Python学习之路</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-tornado%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E5%BA%93/" class="prev" rel="prev" title="Python学习之路-Tornado基础:数据库"><i class="fas fa-angle-left fa-fw"></i>Python学习之路-Tornado基础:数据库</a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.74.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2018 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Silence</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.4afae7d446ba01ebf7fff19893eaf3a1.css" integrity="md5-Svrn1Ea6Aev3//GYk&#43;rzoQ=="><link rel="stylesheet" href="/lib/katex/copy-tex.min.b1994d1b9785dd8801dbf655df7bf6d9.css" integrity="md5-sZlNG5eF3YgB2/ZV33v22Q=="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.acf82ee47549fdc386d02768992a49ad.css" integrity="md5-rPgu5HVJ/cOG0CdomSpJrQ=="><script type="text/javascript" src="/lib/valine/Valine.min.b1d2c9b89c70dbf0a8541bfd36afafa1.js" integrity="md5-sdLJuJxw2/CoVBv9Nq&#43;voQ=="></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.100efdceabf7a138f3297e437d078f74.js" integrity="md5-EA79zqv3oTjzKX5DfQePdA=="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.ae7c5011def46b283696baf367586b5d.js" integrity="md5-rnxQEd70ayg2lrrzZ1hrXQ=="></script><script type="text/javascript" src="/lib/lunr/lunr.min.a08f2562fde4550269dfc13028ed2502.js" integrity="md5-oI8lYv3kVQJp38EwKO0lAg=="></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.b82fb8d93ce0ea6a485dfa3a0b1e7573.js" integrity="md5-uC&#43;42Tzg6mpIXfo6Cx51cw=="></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.f1ba3e22560e2eb7474f28feb4507617.js" integrity="md5-8bo&#43;IlYOLrdHTyj&#43;tFB2Fw=="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.b80e49640d4794d4333d00db76ea22f7.js" integrity="md5-uA5JZA1HlNQzPQDbduoi9w=="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.af8ab36589315582ccdd82f22e84bffb.js" integrity="md5-r4qzZYkxVYLM3YLyLoS/&#43;w=="></script><script type="text/javascript" src="/lib/sharer/sharer.min.c3c3372b4cf5c56dd4e5a4be8ada86c9.js" integrity="md5-w8M3K0z1xW3U5aS&#43;itqGyQ=="></script><script type="text/javascript" src="/lib/typeit/typeit.min.b5f3481ebeaa3e56a2f5f96ea648bf69.js" integrity="md5-tfNIHr6qPlai9flupki/aQ=="></script><script type="text/javascript" src="/lib/katex/katex.min.c158c9e823b681cf535f46596b5e4eac.js" integrity="md5-wVjJ6CO2gc9TX0ZZa15OrA=="></script><script type="text/javascript" src="/lib/katex/auto-render.min.28cd0b98cd3f4fa37d52f3ffe47ad9d4.js" integrity="md5-KM0LmM0/T6N9UvP/5HrZ1A=="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.bfaec7d1dea915d74a7a6d833f0ff62e.js" integrity="md5-v67H0d6pFddKem2DPw/2Lg=="></script><script type="text/javascript" src="/lib/katex/mhchem.min.1bbb252363e83547d4b2186a41eaca28.js" integrity="md5-G7slI2PoNUfUshhqQerKKA=="></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.4a48532bf0b17c058b8b6854f49de23f.js" integrity="md5-SkhTK/CxfAWLi2hU9J3iPw=="></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"c4VA4R1Xg3drBKSQzNfWnWlF-gzGzoHsz","appKey":"upEyt7esgWCbm0L7EPDH6bhV","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","meta":["nick","mail"],"pageSize":10,"placeholder":"说点什么吧...","recordIP":true,"visitor":true}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"id-1":"Silence’s Blog","id-2":"Silence’s Blog"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.7bc7989e979c4a19d97db3ab311a80fe.js" integrity="md5-e8eYnpecShnZfbOrMRqA/g=="></script></body>
+</html>
