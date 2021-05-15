@@ -4,42 +4,7 @@
         <link>https://silencehuliang.github.io/categories/tornado/</link>
         <description>Tornado - 分类 - Silence Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>silencehuliang@gmail.com (Silence)</managingEditor>
-            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 27 Feb 2021 10:40:12 &#43;0800</lastBuildDate><atom:link href="https://silencehuliang.github.io/categories/tornado/" rel="self" type="application/rss+xml" /><item>
-    <title>接口测试:项目测试</title>
-    <link>https://silencehuliang.github.io/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E9%A1%B9%E7%9B%AE%E6%B5%8B%E8%AF%95/</link>
-    <pubDate>Sat, 27 Feb 2021 10:40:12 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E9%A1%B9%E7%9B%AE%E6%B5%8B%E8%AF%95/</guid>
-    <description><![CDATA[API文档分析 API文档解析： href节点： 作用 href节：为资源的请求地址；-(请求资源集合时的请求地址要与href相符) &ldquo;href&rdquo;:&rdquo; http://127.0.0.1:8000/api/departments/&rdquo; items节]]></description>
-</item><item>
-    <title>接口测试:Jmeter插件与分布式</title>
-    <link>https://silencehuliang.github.io/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95jmeter%E6%8F%92%E4%BB%B6%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F/</link>
-    <pubDate>Sat, 20 Feb 2021 10:39:52 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95jmeter%E6%8F%92%E4%BB%B6%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F/</guid>
-    <description><![CDATA[函数 Jmeter函数是什么？ 可以被认为是某种特殊的变量，它们可以被采样器或者其他测试元件所引用。 为什么要学习函数？ 使用函数我们可以1次【批量]]></description>
-</item><item>
-    <title>接口测试:Jmeter工具核心</title>
-    <link>https://silencehuliang.github.io/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95jmeter%E5%B7%A5%E5%85%B7%E6%A0%B8%E5%BF%83/</link>
-    <pubDate>Sat, 13 Feb 2021 10:39:41 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95jmeter%E5%B7%A5%E5%85%B7%E6%A0%B8%E5%BF%83/</guid>
-    <description><![CDATA[参数化 为什么要参数化？ 键所对应的值都是写死的，只能手动更改，无法解决新增大数量（1000条）的问题 什么是参数化？ 根据需求动态获取数据并进行赋]]></description>
-</item><item>
-    <title>Python学习之路-接口测试:工具使用</title>
-    <link>https://silencehuliang.github.io/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/</link>
-    <pubDate>Sat, 06 Feb 2021 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/</guid>
-    <description><![CDATA[Jmeter 概念 Jmeter：是Apche公司使用Java平台开发的一款测试工具。 作用 接口测试 性能测试 压力测试 Web自动化测试 数据库测试 JAVA程序测]]></description>
-</item><item>
-    <title>Python学习之路-接口测试:基础知识</title>
-    <link>https://silencehuliang.github.io/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</link>
-    <pubDate>Sat, 30 Jan 2021 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</guid>
-    <description><![CDATA[接口测试 概念 接口测试就是代替前端或者第三方验证后台响应数据是否正确 接口测试原理 模拟客户端向服务器发送请求报文，服务器接收请求报文后对相应的报]]></description>
-</item><item>
+            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sun, 24 Jan 2021 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://silencehuliang.github.io/categories/tornado/" rel="self" type="application/rss+xml" /><item>
     <title>Python学习之路-Tornado基础:部署</title>
     <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-tornado%E5%9F%BA%E7%A1%80%E9%83%A8%E7%BD%B2/</link>
     <pubDate>Sun, 24 Jan 2021 00:00:00 &#43;0000</pubDate>
@@ -74,5 +39,26 @@
     <author>作者</author>
     <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-tornado%E5%9F%BA%E7%A1%80%E6%A8%A1%E6%9D%BF/</guid>
     <description><![CDATA[静态文件 现在有一个预先写好的静态页面文件， 我们来看下如何用tornado提供静态文件。 static_path 我们可以通过向web.Application类的构造]]></description>
+</item><item>
+    <title>Python学习之路-Tornado基础:深入Tornado</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-tornado%E5%9F%BA%E7%A1%80%E6%B7%B1%E5%85%A5tornado/</link>
+    <pubDate>Sat, 19 Dec 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-tornado%E5%9F%BA%E7%A1%80%E6%B7%B1%E5%85%A5tornado/</guid>
+    <description><![CDATA[Application settings 前面的学习中，我们在创建tornado.web.Application的对象时，传入了第一个参数——路由映射列表。实际上Applicat]]></description>
+</item><item>
+    <title>Python学习之路-Tornado基础:初识Tornado</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-tornado%E5%9F%BA%E7%A1%80%E5%88%9D%E8%AF%86tornado/</link>
+    <pubDate>Sat, 12 Dec 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-tornado%E5%9F%BA%E7%A1%80%E5%88%9D%E8%AF%86tornado/</guid>
+    <description><![CDATA[安装 自动安装 1 $ pip install tornado 手动安装 下载安装包tornado-4.3.tar.gz（https://pypi.python.org/package]]></description>
+</item><item>
+    <title>Python学习之路-Tornado基础:HelloTornado</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-tornado%E5%9F%BA%E7%A1%80hellotornado/</link>
+    <pubDate>Sat, 05 Dec 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-tornado%E5%9F%BA%E7%A1%80hellotornado/</guid>
+    <description><![CDATA[前言 回想Django的部署方式 以Django为代表的python web应用部署时采用wsgi协议与服务器对接（被服务器托管），而这类服务器通]]></description>
 </item></channel>
 </rss>
