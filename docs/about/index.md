@@ -12,7 +12,7 @@
 
 - 本博客使用 [Hugo](https://gohugo.io/) 搭建的静态博客，主题采用的是 [Dillon](https://github.com/dillonzq) 开发的 [LoveIt](https://github.com/dillonzq/LoveIt)主题。
 - 本博客用于我自己的技术记载，相关分享与生活记录总结。
-- 目前博文数量为：94，总字数为：227814
+- 目前博文数量为：96，总字数为：234682
 
 ## 宗旨
 
