@@ -4,7 +4,14 @@
         <link>https://silencehuliang.github.io/tags/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/</link>
         <description>Python学习之路 - 标签 - Silence Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>silencehuliang@gmail.com (Silence)</managingEditor>
-            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 08 May 2021 10:25:36 &#43;0800</lastBuildDate><atom:link href="https://silencehuliang.github.io/tags/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 15 May 2021 09:37:14 &#43;0800</lastBuildDate><atom:link href="https://silencehuliang.github.io/tags/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/" rel="self" type="application/rss+xml" /><item>
+    <title>Python学习之路-爬虫提高:scrapy_redis</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%88%AC%E8%99%AB%E6%8F%90%E9%AB%98scrapy_redis/</link>
+    <pubDate>Sat, 15 May 2021 09:37:14 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%88%AC%E8%99%AB%E6%8F%90%E9%AB%98scrapy_redis/</guid>
+    <description><![CDATA[scrapy_redis是什么 Scrapy_redis ： Redis-based components for Scrapy. Github地址：https://github.com/rmax/scrapy-redis 为什么要]]></description>
+</item><item>
     <title>Python学习之路-爬虫提高:scrapy使用</title>
     <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%88%AC%E8%99%AB%E6%8F%90%E9%AB%98scrapy%E4%BD%BF%E7%94%A8/</link>
     <pubDate>Sat, 08 May 2021 10:25:36 &#43;0800</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://silencehuliang.github.io/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E8%87%AA%E5%8A%A8%E5%8C%96%E8%84%9A%E6%9C%AC/</guid>
     <description><![CDATA[接口自动化脚本 为什么要设计自动化脚本？ 后台程序更新/发布新版之前需要验证下之前的功能是否能用 自动化脚本设计原则 每个测试用例都是独立的 测试用例]]></description>
-</item><item>
-    <title>接口测试:项目测试</title>
-    <link>https://silencehuliang.github.io/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E9%A1%B9%E7%9B%AE%E6%B5%8B%E8%AF%95/</link>
-    <pubDate>Sat, 27 Feb 2021 10:40:12 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E9%A1%B9%E7%9B%AE%E6%B5%8B%E8%AF%95/</guid>
-    <description><![CDATA[API文档分析 API文档解析： href节点： 作用 href节：为资源的请求地址；-(请求资源集合时的请求地址要与href相符) &ldquo;href&rdquo;:&rdquo; http://127.0.0.1:8000/api/departments/&rdquo; items节]]></description>
 </item></channel>
 </rss>
