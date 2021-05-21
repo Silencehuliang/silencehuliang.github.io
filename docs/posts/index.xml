@@ -4,7 +4,14 @@
         <link>https://silencehuliang.github.io/posts/</link>
         <description>所有文章 | Silence Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>silencehuliang@gmail.com (Silence)</managingEditor>
-            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 15 May 2021 09:37:14 &#43;0800</lastBuildDate><atom:link href="https://silencehuliang.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Tue, 18 May 2021 09:38:01 &#43;0800</lastBuildDate><atom:link href="https://silencehuliang.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Python学习之路-爬虫进阶:爬虫框架雏形</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%88%AC%E8%99%AB%E8%BF%9B%E9%98%B6%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6%E9%9B%8F%E5%BD%A2/</link>
+    <pubDate>Tue, 18 May 2021 09:38:01 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%88%AC%E8%99%AB%E8%BF%9B%E9%98%B6%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6%E9%9B%8F%E5%BD%A2/</guid>
+    <description><![CDATA[代码实现分析 明确模块之间的逻辑关系 五个核心模块和三个内置的对象是关键模块，需要优先实现 先抛开中间件，分析下它们之间的逻辑关系是： 构造spid]]></description>
+</item><item>
     <title>Python学习之路-爬虫提高:scrapy_redis</title>
     <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%88%AC%E8%99%AB%E6%8F%90%E9%AB%98scrapy_redis/</link>
     <pubDate>Sat, 15 May 2021 09:37:14 &#43;0800</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://silencehuliang.github.io/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95jmeter%E5%85%B6%E4%BB%96%E7%9F%A5%E8%AF%86%E7%82%B9/</guid>
     <description><![CDATA[FTP服务器测试 FTP是什么？ FTP是英语File Transfer Protocol的首字母缩写，汉语意思为文件传输协议。 FTP有什么用？ 可以根据FTP服务]]></description>
-</item><item>
-    <title>接口测试:自动化脚本</title>
-    <link>https://silencehuliang.github.io/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E8%87%AA%E5%8A%A8%E5%8C%96%E8%84%9A%E6%9C%AC/</link>
-    <pubDate>Sat, 06 Mar 2021 10:40:21 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E8%87%AA%E5%8A%A8%E5%8C%96%E8%84%9A%E6%9C%AC/</guid>
-    <description><![CDATA[接口自动化脚本 为什么要设计自动化脚本？ 后台程序更新/发布新版之前需要验证下之前的功能是否能用 自动化脚本设计原则 每个测试用例都是独立的 测试用例]]></description>
 </item></channel>
 </rss>

@@ -4,7 +4,14 @@
         <link>https://silencehuliang.github.io/categories/%E7%88%AC%E8%99%AB/</link>
         <description>爬虫 - 分类 - Silence Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>silencehuliang@gmail.com (Silence)</managingEditor>
-            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 15 May 2021 09:37:14 &#43;0800</lastBuildDate><atom:link href="https://silencehuliang.github.io/categories/%E7%88%AC%E8%99%AB/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Tue, 18 May 2021 09:38:01 &#43;0800</lastBuildDate><atom:link href="https://silencehuliang.github.io/categories/%E7%88%AC%E8%99%AB/" rel="self" type="application/rss+xml" /><item>
+    <title>Python学习之路-爬虫进阶:爬虫框架雏形</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%88%AC%E8%99%AB%E8%BF%9B%E9%98%B6%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6%E9%9B%8F%E5%BD%A2/</link>
+    <pubDate>Tue, 18 May 2021 09:38:01 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%88%AC%E8%99%AB%E8%BF%9B%E9%98%B6%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6%E9%9B%8F%E5%BD%A2/</guid>
+    <description><![CDATA[代码实现分析 明确模块之间的逻辑关系 五个核心模块和三个内置的对象是关键模块，需要优先实现 先抛开中间件，分析下它们之间的逻辑关系是： 构造spid]]></description>
+</item><item>
     <title>Python学习之路-爬虫提高:scrapy_redis</title>
     <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%88%AC%E8%99%AB%E6%8F%90%E9%AB%98scrapy_redis/</link>
     <pubDate>Sat, 15 May 2021 09:37:14 &#43;0800</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://silencehuliang.github.io/python%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%E4%B9%8Bbilibili/</guid>
     <description><![CDATA[本次要爬取的网站为<em>bilibili</em>，它是国内知名的视频弹幕网站,这里有及时的动漫新番,活跃的ACG氛围,有创意的Up主。可以在这里找到许多欢乐。]]></description>
-</item><item>
-    <title>Python爬虫实战之萝卜投研</title>
-    <link>https://silencehuliang.github.io/python%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%E4%B9%8B%E8%90%9D%E5%8D%9C%E6%8A%95%E7%A0%94/</link>
-    <pubDate>Sat, 06 Jul 2019 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/python%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%E4%B9%8B%E8%90%9D%E5%8D%9C%E6%8A%95%E7%A0%94/</guid>
-    <description><![CDATA[本次要爬取的网站为萝卜投研，是利用人工智能、大数据、移动应用技术,建立的股票基本面分析智能投研平台，在进行投资交易的时候可以使用期研报与各类数据进行分析。]]></description>
 </item></channel>
 </rss>
