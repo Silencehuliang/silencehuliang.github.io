@@ -12,13 +12,6 @@
     <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%88%AC%E8%99%AB%E8%BF%9B%E9%98%B6%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6/</guid>
     <description><![CDATA[了解框架 什么是框架 框架是为了为解决一类问题而开发的程序，框架两个字可以分开理解，框：表示指定解决问题的边界，明确要解决的问题；架：表达的是]]></description>
 </item><item>
-    <title>Python学习之路-爬虫进阶:爬虫框架雏形</title>
-    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%88%AC%E8%99%AB%E8%BF%9B%E9%98%B6%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6%E9%9B%8F%E5%BD%A2/</link>
-    <pubDate>Tue, 18 May 2021 09:38:01 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%88%AC%E8%99%AB%E8%BF%9B%E9%98%B6%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6%E9%9B%8F%E5%BD%A2/</guid>
-    <description><![CDATA[代码实现分析 明确模块之间的逻辑关系 五个核心模块和三个内置的对象是关键模块，需要优先实现 先抛开中间件，分析下它们之间的逻辑关系是： 构造spid]]></description>
-</item><item>
     <title>Python学习之路-爬虫提高:scrapy_redis</title>
     <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%88%AC%E8%99%AB%E6%8F%90%E9%AB%98scrapy_redis/</link>
     <pubDate>Sat, 15 May 2021 09:37:14 &#43;0800</pubDate>
@@ -74,5 +67,12 @@
     <author>作者</author>
     <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%88%9D%E8%AF%86%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</guid>
     <description><![CDATA[什么是爬虫 网络爬虫（又被称为网页蜘蛛，网络机器人）就是模拟客户端发送网络请求，接收请求响应，一种按照一定的规则，自动地抓取互联网信息的程序。]]></description>
+</item><item>
+    <title>Python爬虫实战之bilibili</title>
+    <link>https://silencehuliang.github.io/python%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%E4%B9%8Bbilibili/</link>
+    <pubDate>Sat, 20 Jul 2019 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%E4%B9%8Bbilibili/</guid>
+    <description><![CDATA[本次要爬取的网站为<em>bilibili</em>，它是国内知名的视频弹幕网站,这里有及时的动漫新番,活跃的ACG氛围,有创意的Up主。可以在这里找到许多欢乐。]]></description>
 </item></channel>
 </rss>
