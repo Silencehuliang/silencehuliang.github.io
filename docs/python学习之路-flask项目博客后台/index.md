@@ -34,33 +34,33 @@
   def admin_login():
       if request.method == "GET":    
           return render_template('admin/login.html')
-
+  
       # 取到登录的参数
       username = request.form.get("username")
       password = request.form.get("password")
       if not all([username, password]):
           return render_template('admin/login.html', errmsg="参数不足")
-
+  
       try:
           user = User.query.filter(User.mobile == username).first()
       except Exception as e:
           current_app.logger.error(e)
           return render_template('admin/login.html', errmsg="数据查询失败")
-
+  
       if not user:
           return render_template('admin/login.html', errmsg="用户不存在")
-
+  
       if not user.check_passowrd(password):
           return render_template('admin/login.html', errmsg="密码错误")
-
+  
       if not user.is_admin:
           return render_template('admin/login.html', errmsg="用户权限错误")
-
+  
       session["user_id"] = user.id
       session["nick_name"] = user.nick_name
       session["mobile"] = user.mobile
       session["is_admin"] = True
-
+  
       # TODO 跳转到后台管理主页,暂未实现
       return "登录成功，需要跳转到主页"
   ```
@@ -177,7 +177,7 @@
           total_count = User.query.filter(User.is_admin == False).count()
       except Exception as e:
           current_app.logger.error(e)
-
+  
       # 查询月新增数
       mon_count = 0
       try:
@@ -187,7 +187,7 @@
           mon_count = User.query.filter(User.is_admin == False, User.create_time >= mon_begin_date).count()
       except Exception as e:
           current_app.logger.error(e)
-
+  
       # 查询日新增数
       day_count = 0
       try:
@@ -196,15 +196,15 @@
           day_count = User.query.filter(User.is_admin == False, User.create_time > day_begin_date).count()
       except Exception as e:
           current_app.logger.error(e)
-
+  
       # 查询图表信息
       # 获取到当天00:00:00时间
-
+  
       now_date = datetime.strptime(datetime.now().strftime('%Y-%m-%d'), '%Y-%m-%d')
       # 定义空数组，保存数据
       active_date = []
       active_count = []
-
+  
       # 依次添加数据，再反转
       for i in range(0, 31):
           begin_date = now_date - timedelta(days=i)
@@ -217,13 +217,13 @@
           except Exception as e:
               current_app.logger.error(e)
           active_count.append(count)
-
+  
       active_date.reverse()
       active_count.reverse()
-
+  
       data = {"total_count": total_count, "mon_count": mon_count, "day_count": day_count, "active_date": active_date,
               "active_count": active_count}
-
+  
       return render_template('admin/user_count.html', data=data)
   ```
 
@@ -338,24 +338,24 @@ def blog_edit():
     return render_template('admin/blog_edit.html', data=context)
 ```
 
-## 新闻版式编辑详情
+## 博文版式编辑详情
 
 ### 编辑详情界面数据
 
-- 在 `admin/views.py` 中添加新闻编辑详情视图函数，接收新闻id为参数
+- 在 `admin/views.py` 中添加博文编辑详情视图函数，接收博文id为参数
 
 ```python
 @admin_blu.route('/blog_edit_detail')
 def blog_edit_detail():
-    """新闻编辑详情"""
+    """博文编辑详情"""
 
     # 获取参数
     blog_id = request.args.get("blog_id")
 
     if not blog_id:
-        return render_template('admin/blog_edit_detail.html', data={"errmsg": "未查询到此新闻"})
+        return render_template('admin/blog_edit_detail.html', data={"errmsg": "未查询到此博文"})
 
-    # 查询新闻
+    # 查询博文
     blog = None
     try:
         blog = blog.query.get(blog_id)
@@ -363,7 +363,7 @@ def blog_edit_detail():
         current_app.logger.error(e)
 
     if not blog:
-        return render_template('admin/blog_edit_detail.html', data={"errmsg": "未查询到此新闻"})
+        return render_template('admin/blog_edit_detail.html', data={"errmsg": "未查询到此博文"})
 
     # 查询分类的数据
     categories = Category.query.all()
@@ -381,14 +381,14 @@ def blog_edit_detail():
     return render_template('admin/blog_edit_detail.html', data=data)
 ```
 
-### 新闻编辑提交
+### 博文编辑提交
 
 - 修改视图函数，使其能够接受POST请求执行保存编辑操作，并实现其代码
 
 ```python
 @admin_blu.route('/blog_edit_detail', methods=["GET", "POST"])
 def blog_edit_detail():
-    """新闻编辑详情"""
+    """博文编辑详情"""
     if request.method == "GET":
         ...
         return render_template('admin/blog_edit_detail.html', data=data)
@@ -409,7 +409,7 @@ def blog_edit_detail():
     except Exception as e:
         current_app.logger.error(e)
     if not blog:
-        return jsonify(errno=RET.NODATA, errmsg="未查询到新闻数据")
+        return jsonify(errno=RET.NODATA, errmsg="未查询到博文数据")
 
     # 1.2 尝试读取图片
     if index_image:
@@ -443,11 +443,11 @@ def blog_edit_detail():
     return jsonify(errno=RET.OK, errmsg="编辑成功")
 ```
 
-## 新闻分类管理
+## 博文分类管理
 
 ### 需求分析
 
-可以修改当前新闻分类名，可以添加新闻分类
+可以修改当前博文分类名，可以添加博文分类
 
 ### 实现准备
 

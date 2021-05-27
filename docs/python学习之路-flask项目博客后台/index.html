@@ -174,13 +174,13 @@
         <li><a href="#代码实现-5">代码实现</a></li>
       </ul>
     </li>
-    <li><a href="#新闻版式编辑详情">新闻版式编辑详情</a>
+    <li><a href="#博文版式编辑详情">博文版式编辑详情</a>
       <ul>
         <li><a href="#编辑详情界面数据">编辑详情界面数据</a></li>
-        <li><a href="#新闻编辑提交">新闻编辑提交</a></li>
+        <li><a href="#博文编辑提交">博文编辑提交</a></li>
       </ul>
     </li>
-    <li><a href="#新闻分类管理">新闻分类管理</a>
+    <li><a href="#博文分类管理">博文分类管理</a>
       <ul>
         <li><a href="#需求分析-5">需求分析</a></li>
         <li><a href="#实现准备-3">实现准备</a></li>
@@ -259,33 +259,33 @@
 <span class="k">def</span> <span class="nf">admin_login</span><span class="p">():</span>
     <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s2">&#34;GET&#34;</span><span class="p">:</span>    
         <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;admin/login.html&#39;</span><span class="p">)</span>
-
+  
     <span class="c1"># 取到登录的参数</span>
     <span class="n">username</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;username&#34;</span><span class="p">)</span>
     <span class="n">password</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;password&#34;</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">([</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">]):</span>
         <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;admin/login.html&#39;</span><span class="p">,</span> <span class="n">errmsg</span><span class="o">=</span><span class="s2">&#34;参数不足&#34;</span><span class="p">)</span>
-
+  
     <span class="k">try</span><span class="p">:</span>
         <span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">User</span><span class="o">.</span><span class="n">mobile</span> <span class="o">==</span> <span class="n">username</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
         <span class="n">current_app</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;admin/login.html&#39;</span><span class="p">,</span> <span class="n">errmsg</span><span class="o">=</span><span class="s2">&#34;数据查询失败&#34;</span><span class="p">)</span>
-
+  
     <span class="k">if</span> <span class="ow">not</span> <span class="n">user</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;admin/login.html&#39;</span><span class="p">,</span> <span class="n">errmsg</span><span class="o">=</span><span class="s2">&#34;用户不存在&#34;</span><span class="p">)</span>
-
+  
     <span class="k">if</span> <span class="ow">not</span> <span class="n">user</span><span class="o">.</span><span class="n">check_passowrd</span><span class="p">(</span><span class="n">password</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;admin/login.html&#39;</span><span class="p">,</span> <span class="n">errmsg</span><span class="o">=</span><span class="s2">&#34;密码错误&#34;</span><span class="p">)</span>
-
+  
     <span class="k">if</span> <span class="ow">not</span> <span class="n">user</span><span class="o">.</span><span class="n">is_admin</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;admin/login.html&#39;</span><span class="p">,</span> <span class="n">errmsg</span><span class="o">=</span><span class="s2">&#34;用户权限错误&#34;</span><span class="p">)</span>
-
+  
     <span class="n">session</span><span class="p">[</span><span class="s2">&#34;user_id&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">user</span><span class="o">.</span><span class="n">id</span>
     <span class="n">session</span><span class="p">[</span><span class="s2">&#34;nick_name&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">user</span><span class="o">.</span><span class="n">nick_name</span>
     <span class="n">session</span><span class="p">[</span><span class="s2">&#34;mobile&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">user</span><span class="o">.</span><span class="n">mobile</span>
     <span class="n">session</span><span class="p">[</span><span class="s2">&#34;is_admin&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
-
+  
     <span class="c1"># TODO 跳转到后台管理主页,暂未实现</span>
     <span class="k">return</span> <span class="s2">&#34;登录成功，需要跳转到主页&#34;</span>
 </code></pre></td></tr></table>
@@ -523,7 +523,7 @@
         <span class="n">total_count</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">User</span><span class="o">.</span><span class="n">is_admin</span> <span class="o">==</span> <span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
         <span class="n">current_app</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
-
+  
     <span class="c1"># 查询月新增数</span>
     <span class="n">mon_count</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">try</span><span class="p">:</span>
@@ -533,7 +533,7 @@
         <span class="n">mon_count</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">User</span><span class="o">.</span><span class="n">is_admin</span> <span class="o">==</span> <span class="bp">False</span><span class="p">,</span> <span class="n">User</span><span class="o">.</span><span class="n">create_time</span> <span class="o">&gt;=</span> <span class="n">mon_begin_date</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
         <span class="n">current_app</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
-
+  
     <span class="c1"># 查询日新增数</span>
     <span class="n">day_count</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">try</span><span class="p">:</span>
@@ -542,15 +542,15 @@
         <span class="n">day_count</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">User</span><span class="o">.</span><span class="n">is_admin</span> <span class="o">==</span> <span class="bp">False</span><span class="p">,</span> <span class="n">User</span><span class="o">.</span><span class="n">create_time</span> <span class="o">&gt;</span> <span class="n">day_begin_date</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
         <span class="n">current_app</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
-
+  
     <span class="c1"># 查询图表信息</span>
     <span class="c1"># 获取到当天00:00:00时间</span>
-
+  
     <span class="n">now_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">),</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
     <span class="c1"># 定义空数组，保存数据</span>
     <span class="n">active_date</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">active_count</span> <span class="o">=</span> <span class="p">[]</span>
-
+  
     <span class="c1"># 依次添加数据，再反转</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">31</span><span class="p">):</span>
         <span class="n">begin_date</span> <span class="o">=</span> <span class="n">now_date</span> <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
@@ -563,13 +563,13 @@
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">current_app</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
         <span class="n">active_count</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
-
+  
     <span class="n">active_date</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
     <span class="n">active_count</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
-
+  
     <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;total_count&#34;</span><span class="p">:</span> <span class="n">total_count</span><span class="p">,</span> <span class="s2">&#34;mon_count&#34;</span><span class="p">:</span> <span class="n">mon_count</span><span class="p">,</span> <span class="s2">&#34;day_count&#34;</span><span class="p">:</span> <span class="n">day_count</span><span class="p">,</span> <span class="s2">&#34;active_date&#34;</span><span class="p">:</span> <span class="n">active_date</span><span class="p">,</span>
             <span class="s2">&#34;active_count&#34;</span><span class="p">:</span> <span class="n">active_count</span><span class="p">}</span>
-
+  
     <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;admin/user_count.html&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
@@ -759,10 +759,10 @@
     <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;admin/blog_edit.html&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">context</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="新闻版式编辑详情">新闻版式编辑详情</h2>
+</div><h2 id="博文版式编辑详情">博文版式编辑详情</h2>
 <h3 id="编辑详情界面数据">编辑详情界面数据</h3>
 <ul>
-<li>在 <code>admin/views.py</code> 中添加新闻编辑详情视图函数，接收新闻id为参数</li>
+<li>在 <code>admin/views.py</code> 中添加博文编辑详情视图函数，接收博文id为参数</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -804,15 +804,15 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="nd">@admin_blu.route</span><span class="p">(</span><span class="s1">&#39;/blog_edit_detail&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">blog_edit_detail</span><span class="p">():</span>
-    <span class="s2">&#34;&#34;&#34;新闻编辑详情&#34;&#34;&#34;</span>
+    <span class="s2">&#34;&#34;&#34;博文编辑详情&#34;&#34;&#34;</span>
 
     <span class="c1"># 获取参数</span>
     <span class="n">blog_id</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;blog_id&#34;</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">blog_id</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;admin/blog_edit_detail.html&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&#34;errmsg&#34;</span><span class="p">:</span> <span class="s2">&#34;未查询到此新闻&#34;</span><span class="p">})</span>
+        <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;admin/blog_edit_detail.html&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&#34;errmsg&#34;</span><span class="p">:</span> <span class="s2">&#34;未查询到此博文&#34;</span><span class="p">})</span>
 
-    <span class="c1"># 查询新闻</span>
+    <span class="c1"># 查询博文</span>
     <span class="n">blog</span> <span class="o">=</span> <span class="bp">None</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">blog</span> <span class="o">=</span> <span class="n">blog</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">blog_id</span><span class="p">)</span>
@@ -820,7 +820,7 @@
         <span class="n">current_app</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">blog</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;admin/blog_edit_detail.html&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&#34;errmsg&#34;</span><span class="p">:</span> <span class="s2">&#34;未查询到此新闻&#34;</span><span class="p">})</span>
+        <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;admin/blog_edit_detail.html&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&#34;errmsg&#34;</span><span class="p">:</span> <span class="s2">&#34;未查询到此博文&#34;</span><span class="p">})</span>
 
     <span class="c1"># 查询分类的数据</span>
     <span class="n">categories</span> <span class="o">=</span> <span class="n">Category</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
@@ -838,7 +838,7 @@
     <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;admin/blog_edit_detail.html&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="新闻编辑提交">新闻编辑提交</h3>
+</div><h3 id="博文编辑提交">博文编辑提交</h3>
 <ul>
 <li>修改视图函数，使其能够接受POST请求执行保存编辑操作，并实现其代码</li>
 </ul>
@@ -903,7 +903,7 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="nd">@admin_blu.route</span><span class="p">(</span><span class="s1">&#39;/blog_edit_detail&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s2">&#34;GET&#34;</span><span class="p">,</span> <span class="s2">&#34;POST&#34;</span><span class="p">])</span>
 <span class="k">def</span> <span class="nf">blog_edit_detail</span><span class="p">():</span>
-    <span class="s2">&#34;&#34;&#34;新闻编辑详情&#34;&#34;&#34;</span>
+    <span class="s2">&#34;&#34;&#34;博文编辑详情&#34;&#34;&#34;</span>
     <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s2">&#34;GET&#34;</span><span class="p">:</span>
         <span class="o">...</span>
         <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;admin/blog_edit_detail.html&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
@@ -924,7 +924,7 @@
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
         <span class="n">current_app</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">blog</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">errno</span><span class="o">=</span><span class="n">RET</span><span class="o">.</span><span class="n">NODATA</span><span class="p">,</span> <span class="n">errmsg</span><span class="o">=</span><span class="s2">&#34;未查询到新闻数据&#34;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">errno</span><span class="o">=</span><span class="n">RET</span><span class="o">.</span><span class="n">NODATA</span><span class="p">,</span> <span class="n">errmsg</span><span class="o">=</span><span class="s2">&#34;未查询到博文数据&#34;</span><span class="p">)</span>
 
     <span class="c1"># 1.2 尝试读取图片</span>
     <span class="k">if</span> <span class="n">index_image</span><span class="p">:</span>
@@ -958,9 +958,9 @@
     <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">errno</span><span class="o">=</span><span class="n">RET</span><span class="o">.</span><span class="n">OK</span><span class="p">,</span> <span class="n">errmsg</span><span class="o">=</span><span class="s2">&#34;编辑成功&#34;</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="新闻分类管理">新闻分类管理</h2>
+</div><h2 id="博文分类管理">博文分类管理</h2>
 <h3 id="需求分析-5">需求分析</h3>
-<p>可以修改当前新闻分类名，可以添加新闻分类</p>
+<p>可以修改当前博文分类名，可以添加博文分类</p>
 <h3 id="实现准备-3">实现准备</h3>
 <p>将 <code>static/admin/blog_type.html</code> 文件拖到 <code>templates/admin/</code> 目录下</p>
 <h3 id="代码实现-6">代码实现</h3>
