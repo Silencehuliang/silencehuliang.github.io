@@ -4,7 +4,21 @@
         <link>https://silencehuliang.github.io/categories/python/</link>
         <description>Python - 分类 - Silence Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>silencehuliang@gmail.com (Silence)</managingEditor>
-            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 25 Apr 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://silencehuliang.github.io/categories/python/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Tue, 01 Jun 2021 16:28:14 &#43;0800</lastBuildDate><atom:link href="https://silencehuliang.github.io/categories/python/" rel="self" type="application/rss+xml" /><item>
+    <title>Pandas</title>
+    <link>https://silencehuliang.github.io/pandas/</link>
+    <pubDate>Tue, 01 Jun 2021 16:28:14 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/pandas/</guid>
+    <description><![CDATA[Pandas 参考资料 https://www.jianshu.com/p/a77b0bc736f2; http://pandas.pydata.org/pandas-docs/stable/reference/index.html]]></description>
+</item><item>
+    <title>Python常见项目部署流程</title>
+    <link>https://silencehuliang.github.io/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%B5%81%E7%A8%8B/</link>
+    <pubDate>Tue, 01 Jun 2021 09:28:14 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%B5%81%E7%A8%8B/</guid>
+    <description><![CDATA[项目部署流程 更新系统源 sudo apt-get update 更新系统源是因为我们购买的云主机里装的系统中有很多软件都还没有更新到最新版本，后续安装可能会出现问题 安装依赖包 1]]></description>
+</item><item>
     <title>Python学习之路-深拷贝与浅拷贝</title>
     <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/</link>
     <pubDate>Sat, 25 Apr 2020 00:00:00 &#43;0000</pubDate>
@@ -60,19 +74,5 @@
     <author>作者</author>
     <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%A4%9A%E4%BB%BB%E5%8A%A1%E7%BA%BF%E7%A8%8B/</guid>
     <description><![CDATA[什么叫“多任务”呢？简单地说，就是操作系统可以同时运行多个任务。操作系统轮流让各个任务交替执行，表面上看，每个任务都是交替执行的，但是，由于CPU的执行速度实在是太快了，我们感觉就像所有任务都在同时执行一样。]]></description>
-</item><item>
-    <title>Python学习之路-文件</title>
-    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E4%BB%B6/</link>
-    <pubDate>Sat, 28 Dec 2019 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%96%87%E4%BB%B6/</guid>
-    <description><![CDATA[基本操作 在 Python 中要操作文件需要记住 1 个函数和 3 个方法 函数/方法 说明 open 打开文件，并且返回文件操作对象 read 将文件内容读取到内存 write 将指定内容写入文件 close]]></description>
-</item><item>
-    <title>Python学习之路-模块和包</title>
-    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/</link>
-    <pubDate>Sat, 21 Dec 2019 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/</guid>
-    <description><![CDATA[模块是 Python 程序架构的一个核心概念。每一个以扩展名 <code>py</code> 结尾的 <code>Python</code> 源代码文件都是一个模块，模块名同样也是一个标识符，需要符合标识符的命名规则。在模块中定义的全局变量、函数、类都是提供给外界直接使用的工具。模块就好比是工具包，要想使用这个工具包中的工具，就需要先导入这个模块。]]></description>
 </item></channel>
 </rss>

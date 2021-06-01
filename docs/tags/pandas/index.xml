@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Pandas - 标签 - Silence Blog</title>
+        <link>https://silencehuliang.github.io/tags/pandas/</link>
+        <description>Pandas - 标签 - Silence Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>silencehuliang@gmail.com (Silence)</managingEditor>
+            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Tue, 01 Jun 2021 16:28:14 &#43;0800</lastBuildDate><atom:link href="https://silencehuliang.github.io/tags/pandas/" rel="self" type="application/rss+xml" /><item>
+    <title>Pandas</title>
+    <link>https://silencehuliang.github.io/pandas/</link>
+    <pubDate>Tue, 01 Jun 2021 16:28:14 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/pandas/</guid>
+    <description><![CDATA[Pandas 参考资料 https://www.jianshu.com/p/a77b0bc736f2; http://pandas.pydata.org/pandas-docs/stable/reference/index.html]]></description>
+</item></channel>
+</rss>
