@@ -4,7 +4,14 @@
         <link>https://silencehuliang.github.io/categories/python/</link>
         <description>Python - 分类 - Silence Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>silencehuliang@gmail.com (Silence)</managingEditor>
-            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Tue, 01 Jun 2021 16:28:14 &#43;0800</lastBuildDate><atom:link href="https://silencehuliang.github.io/categories/python/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Tue, 01 Jun 2021 19:28:14 &#43;0800</lastBuildDate><atom:link href="https://silencehuliang.github.io/categories/python/" rel="self" type="application/rss+xml" /><item>
+    <title>NumPy</title>
+    <link>https://silencehuliang.github.io/numpy/</link>
+    <pubDate>Tue, 01 Jun 2021 19:28:14 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/numpy/</guid>
+    <description><![CDATA[NumPy 安装 通过安装Anaconda安装NumPy，一个开源的Python发行版本，其包含了conda、Python等180多个科学包及其依赖项，]]></description>
+</item><item>
     <title>Pandas</title>
     <link>https://silencehuliang.github.io/pandas/</link>
     <pubDate>Tue, 01 Jun 2021 16:28:14 &#43;0800</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%A4%9A%E4%BB%BB%E5%8A%A1%E8%BF%9B%E7%A8%8B/</guid>
     <description><![CDATA[一个程序运行起来后，代码+用到的资源 称之为进程，它是操作系统分配资源的基本单元。不仅可以通过线程完成多任务，进程也是可以的。]]></description>
-</item><item>
-    <title>Python学习之路-多任务:线程</title>
-    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%A4%9A%E4%BB%BB%E5%8A%A1%E7%BA%BF%E7%A8%8B/</link>
-    <pubDate>Sat, 04 Jan 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%A4%9A%E4%BB%BB%E5%8A%A1%E7%BA%BF%E7%A8%8B/</guid>
-    <description><![CDATA[什么叫“多任务”呢？简单地说，就是操作系统可以同时运行多个任务。操作系统轮流让各个任务交替执行，表面上看，每个任务都是交替执行的，但是，由于CPU的执行速度实在是太快了，我们感觉就像所有任务都在同时执行一样。]]></description>
 </item></channel>
 </rss>

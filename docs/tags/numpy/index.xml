@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>NumPy - 标签 - Silence Blog</title>
+        <link>https://silencehuliang.github.io/tags/numpy/</link>
+        <description>NumPy - 标签 - Silence Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>silencehuliang@gmail.com (Silence)</managingEditor>
+            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Tue, 01 Jun 2021 19:28:14 &#43;0800</lastBuildDate><atom:link href="https://silencehuliang.github.io/tags/numpy/" rel="self" type="application/rss+xml" /><item>
+    <title>NumPy</title>
+    <link>https://silencehuliang.github.io/numpy/</link>
+    <pubDate>Tue, 01 Jun 2021 19:28:14 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/numpy/</guid>
+    <description><![CDATA[NumPy 安装 通过安装Anaconda安装NumPy，一个开源的Python发行版本，其包含了conda、Python等180多个科学包及其依赖项，]]></description>
+</item></channel>
+</rss>
