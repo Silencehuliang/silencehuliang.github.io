@@ -36,7 +36,7 @@
 
 语言：Python、Go
 
-技术栈：Django、Flask、Redis、MySQL、MongoDB、Scrapy、Selenium、Linux
+技术栈：Django、Flask、Redis、MySQL、MongoDB、Scrapy、Selenium、Linux、鸿蒙应用开发
 
 ### 了解
 
