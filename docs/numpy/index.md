@@ -185,7 +185,7 @@ demo
   >>> a.data
   <memory at 0x0FE0E990>
   ```
-  
+
 #### ndarray对象的的基本操作
 - 加减乘除四则运算
     ```python
@@ -413,7 +413,8 @@ array([[ 0.00000000e+00,  1.55740772e+00, -2.18503986e+00],
            [1234,   10,   10,    7],
            [   8,   10,   10,   11]])
     ```
-#### NumPy常用操作
+### NumPy常用操作
+
 - IO操作
     - load(file[, mmap_mode, allow_pickle, …]) 从.npy，.npz或pickle文件加载数组或pickle对象。
     - save(file, arr[, allow_pickle, fix_imports]) 将数组保存为NumPy .npy格式的二进制文件。
