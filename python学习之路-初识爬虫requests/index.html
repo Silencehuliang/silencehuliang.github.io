@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Python学习之路-初识爬虫:requests - Silence Blog</title><meta name="Description" content="Silence‘s blog"><meta property="og:title" content="Python学习之路-初识爬虫:requests" />
+<meta property="og:description" content="requests的作用 作用：发送网络请求，返回响应数据 中文文档 ： http://docs.python-requests.org/zh_CN/latest/index.html 为什么学requests而不是urllib requests的底层实现就是" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%88%9D%E8%AF%86%E7%88%AC%E8%99%ABrequests/" />
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
+<meta property="article:published_time" content="2021-03-27T09:36:17+08:00" />
+<meta property="article:modified_time" content="2021-03-28T09:36:17+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
+
+<meta name="twitter:title" content="Python学习之路-初识爬虫:requests"/>
+<meta name="twitter:description" content="requests的作用 作用：发送网络请求，返回响应数据 中文文档 ： http://docs.python-requests.org/zh_CN/latest/index.html 为什么学requests而不是urllib requests的底层实现就是"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%88%9D%E8%AF%86%E7%88%AC%E8%99%ABrequests/" /><link rel="prev" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%88%9D%E8%AF%86%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" /><link rel="next" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%88%9D%E8%AF%86%E7%88%AC%E8%99%AB%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.2e7125082ec8de83a87adc70253c9c23.css" integrity="md5-LnElCC7I3oOoetxwJTycIw=="><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.76cb46c10b6c0293433b371bae2414b2.css" integrity="md5-dstGwQtsApNDOzcbriQUsg=="><link rel="stylesheet" href="/lib/animate/animate.min.bc1a6a99c43f5ccc97d2d350bde13f74.css" integrity="md5-vBpqmcQ/XMyX0tNQveE/dA=="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Python学习之路-初识爬虫:requests",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/silencehuliang.github.io\/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%88%9D%E8%AF%86%E7%88%AC%E8%99%ABrequests\/"
+        },"genre": "posts","keywords": "Python学习之路","wordcount":  4629 ,
+        "url": "https:\/\/silencehuliang.github.io\/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%88%9D%E8%AF%86%E7%88%AC%E8%99%ABrequests\/","datePublished": "2021-03-27T09:36:17+08:00","dateModified": "2021-03-28T09:36:17+08:00","publisher": {
+            "@type": "Organization",
+            "name": "Silence"},"author": {
+                "@type": "Person",
+                "name": "Silence"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Silence Blog"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+        data-srcset="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg, https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg 1.5x, https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+        title="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg" /><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Silence Blog"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+        data-srcset="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg, https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg 1.5x, https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+        title="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg" /><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Python学习之路-初识爬虫:requests</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Silence</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E7%88%AC%E8%99%AB/"><i class="far fa-folder fa-fw"></i>爬虫</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-03-27">2021-03-27</time>&nbsp;<i class="fa fa-history" aria-hidden="true"></i>
+                2021-03-28
+                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4629 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 10 分钟&nbsp;<span id="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%88%9D%E8%AF%86%E7%88%AC%E8%99%ABrequests/" class="leancloud_visitors" data-flag-title="Python学习之路-初识爬虫:requests">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#requests的作用">requests的作用</a></li>
+    <li><a href="#为什么学requests而不是urllib">为什么学requests而不是urllib</a></li>
+    <li><a href="#responsetext-和responsecontent的区别">response.text 和response.content的区别</a></li>
+    <li><a href="#发送带header的请求">发送带header的请求</a>
+      <ul>
+        <li><a href="#思考">思考</a></li>
+        <li><a href="#为什么请求需要带上header">为什么请求需要带上header？</a></li>
+        <li><a href="#header的形式">header的形式</a></li>
+        <li><a href="#用法">用法</a></li>
+      </ul>
+    </li>
+    <li><a href="#发送带参数的请求">发送带参数的请求</a>
+      <ul>
+        <li><a href="#什么叫做请求参数">什么叫做请求参数</a></li>
+        <li><a href="#参数的形式">参数的形式</a></li>
+        <li><a href="#用法-1">用法</a></li>
+        <li><a href="#关于参数的注意点">关于参数的注意点</a></li>
+      </ul>
+    </li>
+    <li><a href="#requests模块发送post请求">requests模块发送POST请求</a>
+      <ul>
+        <li><a href="#哪些地方我们会用到post请求">哪些地方我们会用到POST请求：</a></li>
+        <li><a href="#使用requests模块发送post请求">使用requests模块发送post请求</a></li>
+      </ul>
+    </li>
+    <li><a href="#使用代理">使用代理</a>
+      <ul>
+        <li><a href="#为什么要使用代理">为什么要使用代理</a></li>
+        <li><a href="#理解正向代理和反向代理的区别">理解正向代理和反向代理的区别</a></li>
+        <li><a href="#代理的使用">代理的使用</a></li>
+        <li><a href="#代理ip的分类">代理IP的分类</a></li>
+        <li><a href="#代理ip使用的注意点">代理IP使用的注意点</a></li>
+      </ul>
+    </li>
+    <li><a href="#使用requests处理cookie相关的请求">使用requests处理cookie相关的请求</a>
+      <ul>
+        <li><a href="#回顾cookie和session的区别">回顾cookie和session的区别</a></li>
+        <li><a href="#爬虫中为什么要使用cookie">爬虫中为什么要使用cookie</a></li>
+        <li><a href="#requests处理cookie相关的请求之session">requests处理cookie相关的请求之session</a></li>
+        <li><a href="#requests处理cookie相关的请求之cookie放在headers中">requests处理cookie相关的请求之cookie放在headers中</a></li>
+        <li><a href="#requests处理cookie相关的请求之使用cookies参数">requests处理cookie相关的请求之使用cookies参数</a></li>
+      </ul>
+    </li>
+    <li><a href="#requests模块获取cookie">requests模块获取cookie</a></li>
+    <li><a href="#requests处理证书错误">requests处理证书错误</a></li>
+    <li><a href="#超时参数的使用">超时参数的使用</a></li>
+    <li><a href="#retrying模块的使用">retrying模块的使用</a></li>
+    <li><a href="#为什么需要新建隐身窗口">为什么需要新建隐身窗口</a></li>
+    <li><a href="#chrome中network的更多功能">chrome中network的更多功能</a>
+      <ul>
+        <li><a href="#perserve-log">Perserve log</a></li>
+        <li><a href="#filter过滤">filter过滤</a></li>
+        <li><a href="#观察特定种类的请求">观察特定种类的请求</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="requests的作用">requests的作用</h2>
+<p>作用：发送网络请求，返回响应数据</p>
+<p>中文文档 ： <a href="http://docs.python-requests.org/zh_CN/latest/index.html">http://docs.python-requests.org/zh_CN/latest/index.html</a></p>
+<h2 id="为什么学requests而不是urllib">为什么学requests而不是urllib</h2>
+<ul>
+<li>requests的底层实现就是urllib</li>
+<li>requests在python2 和python3中通用，方法完全一样</li>
+<li>requests简单易用</li>
+<li>Requests能够自动帮助我们解压(gzip压缩的等)网页内容</li>
+</ul>
+<h2 id="responsetext-和responsecontent的区别">response.text 和response.content的区别</h2>
+<ul>
+<li><code>response.text</code>
+<ul>
+<li>类型：str</li>
+<li>解码类型： 根据HTTP 头部对响应的编码作出有根据的推测，推测的文本编码</li>
+<li>如何修改编码方式：<code>response.encoding=”gbk”</code></li>
+</ul>
+</li>
+<li><code>response.content</code>
+<ul>
+<li>类型：bytes</li>
+<li>解码类型： 没有指定</li>
+<li>如何修改编码方式：<code>response.content.deocde(“utf8”)</code></li>
+</ul>
+</li>
+</ul>
+<p>获取网页源码的通用方式：</p>
+<ol>
+<li><code>response.content.decode()</code></li>
+<li><code>response.content.decode(&quot;GBK&quot;)</code></li>
+<li><code>response.text</code></li>
+</ol>
+<p>以上三种方法从前往后尝试，能够100%的解决所有网页解码的问题</p>
+<p>所以：更推荐使用<code>response.content.deocde()</code>的方式获取响应的html页面</p>
+<h2 id="发送带header的请求">发送带header的请求</h2>
+<h3 id="思考">思考</h3>
+<p>对比浏览器上百度首页的网页源码和代码中的百度首页的源码，有什么不同？</p>
+<p>代码中的百度首页的源码非常少，为什么？</p>
+<h3 id="为什么请求需要带上header">为什么请求需要带上header？</h3>
+<p>模拟浏览器，欺骗服务器，获取和浏览器一致的内容</p>
+<h3 id="header的形式">header的形式</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">headers = {&#34;User-Agent&#34;: &#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36&#34;}
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="用法">用法</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">requests.get(url,headers=headers)
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="发送带参数的请求">发送带参数的请求</h2>
+<h3 id="什么叫做请求参数">什么叫做请求参数</h3>
+<p>错误的列1： <a href="http://www.webkaka.com/tutorial/server/2015/021013/">http://www.webkaka.com/tutorial/server/2015/021013/</a></p>
+<p>正确的例2：https://www.baidu.com/s?wd=python&amp;c=b</p>
+<h3 id="参数的形式">参数的形式</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">kw = {&#39;wd&#39;:&#39;长城&#39;}
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="用法-1">用法</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">requests.get(url,params=kw)
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="关于参数的注意点">关于参数的注意点</h3>
+<p>在url地址中，很多参数是没有用的，比如百度搜索的url地址，其中参数只有一个字段有用，其他的都可以删除</p>
+<p>对应的，在后续的爬虫中，越到很多参数的url地址，都可以尝试删除参数</p>
+<h2 id="requests模块发送post请求">requests模块发送POST请求</h2>
+<h3 id="哪些地方我们会用到post请求">哪些地方我们会用到POST请求：</h3>
+<ul>
+<li>登录注册（ POST 比 GET 更安全）</li>
+<li>需要传输大文本内容的时候（ POST 请求对数据长度没有要求）</li>
+</ul>
+<p>所以同样的，我们的爬虫也需要在这两个地方回去模拟浏览器发送post请求</p>
+<h3 id="使用requests模块发送post请求">使用requests模块发送post请求</h3>
+<ul>
+<li>用法： <code>response = requests.post(&quot;http://www.baidu.com/&quot;, data = data,headers=headers)</code></li>
+<li>data 的形式：字典</li>
+</ul>
+<h2 id="使用代理">使用代理</h2>
+<h3 id="为什么要使用代理">为什么要使用代理</h3>
+<ul>
+<li>让服务器以为不是同一个客户端在请求</li>
+<li>防止我们的真实地址被泄露，防止被追究</li>
+</ul>
+<h3 id="理解正向代理和反向代理的区别">理解正向代理和反向代理的区别</h3>
+<p>正向代理：对于浏览器知道服务器的真实地址，例如VPN 反向代理：浏览器不知道服务器的真实地址，例如nginx</p>
+<h3 id="代理的使用">代理的使用</h3>
+<ul>
+<li>用法： <code>requests.get(&quot;http://www.baidu.com&quot;, proxies = proxies)</code></li>
+<li>proxies的形式：字典</li>
+<li>例如：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="err">proxies</span> <span class="err">=</span> <span class="p">{</span> 
+    <span class="nt">&#34;http&#34;</span><span class="p">:</span> <span class="s2">&#34;http://12.34.56.79:9527&#34;</span><span class="p">,</span> 
+    <span class="nt">&#34;https&#34;</span><span class="p">:</span> <span class="s2">&#34;https://12.34.56.79:9527&#34;</span><span class="p">,</span> 
+    <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="代理ip的分类">代理IP的分类</h3>
+<p>根据代理服务器端的配置，向目标地址发送请求时，REMOTE_ADDR， HTTP_VIA，HTTP_X_FORWARDED_FOR三个变量不同而可以分为下面四类：</p>
+<ul>
+<li>
+<p>透明代理(Transparent Proxy)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-txt" data-lang="txt">  REMOTE_ADDR = Proxy IP
+  HTTP_VIA = Proxy IP
+  HTTP_X_FORWARDED_FOR = Your IP
+</code></pre></td></tr></table>
+</div>
+</div><p>透明代理虽然可以直接“隐藏”你的IP地址，但是还是可以从HTTP_X_FORWARDED_FOR来查到你是谁。</p>
+</li>
+<li>
+<p>匿名代理(Anonymous Proxy)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-txt" data-lang="txt">  REMOTE_ADDR = proxy IP
+  HTTP_VIA = proxy IP
+  HTTP_X_FORWARDED_FOR = proxy IP
+</code></pre></td></tr></table>
+</div>
+</div><p>匿名代理比透明代理进步了一点：别人只能知道你用了代理，无法知道你是谁。</p>
+</li>
+<li>
+<p>混淆代理(Distorting Proxies)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-txt" data-lang="txt">  REMOTE_ADDR = Proxy IP
+  HTTP_VIA = Proxy IP
+  HTTP_X_FORWARDED_FOR = Random IP address
+</code></pre></td></tr></table>
+</div>
+</div><p>如上，与匿名代理相同，如果使用了混淆代理，别人还是能知道你在用代理，但是会得到一个假的IP地址，伪装的更逼真</p>
+</li>
+<li>
+<p>高匿代理(Elite proxy或High Anonymity Proxy)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-txt" data-lang="txt">  REMOTE_ADDR = Proxy IP
+  HTTP_VIA = not determined
+  HTTP_X_FORWARDED_FOR = not determined
+</code></pre></td></tr></table>
+</div>
+</div><p>可以看出来，高匿代理让别人根本无法发现你是在用代理，所以是最好的选择。</p>
+</li>
+</ul>
+<p>从使用的协议：代理ip可以分为http代理，https代理，socket代理等，使用的时候需要根据抓取网站的协议来选择</p>
+<h3 id="代理ip使用的注意点">代理IP使用的注意点</h3>
+<ul>
+<li>
+<p>反反爬</p>
+<p>使用代理ip是非常必要的一种<code>反反爬</code>的方式,但是即使使用了代理ip，对方服务器任然会有很多的方式来检测我们是否是一个爬虫</p>
+<p>比如：</p>
+<ul>
+<li>
+<p>一段时间内，检测IP访问的频率，访问太多频繁会屏蔽</p>
+</li>
+<li>
+<p>检查Cookie，User-Agent，Referer等header参数，若没有则屏蔽</p>
+</li>
+<li>
+<p>服务方购买所有代理提供商，加入到反爬虫数据库里，若检测是代理则屏蔽</p>
+<p>所以更好的方式是购买质量更高的代理，或者自己搭建代理服务器，组装自己的<code>代理IP池</code>，同时在使用的时候使用随机的方式进行选择使用，不要每次都用一个代理ip，没事没有任何效果的</p>
+</li>
+</ul>
+</li>
+<li>
+<p>代理ip池的更新</p>
+<p>购买的代理ip很多时候大部分(超过60%)可能都没办法使用，这个时候就需要通过程序去检测哪些可用，把不能用的删除掉。对应的实现方式在我们学习了<code>超时参数的使用</code>之后大家会了解</p>
+</li>
+</ul>
+<h2 id="使用requests处理cookie相关的请求">使用requests处理cookie相关的请求</h2>
+<h3 id="回顾cookie和session的区别">回顾cookie和session的区别</h3>
+<ul>
+<li>cookie数据存放在客户的浏览器上，session数据放在服务器上。</li>
+<li>cookie不是很安全，别人可以分析存放在本地的cookie并进行cookie欺骗。</li>
+<li>session会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能。</li>
+<li>单个cookie保存的数据不能超过4K，很多浏览器都限制一个站点最多保存20个cookie。</li>
+</ul>
+<h3 id="爬虫中为什么要使用cookie">爬虫中为什么要使用cookie</h3>
+<ul>
+<li>带上cookie的好处
+<ul>
+<li>能够访问登录后的页面</li>
+<li>正常的浏览器在请求服务器的时候肯定会带上cookie（第一次请求某个地址除外），所以对方服务器有可能会通过是否携带cookie来判断我们是否是一个爬虫，对应的能够起到一定的反爬的效果</li>
+</ul>
+</li>
+<li>带上cookie的坏处
+<ul>
+<li>一套cookie往往对应的是一个用户的信息，请求太频繁有更大的可能性被对方识别为爬虫</li>
+<li>那么上面的问题如何解决 ?使用多个账号</li>
+</ul>
+</li>
+</ul>
+<h3 id="requests处理cookie相关的请求之session">requests处理cookie相关的请求之session</h3>
+<ul>
+<li>
+<p>requests 提供了一个叫做session类，来实现客户端和服务端的<code>会话保持</code></p>
+</li>
+<li>
+<p>会话保持有两个内涵：</p>
+<ul>
+<li>保存cookie</li>
+<li>实现和服务端的长连接</li>
+</ul>
+</li>
+<li>
+<p>使用方法</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python">  <span class="n">session</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">session</span><span class="p">()</span>
+  <span class="n">response</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">headers</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>session实例在请求了一个网站后，对方服务器设置在本地的cookie会保存在session中，下一次再使用session请求对方服务器的时候，会带上前一次的cookie</p>
+</li>
+<li>
+<p>动手：</p>
+<p>动手尝试使用session来登录人人网： <code>http://www.renren.com/PLogin.do</code>(先不考虑这个url地址从何而来)，请求体的格式：<code>{&quot;email&quot;:&quot;username&quot;, &quot;password&quot;:&quot;password&quot;}</code></p>
+</li>
+</ul>
+<h3 id="requests处理cookie相关的请求之cookie放在headers中">requests处理cookie相关的请求之cookie放在headers中</h3>
+<p>了解headers中cookie</p>
+<ul>
+<li>headers中的cookie：
+<ul>
+<li>使用分号(;)隔开</li>
+<li>分号两边的类似a=b形式的表示一条cookie</li>
+<li>a=b中，a表示键（name），b表示值（value）</li>
+<li>在headers中仅仅使用了cookie的name和value</li>
+</ul>
+</li>
+</ul>
+<p>cookie的具体组成的字段</p>
+<p>由于headers中对cookie仅仅使用它的name和value，所以在代码中我们仅仅需要cookie的name和value即可</p>
+<p>在headers中使用cookie</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+<span class="s2">&#34;User-Agent&#34;</span><span class="p">:</span><span class="s2">&#34;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36&#34;</span><span class="p">,</span>
+<span class="s2">&#34;Cookie&#34;</span><span class="p">:</span><span class="s2">&#34; Pycharm-26c2d973=dbb9b300-2483-478f-9f5a-16ca4580177e; Hm_lvt_98b9d8c2fd6608d564bf2ac2ae642948=1512607763; Pycharm-26c2d974=f645329f-338e-486c-82c2-29e2a0205c74; _xsrf=2|d1a3d8ea|c5b07851cbce048bd5453846445de19d|1522379036&#34;</span><span class="p">}</span>
+
+<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>cookie有过期时间，所以直接复制浏览器中的cookie可能意味着下一程序继续运行的时候需要替换代码中的cookie，对应的我们也可以通过一个程序专门来获取cookie供其他程序使用；当然也有很多网站的cookie过期时间很长，这种情况下，直接复制cookie来使用更加简单</p>
+<h3 id="requests处理cookie相关的请求之使用cookies参数">requests处理cookie相关的请求之使用cookies参数</h3>
+<ul>
+<li>cookies的形式：字典</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="err">cookies</span> <span class="err">=</span> <span class="p">{</span><span class="nt">&#34;cookie的name&#34;</span><span class="p">:</span><span class="s2">&#34;cookie的value&#34;</span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>使用方法：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span><span class="n">cookies</span><span class="o">=</span><span class="n">cookie_dict</span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="requests模块获取cookie">requests模块获取cookie</h2>
+<p><code>requests.utils.dict_from_cookiejar</code>:把cookiejar对象转化为字典</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&#34;http://www.baidu.com&#34;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">cookies</span><span class="p">))</span>
+
+<span class="n">cookies</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">dict_from_cookiejar</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">cookies</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">cookies</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>输出为:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">requests</span><span class="o">.</span><span class="n">cookies</span><span class="o">.</span><span class="n">RequestsCookieJar</span><span class="s1">&#39;&gt;</span>
+<span class="p">{</span><span class="s1">&#39;BDORZ&#39;</span><span class="p">:</span> <span class="s1">&#39;27315&#39;</span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>在前面的requests的session类中，我们不需要处理cookie的任何细节，如果有需要，我们可以使用上述方法来解决</p>
+<h2 id="requests处理证书错误">requests处理证书错误</h2>
+<p>经常我们在网上冲浪时，经常能够看到ssl的证书不安全</p>
+<p>那么如果在代码中请求会怎么样呢？</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&#34;https://www.12306.cn/mormhweb/&#34;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>返回</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">ssl.CertificateError ...
+</code></pre></td></tr></table>
+</div>
+</div><p>为了在代码中能够正常的请求，我们修改添加一个参数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&#34;https://www.12306.cn/mormhweb/&#34;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">verify</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="超时参数的使用">超时参数的使用</h2>
+<p>在平时网上冲浪的过程中，我们经常会遇到网络波动，这个时候，一个请求等了很久可能任然没有结果</p>
+<p>对应的，在爬虫中，一个请求很久没有结果，就会让整个项目的效率变得非常低，这个时候我们就需要对请求进行强制要求，让他必须在特定的时间内返回结果，否则就报错</p>
+<p>使用方法如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">response = requests.get(url,timeout=3)
+</code></pre></td></tr></table>
+</div>
+</div><p>通过添加timeout参数，能够保证在3秒钟内返回响应，否则会报错</p>
+<p>这个方法还能够拿来检测代理ip的质量，如果一个代理ip在很长时间没有响应，那么添加超时之后也会报错，对应的这个ip就可以从代理ip池中删除</p>
+<h2 id="retrying模块的使用">retrying模块的使用</h2>
+<p>上述方法能够加快我们整体的请求速度，但是在正常的网页浏览过成功，如果发生速度很慢的情况，我们会做的选择是<strong>刷新页面</strong>，那么在代码中，我们是否也可以刷新请求呢？</p>
+<p>对应的，retrying模块就可以帮助我们解决</p>
+<ul>
+<li>retrying模块的地址：https://pypi.org/project/retrying/</li>
+<li>retrying 模块的使用
+<ul>
+<li>使用retrying模块提供的retry模块</li>
+<li>通过装饰器的方式使用，让被装饰的函数反复执行</li>
+<li>retry中可以传入参数<code>stop_max_attempt_number</code>,让函数报错后继续重新执行，达到最大执行次数的上限，如果每次都报错，整个函数报错，如果中间有一个成功，程序继续往后执行</li>
+</ul>
+</li>
+</ul>
+<p>所以我们可以结合前面的知识点和retrying模块，把我们需要反复使用的请求方法做一个简单的封装，在后续任何其他地方需要使用的时候，调用该方法就行</p>
+<p>代码参考</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># parse.py</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">retrying</span> <span class="kn">import</span> <span class="n">retry</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{}</span>
+
+
+<span class="nd">@retry</span><span class="p">(</span><span class="n">stop_max_attempt_number</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span> <span class="c1">#最大重试3次，3次全部报错，才会报错</span>
+<span class="k">def</span> <span class="nf">_parse_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span> <span class="c1">#超时的时候回报错并重试</span>
+    <span class="k">assert</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span> <span class="c1">#状态码不是200，也会报错并充实</span>
+    <span class="k">return</span> <span class="n">response</span>
+
+
+<span class="k">def</span> <span class="nf">parse_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span> <span class="c1">#进行异常捕获</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">_parse_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="k">return</span> <span class="n">response</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="为什么需要新建隐身窗口">为什么需要新建隐身窗口</h2>
+<p>在打开隐身窗口的时候，第一次请求某个网站是没有携带cookie的，和代码请求一个网站一样，不携带cookie。这样就能够尽可能的理解代码请求某个网站的结果；除非数据是通过js加载出来的，不然爬虫请求到的数据和浏览器请求的数据大部分时候都是相同的</p>
+<h2 id="chrome中network的更多功能">chrome中network的更多功能</h2>
+<h3 id="perserve-log">Perserve log</h3>
+<p>默认情况下，页面发生跳转之后，之前的请求url地址等信息都会消失，勾选perserve log后之前的请求都会被保留</p>
+<h3 id="filter过滤">filter过滤</h3>
+<p>在url地址很多的时候，可以在filter中输入部分url地址，对所有的url地址起到一定的过滤效果，具体位置在上面第二幅图中的2的位置</p>
+<h3 id="观察特定种类的请求">观察特定种类的请求</h3>
+<p>在上面第二幅图中的3的位置，有很多选项，默认是选择的<code>all</code>，即会观察到所有种类的请求</p>
+<p>很多时候处于自己的目的可以选择<code>all</code>右边的其他选项，比如常见的选项：</p>
+<ul>
+<li>XHR:大部分情况表示ajax请求</li>
+<li>JS:js请求</li>
+<li>CSS:css请求</li>
+</ul>
+<p>但是很多时候我们并不能保证我们需要的请求是什么类型，特别是我们不清楚一个请求是否为ajax请求的时候，直接选择<code>all</code>,从前往后观察即可，其中js，css，图片等不去观察即可</p>
+<p>不要被浏览器中的一堆请求吓到了，这些请求中除了js，css，图片的请求外，其他的请求并没有多少个</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-03-28</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%88%9D%E8%AF%86%E7%88%AC%E8%99%ABrequests/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%88%9D%E8%AF%86%E7%88%AC%E8%99%ABrequests/" data-title="Python学习之路-初识爬虫:requests" data-hashtags="Python学习之路"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%88%9D%E8%AF%86%E7%88%AC%E8%99%ABrequests/" data-hashtag="Python学习之路"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%88%9D%E8%AF%86%E7%88%AC%E8%99%ABrequests/" data-title="Python学习之路-初识爬虫:requests" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%88%9D%E8%AF%86%E7%88%AC%E8%99%ABrequests/" data-title="Python学习之路-初识爬虫:requests"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%88%9D%E8%AF%86%E7%88%AC%E8%99%ABrequests/" data-title="Python学习之路-初识爬虫:requests"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%88%9D%E8%AF%86%E7%88%AC%E8%99%ABrequests/" data-title="Python学习之路-初识爬虫:requests" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%88%9D%E8%AF%86%E7%88%AC%E8%99%ABrequests/" data-title="Python学习之路-初识爬虫:requests" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%88%9D%E8%AF%86%E7%88%AC%E8%99%ABrequests/" data-title="Python学习之路-初识爬虫:requests"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/">Python学习之路</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%88%9D%E8%AF%86%E7%88%AC%E8%99%AB%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="prev" rel="prev" title="Python学习之路-初识爬虫:基础知识"><i class="fas fa-angle-left fa-fw"></i>Python学习之路-初识爬虫:基础知识</a>
+            <a href="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%88%9D%E8%AF%86%E7%88%AC%E8%99%AB%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96/" class="next" rel="next" title="Python学习之路-初识爬虫:数据提取">Python学习之路-初识爬虫:数据提取<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.74.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2018 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Silence</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.4afae7d446ba01ebf7fff19893eaf3a1.css" integrity="md5-Svrn1Ea6Aev3//GYk&#43;rzoQ=="><link rel="stylesheet" href="/lib/katex/copy-tex.min.b1994d1b9785dd8801dbf655df7bf6d9.css" integrity="md5-sZlNG5eF3YgB2/ZV33v22Q=="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.acf82ee47549fdc386d02768992a49ad.css" integrity="md5-rPgu5HVJ/cOG0CdomSpJrQ=="><script type="text/javascript" src="/lib/valine/Valine.min.b1d2c9b89c70dbf0a8541bfd36afafa1.js" integrity="md5-sdLJuJxw2/CoVBv9Nq&#43;voQ=="></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.100efdceabf7a138f3297e437d078f74.js" integrity="md5-EA79zqv3oTjzKX5DfQePdA=="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.ae7c5011def46b283696baf367586b5d.js" integrity="md5-rnxQEd70ayg2lrrzZ1hrXQ=="></script><script type="text/javascript" src="/lib/lunr/lunr.min.a08f2562fde4550269dfc13028ed2502.js" integrity="md5-oI8lYv3kVQJp38EwKO0lAg=="></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.b82fb8d93ce0ea6a485dfa3a0b1e7573.js" integrity="md5-uC&#43;42Tzg6mpIXfo6Cx51cw=="></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.f1ba3e22560e2eb7474f28feb4507617.js" integrity="md5-8bo&#43;IlYOLrdHTyj&#43;tFB2Fw=="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.b80e49640d4794d4333d00db76ea22f7.js" integrity="md5-uA5JZA1HlNQzPQDbduoi9w=="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.af8ab36589315582ccdd82f22e84bffb.js" integrity="md5-r4qzZYkxVYLM3YLyLoS/&#43;w=="></script><script type="text/javascript" src="/lib/sharer/sharer.min.c3c3372b4cf5c56dd4e5a4be8ada86c9.js" integrity="md5-w8M3K0z1xW3U5aS&#43;itqGyQ=="></script><script type="text/javascript" src="/lib/typeit/typeit.min.b5f3481ebeaa3e56a2f5f96ea648bf69.js" integrity="md5-tfNIHr6qPlai9flupki/aQ=="></script><script type="text/javascript" src="/lib/katex/katex.min.c158c9e823b681cf535f46596b5e4eac.js" integrity="md5-wVjJ6CO2gc9TX0ZZa15OrA=="></script><script type="text/javascript" src="/lib/katex/auto-render.min.28cd0b98cd3f4fa37d52f3ffe47ad9d4.js" integrity="md5-KM0LmM0/T6N9UvP/5HrZ1A=="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.bfaec7d1dea915d74a7a6d833f0ff62e.js" integrity="md5-v67H0d6pFddKem2DPw/2Lg=="></script><script type="text/javascript" src="/lib/katex/mhchem.min.1bbb252363e83547d4b2186a41eaca28.js" integrity="md5-G7slI2PoNUfUshhqQerKKA=="></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.4a48532bf0b17c058b8b6854f49de23f.js" integrity="md5-SkhTK/CxfAWLi2hU9J3iPw=="></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"c4VA4R1Xg3drBKSQzNfWnWlF-gzGzoHsz","appKey":"upEyt7esgWCbm0L7EPDH6bhV","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","meta":["nick","mail"],"pageSize":10,"placeholder":"说点什么吧...","recordIP":true,"visitor":true}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"id-1":"Silence’s Blog","id-2":"Silence’s Blog"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.7bc7989e979c4a19d97db3ab311a80fe.js" integrity="md5-e8eYnpecShnZfbOrMRqA/g=="></script></body>
+</html>

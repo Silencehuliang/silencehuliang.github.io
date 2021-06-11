@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Python学习之路-Flask项目:博客后台 - Silence Blog</title><meta name="Description" content="Silence‘s blog"><meta property="og:title" content="Python学习之路-Flask项目:博客后台" />
+<meta property="og:description" content="前言 上一篇完成了博客前台的相关内容，接下来进行博客后台的相关开发。 管理员登录 需求分析 管理员用户进行登录，并且根据不同的情况报出不同的错误信息" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E9%A1%B9%E7%9B%AE%E5%8D%9A%E5%AE%A2%E5%90%8E%E5%8F%B0/" />
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
+<meta property="article:published_time" content="2020-06-27T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-06-28T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
+
+<meta name="twitter:title" content="Python学习之路-Flask项目:博客后台"/>
+<meta name="twitter:description" content="前言 上一篇完成了博客前台的相关内容，接下来进行博客后台的相关开发。 管理员登录 需求分析 管理员用户进行登录，并且根据不同的情况报出不同的错误信息"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E9%A1%B9%E7%9B%AE%E5%8D%9A%E5%AE%A2%E5%90%8E%E5%8F%B0/" /><link rel="prev" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E9%A1%B9%E7%9B%AE%E5%8D%9A%E5%AE%A2%E5%89%8D%E5%8F%B0/" /><link rel="next" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E9%A1%B9%E7%9B%AE%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.2e7125082ec8de83a87adc70253c9c23.css" integrity="md5-LnElCC7I3oOoetxwJTycIw=="><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.76cb46c10b6c0293433b371bae2414b2.css" integrity="md5-dstGwQtsApNDOzcbriQUsg=="><link rel="stylesheet" href="/lib/animate/animate.min.bc1a6a99c43f5ccc97d2d350bde13f74.css" integrity="md5-vBpqmcQ/XMyX0tNQveE/dA=="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Python学习之路-Flask项目:博客后台",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/silencehuliang.github.io\/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E9%A1%B9%E7%9B%AE%E5%8D%9A%E5%AE%A2%E5%90%8E%E5%8F%B0\/"
+        },"genre": "posts","keywords": "Python学习之路","wordcount":  2863 ,
+        "url": "https:\/\/silencehuliang.github.io\/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E9%A1%B9%E7%9B%AE%E5%8D%9A%E5%AE%A2%E5%90%8E%E5%8F%B0\/","datePublished": "2020-06-27T00:00:00+00:00","dateModified": "2020-06-28T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "Silence"},"author": {
+                "@type": "Person",
+                "name": "Silence"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Silence Blog"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+        data-srcset="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg, https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg 1.5x, https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+        title="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg" /><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Silence Blog"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+        data-srcset="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg, https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg 1.5x, https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+        title="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg" /><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Python学习之路-Flask项目:博客后台</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Silence</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/flask/"><i class="far fa-folder fa-fw"></i>Flask</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-27">2020-06-27</time>&nbsp;<i class="fa fa-history" aria-hidden="true"></i>
+                2020-06-28
+                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2863 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;<span id="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E9%A1%B9%E7%9B%AE%E5%8D%9A%E5%AE%A2%E5%90%8E%E5%8F%B0/" class="leancloud_visitors" data-flag-title="Python学习之路-Flask项目:博客后台">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#管理员登录">管理员登录</a>
+      <ul>
+        <li><a href="#需求分析">需求分析</a></li>
+        <li><a href="#代码准备">代码准备</a></li>
+        <li><a href="#代码实现">代码实现</a></li>
+      </ul>
+    </li>
+    <li><a href="#管理后台主页">管理后台主页</a>
+      <ul>
+        <li><a href="#需求分析-1">需求分析</a></li>
+        <li><a href="#代码实现-1">代码实现</a></li>
+      </ul>
+    </li>
+    <li><a href="#后台访问权限控制">后台访问权限控制</a>
+      <ul>
+        <li><a href="#需求分析-2">需求分析</a></li>
+        <li><a href="#代码实现-2">代码实现</a></li>
+      </ul>
+    </li>
+    <li><a href="#用户统计">用户统计</a>
+      <ul>
+        <li><a href="#需求分析-3">需求分析</a></li>
+        <li><a href="#实现准备">实现准备</a></li>
+        <li><a href="#代码实现-3">代码实现</a></li>
+      </ul>
+    </li>
+    <li><a href="#用户列表">用户列表</a>
+      <ul>
+        <li><a href="#需求">需求</a></li>
+        <li><a href="#实现准备-1">实现准备</a></li>
+        <li><a href="#代码实现-4">代码实现</a></li>
+      </ul>
+    </li>
+    <li><a href="#文章版式编辑">文章版式编辑</a>
+      <ul>
+        <li><a href="#需求分析-4">需求分析</a></li>
+        <li><a href="#实现准备-2">实现准备</a></li>
+        <li><a href="#代码实现-5">代码实现</a></li>
+      </ul>
+    </li>
+    <li><a href="#博文版式编辑详情">博文版式编辑详情</a>
+      <ul>
+        <li><a href="#编辑详情界面数据">编辑详情界面数据</a></li>
+        <li><a href="#博文编辑提交">博文编辑提交</a></li>
+      </ul>
+    </li>
+    <li><a href="#博文分类管理">博文分类管理</a>
+      <ul>
+        <li><a href="#需求分析-5">需求分析</a></li>
+        <li><a href="#实现准备-3">实现准备</a></li>
+        <li><a href="#代码实现-6">代码实现</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="前言">前言</h2>
+<p>上一篇完成了博客前台的相关内容，接下来进行博客后台的相关开发。</p>
+<h2 id="管理员登录">管理员登录</h2>
+<h3 id="需求分析">需求分析</h3>
+<p>管理员用户进行登录，并且根据不同的情况报出不同的错误信息，如果当前已登录用户是管理员，在访问登录页面时直接跳转到后台管理主页。登录界面可以直接使用 Form 表单提交(也可以采用 ajax 的方式)</p>
+<h3 id="代码准备">代码准备</h3>
+<p>在 <strong>templates</strong> 目录下创建 <code>admin</code> 文件夹，将 <code>static/admin/</code>目录下 <code>login.html</code> 与 <code>index.html</code> 拖动到 <code>admin</code> 目录下</p>
+<h3 id="代码实现">代码实现</h3>
+<ul>
+<li>
+<p>在 <code>admin/views.py</code> 中，添加登录视图函数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="nd">@admin_blu.route</span><span class="p">(</span><span class="s1">&#39;/login&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">admin_login</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;admin/login.html&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<p>访问测试</p>
+<ul>
+<li>
+<p>修改上一步视图函数，添加 post 请求方式，并添加登录相关逻辑</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="nd">@admin_blu.route</span><span class="p">(</span><span class="s1">&#39;/login&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s2">&#34;GET&#34;</span><span class="p">,</span> <span class="s2">&#34;POST&#34;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">admin_login</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s2">&#34;GET&#34;</span><span class="p">:</span>    
+        <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;admin/login.html&#39;</span><span class="p">)</span>
+  
+    <span class="c1"># 取到登录的参数</span>
+    <span class="n">username</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;username&#34;</span><span class="p">)</span>
+    <span class="n">password</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;password&#34;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">([</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">]):</span>
+        <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;admin/login.html&#39;</span><span class="p">,</span> <span class="n">errmsg</span><span class="o">=</span><span class="s2">&#34;参数不足&#34;</span><span class="p">)</span>
+  
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">User</span><span class="o">.</span><span class="n">mobile</span> <span class="o">==</span> <span class="n">username</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">current_app</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;admin/login.html&#39;</span><span class="p">,</span> <span class="n">errmsg</span><span class="o">=</span><span class="s2">&#34;数据查询失败&#34;</span><span class="p">)</span>
+  
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">user</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;admin/login.html&#39;</span><span class="p">,</span> <span class="n">errmsg</span><span class="o">=</span><span class="s2">&#34;用户不存在&#34;</span><span class="p">)</span>
+  
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">user</span><span class="o">.</span><span class="n">check_passowrd</span><span class="p">(</span><span class="n">password</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;admin/login.html&#39;</span><span class="p">,</span> <span class="n">errmsg</span><span class="o">=</span><span class="s2">&#34;密码错误&#34;</span><span class="p">)</span>
+  
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">user</span><span class="o">.</span><span class="n">is_admin</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;admin/login.html&#39;</span><span class="p">,</span> <span class="n">errmsg</span><span class="o">=</span><span class="s2">&#34;用户权限错误&#34;</span><span class="p">)</span>
+  
+    <span class="n">session</span><span class="p">[</span><span class="s2">&#34;user_id&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">user</span><span class="o">.</span><span class="n">id</span>
+    <span class="n">session</span><span class="p">[</span><span class="s2">&#34;nick_name&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">user</span><span class="o">.</span><span class="n">nick_name</span>
+    <span class="n">session</span><span class="p">[</span><span class="s2">&#34;mobile&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">user</span><span class="o">.</span><span class="n">mobile</span>
+    <span class="n">session</span><span class="p">[</span><span class="s2">&#34;is_admin&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+  
+    <span class="c1"># TODO 跳转到后台管理主页,暂未实现</span>
+    <span class="k">return</span> <span class="s2">&#34;登录成功，需要跳转到主页&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h2 id="管理后台主页">管理后台主页</h2>
+<h3 id="需求分析-1">需求分析</h3>
+<p>为后台主页提供专门的视图函数，需要带入当前管理员用户相关信息以便在界面进行展示</p>
+<h3 id="代码实现-1">代码实现</h3>
+<ul>
+<li>
+<p>在 <code>modules/admin/views.py</code> 文件中添加视图函数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="nd">@admin_blu.route</span><span class="p">(</span><span class="s1">&#39;/index&#39;</span><span class="p">)</span>
+<span class="nd">@user_login_data</span>
+<span class="k">def</span> <span class="nf">admin_index</span><span class="p">():</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">user</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;admin/index.html&#39;</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="n">user</span><span class="o">.</span><span class="n">to_dict</span><span class="p">())</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<p>访问测试</p>
+<ul>
+<li>
+<p>完善登录视图函数跳转界面逻辑</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="nd">@admin_blu.route</span><span class="p">(</span><span class="s1">&#39;/login&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s2">&#34;GET&#34;</span><span class="p">,</span> <span class="s2">&#34;POST&#34;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">admin_login</span><span class="p">():</span>
+    <span class="o">...</span>
+    <span class="c1"># 跳转到后台管理主页</span>
+    <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="n">url_for</span><span class="p">(</span><span class="s1">&#39;admin.admin_index&#39;</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>完善如果已登录的管理员用户访问登录页面直接跳转到主页逻辑</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">admin_login</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s2">&#34;GET&#34;</span><span class="p">:</span>
+        <span class="c1"># 去 session 中取指定的值</span>
+        <span class="n">user_id</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;user_id&#34;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+        <span class="n">is_admin</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;is_admin&#34;</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+        <span class="c1"># 如果用户id存在，并且是管理员，那么直接跳转管理后台主页</span>
+        <span class="k">if</span> <span class="n">user_id</span> <span class="ow">and</span> <span class="n">is_admin</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="n">url_for</span><span class="p">(</span><span class="s1">&#39;admin.admin_index&#39;</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;admin/login.html&#39;</span><span class="p">)</span>
+    <span class="o">...</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h2 id="后台访问权限控制">后台访问权限控制</h2>
+<h3 id="需求分析-2">需求分析</h3>
+<p>解决普通用户登录之后直接访问后台具体的视图函数的问题，如果是普通用户访问后台的视图函数，直接跳转到项目主页，不再执行后续的逻辑判断，后台后续要实现多个视图函数，如果每一个函数内部都去判断用户权限，那么代码重复率高，冗余代码较多，所以得有一个统一判断入口，后台模块中，除了登录页面，后台的其他页面都要判断是否具有管理员权限，采用的方式为：请求勾子中的 before_request，来请求之前进行判断</p>
+<h3 id="代码实现-2">代码实现</h3>
+<ul>
+<li>
+<p>在 <code>modules/admin/__init__.py</code> 文件中，添加请求勾子函数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="nd">@admin_blu.before_request</span>
+<span class="k">def</span> <span class="nf">before_request</span><span class="p">():</span>
+    <span class="c1"># 判断如果不是登录页面的请求</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">url_for</span><span class="p">(</span><span class="s2">&#34;admin.admin_login&#34;</span><span class="p">)):</span>
+        <span class="n">user_id</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;user_id&#34;</span><span class="p">)</span>
+        <span class="n">is_admin</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;is_admin&#34;</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">user_id</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">is_admin</span><span class="p">:</span>
+            <span class="c1"># 判断当前是否有用户登录，或者是否是管理员，如果不是，直接重定向到项目主页</span>
+            <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>完善退出登录相关代码，在退出登录时候，也要清空是否是管理员的相关数据，在 <code>modules/passport/views.py</code> 中</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="nd">@passport_blu.route</span><span class="p">(</span><span class="s2">&#34;/logout&#34;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">logout</span><span class="p">():</span>
+    <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">    清除session中的对应登录之后保存的信息
+</span><span class="s2">    :return:
+</span><span class="s2">    &#34;&#34;&#34;</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;nick_name&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;mobile&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;is_admin&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+  
+    <span class="c1"># 返回结果</span>
+    <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">errno</span><span class="o">=</span><span class="n">RET</span><span class="o">.</span><span class="n">OK</span><span class="p">,</span> <span class="n">errmsg</span><span class="o">=</span><span class="s2">&#34;OK&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h2 id="用户统计">用户统计</h2>
+<h3 id="需求分析-3">需求分析</h3>
+<p>展示当前总人数，月活跃人数，日活跃人数，使用图表的形式展示活跃曲线</p>
+<h3 id="实现准备">实现准备</h3>
+<p>将 <code>static/admin/user_count.html</code> 拖到 <code>templates/admin/</code> 目录下</p>
+<h3 id="代码实现-3">代码实现</h3>
+<ul>
+<li>
+<p>实现思路：</p>
+<ul>
+<li>月新增数：获取到本月第1天0点0分0秒的时间对象，然后查询最后一次登录比其大的所有数据</li>
+<li>日新增数：获取到当日0点0分0秒时间对象，然后查询最后一次登录比其大的所有数据</li>
+<li>图表查询：遍历查询数据每一天的数据(当前天数，减去某些天)</li>
+</ul>
+</li>
+<li>
+<p>后端查询数据实现</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="nd">@admin_blu.route</span><span class="p">(</span><span class="s1">&#39;/user_count&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">user_count</span><span class="p">():</span>
+    <span class="c1"># 查询总人数</span>
+    <span class="n">total_count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">total_count</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">User</span><span class="o">.</span><span class="n">is_admin</span> <span class="o">==</span> <span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">current_app</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+  
+    <span class="c1"># 查询月新增数</span>
+    <span class="n">mon_count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">now</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">localtime</span><span class="p">()</span>
+        <span class="n">mon_begin</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%d</span><span class="s1">-</span><span class="si">%02d</span><span class="s1">-01&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">now</span><span class="o">.</span><span class="n">tm_year</span><span class="p">,</span> <span class="n">now</span><span class="o">.</span><span class="n">tm_mon</span><span class="p">)</span>
+        <span class="n">mon_begin_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">mon_begin</span><span class="p">,</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">mon_count</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">User</span><span class="o">.</span><span class="n">is_admin</span> <span class="o">==</span> <span class="bp">False</span><span class="p">,</span> <span class="n">User</span><span class="o">.</span><span class="n">create_time</span> <span class="o">&gt;=</span> <span class="n">mon_begin_date</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">current_app</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+  
+    <span class="c1"># 查询日新增数</span>
+    <span class="n">day_count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">day_begin</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%d</span><span class="s1">-</span><span class="si">%02d</span><span class="s1">-</span><span class="si">%02d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">now</span><span class="o">.</span><span class="n">tm_year</span><span class="p">,</span> <span class="n">now</span><span class="o">.</span><span class="n">tm_mon</span><span class="p">,</span> <span class="n">now</span><span class="o">.</span><span class="n">tm_mday</span><span class="p">)</span>
+        <span class="n">day_begin_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">day_begin</span><span class="p">,</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">day_count</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">User</span><span class="o">.</span><span class="n">is_admin</span> <span class="o">==</span> <span class="bp">False</span><span class="p">,</span> <span class="n">User</span><span class="o">.</span><span class="n">create_time</span> <span class="o">&gt;</span> <span class="n">day_begin_date</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">current_app</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+  
+    <span class="c1"># 查询图表信息</span>
+    <span class="c1"># 获取到当天00:00:00时间</span>
+  
+    <span class="n">now_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">),</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="c1"># 定义空数组，保存数据</span>
+    <span class="n">active_date</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">active_count</span> <span class="o">=</span> <span class="p">[]</span>
+  
+    <span class="c1"># 依次添加数据，再反转</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">31</span><span class="p">):</span>
+        <span class="n">begin_date</span> <span class="o">=</span> <span class="n">now_date</span> <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">end_date</span> <span class="o">=</span> <span class="n">now_date</span> <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="n">active_date</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">begin_date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">))</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">count</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">User</span><span class="o">.</span><span class="n">is_admin</span> <span class="o">==</span> <span class="bp">False</span><span class="p">,</span> <span class="n">User</span><span class="o">.</span><span class="n">last_login</span> <span class="o">&gt;=</span> <span class="n">day_begin</span><span class="p">,</span>
+                                      <span class="n">User</span><span class="o">.</span><span class="n">last_login</span> <span class="o">&lt;</span> <span class="n">day_end</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">current_app</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="n">active_count</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+  
+    <span class="n">active_date</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+    <span class="n">active_count</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+  
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;total_count&#34;</span><span class="p">:</span> <span class="n">total_count</span><span class="p">,</span> <span class="s2">&#34;mon_count&#34;</span><span class="p">:</span> <span class="n">mon_count</span><span class="p">,</span> <span class="s2">&#34;day_count&#34;</span><span class="p">:</span> <span class="n">day_count</span><span class="p">,</span> <span class="s2">&#34;active_date&#34;</span><span class="p">:</span> <span class="n">active_date</span><span class="p">,</span>
+            <span class="s2">&#34;active_count&#34;</span><span class="p">:</span> <span class="n">active_count</span><span class="p">}</span>
+  
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;admin/user_count.html&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h2 id="用户列表">用户列表</h2>
+<h3 id="需求">需求</h3>
+<p>按用户最后一次登录倒序分页展示用户列表</p>
+<h3 id="实现准备-1">实现准备</h3>
+<p>将 <code>static/admin/user_list.html</code> 拖到 <code>templates/admin/</code> 目录下</p>
+<h3 id="代码实现-4">代码实现</h3>
+<p>后端逻辑</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="nd">@admin_blu.route</span><span class="p">(</span><span class="s1">&#39;/user_list&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">user_list</span><span class="p">():</span>
+    <span class="s2">&#34;&#34;&#34;获取用户列表&#34;&#34;&#34;</span>
+
+    <span class="c1"># 获取参数</span>
+    <span class="n">page</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;p&#34;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">page</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">page</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">current_app</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="n">page</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="c1"># 设置变量默认值</span>
+    <span class="n">users</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">current_page</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">total_page</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="c1"># 查询数据</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">paginate</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">User</span><span class="o">.</span><span class="n">is_admin</span> <span class="o">==</span> <span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="n">User</span><span class="o">.</span><span class="n">last_login</span><span class="o">.</span><span class="n">desc</span><span class="p">())</span><span class="o">.</span><span class="n">paginate</span><span class="p">(</span><span class="n">page</span><span class="p">,</span> <span class="n">constants</span><span class="o">.</span><span class="n">ADMIN_USER_PAGE_MAX_COUNT</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+        <span class="n">users</span> <span class="o">=</span> <span class="n">paginate</span><span class="o">.</span><span class="n">items</span>
+        <span class="n">current_page</span> <span class="o">=</span> <span class="n">paginate</span><span class="o">.</span><span class="n">page</span>
+        <span class="n">total_page</span> <span class="o">=</span> <span class="n">paginate</span><span class="o">.</span><span class="n">pages</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">current_app</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+
+    <span class="c1"># 将模型列表转成字典列表</span>
+    <span class="n">users_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">users</span><span class="p">:</span>
+        <span class="n">users_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">user</span><span class="o">.</span><span class="n">to_admin_dict</span><span class="p">())</span>
+
+    <span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;total_page&#34;</span><span class="p">:</span> <span class="n">total_page</span><span class="p">,</span> <span class="s2">&#34;current_page&#34;</span><span class="p">:</span> <span class="n">current_page</span><span class="p">,</span> <span class="s2">&#34;users&#34;</span><span class="p">:</span> <span class="n">users_list</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;admin/user_list.html&#39;</span><span class="p">,</span>
+                           <span class="n">data</span><span class="o">=</span><span class="n">context</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="文章版式编辑">文章版式编辑</h2>
+<h3 id="需求分析-4">需求分析</h3>
+<ul>
+<li>以分页的形式按文章创建时间倒序展示出文章数据</li>
+<li>可以使用关键这这对文章标题进行搜索</li>
+<li>点击编辑进入编辑详情页面</li>
+</ul>
+<h3 id="实现准备-2">实现准备</h3>
+<ul>
+<li>将 <code>static/admin/</code> 目录下的 <code>blog_edit.html</code> 以及 <code>blog_edit_detail.html</code> 拖到 <code>templates/admin/</code> 目录下</li>
+</ul>
+<h3 id="代码实现-5">代码实现</h3>
+<ul>
+<li>在 <code>admin/views.py</code> 文件中添加视图函数以返回文章列表</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="nd">@admin_blu.route</span><span class="p">(</span><span class="s1">&#39;/blog_edit&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">blog_edit</span><span class="p">():</span>
+    <span class="s2">&#34;&#34;&#34;返回文章列表&#34;&#34;&#34;</span>
+
+    <span class="n">page</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;p&#34;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">keywords</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;keywords&#34;</span><span class="p">,</span> <span class="s2">&#34;&#34;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">page</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">page</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">current_app</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="n">page</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="n">blog_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">current_page</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">total_page</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">filters</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="c1"># 如果有关键词</span>
+        <span class="k">if</span> <span class="n">keywords</span><span class="p">:</span>
+            <span class="c1"># 添加关键词的检索选项</span>
+            <span class="n">filters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">blog</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">keywords</span><span class="p">))</span>
+
+        <span class="c1"># 查询</span>
+        <span class="n">paginate</span> <span class="o">=</span> <span class="n">blog</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="o">*</span><span class="n">filters</span><span class="p">)</span> \
+            <span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="n">blog</span><span class="o">.</span><span class="n">create_time</span><span class="o">.</span><span class="n">desc</span><span class="p">())</span> \
+            <span class="o">.</span><span class="n">paginate</span><span class="p">(</span><span class="n">page</span><span class="p">,</span> <span class="n">constants</span><span class="o">.</span><span class="n">ADMIN_blog_PAGE_MAX_COUNT</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+
+        <span class="n">blog_list</span> <span class="o">=</span> <span class="n">paginate</span><span class="o">.</span><span class="n">items</span>
+        <span class="n">current_page</span> <span class="o">=</span> <span class="n">paginate</span><span class="o">.</span><span class="n">page</span>
+        <span class="n">total_page</span> <span class="o">=</span> <span class="n">paginate</span><span class="o">.</span><span class="n">pages</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">current_app</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+
+    <span class="n">blog_dict_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">blog</span> <span class="ow">in</span> <span class="n">blog_list</span><span class="p">:</span>
+        <span class="n">blog_dict_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">blog</span><span class="o">.</span><span class="n">to_basic_dict</span><span class="p">())</span>
+
+    <span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;total_page&#34;</span><span class="p">:</span> <span class="n">total_page</span><span class="p">,</span> <span class="s2">&#34;current_page&#34;</span><span class="p">:</span> <span class="n">current_page</span><span class="p">,</span> <span class="s2">&#34;blog_list&#34;</span><span class="p">:</span> <span class="n">blog_dict_list</span><span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;admin/blog_edit.html&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">context</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="博文版式编辑详情">博文版式编辑详情</h2>
+<h3 id="编辑详情界面数据">编辑详情界面数据</h3>
+<ul>
+<li>在 <code>admin/views.py</code> 中添加博文编辑详情视图函数，接收博文id为参数</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="nd">@admin_blu.route</span><span class="p">(</span><span class="s1">&#39;/blog_edit_detail&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">blog_edit_detail</span><span class="p">():</span>
+    <span class="s2">&#34;&#34;&#34;博文编辑详情&#34;&#34;&#34;</span>
+
+    <span class="c1"># 获取参数</span>
+    <span class="n">blog_id</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;blog_id&#34;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">blog_id</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;admin/blog_edit_detail.html&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&#34;errmsg&#34;</span><span class="p">:</span> <span class="s2">&#34;未查询到此博文&#34;</span><span class="p">})</span>
+
+    <span class="c1"># 查询博文</span>
+    <span class="n">blog</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">blog</span> <span class="o">=</span> <span class="n">blog</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">blog_id</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">current_app</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">blog</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;admin/blog_edit_detail.html&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&#34;errmsg&#34;</span><span class="p">:</span> <span class="s2">&#34;未查询到此博文&#34;</span><span class="p">})</span>
+
+    <span class="c1"># 查询分类的数据</span>
+    <span class="n">categories</span> <span class="o">=</span> <span class="n">Category</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="n">categories_li</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">category</span> <span class="ow">in</span> <span class="n">categories</span><span class="p">:</span>
+        <span class="n">c_dict</span> <span class="o">=</span> <span class="n">category</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+        <span class="n">c_dict</span><span class="p">[</span><span class="s2">&#34;is_selected&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="k">if</span> <span class="n">category</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="n">blog</span><span class="o">.</span><span class="n">category_id</span><span class="p">:</span>
+            <span class="n">c_dict</span><span class="p">[</span><span class="s2">&#34;is_selected&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="n">categories_li</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c_dict</span><span class="p">)</span>
+    <span class="c1"># 移除`最新`分类</span>
+    <span class="n">categories_li</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;blog&#34;</span><span class="p">:</span> <span class="n">blog</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span> <span class="s2">&#34;categories&#34;</span><span class="p">:</span> <span class="n">categories_li</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;admin/blog_edit_detail.html&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="博文编辑提交">博文编辑提交</h3>
+<ul>
+<li>修改视图函数，使其能够接受POST请求执行保存编辑操作，并实现其代码</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="nd">@admin_blu.route</span><span class="p">(</span><span class="s1">&#39;/blog_edit_detail&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s2">&#34;GET&#34;</span><span class="p">,</span> <span class="s2">&#34;POST&#34;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">blog_edit_detail</span><span class="p">():</span>
+    <span class="s2">&#34;&#34;&#34;博文编辑详情&#34;&#34;&#34;</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s2">&#34;GET&#34;</span><span class="p">:</span>
+        <span class="o">...</span>
+        <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;admin/blog_edit_detail.html&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="n">blog_id</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;blog_id&#34;</span><span class="p">)</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;title&#34;</span><span class="p">)</span>
+    <span class="n">digest</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;digest&#34;</span><span class="p">)</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;content&#34;</span><span class="p">)</span>
+    <span class="n">index_image</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;index_image&#34;</span><span class="p">)</span>
+    <span class="n">category_id</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;category_id&#34;</span><span class="p">)</span>
+    <span class="c1"># 1.1 判断数据是否有值</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">([</span><span class="n">title</span><span class="p">,</span> <span class="n">digest</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">category_id</span><span class="p">]):</span>
+        <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">errno</span><span class="o">=</span><span class="n">RET</span><span class="o">.</span><span class="n">PARAMERR</span><span class="p">,</span> <span class="n">errmsg</span><span class="o">=</span><span class="s2">&#34;参数有误&#34;</span><span class="p">)</span>
+
+    <span class="n">blog</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">blog</span> <span class="o">=</span> <span class="n">blog</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">blog_id</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">current_app</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">blog</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">errno</span><span class="o">=</span><span class="n">RET</span><span class="o">.</span><span class="n">NODATA</span><span class="p">,</span> <span class="n">errmsg</span><span class="o">=</span><span class="s2">&#34;未查询到博文数据&#34;</span><span class="p">)</span>
+
+    <span class="c1"># 1.2 尝试读取图片</span>
+    <span class="k">if</span> <span class="n">index_image</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">index_image</span> <span class="o">=</span> <span class="n">index_image</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">current_app</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">errno</span><span class="o">=</span><span class="n">RET</span><span class="o">.</span><span class="n">PARAMERR</span><span class="p">,</span> <span class="n">errmsg</span><span class="o">=</span><span class="s2">&#34;参数有误&#34;</span><span class="p">)</span>
+
+        <span class="c1"># 2. 将标题图片上传到七牛</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="n">storage</span><span class="p">(</span><span class="n">index_image</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">current_app</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">errno</span><span class="o">=</span><span class="n">RET</span><span class="o">.</span><span class="n">THIRDERR</span><span class="p">,</span> <span class="n">errmsg</span><span class="o">=</span><span class="s2">&#34;上传图片错误&#34;</span><span class="p">)</span>
+        <span class="n">blog</span><span class="o">.</span><span class="n">index_image_url</span> <span class="o">=</span> <span class="n">constants</span><span class="o">.</span><span class="n">QINIU_DOMIN_PREFIX</span> <span class="o">+</span> <span class="n">key</span>
+    <span class="c1"># 3. 设置相关数据</span>
+    <span class="n">blog</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">title</span>
+    <span class="n">blog</span><span class="o">.</span><span class="n">digest</span> <span class="o">=</span> <span class="n">digest</span>
+    <span class="n">blog</span><span class="o">.</span><span class="n">content</span> <span class="o">=</span> <span class="n">content</span>
+    <span class="n">blog</span><span class="o">.</span><span class="n">category_id</span> <span class="o">=</span> <span class="n">category_id</span>
+
+    <span class="c1"># 4. 保存到数据库</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">current_app</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">rollback</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">errno</span><span class="o">=</span><span class="n">RET</span><span class="o">.</span><span class="n">DBERR</span><span class="p">,</span> <span class="n">errmsg</span><span class="o">=</span><span class="s2">&#34;保存数据失败&#34;</span><span class="p">)</span>
+    <span class="c1"># 5. 返回结果</span>
+    <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">errno</span><span class="o">=</span><span class="n">RET</span><span class="o">.</span><span class="n">OK</span><span class="p">,</span> <span class="n">errmsg</span><span class="o">=</span><span class="s2">&#34;编辑成功&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="博文分类管理">博文分类管理</h2>
+<h3 id="需求分析-5">需求分析</h3>
+<p>可以修改当前博文分类名，可以添加博文分类</p>
+<h3 id="实现准备-3">实现准备</h3>
+<p>将 <code>static/admin/blog_type.html</code> 文件拖到 <code>templates/admin/</code> 目录下</p>
+<h3 id="代码实现-6">代码实现</h3>
+<p>在 <code>admin/views.py</code> 文件中添加视图函数以返回分类列表</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="nd">@admin_blu.route</span><span class="p">(</span><span class="s1">&#39;/blog_category&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">get_blog_category</span><span class="p">():</span>
+    <span class="c1"># 获取所有的分类数据</span>
+    <span class="n">categories</span> <span class="o">=</span> <span class="n">Category</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="c1"># 定义列表保存分类数据</span>
+    <span class="n">categories_dicts</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">category</span> <span class="ow">in</span> <span class="n">categories</span><span class="p">:</span>
+        <span class="c1"># 获取字典</span>
+        <span class="n">cate_dict</span> <span class="o">=</span> <span class="n">category</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+        <span class="c1"># 拼接内容</span>
+        <span class="n">categories_dicts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cate_dict</span><span class="p">)</span>
+
+    <span class="n">categories_dicts</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="c1"># 返回内容</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;admin/blog_type.html&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&#34;categories&#34;</span><span class="p">:</span> <span class="n">categories_dicts</span><span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-06-28</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E9%A1%B9%E7%9B%AE%E5%8D%9A%E5%AE%A2%E5%90%8E%E5%8F%B0/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E9%A1%B9%E7%9B%AE%E5%8D%9A%E5%AE%A2%E5%90%8E%E5%8F%B0/" data-title="Python学习之路-Flask项目:博客后台" data-hashtags="Python学习之路"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E9%A1%B9%E7%9B%AE%E5%8D%9A%E5%AE%A2%E5%90%8E%E5%8F%B0/" data-hashtag="Python学习之路"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E9%A1%B9%E7%9B%AE%E5%8D%9A%E5%AE%A2%E5%90%8E%E5%8F%B0/" data-title="Python学习之路-Flask项目:博客后台" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E9%A1%B9%E7%9B%AE%E5%8D%9A%E5%AE%A2%E5%90%8E%E5%8F%B0/" data-title="Python学习之路-Flask项目:博客后台"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E9%A1%B9%E7%9B%AE%E5%8D%9A%E5%AE%A2%E5%90%8E%E5%8F%B0/" data-title="Python学习之路-Flask项目:博客后台"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E9%A1%B9%E7%9B%AE%E5%8D%9A%E5%AE%A2%E5%90%8E%E5%8F%B0/" data-title="Python学习之路-Flask项目:博客后台" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E9%A1%B9%E7%9B%AE%E5%8D%9A%E5%AE%A2%E5%90%8E%E5%8F%B0/" data-title="Python学习之路-Flask项目:博客后台" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E9%A1%B9%E7%9B%AE%E5%8D%9A%E5%AE%A2%E5%90%8E%E5%8F%B0/" data-title="Python学习之路-Flask项目:博客后台"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/">Python学习之路</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E9%A1%B9%E7%9B%AE%E5%8D%9A%E5%AE%A2%E5%89%8D%E5%8F%B0/" class="prev" rel="prev" title="Python学习之路-Flask项目:博客前台"><i class="fas fa-angle-left fa-fw"></i>Python学习之路-Flask项目:博客前台</a>
+            <a href="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E9%A1%B9%E7%9B%AE%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/" class="next" rel="next" title="Python学习之路-Flask项目:项目部署">Python学习之路-Flask项目:项目部署<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.74.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2018 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Silence</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.4afae7d446ba01ebf7fff19893eaf3a1.css" integrity="md5-Svrn1Ea6Aev3//GYk&#43;rzoQ=="><link rel="stylesheet" href="/lib/katex/copy-tex.min.b1994d1b9785dd8801dbf655df7bf6d9.css" integrity="md5-sZlNG5eF3YgB2/ZV33v22Q=="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.acf82ee47549fdc386d02768992a49ad.css" integrity="md5-rPgu5HVJ/cOG0CdomSpJrQ=="><script type="text/javascript" src="/lib/valine/Valine.min.b1d2c9b89c70dbf0a8541bfd36afafa1.js" integrity="md5-sdLJuJxw2/CoVBv9Nq&#43;voQ=="></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.100efdceabf7a138f3297e437d078f74.js" integrity="md5-EA79zqv3oTjzKX5DfQePdA=="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.ae7c5011def46b283696baf367586b5d.js" integrity="md5-rnxQEd70ayg2lrrzZ1hrXQ=="></script><script type="text/javascript" src="/lib/lunr/lunr.min.a08f2562fde4550269dfc13028ed2502.js" integrity="md5-oI8lYv3kVQJp38EwKO0lAg=="></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.b82fb8d93ce0ea6a485dfa3a0b1e7573.js" integrity="md5-uC&#43;42Tzg6mpIXfo6Cx51cw=="></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.f1ba3e22560e2eb7474f28feb4507617.js" integrity="md5-8bo&#43;IlYOLrdHTyj&#43;tFB2Fw=="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.b80e49640d4794d4333d00db76ea22f7.js" integrity="md5-uA5JZA1HlNQzPQDbduoi9w=="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.af8ab36589315582ccdd82f22e84bffb.js" integrity="md5-r4qzZYkxVYLM3YLyLoS/&#43;w=="></script><script type="text/javascript" src="/lib/sharer/sharer.min.c3c3372b4cf5c56dd4e5a4be8ada86c9.js" integrity="md5-w8M3K0z1xW3U5aS&#43;itqGyQ=="></script><script type="text/javascript" src="/lib/typeit/typeit.min.b5f3481ebeaa3e56a2f5f96ea648bf69.js" integrity="md5-tfNIHr6qPlai9flupki/aQ=="></script><script type="text/javascript" src="/lib/katex/katex.min.c158c9e823b681cf535f46596b5e4eac.js" integrity="md5-wVjJ6CO2gc9TX0ZZa15OrA=="></script><script type="text/javascript" src="/lib/katex/auto-render.min.28cd0b98cd3f4fa37d52f3ffe47ad9d4.js" integrity="md5-KM0LmM0/T6N9UvP/5HrZ1A=="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.bfaec7d1dea915d74a7a6d833f0ff62e.js" integrity="md5-v67H0d6pFddKem2DPw/2Lg=="></script><script type="text/javascript" src="/lib/katex/mhchem.min.1bbb252363e83547d4b2186a41eaca28.js" integrity="md5-G7slI2PoNUfUshhqQerKKA=="></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.4a48532bf0b17c058b8b6854f49de23f.js" integrity="md5-SkhTK/CxfAWLi2hU9J3iPw=="></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"c4VA4R1Xg3drBKSQzNfWnWlF-gzGzoHsz","appKey":"upEyt7esgWCbm0L7EPDH6bhV","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","meta":["nick","mail"],"pageSize":10,"placeholder":"说点什么吧...","recordIP":true,"visitor":true}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"id-1":"Silence’s Blog","id-2":"Silence’s Blog"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.7bc7989e979c4a19d97db3ab311a80fe.js" integrity="md5-e8eYnpecShnZfbOrMRqA/g=="></script></body>
+</html>

@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Python学习之路-Flask基础:数据库 - Silence Blog</title><meta name="Description" content="Silence‘s blog"><meta property="og:title" content="Python学习之路-Flask基础:数据库" />
+<meta property="og:description" content="ORM全拼Object-Relation Mapping，中文意为 对象-关系映射。主要实现模型对象到关系数据库数据的映射." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E5%BA%93/" />
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
+<meta property="article:published_time" content="2020-05-30T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-05-31T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
+
+<meta name="twitter:title" content="Python学习之路-Flask基础:数据库"/>
+<meta name="twitter:description" content="ORM全拼Object-Relation Mapping，中文意为 对象-关系映射。主要实现模型对象到关系数据库数据的映射."/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E5%BA%93/" /><link rel="prev" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80%E6%A8%A1%E6%9D%BF/" /><link rel="next" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80%E8%93%9D%E5%9B%BE/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.2e7125082ec8de83a87adc70253c9c23.css" integrity="md5-LnElCC7I3oOoetxwJTycIw=="><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.76cb46c10b6c0293433b371bae2414b2.css" integrity="md5-dstGwQtsApNDOzcbriQUsg=="><link rel="stylesheet" href="/lib/animate/animate.min.bc1a6a99c43f5ccc97d2d350bde13f74.css" integrity="md5-vBpqmcQ/XMyX0tNQveE/dA=="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Python学习之路-Flask基础:数据库",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/silencehuliang.github.io\/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E5%BA%93\/"
+        },"genre": "posts","keywords": "Python学习之路","wordcount":  4671 ,
+        "url": "https:\/\/silencehuliang.github.io\/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E5%BA%93\/","datePublished": "2020-05-30T00:00:00+00:00","dateModified": "2020-05-31T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "Silence"},"author": {
+                "@type": "Person",
+                "name": "Silence"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Silence Blog"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+        data-srcset="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg, https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg 1.5x, https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+        title="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg" /><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Silence Blog"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+        data-srcset="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg, https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg 1.5x, https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+        title="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg" /><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Python学习之路-Flask基础:数据库</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Silence</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/flask/"><i class="far fa-folder fa-fw"></i>Flask</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-05-30">2020-05-30</time>&nbsp;<i class="fa fa-history" aria-hidden="true"></i>
+                2020-05-31
+                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4671 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 10 分钟&nbsp;<span id="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E5%BA%93/" class="leancloud_visitors" data-flag-title="Python学习之路-Flask基础:数据库">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#orm">ORM</a>
+      <ul>
+        <li><a href="#简介">简介</a></li>
+        <li><a href="#优点">优点</a></li>
+        <li><a href="#缺点">缺点</a></li>
+        <li><a href="#sqlalchemy">SQLALchemy</a>
+          <ul>
+            <li><a href="#安装">安装</a></li>
+            <li><a href="#数据库连接设置">数据库连接设置</a></li>
+            <li><a href="#连接其他数据库">连接其他数据库</a></li>
+            <li><a href="#常用的字段类型">常用的字段类型</a></li>
+            <li><a href="#常用的列选项">常用的列选项</a></li>
+            <li><a href="#常用的关系选项">常用的关系选项</a></li>
+            <li><a href="#数据库基本操作">数据库基本操作</a></li>
+            <li><a href="#在视图函数中定义模型类">在视图函数中定义模型类</a></li>
+            <li><a href="#模型之前的关联">模型之前的关联</a>
+              <ul>
+                <li><a href="#一对多">一对多</a></li>
+                <li><a href="#多对多">多对多</a></li>
+              </ul>
+            </li>
+            <li><a href="#常用的查询过滤器">常用的查询过滤器</a></li>
+            <li><a href="#常用的查询执行器">常用的查询执行器</a></li>
+            <li><a href="#创建表">创建表</a></li>
+            <li><a href="#删除表">删除表</a></li>
+            <li><a href="#插入一条数据">插入一条数据</a></li>
+            <li><a href="#一次插入多条数据">一次插入多条数据</a></li>
+            <li><a href="#查询">查询:</a>
+              <ul>
+                <li><a href="#filter_by">filter_by</a></li>
+                <li><a href="#first">first</a></li>
+                <li><a href="#all">all</a></li>
+                <li><a href="#filter">filter</a></li>
+                <li><a href="#get">get</a></li>
+                <li><a href="#heading">!=</a></li>
+                <li><a href="#not_">not_</a></li>
+                <li><a href="#and_">and_</a></li>
+                <li><a href="#or_">or_</a></li>
+              </ul>
+            </li>
+            <li><a href="#查询数据后删除">查询数据后删除</a></li>
+            <li><a href="#更新数据">更新数据</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#数据库迁移">数据库迁移</a>
+      <ul>
+        <li><a href="#简介-1">简介</a></li>
+        <li><a href="#使用">使用</a></li>
+      </ul>
+    </li>
+    <li><a href="#信号机制">信号机制</a>
+      <ul>
+        <li><a href="#简介-2">简介</a></li>
+        <li><a href="#应用场景">应用场景</a></li>
+        <li><a href="#flask-sqlalchemy-信号支持">Flask-SQLAlchemy 信号支持</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="orm">ORM</h2>
+<h3 id="简介">简介</h3>
+<p><code>ORM</code>全拼<code>Object-Relation Mapping</code>，中文意为 <code>对象-关系映射</code>。主要实现模型对象到关系数据库数据的映射.</p>
+<h3 id="优点">优点</h3>
+<ul>
+<li>只需要面向对象编程, 不需要面向数据库编写代码。对数据库的操作都转化成对类属性和方法的操作，不用编写各种数据库的<code>sql</code>语句。</li>
+<li>实现了数据模型与数据库的解耦，屏蔽了不同数据库操作上的差异。不在关注用的是<code>mysql</code>、<code>oracle</code>&hellip;等。通过简单的配置就可以轻松更换数据库, 而不需要修改代码.</li>
+</ul>
+<h3 id="缺点">缺点</h3>
+<ul>
+<li>相比较直接使用SQL语句操作数据库,有性能损失。</li>
+<li>根据对象的操作转换成SQL语句,根据查询的结果转化成对象, 在映射过程中有性能损失。</li>
+</ul>
+<h3 id="sqlalchemy">SQLALchemy</h3>
+<p><code>SQLALchemy</code>实际上是对数据库的抽象，让开发者不用直接和<code>SQL</code>语句打交道，而是通过<code>Python</code>对象来操作数据库，在舍弃一些性能开销的同时，换来的是开发效率的较大提升。<code>SQLAlchemy</code>是一个关系型数据库框架，它提供了高层的 <code>ORM</code>和底层的原生数据库的操作。<code>flask-sqlalchemy</code>是一个简化了<code>SQLAlchemy</code>操作的flask扩展。</p>
+<p>文档地址：http://docs.jinkan.org/docs/flask-sqlalchemy</p>
+<h4 id="安装">安装</h4>
+<ul>
+<li>安装 flask-sqlalchemy</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">pip install flask-sqlalchemy
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>如果连接的是 mysql 数据库，需要安装 mysqldb</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">pip install flask-mysqldb
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="数据库连接设置">数据库连接设置</h4>
+<ul>
+<li>在 Flask-SQLAlchemy 中，数据库使用URL指定，而且程序使用的数据库必须保存到Flask配置对象的 <strong>SQLALCHEMY_DATABASE_URI</strong> 键中</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;SQLALCHEMY_DATABASE_URI&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;mysql://root:mysql@127.0.0.1:3306/test&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>其他设置：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 动态追踪修改设置，如未设置只会提示警告</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;SQLALCHEMY_TRACK_MODIFICATIONS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="c1">#查询时会显示原始SQL语句</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;SQLALCHEMY_ECHO&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>配置完成需要去 MySQL 中创建项目所使用的数据库</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ mysql -uroot -pmysql
+$ create database <span class="nb">test</span> charset utf8<span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>其他配置</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">名字</th>
+<th align="left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">SQLALCHEMY_DATABASE_URI</td>
+<td align="left">用于连接的数据库 URI 。例如:sqlite:////tmp/test.dbmysql://username:password@server/db</td>
+</tr>
+<tr>
+<td align="left">SQLALCHEMY_BINDS</td>
+<td align="left">一个映射 binds 到连接 URI 的字典。更多 binds 的信息见<a href="http://docs.jinkan.org/docs/flask-sqlalchemy/binds.html#binds" target="_blank" rel="noopener noreffer"><em>用 Binds 操作多个数据库</em></a>。</td>
+</tr>
+<tr>
+<td align="left">SQLALCHEMY_ECHO</td>
+<td align="left">如果设置为Ture， SQLAlchemy 会记录所有 发给 stderr 的语句，这对调试有用。(打印sql语句)</td>
+</tr>
+<tr>
+<td align="left">SQLALCHEMY_RECORD_QUERIES</td>
+<td align="left">可以用于显式地禁用或启用查询记录。查询记录 在调试或测试模式自动启用。更多信息见get_debug_queries()。</td>
+</tr>
+<tr>
+<td align="left">SQLALCHEMY_NATIVE_UNICODE</td>
+<td align="left">可以用于显式禁用原生 unicode 支持。当使用 不合适的指定无编码的数据库默认值时，这对于 一些数据库适配器是必须的（比如 Ubuntu 上 某些版本的 PostgreSQL ）。</td>
+</tr>
+<tr>
+<td align="left">SQLALCHEMY_POOL_SIZE</td>
+<td align="left">数据库连接池的大小。默认是引擎默认值（通常 是 5 ）</td>
+</tr>
+<tr>
+<td align="left">SQLALCHEMY_POOL_TIMEOUT</td>
+<td align="left">设定连接池的连接超时时间。默认是 10 。</td>
+</tr>
+<tr>
+<td align="left">SQLALCHEMY_POOL_RECYCLE</td>
+<td align="left">多少秒后自动回收连接。这对 MySQL 是必要的， 它默认移除闲置多于 8 小时的连接。注意如果 使用了 MySQL ， Flask-SQLALchemy 自动设定 这个值为 2 小时。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="连接其他数据库">连接其他数据库</h4>
+<p>完整连接 URI 列表请跳转到 SQLAlchemy 下面的文档 (<a href="http://www.sqlalchemy.org/docs/core/engines.html" target="_blank" rel="noopener noreffer">Supported Databases</a>) 。这里给出一些 常见的连接字符串。</p>
+<ul>
+<li>Postgres:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">postgresql://scott:tiger@localhost/mydatabase
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>MySQL:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">mysql://scott:tiger@localhost/mydatabase
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Oracle:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">- oracle://scott:tiger@127.0.0.1:1521/sidname
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>SQLite （注意开头的四个斜线）:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">sqlite:////absolute/path/to/foo.db
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="常用的字段类型">常用的字段类型</h4>
+<table>
+<thead>
+<tr>
+<th align="center">类型名</th>
+<th align="center">python中类型</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Integer</td>
+<td align="center">int</td>
+<td align="center">普通整数，一般是32位</td>
+</tr>
+<tr>
+<td align="center">SmallInteger</td>
+<td align="center">int</td>
+<td align="center">取值范围小的整数，一般是16位</td>
+</tr>
+<tr>
+<td align="center">BigInteger</td>
+<td align="center">int或long</td>
+<td align="center">不限制精度的整数</td>
+</tr>
+<tr>
+<td align="center">Float</td>
+<td align="center">float</td>
+<td align="center">浮点数</td>
+</tr>
+<tr>
+<td align="center">Numeric</td>
+<td align="center">decimal.Decimal</td>
+<td align="center">普通整数，一般是32位</td>
+</tr>
+<tr>
+<td align="center">String</td>
+<td align="center">str</td>
+<td align="center">变长字符串</td>
+</tr>
+<tr>
+<td align="center">Text</td>
+<td align="center">str</td>
+<td align="center">变长字符串，对较长或不限长度的字符串做了优化</td>
+</tr>
+<tr>
+<td align="center">Unicode</td>
+<td align="center">unicode</td>
+<td align="center">变长Unicode字符串</td>
+</tr>
+<tr>
+<td align="center">UnicodeText</td>
+<td align="center">unicode</td>
+<td align="center">变长Unicode字符串，对较长或不限长度的字符串做了优化</td>
+</tr>
+<tr>
+<td align="center">Boolean</td>
+<td align="center">bool</td>
+<td align="center">布尔值</td>
+</tr>
+<tr>
+<td align="center">Date</td>
+<td align="center">datetime.date</td>
+<td align="center">时间</td>
+</tr>
+<tr>
+<td align="center">Time</td>
+<td align="center">datetime.datetime</td>
+<td align="center">日期和时间</td>
+</tr>
+<tr>
+<td align="center">LargeBinary</td>
+<td align="center">str</td>
+<td align="center">二进制文件</td>
+</tr>
+</tbody>
+</table>
+<h4 id="常用的列选项">常用的列选项</h4>
+<table>
+<thead>
+<tr>
+<th align="center">选项名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">primary_key</td>
+<td align="center">如果为True，代表表的主键</td>
+</tr>
+<tr>
+<td align="center">unique</td>
+<td align="center">如果为True，代表这列不允许出现重复的值</td>
+</tr>
+<tr>
+<td align="center">index</td>
+<td align="center">如果为True，为这列创建索引，提高查询效率</td>
+</tr>
+<tr>
+<td align="center">nullable</td>
+<td align="center">如果为True，允许有空值，如果为False，不允许有空值</td>
+</tr>
+<tr>
+<td align="center">default</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<h4 id="常用的关系选项">常用的关系选项</h4>
+<table>
+<thead>
+<tr>
+<th align="left">选项名</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">backref</td>
+<td align="left">在关系的另一模型中添加反向引用</td>
+</tr>
+<tr>
+<td align="left">primary join</td>
+<td align="left">明确指定两个模型之间使用的联结条件</td>
+</tr>
+<tr>
+<td align="left">uselist</td>
+<td align="left">如果为False，不使用列表，而使用标量值</td>
+</tr>
+<tr>
+<td align="left">order_by</td>
+<td align="left">指定关系中记录的排序方式</td>
+</tr>
+<tr>
+<td align="left">secondary</td>
+<td align="left">指定多对多关系中关系表的名字</td>
+</tr>
+<tr>
+<td align="left">secondary join</td>
+<td align="left">在SQLAlchemy中无法自行决定时，指定多对多关系中的二级联结条件</td>
+</tr>
+</tbody>
+</table>
+<h4 id="数据库基本操作">数据库基本操作</h4>
+<ul>
+<li>在Flask-SQLAlchemy中，插入、修改、删除操作，均由数据库会话管理。会话用 db.session 表示。在准备把数据写入数据库前，要先将数据添加到会话中然后调用 commit() 方法提交会话。</li>
+<li>在 Flask-SQLAlchemy 中，查询操作是通过 query 对象操作数据。最基本的查询是返回表中所有数据，可以通过过滤器进行更精确的数据库查询。</li>
+</ul>
+<h4 id="在视图函数中定义模型类">在视图函数中定义模型类</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<span class="kn">from</span> <span class="nn">flask_sqlalchemy</span> <span class="kn">import</span> <span class="n">SQLAlchemy</span>
+
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="c1">#设置连接数据库的URL</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;SQLALCHEMY_DATABASE_URI&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;mysql://root:mysql@127.0.0.1:3306/test&#39;</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;SQLALCHEMY_TRACK_MODIFICATIONS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="c1">#查询时会显示原始SQL语句</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;SQLALCHEMY_ECHO&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">SQLAlchemy</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Role</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="c1"># 定义表名</span>
+    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s1">&#39;roles&#39;</span>
+    <span class="c1"># 定义列对象</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">64</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">relationship</span><span class="p">(</span><span class="s1">&#39;User&#39;</span><span class="p">,</span> <span class="n">backref</span><span class="o">=</span><span class="s1">&#39;role&#39;</span><span class="p">)</span>
+
+    <span class="c1">#repr()方法显示一个可读字符串</span>
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;Role:</span><span class="si">%s</span><span class="s1">&#39;</span><span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+
+<span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s1">&#39;users&#39;</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">64</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">email</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">64</span><span class="p">),</span><span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">password</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">64</span><span class="p">))</span>
+    <span class="n">role_id</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">db</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="s1">&#39;roles.id&#39;</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;User:</span><span class="si">%s</span><span class="s1">&#39;</span><span class="o">%</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="模型之前的关联">模型之前的关联</h4>
+<h5 id="一对多">一对多</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Role</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="o">...</span>
+    <span class="c1">#关键代码</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">relationship</span><span class="p">(</span><span class="s1">&#39;User&#39;</span><span class="p">,</span> <span class="n">backref</span><span class="o">=</span><span class="s1">&#39;role&#39;</span><span class="p">,</span> <span class="n">lazy</span><span class="o">=</span><span class="s1">&#39;dynamic&#39;</span><span class="p">)</span>
+    <span class="o">...</span>
+
+<span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="o">...</span>
+    <span class="n">role_id</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">db</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="s1">&#39;roles.id&#39;</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>其中realtionship描述了Role和User的关系。在此文中，第一个参数为对应参照的类&quot;User&rdquo;</li>
+<li>第二个参数backref为类User申明新属性的方法</li>
+<li>第三个参数lazy决定了什么时候SQLALchemy从数据库中加载数据
+<ul>
+<li>如果设置为子查询方式(subquery)，则会在加载完Role对象后，就立即加载与其关联的对象，这样会让总查询数量减少，但如果返回的条目数量很多，就会比较慢
+<ul>
+<li>设置为 subquery 的话，role.users 返回所有数据列表</li>
+</ul>
+</li>
+<li>另外,也可以设置为动态方式(dynamic)，这样关联对象会在被使用的时候再进行加载，并且在返回前进行过滤，如果返回的对象数很多，或者未来会变得很多，那最好采用这种方式
+<ul>
+<li>设置为 dynamic 的话，role.users 返回查询对象，并没有做真正的查询，可以利用查询对象做其他逻辑，比如：先排序再返回结果</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="多对多">多对多</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">registrations</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Table</span><span class="p">(</span><span class="s1">&#39;registrations&#39;</span><span class="p">,</span>  
+    <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="s1">&#39;student_id&#39;</span><span class="p">,</span> <span class="n">db</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">db</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="s1">&#39;students.id&#39;</span><span class="p">)),</span>  
+    <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="s1">&#39;course_id&#39;</span><span class="p">,</span> <span class="n">db</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">db</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="s1">&#39;courses.id&#39;</span><span class="p">))</span>  
+<span class="p">)</span>  
+<span class="k">class</span> <span class="nc">Course</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="o">...</span>
+<span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="o">...</span>
+    <span class="n">courses</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">relationship</span><span class="p">(</span><span class="s1">&#39;Course&#39;</span><span class="p">,</span><span class="n">secondary</span><span class="o">=</span><span class="n">registrations</span><span class="p">,</span>  
+                                    <span class="n">backref</span><span class="o">=</span><span class="s1">&#39;students&#39;</span><span class="p">,</span>  
+                                    <span class="n">lazy</span><span class="o">=</span><span class="s1">&#39;dynamic&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="常用的查询过滤器">常用的查询过滤器</h4>
+<table>
+<thead>
+<tr>
+<th align="center">过滤器</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">filter()</td>
+<td align="center">把过滤器添加到原查询上，返回一个新查询</td>
+</tr>
+<tr>
+<td align="center">filter_by()</td>
+<td align="center">把等值过滤器添加到原查询上，返回一个新查询</td>
+</tr>
+<tr>
+<td align="center">limit</td>
+<td align="center">使用指定的值限定原查询返回的结果</td>
+</tr>
+<tr>
+<td align="center">offset()</td>
+<td align="center">偏移原查询返回的结果，返回一个新查询</td>
+</tr>
+<tr>
+<td align="center">order_by()</td>
+<td align="center">根据指定条件对原查询结果进行排序，返回一个新查询</td>
+</tr>
+<tr>
+<td align="center">group_by()</td>
+<td align="center">根据指定条件对原查询结果进行分组，返回一个新查询</td>
+</tr>
+</tbody>
+</table>
+<h4 id="常用的查询执行器">常用的查询执行器</h4>
+<table>
+<thead>
+<tr>
+<th align="center">方法</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">all()</td>
+<td align="center">以列表形式返回查询的所有结果</td>
+</tr>
+<tr>
+<td align="center">first()</td>
+<td align="center">返回查询的第一个结果，如果未查到，返回None</td>
+</tr>
+<tr>
+<td align="center">first_or_404()</td>
+<td align="center">返回查询的第一个结果，如果未查到，返回404</td>
+</tr>
+<tr>
+<td align="center">get()</td>
+<td align="center">返回指定主键对应的行，如不存在，返回None</td>
+</tr>
+<tr>
+<td align="center">get_or_404()</td>
+<td align="center">返回指定主键对应的行，如不存在，返回404</td>
+</tr>
+<tr>
+<td align="center">count()</td>
+<td align="center">返回查询结果的数量</td>
+</tr>
+<tr>
+<td align="center">paginate()</td>
+<td align="center">返回一个Paginate对象，它包含指定范围内的结果</td>
+</tr>
+</tbody>
+</table>
+<h4 id="创建表">创建表</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">db.create_all()
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="删除表">删除表</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">db.drop_all()
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="插入一条数据">插入一条数据</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">ro1 = Role(name=&#39;admin&#39;)
+db.session.add(ro1)
+db.session.commit()
+#再次插入一条数据
+ro2 = Role(name=&#39;user&#39;)
+db.session.add(ro2)
+db.session.commit()
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="一次插入多条数据">一次插入多条数据</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">us1</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;wang&#39;</span><span class="p">,</span><span class="n">email</span><span class="o">=</span><span class="s1">&#39;wang@163.com&#39;</span><span class="p">,</span><span class="n">password</span><span class="o">=</span><span class="s1">&#39;123456&#39;</span><span class="p">,</span><span class="n">role_id</span><span class="o">=</span><span class="n">ro1</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+<span class="n">us2</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;zhang&#39;</span><span class="p">,</span><span class="n">email</span><span class="o">=</span><span class="s1">&#39;zhang@189.com&#39;</span><span class="p">,</span><span class="n">password</span><span class="o">=</span><span class="s1">&#39;201512&#39;</span><span class="p">,</span><span class="n">role_id</span><span class="o">=</span><span class="n">ro2</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+<span class="n">us3</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;chen&#39;</span><span class="p">,</span><span class="n">email</span><span class="o">=</span><span class="s1">&#39;chen@126.com&#39;</span><span class="p">,</span><span class="n">password</span><span class="o">=</span><span class="s1">&#39;987654&#39;</span><span class="p">,</span><span class="n">role_id</span><span class="o">=</span><span class="n">ro2</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+<span class="n">us4</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;zhou&#39;</span><span class="p">,</span><span class="n">email</span><span class="o">=</span><span class="s1">&#39;zhou@163.com&#39;</span><span class="p">,</span><span class="n">password</span><span class="o">=</span><span class="s1">&#39;456789&#39;</span><span class="p">,</span><span class="n">role_id</span><span class="o">=</span><span class="n">ro1</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+<span class="n">us5</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;tang&#39;</span><span class="p">,</span><span class="n">email</span><span class="o">=</span><span class="s1">&#39;tang@itheima.com&#39;</span><span class="p">,</span><span class="n">password</span><span class="o">=</span><span class="s1">&#39;158104&#39;</span><span class="p">,</span><span class="n">role_id</span><span class="o">=</span><span class="n">ro2</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+<span class="n">us6</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;wu&#39;</span><span class="p">,</span><span class="n">email</span><span class="o">=</span><span class="s1">&#39;wu@gmail.com&#39;</span><span class="p">,</span><span class="n">password</span><span class="o">=</span><span class="s1">&#39;5623514&#39;</span><span class="p">,</span><span class="n">role_id</span><span class="o">=</span><span class="n">ro2</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+<span class="n">us7</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;qian&#39;</span><span class="p">,</span><span class="n">email</span><span class="o">=</span><span class="s1">&#39;qian@gmail.com&#39;</span><span class="p">,</span><span class="n">password</span><span class="o">=</span><span class="s1">&#39;1543567&#39;</span><span class="p">,</span><span class="n">role_id</span><span class="o">=</span><span class="n">ro1</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+<span class="n">us8</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;liu&#39;</span><span class="p">,</span><span class="n">email</span><span class="o">=</span><span class="s1">&#39;liu@itheima.com&#39;</span><span class="p">,</span><span class="n">password</span><span class="o">=</span><span class="s1">&#39;867322&#39;</span><span class="p">,</span><span class="n">role_id</span><span class="o">=</span><span class="n">ro1</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+<span class="n">us9</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;li&#39;</span><span class="p">,</span><span class="n">email</span><span class="o">=</span><span class="s1">&#39;li@163.com&#39;</span><span class="p">,</span><span class="n">password</span><span class="o">=</span><span class="s1">&#39;4526342&#39;</span><span class="p">,</span><span class="n">role_id</span><span class="o">=</span><span class="n">ro2</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+<span class="n">us10</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;sun&#39;</span><span class="p">,</span><span class="n">email</span><span class="o">=</span><span class="s1">&#39;sun@163.com&#39;</span><span class="p">,</span><span class="n">password</span><span class="o">=</span><span class="s1">&#39;235523&#39;</span><span class="p">,</span><span class="n">role_id</span><span class="o">=</span><span class="n">ro2</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+<span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">add_all</span><span class="p">([</span><span class="n">us1</span><span class="p">,</span><span class="n">us2</span><span class="p">,</span><span class="n">us3</span><span class="p">,</span><span class="n">us4</span><span class="p">,</span><span class="n">us5</span><span class="p">,</span><span class="n">us6</span><span class="p">,</span><span class="n">us7</span><span class="p">,</span><span class="n">us8</span><span class="p">,</span><span class="n">us9</span><span class="p">,</span><span class="n">us10</span><span class="p">])</span>
+<span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+
+
+<span class="s2">&#34;&#34;&#34;
+</span><span class="s2">查询所有用户数据
+</span><span class="s2">查询有多少个用户
+</span><span class="s2">查询第1个用户
+</span><span class="s2">查询id为4的用户[3种方式]
+</span><span class="s2">查询名字结尾字符为g的所有数据[开始/包含]
+</span><span class="s2">查询名字不等于wang的所有数据[2种方式]
+</span><span class="s2">查询名字和邮箱都以 li 开头的所有数据[2种方式]
+</span><span class="s2">查询password是 `123456` 或者 `email` 以 `itheima.com` 结尾的所有数据
+</span><span class="s2">查询id为 [1, 3, 5, 7, 9] 的用户列表
+</span><span class="s2">查询name为liu的角色数据
+</span><span class="s2">查询所有用户数据，并以邮箱排序
+</span><span class="s2">每页3个，查询第2页的数据
+</span><span class="s2">&#34;&#34;&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="查询">查询:</h4>
+<h5 id="filter_by">filter_by</h5>
+<p>精确查询,例：返回名字等于wang的所有人</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">User.query.filter_by<span class="o">(</span><span class="nv">name</span><span class="o">=</span><span class="s1">&#39;wang&#39;</span><span class="o">)</span>.all<span class="o">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="first">first</h5>
+<p>返回查询到的第一个对象</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">User.query.first<span class="o">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="all">all</h5>
+<p>返回查询到的所有对象</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">User.query.all<span class="o">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="filter">filter</h5>
+<p>模糊查询，例：返回名字结尾字符为g的所有数据。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">User</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">User</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;g&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="get">get</h5>
+<p>参数为主键，如果主键不存在没有返回内容</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">User</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="heading">!=</h5>
+<p>逻辑非，返回条件满足的所有数据，例：返回名字不等于<code>wang</code>的所有数据</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">User</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">User</span><span class="o">.</span><span class="n">name</span><span class="o">!=</span><span class="s1">&#39;wang&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="not_">not_</h5>
+<p>相当于取反，返回条件满足的所有数据，例：返回名字不等于<code>chen</code>的所有数据</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">not_</span>
+<span class="n">User</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">not_</span><span class="p">(</span><span class="n">User</span><span class="o">.</span><span class="n">name</span><span class="o">==</span><span class="s1">&#39;chen&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="and_">and_</h5>
+<p>逻辑与，返回条件满足的所有数据，例：返回名字不等于<code>wang</code>且邮箱以<code>163.com</code>结尾的所有数据</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">and_</span>
+<span class="n">User</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">and_</span><span class="p">(</span><span class="n">User</span><span class="o">.</span><span class="n">name</span><span class="o">!=</span><span class="s1">&#39;wang&#39;</span><span class="p">,</span><span class="n">User</span><span class="o">.</span><span class="n">email</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;163.com&#39;</span><span class="p">)))</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="or_">or_</h5>
+<p>逻辑或，返回条件满足的所有数据，例：返回名字不等于<code>wang</code>或者邮箱以<code>163.com</code>结尾的所有数据</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">or_</span>
+<span class="n">User</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">or_</span><span class="p">(</span><span class="n">User</span><span class="o">.</span><span class="n">name</span><span class="o">!=</span><span class="s1">&#39;wang&#39;</span><span class="p">,</span><span class="n">User</span><span class="o">.</span><span class="n">email</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;163.com&#39;</span><span class="p">)))</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="查询数据后删除">查询数据后删除</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+<span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+<span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="n">User</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="更新数据">更新数据</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+<span class="n">user</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;dong&#39;</span>
+<span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="n">User</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="数据库迁移">数据库迁移</h2>
+<h3 id="简介-1">简介</h3>
+<p>在开发过程中，需要修改数据库模型，而且还要在修改之后更新数据库。最直接的方式就是删除旧表，但这样会丢失数据。更好的解决办法是使用数据库迁移框架，它可以追踪数据库模式的变化，然后把变动应用到数据库中。在Flask中可以使用Flask-Migrate扩展，来实现数据迁移。并且集成到Flask-Script中，所有操作通过命令就能完成。为了导出数据库迁移命令，Flask-Migrate提供了一个MigrateCommand类，可以附加到flask-script的manager对象上。</p>
+<h3 id="使用">使用</h3>
+<ul>
+<li>
+<p>首先要在虚拟环境中安装Flask-Migrate。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">pip install flask-migrate
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>代码文件内容：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#coding=utf-8</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+  
+<span class="kn">from</span> <span class="nn">flask_sqlalchemy</span> <span class="kn">import</span> <span class="n">SQLAlchemy</span>
+<span class="kn">from</span> <span class="nn">flask_migrate</span> <span class="kn">import</span> <span class="n">Migrate</span><span class="p">,</span><span class="n">MigrateCommand</span>
+<span class="kn">from</span> <span class="nn">flask_script</span> <span class="kn">import</span> <span class="n">Shell</span><span class="p">,</span><span class="n">Manager</span>
+  
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="n">manager</span> <span class="o">=</span> <span class="n">Manager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+  
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;SQLALCHEMY_DATABASE_URI&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;mysql://root:mysql@127.0.0.1:3306/Flask_test&#39;</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;SQLALCHEMY_COMMIT_ON_TEARDOWN&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;SQLALCHEMY_TRACK_MODIFICATIONS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">SQLAlchemy</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+  
+<span class="c1">#第一个参数是Flask的实例，第二个参数是Sqlalchemy数据库实例</span>
+<span class="n">migrate</span> <span class="o">=</span> <span class="n">Migrate</span><span class="p">(</span><span class="n">app</span><span class="p">,</span><span class="n">db</span><span class="p">)</span> 
+  
+<span class="c1">#manager是Flask-Script的实例，这条语句在flask-Script中添加一个db命令</span>
+<span class="n">manager</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="s1">&#39;db&#39;</span><span class="p">,</span><span class="n">MigrateCommand</span><span class="p">)</span>
+  
+<span class="c1">#定义模型Role</span>
+<span class="k">class</span> <span class="nc">Role</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="c1"># 定义表名</span>
+    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s1">&#39;roles&#39;</span>
+    <span class="c1"># 定义列对象</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">64</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">relationship</span><span class="p">(</span><span class="s1">&#39;User&#39;</span><span class="p">,</span> <span class="n">backref</span><span class="o">=</span><span class="s1">&#39;role&#39;</span><span class="p">)</span>
+  
+    <span class="c1">#repr()方法显示一个可读字符串，</span>
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;Role:&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+  
+<span class="c1">#定义用户</span>
+<span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">__talbe__</span> <span class="o">=</span> <span class="s1">&#39;users&#39;</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">username</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">64</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="c1">#设置外键</span>
+    <span class="n">role_id</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">db</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="s1">&#39;roles.id&#39;</span><span class="p">))</span>
+  
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;User:&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">username</span><span class="p">)</span>
+        
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">manager</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>创建迁移仓库</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1">#这个命令会创建migrations文件夹，所有迁移文件都放在里面。</span>
+python database.py db init
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>创建迁移脚本</p>
+<p>自动创建迁移脚本有两个函数：</p>
+<ul>
+<li>upgrade()：函数把迁移中的改动应用到数据库中。</li>
+<li>downgrade()：函数则将改动删除。</li>
+</ul>
+<p>自动创建的迁移脚本会根据模型定义和数据库当前状态的差异，生成upgrade()和downgrade()函数的内容。对比不一定完全正确，有可能会遗漏一些细节，需要进行检查</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">python database.py db migrate -m &#39;initial migration&#39;
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>更新数据库</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">python database.py db upgrade
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>返回以前的版本</p>
+<p>可以根据history命令找到版本号,然后传给downgrade命令:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">python app.py db <span class="nb">history</span>
+  
+输出格式：&lt;base&gt; -&gt;  版本号 <span class="o">(</span>head<span class="o">)</span>, initial migration
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>回滚到指定版本</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">python app.py db downgrade 版本号
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h2 id="信号机制">信号机制</h2>
+<h3 id="简介-2">简介</h3>
+<p>Flask信号(signals, or event hooking)允许特定的发送端通知订阅者发生了什么（既然知道发生了什么，那我们可以根据自己业务需求实现自己的逻辑）。Flask提供了一些信号（核心信号）且其它的扩展提供更多的信号。信号依赖于<strong>Blinker</strong>库。</p>
+<p>flask内置信号列表：http://docs.jinkan.org/docs/flask/api.html#id17</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">template_rendered</span> <span class="o">=</span> <span class="n">_signals</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="s1">&#39;template-rendered&#39;</span><span class="p">)</span>
+<span class="n">request_started</span> <span class="o">=</span> <span class="n">_signals</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="s1">&#39;request-started&#39;</span><span class="p">)</span>
+<span class="n">request_finished</span> <span class="o">=</span> <span class="n">_signals</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="s1">&#39;request-finished&#39;</span><span class="p">)</span>
+<span class="n">request_tearing_down</span> <span class="o">=</span> <span class="n">_signals</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="s1">&#39;request-tearing-down&#39;</span><span class="p">)</span>
+<span class="n">got_request_exception</span> <span class="o">=</span> <span class="n">_signals</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="s1">&#39;got-request-exception&#39;</span><span class="p">)</span>
+<span class="n">appcontext_tearing_down</span> <span class="o">=</span> <span class="n">_signals</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="s1">&#39;appcontext-tearing-down&#39;</span><span class="p">)</span>
+<span class="n">appcontext_pushed</span> <span class="o">=</span> <span class="n">_signals</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="s1">&#39;appcontext-pushed&#39;</span><span class="p">)</span>
+<span class="n">appcontext_popped</span> <span class="o">=</span> <span class="n">_signals</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="s1">&#39;appcontext-popped&#39;</span><span class="p">)</span>
+<span class="n">message_flashed</span> <span class="o">=</span> <span class="n">_signals</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="s1">&#39;message-flashed&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="应用场景">应用场景</h3>
+<p>Flask-User 这个扩展中定义了名为 user_logged_in 的信号，当用户成功登入之后，这个信号会被发送。我们可以订阅该信号去追踪登录次数和登录IP：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">request</span>
+<span class="kn">from</span> <span class="nn">flask_user.signals</span> <span class="kn">import</span> <span class="n">user_logged_in</span>
+
+<span class="nd">@user_logged_in.connect_via</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">track_logins</span><span class="p">(</span><span class="n">sender</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="o">**</span><span class="n">extra</span><span class="p">):</span>
+    <span class="n">user</span><span class="o">.</span><span class="n">login_count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">user</span><span class="o">.</span><span class="n">last_login_ip</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">remote_addr</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="flask-sqlalchemy-信号支持">Flask-SQLAlchemy 信号支持</h3>
+<p>在 Flask-SQLAlchemy 模块中，0.10 版本开始支持信号，可以连接到信号来获取到底发生什么了的通知。存在于下面两个信号：</p>
+<ul>
+<li>models_committed：这个信号在修改的模型提交到数据库时发出。发送者是发送修改的应用，模型 和 操作描述符 以 (model, operation) 形式作为元组，这样的元组列表传递给接受者的 changes 参数。该模型是发送到数据库的模型实例，当一个模型已经插入，操作是 &lsquo;insert&rsquo; ，而已删除是 &lsquo;delete&rsquo; ，如果更新了任何列，会是 &lsquo;update&rsquo; 。</li>
+<li>before_models_committed：除了刚好在提交发送前发生，与 models_committed 完全相同。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">flask_sqlalchemy</span> <span class="kn">import</span> <span class="n">models_committed</span>
+
+<span class="c1"># 给 models_committed 信号添加一个订阅者，即为当前 app</span>
+<span class="nd">@models_committed.connect_via</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">models_committed</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">changes</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">changes</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-05-31</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E5%BA%93/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E5%BA%93/" data-title="Python学习之路-Flask基础:数据库" data-hashtags="Python学习之路"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E5%BA%93/" data-hashtag="Python学习之路"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E5%BA%93/" data-title="Python学习之路-Flask基础:数据库" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E5%BA%93/" data-title="Python学习之路-Flask基础:数据库"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E5%BA%93/" data-title="Python学习之路-Flask基础:数据库"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E5%BA%93/" data-title="Python学习之路-Flask基础:数据库" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E5%BA%93/" data-title="Python学习之路-Flask基础:数据库" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE%E5%BA%93/" data-title="Python学习之路-Flask基础:数据库"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/">Python学习之路</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80%E6%A8%A1%E6%9D%BF/" class="prev" rel="prev" title="Python学习之路-Flask基础:模板"><i class="fas fa-angle-left fa-fw"></i>Python学习之路-Flask基础:模板</a>
+            <a href="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-flask%E5%9F%BA%E7%A1%80%E8%93%9D%E5%9B%BE/" class="next" rel="next" title="Python学习之路-Flask基础:蓝图">Python学习之路-Flask基础:蓝图<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.74.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2018 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Silence</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.4afae7d446ba01ebf7fff19893eaf3a1.css" integrity="md5-Svrn1Ea6Aev3//GYk&#43;rzoQ=="><link rel="stylesheet" href="/lib/katex/copy-tex.min.b1994d1b9785dd8801dbf655df7bf6d9.css" integrity="md5-sZlNG5eF3YgB2/ZV33v22Q=="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.acf82ee47549fdc386d02768992a49ad.css" integrity="md5-rPgu5HVJ/cOG0CdomSpJrQ=="><script type="text/javascript" src="/lib/valine/Valine.min.b1d2c9b89c70dbf0a8541bfd36afafa1.js" integrity="md5-sdLJuJxw2/CoVBv9Nq&#43;voQ=="></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.100efdceabf7a138f3297e437d078f74.js" integrity="md5-EA79zqv3oTjzKX5DfQePdA=="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.ae7c5011def46b283696baf367586b5d.js" integrity="md5-rnxQEd70ayg2lrrzZ1hrXQ=="></script><script type="text/javascript" src="/lib/lunr/lunr.min.a08f2562fde4550269dfc13028ed2502.js" integrity="md5-oI8lYv3kVQJp38EwKO0lAg=="></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.b82fb8d93ce0ea6a485dfa3a0b1e7573.js" integrity="md5-uC&#43;42Tzg6mpIXfo6Cx51cw=="></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.f1ba3e22560e2eb7474f28feb4507617.js" integrity="md5-8bo&#43;IlYOLrdHTyj&#43;tFB2Fw=="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.b80e49640d4794d4333d00db76ea22f7.js" integrity="md5-uA5JZA1HlNQzPQDbduoi9w=="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.af8ab36589315582ccdd82f22e84bffb.js" integrity="md5-r4qzZYkxVYLM3YLyLoS/&#43;w=="></script><script type="text/javascript" src="/lib/sharer/sharer.min.c3c3372b4cf5c56dd4e5a4be8ada86c9.js" integrity="md5-w8M3K0z1xW3U5aS&#43;itqGyQ=="></script><script type="text/javascript" src="/lib/typeit/typeit.min.b5f3481ebeaa3e56a2f5f96ea648bf69.js" integrity="md5-tfNIHr6qPlai9flupki/aQ=="></script><script type="text/javascript" src="/lib/katex/katex.min.c158c9e823b681cf535f46596b5e4eac.js" integrity="md5-wVjJ6CO2gc9TX0ZZa15OrA=="></script><script type="text/javascript" src="/lib/katex/auto-render.min.28cd0b98cd3f4fa37d52f3ffe47ad9d4.js" integrity="md5-KM0LmM0/T6N9UvP/5HrZ1A=="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.bfaec7d1dea915d74a7a6d833f0ff62e.js" integrity="md5-v67H0d6pFddKem2DPw/2Lg=="></script><script type="text/javascript" src="/lib/katex/mhchem.min.1bbb252363e83547d4b2186a41eaca28.js" integrity="md5-G7slI2PoNUfUshhqQerKKA=="></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.4a48532bf0b17c058b8b6854f49de23f.js" integrity="md5-SkhTK/CxfAWLi2hU9J3iPw=="></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"c4VA4R1Xg3drBKSQzNfWnWlF-gzGzoHsz","appKey":"upEyt7esgWCbm0L7EPDH6bhV","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","meta":["nick","mail"],"pageSize":10,"placeholder":"说点什么吧...","recordIP":true,"visitor":true}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"id-1":"Silence’s Blog","id-2":"Silence’s Blog"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.7bc7989e979c4a19d97db3ab311a80fe.js" integrity="md5-e8eYnpecShnZfbOrMRqA/g=="></script></body>
+</html>

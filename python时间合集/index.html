@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Python时间合集 - Silence Blog</title><meta name="Description" content="Python时间合集"><meta property="og:title" content="Python时间合集" />
+<meta property="og:description" content="Python时间合集" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://silencehuliang.github.io/python%E6%97%B6%E9%97%B4%E5%90%88%E9%9B%86/" />
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
+<meta property="article:published_time" content="2019-01-26T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-01-26T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
+
+<meta name="twitter:title" content="Python时间合集"/>
+<meta name="twitter:description" content="Python时间合集"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://silencehuliang.github.io/python%E6%97%B6%E9%97%B4%E5%90%88%E9%9B%86/" /><link rel="prev" href="https://silencehuliang.github.io/python%E6%90%AD%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/" /><link rel="next" href="https://silencehuliang.github.io/django2.x%E9%85%8D%E7%BD%AEmysql/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.2e7125082ec8de83a87adc70253c9c23.css" integrity="md5-LnElCC7I3oOoetxwJTycIw=="><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.76cb46c10b6c0293433b371bae2414b2.css" integrity="md5-dstGwQtsApNDOzcbriQUsg=="><link rel="stylesheet" href="/lib/animate/animate.min.bc1a6a99c43f5ccc97d2d350bde13f74.css" integrity="md5-vBpqmcQ/XMyX0tNQveE/dA=="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Python时间合集",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/silencehuliang.github.io\/python%E6%97%B6%E9%97%B4%E5%90%88%E9%9B%86\/"
+        },"genre": "posts","keywords": "时间","wordcount":  6355 ,
+        "url": "https:\/\/silencehuliang.github.io\/python%E6%97%B6%E9%97%B4%E5%90%88%E9%9B%86\/","datePublished": "2019-01-26T00:00:00+00:00","dateModified": "2019-01-26T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "Silence"},"author": {
+                "@type": "Person",
+                "name": "Silence"
+            },"description": "Python时间合集"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Silence Blog"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+        data-srcset="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg, https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg 1.5x, https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+        title="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg" /><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Silence Blog"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+        data-srcset="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg, https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg 1.5x, https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+        title="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg" /><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Python时间合集</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Silence</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/python/"><i class="far fa-folder fa-fw"></i>Python</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-01-26">2019-01-26</time>&nbsp;<i class="fa fa-history" aria-hidden="true"></i>
+                2019-01-26
+                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 6355 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 13 分钟&nbsp;<span id="/python%E6%97%B6%E9%97%B4%E5%90%88%E9%9B%86/" class="leancloud_visitors" data-flag-title="Python时间合集">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#python3中时间的表示形式">python3中时间的表示形式</a>
+      <ul>
+        <li><a href="#格式化时间字符串">格式化时间字符串</a></li>
+        <li><a href="#时间戳">时间戳</a></li>
+        <li><a href="#时间元祖">时间元祖</a></li>
+        <li><a href="#时间对象">时间对象</a></li>
+      </ul>
+    </li>
+    <li><a href="#python中两大时间库">python中两大时间库：</a>
+      <ul>
+        <li><a href="#time">time</a>
+          <ul>
+            <li><a href="#简介">简介：</a></li>
+            <li><a href="#常量">常量</a></li>
+            <li><a href="#方法">方法：</a></li>
+          </ul>
+        </li>
+        <li><a href="#datetime">datetime</a>
+          <ul>
+            <li><a href="#由五个模块组成">由五个模块组成</a></li>
+            <li><a href="#date">date：</a>
+              <ul>
+                <li><a href="#简介-1">简介</a></li>
+                <li><a href="#常量-1">常量</a></li>
+                <li><a href="#类方法">类方法</a></li>
+                <li><a href="#实例方法">实例方法</a></li>
+                <li><a href="#魔法属性">魔法属性</a></li>
+              </ul>
+            </li>
+            <li><a href="#time-1">time</a>
+              <ul>
+                <li><a href="#简介-2">简介</a></li>
+                <li><a href="#参数">参数</a></li>
+                <li><a href="#常量-2">常量</a></li>
+                <li><a href="#魔法属性-1">魔法属性</a></li>
+                <li><a href="#实例方法-1">实例方法</a></li>
+              </ul>
+            </li>
+            <li><a href="#datetime-1">datetime</a>
+              <ul>
+                <li><a href="#简介-3">简介</a></li>
+                <li><a href="#参数-1">参数</a></li>
+                <li><a href="#魔法属性-2">魔法属性</a></li>
+                <li><a href="#类方法-1">类方法</a></li>
+                <li><a href="#实例方法-2">实例方法</a></li>
+              </ul>
+            </li>
+            <li><a href="#timedelta">timedelta</a>
+              <ul>
+                <li><a href="#简介-4">简介</a></li>
+                <li><a href="#参数-2">参数</a></li>
+                <li><a href="#魔法属性-3">魔法属性</a></li>
+              </ul>
+            </li>
+            <li><a href="#tzinfo">tzinfo</a>
+              <ul>
+                <li><a href="#简介-5">简介</a></li>
+                <li><a href="#用法">用法</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p><strong>声明：以下内容均为我个人的理解，如果发现错误或者疑问可以联系我共同探讨</strong></p>
+<h2 id="python3中时间的表示形式">python3中时间的表示形式</h2>
+<h3 id="格式化时间字符串">格式化时间字符串</h3>
+<p>格式化时间字符串（string_time）,指<strong>格式化输出指定输出参数的格式与相对位置的字符串参数</strong>，与python中的format作用类似，常见的格式化时间字符串：<strong>&quot;%Y-%m-%d %H:%M:%S %z,%a,%A,%b,%B,%c,%I,%p&rdquo;</strong></p>
+<ul>
+<li>常用的表</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">名  称</th>
+<th align="center">含  义</th>
+<th align="center">例  子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">%Y</td>
+<td align="center">有世纪并用0填充的十进制数年份</td>
+<td align="center">0001, 0002, …, 2013, 2014, …, 9998, 9999</td>
+</tr>
+<tr>
+<td align="center">%m</td>
+<td align="center">用零填充十进制数的月份</td>
+<td align="center">01, 02, …, 12</td>
+</tr>
+<tr>
+<td align="center">%d</td>
+<td align="center">用零填充十进制数的月中的某一天</td>
+<td align="center">01, 02, …, 31</td>
+</tr>
+<tr>
+<td align="center">%H</td>
+<td align="center">24小时格式的用0填充的十进制数小时</td>
+<td align="center">00, 01, …, 23</td>
+</tr>
+<tr>
+<td align="center">%M</td>
+<td align="center">用0填充的十进制数分钟</td>
+<td align="center">00, 01, …, 59</td>
+</tr>
+<tr>
+<td align="center">%S</td>
+<td align="center">用0填充的十进制数秒</td>
+<td align="center">00, 01, …, 59</td>
+</tr>
+<tr>
+<td align="center">%z</td>
+<td align="center">用零填充的十进制小时分钟秒毫秒的时差</td>
+<td align="center">(empty), +0000, -0400, +1030, +063415, -030712.345216</td>
+</tr>
+<tr>
+<td align="center">%a</td>
+<td align="center">根据区域设置的缩写的星期名称</td>
+<td align="center">Sun, Mon, …, Sat (en_US)<br>So, Mo, …, Sa (de_DE)</td>
+</tr>
+<tr>
+<td align="center">%A</td>
+<td align="center">根据区域设置的完整星期名称</td>
+<td align="center">Sunday, Monday, …, Saturday (en_US)<br>Sonntag, Montag, …, Samstag (de_DE)</td>
+</tr>
+</tbody>
+</table>
+<p>吐槽一下官网注释秒的范围是0-59，实测0-61都可以</p>
+<ul>
+<li>官方的完整表：
+以下是C标准（1989版）所需的所有格式代码的列表，这些代码适用于具有标准C实现的所有平台。请注意，1999版C标准添加了其他格式代码。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">名  称</th>
+<th align="center">含  义</th>
+<th align="center">例  子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">%a</td>
+<td align="center">根据区域设置的缩写的星期名称</td>
+<td align="center">Sun, Mon, …, Sat (en_US)So, Mo, …, Sa (de_DE)</td>
+</tr>
+<tr>
+<td align="center">%A</td>
+<td align="center">根据区域设置的完整星期名称</td>
+<td align="center">Sunday, Monday, …, Saturday (en_US)Sonntag, Montag, …, Samstag (de_DE)</td>
+</tr>
+<tr>
+<td align="center">%w</td>
+<td align="center">将工作日变成十进制数，其中0表示星期日，6表示星期六</td>
+<td align="center">0, 1, …, 6</td>
+</tr>
+<tr>
+<td align="center">%d</td>
+<td align="center">用零填充十进制数的月中的某一天</td>
+<td align="center">01, 02, …, 31</td>
+</tr>
+<tr>
+<td align="center">%b</td>
+<td align="center">根据区域设置的缩写月份名</td>
+<td align="center">Jan, Feb, …, Dec (en_US);Jan, Feb, …, Dez (de_DE)</td>
+</tr>
+<tr>
+<td align="center">%B</td>
+<td align="center">根据区域改变月份全称</td>
+<td align="center">January, February, …, December (en_US)Januar, Februar, …, Dezember (de_DE)</td>
+</tr>
+<tr>
+<td align="center">%m</td>
+<td align="center">用零填充十进制数的月份</td>
+<td align="center">01, 02, …, 12</td>
+</tr>
+<tr>
+<td align="center">%y</td>
+<td align="center">没有世纪并用0填充的十进制数年份</td>
+<td align="center">00, 01, …, 99</td>
+</tr>
+<tr>
+<td align="center">%Y</td>
+<td align="center">有世纪并用0填充的十进制数年份</td>
+<td align="center">0001, 0002, …, 2013, 2014, …, 9998, 9999</td>
+</tr>
+</tbody>
+</table>
+<h3 id="时间戳">时间戳</h3>
+<p>时间戳（Timestamp）,指<strong>字符串或编码信息用于辨识记录下来的时间日期</strong>，维基百科解释的不容易懂，我的个人理解是<strong>从1970年1月1日到现在过去了多少秒</strong>。</p>
+<h3 id="时间元祖">时间元祖</h3>
+<p>时间元祖(struct_time),<strong>指包含9个特殊元素的元祖</strong>，（tm_year，tm_mon，tm_mday，tm_hour，tm_min，tm_sec，tm_wday，tm_yday，tm_isdst），详情见下表格</p>
+<table>
+<thead>
+<tr>
+<th align="center">名  称</th>
+<th align="center">含  义</th>
+<th align="center">值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">tm_year</td>
+<td align="center">年</td>
+<td align="center">具体年份，例：2017</td>
+</tr>
+<tr>
+<td align="center">tm_mon</td>
+<td align="center">月</td>
+<td align="center">1-12</td>
+</tr>
+<tr>
+<td align="center">tm_mday</td>
+<td align="center">日</td>
+<td align="center">1-31</td>
+</tr>
+<tr>
+<td align="center">tm_hour</td>
+<td align="center">时</td>
+<td align="center">1-23</td>
+</tr>
+<tr>
+<td align="center">tm_min</td>
+<td align="center">分</td>
+<td align="center">0-59</td>
+</tr>
+<tr>
+<td align="center">tm_sec</td>
+<td align="center">秒</td>
+<td align="center">0-61</td>
+</tr>
+<tr>
+<td align="center">tm_wday</td>
+<td align="center">周</td>
+<td align="center">0-6（从周末开始）</td>
+</tr>
+<tr>
+<td align="center">tm_yday</td>
+<td align="center">在一年中的第几天</td>
+<td align="center">1-666</td>
+</tr>
+<tr>
+<td align="center">tm_isdst</td>
+<td align="center">是否为夏令时</td>
+<td align="center">-1,0,1（能表示true和flase的值）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="时间对象">时间对象</h3>
+<p>时间对象（time_object）,指<strong>通过某些时间类生成的对象</strong>，例如datetime对象。</p>
+<h2 id="python中两大时间库">python中两大时间库：</h2>
+<h3 id="time">time</h3>
+<h4 id="简介">简介：</h4>
+<p>常用于具体时间操作</p>
+<h4 id="常量">常量</h4>
+<ul>
+<li>
+<p>Variables with simple values，值简单的变量</p>
+<ul>
+<li>altzone，-32400</li>
+<li>daylight，0</li>
+<li>timezone，-28800</li>
+<li>_STRUCT_TM_ITEMS，11</li>
+</ul>
+</li>
+<li>
+<p>variables with complex values，值复杂的变量</p>
+<ul>
+<li>tzname 但是如果直接调用会得到一个乱码的值，看不懂，查阅资料后发现通过重新编码解码可以看到真实值，这里很感谢这个爱思考的博主，这里编码解码参考他的博客，这条博文在这里：https://www.cnblogs.com/luo630/p/9555684.html，里面讲的很详细</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">time</span><span class="o">.</span><span class="n">tzname</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;latin-1&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;gbk&#39;</span><span class="p">)</span>
+<span class="s1">&#39;中国标准时间&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">time</span><span class="o">.</span><span class="n">tzname</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;latin-1&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;gbk&#39;</span><span class="p">)</span>
+<span class="s1">&#39;中国夏令时&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h4 id="方法">方法：</h4>
+<ul>
+<li>
+<p>asctime：将时间元组转换为字符串，当没有传入参数时，调用localtime()返回的当前时间，参数类型：元祖，返回类型：字符串。例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">time</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span>
+<span class="s1">&#39;Tue Jun 11 16:07:40 2017&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">((</span><span class="mi">2017</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">59</span><span class="p">,</span><span class="mi">59</span><span class="p">,</span><span class="mi">59</span><span class="p">))</span> <span class="c1"># 这里必须要穿一个包含9个数字的元组，且年月日时分都必须符合时间逻辑，秒必须小于等于61，不知道为什么是61，后面三位逻辑暂时还没弄明白，但是跟前面对应的年月日有关</span>
+<span class="s1">&#39;Thu Jun 11 16:07:40 2017&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>clock：计时器函数，在进程结束后返回从开始到第一次调用该函数使用的时间，返回类型：浮点数。例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
+<span class="mf">5e-07</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
+<span class="mf">11.9833418</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
+<span class="mf">35.1999596</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>ctime：将时间戳转换为以本地时间为单位的字符串。相当于asctime(localtime(seconds))。当没有传入参数时，使用localtime()返回的当前时间。参数类型：时间戳，返回类型：字符串。例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">time</span><span class="o">.</span><span class="n">ctime</span><span class="p">(</span><span class="mi">1555555550</span><span class="p">)</span>
+<span class="s1">&#39;Thu Apr 18 10:45:50 2017&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">time</span><span class="o">.</span><span class="n">ctime</span><span class="p">()</span>
+<span class="s1">&#39;Tue Jun 11 17:08:44 2017&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>get_clock_info：获取有关指定时钟的信息作为命名空间对象。支持的时钟名称和读取其值的相应函数是：</p>
+<ul>
+<li>&lsquo;clock&rsquo;： time.clock()</li>
+<li>&lsquo;monotonic&rsquo;： time.monotonic()</li>
+<li>&lsquo;perf_counter&rsquo;： time.perf_counter()</li>
+<li>&lsquo;process_time&rsquo;： time.process_time()</li>
+<li>&lsquo;thread_time&rsquo;： time.thread_time()</li>
+<li>&lsquo;time&rsquo;： time.time()<br>
+结果具有以下属性：
+adjustable：True如果时钟可以自动更改（例如通过NTP守护程序）或由系统管理员手动更改，False否则
+implementation：用于获取时钟值的基础C函数的名称。有关可能的值，请参阅时钟ID常量。
+单调：True如果时钟不能倒退， False否则分辨率：时钟的分辨率（秒）（float）</li>
+</ul>
+</li>
+<li>
+<p>gmtime：将时间戳转换为时间元祖，当没有传入参数时，返回当前世界标准时间的时间元祖。参数类型：时间戳，返回类型：元祖（但是查看源码只有一个pass）。例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">time</span><span class="o">.</span><span class="n">gmtime</span><span class="p">(</span><span class="mi">1555555550</span><span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">struct_time</span><span class="p">(</span><span class="n">tm_year</span><span class="o">=</span><span class="mi">2017</span><span class="p">,</span> <span class="n">tm_mon</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">tm_mday</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">tm_hour</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">tm_min</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">tm_sec</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">tm_wday</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">tm_yday</span><span class="o">=</span><span class="mi">108</span><span class="p">,</span> <span class="n">tm_isdst</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">time</span><span class="o">.</span><span class="n">gmtime</span><span class="p">()</span>
+<span class="n">time</span><span class="o">.</span><span class="n">struct_time</span><span class="p">(</span><span class="n">tm_year</span><span class="o">=</span><span class="mi">2017</span><span class="p">,</span> <span class="n">tm_mon</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">tm_mday</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">tm_hour</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">tm_min</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">tm_sec</span><span class="o">=</span><span class="mi">54</span><span class="p">,</span> <span class="n">tm_wday</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">tm_yday</span><span class="o">=</span><span class="mi">162</span><span class="p">,</span> <span class="n">tm_isdst</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>localtime：与gmtime功能类似，但是返回的时间变成了当地时间。例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">time</span><span class="o">.</span><span class="n">localtime</span><span class="p">(</span><span class="mi">1555555550</span><span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">struct_time</span><span class="p">(</span><span class="n">tm_year</span><span class="o">=</span><span class="mi">2017</span><span class="p">,</span> <span class="n">tm_mon</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">tm_mday</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">tm_hour</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">tm_min</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">tm_sec</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">tm_wday</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">tm_yday</span><span class="o">=</span><span class="mi">108</span><span class="p">,</span> <span class="n">tm_isdst</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">time</span><span class="o">.</span><span class="n">localtime</span><span class="p">()</span>
+<span class="n">time</span><span class="o">.</span><span class="n">struct_time</span><span class="p">(</span><span class="n">tm_year</span><span class="o">=</span><span class="mi">2017</span><span class="p">,</span> <span class="n">tm_mon</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">tm_mday</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">tm_hour</span><span class="o">=</span><span class="mi">17</span><span class="p">,</span> <span class="n">tm_min</span><span class="o">=</span><span class="mi">28</span><span class="p">,</span> <span class="n">tm_sec</span><span class="o">=</span><span class="mi">34</span><span class="p">,</span> <span class="n">tm_wday</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">tm_yday</span><span class="o">=</span><span class="mi">162</span><span class="p">,</span> <span class="n">tm_isdst</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>mktime：将时间元祖转化为时间戳，返回时间戳。参数类型：时间元祖（9个元素），返回类型：时间戳。例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">time</span><span class="o">.</span><span class="n">mktime</span><span class="p">((</span><span class="mi">2017</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">45</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">108</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="mf">1555555550.0</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>monotonic: 一个单调的计时器，不能倒转。不知道从什么时候开始的，返回类型：浮点型。例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
+<span class="o">...</span>     <span class="k">print</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">monotonic</span><span class="p">())</span>
+<span class="o">...</span>     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">while</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">:</span>
+<span class="o">...</span>     <span class="n">func</span><span class="p">()</span>
+<span class="o">...</span>     <span class="n">i</span><span class="o">+=</span><span class="mi">1</span>
+<span class="o">...</span>
+<span class="mf">461875.89</span>
+<span class="mf">461876.89</span>
+<span class="mf">461877.89</span>
+<span class="mf">461878.89</span>
+<span class="mf">461879.89</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>perf_counter：性能计数器用于基准测试。不服跑个分！返回类型：浮点型。例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
+<span class="mf">3674.2299851</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
+<span class="mf">3675.2086447</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
+<span class="mf">3675.9990329</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>process_time：用于分析的进程时间:内核和用户空间CPU时间的总和。返回类型：浮点型。例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">time</span><span class="o">.</span><span class="n">process_time</span><span class="p">()</span>
+<span class="mf">4.40625</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>sleep:将执行延迟数秒。参数类型：int or float ,返回类型：无，这就不演示了&hellip;浪费时间</p>
+</li>
+<li>
+<p>strftime：根据格式规范将时间元组转换为字符串。有关格式化代码，请参阅库参考手册。当没有传入参数时，使用localtime()返回的当前时间。传入参数：配对字符串,时间元祖（与字符串配对），返回参数：时间字符串,例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 根据前面的格式化字符串来生成对应时间字符串</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&#34;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&#34;</span><span class="p">,</span> <span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="s1">&#39;2017-01-01 01:01:01&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&#34;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S %I&#34;</span><span class="p">,</span> <span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="s1">&#39;2017-01-01 01:01:01 01&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&#34;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S %z,%a,%A,%b,%B,</span><span class="si">%c</span><span class="s2">,%I,%p&#34;</span><span class="p">,</span> <span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="s1">&#39;2017-01-01 01:01:01 +0800,Tue,Tuesday,Jan,January,Tue Jan  1 01:01:01 2017,01,AM&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>strptime：根据格式规范将字符串解析为时间元组。有关格式化代码，请参阅库参考手册(与strftime ())。传入参数：时间字符串，配对字符串。返回参数：时间元祖</p>
+</li>
+</ul>
+<p>例：
+<code>python &gt;&gt;&gt; time.strptime(&quot;2017-01-01 01:01:02&quot;, &quot;%Y-%m-%d %H:%M:%S&quot;) time.struct_time(tm_year=2017, tm_mon=1, tm_mday=1, tm_hour=1, tm_min=1, tm_sec=2, tm_wday=1, tm_yday=1, tm_isdst=-1)</code></p>
+<ul>
+<li>time：以秒为单位返回从纪元开始的当前时间。如果系统时钟提供这些信息，那么可能只存在几分之一秒。就是我们常说的时间戳。返回参数：浮点数</li>
+</ul>
+<h3 id="datetime">datetime</h3>
+<h4 id="由五个模块组成">由五个模块组成</h4>
+<h4 id="date">date：</h4>
+<h5 id="简介-1">简介</h5>
+<p>表示日期的类。常用的属性有year, month, day。</p>
+<h5 id="常量-1">常量</h5>
+<ul>
+<li>date.min = date(1, 1, 1)，date.max = date(9999, 12, 31)，date.resolution = timedelta(days=1)，分别规定了date对象的最小值、最大值，date对象的最小单位，为天</li>
+</ul>
+<h5 id="类方法">类方法</h5>
+<ul>
+<li>
+<p>fromtimestamp：将时间戳转化为date对象，参数类型：float，int，返回类型：date对象</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">date</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="mi">1560415206</span><span class="p">)</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">13</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="mi">1560415206</span><span class="p">))</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">datetime</span><span class="o">.</span><span class="n">date</span><span class="s1">&#39;&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>today：获得今天的日期，返回类型：date对象</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">13</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">())</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">datetime</span><span class="o">.</span><span class="n">date</span><span class="s1">&#39;&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>fromordinal：跟fromtimestamp类似</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">date</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="mi">1560415206</span><span class="p">)</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">13</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="mi">1560415206</span><span class="p">))</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">datetime</span><span class="o">.</span><span class="n">date</span><span class="s1">&#39;&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h5 id="实例方法">实例方法</h5>
+<ul>
+<li>
+<p>ctime：返回将日期对象转化为标准时间日期的 00:00:00</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">date</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">13</span><span class="p">)</span><span class="o">.</span><span class="n">ctime</span><span class="p">()</span>
+<span class="s1">&#39;Thu Jun 13 00:00:00 2017&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>strftime，返回将date对象转化为指定格式的date对象</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">%d</span><span class="s2">/%m/%y&#34;</span><span class="p">)</span>
+<span class="s1">&#39;01/01/17&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">datetime</span><span class="o">.</span><span class="n">date</span><span class="s1">&#39;&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>isoformat,返回将date对象转化为&rsquo;YYYY-MM-DD&rsquo;格式的date对象,</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span>
+<span class="s1">&#39;2017-02-02&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">datetime</span><span class="o">.</span><span class="n">date</span><span class="s1">&#39;&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>timetuple,返回与time.localtime()兼容的本地时间元组</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">date</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span><span class="o">.</span><span class="n">timetuple</span><span class="p">()</span>
+<span class="n">time</span><span class="o">.</span><span class="n">struct_time</span><span class="p">(</span><span class="n">tm_year</span><span class="o">=</span><span class="mi">2017</span><span class="p">,</span> <span class="n">tm_mon</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">tm_mday</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">tm_hour</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">tm_min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">tm_sec</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">tm_wday</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">tm_yday</span><span class="o">=</span><span class="mi">188</span><span class="p">,</span> <span class="n">tm_isdst</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>toordinal,按年、月、日返回子午线格列高利教序数。返回类型：int</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span><span class="o">.</span><span class="n">toordinal</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">int</span><span class="s1">&#39;&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>replace,根据传入的年月日修改date对象的年月日,参数类型：int,返回类型:date对象</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">month</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span><span class="n">day</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>weekday,根据date对象，判断该日期为星期几,返回类型：int,0-6分别对应星期一到星期天</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">12</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">weekday</span><span class="p">()</span>
+<span class="mi">0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">int</span><span class="s1">&#39;&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>isoweekday，根据date对象，判断该日期为星期几,返回类型：int,1-7分别对应星期一到星期天</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">12</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">isoweekday</span><span class="p">()</span>
+<span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">int</span><span class="s1">&#39;&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>isocalendar,根据date对象，判断该日期为第几周的星期几，返回类型：包含年，第几周，星期几的元祖</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">12</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">isocalendar</span><span class="p">()</span>
+<span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">12</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">isocalendar</span><span class="p">()</span>
+<span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h5 id="魔法属性">魔法属性</h5>
+<p>year,month,day：返回年、月、日</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">13</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">year</span>
+<span class="mi">2017</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">month</span>
+<span class="mi">6</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">day</span>
+<span class="mi">13</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="time-1">time</h4>
+<h5 id="简介-2">简介</h5>
+<p>表示时间的类。常用的属性有hour, minute, second, microsecond。</p>
+<h5 id="参数">参数</h5>
+<p>hour=0, minute=0, second=0, microsecond=0, tzinfo=None, fold=0，</p>
+<ul>
+<li>hour，minute，小时和分钟必须传入，小时为0-23，分钟为0-59</li>
+<li>second，microsecond，秒和毫秒，默认为0，可以不传，秒为0-59，毫秒为0-999999</li>
+<li>tzinfo，时区默认为None,可以填你想要的时区</li>
+<li>fold，在[0,1]。用于消除重复间隔期间的墙壁时间的歧义。(当时钟在夏令时结束时回滚，或由于政治原因降低当前区域的UTC偏移量时，会出现重复间隔。)值0(1)表示具有相同壁面时间表示的两个时刻中较早(较晚)的时刻。</li>
+</ul>
+<h5 id="常量-2">常量</h5>
+<ul>
+<li>time.min，最早可表示的时间，时间(0,0,0,0)。</li>
+<li>time.max，最新可表示时间，时间(23,59,59,999999)。</li>
+<li>time.resolution在不相等的时间对象之间可能存在的最小差异是时间增量(微秒=1)，不过请注意，不支持对时间对象进行算术。</li>
+</ul>
+<h5 id="魔法属性-1">魔法属性</h5>
+<ul>
+<li>
+<p>hour、minute、second、microsecond、tzinfo、fold分别返回时、分、秒、毫秒、时区与折叠关键字</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">time</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">time</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span><span class="o">.</span><span class="n">hour</span>
+<span class="mi">9</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span><span class="o">.</span><span class="n">minute</span>
+<span class="mi">9</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span><span class="o">.</span><span class="n">second</span>
+<span class="mi">0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span><span class="o">.</span><span class="n">microsecond</span>
+<span class="mi">0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span><span class="o">.</span><span class="n">tzinfo</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span><span class="o">.</span><span class="n">fold</span>
+<span class="mi">0</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h5 id="实例方法-1">实例方法</h5>
+<ul>
+<li>
+<p>isoformat，返回按ISO格式格式化的时间字符串。完整的格式是&rsquo;HH:MM:SS.mmmmmm+zz:zz&rsquo;可选参数：timespec，指定附加的数量所包括的时间条款</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">time</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
+<span class="s1">&#39;08:08:00&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">str</span><span class="s1">&#39;&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>strftime，返回一个表示时间的字符串，由显式格式字符串控制。参数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">datetime</span><span class="o">.</span><span class="n">time</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">time</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">time</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&#34;%H/%H/%S&#34;</span><span class="p">)</span>
+<span class="s1">&#39;09/09/00&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>replace,返回根据关键字替换datetime.time对象中的值,参数：hour, minute, second, microsecond, tzinfo,fold</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">time</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">time</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>utcoffset,根据utc返回以东的时区偏移（可以理解为时差），以分钟为单位，如果没有设置tzinfo则返回none。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">UTC</span><span class="p">(</span><span class="n">tzinfo</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">offset</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
+<span class="o">...</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_offset</span> <span class="o">=</span> <span class="n">offset</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">utcoffset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">dt</span><span class="p">):</span>
+<span class="o">...</span>         <span class="k">return</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_offset</span><span class="p">)</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">tzname</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">dt</span><span class="p">):</span>
+<span class="o">...</span>         <span class="k">return</span> <span class="s2">&#34;UTC +</span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_offset</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">dst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
+<span class="o">...</span>         <span class="k">return</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_offset</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">time</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span><span class="o">.</span><span class="n">utcoffset</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">time</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="n">tzinfo</span><span class="o">=</span><span class="n">UTC</span><span class="p">(</span><span class="mi">8</span><span class="p">))</span><span class="o">.</span><span class="n">utcoffset</span><span class="p">()</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">28800</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>tzname,返回时区的名字</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">time</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="n">tzinfo</span><span class="o">=</span><span class="n">UTC</span><span class="p">(</span><span class="mi">8</span><span class="p">))</span><span class="o">.</span><span class="n">tzname</span><span class="p">()</span>
+<span class="s1">&#39;UTC +8&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>dst,返回dst偏移信息，如果没有则返回none</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">time</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="n">tzinfo</span><span class="o">=</span><span class="n">UTC</span><span class="p">(</span><span class="mi">8</span><span class="p">))</span><span class="o">.</span><span class="n">dst</span><span class="p">()</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">28800</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">time</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span><span class="o">.</span><span class="n">dst</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h4 id="datetime-1">datetime</h4>
+<h5 id="简介-3">简介</h5>
+<p>表示日期+时间</p>
+<h5 id="参数-1">参数</h5>
+<p>year, month, day, hour=0, minute=0, second=0, microsecond=0, tzinfo=None, fold=0，年，月，日参数是必需的。 tzinfo可以是None，或者是tzinfo子类的实例。其余参数可以是整数，在以下范围内：</p>
+<ul>
+<li>MINYEAR &lt;= year &lt;= MAXYEAR，</li>
+<li>1 &lt;= month &lt;= 12，</li>
+<li>1 &lt;= day &lt;= number of days in the given month and year，</li>
+<li>0 &lt;= hour &lt; 24，</li>
+<li>0 &lt;= minute &lt; 60，</li>
+<li>0 &lt;= second &lt; 60，</li>
+<li>0 &lt;= microsecond &lt; 1000000，</li>
+<li>fold in [0, 1]。</li>
+</ul>
+<h5 id="魔法属性-2">魔法属性</h5>
+<p>hour,minute,second,microsecond,tzinfo,fold.根据datetime对象返回对应的信息</p>
+<h5 id="类方法-1">类方法</h5>
+<ul>
+<li>
+<p>today,返回当前的本地datetime对象</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">846817</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>now,可选参数：tz，时区信息，返回当前本地datetime对象，如果没有传tz则得到结果与today一样</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="mi">221440</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">UTC</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">84489</span><span class="p">,</span> <span class="n">tzinfo</span><span class="o">=&lt;</span><span class="n">__main__</span><span class="o">.</span><span class="n">UTC</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x0000016B860D0EB8</span><span class="o">&gt;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>utcnow,返回当前的UTCdatetime对象</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">668355</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>fromtimestamp,根据时间戳参数返回当前的datetime对象</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="mi">1516083000</span><span class="p">)</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>utcfromtimestamp，根据时间戳参数返回UTC的datetime对象</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">datetime</span><span class="o">.</span><span class="n">utcfromtimestamp</span><span class="p">(</span><span class="mi">1516083000</span><span class="p">)</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>combine,返回指定日期与时间的datetime对象</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">datetime</span><span class="o">.</span><span class="n">combine</span><span class="p">(</span><span class="n">date</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">time</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>strptime，根据参数中的时间字符串格式返回对应的时间字符串</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&#34;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&#34;</span><span class="p">)</span>
+<span class="s1">&#39;2019-07-17 14:41:52&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h5 id="实例方法-2">实例方法</h5>
+<ul>
+<li>
+<p>timetuple,根据datetime对象的信息返回时间元祖</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">timetuple</span><span class="p">()</span>
+<span class="n">time</span><span class="o">.</span><span class="n">struct_time</span><span class="p">(</span><span class="n">tm_year</span><span class="o">=</span><span class="mi">2018</span><span class="p">,</span> <span class="n">tm_mon</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">tm_mday</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">tm_hour</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">tm_min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">tm_sec</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">tm_wday</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">tm_yday</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">tm_isdst</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>timestamp,根据datetime对象的信息返回对应的时间戳</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">timestamp</span><span class="p">()</span>
+<span class="mf">1514736000.0</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>utctimetuple，根据datetime对象的信息返回对应的utc时间元祖</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">utctimetuple</span><span class="p">()</span>
+<span class="n">time</span><span class="o">.</span><span class="n">struct_time</span><span class="p">(</span><span class="n">tm_year</span><span class="o">=</span><span class="mi">2018</span><span class="p">,</span> <span class="n">tm_mon</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">tm_mday</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">tm_hour</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">tm_min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">tm_sec</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">tm_wday</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">tm_yday</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">tm_isdst</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>date,根据datetime对象的信息返回对应的datetime.date对象</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">date</span><span class="p">()</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>time,根据datetime对象的信息返回对应的datetime.time对象，没有则为datetime.time(0,0)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">time</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">59</span><span class="p">)</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">time</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">59</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>timetz,根据datetime对象的tzinfo信息返回对应的datetime.time对象，在没有设置tzinfo时与time效果一样</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">59</span><span class="p">)</span><span class="o">.</span><span class="n">timetz</span><span class="p">()</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">time</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">59</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">59</span><span class="p">,</span><span class="n">tzinfo</span><span class="o">=</span><span class="n">UTC</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span><span class="o">.</span><span class="n">timetz</span><span class="p">()</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">time</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="n">tzinfo</span><span class="o">=&lt;</span><span class="n">__main__</span><span class="o">.</span><span class="n">UTC</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x0000016B883D8588</span><span class="o">&gt;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>replace,根据传入的关键字返回一个新的datetime对象</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">59</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">59</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>astimezone,返回一个具有tzinfo的datetime对象，如果没有设置tz则为本地的时区信息</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">59</span><span class="p">)</span><span class="o">.</span><span class="n">astimezone</span><span class="p">()</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="n">tzinfo</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">timezone</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">28800</span><span class="p">),</span> <span class="s1">&#39;?D1¨²¡À¨º¡Á?¨º¡À??&#39;</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>ctime，返回按c格式格式化的时间字符串</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">59</span><span class="p">)</span><span class="o">.</span><span class="n">ctime</span><span class="p">()</span>
+<span class="s1">&#39;Mon Jan  1 14:59:00 2018&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>isoformat,返回一个按iso格式格式化的事件字符串，完整的格式看起来像&rsquo;YYYY-MM-DD HH:MM:SS.mmmmmm&rsquo;，如果设置了tzinfo，则UTC偏移量也会被格式化，这时候完整的格式&rsquo;YYYY-MM-DD HH:MM:SS.mmmmmm+HH:MM&rsquo;，可选参数sep默认为T，指定日期与时间之间的分隔符</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2018</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">59</span><span class="p">)</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span>
+<span class="s1">&#39;2018-01-01T14:59:00&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>utcoffset,返回UTC以东的时区偏移，以分钟为单位</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">UTC</span><span class="p">(</span><span class="mi">8</span><span class="p">))</span><span class="o">.</span><span class="n">utcoffset</span><span class="p">()</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">28800</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>tzname,返回datetime对象的时区名字</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">UTC</span><span class="p">(</span><span class="mi">8</span><span class="p">))</span><span class="o">.</span><span class="n">tzname</span><span class="p">()</span>
+<span class="s1">&#39;UTC +8&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>dst,返回datetime对象的dst偏移</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(</span><span class="n">UTC</span><span class="p">(</span><span class="mi">8</span><span class="p">))</span><span class="o">.</span><span class="n">dst</span><span class="p">()</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">28800</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h4 id="timedelta">timedelta</h4>
+<h5 id="简介-4">简介</h5>
+<p>表示两个datetime对象之间的差异。</p>
+<ul>
+<li>
+<p>支持比较的方式：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">-</span> <span class="err">加减时间</span>
+<span class="o">-</span> <span class="err">一元正，一元负，绝对值</span>
+<span class="o">-</span> <span class="err">与时间比较</span>
+<span class="o">-</span> <span class="err">乘以，除以</span><span class="nb">int</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>此外，datetime支持减去两个datetime对象返回一个时间增量，以及一个datetime的加减法以及给出datetime的时间增量。</p>
+</li>
+</ul>
+<h5 id="参数-2">参数</h5>
+<p>days=0, seconds=0, microseconds=0,milliseconds=0,     minutes=0, hours=0, weeks=0</p>
+<h5 id="魔法属性-3">魔法属性</h5>
+<ul>
+<li>
+<p>days,返回日,不足一日则为0</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">days</span>
+<span class="mi">0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span><span class="o">.</span><span class="n">days</span>
+    <span class="mi">1</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>seconds，[秒]</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">seconds</span>
+<span class="mi">3600</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">seconds</span>
+<span class="mi">7200</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>microseconds</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">microseconds</span>
+    <span class="mi">0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">microseconds</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">microseconds</span>
+    <span class="mi">1</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>total_seconds，计算timedelta对象的秒数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span>
+<span class="mf">3600.0</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h4 id="tzinfo">tzinfo</h4>
+<h5 id="简介-5">简介</h5>
+<p>与时区有关的相关信息</p>
+<h5 id="用法">用法</h5>
+<p>时区信息类，他是一个抽象类，不能直接实例化，需要派生一个具体的子类。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">tzinfo</span><span class="p">,</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">class</span> <span class="nc">UTC</span><span class="p">(</span><span class="n">tzinfo</span><span class="p">):</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">offset</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
+<span class="o">...</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_offset</span> <span class="o">=</span> <span class="n">offset</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">utcoffset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">dt</span><span class="p">):</span>
+<span class="o">...</span>         <span class="k">return</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_offset</span><span class="p">)</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">tzname</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">dt</span><span class="p">):</span>
+<span class="o">...</span>         <span class="k">return</span> <span class="s2">&#34;UTC +</span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">_offset</span>
+<span class="o">...</span>     <span class="k">def</span> <span class="nf">dst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
+<span class="o">...</span>         <span class="k">return</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_offset</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">sh</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">tzinfo</span><span class="o">=</span><span class="n">UTC</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">sh</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tzinfo</span><span class="o">=&lt;</span><span class="n">__main__</span><span class="o">.</span><span class="n">UTC_add_8</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x0000021499624588</span><span class="o">&gt;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>​</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2019-01-26</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/python%E6%97%B6%E9%97%B4%E5%90%88%E9%9B%86/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://silencehuliang.github.io/python%E6%97%B6%E9%97%B4%E5%90%88%E9%9B%86/" data-title="Python时间合集" data-hashtags="时间"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://silencehuliang.github.io/python%E6%97%B6%E9%97%B4%E5%90%88%E9%9B%86/" data-hashtag="时间"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://silencehuliang.github.io/python%E6%97%B6%E9%97%B4%E5%90%88%E9%9B%86/" data-title="Python时间合集" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://silencehuliang.github.io/python%E6%97%B6%E9%97%B4%E5%90%88%E9%9B%86/" data-title="Python时间合集"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://silencehuliang.github.io/python%E6%97%B6%E9%97%B4%E5%90%88%E9%9B%86/" data-title="Python时间合集"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://silencehuliang.github.io/python%E6%97%B6%E9%97%B4%E5%90%88%E9%9B%86/" data-title="Python时间合集" data-description="Python时间合集"><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://silencehuliang.github.io/python%E6%97%B6%E9%97%B4%E5%90%88%E9%9B%86/" data-title="Python时间合集" data-description="Python时间合集"><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://silencehuliang.github.io/python%E6%97%B6%E9%97%B4%E5%90%88%E9%9B%86/" data-title="Python时间合集"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E6%97%B6%E9%97%B4/">时间</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/python%E6%90%AD%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/" class="prev" rel="prev" title="Python搭建虚拟环境"><i class="fas fa-angle-left fa-fw"></i>Python搭建虚拟环境</a>
+            <a href="/django2.x%E9%85%8D%E7%BD%AEmysql/" class="next" rel="next" title="Django2.x配置mysql">Django2.x配置mysql<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.74.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2018 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Silence</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.4afae7d446ba01ebf7fff19893eaf3a1.css" integrity="md5-Svrn1Ea6Aev3//GYk&#43;rzoQ=="><link rel="stylesheet" href="/lib/katex/copy-tex.min.b1994d1b9785dd8801dbf655df7bf6d9.css" integrity="md5-sZlNG5eF3YgB2/ZV33v22Q=="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.acf82ee47549fdc386d02768992a49ad.css" integrity="md5-rPgu5HVJ/cOG0CdomSpJrQ=="><script type="text/javascript" src="/lib/valine/Valine.min.b1d2c9b89c70dbf0a8541bfd36afafa1.js" integrity="md5-sdLJuJxw2/CoVBv9Nq&#43;voQ=="></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.100efdceabf7a138f3297e437d078f74.js" integrity="md5-EA79zqv3oTjzKX5DfQePdA=="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.ae7c5011def46b283696baf367586b5d.js" integrity="md5-rnxQEd70ayg2lrrzZ1hrXQ=="></script><script type="text/javascript" src="/lib/lunr/lunr.min.a08f2562fde4550269dfc13028ed2502.js" integrity="md5-oI8lYv3kVQJp38EwKO0lAg=="></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.b82fb8d93ce0ea6a485dfa3a0b1e7573.js" integrity="md5-uC&#43;42Tzg6mpIXfo6Cx51cw=="></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.f1ba3e22560e2eb7474f28feb4507617.js" integrity="md5-8bo&#43;IlYOLrdHTyj&#43;tFB2Fw=="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.b80e49640d4794d4333d00db76ea22f7.js" integrity="md5-uA5JZA1HlNQzPQDbduoi9w=="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.af8ab36589315582ccdd82f22e84bffb.js" integrity="md5-r4qzZYkxVYLM3YLyLoS/&#43;w=="></script><script type="text/javascript" src="/lib/sharer/sharer.min.c3c3372b4cf5c56dd4e5a4be8ada86c9.js" integrity="md5-w8M3K0z1xW3U5aS&#43;itqGyQ=="></script><script type="text/javascript" src="/lib/typeit/typeit.min.b5f3481ebeaa3e56a2f5f96ea648bf69.js" integrity="md5-tfNIHr6qPlai9flupki/aQ=="></script><script type="text/javascript" src="/lib/katex/katex.min.c158c9e823b681cf535f46596b5e4eac.js" integrity="md5-wVjJ6CO2gc9TX0ZZa15OrA=="></script><script type="text/javascript" src="/lib/katex/auto-render.min.28cd0b98cd3f4fa37d52f3ffe47ad9d4.js" integrity="md5-KM0LmM0/T6N9UvP/5HrZ1A=="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.bfaec7d1dea915d74a7a6d833f0ff62e.js" integrity="md5-v67H0d6pFddKem2DPw/2Lg=="></script><script type="text/javascript" src="/lib/katex/mhchem.min.1bbb252363e83547d4b2186a41eaca28.js" integrity="md5-G7slI2PoNUfUshhqQerKKA=="></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.4a48532bf0b17c058b8b6854f49de23f.js" integrity="md5-SkhTK/CxfAWLi2hU9J3iPw=="></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"c4VA4R1Xg3drBKSQzNfWnWlF-gzGzoHsz","appKey":"upEyt7esgWCbm0L7EPDH6bhV","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","meta":["nick","mail"],"pageSize":10,"placeholder":"说点什么吧...","recordIP":true,"visitor":true}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"id-1":"Silence’s Blog","id-2":"Silence’s Blog"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.7bc7989e979c4a19d97db3ab311a80fe.js" integrity="md5-e8eYnpecShnZfbOrMRqA/g=="></script></body>
+</html>

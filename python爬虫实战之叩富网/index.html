@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Python爬虫实战之叩富网 - Silence Blog</title><meta name="Description" content="Python爬虫实战之叩富网"><meta property="og:title" content="Python爬虫实战之叩富网" />
+<meta property="og:description" content="Python爬虫实战之叩富网" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://silencehuliang.github.io/python%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%E4%B9%8B%E5%8F%A9%E5%AF%8C%E7%BD%91/" />
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
+<meta property="article:published_time" content="2019-06-22T00:00:00+00:00" />
+<meta property="article:modified_time" content="2012-06-30T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
+
+<meta name="twitter:title" content="Python爬虫实战之叩富网"/>
+<meta name="twitter:description" content="Python爬虫实战之叩富网"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://silencehuliang.github.io/python%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%E4%B9%8B%E5%8F%A9%E5%AF%8C%E7%BD%91/" /><link rel="prev" href="https://silencehuliang.github.io/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Avim/" /><link rel="next" href="https://silencehuliang.github.io/python%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%E4%B9%8B%E8%90%9D%E5%8D%9C%E6%8A%95%E7%A0%94/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.2e7125082ec8de83a87adc70253c9c23.css" integrity="md5-LnElCC7I3oOoetxwJTycIw=="><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.76cb46c10b6c0293433b371bae2414b2.css" integrity="md5-dstGwQtsApNDOzcbriQUsg=="><link rel="stylesheet" href="/lib/animate/animate.min.bc1a6a99c43f5ccc97d2d350bde13f74.css" integrity="md5-vBpqmcQ/XMyX0tNQveE/dA=="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Python爬虫实战之叩富网",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/silencehuliang.github.io\/python%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%E4%B9%8B%E5%8F%A9%E5%AF%8C%E7%BD%91\/"
+        },"genre": "posts","keywords": "爬虫","wordcount":  4571 ,
+        "url": "https:\/\/silencehuliang.github.io\/python%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%E4%B9%8B%E5%8F%A9%E5%AF%8C%E7%BD%91\/","datePublished": "2019-06-22T00:00:00+00:00","dateModified": "2012-06-30T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "Silence"},"author": {
+                "@type": "Person",
+                "name": "Silence"
+            },"description": "Python爬虫实战之叩富网"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Silence Blog"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+        data-srcset="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg, https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg 1.5x, https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+        title="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg" /><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Silence Blog"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+        data-srcset="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg, https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg 1.5x, https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+        title="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg" /><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Python爬虫实战之叩富网</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Silence</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E7%88%AC%E8%99%AB/"><i class="far fa-folder fa-fw"></i>爬虫</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-06-22">2019-06-22</time>&nbsp;<i class="fa fa-history" aria-hidden="true"></i>
+                2012-06-30
+                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4571 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 10 分钟&nbsp;<span id="/python%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%E4%B9%8B%E5%8F%A9%E5%AF%8C%E7%BD%91/" class="leancloud_visitors" data-flag-title="Python爬虫实战之叩富网">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#爬虫介绍">爬虫介绍</a>
+      <ul>
+        <li><a href="#网站介绍">网站介绍</a></li>
+        <li><a href="#编写爬虫的原因和用途">编写爬虫的原因和用途</a></li>
+      </ul>
+    </li>
+    <li><a href="#robots协议">robots协议</a>
+      <ul>
+        <li><a href="#什么是robots协议">什么是robots协议</a></li>
+        <li><a href="#robots协议的构成">robots协议的构成</a></li>
+        <li><a href="#常见的规则有哪些">常见的规则有哪些</a></li>
+        <li><a href="#feeling">Feeling</a></li>
+      </ul>
+    </li>
+    <li><a href="#requests">requests</a>
+      <ul>
+        <li><a href="#快速上手">快速上手</a></li>
+        <li><a href="#获取robots协议查看可爬取范围">获取robots协议，查看可爬取范围</a></li>
+        <li><a href="#登陆叩富网">登陆叩富网</a></li>
+        <li><a href="#feeling-1">Feeling</a></li>
+      </ul>
+    </li>
+    <li><a href="#获取账户信息">获取账户信息</a>
+      <ul>
+        <li><a href="#练习区信息">练习区信息</a></li>
+        <li><a href="#xpath">XPath</a></li>
+        <li><a href="#持仓交易业绩信息">持仓、交易、业绩信息</a></li>
+        <li><a href="#feeling-2">Feeling</a></li>
+      </ul>
+    </li>
+    <li><a href="#账户操作">账户操作</a>
+      <ul>
+        <li><a href="#股票信息">股票信息</a></li>
+        <li><a href="#股票交易">股票交易</a></li>
+        <li><a href="#持仓数量">持仓数量</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p><strong>声明：以下内容均为我个人的理解，如果发现错误或者疑问可以联系我共同探讨</strong></p>
+<h2 id="爬虫介绍">爬虫介绍</h2>
+<p>爬虫是一种按照一定规则自动抓取网络上的信息数据的程序。我们身处一个大数据的时代，可以通过爬虫获取到我们所需要的数据(遵从<strong>robots协议</strong>中的规则)。</p>
+<h3 id="网站介绍">网站介绍</h3>
+<p><a href="http://www.cofool.com/" target="_blank" rel="noopener noreffer">叩富网</a>是江西博辰网络科技公司旗下的一个专业网站。模拟炒股网站初建于2000年，2006年被博辰网络收购，并开始规范系统的运作。目前用户100多万，日均IP数10万左右。是国内唯一一家专业致力于模拟炒股开发和运营的网站。公司旗下有有奖大赛站、免费大赛站以及和其他证券公司合作的网站。</p>
+<h3 id="编写爬虫的原因和用途">编写爬虫的原因和用途</h3>
+<p>本人闲暇时间会学习投资理财相关内容，并通过叩富网进行模拟炒股，本次想通过编写爬虫来程序化自己的模拟交易</p>
+<h2 id="robots协议">robots协议</h2>
+<h3 id="什么是robots协议">什么是robots协议</h3>
+<p>robots协议以robots.txt文件形式呈现，是网站中给各类爬虫规定爬取范围的文件，robots.txt存放在网站的根目录下。我们准备爬取某个网站时，首先应该查看我们需要的数据该网站是否允许我们爬取，当我们爬取规则之外的数据时，该网站有权利起诉我们非法获取数据。</p>
+<h3 id="robots协议的构成">robots协议的构成</h3>
+<p>由User-agent、Allow、Disallow构成。User-agent后面的内容是具体的爬虫名，如百度爬虫为Baiduspider，<em>则代表所有爬虫。Allow后面的内容是允许爬取的URL路径，如/</em>.jpg$表示可以爬取该网站下的所有.jpg图片，/表示所有路径均允许爬取。Disallow后面的内容是不允许爬取的URL路径，同Allow相反。</p>
+<h3 id="常见的规则有哪些">常见的规则有哪些</h3>
+<p>允许爬虫获取所有内容：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">User-agent: *
+Disallow:
+# 或者
+User-agent: *
+Allow: /
+</code></pre></td></tr></table>
+</div>
+</div><p>禁止爬取所有内容：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">User-agent: *
+Disallow: /
+</code></pre></td></tr></table>
+</div>
+</div><p>禁止访问网站中所有动态页面</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">User-agent: *
+Disallow: /*?*
+</code></pre></td></tr></table>
+</div>
+</div><p>禁止搜索引擎抓取网站上所有图片</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">User-agent: *
+
+Disallow: /*.jpg$
+
+Disallow: /*.jpeg$
+
+Disallow: /*.gif$
+
+Disallow: /*.png$
+
+Disallow: /*.bmp$
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="feeling">Feeling</h3>
+<p>爬虫可以使我们更加高效的获取到互联网中的各类数据，但网络不是法外之地我们也要在合规合法的基础上进行爬取，尊重每一个网站开发者，敬畏法律。</p>
+<h2 id="requests">requests</h2>
+<p>requests库是学习爬虫入门最适合的一个第三方库，它是将Python内置的urllib进行深度封装的库。是一个非常成熟的HTTP客户端库，当然他也并非完美，我们后期也可以在其基础上进行补充形成适合自己的一个库。</p>
+<h3 id="快速上手">快速上手</h3>
+<p>中文文档：https://docs.python-requests.org/zh_CN/latest/index.html</p>
+<p>官方示例：https://docs.python-requests.org/zh_CN/latest/user/quickstart.html</p>
+<h3 id="获取robots协议查看可爬取范围">获取robots协议，查看可爬取范围</h3>
+<p>使用get请求获取协议内容，并将其输出控制台查看发现规则允许我们爬取整站内容</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tvax3.sinaimg.cn/large/00729CCqgy1gp1wu4ik9uj311v0buwib.jpg"
+        data-srcset="https://tvax3.sinaimg.cn/large/00729CCqgy1gp1wu4ik9uj311v0buwib.jpg, https://tvax3.sinaimg.cn/large/00729CCqgy1gp1wu4ik9uj311v0buwib.jpg 1.5x, https://tvax3.sinaimg.cn/large/00729CCqgy1gp1wu4ik9uj311v0buwib.jpg 2x"
+        data-sizes="auto"
+        alt="https://tvax3.sinaimg.cn/large/00729CCqgy1gp1wu4ik9uj311v0buwib.jpg"
+        title="https://tvax3.sinaimg.cn/large/00729CCqgy1gp1wu4ik9uj311v0buwib.jpg" /></p>
+<h3 id="登陆叩富网">登陆叩富网</h3>
+<p>在Chrome浏览器中通过开发者选项中的Network选项卡中发现，登陆的时候有一个login.html</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tva4.sinaimg.cn/large/00729CCqgy1gp1x8238bsj31g10muk7t.jpg"
+        data-srcset="https://tva4.sinaimg.cn/large/00729CCqgy1gp1x8238bsj31g10muk7t.jpg, https://tva4.sinaimg.cn/large/00729CCqgy1gp1x8238bsj31g10muk7t.jpg 1.5x, https://tva4.sinaimg.cn/large/00729CCqgy1gp1x8238bsj31g10muk7t.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva4.sinaimg.cn/large/00729CCqgy1gp1x8238bsj31g10muk7t.jpg"
+        title="https://tva4.sinaimg.cn/large/00729CCqgy1gp1x8238bsj31g10muk7t.jpg" /></p>
+<p>我们可以在里面看到请求URL、请求方式和Form Data所需要的内容，根据这个编写一个请求查看一下获取到的数据</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tvax4.sinaimg.cn/large/00729CCqgy1gp1xsqudg4j310b0ndgrt.jpg"
+        data-srcset="https://tvax4.sinaimg.cn/large/00729CCqgy1gp1xsqudg4j310b0ndgrt.jpg, https://tvax4.sinaimg.cn/large/00729CCqgy1gp1xsqudg4j310b0ndgrt.jpg 1.5x, https://tvax4.sinaimg.cn/large/00729CCqgy1gp1xsqudg4j310b0ndgrt.jpg 2x"
+        data-sizes="auto"
+        alt="https://tvax4.sinaimg.cn/large/00729CCqgy1gp1xsqudg4j310b0ndgrt.jpg"
+        title="https://tvax4.sinaimg.cn/large/00729CCqgy1gp1xsqudg4j310b0ndgrt.jpg" /></p>
+<p>由于是字符串格式，所以出现了我们看不懂的字符，通过json转成Python中的字典格式再查看</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tva3.sinaimg.cn/large/00729CCqgy1gp1y605naqj31a40oxdmd.jpg"
+        data-srcset="https://tva3.sinaimg.cn/large/00729CCqgy1gp1y605naqj31a40oxdmd.jpg, https://tva3.sinaimg.cn/large/00729CCqgy1gp1y605naqj31a40oxdmd.jpg 1.5x, https://tva3.sinaimg.cn/large/00729CCqgy1gp1y605naqj31a40oxdmd.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva3.sinaimg.cn/large/00729CCqgy1gp1y605naqj31a40oxdmd.jpg"
+        title="https://tva3.sinaimg.cn/large/00729CCqgy1gp1y605naqj31a40oxdmd.jpg" /></p>
+<p>可以看到显示登陆成功了，接下来通过获取到的cookie就可以获取到我们需要的各种信息了</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tva1.sinaimg.cn/large/00729CCqgy1gp1yph1milj30ys0qadox.jpg"
+        data-srcset="https://tva1.sinaimg.cn/large/00729CCqgy1gp1yph1milj30ys0qadox.jpg, https://tva1.sinaimg.cn/large/00729CCqgy1gp1yph1milj30ys0qadox.jpg 1.5x, https://tva1.sinaimg.cn/large/00729CCqgy1gp1yph1milj30ys0qadox.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva1.sinaimg.cn/large/00729CCqgy1gp1yph1milj30ys0qadox.jpg"
+        title="https://tva1.sinaimg.cn/large/00729CCqgy1gp1yph1milj30ys0qadox.jpg" /></p>
+<p>接下来我们将代码优化一下变成一个方法，让登陆后的cookie可以在以后任意需要的地方使用</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">lxml</span> <span class="kn">import</span> <span class="n">etree</span>
+
+
+<span class="k">def</span> <span class="nf">login</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">    登陆叩富网
+</span><span class="s2">    :param username: 用户名
+</span><span class="s2">    :param password: 密码
+</span><span class="s2">    :return: 登陆成功返回cookie，失败抛出对应异常
+</span><span class="s2">    &#34;&#34;&#34;</span>
+    <span class="n">login_url</span> <span class="o">=</span> <span class="s1">&#39;http://www.cofool.com/Passport/login.html&#39;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;username&#39;</span><span class="p">:</span> <span class="n">username</span><span class="p">,</span>
+        <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="n">password</span>
+    <span class="p">}</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">login_url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&#34;登陆失败，原因为：{}&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+
+    <span class="n">content</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+    <span class="k">if</span> <span class="n">content</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">cookie</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">cookies</span><span class="o">.</span><span class="n">get_dict</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">cookie</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&#34;登陆失败，原因为：{}&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">content</span><span class="p">[</span><span class="s1">&#39;info&#39;</span><span class="p">]))</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>在出现登录失败的时候抛出异常，并显示错误信息</p>
+<h3 id="feeling-1">Feeling</h3>
+<p>爬虫是我们与开发者的博弈，我们需要站在他们的角度去分析他们开发的过程，从而更好的理解并去设计我们的相关爬虫程序。通常爬虫程序都不是一次就完成的，需要通过我们不断根据请求的反馈去修改程序，最终通过多层解析得到结果。</p>
+<h2 id="获取账户信息">获取账户信息</h2>
+<h3 id="练习区信息">练习区信息</h3>
+<p>通过对相关请求的分析，练习区信息在<code>http://www.cofool.com/Trade/Stock/index/gid/2.html</code>这个URL下</p>
+<p>对页面分析我们所需要的数据在class为top_ts的div下</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tva1.sinaimg.cn/large/00729CCqgy1gp2w964y87j31gn0h615i.jpg"
+        data-srcset="https://tva1.sinaimg.cn/large/00729CCqgy1gp2w964y87j31gn0h615i.jpg, https://tva1.sinaimg.cn/large/00729CCqgy1gp2w964y87j31gn0h615i.jpg 1.5x, https://tva1.sinaimg.cn/large/00729CCqgy1gp2w964y87j31gn0h615i.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva1.sinaimg.cn/large/00729CCqgy1gp2w964y87j31gn0h615i.jpg"
+        title="https://tva1.sinaimg.cn/large/00729CCqgy1gp2w964y87j31gn0h615i.jpg" /></p>
+<h3 id="xpath">XPath</h3>
+<p>XPath是一门在XML文档中查找信息的语言，可以帮助我们在爬虫中对获取数据进行查找得到我们需要的内容。</p>
+<p>推荐从大佬<a href="https://cuiqingcai.com/2621.html" target="_blank" rel="noopener noreffer">崔庆才的个人博客</a>学习XPath及爬虫的相关内容</p>
+<p>开始通过XPath获取对应数据，考虑到多个数据在相同的font标签下，可以一次性获取所有标签然后进行处理</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">get_account_info</span><span class="p">(</span><span class="n">query_category</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">    根据query_category获取账户相关信息
+</span><span class="s2">    :param query_category: 查询类别信息,账户信息:ai 持仓状态:ap 当日委托:ac 当日成交:ad 历史成交:hd 股票收益明细:sd 日资产增长明细：da
+</span><span class="s2">    月资产增长明细：ma 荣耀榜 ho
+</span><span class="s2">    :return:
+</span><span class="s2">    &#34;&#34;&#34;</span>
+    <span class="n">cookie</span> <span class="o">=</span> <span class="n">login</span><span class="p">(</span><span class="s1">&#39;用户名&#39;</span><span class="p">,</span> <span class="s1">&#39;密码&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">query_category</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;ai&#39;</span><span class="p">,</span> <span class="s1">&#39;ap&#39;</span><span class="p">,</span> <span class="s1">&#39;ac&#39;</span><span class="p">,</span> <span class="s1">&#39;ad&#39;</span><span class="p">,</span> <span class="s1">&#39;hd&#39;</span><span class="p">,</span> <span class="s1">&#39;sd&#39;</span><span class="p">,</span> <span class="s1">&#39;da&#39;</span><span class="p">,</span> <span class="s1">&#39;ma&#39;</span><span class="p">,</span> <span class="s1">&#39;ho&#39;</span><span class="p">]:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;查询类别不存在&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">query_category</span> <span class="o">==</span> <span class="s1">&#39;ai&#39;</span><span class="p">:</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://www.cofool.com/Trade/Stock/index/gid/2.html&#39;</span>
+        <span class="c1"># 抓取账户相关数据</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">cookies</span><span class="o">=</span><span class="n">cookie</span><span class="p">)</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&#34;获取账户数据失败，原因为：{}&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+        <span class="k">if</span> <span class="s1">&#39;总盈利率&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">response</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&#34;获取账户数据失败，未获取到正确信息&#34;</span><span class="p">)</span>
+        <span class="c1"># 使用xpath对抓取到的数据进行清洗得到我们需要的数据</span>
+        <span class="n">html</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+        <span class="n">account_info</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;//div [@class=&#34;top_ts&#34;]/div//font/text()&#39;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">account_info</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">4</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&#34;获取账户数据失败，未获取足够的账户数据&#34;</span><span class="p">)</span>
+        <span class="n">gross_profit_rate</span> <span class="o">=</span> <span class="n">account_info</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># 总收益率</span>
+        <span class="n">initial_funding</span> <span class="o">=</span> <span class="n">account_info</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># 初始资金</span>
+        <span class="n">number_of_participants</span> <span class="o">=</span> <span class="n">account_info</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># 参赛人数</span>
+        <span class="n">average_income</span> <span class="o">=</span> <span class="n">account_info</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>  <span class="c1"># 平均收益率</span>
+        <span class="n">overall_ranking</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;//div [@class=&#34;top_ts&#34;]/div//p[2]/b/text()&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># 总排名</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">total_assets</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;\d,\d*,\d*.\d*&#39;</span><span class="p">,</span> <span class="n">html</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span>
+                <span class="s1">&#39;//*[@id=&#34;left2&#34;]/table/tbody/tr[1]/td[@class=&#34;btom zjsr&#34;]/text()&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)))</span>
+            <span class="n">available_funds</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;\d,\d*,\d*.\d*&#39;</span><span class="p">,</span> <span class="n">html</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span>
+                <span class="s1">&#39;//*[@id=&#34;left2&#34;]/table/tbody/tr[1]/td[@class=&#34;btom zjl&#34;]/text()&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)))</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&#34;获取账户数据失败，{}&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;总收益率&#39;</span><span class="p">:</span> <span class="n">gross_profit_rate</span><span class="p">,</span> <span class="s1">&#39;初始资金&#39;</span><span class="p">:</span> <span class="n">initial_funding</span><span class="p">,</span> <span class="s1">&#39;参赛人数&#39;</span><span class="p">:</span> <span class="n">number_of_participants</span><span class="p">,</span>
+                <span class="s1">&#39;平均收益率&#39;</span><span class="p">:</span> <span class="n">average_income</span><span class="p">,</span> <span class="s1">&#39;总排名&#39;</span><span class="p">:</span> <span class="n">overall_ranking</span><span class="p">,</span> <span class="s1">&#39;总资产&#39;</span><span class="p">:</span> <span class="n">total_assets</span><span class="p">,</span> <span class="s1">&#39;可用资金&#39;</span><span class="p">:</span> <span class="n">available_funds</span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="持仓交易业绩信息">持仓、交易、业绩信息</h3>
+<p>通过对相关请求的分析，当前持仓、当日委托、当日成交、历史成交与业绩报告都用同一个URL进行请求，只是请求中FormData部分数据不同，分析各页面数据发现当前持仓、当日委托、当日成交、历史成交数据类似，将其作为同一个类型进行爬取做简单修改即可。分页相关信息需要根据页码数据进行追加处理</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">...</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://www.cofool.com/Trade/Stock/tradeItem.html&#39;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;gid&#39;</span><span class="p">:</span> <span class="s1">&#39;gid&#39;</span><span class="p">,</span> <span class="s1">&#39;uid&#39;</span><span class="p">:</span> <span class="s1">&#39;uid&#39;</span><span class="p">,</span> <span class="s1">&#39;web_id&#39;</span><span class="p">:</span> <span class="s1">&#39;web_id}</span>
+    <span class="c1"># 根据查询条件设置对应的type值</span>
+    <span class="k">if</span> <span class="n">query_category</span> <span class="o">==</span> <span class="s1">&#39;ap&#39;</span><span class="p">:</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;position&#39;</span>
+    <span class="k">elif</span> <span class="n">query_category</span> <span class="o">==</span> <span class="s1">&#39;ac&#39;</span><span class="p">:</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;entrust&#39;</span>
+    <span class="k">elif</span> <span class="n">query_category</span> <span class="o">==</span> <span class="s1">&#39;ad&#39;</span><span class="p">:</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;turnover&#39;</span>
+    <span class="k">elif</span> <span class="n">query_category</span> <span class="o">==</span> <span class="s1">&#39;hd&#39;</span><span class="p">:</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;history&#39;</span>
+    <span class="k">elif</span> <span class="n">query_category</span> <span class="o">==</span> <span class="s1">&#39;sd&#39;</span><span class="p">:</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;earnings&#39;</span>
+    <span class="k">elif</span> <span class="n">query_category</span> <span class="o">==</span> <span class="s1">&#39;da&#39;</span><span class="p">:</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;dayasset&#39;</span>
+    <span class="k">elif</span> <span class="n">query_category</span> <span class="o">==</span> <span class="s1">&#39;ma&#39;</span><span class="p">:</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;monthasset&#39;</span>
+    <span class="k">elif</span> <span class="n">query_category</span> <span class="o">==</span> <span class="s1">&#39;ho&#39;</span><span class="p">:</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;honor&#39;</span>
+    <span class="c1"># 第一次获取对应信息，当信息不存在时返回&#39;暂无交易的数据！&#39;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;获取账户数据失败，原因为：{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+    <span class="k">if</span> <span class="s1">&#39; 暂无交易的数据！&#39;</span> <span class="ow">in</span> <span class="n">response</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;暂无交易的数据！&#39;</span>
+    <span class="n">html</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+    <span class="c1"># 当有信息时获取页码数值，</span>
+    <span class="n">number_of_pages</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">html</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;//div [@class = &#34;clearfix fr&#34;]/a/text()&#39;</span><span class="p">))</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="c1"># 获取对应表头名</span>
+    <span class="n">col_name</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;//tr/th/text()&#39;</span><span class="p">)</span>
+    <span class="c1"># 设置临时存储字典</span>
+    <span class="n">temp_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="c1"># 根据页码信息进行第二次访问获取信息</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">number_of_pages</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="c1"># 添加页码数据</span>
+        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;p&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;获取账户数据失败，原因为：{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+        <span class="c1"># 由于爬取的数据存在大量\n和空格，先进行一次简单的清洗</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">\s|\s&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+        <span class="n">html</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+        <span class="c1"># 分别获取各列信息</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">col_name</span><span class="p">)):</span>
+            <span class="n">xpath_index</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="n">xpath_values</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;//tr/td[{}]//text()|//tr/td[{}]/font/text()|//tr/td[{}]/text()&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">xpath_index</span><span class="p">,</span> <span class="n">xpath_index</span><span class="p">,</span><span class="n">xpath_index</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">temp_dict</span><span class="p">[</span><span class="n">col_name</span><span class="p">[</span><span class="n">j</span><span class="p">]]</span> <span class="o">=</span> <span class="n">xpath_values</span>
+            <span class="c1"># 当出现第二页及其以上时，进行数据追加处理</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">temp_dict</span><span class="p">[</span><span class="n">col_name</span><span class="p">[</span><span class="n">j</span><span class="p">]]</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">xpath_values</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">temp_dict</span><span class="p">)</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="feeling-2">Feeling</h3>
+<p>爬虫中数据清洗的过程通常也非常熬人，网站开发者的水平高低与反爬的难度，会导致许多数据清洗起来非常复杂，可能会花费大量的时间还得不到你想要的结果，这时候我们需要保持一颗平常心，针对出现的问题一个一个去解决，只要坚持下去一定能解决的！</p>
+<h2 id="账户操作">账户操作</h2>
+<h3 id="股票信息">股票信息</h3>
+<p>接下来编写账户操作方面的爬虫，要交易首先要拿到进行交易股票的相关信息，通过分析相关请求后发现其URL为<code>http://www.cofool.com/Trade/Stock/stockQuote.html</code>,这个比较简单很快就可以完成对应代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">get_stock_info</span><span class="p">(</span><span class="n">stock_code</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">    根据股票代码获取相关价格
+</span><span class="s2">    :param code:股票代码
+</span><span class="s2">    :return: 相关价格
+</span><span class="s2">    &#34;&#34;&#34;</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&#34;http://www.cofool.com/Trade/Stock/stockQuote.html&#34;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&#34;code&#34;</span><span class="p">:</span> <span class="n">stock_code</span><span class="p">,</span>
+        <span class="s2">&#34;uid&#34;</span><span class="p">:</span> <span class="s1">&#39;uid&#39;</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">cookie</span> <span class="o">=</span> <span class="n">login</span><span class="p">(</span><span class="s1">&#39;账户名&#39;</span><span class="p">,</span> <span class="s1">&#39;密码&#39;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">cookies</span><span class="o">=</span><span class="n">cookie</span><span class="p">)</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&#34;utf-8-sig&#34;</span><span class="p">))</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;获取账户数据失败，原因为：{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+    <span class="n">stock_info</span> <span class="o">=</span> <span class="n">response</span><span class="p">[</span><span class="s2">&#34;info&#34;</span><span class="p">]</span>
+    <span class="n">info_dict</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&#34;high_limit&#34;</span><span class="p">:</span> <span class="n">stock_info</span><span class="p">[</span><span class="s2">&#34;surgedLimit&#34;</span><span class="p">],</span>  <span class="c1"># 涨停价</span>
+        <span class="s2">&#34;low_limit&#34;</span><span class="p">:</span> <span class="n">stock_info</span><span class="p">[</span><span class="s2">&#34;declineLimit&#34;</span><span class="p">],</span>  <span class="c1"># 跌停价</span>
+        <span class="s2">&#34;stock_name&#34;</span><span class="p">:</span> <span class="n">stock_info</span><span class="p">[</span><span class="s1">&#39;stockName&#39;</span><span class="p">],</span>  <span class="c1"># 股票名称</span>
+        <span class="s1">&#39;currentPrice&#39;</span><span class="p">:</span> <span class="n">stock_info</span><span class="p">[</span><span class="s2">&#34;currentPrice&#34;</span><span class="p">],</span>  <span class="c1"># 当前价</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">info_dict</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="股票交易">股票交易</h3>
+<p>通过观察发现买入与卖出操作的URL差距非常小，并且请求参数也高度相似，可以将其放在同一个方法中</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">tradeing</span><span class="p">(</span><span class="n">stock_code</span><span class="p">,</span> <span class="n">tradeing_type</span><span class="p">,</span> <span class="n">amount</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;
+</span><span class="s2">    股票交易，并返回交易状态
+</span><span class="s2">    :param stock_code:股票代码
+</span><span class="s2">    :param tradeing_type:交易类型
+</span><span class="s2">    :param amount:交易数量,默认为0防止出现没有填写的情况
+</span><span class="s2">    :return:交易状态
+</span><span class="s2">    &#34;&#34;&#34;</span>
+    <span class="n">cookie</span> <span class="o">=</span> <span class="n">login</span><span class="p">(</span><span class="s1">&#39;账户名&#39;</span><span class="p">,</span> <span class="s1">&#39;密码&#39;</span><span class="p">)</span>
+    <span class="c1"># 获取股票相关信息</span>
+    <span class="n">info_dict</span> <span class="o">=</span> <span class="n">get_stock_info</span><span class="p">(</span><span class="n">stock_code</span><span class="p">)</span>
+    <span class="n">price</span> <span class="o">=</span> <span class="n">info_dict</span><span class="p">[</span><span class="s2">&#34;high_limit&#34;</span><span class="p">]</span>
+    <span class="c1"># 配置相关数据</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&#34;stockName&#34;</span><span class="p">:</span> <span class="n">info_dict</span><span class="p">[</span><span class="s1">&#39;stock_name&#39;</span><span class="p">],</span>
+        <span class="s2">&#34;code&#34;</span><span class="p">:</span> <span class="n">stock_code</span><span class="p">,</span>
+        <span class="s2">&#34;uid&#34;</span><span class="p">:</span> <span class="s1">&#39;uid&#39;</span><span class="p">,</span>
+        <span class="s2">&#34;gid&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s2">&#34;orderPrice&#34;</span><span class="p">:</span> <span class="n">price</span><span class="p">,</span>
+        <span class="s2">&#34;orderAmount&#34;</span><span class="p">:</span> <span class="n">amount</span><span class="p">,</span>
+        <span class="s2">&#34;declineLimit&#34;</span><span class="p">:</span> <span class="n">info_dict</span><span class="p">[</span><span class="s1">&#39;low_limit&#39;</span><span class="p">],</span>
+        <span class="s2">&#34;surgedLimit&#34;</span><span class="p">:</span> <span class="n">info_dict</span><span class="p">[</span><span class="s1">&#39;high_limit&#39;</span><span class="p">]</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="n">tradeing_type</span> <span class="o">==</span> <span class="s1">&#39;buy&#39;</span><span class="p">:</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&#34;http://www.cofool.com/Trade/Stock/buy.html&#34;</span>
+        <span class="c1"># 买入操作，检测买入数量防止超过最大买入数量</span>
+        <span class="n">available_funds</span> <span class="o">=</span> <span class="n">get_account_info</span><span class="p">(</span><span class="s1">&#39;ai&#39;</span><span class="p">)[</span><span class="s1">&#39;可用资金&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">amount</span> <span class="o">&lt;</span> <span class="n">available_funds</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">price</span><span class="p">):</span>
+            <span class="n">data</span><span class="p">[</span><span class="s2">&#34;orderAmount&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">amount</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;购买数量超过最大可购买数量&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">tradeing_type</span> <span class="o">==</span> <span class="s1">&#39;sell&#39;</span><span class="p">:</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&#34;http://www.cofool.com/Trade/Stock/sell.html&#34;</span>
+        <span class="c1"># 卖出操作，从持仓信息中获取可卖出数量</span>
+        <span class="n">data</span><span class="p">[</span><span class="s2">&#34;orderAmount&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_amount</span><span class="p">(</span><span class="n">stock_code</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">content</span> <span class="o">=</span> \
+            <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">cookies</span><span class="o">=</span><span class="n">cookie</span><span class="p">)</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&#34;utf-8-sig&#34;</span><span class="p">)</span>
+        <span class="n">status</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&#34;unicode_escape&#34;</span><span class="p">)[</span><span class="s2">&#34;status&#34;</span><span class="p">]</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;获取账户数据失败，原因为：{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&#34;买入股票：{}，股数：{}&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">stock_code</span><span class="p">,</span> <span class="n">amount</span><span class="p">))</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&#34;买入失败，失败原因为：{}&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&#34;unicode_escape&#34;</span><span class="p">)[</span><span class="s2">&#34;info&#34;</span><span class="p">]))</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="持仓数量">持仓数量</h3>
+<p>在卖出交易的时候需要获取账户中持仓的数量</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">get_amount</span><span class="p">(</span><span class="n">code</span><span class="p">):</span>
+    <span class="s2">&#34;&#34;&#34;根据股票代码获取可交易数量
+</span><span class="s2">    :param code:股票代码
+</span><span class="s2">    :return:对应股票可用数量
+</span><span class="s2">    &#34;&#34;&#34;</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&#34;http://www.cofool.com/Trade/Stock/sellAmount&#34;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&#34;code&#34;</span><span class="p">:</span> <span class="n">code</span><span class="p">,</span>
+        <span class="s2">&#34;uid&#34;</span><span class="p">:</span> <span class="s1">&#39;uid&#39;</span><span class="p">,</span>
+        <span class="s2">&#34;web_id&#34;</span><span class="p">:</span> <span class="s1">&#39;web_id&#39;</span>
+    <span class="p">}</span>
+    <span class="n">cookie</span> <span class="o">=</span> <span class="n">login</span><span class="p">(</span><span class="s1">&#39;账户名&#39;</span><span class="p">,</span> <span class="s1">&#39;密码&#39;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">content</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">cookies</span><span class="o">=</span><span class="n">cookie</span><span class="p">)</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;unicode_escape&#39;</span><span class="p">))</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&#34;获取股数数据失败，{}&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="n">content</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">amount</span> <span class="o">=</span> <span class="n">content</span><span class="p">[</span><span class="s1">&#39;info&#39;</span><span class="p">][</span><span class="s1">&#39;frozen_amount&#39;</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">amount</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="n">content</span><span class="p">[</span><span class="s1">&#39;info&#39;</span><span class="p">])</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>到这里叩富网的爬虫基本完成了，最后将转化为类就可以了，完整代码可以在我的GitHub仓库查看最新的代码</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2012-06-30</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/python%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%E4%B9%8B%E5%8F%A9%E5%AF%8C%E7%BD%91/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://silencehuliang.github.io/python%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%E4%B9%8B%E5%8F%A9%E5%AF%8C%E7%BD%91/" data-title="Python爬虫实战之叩富网" data-hashtags="爬虫"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://silencehuliang.github.io/python%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%E4%B9%8B%E5%8F%A9%E5%AF%8C%E7%BD%91/" data-hashtag="爬虫"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://silencehuliang.github.io/python%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%E4%B9%8B%E5%8F%A9%E5%AF%8C%E7%BD%91/" data-title="Python爬虫实战之叩富网" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://silencehuliang.github.io/python%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%E4%B9%8B%E5%8F%A9%E5%AF%8C%E7%BD%91/" data-title="Python爬虫实战之叩富网"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://silencehuliang.github.io/python%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%E4%B9%8B%E5%8F%A9%E5%AF%8C%E7%BD%91/" data-title="Python爬虫实战之叩富网"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://silencehuliang.github.io/python%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%E4%B9%8B%E5%8F%A9%E5%AF%8C%E7%BD%91/" data-title="Python爬虫实战之叩富网" data-description="Python爬虫实战之叩富网"><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://silencehuliang.github.io/python%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%E4%B9%8B%E5%8F%A9%E5%AF%8C%E7%BD%91/" data-title="Python爬虫实战之叩富网" data-description="Python爬虫实战之叩富网"><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://silencehuliang.github.io/python%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%E4%B9%8B%E5%8F%A9%E5%AF%8C%E7%BD%91/" data-title="Python爬虫实战之叩富网"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E7%88%AC%E8%99%AB/">爬虫</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%AD%A6%E4%BC%9Avim/" class="prev" rel="prev" title="一篇文章学会Vim"><i class="fas fa-angle-left fa-fw"></i>一篇文章学会Vim</a>
+            <a href="/python%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%E4%B9%8B%E8%90%9D%E5%8D%9C%E6%8A%95%E7%A0%94/" class="next" rel="next" title="Python爬虫实战之萝卜投研">Python爬虫实战之萝卜投研<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.74.3">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2018 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Silence</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.4afae7d446ba01ebf7fff19893eaf3a1.css" integrity="md5-Svrn1Ea6Aev3//GYk&#43;rzoQ=="><link rel="stylesheet" href="/lib/katex/copy-tex.min.b1994d1b9785dd8801dbf655df7bf6d9.css" integrity="md5-sZlNG5eF3YgB2/ZV33v22Q=="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.acf82ee47549fdc386d02768992a49ad.css" integrity="md5-rPgu5HVJ/cOG0CdomSpJrQ=="><script type="text/javascript" src="/lib/valine/Valine.min.b1d2c9b89c70dbf0a8541bfd36afafa1.js" integrity="md5-sdLJuJxw2/CoVBv9Nq&#43;voQ=="></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.100efdceabf7a138f3297e437d078f74.js" integrity="md5-EA79zqv3oTjzKX5DfQePdA=="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.ae7c5011def46b283696baf367586b5d.js" integrity="md5-rnxQEd70ayg2lrrzZ1hrXQ=="></script><script type="text/javascript" src="/lib/lunr/lunr.min.a08f2562fde4550269dfc13028ed2502.js" integrity="md5-oI8lYv3kVQJp38EwKO0lAg=="></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.b82fb8d93ce0ea6a485dfa3a0b1e7573.js" integrity="md5-uC&#43;42Tzg6mpIXfo6Cx51cw=="></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.f1ba3e22560e2eb7474f28feb4507617.js" integrity="md5-8bo&#43;IlYOLrdHTyj&#43;tFB2Fw=="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.b80e49640d4794d4333d00db76ea22f7.js" integrity="md5-uA5JZA1HlNQzPQDbduoi9w=="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.af8ab36589315582ccdd82f22e84bffb.js" integrity="md5-r4qzZYkxVYLM3YLyLoS/&#43;w=="></script><script type="text/javascript" src="/lib/sharer/sharer.min.c3c3372b4cf5c56dd4e5a4be8ada86c9.js" integrity="md5-w8M3K0z1xW3U5aS&#43;itqGyQ=="></script><script type="text/javascript" src="/lib/typeit/typeit.min.b5f3481ebeaa3e56a2f5f96ea648bf69.js" integrity="md5-tfNIHr6qPlai9flupki/aQ=="></script><script type="text/javascript" src="/lib/katex/katex.min.c158c9e823b681cf535f46596b5e4eac.js" integrity="md5-wVjJ6CO2gc9TX0ZZa15OrA=="></script><script type="text/javascript" src="/lib/katex/auto-render.min.28cd0b98cd3f4fa37d52f3ffe47ad9d4.js" integrity="md5-KM0LmM0/T6N9UvP/5HrZ1A=="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.bfaec7d1dea915d74a7a6d833f0ff62e.js" integrity="md5-v67H0d6pFddKem2DPw/2Lg=="></script><script type="text/javascript" src="/lib/katex/mhchem.min.1bbb252363e83547d4b2186a41eaca28.js" integrity="md5-G7slI2PoNUfUshhqQerKKA=="></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.4a48532bf0b17c058b8b6854f49de23f.js" integrity="md5-SkhTK/CxfAWLi2hU9J3iPw=="></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"c4VA4R1Xg3drBKSQzNfWnWlF-gzGzoHsz","appKey":"upEyt7esgWCbm0L7EPDH6bhV","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":false,"highlight":true,"lang":"zh-cn","meta":["nick","mail"],"pageSize":10,"placeholder":"说点什么吧...","recordIP":true,"visitor":true}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"id-1":"Silence’s Blog","id-2":"Silence’s Blog"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.7bc7989e979c4a19d97db3ab311a80fe.js" integrity="md5-e8eYnpecShnZfbOrMRqA/g=="></script></body>
+</html>

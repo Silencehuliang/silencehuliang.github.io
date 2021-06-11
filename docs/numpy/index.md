@@ -33,16 +33,16 @@
             - subok 	默认返回一个与基类类型一致的数组
             - ndmin 	指定生成数组的最小维度
     - demo
-    ```python
-    >>> from numpy as np
-    >>> x = np.array([[1, 2, 3], [4, 5, 6]],dtype=np.int32,copy=True,order=None,subok=False,ndmin=0)
-    >>> type(x) # 查看x类型
-    <type 'numpy.ndarray'>
-    >>> x.shape # 查看ndarray对象的维度
-    (2, 3)
-    >>> x.dtype # 查看x里的数据类型
-    dtype('int32')
-    ```
+      ```python
+      >>> from numpy as np
+      >>> x = np.array([[1, 2, 3], [4, 5, 6]],dtype=np.int32,copy=True,order=None,subok=False,ndmin=0)
+      >>> type(x) # 查看x类型
+      <type 'numpy.ndarray'>
+      >>> x.shape # 查看ndarray对象的维度
+      (2, 3)
+      >>> x.dtype # 查看x里的数据类型
+      dtype('int32')
+      ```
 - 通过zeros/ones方法创建(创建指定大小的数组，数组元素以 0/1 来填充,)
     - 参数说明
         - 必要参数
@@ -51,14 +51,14 @@
             - dtype 	数据类型
             - order 	'C' 用于 C 的行数组，或者 'F' 用于 FORTRAN 的列数组
     - demo
-    ```python
-    >>> np.zeros(5)
-    array([0., 0., 0., 0., 0.])
-    >>> np.zeros((3,3))
-    array([[0., 0., 0.],
-           [0., 0., 0.],
-           [0., 0., 0.]])
-    ```
+      ```python
+      >>> np.zeros(5)
+      array([0., 0., 0., 0., 0.])
+      >>> np.zeros((3,3))
+      array([[0., 0., 0.],
+             [0., 0., 0.],
+             [0., 0., 0.]])
+      ```
 - 通过empty方法创建（创建一个指定形状（shape）、数据类型（dtype）且未初始化的数组：）
     - 参数说明
         - 必要参数
@@ -67,52 +67,52 @@
             - dtype 	数据类型
             - 有"C"和"F"两个选项,分别代表，行优先和列优先，在计算机内存中的存储元素的顺序
     - demo
-    ```python
-    >>> x = np.empty((3,2),dtype=int)
-    >>> x
-    array([[0, 0],
-          [0, 0],
-          [0, 0]])
-    >>> y = np.empty([3,2],dtype=int)
-    >>> y
-    array([[0, 0],
-           [0, 0],
-           [0, 0]])
-    ```
+      ```python
+      >>> x = np.empty((3,2),dtype=int)
+      >>> x
+      array([[0, 0],
+            [0, 0],
+            [0, 0]])
+      >>> y = np.empty([3,2],dtype=int)
+      >>> y
+      array([[0, 0],
+             [0, 0],
+             [0, 0]])
+      ```
 - 其他方法：
     - 通过full方法创建（创建一个填充给定值的n * n数组）
     - demo
-    ```python
-    >>> np.full([3,3],3)
-    array([[3, 3, 3],
-           [3, 3, 3],
-           [3, 3, 3]])
-    ```
+      ```python
+      >>> np.full([3,3],3)
+      array([[3, 3, 3],
+             [3, 3, 3],
+             [3, 3, 3]])
+      ```
     - 通过eye方法创建（创建一个对角线是1，其余是0的多维数组）
     - demo
-    ```python
-    >>> np.eye(3)
-    array([[1., 0., 0.],
-           [0., 1., 0.],
-           [0., 0., 1.]])
-    >>> np.eye(1)
-    array([[1.]])
-    ```
+      ```python
+      >>> np.eye(3)
+      array([[1., 0., 0.],
+             [0., 1., 0.],
+             [0., 0., 1.]])
+      >>> np.eye(1)
+      array([[1.]])
+      ```
     - 通过linspace方法创建（创建一个在指定的时间间隔内返回均匀间隔的数字的数组）
     - demo
-    ```python 
-    >>> np.linspace(0,8.8,num=5)
-    array([0. , 2.2, 4.4, 6.6, 8.8])
-    ```
+      ```python 
+      >>> np.linspace(0,8.8,num=5)
+      array([0. , 2.2, 4.4, 6.6, 8.8])
+      ```
     - 通过random方法创建（创建一个填充0到1之间随机值的数组）
     - demo
-    ```python
-    >>> np.random.random([3,3])
-    array([[0.17647511, 0.79086009, 0.26275058],
-           [0.83484953, 0.6386956 , 0.53928901],
-           [0.26020885, 0.58836421, 0.39308341]])
-    ```
-    // TODO :补充
+      ```python
+      >>> np.random.random([3,3])
+      array([[0.17647511, 0.79086009, 0.26275058],
+             [0.83484953, 0.6386956 , 0.53928901],
+             [0.26020885, 0.58836421, 0.39308341]])
+      ```
+      // TODO :补充
 #### NumPy支持的数据类型（ndarray对象支持的数据类型）
 名称 | 描述
 ---|---
@@ -150,42 +150,42 @@ ndarray.real 	|   ndarray元素的实部
 ndarray.imag 	|   ndarray 元素的虚部
 ndarray.data 	|   该缓冲区包含数组的实际元素。通常，我们不需要使用此属性，因为我们将使用索引访问数组中的元素。
 demo
-```python
->>> a = np.full((3,3),3)
->>> a
-array([[3, 3, 3],
-       [3, 3, 3],
-       [3, 3, 3]])
->>> a.ndim
-2
->>> a.shape
-(3, 3)
->>> a.size
-9
->>> a.dtype
-dtype('int32')
->>> a.itemsize
-4
->>> a.flags
-  C_CONTIGUOUS : True
-  F_CONTIGUOUS : False
-  OWNDATA : True
-  WRITEABLE : True
-  ALIGNED : True
-  WRITEBACKIFCOPY : False
-  UPDATEIFCOPY : False
->>> a.real
-array([[3, 3, 3],
-       [3, 3, 3],
-       [3, 3, 3]])
->>> a.imag
-array([[0, 0, 0],
-       [0, 0, 0],
-       [0, 0, 0]])
->>> a.data
-<memory at 0x0FE0E990>
-
-```
+  ```python
+  >>> a = np.full((3,3),3)
+  >>> a
+  array([[3, 3, 3],
+         [3, 3, 3],
+         [3, 3, 3]])
+  >>> a.ndim
+  2
+  >>> a.shape
+  (3, 3)
+  >>> a.size
+  9
+  >>> a.dtype
+  dtype('int32')
+  >>> a.itemsize
+  4
+  >>> a.flags
+    C_CONTIGUOUS : True
+    F_CONTIGUOUS : False
+    OWNDATA : True
+    WRITEABLE : True
+    ALIGNED : True
+    WRITEBACKIFCOPY : False
+    UPDATEIFCOPY : False
+  >>> a.real
+  array([[3, 3, 3],
+         [3, 3, 3],
+         [3, 3, 3]])
+  >>> a.imag
+  array([[0, 0, 0],
+         [0, 0, 0],
+         [0, 0, 0]])
+  >>> a.data
+  <memory at 0x0FE0E990>
+  ```
+  
 #### ndarray对象的的基本操作
 - 加减乘除四则运算
     ```python
