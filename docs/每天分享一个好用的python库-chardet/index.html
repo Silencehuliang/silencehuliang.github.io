@@ -5,32 +5,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>一个Python开发者对鸿蒙的看法 - Silence Blog</title><meta name="Description" content="Silence‘s blog"><meta property="og:title" content="一个Python开发者对鸿蒙的看法" />
-<meta property="og:description" content="前言 最近关于鸿蒙的话题很热，网上有很多关于鸿蒙的一些言论，有支持的也有反对的，但大多数支持的言论都有爱国情绪在其中，大多数反对都在纠结鸿蒙到" />
+        <title>每天分享一个Python库-Chardet - Silence Blog</title><meta name="Description" content="Silence‘s blog"><meta property="og:title" content="每天分享一个Python库-Chardet" />
+<meta property="og:description" content="前言 Python中有许多好用、有意思的库，有一些可以大大提高开发效率，有的可以为我们解决很多棘手的问题，从今天开始我会每天给大家分享一个Py" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://silencehuliang.github.io/%E4%B8%80%E4%B8%AApython%E5%BC%80%E5%8F%91%E8%80%85%E5%AF%B9%E9%B8%BF%E8%92%99%E7%9A%84%E7%9C%8B%E6%B3%95/" />
+<meta property="og:url" content="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet/" />
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
-<meta property="article:published_time" content="2021-06-09T09:28:14+08:00" />
-<meta property="article:modified_time" content="2021-06-09T09:28:14+08:00" />
+<meta property="article:published_time" content="2021-06-16T16:16:32+08:00" />
+<meta property="article:modified_time" content="2021-06-16T16:16:32+08:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
 
-<meta name="twitter:title" content="一个Python开发者对鸿蒙的看法"/>
-<meta name="twitter:description" content="前言 最近关于鸿蒙的话题很热，网上有很多关于鸿蒙的一些言论，有支持的也有反对的，但大多数支持的言论都有爱国情绪在其中，大多数反对都在纠结鸿蒙到"/>
+<meta name="twitter:title" content="每天分享一个Python库-Chardet"/>
+<meta name="twitter:description" content="前言 Python中有许多好用、有意思的库，有一些可以大大提高开发效率，有的可以为我们解决很多棘手的问题，从今天开始我会每天给大家分享一个Py"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://silencehuliang.github.io/%E4%B8%80%E4%B8%AApython%E5%BC%80%E5%8F%91%E8%80%85%E5%AF%B9%E9%B8%BF%E8%92%99%E7%9A%84%E7%9C%8B%E6%B3%95/" /><link rel="prev" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%88%AC%E8%99%AB%E8%BF%9B%E9%98%B6%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6%E8%BF%90%E8%A1%8C/" /><link rel="next" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%88%AC%E8%99%AB%E8%BF%9B%E9%98%B6%E6%A1%86%E6%9E%B6%E5%8A%9F%E8%83%BD%E5%AE%8C%E5%96%84/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.2e7125082ec8de83a87adc70253c9c23.css" integrity="md5-LnElCC7I3oOoetxwJTycIw=="><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.76cb46c10b6c0293433b371bae2414b2.css" integrity="md5-dstGwQtsApNDOzcbriQUsg=="><link rel="stylesheet" href="/lib/animate/animate.min.bc1a6a99c43f5ccc97d2d350bde13f74.css" integrity="md5-vBpqmcQ/XMyX0tNQveE/dA=="><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet/" /><link rel="prev" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%88%AC%E8%99%AB%E8%BF%9B%E9%98%B6%E6%A1%86%E6%9E%B6%E5%8A%9F%E8%83%BD%E5%AE%8C%E5%96%84/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.2e7125082ec8de83a87adc70253c9c23.css" integrity="md5-LnElCC7I3oOoetxwJTycIw=="><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.76cb46c10b6c0293433b371bae2414b2.css" integrity="md5-dstGwQtsApNDOzcbriQUsg=="><link rel="stylesheet" href="/lib/animate/animate.min.bc1a6a99c43f5ccc97d2d350bde13f74.css" integrity="md5-vBpqmcQ/XMyX0tNQveE/dA=="><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "一个Python开发者对鸿蒙的看法",
+        "headline": "每天分享一个Python库-Chardet",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/silencehuliang.github.io\/%E4%B8%80%E4%B8%AApython%E5%BC%80%E5%8F%91%E8%80%85%E5%AF%B9%E9%B8%BF%E8%92%99%E7%9A%84%E7%9C%8B%E6%B3%95\/"
-        },"genre": "posts","keywords": "鸿蒙","wordcount":  1160 ,
-        "url": "https:\/\/silencehuliang.github.io\/%E4%B8%80%E4%B8%AApython%E5%BC%80%E5%8F%91%E8%80%85%E5%AF%B9%E9%B8%BF%E8%92%99%E7%9A%84%E7%9C%8B%E6%B3%95\/","datePublished": "2021-06-09T09:28:14+08:00","dateModified": "2021-06-09T09:28:14+08:00","publisher": {
+            "@id": "https:\/\/silencehuliang.github.io\/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet\/"
+        },"genre": "posts","keywords": "Python库","wordcount":  764 ,
+        "url": "https:\/\/silencehuliang.github.io\/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet\/","datePublished": "2021-06-16T16:16:32+08:00","dateModified": "2021-06-16T16:16:32+08:00","publisher": {
             "@type": "Organization",
             "name": "Silence"},"author": {
                 "@type": "Person",
@@ -118,12 +118,12 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">一个Python开发者对鸿蒙的看法</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Silence</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E7%94%9F%E6%B4%BB/"><i class="far fa-folder fa-fw"></i>生活</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-06-09">2021-06-09</time>&nbsp;<i class="fa fa-history" aria-hidden="true"></i>
-                2021-06-09
-                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1160 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/%E4%B8%80%E4%B8%AApython%E5%BC%80%E5%8F%91%E8%80%85%E5%AF%B9%E9%B8%BF%E8%92%99%E7%9A%84%E7%9C%8B%E6%B3%95/" class="leancloud_visitors" data-flag-title="一个Python开发者对鸿蒙的看法">
+        </div><article class="page single"><h1 class="single-title animated flipInX">每天分享一个Python库-Chardet</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Silence</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/python/"><i class="far fa-folder fa-fw"></i>Python</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-06-16">2021-06-16</time>&nbsp;<i class="fa fa-history" aria-hidden="true"></i>
+                2021-06-16
+                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 764 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet/" class="leancloud_visitors" data-flag-title="每天分享一个Python库-Chardet">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
@@ -134,50 +134,117 @@
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#前言">前言</a></li>
-    <li><a href="#python与鸿蒙">Python与鸿蒙</a></li>
-    <li><a href="#我眼中的鸿蒙">我眼中的鸿蒙</a></li>
-    <li><a href="#对鸿蒙的展望">对鸿蒙的展望</a></li>
-    <li><a href="#尾声">尾声</a></li>
+    <li><a href="#chardet">Chardet</a>
+      <ul>
+        <li><a href="#简介">简介</a></li>
+        <li><a href="#安装">安装</a></li>
+        <li><a href="#简单使用">简单使用</a></li>
+        <li><a href="#作用">作用</a></li>
+      </ul>
+    </li>
+    <li><a href="#尾巴">尾巴</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h2 id="前言">前言</h2>
-<p>最近关于鸿蒙的话题很热，网上有很多关于鸿蒙的一些言论，有支持的也有反对的，但大多数支持的言论都有爱国情绪在其中，大多数反对都在纠结鸿蒙到底是不是安卓套壳。正好我一直都有关注鸿蒙的发展，想从一名Python开发者来谈谈我对鸿蒙的看法。</p>
-<h2 id="python与鸿蒙">Python与鸿蒙</h2>
-<p>Python不是鸿蒙开发使用的语言，看上去跟鸿蒙毫无关系，但我作为一名Python开发者很能体会目前鸿蒙的状态，Python与鸿蒙其实有很多相似之处。当初Python之父吉多・范罗苏姆参与设计开发的ABC语言，虽然最终没有成功但是不服输的他利用空余时间开发出Python，与现在华为居安思危早在2012年就开始规划鸿蒙操作系统，19年遭遇漂亮国制裁后选择将开发多年的鸿蒙操作系统开源，当你Python初版开发出来后将其开源欢迎广大开发者加入，形成庞大的生态圈，今天Python的成功离不开广大开发者的贡献，我相信未来鸿蒙操作系统的成功肯定也离不开广大开发者的支持。虽然Python存在着运行速度慢的问题，但是还是出现了numpy这种运行速度很快的库，可以让其广泛用于数据处理的地方。所以现在的鸿蒙存在的问题，我相信未来一定也会有对应的解决方案。</p>
-<h2 id="我眼中的鸿蒙">我眼中的鸿蒙</h2>
-<p>我们不能否认的是现在手机端的鸿蒙是根据AOSP打造的，但AOSP本身就是一个开源的项目，就像苹果的IOS的底层是Darwin，Darwin是基于BSD，BSD是基于UNIX本质上也是基于一个开源的系统打造的，所以没必要去纠结是不是安卓套壳，因为手机只是鸿蒙操作系统众多终端中的一部分。还有部分手机用户在更新了鸿蒙之后说抄袭IOS的，看看今天苹果的WWDC，你能说苹果抄袭鸿蒙吗，肯定也不是，只能说是在这个系统开发的周期，大家都选择了做多设备互联，看看现在的IOS还不是很多安卓的味道。</p>
-<p>从华为1+8+N的战略就可以看得出来，鸿蒙操作系统本不是为手机这个单独的设备设计的，他的愿景是通过手机加8大主要类目产品加生态产品全方位的覆盖生活中的方方面面，这将是一个庞大的市场。鸿蒙操作系统只提供一个平台，未来可能像Linux一样出现很多不同的发行版本，当各大生态链产品接入鸿蒙之后，所有设备就可以有了互通互联的能力，这将是一片巨大的红海。</p>
-<h2 id="对鸿蒙的展望">对鸿蒙的展望</h2>
-<p>目前受制于芯片等问题华为在手机这个终端能发挥的空间很有限了，不过又有很多新的业务进入了我们的视野，手表、显示器、车机系统、等各类生态链产品，你会发现他们搭载鸿蒙操作系统之后有了不一样的活力，华为这个公司跟理工男很像，都是暗自先做，等做出来了产品之后再进行宣传。就目前鸿蒙2.0来看还有很大的进步空间，我相信未来他还会更好。</p>
-<h2 id="尾声">尾声</h2>
-<p>不管是IOS、安卓、鸿蒙还是其他的系统，跟Java、PHP、Python这些编程语言一样，我们可能处在不同的阵营，但不影响他们在其领域大放异彩。</p>
+<p>Python中有许多好用、有意思的库，有一些可以大大提高开发效率，有的可以为我们解决很多棘手的问题，从今天开始我会每天给大家分享一个Python库。今天分享的是一个跟字符串编码有关的库&mdash;chardet</p>
+<h2 id="chardet">Chardet</h2>
+<h3 id="简介">简介</h3>
+<p>chardet是一个识别字符串编码的第三方库，支持繁简中文、日语、韩文等多种语言</p>
+<h3 id="安装">安装</h3>
+<ul>
+<li>
+<p>使用<code>pip</code>进行安装</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ pip install chardet
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>通过安装Anaconda进行安装，由于Anaconda中已经帮我们安装了chardet，可以直接使用</p>
+</li>
+</ul>
+<h3 id="简单使用">简单使用</h3>
+<ul>
+<li>
+<p>识别字符串格式</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">chardet</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">chardet</span><span class="o">.</span><span class="n">detect</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;Hello chardet!&#39;</span><span class="p">)</span>
+<span class="p">{</span><span class="s1">&#39;encoding&#39;</span><span class="p">:</span> <span class="s1">&#39;ascii&#39;</span><span class="p">,</span> <span class="s1">&#39;confidence&#39;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s1">&#39;language&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>返回的结果中，<code>encoding</code>对应的键为编码类型，<code>confidence</code>对应的键为识别可信度为1，即为100%，<code>language</code>对应的键为语言，这里没有检测出来</p>
+</li>
+<li>
+<p>识别中文格式</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">chardet</span><span class="o">.</span><span class="n">detect</span><span class="p">(</span><span class="s1">&#39;你好&#39;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">{</span><span class="s1">&#39;encoding&#39;</span><span class="p">:</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">,</span> <span class="s1">&#39;confidence&#39;</span><span class="p">:</span> <span class="mf">0.7525</span><span class="p">,</span> <span class="s1">&#39;language&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这次可以看到检测出了编码类型为utf-8，可信度为75.25%，从这里可以看出检测中文的准确率没有那么高</p>
+</li>
+<li>
+<p>对外语进行检测</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">chardet</span><span class="o">.</span><span class="n">detect</span><span class="p">(</span><span class="s1">&#39;こんにちは&#39;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;euc-jp&#39;</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">{</span><span class="s1">&#39;encoding&#39;</span><span class="p">:</span> <span class="s1">&#39;EUC-JP&#39;</span><span class="p">,</span> <span class="s1">&#39;confidence&#39;</span><span class="p">:</span> <span class="mf">0.99</span><span class="p">,</span> <span class="s1">&#39;language&#39;</span><span class="p">:</span> <span class="s1">&#39;Japanese&#39;</span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>对日语的检测可信度为99%且成功检测出来了语言</p>
+</li>
+</ul>
+<h3 id="作用">作用</h3>
+<p>前面介绍了一下<code>chardet</code>库，与其简单的使用方法，那我们什么场景可以使用它呢，我举一个例子：当我们从网页爬取一段内容后，不清楚编码类型，就可以使用<code>chardet</code>库来进行检测，然后将不同的类型转化为<code>utf-8</code>来进行后续操作。还有其他使用场景欢迎大家补充！</p>
+<h2 id="尾巴">尾巴</h2>
+<p>从上可以看出，<code>chardet</code>库非常的简单易用，核心目的也比较明确：检测字符串编码类型。以后在字符串编码不清楚的时候可以使用<code>chardet</code>库，而不是自己去试，可以大大提高开发效率。</p>
+<p><a href="https://pypi.org/project/chardet/1.0/" target="_blank" rel="noopener noreffer">官方文档地址</a></p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2021-06-09</span>
+                <span>更新于 2021-06-16</span>
             </div>
             <div class="post-info-license"></div>
         </div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/%E4%B8%80%E4%B8%AApython%E5%BC%80%E5%8F%91%E8%80%85%E5%AF%B9%E9%B8%BF%E8%92%99%E7%9A%84%E7%9C%8B%E6%B3%95/index.md" target="_blank">阅读原始文档</a>
+                            <a class="link-to-markdown" href="/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://silencehuliang.github.io/%E4%B8%80%E4%B8%AApython%E5%BC%80%E5%8F%91%E8%80%85%E5%AF%B9%E9%B8%BF%E8%92%99%E7%9A%84%E7%9C%8B%E6%B3%95/" data-title="一个Python开发者对鸿蒙的看法" data-hashtags="鸿蒙"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://silencehuliang.github.io/%E4%B8%80%E4%B8%AApython%E5%BC%80%E5%8F%91%E8%80%85%E5%AF%B9%E9%B8%BF%E8%92%99%E7%9A%84%E7%9C%8B%E6%B3%95/" data-hashtag="鸿蒙"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://silencehuliang.github.io/%E4%B8%80%E4%B8%AApython%E5%BC%80%E5%8F%91%E8%80%85%E5%AF%B9%E9%B8%BF%E8%92%99%E7%9A%84%E7%9C%8B%E6%B3%95/" data-title="一个Python开发者对鸿蒙的看法" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://silencehuliang.github.io/%E4%B8%80%E4%B8%AApython%E5%BC%80%E5%8F%91%E8%80%85%E5%AF%B9%E9%B8%BF%E8%92%99%E7%9A%84%E7%9C%8B%E6%B3%95/" data-title="一个Python开发者对鸿蒙的看法"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://silencehuliang.github.io/%E4%B8%80%E4%B8%AApython%E5%BC%80%E5%8F%91%E8%80%85%E5%AF%B9%E9%B8%BF%E8%92%99%E7%9A%84%E7%9C%8B%E6%B3%95/" data-title="一个Python开发者对鸿蒙的看法"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://silencehuliang.github.io/%E4%B8%80%E4%B8%AApython%E5%BC%80%E5%8F%91%E8%80%85%E5%AF%B9%E9%B8%BF%E8%92%99%E7%9A%84%E7%9C%8B%E6%B3%95/" data-title="一个Python开发者对鸿蒙的看法" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://silencehuliang.github.io/%E4%B8%80%E4%B8%AApython%E5%BC%80%E5%8F%91%E8%80%85%E5%AF%B9%E9%B8%BF%E8%92%99%E7%9A%84%E7%9C%8B%E6%B3%95/" data-title="一个Python开发者对鸿蒙的看法" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://silencehuliang.github.io/%E4%B8%80%E4%B8%AApython%E5%BC%80%E5%8F%91%E8%80%85%E5%AF%B9%E9%B8%BF%E8%92%99%E7%9A%84%E7%9C%8B%E6%B3%95/" data-title="一个Python开发者对鸿蒙的看法"><i class="fab fa-evernote fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet/" data-title="每天分享一个Python库-Chardet" data-hashtags="Python库"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet/" data-hashtag="Python库"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet/" data-title="每天分享一个Python库-Chardet" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet/" data-title="每天分享一个Python库-Chardet"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet/" data-title="每天分享一个Python库-Chardet"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet/" data-title="每天分享一个Python库-Chardet" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet/" data-title="每天分享一个Python库-Chardet" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet/" data-title="每天分享一个Python库-Chardet"><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E9%B8%BF%E8%92%99/">鸿蒙</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/python%E5%BA%93/">Python库</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%88%AC%E8%99%AB%E8%BF%9B%E9%98%B6%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6%E8%BF%90%E8%A1%8C/" class="prev" rel="prev" title="Python学习之路-爬虫进阶:爬虫框架运行"><i class="fas fa-angle-left fa-fw"></i>Python学习之路-爬虫进阶:爬虫框架运行</a>
-            <a href="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%88%AC%E8%99%AB%E8%BF%9B%E9%98%B6%E6%A1%86%E6%9E%B6%E5%8A%9F%E8%83%BD%E5%AE%8C%E5%96%84/" class="next" rel="next" title="Python学习之路-爬虫提高:框架功能完善">Python学习之路-爬虫提高:框架功能完善<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%88%AC%E8%99%AB%E8%BF%9B%E9%98%B6%E6%A1%86%E6%9E%B6%E5%8A%9F%E8%83%BD%E5%AE%8C%E5%96%84/" class="prev" rel="prev" title="Python学习之路-爬虫提高:框架功能完善"><i class="fas fa-angle-left fa-fw"></i>Python学习之路-爬虫提高:框架功能完善</a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.

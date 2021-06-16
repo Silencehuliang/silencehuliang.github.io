@@ -4,7 +4,14 @@
         <link>https://silencehuliang.github.io/categories/%E7%88%AC%E8%99%AB/</link>
         <description>爬虫 - 分类 - Silence Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>silencehuliang@gmail.com (Silence)</managingEditor>
-            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 05 Jun 2021 09:37:47 &#43;0800</lastBuildDate><atom:link href="https://silencehuliang.github.io/categories/%E7%88%AC%E8%99%AB/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 12 Jun 2021 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://silencehuliang.github.io/categories/%E7%88%AC%E8%99%AB/" rel="self" type="application/rss+xml" /><item>
+    <title>Python学习之路-爬虫提高:框架功能完善</title>
+    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%88%AC%E8%99%AB%E8%BF%9B%E9%98%B6%E6%A1%86%E6%9E%B6%E5%8A%9F%E8%83%BD%E5%AE%8C%E5%96%84/</link>
+    <pubDate>Sat, 12 Jun 2021 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%88%AC%E8%99%AB%E8%BF%9B%E9%98%B6%E6%A1%86%E6%9E%B6%E5%8A%9F%E8%83%BD%E5%AE%8C%E5%96%84/</guid>
+    <description><![CDATA[完善框架的基础功能 项目中除了实现main.py以外，还需要实现： 项目配置文件 爬虫文件 管道文件 中间件文件 框架中还需要实现： 框架配置文件，并且需]]></description>
+</item><item>
     <title>Python学习之路-爬虫进阶:爬虫框架运行</title>
     <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%88%AC%E8%99%AB%E8%BF%9B%E9%98%B6%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6%E8%BF%90%E8%A1%8C/</link>
     <pubDate>Sat, 05 Jun 2021 09:37:47 &#43;0800</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%88%9D%E8%AF%86%E7%88%AC%E8%99%AB%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96/</guid>
     <description><![CDATA[什么是数据提取 简单的来说，数据提取就是从响应中获取我们想要的数据的过程 爬虫中数据的分类 结构化数据：json，xml等 处理方式：直接转化为py]]></description>
-</item><item>
-    <title>Python学习之路-初识爬虫:requests</title>
-    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%88%9D%E8%AF%86%E7%88%AC%E8%99%ABrequests/</link>
-    <pubDate>Sat, 27 Mar 2021 09:36:17 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E5%88%9D%E8%AF%86%E7%88%AC%E8%99%ABrequests/</guid>
-    <description><![CDATA[requests的作用 作用：发送网络请求，返回响应数据 中文文档 ： http://docs.python-requests.org/zh_CN/latest/index.html 为什么学requests而不是urllib requests的底层实现就是]]></description>
 </item></channel>
 </rss>
