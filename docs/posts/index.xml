@@ -4,7 +4,14 @@
         <link>https://silencehuliang.github.io/posts/</link>
         <description>所有文章 | Silence Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>silencehuliang@gmail.com (Silence)</managingEditor>
-            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Wed, 16 Jun 2021 16:16:32 &#43;0800</lastBuildDate><atom:link href="https://silencehuliang.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Thu, 17 Jun 2021 16:19:57 &#43;0800</lastBuildDate><atom:link href="https://silencehuliang.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>每天分享一个好用的Python库 Colorama</title>
+    <link>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-colorama/</link>
+    <pubDate>Thu, 17 Jun 2021 16:19:57 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-colorama/</guid>
+    <description><![CDATA[前言 今天分享的是一个主要用来给文本添加各种颜色的库：colorama。 colorama 简介 colorama是一个可以跨多终端显示不同颜色字符与背景的第三方]]></description>
+</item><item>
     <title>每天分享一个Python库-Chardet</title>
     <link>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet/</link>
     <pubDate>Wed, 16 Jun 2021 16:16:32 &#43;0800</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%88%AC%E8%99%AB%E8%BF%9B%E9%98%B6%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6%E9%9B%8F%E5%BD%A2/</guid>
     <description><![CDATA[代码实现分析 明确模块之间的逻辑关系 五个核心模块和三个内置的对象是关键模块，需要优先实现 先抛开中间件，分析下它们之间的逻辑关系是： 构造spid]]></description>
-</item><item>
-    <title>Python学习之路-爬虫进阶:爬虫框架</title>
-    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%88%AC%E8%99%AB%E8%BF%9B%E9%98%B6%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6/</link>
-    <pubDate>Sat, 22 May 2021 09:37:47 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%88%AC%E8%99%AB%E8%BF%9B%E9%98%B6%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6/</guid>
-    <description><![CDATA[了解框架 什么是框架 框架是为了为解决一类问题而开发的程序，框架两个字可以分开理解，框：表示指定解决问题的边界，明确要解决的问题；架：表达的是]]></description>
 </item></channel>
 </rss>

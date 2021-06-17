@@ -5,32 +5,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>每天分享一个Python库-Chardet - Silence Blog</title><meta name="Description" content="Silence‘s blog"><meta property="og:title" content="每天分享一个Python库-Chardet" />
-<meta property="og:description" content="前言 Python中有许多好用、有意思的库，有一些可以大大提高开发效率，有的可以为我们解决很多棘手的问题，从今天开始我会每天给大家分享一个Py" />
+        <title>每天分享一个好用的Python库 Colorama - Silence Blog</title><meta name="Description" content="Silence‘s blog"><meta property="og:title" content="每天分享一个好用的Python库 Colorama" />
+<meta property="og:description" content="前言 今天分享的是一个主要用来给文本添加各种颜色的库：colorama。 colorama 简介 colorama是一个可以跨多终端显示不同颜色字符与背景的第三方" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet/" />
+<meta property="og:url" content="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-colorama/" />
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
-<meta property="article:published_time" content="2021-06-16T16:16:32+08:00" />
-<meta property="article:modified_time" content="2021-06-16T16:16:32+08:00" />
+<meta property="article:published_time" content="2021-06-17T16:19:57+08:00" />
+<meta property="article:modified_time" content="2021-06-17T16:19:57+08:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
 
-<meta name="twitter:title" content="每天分享一个Python库-Chardet"/>
-<meta name="twitter:description" content="前言 Python中有许多好用、有意思的库，有一些可以大大提高开发效率，有的可以为我们解决很多棘手的问题，从今天开始我会每天给大家分享一个Py"/>
+<meta name="twitter:title" content="每天分享一个好用的Python库 Colorama"/>
+<meta name="twitter:description" content="前言 今天分享的是一个主要用来给文本添加各种颜色的库：colorama。 colorama 简介 colorama是一个可以跨多终端显示不同颜色字符与背景的第三方"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet/" /><link rel="prev" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%88%AC%E8%99%AB%E8%BF%9B%E9%98%B6%E6%A1%86%E6%9E%B6%E5%8A%9F%E8%83%BD%E5%AE%8C%E5%96%84/" /><link rel="next" href="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-colorama/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.2e7125082ec8de83a87adc70253c9c23.css" integrity="md5-LnElCC7I3oOoetxwJTycIw=="><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.76cb46c10b6c0293433b371bae2414b2.css" integrity="md5-dstGwQtsApNDOzcbriQUsg=="><link rel="stylesheet" href="/lib/animate/animate.min.bc1a6a99c43f5ccc97d2d350bde13f74.css" integrity="md5-vBpqmcQ/XMyX0tNQveE/dA=="><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-colorama/" /><link rel="prev" href="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.2e7125082ec8de83a87adc70253c9c23.css" integrity="md5-LnElCC7I3oOoetxwJTycIw=="><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.76cb46c10b6c0293433b371bae2414b2.css" integrity="md5-dstGwQtsApNDOzcbriQUsg=="><link rel="stylesheet" href="/lib/animate/animate.min.bc1a6a99c43f5ccc97d2d350bde13f74.css" integrity="md5-vBpqmcQ/XMyX0tNQveE/dA=="><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "每天分享一个Python库-Chardet",
+        "headline": "每天分享一个好用的Python库 Colorama",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/silencehuliang.github.io\/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet\/"
-        },"genre": "posts","keywords": "Python库","wordcount":  764 ,
-        "url": "https:\/\/silencehuliang.github.io\/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet\/","datePublished": "2021-06-16T16:16:32+08:00","dateModified": "2021-06-16T16:16:32+08:00","publisher": {
+            "@id": "https:\/\/silencehuliang.github.io\/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-colorama\/"
+        },"genre": "posts","keywords": "Python库","wordcount":  814 ,
+        "url": "https:\/\/silencehuliang.github.io\/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-colorama\/","datePublished": "2021-06-17T16:19:57+08:00","dateModified": "2021-06-17T16:19:57+08:00","publisher": {
             "@type": "Organization",
             "name": "Silence"},"author": {
                 "@type": "Person",
@@ -118,12 +118,12 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">每天分享一个Python库-Chardet</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">每天分享一个好用的Python库 Colorama</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Silence</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/python/"><i class="far fa-folder fa-fw"></i>Python</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-06-16">2021-06-16</time>&nbsp;<i class="fa fa-history" aria-hidden="true"></i>
-                2021-06-16
-                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 764 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet/" class="leancloud_visitors" data-flag-title="每天分享一个Python库-Chardet">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-06-17">2021-06-17</time>&nbsp;<i class="fa fa-history" aria-hidden="true"></i>
+                2021-06-17
+                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 814 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-colorama/" class="leancloud_visitors" data-flag-title="每天分享一个好用的Python库 Colorama">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
@@ -134,11 +134,17 @@
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#前言">前言</a></li>
-    <li><a href="#chardet">Chardet</a>
+    <li><a href="#colorama">colorama</a>
       <ul>
         <li><a href="#简介">简介</a></li>
         <li><a href="#安装">安装</a></li>
-        <li><a href="#简单使用">简单使用</a></li>
+        <li><a href="#简单使用">简单使用</a>
+          <ul>
+            <li><a href="#常用参数">常用参数</a></li>
+            <li><a href="#初次使用">初次使用</a></li>
+            <li><a href="#init关键字参数">Init关键字参数</a></li>
+          </ul>
+        </li>
         <li><a href="#作用">作用</a></li>
       </ul>
     </li>
@@ -146,10 +152,10 @@
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h2 id="前言">前言</h2>
-<p>Python中有许多好用、有意思的库，有一些可以大大提高开发效率，有的可以为我们解决很多棘手的问题，从今天开始我会每天给大家分享一个Python库。今天分享的是一个跟字符串编码有关的库&mdash;chardet</p>
-<h2 id="chardet">Chardet</h2>
+<p>今天分享的是一个主要用来给文本添加各种颜色的库：<code>colorama</code>。</p>
+<h2 id="colorama">colorama</h2>
 <h3 id="简介">简介</h3>
-<p>chardet是一个识别字符串编码的第三方库，支持繁简中文、日语、韩文等多种语言</p>
+<p><code>colorama</code>是一个可以跨多终端显示不同颜色字符与背景的第三方库。</p>
 <h3 id="安装">安装</h3>
 <ul>
 <li>
@@ -159,80 +165,108 @@
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ pip install chardet
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ pip install colorama
 </code></pre></td></tr></table>
 </div>
 </div></li>
-<li>
-<p>通过安装Anaconda进行安装，由于Anaconda中已经帮我们安装了chardet，可以直接使用</p>
-</li>
 </ul>
 <h3 id="简单使用">简单使用</h3>
-<ul>
-<li>
-<p>识别字符串格式</p>
+<h4 id="常用参数">常用参数</h4>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">字体颜色</th>
+<th align="center">字体背景颜色</th>
+<th align="center">字体格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">对应名字</td>
+<td align="center">Fore</td>
+<td align="center">Back</td>
+<td align="center">Style</td>
+</tr>
+<tr>
+<td align="center">可用颜色</td>
+<td align="center">BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE, RESET</td>
+<td align="center">BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE, RESET</td>
+<td align="center">DIM, NORMAL, BRIGHT, RESET_ALL</td>
+</tr>
+</tbody>
+</table>
+<div class="details admonition waring open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">颜色都需要大写。</div>
+        </div>
+    </div>
+<h4 id="初次使用">初次使用</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">chardet</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">chardet</span><span class="o">.</span><span class="n">detect</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;Hello chardet!&#39;</span><span class="p">)</span>
-<span class="p">{</span><span class="s1">&#39;encoding&#39;</span><span class="p">:</span> <span class="s1">&#39;ascii&#39;</span><span class="p">,</span> <span class="s1">&#39;confidence&#39;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s1">&#39;language&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">}</span>
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">colorama</span> <span class="kn">import</span> <span class="n">Fore</span><span class="p">,</span> <span class="n">Back</span><span class="p">,</span> <span class="n">Style</span>
+<span class="k">print</span><span class="p">(</span><span class="n">Fore</span><span class="o">.</span><span class="n">RED</span> <span class="o">+</span> <span class="s1">&#39;你好&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">Back</span><span class="o">.</span><span class="n">BLUE</span> <span class="o">+</span> <span class="s1">&#39;colorama库&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">Style</span><span class="o">.</span><span class="n">DIM</span> <span class="o">+</span> <span class="s1">&#39;这是字体DIM&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">Style</span><span class="o">.</span><span class="n">RESET_ALL</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;这是重置后的情况&#39;</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>返回的结果中，<code>encoding</code>对应的键为编码类型，<code>confidence</code>对应的键为识别可信度为1，即为100%，<code>language</code>对应的键为语言，这里没有检测出来</p>
+</div><p>可以从代码里看出，使用的方法非常简单，结果显示也很酷！</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tva4.sinaimg.cn/large/00729CCqgy1grlcp00aimj30cd05aaao.jpg"
+        data-srcset="https://tva4.sinaimg.cn/large/00729CCqgy1grlcp00aimj30cd05aaao.jpg, https://tva4.sinaimg.cn/large/00729CCqgy1grlcp00aimj30cd05aaao.jpg 1.5x, https://tva4.sinaimg.cn/large/00729CCqgy1grlcp00aimj30cd05aaao.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva4.sinaimg.cn/large/00729CCqgy1grlcp00aimj30cd05aaao.jpg"
+        title="https://tva4.sinaimg.cn/large/00729CCqgy1grlcp00aimj30cd05aaao.jpg" /></p>
+<h4 id="init关键字参数">Init关键字参数</h4>
+<ul>
+<li>
+<p><code>autoreset</code>：自动重置，可以在每次打印输出后重置对字体相关和背景的修改，默认为False</p>
 </li>
 <li>
-<p>识别中文格式</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">chardet</span><span class="o">.</span><span class="n">detect</span><span class="p">(</span><span class="s1">&#39;你好&#39;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="p">{</span><span class="s1">&#39;encoding&#39;</span><span class="p">:</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">,</span> <span class="s1">&#39;confidence&#39;</span><span class="p">:</span> <span class="mf">0.7525</span><span class="p">,</span> <span class="s1">&#39;language&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>这次可以看到检测出了编码类型为utf-8，可信度为75.25%，从这里可以看出检测中文的准确率没有那么高</p>
+<p><code>convert</code>：覆盖是否将输出中的 ANSI 代码转换为 win32 调用。默认行为是在 Windows 上进行转换，并且输出是 tty（终端）</p>
 </li>
 <li>
-<p>对外语进行检测</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">chardet</span><span class="o">.</span><span class="n">detect</span><span class="p">(</span><span class="s1">&#39;こんにちは&#39;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;euc-jp&#39;</span><span class="p">))</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="p">{</span><span class="s1">&#39;encoding&#39;</span><span class="p">:</span> <span class="s1">&#39;EUC-JP&#39;</span><span class="p">,</span> <span class="s1">&#39;confidence&#39;</span><span class="p">:</span> <span class="mf">0.99</span><span class="p">,</span> <span class="s1">&#39;language&#39;</span><span class="p">:</span> <span class="s1">&#39;Japanese&#39;</span><span class="p">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>对日语的检测可信度为99%且成功检测出来了语言</p>
+<p><code>strip</code>：盖是否应从输出中删除 ANSI 代码。默认行为是在 Windows 上或重定向输出（不是 tty）时剥离。</p>
+</li>
+<li>
+<p><code>wrap</code>：在 Windows 上，Colorama 通过用 代理对象替换<code>sys.stdout</code>和<code>sys.stderr 来工作</code>，代理对象会覆盖<code>.write()</code>方法来完成它们的工作。如果这种包装给你带来了问题，那么可以通过传递<code>init(wrap=False)</code>来禁用它 。如果<code>autoreset</code>或 <code>strip</code>或<code>convert</code>为 True，则默认行为是换<code>行</code>。</p>
+<p>禁用环绕后，非 Windows 平台上的彩色打印将继续正常工作。做跨平台彩色输出，可以直接使用Colorama的<code>AnsiToWin32</code>代理</p>
 </li>
 </ul>
 <h3 id="作用">作用</h3>
-<p>前面介绍了一下<code>chardet</code>库，与其简单的使用方法，那我们什么场景可以使用它呢，我举一个例子：当我们从网页爬取一段内容后，不清楚编码类型，就可以使用<code>chardet</code>库来进行检测，然后将不同的类型转化为<code>utf-8</code>来进行后续操作。还有其他使用场景欢迎大家补充！</p>
+<p>这个库最棒的作用就是可以个性化控制台输出，爱折腾的人可以调试一个自己喜欢的样式来优化控制台的输出效果！</p>
 <h2 id="尾巴">尾巴</h2>
-<p>从上可以看出，<code>chardet</code>库非常的简单易用，核心目的也比较明确：检测字符串编码类型。以后在字符串编码不清楚的时候可以使用<code>chardet</code>库，而不是自己去试，可以大大提高开发效率。</p>
-<p><a href="https://pypi.org/project/chardet/1.0/" target="_blank" rel="noopener noreffer">官方文档地址</a></p>
+<p>从上可以看出，<code>colorama</code>库非常的简单易用，其目的也很单一，就是优化控制台输出的样式。提供给那些爱折腾的人一个好玩的选项，当然在项目中需要输出样式有调整的时候也可以用上它，它就是那种小而美的一个库</p>
+<p><a href="https://pypi.org/project/colorama/" target="_blank" rel="noopener noreffer">官方文档地址</a></p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2021-06-16</span>
+                <span>更新于 2021-06-17</span>
             </div>
             <div class="post-info-license"></div>
         </div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet/index.md" target="_blank">阅读原始文档</a>
+                            <a class="link-to-markdown" href="/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-colorama/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet/" data-title="每天分享一个Python库-Chardet" data-hashtags="Python库"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet/" data-hashtag="Python库"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet/" data-title="每天分享一个Python库-Chardet" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet/" data-title="每天分享一个Python库-Chardet"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet/" data-title="每天分享一个Python库-Chardet"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet/" data-title="每天分享一个Python库-Chardet" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet/" data-title="每天分享一个Python库-Chardet" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet/" data-title="每天分享一个Python库-Chardet"><i class="fab fa-evernote fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-colorama/" data-title="每天分享一个好用的Python库 Colorama" data-hashtags="Python库"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-colorama/" data-hashtag="Python库"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-colorama/" data-title="每天分享一个好用的Python库 Colorama" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-colorama/" data-title="每天分享一个好用的Python库 Colorama"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-colorama/" data-title="每天分享一个好用的Python库 Colorama"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-colorama/" data-title="每天分享一个好用的Python库 Colorama" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-colorama/" data-title="每天分享一个好用的Python库 Colorama" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-colorama/" data-title="每天分享一个好用的Python库 Colorama"><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>
@@ -244,8 +278,7 @@
         </section>
     </div>
 
-    <div class="post-nav"><a href="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%88%AC%E8%99%AB%E8%BF%9B%E9%98%B6%E6%A1%86%E6%9E%B6%E5%8A%9F%E8%83%BD%E5%AE%8C%E5%96%84/" class="prev" rel="prev" title="Python学习之路-爬虫提高:框架功能完善"><i class="fas fa-angle-left fa-fw"></i>Python学习之路-爬虫提高:框架功能完善</a>
-            <a href="/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-colorama/" class="next" rel="next" title="每天分享一个好用的Python库 Colorama">每天分享一个好用的Python库 Colorama<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet/" class="prev" rel="prev" title="每天分享一个Python库-Chardet"><i class="fas fa-angle-left fa-fw"></i>每天分享一个Python库-Chardet</a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
