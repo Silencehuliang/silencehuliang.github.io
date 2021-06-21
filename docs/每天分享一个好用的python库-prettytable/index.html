@@ -5,32 +5,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>每天分享一个Python库-Chardet - Silence Blog</title><meta name="Description" content="Silence‘s blog"><meta property="og:title" content="每天分享一个Python库-Chardet" />
-<meta property="og:description" content="前言 Python中有许多好用、有意思的库，有一些可以大大提高开发效率，有的可以为我们解决很多棘手的问题，从今天开始我会每天给大家分享一个Py" />
+        <title>每天分享一个好用的Python库-Prettytable - Silence Blog</title><meta name="Description" content="Silence‘s blog"><meta property="og:title" content="每天分享一个好用的Python库-Prettytable" />
+<meta property="og:description" content="前言 今天分享的是一个主要用于在终端或浏览器端构建格式化的输出的库：Prettytable。 Prettytable 简介 PrettyTable 是python中一个可用来生成美观的ASC" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet/" />
+<meta property="og:url" content="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-prettytable/" />
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
-<meta property="article:published_time" content="2021-06-16T16:16:32+08:00" />
-<meta property="article:modified_time" content="2021-06-16T16:16:32+08:00" />
+<meta property="article:published_time" content="2021-06-18T13:14:11+08:00" />
+<meta property="article:modified_time" content="2021-06-18T13:14:11+08:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
 
-<meta name="twitter:title" content="每天分享一个Python库-Chardet"/>
-<meta name="twitter:description" content="前言 Python中有许多好用、有意思的库，有一些可以大大提高开发效率，有的可以为我们解决很多棘手的问题，从今天开始我会每天给大家分享一个Py"/>
+<meta name="twitter:title" content="每天分享一个好用的Python库-Prettytable"/>
+<meta name="twitter:description" content="前言 今天分享的是一个主要用于在终端或浏览器端构建格式化的输出的库：Prettytable。 Prettytable 简介 PrettyTable 是python中一个可用来生成美观的ASC"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet/" /><link rel="prev" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%88%AC%E8%99%AB%E8%BF%9B%E9%98%B6%E6%A1%86%E6%9E%B6%E5%8A%9F%E8%83%BD%E5%AE%8C%E5%96%84/" /><link rel="next" href="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-colorama/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.2e7125082ec8de83a87adc70253c9c23.css" integrity="md5-LnElCC7I3oOoetxwJTycIw=="><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.76cb46c10b6c0293433b371bae2414b2.css" integrity="md5-dstGwQtsApNDOzcbriQUsg=="><link rel="stylesheet" href="/lib/animate/animate.min.bc1a6a99c43f5ccc97d2d350bde13f74.css" integrity="md5-vBpqmcQ/XMyX0tNQveE/dA=="><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-prettytable/" /><link rel="prev" href="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-colorama/" /><link rel="next" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%B7%AF%E5%BE%84/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.2e7125082ec8de83a87adc70253c9c23.css" integrity="md5-LnElCC7I3oOoetxwJTycIw=="><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.76cb46c10b6c0293433b371bae2414b2.css" integrity="md5-dstGwQtsApNDOzcbriQUsg=="><link rel="stylesheet" href="/lib/animate/animate.min.bc1a6a99c43f5ccc97d2d350bde13f74.css" integrity="md5-vBpqmcQ/XMyX0tNQveE/dA=="><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "每天分享一个Python库-Chardet",
+        "headline": "每天分享一个好用的Python库-Prettytable",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/silencehuliang.github.io\/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet\/"
-        },"genre": "posts","keywords": "Python库","wordcount":  764 ,
-        "url": "https:\/\/silencehuliang.github.io\/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet\/","datePublished": "2021-06-16T16:16:32+08:00","dateModified": "2021-06-16T16:16:32+08:00","publisher": {
+            "@id": "https:\/\/silencehuliang.github.io\/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-prettytable\/"
+        },"genre": "posts","keywords": "Python库","wordcount":  585 ,
+        "url": "https:\/\/silencehuliang.github.io\/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-prettytable\/","datePublished": "2021-06-18T13:14:11+08:00","dateModified": "2021-06-18T13:14:11+08:00","publisher": {
             "@type": "Organization",
             "name": "Silence"},"author": {
                 "@type": "Person",
@@ -118,12 +118,12 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">每天分享一个Python库-Chardet</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">每天分享一个好用的Python库-Prettytable</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Silence</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/python/"><i class="far fa-folder fa-fw"></i>Python</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-06-16">2021-06-16</time>&nbsp;<i class="fa fa-history" aria-hidden="true"></i>
-                2021-06-16
-                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 764 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet/" class="leancloud_visitors" data-flag-title="每天分享一个Python库-Chardet">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-06-18">2021-06-18</time>&nbsp;<i class="fa fa-history" aria-hidden="true"></i>
+                2021-06-18
+                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 585 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-prettytable/" class="leancloud_visitors" data-flag-title="每天分享一个好用的Python库-Prettytable">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
@@ -134,7 +134,7 @@
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#前言">前言</a></li>
-    <li><a href="#chardet">Chardet</a>
+    <li><a href="#prettytable">Prettytable</a>
       <ul>
         <li><a href="#简介">简介</a></li>
         <li><a href="#安装">安装</a></li>
@@ -146,10 +146,10 @@
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h2 id="前言">前言</h2>
-<p>Python中有许多好用、有意思的库，有一些可以大大提高开发效率，有的可以为我们解决很多棘手的问题，从今天开始我会每天给大家分享一个Python库。今天分享的是一个跟字符串编码有关的库&mdash;chardet</p>
-<h2 id="chardet">Chardet</h2>
+<p>今天分享的是一个主要用于在终端或浏览器端构建格式化的输出的库：<code>Prettytable</code>。</p>
+<h2 id="prettytable">Prettytable</h2>
 <h3 id="简介">简介</h3>
-<p>chardet是一个识别字符串编码的第三方库，支持繁简中文、日语、韩文等多种语言</p>
+<p><code>PrettyTable</code> 是python中一个可用来生成美观的ASCII格式表格的第三方库。</p>
 <h3 id="安装">安装</h3>
 <ul>
 <li>
@@ -159,80 +159,136 @@
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">$ pip install chardet
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ pip install PrettyTable
 </code></pre></td></tr></table>
 </div>
 </div></li>
-<li>
-<p>通过安装Anaconda进行安装，由于Anaconda中已经帮我们安装了chardet，可以直接使用</p>
-</li>
 </ul>
 <h3 id="简单使用">简单使用</h3>
 <ul>
 <li>
-<p>识别字符串格式</p>
+<p>创建一个<code>PrettyTable</code>对象，并添加数据</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">chardet</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">chardet</span><span class="o">.</span><span class="n">detect</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;Hello chardet!&#39;</span><span class="p">)</span>
-<span class="p">{</span><span class="s1">&#39;encoding&#39;</span><span class="p">:</span> <span class="s1">&#39;ascii&#39;</span><span class="p">,</span> <span class="s1">&#39;confidence&#39;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s1">&#39;language&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">}</span>
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">prettytable</span> <span class="kn">as</span> <span class="nn">pt</span>
+  
+<span class="n">tb</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">PrettyTable</span><span class="p">()</span>
+<span class="n">tb</span><span class="o">.</span><span class="n">field_names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;股票名称&#34;</span><span class="p">,</span> <span class="s2">&#34;持仓数量&#34;</span><span class="p">,</span> <span class="s2">&#34;最新价&#34;</span><span class="p">,</span> <span class="s2">&#34;盈亏比例%&#34;</span><span class="p">]</span>
+<span class="n">tb</span><span class="o">.</span><span class="n">add_row</span><span class="p">([</span><span class="s2">&#34;贵州茅台&#34;</span><span class="p">,</span> <span class="mi">1200</span><span class="p">,</span> <span class="mf">2078.17</span><span class="p">,</span> <span class="mi">520</span><span class="p">])</span>
+<span class="n">tb</span><span class="o">.</span><span class="n">add_row</span><span class="p">([</span><span class="s2">&#34;宁德时代&#34;</span><span class="p">,</span> <span class="mi">5900</span><span class="p">,</span> <span class="mf">446.78</span><span class="p">,</span> <span class="mi">1314</span><span class="p">])</span>
+<span class="n">tb</span><span class="o">.</span><span class="n">add_row</span><span class="p">([</span><span class="s2">&#34;常山北明&#34;</span><span class="p">,</span> <span class="mi">11200</span><span class="p">,</span> <span class="mf">12.13</span><span class="p">,</span> <span class="mi">1996</span><span class="p">])</span>
+<span class="n">tb</span><span class="o">.</span><span class="n">add_row</span><span class="p">([</span><span class="s2">&#34;中远海控&#34;</span><span class="p">,</span> <span class="mi">135700</span><span class="p">,</span> <span class="mf">27.64</span><span class="p">,</span> <span class="mi">1997</span><span class="p">])</span>
+  
+<span class="k">print</span><span class="p">(</span><span class="n">tb</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>返回的结果中，<code>encoding</code>对应的键为编码类型，<code>confidence</code>对应的键为识别可信度为1，即为100%，<code>language</code>对应的键为语言，这里没有检测出来</p>
+</div><p>效果如下：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tva3.sinaimg.cn/large/00729CCqgy1grmd7zpt2mj30je089mz0.jpg"
+        data-srcset="https://tva3.sinaimg.cn/large/00729CCqgy1grmd7zpt2mj30je089mz0.jpg, https://tva3.sinaimg.cn/large/00729CCqgy1grmd7zpt2mj30je089mz0.jpg 1.5x, https://tva3.sinaimg.cn/large/00729CCqgy1grmd7zpt2mj30je089mz0.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva3.sinaimg.cn/large/00729CCqgy1grmd7zpt2mj30je089mz0.jpg"
+        title="https://tva3.sinaimg.cn/large/00729CCqgy1grmd7zpt2mj30je089mz0.jpg" /></p>
 </li>
 <li>
-<p>识别中文格式</p>
+<p>添加一列数据</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">chardet</span><span class="o">.</span><span class="n">detect</span><span class="p">(</span><span class="s1">&#39;你好&#39;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="p">{</span><span class="s1">&#39;encoding&#39;</span><span class="p">:</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">,</span> <span class="s1">&#39;confidence&#39;</span><span class="p">:</span> <span class="mf">0.7525</span><span class="p">,</span> <span class="s1">&#39;language&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">}</span>
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">tb</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="s1">&#39;盈亏&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">24960004</span><span class="p">,</span> <span class="mi">2631400</span><span class="p">,</span> <span class="mi">135856</span><span class="p">,</span> <span class="mi">3750748</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">tb</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>这次可以看到检测出了编码类型为utf-8，可信度为75.25%，从这里可以看出检测中文的准确率没有那么高</p>
+</div><p>效果如下：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tva2.sinaimg.cn/large/00729CCqgy1grmdeehg32j30nb08ggnv.jpg"
+        data-srcset="https://tva2.sinaimg.cn/large/00729CCqgy1grmdeehg32j30nb08ggnv.jpg, https://tva2.sinaimg.cn/large/00729CCqgy1grmdeehg32j30nb08ggnv.jpg 1.5x, https://tva2.sinaimg.cn/large/00729CCqgy1grmdeehg32j30nb08ggnv.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva2.sinaimg.cn/large/00729CCqgy1grmdeehg32j30nb08ggnv.jpg"
+        title="https://tva2.sinaimg.cn/large/00729CCqgy1grmdeehg32j30nb08ggnv.jpg" /></p>
 </li>
 <li>
-<p>对外语进行检测</p>
+<p>设置输出风格</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">chardet</span><span class="o">.</span><span class="n">detect</span><span class="p">(</span><span class="s1">&#39;こんにちは&#39;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;euc-jp&#39;</span><span class="p">))</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="p">{</span><span class="s1">&#39;encoding&#39;</span><span class="p">:</span> <span class="s1">&#39;EUC-JP&#39;</span><span class="p">,</span> <span class="s1">&#39;confidence&#39;</span><span class="p">:</span> <span class="mf">0.99</span><span class="p">,</span> <span class="s1">&#39;language&#39;</span><span class="p">:</span> <span class="s1">&#39;Japanese&#39;</span><span class="p">}</span>
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">tb</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="n">pt</span><span class="o">.</span><span class="n">PLAIN_COLUMNS</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">tb</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>对日语的检测可信度为99%且成功检测出来了语言</p>
+</div><p>效果如下：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://tva3.sinaimg.cn/large/00729CCqgy1grmdgprfwrj30vc05v0ua.jpg"
+        data-srcset="https://tva3.sinaimg.cn/large/00729CCqgy1grmdgprfwrj30vc05v0ua.jpg, https://tva3.sinaimg.cn/large/00729CCqgy1grmdgprfwrj30vc05v0ua.jpg 1.5x, https://tva3.sinaimg.cn/large/00729CCqgy1grmdgprfwrj30vc05v0ua.jpg 2x"
+        data-sizes="auto"
+        alt="https://tva3.sinaimg.cn/large/00729CCqgy1grmdgprfwrj30vc05v0ua.jpg"
+        title="https://tva3.sinaimg.cn/large/00729CCqgy1grmdgprfwrj30vc05v0ua.jpg" /></p>
+</li>
+<li>
+<p>设置随机输出风格</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">tb</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="n">pt</span><span class="o">.</span><span class="n">RANDOM</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">tb</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>提醒<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">还可以自定义表格输出的样式，选择有很多，可以看文档进行选择</div>
+        </div>
+    </div>
 </li>
 </ul>
 <h3 id="作用">作用</h3>
-<p>前面介绍了一下<code>chardet</code>库，与其简单的使用方法，那我们什么场景可以使用它呢，我举一个例子：当我们从网页爬取一段内容后，不清楚编码类型，就可以使用<code>chardet</code>库来进行检测，然后将不同的类型转化为<code>utf-8</code>来进行后续操作。还有其他使用场景欢迎大家补充！</p>
+<p>这个库与昨天分享的<code>Colorama</code>都是为我们个性化控制台输出给出更多的可能，爱折腾的人可以调试一个自己喜欢的样式来优化控制台的输出效果！</p>
 <h2 id="尾巴">尾巴</h2>
-<p>从上可以看出，<code>chardet</code>库非常的简单易用，核心目的也比较明确：检测字符串编码类型。以后在字符串编码不清楚的时候可以使用<code>chardet</code>库，而不是自己去试，可以大大提高开发效率。</p>
-<p><a href="https://pypi.org/project/chardet/1.0/" target="_blank" rel="noopener noreffer">官方文档地址</a></p>
+<p>从上可以看出，<code>Prettytable</code>库也非常的简单易用，这些库可能有些人觉得很没用，但是当你需要用到的时候就会发现，他真的很简单很好用，值得尝试！</p>
+<p><a href="https://pypi.org/project/prettytable/" target="_blank" rel="noopener noreffer">官方文档地址</a></p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2021-06-16</span>
+                <span>更新于 2021-06-18</span>
             </div>
             <div class="post-info-license"></div>
         </div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet/index.md" target="_blank">阅读原始文档</a>
+                            <a class="link-to-markdown" href="/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-prettytable/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet/" data-title="每天分享一个Python库-Chardet" data-hashtags="Python库"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet/" data-hashtag="Python库"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet/" data-title="每天分享一个Python库-Chardet" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet/" data-title="每天分享一个Python库-Chardet"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet/" data-title="每天分享一个Python库-Chardet"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet/" data-title="每天分享一个Python库-Chardet" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet/" data-title="每天分享一个Python库-Chardet" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet/" data-title="每天分享一个Python库-Chardet"><i class="fab fa-evernote fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-prettytable/" data-title="每天分享一个好用的Python库-Prettytable" data-hashtags="Python库"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-prettytable/" data-hashtag="Python库"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-prettytable/" data-title="每天分享一个好用的Python库-Prettytable" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-prettytable/" data-title="每天分享一个好用的Python库-Prettytable"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-prettytable/" data-title="每天分享一个好用的Python库-Prettytable"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-prettytable/" data-title="每天分享一个好用的Python库-Prettytable" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-prettytable/" data-title="每天分享一个好用的Python库-Prettytable" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-prettytable/" data-title="每天分享一个好用的Python库-Prettytable"><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>
@@ -244,8 +300,8 @@
         </section>
     </div>
 
-    <div class="post-nav"><a href="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%88%AC%E8%99%AB%E8%BF%9B%E9%98%B6%E6%A1%86%E6%9E%B6%E5%8A%9F%E8%83%BD%E5%AE%8C%E5%96%84/" class="prev" rel="prev" title="Python学习之路-爬虫提高:框架功能完善"><i class="fas fa-angle-left fa-fw"></i>Python学习之路-爬虫提高:框架功能完善</a>
-            <a href="/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-colorama/" class="next" rel="next" title="每天分享一个好用的Python库-Colorama">每天分享一个好用的Python库-Colorama<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-colorama/" class="prev" rel="prev" title="每天分享一个好用的Python库-Colorama"><i class="fas fa-angle-left fa-fw"></i>每天分享一个好用的Python库-Colorama</a>
+            <a href="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%B7%AF%E5%BE%84/" class="next" rel="next" title="Python学习之路-路径">Python学习之路-路径<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.

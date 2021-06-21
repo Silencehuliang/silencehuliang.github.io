@@ -1,4 +1,4 @@
-# 每天分享一个好用的Python库 Colorama
+# 每天分享一个好用的Python库-Colorama
 
 
 ## 前言
@@ -28,7 +28,7 @@
 | 对应名字 |                             Fore                             |                             Back                             |             Style              |
 | 可用颜色 | BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE, RESET | BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE, RESET | DIM, NORMAL, BRIGHT, RESET_ALL |
 
-{{< admonition waring "注意" true >}}
+{{< admonition warning "注意" true >}}
 
 颜色都需要大写。
 
