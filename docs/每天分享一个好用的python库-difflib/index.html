@@ -5,32 +5,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>Python学习之路-路径 - Silence Blog</title><meta name="Description" content="Silence‘s blog"><meta property="og:title" content="Python学习之路-路径" />
-<meta property="og:description" content="路径 简介 路径是一种电脑文件或目录的名称的通用表现形式，它指向文件系统上的一个唯一位置。指向一个文件系统位置的路径通常采用以字符串表示的目录树" />
+        <title>每天分享一个好用的Python库-difflib - Silence Blog</title><meta name="Description" content="Silence‘s blog"><meta property="og:title" content="每天分享一个好用的Python库-difflib" />
+<meta property="og:description" content="前言 由于生病了几天，导致该系列拖更了，今天稍微好点了，继续开始更新。今天分享是一个Python标准库，主要用于计算文本间的差异：diffli" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%B7%AF%E5%BE%84/" />
+<meta property="og:url" content="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-difflib/" />
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
-<meta property="article:published_time" content="2021-06-18T14:39:47+08:00" />
-<meta property="article:modified_time" content="2021-06-18T14:39:47+08:00" />
+<meta property="article:published_time" content="2021-06-22T13:14:11+08:00" />
+<meta property="article:modified_time" content="2021-06-22T13:14:11+08:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
 
-<meta name="twitter:title" content="Python学习之路-路径"/>
-<meta name="twitter:description" content="路径 简介 路径是一种电脑文件或目录的名称的通用表现形式，它指向文件系统上的一个唯一位置。指向一个文件系统位置的路径通常采用以字符串表示的目录树"/>
+<meta name="twitter:title" content="每天分享一个好用的Python库-difflib"/>
+<meta name="twitter:description" content="前言 由于生病了几天，导致该系列拖更了，今天稍微好点了，继续开始更新。今天分享是一个Python标准库，主要用于计算文本间的差异：diffli"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%B7%AF%E5%BE%84/" /><link rel="prev" href="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-prettytable/" /><link rel="next" href="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-difflib/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.2e7125082ec8de83a87adc70253c9c23.css" integrity="md5-LnElCC7I3oOoetxwJTycIw=="><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.76cb46c10b6c0293433b371bae2414b2.css" integrity="md5-dstGwQtsApNDOzcbriQUsg=="><link rel="stylesheet" href="/lib/animate/animate.min.bc1a6a99c43f5ccc97d2d350bde13f74.css" integrity="md5-vBpqmcQ/XMyX0tNQveE/dA=="><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-difflib/" /><link rel="prev" href="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%B7%AF%E5%BE%84/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.2e7125082ec8de83a87adc70253c9c23.css" integrity="md5-LnElCC7I3oOoetxwJTycIw=="><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.76cb46c10b6c0293433b371bae2414b2.css" integrity="md5-dstGwQtsApNDOzcbriQUsg=="><link rel="stylesheet" href="/lib/animate/animate.min.bc1a6a99c43f5ccc97d2d350bde13f74.css" integrity="md5-vBpqmcQ/XMyX0tNQveE/dA=="><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "Python学习之路-路径",
+        "headline": "每天分享一个好用的Python库-difflib",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/silencehuliang.github.io\/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%B7%AF%E5%BE%84\/"
-        },"genre": "posts","keywords": "Python学习之路","wordcount":  547 ,
-        "url": "https:\/\/silencehuliang.github.io\/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%B7%AF%E5%BE%84\/","datePublished": "2021-06-18T14:39:47+08:00","dateModified": "2021-06-18T14:39:47+08:00","publisher": {
+            "@id": "https:\/\/silencehuliang.github.io\/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-difflib\/"
+        },"genre": "posts","keywords": "Python库","wordcount":  612 ,
+        "url": "https:\/\/silencehuliang.github.io\/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-difflib\/","datePublished": "2021-06-22T13:14:11+08:00","dateModified": "2021-06-22T13:14:11+08:00","publisher": {
             "@type": "Organization",
             "name": "Silence"},"author": {
                 "@type": "Person",
@@ -118,12 +118,12 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">Python学习之路-路径</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">每天分享一个好用的Python库-difflib</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Silence</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/python/"><i class="far fa-folder fa-fw"></i>Python</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-06-18">2021-06-18</time>&nbsp;<i class="fa fa-history" aria-hidden="true"></i>
-                2021-06-18
-                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 547 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%B7%AF%E5%BE%84/" class="leancloud_visitors" data-flag-title="Python学习之路-路径">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-06-22">2021-06-22</time>&nbsp;<i class="fa fa-history" aria-hidden="true"></i>
+                2021-06-22
+                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 612 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-difflib/" class="leancloud_visitors" data-flag-title="每天分享一个好用的Python库-difflib">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
@@ -133,111 +133,116 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#路径">路径</a>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#difflib">difflib</a>
       <ul>
         <li><a href="#简介">简介</a></li>
-        <li><a href="#当前工作目录">当前工作目录</a></li>
-        <li><a href="#绝对路径">绝对路径</a></li>
-        <li><a href="#相对路径">相对路径</a></li>
+        <li><a href="#安装">安装</a></li>
+        <li><a href="#简单使用">简单使用</a>
+          <ul>
+            <li><a href="#常见类">常见类</a></li>
+            <li><a href="#常用方法">常用方法</a></li>
+          </ul>
+        </li>
+        <li><a href="#作用">作用</a></li>
       </ul>
     </li>
-    <li><a href="#python中的路径">Python中的路径</a>
-      <ul>
-        <li><a href="#获取当前工作目录">获取当前工作目录</a></li>
-        <li><a href="#路径自动连接">路径自动连接</a></li>
-      </ul>
-    </li>
-    <li><a href="#补充">补充</a></li>
+    <li><a href="#尾巴">尾巴</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h2 id="路径">路径</h2>
+            </div><div class="content" id="content"><h2 id="前言">前言</h2>
+<p>由于生病了几天，导致该系列拖更了，今天稍微好点了，继续开始更新。今天分享是一个Python标准库，主要用于计算文本间的差异：<code>difflib</code>。</p>
+<h2 id="difflib">difflib</h2>
 <h3 id="简介">简介</h3>
-<p>路径是一种电脑文件或目录的名称的通用表现形式，它指向文件系统上的一个唯一位置。指向一个文件系统位置的路径通常采用以字符串表示的目录树分层结构，首个部分表示文件系统位置，之后以分隔字符分开的各部分路径表示各级目录，最后是该文件/文件夹。分隔字符最常采用斜线（/）、反斜线（\）或冒号（:）字符，不同操作系统与环境可能采用不同的字符。</p>
-<h3 id="当前工作目录">当前工作目录</h3>
-<p>当前工作目录指的是当前工作所处的路径。</p>
-<h3 id="绝对路径">绝对路径</h3>
-<p>也可称完整路径，是指向文件系统中某个固定位置的路径，不会因当前的工作目录而产生变化。为做到这点，它必须包括根目录。</p>
-<h3 id="相对路径">相对路径</h3>
-<p>则是以指定的工作目录作为基点，避开提供完整的绝对路径。文件名称就可以被视为以指定工作目录为基点的一个相对路径（虽然一般不将其称之为路径）。</p>
-<h2 id="python中的路径">Python中的路径</h2>
-<h3 id="获取当前工作目录">获取当前工作目录</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">os</span> 
-<span class="k">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
-</code></pre></td></tr></table>
-</div>
-</div><h3 id="路径自动连接">路径自动连接</h3>
-<p>当需要连接两个或者更多路径时，可以用<code>os.path.join</code>。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">os</span>
-<span class="n">p1</span> <span class="o">=</span> <span class="s1">&#39;a&#39;</span>
-<span class="n">p2</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span>
-<span class="n">p3</span> <span class="o">=</span> <span class="s1">&#39;c&#39;</span>
-<span class="n">p4</span> <span class="o">=</span> <span class="s1">&#39;d&#39;</span>
-<span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">,</span><span class="n">p3</span><span class="p">,</span><span class="n">p4</span><span class="p">)</span>
-<span class="s1">&#39;a/b/c/d&#39;</span>
-</code></pre></td></tr></table>
-</div>
-</div><div class="details admonition warning open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-exclamation-triangle fa-fw"></i>提醒<i class="details-icon fas fa-angle-right fa-fw"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><ul>
+<p><code>difflib</code> 是Python标准库中一个可用于对比文本之间的差异，并且支持输出HTML文档的库。</p>
+<h3 id="安装">安装</h3>
+<p>Python标准库，无需安装。</p>
+<h3 id="简单使用">简单使用</h3>
+<h4 id="常见类">常见类</h4>
+<ul>
 <li>
-<p>如果各路径首字母不包含&rsquo;/'，则函数会自动加上，首个除外。</p>
+<p><code>Differ</code>：是一个用于比较文本行序列的类，并且产生人类可读的差异或增量。</p>
+<ul>
+<li>
+<p><code>compare</code>：比较两个行序列； 生成结果增量。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">Differ</span><span class="p">()</span><span class="o">.</span><span class="n">compare</span><span class="p">(</span><span class="s1">&#39;one</span><span class="se">\n</span><span class="s1">two</span><span class="se">\n</span><span class="s1">three</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">splitlines</span><span class="p">(</span><span class="bp">True</span><span class="p">),</span>
+        <span class="o">...</span>                                <span class="s1">&#39;ore</span><span class="se">\n</span><span class="s1">tree</span><span class="se">\n</span><span class="s1">emu</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">splitlines</span><span class="p">(</span><span class="bp">True</span><span class="p">))),</span>
+        <span class="o">...</span>       <span class="n">end</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+        <span class="o">-</span> <span class="n">one</span>
+        <span class="err">?</span>  <span class="o">^</span>
+        <span class="o">+</span> <span class="n">ore</span>
+        <span class="err">?</span>  <span class="o">^</span>
+        <span class="o">-</span> <span class="n">two</span>
+        <span class="o">-</span> <span class="n">three</span>
+        <span class="err">?</span>  <span class="o">-</span>
+        <span class="o">+</span> <span class="n">tree</span>
+        <span class="o">+</span> <span class="n">emu</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
 </li>
 <li>
-<p>如果最后一个组件为空，则生成的路径以一个&rsquo;/&lsquo;分隔符结尾</p>
+<p><code>HtmlDiff</code>：用于生成 HTML 并与更改亮点进行比较。此类可用于创建 HTML 表格（或包含该表格的完整 HTML 文件），显示文本与行间和行内更改突出显示的并排、逐行比较。该表可以以完整或上下文差异模式生成。为 HTML 生成提供了以下方法：</p>
+<ul>
+<li><code>make_table</code>：为单个并排表格生成 HTML。
+<ul>
+<li><code>make_file</code>：使用一个并排表格生成完整的 HTML 文件。</li>
+</ul>
 </li>
 </ul>
-</div>
-        </div>
-    </div>
-<h2 id="补充">补充</h2>
-<p>当想查看当前工作目录下的所有文件时，可以使用<code>os.listdir()</code>，当然你也可以指定路径查看对应路径下的所有文件</p>
+</li>
+</ul>
+<h4 id="常用方法">常用方法</h4>
+<p><code>ratio</code>：用[0,1]的范围返回序列相似性的度量，作为[0,1]范围内的浮点数。值超过 0.6 意味着序列接近匹配。</p>
+<h3 id="作用">作用</h3>
+<p>这个库与Linux下的<code>vimdiff</code>命令功能一样，在Python中可以更好的让我们处理对比文档的结果。</p>
+<h2 id="尾巴">尾巴</h2>
+<p>Python标准库也需要大家都进行学习的，里面充满着很多有意思的库，不需要在重复造轮子了。</p>
+<p>大家一定要保重身体，身体才是革命的本钱。由于本人目前还很虚弱，爬虫系列的更新会再晚一些，请再给我一点时间。</p>
+<p><a href="https://docs.python.org/zh-cn/3/library/difflib.html" target="_blank" rel="noopener noreffer">官方文档地址</a></p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2021-06-18</span>
+                <span>更新于 2021-06-22</span>
             </div>
             <div class="post-info-license"></div>
         </div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%B7%AF%E5%BE%84/index.md" target="_blank">阅读原始文档</a>
+                            <a class="link-to-markdown" href="/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-difflib/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%B7%AF%E5%BE%84/" data-title="Python学习之路-路径" data-hashtags="Python学习之路"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%B7%AF%E5%BE%84/" data-hashtag="Python学习之路"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%B7%AF%E5%BE%84/" data-title="Python学习之路-路径" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%B7%AF%E5%BE%84/" data-title="Python学习之路-路径"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%B7%AF%E5%BE%84/" data-title="Python学习之路-路径"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%B7%AF%E5%BE%84/" data-title="Python学习之路-路径" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%B7%AF%E5%BE%84/" data-title="Python学习之路-路径" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%B7%AF%E5%BE%84/" data-title="Python学习之路-路径"><i class="fab fa-evernote fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-difflib/" data-title="每天分享一个好用的Python库-difflib" data-hashtags="Python库"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-difflib/" data-hashtag="Python库"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-difflib/" data-title="每天分享一个好用的Python库-difflib" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-difflib/" data-title="每天分享一个好用的Python库-difflib"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-difflib/" data-title="每天分享一个好用的Python库-difflib"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-difflib/" data-title="每天分享一个好用的Python库-difflib" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-difflib/" data-title="每天分享一个好用的Python库-difflib" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-difflib/" data-title="每天分享一个好用的Python库-difflib"><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/">Python学习之路</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/python%E5%BA%93/">Python库</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-prettytable/" class="prev" rel="prev" title="每天分享一个好用的Python库-Prettytable"><i class="fas fa-angle-left fa-fw"></i>每天分享一个好用的Python库-Prettytable</a>
-            <a href="/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-difflib/" class="next" rel="next" title="每天分享一个好用的Python库-difflib">每天分享一个好用的Python库-difflib<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E8%B7%AF%E5%BE%84/" class="prev" rel="prev" title="Python学习之路-路径"><i class="fas fa-angle-left fa-fw"></i>Python学习之路-路径</a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.

@@ -7,7 +7,7 @@
 
 ### 简介
 
-`PrettyTable` 是python中一个可用来生成美观的ASCII格式表格的第三方库。
+`PrettyTable` 是Python中一个可用来生成美观的ASCII格式表格的第三方库。
 
 ### 安装
 
