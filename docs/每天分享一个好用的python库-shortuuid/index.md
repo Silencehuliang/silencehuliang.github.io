@@ -5,41 +5,84 @@
 
 今天分享是一个一组简洁URL/UUID函数库的第三方库：`shortuuid`。
 
-## esmre
+## shortuuid
 
 ### 简介
 
-当你需要从一大堆数据中找寻自己想要的数据时可以使用[AC自动机算法](https://zh.wikipedia.org/wiki/AC%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%AE%97%E6%B3%95)使用AC自动机算法，在`Python`中这时候可以使用`esmre`。
+`shortuuid` 是一个简单的第三方`Python` 库，可以生成简洁、明确、URL 安全的 UUID。
 
 ### 安装
 
 ```python
-pip install esmre
+pip install shortuuid
 ```
 
 ### 简单使用
 
-```python
->>> import esm
->>> index = esm.Index()
->>> index.enter('保罗')
->>> index.enter('小卡')
->>> index.enter('贝弗利')
->>> index.fix()
->>> index.query("""NBA季后赛西部决赛，快船与太阳移师洛杉矶展开了他们系列赛第三场较量，上一场太阳凭借艾顿的空接绝杀惊险胜出，此役保罗火线复出，而小卡则继续缺阵。首节开局两队势均力敌，但保罗和布克单节一分未得的拉胯表现让太阳陷入困境，快船趁机在节末打出一波9-2稍稍拉开比分，次节快船替补球员得分乏术，太阳抓住机会打出14-4的攻击波反超比分，布克和保罗先后找回手感，纵使乔治重新登场后状态火热，太阳也依旧带着2分的优势结束上半场。下半场太阳的进攻突然断电，快船则在曼恩和乔治的引领下打出一波21-3的攻击狂潮彻底掌控场上局势，末节快船在领先到18分后略有放松，太阳一波12-0看到了翻盘的希望，关键时刻雷吉和贝弗利接管比赛，正是他们出色的发挥为球队锁定胜局，最终快船主场106-92击败太阳，将总比分扳成1-2。""")
-[((162, 168), '保罗'), ((186, 192), '小卡'), ((246, 252), '保罗'), ((478, 484), '保罗'), ((846, 855), '贝弗利')]
+- 生成短的uuid
 
-```
+  ```python
+  >>> import shortuuid
+  >>> shortuuid.uuid()
+  'TNEbNCHXTNos848uxHqkd6'
+  ```
+  
+- 根据DNS或者URL生成uuid
 
+  ```python
+  >>> shortuuid.uuid(name="baidu.com")
+  'KJ65furhUxu7TE6Xue95MD'
+  >>> shortuuid.uuid(name="https://silencehuliang.github.io/")
+  'cteCmrh3fC6DeX5jzXxxXf'
+  ```
 
+- 生成指定长度的uuid
+
+  ```python
+  >>> shortuuid.ShortUUID().random(length=8)
+  '73mjzeqZ'
+  ```
+
+- 查看用于生成uuid的字符
+
+  ```python
+  >>> shortuuid.get_alphabet()
+  '23456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz'
+  ```
+
+- 指定用于生成uuid的字符
+
+  ```python
+  >>> shortuuid.set_alphabet("huliang")
+  >>> shortuuid.uuid()
+  'auauhhaunhliunagulnnluilhuglhughhiaaahuniuuaug'
+  ```
+
+  {{< admonition warning "注意" true >}}
+
+  这里可以看到由于我们给的用于生成uuid的字符比较少，为了安全考虑对应生成的uuid变长了，这个时候指定数量会使用默认的字符，当我们设置更长的字符时，对应生成的uuid就会变短。
+
+  {{< /admonition >}}
+
+  ```python
+  >>> shortuuid.ShortUUID().random(length=8)
+  'Xwp6drW8'
+  >>> shortuuid.set_alphabet("23456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxy")
+  >>> shortuuid.uuid()
+  '27FTRikpT2vh7k7aYy5h2sm'
+  ```
+
+  
 
 
 ### 作用
 
-这个库的使用方法比较简单易用，性能也还可以，而且`esmre`库也不存在内存异常泄露等问题，需要的小伙伴可以尝试一下！
+该库可以很好地帮助我们设置一个符合我们需求的uuid，不需要我们在对`uuid`库进行二次开发.
 
 ## 尾巴
 
-很多好用的第三方库知道的人少，导致不断重复造轮子，其实这也是我分享这些好用的库的初衷，想让大家工作变得更高效，不再重复造轮子，我也只是抛砖引玉给大家推荐好用的库，能让他发挥更大作用的是你们！
+最近生病了还在恢复中，各类文章会逐步更新起来，谢谢大家关心！大家一定要注意身体，这个时候容易生病！
 
-[官方文档地址](
+[官方文档地址](https://pypi.org/project/shortuuid/)
+
+
