@@ -4,7 +4,21 @@
         <link>https://silencehuliang.github.io/tags/python%E5%BA%93/</link>
         <description>Python库 - 标签 - Silence Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>silencehuliang@gmail.com (Silence)</managingEditor>
-            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Thu, 24 Jun 2021 09:14:11 &#43;0800</lastBuildDate><atom:link href="https://silencehuliang.github.io/tags/python%E5%BA%93/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 26 Jun 2021 09:15:11 &#43;0800</lastBuildDate><atom:link href="https://silencehuliang.github.io/tags/python%E5%BA%93/" rel="self" type="application/rss+xml" /><item>
+    <title>每天分享一个好用的Python库-shortuuid</title>
+    <link>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-shortuuid/</link>
+    <pubDate>Sat, 26 Jun 2021 09:15:11 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-shortuuid/</guid>
+    <description><![CDATA[前言 今天分享是一个一组简洁URL/UUID函数库的第三方库：shortuuid。 esmre 简介 当你需要从一大堆数据中找寻自己想要的数据时可以使用AC]]></description>
+</item><item>
+    <title>每天分享一个好用的Python库-esmre</title>
+    <link>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-esmre/</link>
+    <pubDate>Fri, 25 Jun 2021 09:15:11 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-esmre/</guid>
+    <description><![CDATA[前言 今天分享是一个用于加速大型正则集合执行的第三方库：esmre。 esmre 简介 当你需要从一大堆数据中找寻自己想要的数据时可以使用AC自动机算法使用]]></description>
+</item><item>
     <title>每天分享一个好用的Python库-Levenshtein</title>
     <link>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-levenshtein/</link>
     <pubDate>Thu, 24 Jun 2021 09:14:11 &#43;0800</pubDate>

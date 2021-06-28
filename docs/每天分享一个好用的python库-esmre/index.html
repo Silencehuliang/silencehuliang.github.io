@@ -5,32 +5,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>每天分享一个好用的Python库-Levenshtein - Silence Blog</title><meta name="Description" content="Silence‘s blog"><meta property="og:title" content="每天分享一个好用的Python库-Levenshtein" />
-<meta property="og:description" content="前言 最近几天处于恢复期间，会不定期更新，感谢大家的关心与支持。今天分享是一个计算字符串相似度的第三方库：Levenshtein。 Levenshtein 简介 Lev" />
+        <title>每天分享一个好用的Python库-esmre - Silence Blog</title><meta name="Description" content="Silence‘s blog"><meta property="og:title" content="每天分享一个好用的Python库-esmre" />
+<meta property="og:description" content="前言 今天分享是一个用于加速大型正则集合执行的第三方库：esmre。 esmre 简介 当你需要从一大堆数据中找寻自己想要的数据时可以使用AC自动机算法使用" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-levenshtein/" />
+<meta property="og:url" content="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-esmre/" />
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
-<meta property="article:published_time" content="2021-06-24T09:14:11+08:00" />
-<meta property="article:modified_time" content="2021-06-24T09:14:11+08:00" />
+<meta property="article:published_time" content="2021-06-25T09:15:11+08:00" />
+<meta property="article:modified_time" content="2021-06-22T09:16:11+08:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"/>
 
-<meta name="twitter:title" content="每天分享一个好用的Python库-Levenshtein"/>
-<meta name="twitter:description" content="前言 最近几天处于恢复期间，会不定期更新，感谢大家的关心与支持。今天分享是一个计算字符串相似度的第三方库：Levenshtein。 Levenshtein 简介 Lev"/>
+<meta name="twitter:title" content="每天分享一个好用的Python库-esmre"/>
+<meta name="twitter:description" content="前言 今天分享是一个用于加速大型正则集合执行的第三方库：esmre。 esmre 简介 当你需要从一大堆数据中找寻自己想要的数据时可以使用AC自动机算法使用"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-levenshtein/" /><link rel="prev" href="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-difflib/" /><link rel="next" href="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-esmre/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.2e7125082ec8de83a87adc70253c9c23.css" integrity="md5-LnElCC7I3oOoetxwJTycIw=="><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.76cb46c10b6c0293433b371bae2414b2.css" integrity="md5-dstGwQtsApNDOzcbriQUsg=="><link rel="stylesheet" href="/lib/animate/animate.min.bc1a6a99c43f5ccc97d2d350bde13f74.css" integrity="md5-vBpqmcQ/XMyX0tNQveE/dA=="><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-esmre/" /><link rel="prev" href="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-levenshtein/" /><link rel="next" href="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-shortuuid/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.2e7125082ec8de83a87adc70253c9c23.css" integrity="md5-LnElCC7I3oOoetxwJTycIw=="><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.76cb46c10b6c0293433b371bae2414b2.css" integrity="md5-dstGwQtsApNDOzcbriQUsg=="><link rel="stylesheet" href="/lib/animate/animate.min.bc1a6a99c43f5ccc97d2d350bde13f74.css" integrity="md5-vBpqmcQ/XMyX0tNQveE/dA=="><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "每天分享一个好用的Python库-Levenshtein",
+        "headline": "每天分享一个好用的Python库-esmre",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/silencehuliang.github.io\/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-levenshtein\/"
-        },"genre": "posts","keywords": "Python库","wordcount":  890 ,
-        "url": "https:\/\/silencehuliang.github.io\/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-levenshtein\/","datePublished": "2021-06-24T09:14:11+08:00","dateModified": "2021-06-24T09:14:11+08:00","publisher": {
+            "@id": "https:\/\/silencehuliang.github.io\/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-esmre\/"
+        },"genre": "posts","keywords": "Python库","wordcount":  841 ,
+        "url": "https:\/\/silencehuliang.github.io\/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-esmre\/","datePublished": "2021-06-25T09:15:11+08:00","dateModified": "2021-06-22T09:16:11+08:00","publisher": {
             "@type": "Organization",
             "name": "Silence"},"author": {
                 "@type": "Person",
@@ -118,12 +118,12 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">每天分享一个好用的Python库-Levenshtein</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">每天分享一个好用的Python库-esmre</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Silence</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/python/"><i class="far fa-folder fa-fw"></i>Python</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-06-24">2021-06-24</time>&nbsp;<i class="fa fa-history" aria-hidden="true"></i>
-                2021-06-24
-                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 890 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-levenshtein/" class="leancloud_visitors" data-flag-title="每天分享一个好用的Python库-Levenshtein">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-06-25">2021-06-25</time>&nbsp;<i class="fa fa-history" aria-hidden="true"></i>
+                2021-06-22
+                <i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 841 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-esmre/" class="leancloud_visitors" data-flag-title="每天分享一个好用的Python库-esmre">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
@@ -134,15 +134,11 @@
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#前言">前言</a></li>
-    <li><a href="#levenshtein">Levenshtein</a>
+    <li><a href="#esmre">esmre</a>
       <ul>
         <li><a href="#简介">简介</a></li>
         <li><a href="#安装">安装</a></li>
-        <li><a href="#简单使用">简单使用</a>
-          <ul>
-            <li><a href="#常见方法">常见方法</a></li>
-          </ul>
-        </li>
+        <li><a href="#简单使用">简单使用</a></li>
         <li><a href="#作用">作用</a></li>
       </ul>
     </li>
@@ -150,41 +146,20 @@
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h2 id="前言">前言</h2>
-<p>最近几天处于恢复期间，会不定期更新，感谢大家的关心与支持。今天分享是一个计算字符串相似度的第三方库：<code>Levenshtein</code>。</p>
-<h2 id="levenshtein">Levenshtein</h2>
+<p>今天分享是一个用于加速大型正则集合执行的第三方库：<code>esmre</code>。</p>
+<h2 id="esmre">esmre</h2>
 <h3 id="简介">简介</h3>
-<p><code>Levenshtein</code>：莱文斯坦距离，又称Levenshtein距离，是编辑距离的一种。 指两个字串之間，由一个转成另一个所需的最少编辑操作次数。 允许的编辑操作包括将一个字符替换成另一个字符，插入一个字符，刪除一个字符。</p>
+<p>当你需要从一大堆数据中找寻自己想要的数据时可以使用<a href="https://zh.wikipedia.org/wiki/AC%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%AE%97%E6%B3%95" target="_blank" rel="noopener noreffer">AC自动机算法</a>使用AC自动机算法，在<code>Python</code>中这时候可以使用<code>esmre</code>。</p>
 <h3 id="安装">安装</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">pip</span> <span class="n">install</span> <span class="n">python</span><span class="o">-</span><span class="n">Levenshtein</span>
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">pip</span> <span class="n">install</span> <span class="n">esmre</span>
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="简单使用">简单使用</h3>
-<h4 id="常见方法">常见方法</h4>
-<ul>
-<li>
-<p><code>hamming</code>：计算汉明距离，两个字符串的长度必须相同。返回两个字串之间对应位置上不同字符的个数。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">hamming</span><span class="p">(</span><span class="s1">&#39;Hello world!&#39;</span><span class="p">,</span> <span class="s1">&#39;Holly grail!&#39;</span><span class="p">)</span>
-    <span class="mi">7</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">hamming</span><span class="p">(</span><span class="s1">&#39;Brian&#39;</span><span class="p">,</span> <span class="s1">&#39;Jesus&#39;</span><span class="p">)</span>
-    <span class="mi">5</span>
-</code></pre></td></tr></table>
-</div>
-</div></li>
-<li>
-<p><code>distance</code>：计算一个字串转化成另一个字串最少的操作次数，在其中的操作包括插入、删除、替换</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -195,126 +170,39 @@
 </span><span class="lnt">6
 </span><span class="lnt">7
 </span><span class="lnt">8
+</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">distance</span><span class="p">(</span><span class="s1">&#39;Levenshtein&#39;</span><span class="p">,</span> <span class="s1">&#39;Lenvinsten&#39;</span><span class="p">)</span>
-    <span class="mi">4</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">distance</span><span class="p">(</span><span class="s1">&#39;Levenshtein&#39;</span><span class="p">,</span> <span class="s1">&#39;Levensthein&#39;</span><span class="p">)</span>
-    <span class="mi">2</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">distance</span><span class="p">(</span><span class="s1">&#39;Levenshtein&#39;</span><span class="p">,</span> <span class="s1">&#39;Levenshten&#39;</span><span class="p">)</span>
-    <span class="mi">1</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">distance</span><span class="p">(</span><span class="s1">&#39;Levenshtein&#39;</span><span class="p">,</span> <span class="s1">&#39;Levenshtein&#39;</span><span class="p">)</span>
-    <span class="mi">0</span>
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">esm</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">index</span> <span class="o">=</span> <span class="n">esm</span><span class="o">.</span><span class="n">Index</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">index</span><span class="o">.</span><span class="n">enter</span><span class="p">(</span><span class="s1">&#39;保罗&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">index</span><span class="o">.</span><span class="n">enter</span><span class="p">(</span><span class="s1">&#39;小卡&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">index</span><span class="o">.</span><span class="n">enter</span><span class="p">(</span><span class="s1">&#39;贝弗利&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">index</span><span class="o">.</span><span class="n">fix</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">index</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&#34;&#34;&#34;NBA季后赛西部决赛，快船与太阳移师洛杉矶展开了他们系列赛第三场较量，上一场太阳凭借艾顿的空接绝杀惊险胜出，此役保罗火线复出，而小卡则继续缺阵。首节开局两队势均力敌，但保罗和布克单节一分未得的拉胯表现让太阳陷入困境，快船趁机在节末打出一波9-2稍稍拉开比分，次节快船替补球员得分乏术，太阳抓住机会打出14-4的攻击波反超比分，布克和保罗先后找回手感，纵使乔治重新登场后状态火热，太阳也依旧带着2分的优势结束上半场。下半场太阳的进攻突然断电，快船则在曼恩和乔治的引领下打出一波21-3的攻击狂潮彻底掌控场上局势，末节快船在领先到18分后略有放松，太阳一波12-0看到了翻盘的希望，关键时刻雷吉和贝弗利接管比赛，正是他们出色的发挥为球队锁定胜局，最终快船主场106-92击败太阳，将总比分扳成1-2。&#34;&#34;&#34;</span><span class="p">)</span>
+<span class="p">[((</span><span class="mi">162</span><span class="p">,</span> <span class="mi">168</span><span class="p">),</span> <span class="s1">&#39;保罗&#39;</span><span class="p">),</span> <span class="p">((</span><span class="mi">186</span><span class="p">,</span> <span class="mi">192</span><span class="p">),</span> <span class="s1">&#39;小卡&#39;</span><span class="p">),</span> <span class="p">((</span><span class="mi">246</span><span class="p">,</span> <span class="mi">252</span><span class="p">),</span> <span class="s1">&#39;保罗&#39;</span><span class="p">),</span> <span class="p">((</span><span class="mi">478</span><span class="p">,</span> <span class="mi">484</span><span class="p">),</span> <span class="s1">&#39;保罗&#39;</span><span class="p">),</span> <span class="p">((</span><span class="mi">846</span><span class="p">,</span> <span class="mi">855</span><span class="p">),</span> <span class="s1">&#39;贝弗利&#39;</span><span class="p">)]</span>
+
 </code></pre></td></tr></table>
 </div>
-</div></li>
-<li>
-<p><code>ratio</code>：计算莱文斯坦比。计算公式为  r = (sum - ldist) / sum, 其中sum是指str1 和 str2 字串的长度总和，ldist是类编辑距离。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">ratio</span><span class="p">(</span><span class="s1">&#39;Hello world!&#39;</span><span class="p">,</span> <span class="s1">&#39;Holly grail!&#39;</span><span class="p">)</span>  <span class="c1"># doctest: +ELLIPSIS</span>
-    <span class="mf">0.583333</span><span class="o">...</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">ratio</span><span class="p">(</span><span class="s1">&#39;Brian&#39;</span><span class="p">,</span> <span class="s1">&#39;Jesus&#39;</span><span class="p">)</span>
-    <span class="mf">0.0</span>
-</code></pre></td></tr></table>
-</div>
-</div><div class="details admonition warning open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-exclamation-triangle fa-fw"></i>注意<i class="details-icon fas fa-angle-right fa-fw"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content">这里的类编辑距离不是2中所说的编辑距离，2中三种操作中每个操作+1，而在此处，删除、插入依然+1，但是替换+2，这样ratio(&lsquo;a&rsquo;, &lsquo;c&rsquo;)，sum=2，按2中计算为（2-1）/2 = 0.5，’a&rsquo;，&lsquo;c&rsquo;没有重合，显然不合算，但是替换操作+2，就可以解决这个问题。</div>
-        </div>
-    </div>
-</li>
-<li>
-<p><code>jaro</code>：计算两个字符串的 Jaro 字符串相似度度量。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">jaro</span><span class="p">(</span><span class="s1">&#39;Brian&#39;</span><span class="p">,</span> <span class="s1">&#39;Jesus&#39;</span><span class="p">)</span>
-    <span class="mf">0.0</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">jaro</span><span class="p">(</span><span class="s1">&#39;Thorkel&#39;</span><span class="p">,</span> <span class="s1">&#39;Thorgier&#39;</span><span class="p">)</span>  <span class="c1"># doctest: +ELLIPSIS</span>
-    <span class="mf">0.779761</span><span class="o">...</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">jaro</span><span class="p">(</span><span class="s1">&#39;Dinsdale&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">)</span>  <span class="c1"># doctest: +ELLIPSIS</span>
-    <span class="mf">0.708333</span><span class="o">...</span>
-</code></pre></td></tr></table>
-</div>
-</div><div class="details admonition info open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-info-circle fa-fw"></i>提示<i class="details-icon fas fa-angle-right fa-fw"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content">Jaro 字符串相似度度量适用于短字符串，例如个人姓氏。 对于完全不同的字符串，它是 0 并且1 表示相同的字符串。</div>
-        </div>
-    </div>
-</li>
-<li>
-<p><code>jaro_winkler</code>：计算两个字符串的 Jaro 字符串相似度度量。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">jaro_winkler</span><span class="p">(</span><span class="s1">&#39;Brian&#39;</span><span class="p">,</span> <span class="s1">&#39;Jesus&#39;</span><span class="p">)</span>
-    <span class="mf">0.0</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">jaro_winkler</span><span class="p">(</span><span class="s1">&#39;Thorkel&#39;</span><span class="p">,</span> <span class="s1">&#39;Thorgier&#39;</span><span class="p">)</span>  <span class="c1"># doctest: +ELLIPSIS</span>
-    <span class="mf">0.867857</span><span class="o">...</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">jaro_winkler</span><span class="p">(</span><span class="s1">&#39;Dinsdale&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">)</span>  <span class="c1"># doctest: +ELLIPSIS</span>
-    <span class="mf">0.7375</span><span class="o">...</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">jaro_winkler</span><span class="p">(</span><span class="s1">&#39;Thorkel&#39;</span><span class="p">,</span> <span class="s1">&#39;Thorgier&#39;</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">)</span>
-    <span class="mf">1.0</span>
-</code></pre></td></tr></table>
-</div>
-</div><div class="details admonition info open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-info-circle fa-fw"></i>提示<i class="details-icon fas fa-angle-right fa-fw"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content">Jaro-Winkler 字符串相似度度量是对 Jaro 的修改，度量给予公共前缀更多的权重，因为拼写错误是更可能出现在词尾附近。</div>
-        </div>
-    </div>
-</li>
-</ul>
-<h3 id="作用">作用</h3>
-<p>这个库是一个专门用于处理两个字符串间差异的库，目前该库很久没有维护，大家可以根据需求来使用。</p>
+</div><h3 id="作用">作用</h3>
+<p>这个库的使用方法比较简单易用，性能也还可以，而且<code>esmre</code>库也不存在内存异常泄露等问题，需要的小伙伴可以尝试一下！</p>
 <h2 id="尾巴">尾巴</h2>
-<p>该项目的作者正在寻找新的维护者，如果对该项目感兴趣的朋友可以联系作者，将该库一直维护下去！</p>
-<p><a href="https://pypi.org/project/python-Levenshtein/" target="_blank" rel="noopener noreffer">官方文档地址</a></p>
+<p>很多好用的第三方库知道的人少，导致不断重复造轮子，其实这也是我分享这些好用的库的初衷，想让大家工作变得更高效，不再重复造轮子，我也只是抛砖引玉给大家推荐好用的库，能让他发挥更大作用的是你们！</p>
+<p><a href="https://pypi.org/project/esmre/" target="_blank" rel="noopener noreffer">官方文档地址</a></p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2021-06-24</span>
+                <span>更新于 2021-06-22</span>
             </div>
             <div class="post-info-license"></div>
         </div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-levenshtein/index.md" target="_blank">阅读原始文档</a>
+                            <a class="link-to-markdown" href="/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-esmre/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-levenshtein/" data-title="每天分享一个好用的Python库-Levenshtein" data-hashtags="Python库"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-levenshtein/" data-hashtag="Python库"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-levenshtein/" data-title="每天分享一个好用的Python库-Levenshtein" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-levenshtein/" data-title="每天分享一个好用的Python库-Levenshtein"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-levenshtein/" data-title="每天分享一个好用的Python库-Levenshtein"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-levenshtein/" data-title="每天分享一个好用的Python库-Levenshtein" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-levenshtein/" data-title="每天分享一个好用的Python库-Levenshtein" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-levenshtein/" data-title="每天分享一个好用的Python库-Levenshtein"><i class="fab fa-evernote fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-esmre/" data-title="每天分享一个好用的Python库-esmre" data-hashtags="Python库"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-esmre/" data-hashtag="Python库"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-esmre/" data-title="每天分享一个好用的Python库-esmre" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-esmre/" data-title="每天分享一个好用的Python库-esmre"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-esmre/" data-title="每天分享一个好用的Python库-esmre"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-esmre/" data-title="每天分享一个好用的Python库-esmre" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-esmre/" data-title="每天分享一个好用的Python库-esmre" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-esmre/" data-title="每天分享一个好用的Python库-esmre"><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>
@@ -326,8 +214,8 @@
         </section>
     </div>
 
-    <div class="post-nav"><a href="/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-difflib/" class="prev" rel="prev" title="每天分享一个好用的Python库-difflib"><i class="fas fa-angle-left fa-fw"></i>每天分享一个好用的Python库-difflib</a>
-            <a href="/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-esmre/" class="next" rel="next" title="每天分享一个好用的Python库-esmre">每天分享一个好用的Python库-esmre<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-levenshtein/" class="prev" rel="prev" title="每天分享一个好用的Python库-Levenshtein"><i class="fas fa-angle-left fa-fw"></i>每天分享一个好用的Python库-Levenshtein</a>
+            <a href="/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-shortuuid/" class="next" rel="next" title="每天分享一个好用的Python库-shortuuid">每天分享一个好用的Python库-shortuuid<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.

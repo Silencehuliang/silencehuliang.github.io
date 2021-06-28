@@ -4,7 +4,21 @@
         <link>https://silencehuliang.github.io/categories/python/</link>
         <description>Python - 分类 - Silence Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>silencehuliang@gmail.com (Silence)</managingEditor>
-            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Thu, 24 Jun 2021 09:14:11 &#43;0800</lastBuildDate><atom:link href="https://silencehuliang.github.io/categories/python/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 26 Jun 2021 09:15:11 &#43;0800</lastBuildDate><atom:link href="https://silencehuliang.github.io/categories/python/" rel="self" type="application/rss+xml" /><item>
+    <title>每天分享一个好用的Python库-shortuuid</title>
+    <link>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-shortuuid/</link>
+    <pubDate>Sat, 26 Jun 2021 09:15:11 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-shortuuid/</guid>
+    <description><![CDATA[前言 今天分享是一个一组简洁URL/UUID函数库的第三方库：shortuuid。 esmre 简介 当你需要从一大堆数据中找寻自己想要的数据时可以使用AC]]></description>
+</item><item>
+    <title>每天分享一个好用的Python库-esmre</title>
+    <link>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-esmre/</link>
+    <pubDate>Fri, 25 Jun 2021 09:15:11 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-esmre/</guid>
+    <description><![CDATA[前言 今天分享是一个用于加速大型正则集合执行的第三方库：esmre。 esmre 简介 当你需要从一大堆数据中找寻自己想要的数据时可以使用AC自动机算法使用]]></description>
+</item><item>
     <title>每天分享一个好用的Python库-Levenshtein</title>
     <link>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-levenshtein/</link>
     <pubDate>Thu, 24 Jun 2021 09:14:11 &#43;0800</pubDate>
@@ -60,19 +74,5 @@
     <author>作者</author>
     <guid>https://silencehuliang.github.io/pandas/</guid>
     <description><![CDATA[Pandas 参考资料 https://www.jianshu.com/p/a77b0bc736f2; http://pandas.pydata.org/pandas-docs/stable/reference/index.html]]></description>
-</item><item>
-    <title>Python常见项目部署流程</title>
-    <link>https://silencehuliang.github.io/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%B5%81%E7%A8%8B/</link>
-    <pubDate>Tue, 01 Jun 2021 09:28:14 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E6%B5%81%E7%A8%8B/</guid>
-    <description><![CDATA[项目部署流程 更新系统源 sudo apt-get update 更新系统源是因为我们购买的云主机里装的系统中有很多软件都还没有更新到最新版本，后续安装可能会出现问题 安装依赖包 1]]></description>
-</item><item>
-    <title>Python学习之路-深拷贝与浅拷贝</title>
-    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/</link>
-    <pubDate>Sat, 25 Apr 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/</guid>
-    <description><![CDATA[Python中的拷贝机制有两种，一种是深拷贝一种是浅拷贝，下面深入学习一下]]></description>
 </item></channel>
 </rss>
