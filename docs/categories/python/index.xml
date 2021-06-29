@@ -4,7 +4,14 @@
         <link>https://silencehuliang.github.io/categories/python/</link>
         <description>Python - 分类 - Silence Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>silencehuliang@gmail.com (Silence)</managingEditor>
-            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Mon, 28 Jun 2021 10:15:11 &#43;0800</lastBuildDate><atom:link href="https://silencehuliang.github.io/categories/python/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Tue, 29 Jun 2021 11:15:11 &#43;0800</lastBuildDate><atom:link href="https://silencehuliang.github.io/categories/python/" rel="self" type="application/rss+xml" /><item>
+    <title>每天分享一个好用的Python库-xpinyin</title>
+    <link>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-xpinyin/</link>
+    <pubDate>Tue, 29 Jun 2021 11:15:11 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-xpinyin/</guid>
+    <description><![CDATA[前言 今天分享是一个将汉字转换为拼音的的第三方库：xpinyin。 shortuuid 简介 将汉字转换为拼音的的第三方库：xpinyin 安装 Python版本大于等]]></description>
+</item><item>
     <title>每天分享一个好用的Python库-shortuuid</title>
     <link>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-shortuuid/</link>
     <pubDate>Mon, 28 Jun 2021 10:15:11 &#43;0800</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://silencehuliang.github.io/numpy/</guid>
     <description><![CDATA[NumPy 安装 通过安装Anaconda安装NumPy，一个开源的Python发行版本，其包含了conda、Python等180多个科学包及其依赖项，]]></description>
-</item><item>
-    <title>Pandas</title>
-    <link>https://silencehuliang.github.io/pandas/</link>
-    <pubDate>Tue, 01 Jun 2021 16:28:14 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/pandas/</guid>
-    <description><![CDATA[Pandas 参考资料 https://www.jianshu.com/p/a77b0bc736f2; http://pandas.pydata.org/pandas-docs/stable/reference/index.html]]></description>
 </item></channel>
 </rss>
