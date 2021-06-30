@@ -5,6 +5,13 @@
         <description>Python库 - 标签 - Silence Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>silencehuliang@gmail.com (Silence)</managingEditor>
             <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Tue, 29 Jun 2021 11:15:11 &#43;0800</lastBuildDate><atom:link href="https://silencehuliang.github.io/tags/python%E5%BA%93/" rel="self" type="application/rss+xml" /><item>
+    <title>每天分享一个好用的Python库-pyfiglet</title>
+    <link>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-pyfiglet/</link>
+    <pubDate>Tue, 29 Jun 2021 11:15:11 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-pyfiglet/</guid>
+    <description><![CDATA[前言 学习Linux命令的朋友们肯定都学过或者听说过figlet这个有趣的命令，今天分享是Python中实现这个命令的第三方库：pyfigle]]></description>
+</item><item>
     <title>每天分享一个好用的Python库-xpinyin</title>
     <link>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-xpinyin/</link>
     <pubDate>Tue, 29 Jun 2021 11:15:11 &#43;0800</pubDate>

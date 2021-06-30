@@ -5,6 +5,13 @@
         <description>所有文章 | Silence Blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>silencehuliang@gmail.com (Silence)</managingEditor>
             <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Tue, 29 Jun 2021 11:15:11 &#43;0800</lastBuildDate><atom:link href="https://silencehuliang.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>每天分享一个好用的Python库-pyfiglet</title>
+    <link>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-pyfiglet/</link>
+    <pubDate>Tue, 29 Jun 2021 11:15:11 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-pyfiglet/</guid>
+    <description><![CDATA[前言 学习Linux命令的朋友们肯定都学过或者听说过figlet这个有趣的命令，今天分享是Python中实现这个命令的第三方库：pyfigle]]></description>
+</item><item>
     <title>每天分享一个好用的Python库-xpinyin</title>
     <link>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-xpinyin/</link>
     <pubDate>Tue, 29 Jun 2021 11:15:11 &#43;0800</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-colorama/</guid>
     <description><![CDATA[前言 今天分享的是一个主要用来给文本添加各种颜色的库：colorama。 colorama 简介 colorama是一个可以跨多终端显示不同颜色字符与背景的第三方]]></description>
-</item><item>
-    <title>每天分享一个Python库-Chardet</title>
-    <link>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet/</link>
-    <pubDate>Wed, 16 Jun 2021 16:16:32 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-chardet/</guid>
-    <description><![CDATA[前言 Python中有许多好用、有意思的库，有一些可以大大提高开发效率，有的可以为我们解决很多棘手的问题，从今天开始我会每天给大家分享一个Py]]></description>
 </item></channel>
 </rss>
