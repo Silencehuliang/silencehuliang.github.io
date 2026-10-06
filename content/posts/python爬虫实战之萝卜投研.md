@@ -65,7 +65,8 @@ Scrapy的相关使用教程可以通过[官方文档](https://docs.scrapy.org/en
 
 scrapy shell可以帮助我们模拟请求地址，并进入一个交互式终端，在交互式终端中我们可以查看请求的各类信息，并进行调试。但scrapy shell也有缺陷，不能解析response的格式，看起来比较乱等，这时候可以通过结合Postman来协同调试。
 
-![](https://tvax3.sinaimg.cn/large/00729CCqgy1gp5ct1yz35j31fg0qdhan.jpg)
+<!-- 原图(已失效): https://tvax3.sinaimg.cn/large/00729CCqgy1gp5ct1yz35j31fg0qdhan.jpg -->
+![图片失效](/images/broken-image.svg)
 
 ### Postman
 
@@ -81,7 +82,8 @@ Postman官方的使用教程非常详细，可以跟着官方的使用教程中�
 
 通过Postman发送请求，可以得到我们想要的数据，并且可以得到格式化后的数据，看起来条理更加清晰，再配合scrapy shell调试可以很容易就获得我们需要的数据
 
-![](https://tva3.sinaimg.cn/large/00729CCqgy1gp56fudgzoj312o0pctjb.jpg)
+<!-- 原图(已失效): https://tva3.sinaimg.cn/large/00729CCqgy1gp56fudgzoj312o0pctjb.jpg -->
+![图片失效](/images/broken-image.svg)
 
 ## 编写爬虫
 

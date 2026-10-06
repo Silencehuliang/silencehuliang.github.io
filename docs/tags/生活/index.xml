@@ -3,7 +3,49 @@
         <title>生活 - 标签 - Silence Blog</title>
         <link>https://silencehuliang.github.io/tags/%E7%94%9F%E6%B4%BB/</link>
         <description>生活 - 标签 - Silence Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 30 Dec 2019 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://silencehuliang.github.io/tags/%E7%94%9F%E6%B4%BB/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 31 Dec 2025 20:00:00 &#43;0800</lastBuildDate><atom:link href="https://silencehuliang.github.io/tags/%E7%94%9F%E6%B4%BB/" rel="self" type="application/rss+xml" /><item>
+    <title>2025年终总结</title>
+    <link>https://silencehuliang.github.io/2025%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</link>
+    <pubDate>Wed, 31 Dec 2025 20:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/2025%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</guid>
+    <description><![CDATA[前言 2025 年的关键词是:边缘计算与 AI。这一年我部署了一堆小服务，全部跑在免费额度上，零服务器零运维;同时 AI 编码从&quot;辅助&quot;开]]></description>
+</item><item>
+    <title>2024年终总结</title>
+    <link>https://silencehuliang.github.io/2024%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</link>
+    <pubDate>Tue, 31 Dec 2024 20:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/2024%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</guid>
+    <description><![CDATA[前言 如果用一句话总结 2024 年，那就是:AI 离我的工作越来越近了。 折腾记录 今年公开的产出不多，但折腾了不少： 部署了 docker_image_pus]]></description>
+</item><item>
+    <title>2023年终总结</title>
+    <link>https://silencehuliang.github.io/2023%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</link>
+    <pubDate>Sun, 31 Dec 2023 20:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/2023%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</guid>
+    <description><![CDATA[前言 2023 年是我技术栈发生明显转向的一年：从纯 Python 后端，转向了 TypeScript 全栈。趁着年底，把这一年记录一下。 技术转型 这一年为了做项目，系统地入了前端的坑： 托]]></description>
+</item><item>
+    <title>2022年终总结</title>
+    <link>https://silencehuliang.github.io/2022%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</link>
+    <pubDate>Sat, 31 Dec 2022 20:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/2022%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</guid>
+    <description><![CDATA[前言 博客依然处于停更状态，但代码没有停。2022 年写了几个小项目，趁着年底补一篇总结。 项目 今年在 GitHub 上留下了三个小东西： TimeSequenc]]></description>
+</item><item>
+    <title>2021年终总结</title>
+    <link>https://silencehuliang.github.io/2021%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</link>
+    <pubDate>Fri, 31 Dec 2021 20:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/2021%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</guid>
+    <description><![CDATA[前言 2021 年就这么过完了。如果要给这一年一个关键词，我觉得是「断电」——博客写到 7 月份就停更了，一直停到了写这篇总结的时候。 博客与技术 上半年延续]]></description>
+</item><item>
+    <title>2020年终总结</title>
+    <link>https://silencehuliang.github.io/2020%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</link>
+    <pubDate>Thu, 31 Dec 2020 20:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/2020%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</guid>
+    <description><![CDATA[前言 2020 年，注定是被写进历史的一年。对我个人来说，这一年也发生了不少值得记录的事。 疫情之下 年初武汉封城，我写了两篇文章记录心情（武汉封城了、新]]></description>
+</item><item>
     <title>2019年终总结</title>
     <link>https://silencehuliang.github.io/2019%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</link>
     <pubDate>Mon, 30 Dec 2019 00:00:00 &#43;0000</pubDate>

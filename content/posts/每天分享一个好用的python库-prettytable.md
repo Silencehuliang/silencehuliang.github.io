@@ -43,7 +43,8 @@ tags: ["python库"]
 
   效果如下：
 
-  ![](https://tva3.sinaimg.cn/large/00729CCqgy1grmd7zpt2mj30je089mz0.jpg)
+  <!-- 原图(已失效): https://tva3.sinaimg.cn/large/00729CCqgy1grmd7zpt2mj30je089mz0.jpg -->
+![图片失效](/images/broken-image.svg)
 
 - 添加一列数据
 
@@ -54,7 +55,8 @@ tags: ["python库"]
 
   效果如下：
 
-  ![](https://tva2.sinaimg.cn/large/00729CCqgy1grmdeehg32j30nb08ggnv.jpg)
+  <!-- 原图(已失效): https://tva2.sinaimg.cn/large/00729CCqgy1grmdeehg32j30nb08ggnv.jpg -->
+![图片失效](/images/broken-image.svg)
 
 - 设置输出风格
 
@@ -65,7 +67,8 @@ tags: ["python库"]
 
   效果如下：
 
-  ![](https://tva3.sinaimg.cn/large/00729CCqgy1grmdgprfwrj30vc05v0ua.jpg)
+  <!-- 原图(已失效): https://tva3.sinaimg.cn/large/00729CCqgy1grmdgprfwrj30vc05v0ua.jpg -->
+![图片失效](/images/broken-image.svg)
 
 - 设置随机输出风格
 

@@ -13,7 +13,8 @@
 
 通过pycharm创建博客项目与虚拟环境
 
-![](http://tva3.sinaimg.cn/large/00729CCqgy1g96ltpvg1pj30ln0et75l.jpg)
+<!-- 原图(已失效): http://tva3.sinaimg.cn/large/00729CCqgy1g96ltpvg1pj30ln0et75l.jpg -->
+![图片失效](/images/broken-image.svg)
 
 ### 修改相关设置
 
@@ -191,9 +192,11 @@ Superuser created successfully.
 
 #### 配置pycharm运行参数
 
-![](http://tva4.sinaimg.cn/large/00729CCqgy1g96lui0oprj30ck07umx4.jpg)
+<!-- 原图(已失效): http://tva4.sinaimg.cn/large/00729CCqgy1g96lui0oprj30ck07umx4.jpg -->
+![图片失效](/images/broken-image.svg)
 
-![](http://tvax3.sinaimg.cn/large/00729CCqgy1g96luuhzosj30tx0iy3zp.jpg)
+<!-- 原图(已失效): http://tvax3.sinaimg.cn/large/00729CCqgy1g96luuhzosj30tx0iy3zp.jpg -->
+![图片失效](/images/broken-image.svg)
 
 配置完成后点击pycharm中的运行按钮，在浏览器中输入127.0.0.1:8000访问，出现小火箭升空表示Django安装成功， 访问Django-admin界面， 在浏览器中输入`127.0.0.1:8000/admin`，看到Django管理，需要输入用户名密码，输入用户名密码后可以跳转到Django管理页面表示Django-admin设置成功
 

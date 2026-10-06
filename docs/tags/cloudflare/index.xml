@@ -1,0 +1,21 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Cloudflare - 标签 - Silence Blog</title>
+        <link>https://silencehuliang.github.io/tags/cloudflare/</link>
+        <description>Cloudflare - 标签 - Silence Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 15 Sep 2026 20:00:00 &#43;0800</lastBuildDate><atom:link href="https://silencehuliang.github.io/tags/cloudflare/" rel="self" type="application/rss+xml" /><item>
+    <title>我的家庭数字工具箱:2026年给自己家造的软件</title>
+    <link>https://silencehuliang.github.io/%E6%88%91%E7%9A%84%E5%AE%B6%E5%BA%AD%E6%95%B0%E5%AD%97%E5%B7%A5%E5%85%B7%E7%AE%B1-2026%E5%B9%B4%E7%BB%99%E8%87%AA%E5%B7%B1%E5%AE%B6%E9%80%A0%E7%9A%84%E8%BD%AF%E4%BB%B6/</link>
+    <pubDate>Tue, 15 Sep 2026 20:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/%E6%88%91%E7%9A%84%E5%AE%B6%E5%BA%AD%E6%95%B0%E5%AD%97%E5%B7%A5%E5%85%B7%E7%AE%B1-2026%E5%B9%B4%E7%BB%99%E8%87%AA%E5%B7%B1%E5%AE%B6%E9%80%A0%E7%9A%84%E8%BD%AF%E4%BB%B6/</guid>
+    <description><![CDATA[前言 写完 CoinNote(家庭记账小程序)之后，我发现根本停不下来——家里的各种&quot;数字化需求&quot;一个个冒出来。2026 年上]]></description>
+</item><item>
+    <title>白嫖边缘计算:2025年我自部署的小服务</title>
+    <link>https://silencehuliang.github.io/%E7%99%BD%E5%AB%96%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97-2025%E5%B9%B4%E6%88%91%E8%87%AA%E9%83%A8%E7%BD%B2%E7%9A%84%E5%B0%8F%E6%9C%8D%E5%8A%A1/</link>
+    <pubDate>Sat, 30 Aug 2025 20:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/%E7%99%BD%E5%AB%96%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97-2025%E5%B9%B4%E6%88%91%E8%87%AA%E9%83%A8%E7%BD%B2%E7%9A%84%E5%B0%8F%E6%9C%8D%E5%8A%A1/</guid>
+    <description><![CDATA[前言 这两年我有一个很强烈的感受：个人开发者部署一个服务的成本，正在无限趋近于零。Cloudflare Workers、Vercel 这类平台把&]]></description>
+</item></channel>
+</rss>

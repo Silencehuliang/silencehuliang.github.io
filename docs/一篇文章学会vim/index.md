@@ -207,13 +207,15 @@ Vim自带教程**vimtutor**是你从零开始学习Vim最好的老师，教程�
 
 在控制台中输入vim就可以查看Vim的相关信息
 
-![](https://tvax2.sinaimg.cn/large/006lmzsGgy1gaq8qqqumnj30va0iotag.jpg)
+<!-- 原图(已失效): https://tvax2.sinaimg.cn/large/006lmzsGgy1gaq8qqqumnj30va0iotag.jpg -->
+![图片失效](/images/broken-image.svg)
 
 根据图片所示我们可以知道，当前VIM的版本为8.0.1365，想退出需要输入”:q”，查看在线帮助文档可以输入”:help”，查看版本信息可以输入”:help version8”
 
 在英文模式下输入”:help"回车后便可以看到
 
-![](https://tva4.sinaimg.cn/large/006lmzsGgy1gaq90e91hcj30vc0iu43p.jpg)
+<!-- 原图(已失效): https://tva4.sinaimg.cn/large/006lmzsGgy1gaq90e91hcj30vc0iu43p.jpg -->
+![图片失效](/images/broken-image.svg)
 
 在这里有详细的Vim教程，教你玩转Vim。
 

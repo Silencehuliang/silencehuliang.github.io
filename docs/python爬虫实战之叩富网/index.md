@@ -85,25 +85,30 @@ requests库是学习爬虫入门最适合的一个第三方库，它是将Python
 
 使用get请求获取协议内容，并将其输出控制台查看发现规则允许我们爬取整站内容
 
-![](https://tvax3.sinaimg.cn/large/00729CCqgy1gp1wu4ik9uj311v0buwib.jpg)
+<!-- 原图(已失效): https://tvax3.sinaimg.cn/large/00729CCqgy1gp1wu4ik9uj311v0buwib.jpg -->
+![图片失效](/images/broken-image.svg)
 
 ### 登陆叩富网
 
 在Chrome浏览器中通过开发者选项中的Network选项卡中发现，登陆的时候有一个login.html
 
-![](https://tva4.sinaimg.cn/large/00729CCqgy1gp1x8238bsj31g10muk7t.jpg)
+<!-- 原图(已失效): https://tva4.sinaimg.cn/large/00729CCqgy1gp1x8238bsj31g10muk7t.jpg -->
+![图片失效](/images/broken-image.svg)
 
 我们可以在里面看到请求URL、请求方式和Form Data所需要的内容，根据这个编写一个请求查看一下获取到的数据
 
-![](https://tvax4.sinaimg.cn/large/00729CCqgy1gp1xsqudg4j310b0ndgrt.jpg)
+<!-- 原图(已失效): https://tvax4.sinaimg.cn/large/00729CCqgy1gp1xsqudg4j310b0ndgrt.jpg -->
+![图片失效](/images/broken-image.svg)
 
 由于是字符串格式，所以出现了我们看不懂的字符，通过json转成Python中的字典格式再查看
 
-![](https://tva3.sinaimg.cn/large/00729CCqgy1gp1y605naqj31a40oxdmd.jpg)
+<!-- 原图(已失效): https://tva3.sinaimg.cn/large/00729CCqgy1gp1y605naqj31a40oxdmd.jpg -->
+![图片失效](/images/broken-image.svg)
 
 可以看到显示登陆成功了，接下来通过获取到的cookie就可以获取到我们需要的各种信息了
 
-![](https://tva1.sinaimg.cn/large/00729CCqgy1gp1yph1milj30ys0qadox.jpg)
+<!-- 原图(已失效): https://tva1.sinaimg.cn/large/00729CCqgy1gp1yph1milj30ys0qadox.jpg -->
+![图片失效](/images/broken-image.svg)
 
 接下来我们将代码优化一下变成一个方法，让登陆后的cookie可以在以后任意需要的地方使用
 
@@ -151,7 +156,8 @@ def login(username, password):
 
 对页面分析我们所需要的数据在class为top_ts的div下
 
-![](https://tva1.sinaimg.cn/large/00729CCqgy1gp2w964y87j31gn0h615i.jpg)
+<!-- 原图(已失效): https://tva1.sinaimg.cn/large/00729CCqgy1gp2w964y87j31gn0h615i.jpg -->
+![图片失效](/images/broken-image.svg)
 
 ### XPath
 

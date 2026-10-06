@@ -45,7 +45,8 @@ print('这是重置后的情况')
 
 可以从代码里看出，使用的方法非常简单，结果显示也很酷！
 
-![](https://tva4.sinaimg.cn/large/00729CCqgy1grlcp00aimj30cd05aaao.jpg)
+<!-- 原图(已失效): https://tva4.sinaimg.cn/large/00729CCqgy1grlcp00aimj30cd05aaao.jpg -->
+![图片失效](/images/broken-image.svg)
 
 #### Init关键字参数
 

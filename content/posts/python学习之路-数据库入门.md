@@ -24,7 +24,8 @@ tags: ["python学习之路"]
 
 ## RDBMS和数据库的关系
 
-![](https://tvax3.sinaimg.cn/large/00729CCqgy1gpj3602s6zj30sn0elgmc.jpg)
+<!-- 原图(已失效): https://tvax3.sinaimg.cn/large/00729CCqgy1gpj3602s6zj30sn0elgmc.jpg -->
+![图片失效](/images/broken-image.svg)
 
 图片取材于[布布扣](http://www.bubuko.com/infodetail-2885871.html)，更详细的内容可以参考其博客
 

@@ -33,107 +33,133 @@
 
 将镜像写入U盘后，开机以U盘为第一启动项启动，可以看到以下界面
 
-![](https://tvax3.sinaimg.cn/large/006lmzsGgy1garfy9umhyj32lc1gitf0.jpg)
+<!-- 原图(已失效): https://tvax3.sinaimg.cn/large/006lmzsGgy1garfy9umhyj32lc1gitf0.jpg -->
+![图片失效](/images/broken-image.svg)
 
 选择第一项安装Ubuntu Server
 
 下一步选择语言，这里选择英语，防止乱码与文件名是中文的问题
 
-![](https://tva1.sinaimg.cn/large/006lmzsGgy1garg0vpw3aj32lc1gin9h.jpg)
+<!-- 原图(已失效): https://tva1.sinaimg.cn/large/006lmzsGgy1garg0vpw3aj32lc1gin9h.jpg -->
+![图片失效](/images/broken-image.svg)
 
 下一步选择区域，没有中国，所以先选其他
 
-![](https://tvax3.sinaimg.cn/large/006lmzsGgy1garg3lx7z7j32lc1gi47j.jpg)
+<!-- 原图(已失效): https://tvax3.sinaimg.cn/large/006lmzsGgy1garg3lx7z7j32lc1gi47j.jpg -->
+![图片失效](/images/broken-image.svg)
 
 接下来选择亚洲Asia
 
-![](https://tvax3.sinaimg.cn/large/006lmzsGgy1garg53j1esj32lc1gi7c9.jpg)
+<!-- 原图(已失效): https://tvax3.sinaimg.cn/large/006lmzsGgy1garg53j1esj32lc1gi7c9.jpg -->
+![图片失效](/images/broken-image.svg)
 
 接着选这中国
 
-![](https://tvax2.sinaimg.cn/large/006lmzsGgy1garg6dwrcgj32lc1gi146.jpg)
+<!-- 原图(已失效): https://tvax2.sinaimg.cn/large/006lmzsGgy1garg6dwrcgj32lc1gi146.jpg -->
+![图片失效](/images/broken-image.svg)
 
 下一步选择字符集，这里选择美国的UTF-8字符集，即en_US.UTF-8
 
-![](https://tva4.sinaimg.cn/large/006lmzsGgy1garg86wyw6j32lc1giaka.jpg)
+<!-- 原图(已失效): https://tva4.sinaimg.cn/large/006lmzsGgy1garg86wyw6j32lc1giaka.jpg -->
+![图片失效](/images/broken-image.svg)
 
 下一步检测键盘，选择否
 
-![](https://tva1.sinaimg.cn/large/006lmzsGgy1gargbbgpkvj32lc1gidma.jpg)
+<!-- 原图(已失效): https://tva1.sinaimg.cn/large/006lmzsGgy1gargbbgpkvj32lc1gidma.jpg -->
+![图片失效](/images/broken-image.svg)
 
 接着让我们设置键盘的类型与布局
 
-![](https://tvax4.sinaimg.cn/large/006lmzsGgy1gargc4ptctj32lc1giakp.jpg)
+<!-- 原图(已失效): https://tvax4.sinaimg.cn/large/006lmzsGgy1gargc4ptctj32lc1giakp.jpg -->
+![图片失效](/images/broken-image.svg)
 
-![](https://tva1.sinaimg.cn/large/006lmzsGgy1gargcii9fjj32lc1gin9c.jpg)
+<!-- 原图(已失效): https://tva1.sinaimg.cn/large/006lmzsGgy1gargcii9fjj32lc1gin9c.jpg -->
+![图片失效](/images/broken-image.svg)
 
 下一步是设置主机名称，默认为ubuntu，可以改为你喜欢的名称
 
-![](https://tva3.sinaimg.cn/large/006lmzsGgy1gargeb4ovtj32lc1gi10d.jpg)
+<!-- 原图(已失效): https://tva3.sinaimg.cn/large/006lmzsGgy1gargeb4ovtj32lc1gi10d.jpg -->
+![图片失效](/images/broken-image.svg)
 
 设置用户名
 
-![](https://tva3.sinaimg.cn/large/006lmzsGgy1gargg9wwiwj32lc1gido1.jpg)
+<!-- 原图(已失效): https://tva3.sinaimg.cn/large/006lmzsGgy1gargg9wwiwj32lc1gido1.jpg -->
+![图片失效](/images/broken-image.svg)
 
 下一步设置登陆账号
 
-![](https://tvax4.sinaimg.cn/large/006lmzsGgy1gargjunehkj32lc1gidna.jpg)
+<!-- 原图(已失效): https://tvax4.sinaimg.cn/large/006lmzsGgy1gargjunehkj32lc1gidna.jpg -->
+![图片失效](/images/broken-image.svg)
 
 设置密码，可以在下面选择显示密码，可以确认一次
 
-![](https://tva4.sinaimg.cn/large/006lmzsGgy1garglfwh0zj32lc1gi7bb.jpg)
+<!-- 原图(已失效): https://tva4.sinaimg.cn/large/006lmzsGgy1garglfwh0zj32lc1gi7bb.jpg -->
+![图片失效](/images/broken-image.svg)
 
 再次输入，确认密码
 
-![](https://tvax3.sinaimg.cn/large/006lmzsGgy1gargodu0a4j32lc1gidm7.jpg)
+<!-- 原图(已失效): https://tvax3.sinaimg.cn/large/006lmzsGgy1gargodu0a4j32lc1gidm7.jpg -->
+![图片失效](/images/broken-image.svg)
 
 是否加密home文件夹，选择否
 
-![](https://tva4.sinaimg.cn/large/006lmzsGgy1gargpfimajj32lc1gi0zz.jpg)
+<!-- 原图(已失效): https://tva4.sinaimg.cn/large/006lmzsGgy1gargpfimajj32lc1gi0zz.jpg -->
+![图片失效](/images/broken-image.svg)
 
 下一步系统根据区域推断出我们的市区是上海，没有问题，所以选择是
 
-![](https://tva4.sinaimg.cn/large/006lmzsGgy1gargu0lqf0j32lc1gijxb.jpg)
+<!-- 原图(已失效): https://tva4.sinaimg.cn/large/006lmzsGgy1gargu0lqf0j32lc1gijxb.jpg -->
+![图片失效](/images/broken-image.svg)
 
 选择分区方式，这里选择Guided - use entire disk and set up LVM
 
-![](https://tva2.sinaimg.cn/large/006lmzsGgy1gargvdgj5oj32lc1gik05.jpg)
+<!-- 原图(已失效): https://tva2.sinaimg.cn/large/006lmzsGgy1gargvdgj5oj32lc1gik05.jpg -->
+![图片失效](/images/broken-image.svg)
 
 选择安装的硬盘
 
-![](https://tvax2.sinaimg.cn/large/006lmzsGgy1gargx0vgedj32lc1giqbb.jpg)
+<!-- 原图(已失效): https://tvax2.sinaimg.cn/large/006lmzsGgy1gargx0vgedj32lc1giqbb.jpg -->
+![图片失效](/images/broken-image.svg)
 
 这里告诉我们会格式化这个盘确认选择
 
-![](https://tvax2.sinaimg.cn/large/006lmzsGgy1gargycrtkdj32lc1gi7b8.jpg)
+<!-- 原图(已失效): https://tvax2.sinaimg.cn/large/006lmzsGgy1gargycrtkdj32lc1gi7b8.jpg -->
+![图片失效](/images/broken-image.svg)
 
 选择自动安装
 
-![](https://tva3.sinaimg.cn/large/006lmzsGgy1garhjbqigij32lc1gin2q.jpg)
+<!-- 原图(已失效): https://tva3.sinaimg.cn/large/006lmzsGgy1garhjbqigij32lc1gin2q.jpg -->
+![图片失效](/images/broken-image.svg)
 
 确认分区
 
-![](https://tvax3.sinaimg.cn/large/006lmzsGgy1garhkbocmdj32lc1giwob.jpg)
+<!-- 原图(已失效): https://tvax3.sinaimg.cn/large/006lmzsGgy1garhkbocmdj32lc1giwob.jpg -->
+![图片失效](/images/broken-image.svg)
 
 确认安装
 
-![](https://tva4.sinaimg.cn/large/006lmzsGgy1garhleuym5j32lc1gin5f.jpg)
+<!-- 原图(已失效): https://tva4.sinaimg.cn/large/006lmzsGgy1garhleuym5j32lc1gin5f.jpg -->
+![图片失效](/images/broken-image.svg)
 
 选择代理，没有就跳过
 
-![](https://tvax2.sinaimg.cn/large/006lmzsGgy1garhr55hyrj32lc1giwm2.jpg)
+<!-- 原图(已失效): https://tvax2.sinaimg.cn/large/006lmzsGgy1garhr55hyrj32lc1giwm2.jpg -->
+![图片失效](/images/broken-image.svg)
 
 选择升级方式，这里选择不自动升级No automatic updates
 
-![](https://tva1.sinaimg.cn/large/006lmzsGgy1garhogo0lkj32lc1giqbw.jpg)
+<!-- 原图(已失效): https://tva1.sinaimg.cn/large/006lmzsGgy1garhogo0lkj32lc1giqbw.jpg -->
+![图片失效](/images/broken-image.svg)
 
 安装完成后会重启，选择ubuntu启动即可
 
-![](https://tva3.sinaimg.cn/large/006lmzsGgy1gari7smoekj32lc1giwkc.jpg)
+<!-- 原图(已失效): https://tva3.sinaimg.cn/large/006lmzsGgy1gari7smoekj32lc1giwkc.jpg -->
+![图片失效](/images/broken-image.svg)
 
 进入系统后输入用户名密码就可以登录上ubuntu了，到此安装完毕
 
-![](https://tva4.sinaimg.cn/large/006lmzsGgy1gari9dj5bgj32lc1gijyt.jpg)
+<!-- 原图(已失效): https://tva4.sinaimg.cn/large/006lmzsGgy1gari9dj5bgj32lc1gijyt.jpg -->
+![图片失效](/images/broken-image.svg)
 
 ## linux 根目录
 

@@ -39,11 +39,13 @@ bilibili已经从原来的小破站变成了现在现象级的多元化的社区
 
 这种就是找到最右边的位置信息，然后滑动即可
 
-![](https://tvax3.sinaimg.cn/large/00729CCqgy1gp5n2img5yj30iz0bidgz.jpg)
+<!-- 原图(已失效): https://tvax3.sinaimg.cn/large/00729CCqgy1gp5n2img5yj30iz0bidgz.jpg -->
+![图片失效](/images/broken-image.svg)
 
 这种需要先找到整个图片的位置，然后滑动先找到内容的轮廓在进行滑动，都是同一个思路演变的
 
-![](https://tva1.sinaimg.cn/large/00729CCqgy1gp5n3tydbaj30k00f8761.jpg)
+<!-- 原图(已失效): https://tva1.sinaimg.cn/large/00729CCqgy1gp5n3tydbaj30k00f8761.jpg -->
+![图片失效](/images/broken-image.svg)
 
 ### 看图填答案系列
 
@@ -61,7 +63,8 @@ bilibili已经从原来的小破站变成了现在现象级的多元化的社区
 
 bilibili的最新的验证码属于第三种，在点击登陆按钮就会出现一个验证码的框,我们需要将这个图片下载下来给打码平台去识别，获得坐标信息然后再用Selenium进行点击操作
 
-![](https://tvax3.sinaimg.cn/large/00729CCqgy1gp5of2c2b0j307m09oq67.jpg)
+<!-- 原图(已失效): https://tvax3.sinaimg.cn/large/00729CCqgy1gp5of2c2b0j307m09oq67.jpg -->
+![图片失效](/images/broken-image.svg)
 
 ​bilibili验证码
 

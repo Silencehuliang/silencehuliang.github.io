@@ -186,7 +186,8 @@ class IndexHandler(RequestHandler):
     def get(self):
         self.write('<html><head><title>被攻击的网站</title></head>'
         '<body><h1>此网站的图片链接被修改了</h1>'
-        '<img alt="这应该是图片" src="http://127.0.0.1:8000/?f=9000/">'
+        '<!-- 原图(已失效): http://127.0.0.1:8000/?f=9000/ -->
+<img src="/images/broken-image.svg" alt="图片失效" />'
         '</body></html>'
         )
 ```

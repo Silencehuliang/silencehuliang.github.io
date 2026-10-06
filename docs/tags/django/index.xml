@@ -1,9 +1,16 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>django - 标签 - Silence Blog</title>
+        <title>Django - 标签 - Silence Blog</title>
         <link>https://silencehuliang.github.io/tags/django/</link>
-        <description>django - 标签 - Silence Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 20 Apr 2019 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://silencehuliang.github.io/tags/django/" rel="self" type="application/rss+xml" /><item>
+        <description>Django - 标签 - Silence Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 27 Jul 2023 20:00:00 &#43;0800</lastBuildDate><atom:link href="https://silencehuliang.github.io/tags/django/" rel="self" type="application/rss+xml" /><item>
+    <title>bilihuli:用Django做一个弹幕视频网站</title>
+    <link>https://silencehuliang.github.io/bilihuli-%E7%94%A8django%E5%81%9A%E4%B8%80%E4%B8%AA%E5%BC%B9%E5%B9%95%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99/</link>
+    <pubDate>Thu, 27 Jul 2023 20:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/bilihuli-%E7%94%A8django%E5%81%9A%E4%B8%80%E4%B8%AA%E5%BC%B9%E5%B9%95%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99/</guid>
+    <description><![CDATA[前言 早在写「python学习之路-flask项目博客」系列的时候就有个想法：博客做完了，能不能再做一个稍微复杂一点的 Web 项目？作为一个老 B 站用]]></description>
+</item><item>
     <title>Django2.x搭建博客</title>
     <link>https://silencehuliang.github.io/django2.x%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</link>
     <pubDate>Sat, 20 Apr 2019 00:00:00 &#43;0000</pubDate>

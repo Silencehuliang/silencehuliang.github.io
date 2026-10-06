@@ -5,7 +5,8 @@
 
 ### 处理流程
 
-![](https://tva1.sinaimg.cn/large/00729CCqgy1gpzewf19i8j30nm0dggoo.jpg)
+<!-- 原图(已失效): https://tva1.sinaimg.cn/large/00729CCqgy1gpzewf19i8j30nm0dggoo.jpg -->
+![图片失效](/images/broken-image.svg)
 
 图片来源于[未来的小牛的CSDN博客](https://blog.csdn.net/m15511023218/article/details/84931862)
 

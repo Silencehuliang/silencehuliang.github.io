@@ -164,9 +164,11 @@ app.config.from_object(Config)
 
 - 编辑运行的相关配置
 
-  ![](https://tva2.sinaimg.cn/large/00729CCqgy1gpq164xjkej309t04pmxx.jpg)
+  <!-- 原图(已失效): https://tva2.sinaimg.cn/large/00729CCqgy1gpq164xjkej309t04pmxx.jpg -->
+![图片失效](/images/broken-image.svg)
 
-  ![](https://tvax4.sinaimg.cn/large/00729CCqgy1gpq1a0xbh2j30tt0iraiq.jpg)
+  <!-- 原图(已失效): https://tvax4.sinaimg.cn/large/00729CCqgy1gpq1a0xbh2j30tt0iraiq.jpg -->
+![图片失效](/images/broken-image.svg)
 
 - 使用代码去加载配置
 

@@ -3,7 +3,28 @@
         <title>python库 - 标签 - Silence Blog</title>
         <link>https://silencehuliang.github.io/tags/python%E5%BA%93/</link>
         <description>python库 - 标签 - Silence Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 03 Jul 2021 09:15:11 &#43;0800</lastBuildDate><atom:link href="https://silencehuliang.github.io/tags/python%E5%BA%93/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 20 Jul 2021 10:00:00 &#43;0800</lastBuildDate><atom:link href="https://silencehuliang.github.io/tags/python%E5%BA%93/" rel="self" type="application/rss+xml" /><item>
+    <title>每天分享一个好用的Python库-pydantic</title>
+    <link>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-pydantic/</link>
+    <pubDate>Tue, 20 Jul 2021 10:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-pydantic/</guid>
+    <description><![CDATA[前言 Python中有许多好用、有意思的库，有一些可以大大提高开发效率，有的可以为我们解决很多棘手的问题，从今天开始我会每天给大家分享一个Py]]></description>
+</item><item>
+    <title>每天分享一个好用的Python库-httpx</title>
+    <link>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-httpx/</link>
+    <pubDate>Mon, 19 Jul 2021 10:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-httpx/</guid>
+    <description><![CDATA[前言 Python中有许多好用、有意思的库，有一些可以大大提高开发效率，有的可以为我们解决很多棘手的问题，从今天开始我会每天给大家分享一个Py]]></description>
+</item><item>
+    <title>每天分享一个好用的Python库-Rich</title>
+    <link>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-rich/</link>
+    <pubDate>Sun, 18 Jul 2021 10:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-rich/</guid>
+    <description><![CDATA[前言 Python中有许多好用、有意思的库，有一些可以大大提高开发效率，有的可以为我们解决很多棘手的问题，从今天开始我会每天给大家分享一个Py]]></description>
+</item><item>
     <title>每天分享一个好用的Python库-Pygments</title>
     <link>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-pygments/</link>
     <pubDate>Sat, 03 Jul 2021 09:15:11 &#43;0800</pubDate>
@@ -52,26 +73,5 @@
     <author>作者</author>
     <guid>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-esmre/</guid>
     <description><![CDATA[前言 今天分享是一个用于加速大型正则集合执行的第三方库：esmre。 esmre 简介 当你需要从一大堆数据中找寻自己想要的数据时可以使用AC自动机算法使用]]></description>
-</item><item>
-    <title>每天分享一个好用的Python库-Levenshtein</title>
-    <link>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-levenshtein/</link>
-    <pubDate>Thu, 24 Jun 2021 09:14:11 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-levenshtein/</guid>
-    <description><![CDATA[前言 最近几天处于恢复期间，会不定期更新，感谢大家的关心与支持。今天分享是一个计算字符串相似度的第三方库：Levenshtein。 Levenshtein 简介 Lev]]></description>
-</item><item>
-    <title>每天分享一个好用的Python库-difflib</title>
-    <link>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-difflib/</link>
-    <pubDate>Tue, 22 Jun 2021 13:14:11 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-difflib/</guid>
-    <description><![CDATA[前言 由于生病了几天，导致该系列拖更了，今天稍微好点了，继续开始更新。今天分享是一个Python标准库，主要用于计算文本间的差异：diffli]]></description>
-</item><item>
-    <title>每天分享一个好用的Python库-Prettytable</title>
-    <link>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-prettytable/</link>
-    <pubDate>Fri, 18 Jun 2021 13:14:11 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-prettytable/</guid>
-    <description><![CDATA[前言 今天分享的是一个主要用于在终端或浏览器端构建格式化的输出的库：Prettytable。 Prettytable 简介 PrettyTable 是Python中一个可用来生成美观的ASC]]></description>
 </item></channel>
 </rss>

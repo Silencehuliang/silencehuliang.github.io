@@ -2,78 +2,78 @@
     <channel>
         <title>Silence Blog</title>
         <link>https://silencehuliang.github.io/</link>
-        <description>Silence Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 17 Jul 2021 13:28:14 &#43;0800</lastBuildDate>
+        <description>Silence 的个人博客:记录技术与生活,Python、Web 开发、自部署与 AI 工作流</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 06 Oct 2026 09:00:00 &#43;0800</lastBuildDate>
             <atom:link href="https://silencehuliang.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
-    <title>Python学习之路-MongoDB进阶</title>
-    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-mongodb%E8%BF%9B%E9%98%B6/</link>
-    <pubDate>Sat, 17 Jul 2021 13:28:14 &#43;0800</pubDate>
+    <title>当AI开始帮我写代码:我的AI辅助开发工作流</title>
+    <link>https://silencehuliang.github.io/%E5%BD%93ai%E5%BC%80%E5%A7%8B%E5%B8%AE%E6%88%91%E5%86%99%E4%BB%A3%E7%A0%81-%E6%88%91%E7%9A%84ai%E8%BE%85%E5%8A%A9%E5%BC%80%E5%8F%91%E5%B7%A5%E4%BD%9C%E6%B5%81/</link>
+    <pubDate>Tue, 06 Oct 2026 09:00:00 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-mongodb%E8%BF%9B%E9%98%B6/</guid>
-    <description><![CDATA[MongoDB的聚合操作 MongoDB的聚合是什么 聚合(aggregate)是基于数据处理的聚合管道，每个文档通过一个由多个阶段（stage]]></description>
+    <guid>https://silencehuliang.github.io/%E5%BD%93ai%E5%BC%80%E5%A7%8B%E5%B8%AE%E6%88%91%E5%86%99%E4%BB%A3%E7%A0%81-%E6%88%91%E7%9A%84ai%E8%BE%85%E5%8A%A9%E5%BC%80%E5%8F%91%E5%B7%A5%E4%BD%9C%E6%B5%81/</guid>
+    <description><![CDATA[前言 这个博客停更的五年，正好是 AI 编码工具从无到有、从玩具变成生产力的五年。2026 年回头再看，我的开发方式已经被彻底改变了。这篇文章记录一下]]></description>
 </item><item>
-    <title>Python学习之路-Python操作MongoDB</title>
-    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-python%E6%93%8D%E4%BD%9Cmongodb/</link>
-    <pubDate>Sat, 10 Jul 2021 13:27:36 &#43;0800</pubDate>
+    <title>我的家庭数字工具箱:2026年给自己家造的软件</title>
+    <link>https://silencehuliang.github.io/%E6%88%91%E7%9A%84%E5%AE%B6%E5%BA%AD%E6%95%B0%E5%AD%97%E5%B7%A5%E5%85%B7%E7%AE%B1-2026%E5%B9%B4%E7%BB%99%E8%87%AA%E5%B7%B1%E5%AE%B6%E9%80%A0%E7%9A%84%E8%BD%AF%E4%BB%B6/</link>
+    <pubDate>Tue, 15 Sep 2026 20:00:00 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-python%E6%93%8D%E4%BD%9Cmongodb/</guid>
-    <description><![CDATA[MongoDB和Python交互的模块 pymongo提供了mongdb和python交互的所有方法 安装方式: pip install pymongo 使用pymongo 导入py]]></description>
+    <guid>https://silencehuliang.github.io/%E6%88%91%E7%9A%84%E5%AE%B6%E5%BA%AD%E6%95%B0%E5%AD%97%E5%B7%A5%E5%85%B7%E7%AE%B1-2026%E5%B9%B4%E7%BB%99%E8%87%AA%E5%B7%B1%E5%AE%B6%E9%80%A0%E7%9A%84%E8%BD%AF%E4%BB%B6/</guid>
+    <description><![CDATA[前言 写完 CoinNote(家庭记账小程序)之后，我发现根本停不下来——家里的各种&quot;数字化需求&quot;一个个冒出来。2026 年上]]></description>
 </item><item>
-    <title>Python学习之路-MongoDB基础与简单使用</title>
-    <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-mongodb%E5%9F%BA%E7%A1%80/</link>
-    <pubDate>Sat, 03 Jul 2021 13:27:11 &#43;0800</pubDate>
+    <title>CoinNote:从零做一个家庭记账微信小程序</title>
+    <link>https://silencehuliang.github.io/coinnote-%E4%BB%8E%E9%9B%B6%E5%81%9A%E4%B8%80%E4%B8%AA%E5%AE%B6%E5%BA%AD%E8%AE%B0%E8%B4%A6%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</link>
+    <pubDate>Mon, 08 Jun 2026 20:00:00 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-mongodb%E5%9F%BA%E7%A1%80/</guid>
-    <description><![CDATA[NoSQL的介绍 “NoSQL”⼀词最早于1998年被⽤于⼀个轻量级的关系数据库的名字。随着web2.0的快速发展， NoSQL概念在2009年]]></description>
+    <guid>https://silencehuliang.github.io/coinnote-%E4%BB%8E%E9%9B%B6%E5%81%9A%E4%B8%80%E4%B8%AA%E5%AE%B6%E5%BA%AD%E8%AE%B0%E8%B4%A6%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</guid>
+    <description><![CDATA[前言 家里一直有记账的需求，用过不少记账软件：要么功能太重塞满了社交和理财，要么&quot;家庭账本&quot;要收费，要么数据全在别人服务器]]></description>
 </item><item>
-    <title>每天分享一个好用的Python库-Pygments</title>
-    <link>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-pygments/</link>
-    <pubDate>Sat, 03 Jul 2021 09:15:11 &#43;0800</pubDate>
+    <title>2025年终总结</title>
+    <link>https://silencehuliang.github.io/2025%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</link>
+    <pubDate>Wed, 31 Dec 2025 20:00:00 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-pygments/</guid>
-    <description><![CDATA[前言 今天分享一个用语法高亮器，适用于代码托管、论坛、维基或其他需要美化源代码的应用程序的第三方库：Pygments。 Pygments 简介 Pygments 是一个支持500]]></description>
+    <guid>https://silencehuliang.github.io/2025%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</guid>
+    <description><![CDATA[前言 2025 年的关键词是:边缘计算与 AI。这一年我部署了一堆小服务，全部跑在免费额度上，零服务器零运维;同时 AI 编码从&quot;辅助&quot;开]]></description>
 </item><item>
-    <title>每天分享一个好用的Python库-sqlparse</title>
-    <link>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-sqlparse/</link>
-    <pubDate>Fri, 02 Jul 2021 09:15:11 &#43;0800</pubDate>
+    <title>白嫖边缘计算:2025年我自部署的小服务</title>
+    <link>https://silencehuliang.github.io/%E7%99%BD%E5%AB%96%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97-2025%E5%B9%B4%E6%88%91%E8%87%AA%E9%83%A8%E7%BD%B2%E7%9A%84%E5%B0%8F%E6%9C%8D%E5%8A%A1/</link>
+    <pubDate>Sat, 30 Aug 2025 20:00:00 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-sqlparse/</guid>
-    <description><![CDATA[前言 今天分享一个可以对SQL语句进行解析、拆分和格式化的第三方库：sqlparse。 sqlparse 简介 sqlparse 是 Python 的非验证 SQL 解析器。 它提供对 SQL 语句的解析、拆分]]></description>
+    <guid>https://silencehuliang.github.io/%E7%99%BD%E5%AB%96%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97-2025%E5%B9%B4%E6%88%91%E8%87%AA%E9%83%A8%E7%BD%B2%E7%9A%84%E5%B0%8F%E6%9C%8D%E5%8A%A1/</guid>
+    <description><![CDATA[前言 这两年我有一个很强烈的感受：个人开发者部署一个服务的成本，正在无限趋近于零。Cloudflare Workers、Vercel 这类平台把&]]></description>
 </item><item>
-    <title>每天分享一个好用的Python库-user-agents</title>
-    <link>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-user-agents/</link>
-    <pubDate>Thu, 01 Jul 2021 09:15:11 &#43;0800</pubDate>
+    <title>2024年终总结</title>
+    <link>https://silencehuliang.github.io/2024%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</link>
+    <pubDate>Tue, 31 Dec 2024 20:00:00 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-user-agents/</guid>
-    <description><![CDATA[前言 今天分享是浏览器的用户代理的第三方库：user-agents。 user-agents 简介 unioutuser_agents是一个提供了一种通过解析（浏览器/]]></description>
+    <guid>https://silencehuliang.github.io/2024%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</guid>
+    <description><![CDATA[前言 如果用一句话总结 2024 年，那就是:AI 离我的工作越来越近了。 折腾记录 今年公开的产出不多，但折腾了不少： 部署了 docker_image_pus]]></description>
 </item><item>
-    <title>每天分享一个好用的Python库-pyfiglet</title>
-    <link>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-pyfiglet/</link>
-    <pubDate>Wed, 30 Jun 2021 11:15:11 &#43;0800</pubDate>
+    <title>用GitHub Actions把Docker镜像转存到阿里云</title>
+    <link>https://silencehuliang.github.io/%E7%94%A8github-actions%E6%8A%8Adocker%E9%95%9C%E5%83%8F%E8%BD%AC%E5%AD%98%E5%88%B0%E9%98%BF%E9%87%8C%E4%BA%91/</link>
+    <pubDate>Sat, 22 Jun 2024 20:00:00 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-pyfiglet/</guid>
-    <description><![CDATA[前言 学习Linux命令的朋友们肯定都学过或者听说过figlet这个有趣的命令，今天分享是Python中实现这个命令的第三方库：pyfigle]]></description>
+    <guid>https://silencehuliang.github.io/%E7%94%A8github-actions%E6%8A%8Adocker%E9%95%9C%E5%83%8F%E8%BD%AC%E5%AD%98%E5%88%B0%E9%98%BF%E9%87%8C%E4%BA%91/</guid>
+    <description><![CDATA[前言 这两年国内拉 Docker Hub 镜像越来越难，官方源基本拉不动，各种加速器也是时好时坏。家里有几台自用的服务器要拉镜像，被折磨了几次之后，我决定用 GitHub Actions 搭]]></description>
 </item><item>
-    <title>每天分享一个好用的Python库-xpinyin</title>
-    <link>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-xpinyin/</link>
-    <pubDate>Tue, 29 Jun 2021 11:15:11 &#43;0800</pubDate>
+    <title>2023年终总结</title>
+    <link>https://silencehuliang.github.io/2023%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</link>
+    <pubDate>Sun, 31 Dec 2023 20:00:00 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-xpinyin/</guid>
-    <description><![CDATA[前言 今天分享是一个将汉字转换为拼音的的第三方库：xpinyin。 shortuuid 简介 将汉字转换为拼音的的第三方库：xpinyin 安装 Python版本大于等]]></description>
+    <guid>https://silencehuliang.github.io/2023%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</guid>
+    <description><![CDATA[前言 2023 年是我技术栈发生明显转向的一年：从纯 Python 后端，转向了 TypeScript 全栈。趁着年底，把这一年记录一下。 技术转型 这一年为了做项目，系统地入了前端的坑： 托]]></description>
 </item><item>
-    <title>每天分享一个好用的Python库-shortuuid</title>
-    <link>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-shortuuid/</link>
-    <pubDate>Mon, 28 Jun 2021 10:15:11 &#43;0800</pubDate>
+    <title>bilihuli:用Django做一个弹幕视频网站</title>
+    <link>https://silencehuliang.github.io/bilihuli-%E7%94%A8django%E5%81%9A%E4%B8%80%E4%B8%AA%E5%BC%B9%E5%B9%95%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99/</link>
+    <pubDate>Thu, 27 Jul 2023 20:00:00 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-shortuuid/</guid>
-    <description><![CDATA[前言 今天分享是一个一组简洁URL/UUID函数库的第三方库：shortuuid。 shortuuid 简介 shortuuid 是一个简单的第三方Python 库，可以生成简洁、明确]]></description>
+    <guid>https://silencehuliang.github.io/bilihuli-%E7%94%A8django%E5%81%9A%E4%B8%80%E4%B8%AA%E5%BC%B9%E5%B9%95%E8%A7%86%E9%A2%91%E7%BD%91%E7%AB%99/</guid>
+    <description><![CDATA[前言 早在写「python学习之路-flask项目博客」系列的时候就有个想法：博客做完了，能不能再做一个稍微复杂一点的 Web 项目？作为一个老 B 站用]]></description>
 </item><item>
-    <title>每天分享一个好用的Python库-esmre</title>
-    <link>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-esmre/</link>
-    <pubDate>Fri, 25 Jun 2021 09:15:11 &#43;0800</pubDate>
+    <title>2022年终总结</title>
+    <link>https://silencehuliang.github.io/2022%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</link>
+    <pubDate>Sat, 31 Dec 2022 20:00:00 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://silencehuliang.github.io/%E6%AF%8F%E5%A4%A9%E5%88%86%E4%BA%AB%E4%B8%80%E4%B8%AA%E5%A5%BD%E7%94%A8%E7%9A%84python%E5%BA%93-esmre/</guid>
-    <description><![CDATA[前言 今天分享是一个用于加速大型正则集合执行的第三方库：esmre。 esmre 简介 当你需要从一大堆数据中找寻自己想要的数据时可以使用AC自动机算法使用]]></description>
+    <guid>https://silencehuliang.github.io/2022%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</guid>
+    <description><![CDATA[前言 博客依然处于停更状态，但代码没有停。2022 年写了几个小项目，趁着年底补一篇总结。 项目 今年在 GitHub 上留下了三个小东西： TimeSequenc]]></description>
 </item></channel>
 </rss>

@@ -42,7 +42,8 @@ Git是一个免费的开源分布式版本控制系统，也是目前为止世�
 
 ### Git操作流程
 
-![](https://tvax3.sinaimg.cn/large/00729CCqgy1gdbwnczj2hj30bh0fct9l.jpg)
+<!-- 原图(已失效): https://tvax3.sinaimg.cn/large/00729CCqgy1gdbwnczj2hj30bh0fct9l.jpg -->
+![图片失效](/images/broken-image.svg)
 
 - `clone`：第一次从Git服务器获取项目
 - add：将修改添加到本地仓库
@@ -62,7 +63,8 @@ Git是一个免费的开源分布式版本控制系统，也是目前为止世�
 - 暂存区：存储工作区的操作的区域。
 - 仓库区：即本地仓库区域，会记录完成的操作与历史版本。
 
-![](https://tva2.sinaimg.cn/large/00729CCqgy1gdbxah8gyzj30k909fgol.jpg)
+<!-- 原图(已失效): https://tva2.sinaimg.cn/large/00729CCqgy1gdbxah8gyzj30k909fgol.jpg -->
+![图片失效](/images/broken-image.svg)
 
 ### Git操作
 

@@ -17,6 +17,8 @@ enableRobotsTXT = false
 # 文章的 lastmod 已写入 front matter,不依赖 git 历史
 enableGitInfo = false
 enableEmoji = false
+# 补发历史文章时可能出现"未来日期",允许构建
+buildFuture = true
 
 [markup]
   [markup.highlight]
@@ -125,7 +127,7 @@ enableEmoji = false
         weight = 4
     [languages.zh-cn.params]
       # 网站描述
-      description = ""
+      description = "Silence 的个人博客:记录技术与生活,Python、Web 开发、自部署与 AI 工作流"
       # 网站关键词
       keywords = ["Silence‘s blog"]
       # 搜索配置(lunr,中文分词)
@@ -144,7 +146,7 @@ enableEmoji = false
         [languages.zh-cn.params.home.profile]
           enable = true
           gravatarEmail = ""
-          avatarURL = "https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+          avatarURL = "/images/avatar.png"
           # 主页标题
           title = "Never give up"
           # 主页副标题(打字机动画)
@@ -350,7 +352,7 @@ enableEmoji = false
 
   [params.seo]
     # 全站默认头图(og:image)
-    image = "https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+    image = "/images/avatar.png"
     thumbnailUrl = ""
 
   [params.analytics]

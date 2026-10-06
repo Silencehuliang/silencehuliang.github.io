@@ -9,11 +9,13 @@ REST framework 提供了众多的通用视图基类与扩展类，以简化视�
 
 ### 视图的继承关系
 
-![](https://tva3.sinaimg.cn/large/00729CCqgy1gq9sr8b478j34m00rsac4.jpg)
+<!-- 原图(已失效): https://tva3.sinaimg.cn/large/00729CCqgy1gq9sr8b478j34m00rsac4.jpg -->
+![图片失效](/images/broken-image.svg)
 
 ### 视图的方法与属性
 
-![](https://tvax2.sinaimg.cn/large/00729CCqgy1gq9st71vfpj34mq43shdt.jpg)
+<!-- 原图(已失效): https://tvax2.sinaimg.cn/large/00729CCqgy1gq9st71vfpj34mq43shdt.jpg -->
+![图片失效](/images/broken-image.svg)
 
 ## 视图说明
 
@@ -461,11 +463,13 @@ class BookInfoViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, GenericV
 
 1） SimpleRouter
 
-![](https://tvax1.sinaimg.cn/large/00729CCqgy1gq9tfy4swej31940gwdj7.jpg)
+<!-- 原图(已失效): https://tvax1.sinaimg.cn/large/00729CCqgy1gq9tfy4swej31940gwdj7.jpg -->
+![图片失效](/images/broken-image.svg)
 
 2）DefaultRouter
 
-![](https://tvax3.sinaimg.cn/large/00729CCqgy1gq9tgjblz9j318y0j4wii.jpg)
+<!-- 原图(已失效): https://tvax3.sinaimg.cn/large/00729CCqgy1gq9tgjblz9j318y0j4wii.jpg -->
+![图片失效](/images/broken-image.svg)
 
 DefaultRouter与SimpleRouter的区别是，DefaultRouter会多附带一个默认的API根视图，返回一个包含所有列表视图的超链接响应数据。
 

@@ -35,7 +35,8 @@ hugo version
 hugo new site SilenceBlog
 ```
 
-![](https://tvax1.sinaimg.cn/large/00729CCqgy1gp6qpmyiftj30fa053abx.jpg)
+<!-- 原图(已失效): https://tvax1.sinaimg.cn/large/00729CCqgy1gp6qpmyiftj30fa053abx.jpg -->
+![图片失效](/images/broken-image.svg)
 
 创建成功图片
 
@@ -71,7 +72,8 @@ hugo new posts/firstpost.md
 
 输入完后会提是我们创建成功和文章所在的位置
 
-![](https://tva2.sinaimg.cn/large/00729CCqgy1gp6rljde02j30dh00u3yt.jpg)
+<!-- 原图(已失效): https://tva2.sinaimg.cn/large/00729CCqgy1gp6rljde02j30dh00u3yt.jpg -->
+![图片失效](/images/broken-image.svg)
 
 接下来可以打开这个文件进行编辑，当我们编辑完毕保存退出后，可以启动Hugo服务器查看效果
 
@@ -81,7 +83,8 @@ hugo server -D
 
 启动后我们可以看到，本次启动的一些信息
 
-![](https://tvax4.sinaimg.cn/large/00729CCqgy1gp6rq42zxvj30i607vgnk.jpg)
+<!-- 原图(已失效): https://tvax4.sinaimg.cn/large/00729CCqgy1gp6rq42zxvj30i607vgnk.jpg -->
+![图片失效](/images/broken-image.svg)
 
 在浏览器中打开`http://localhost:1313/`即可查看效果，并且效果是实时更新的，会随着对站点博客的操作自动更新相应的效果
 
@@ -117,7 +120,8 @@ GitHub Pages 是一种静态网站托管服务，它可以直接从 GitHub 上�
 
 2.接下来进入仓库的设置页对GitHub Pages进行配置，找到GitHub Pages所在的位置，按下图配置好分支和站点存放路径即可
 
-![](https://tva3.sinaimg.cn/large/00729CCqgy1gp6tnklllnj30rx0ipdo0.jpg)
+<!-- 原图(已失效): https://tva3.sinaimg.cn/large/00729CCqgy1gp6tnklllnj30rx0ipdo0.jpg -->
+![图片失效](/images/broken-image.svg)
 
 3.配置完毕后，把仓库克隆下来，使用`hugo -D 路径`将站点生成的静态文件存放在配置文件中选择的路径下即可。最后将文件提交上去就可以打开对应域名进行查看了。
 
@@ -125,11 +129,13 @@ GitHub Pages 是一种静态网站托管服务，它可以直接从 GitHub 上�
 
 当我们将文件提交上去之后打开对应域名发现并没有我们想要的内容时可以通过查看提交记录查看错误原因，点击Deatils可以找到具体位置的具体错误
 
-![](https://tvax3.sinaimg.cn/large/00729CCqgy1gp6u18wlivj30q606841s.jpg)
+<!-- 原图(已失效): https://tvax3.sinaimg.cn/large/00729CCqgy1gp6u18wlivj30q606841s.jpg -->
+![图片失效](/images/broken-image.svg)
 
 还可以在GitHub Pages的设置出找到错误原因
 
-![](https://tvax4.sinaimg.cn/large/00729CCqgy1gp6tx8q1bej30r30jxq6f.jpg)
+<!-- 原图(已失效): https://tvax4.sinaimg.cn/large/00729CCqgy1gp6tx8q1bej30r30jxq6f.jpg -->
+![图片失效](/images/broken-image.svg)
 
 {{< admonition info "" true >}}
 更详细的内容可以查看<a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/" rel="noopener noreffer" target="_blank">Hugo官方部署文档</a>或<a href="https://docs.github.com/en/pages/getting-started-with-github-pages" rel="noopener noreffer" target="_blank">GitHub Pages入门教程文档</a>

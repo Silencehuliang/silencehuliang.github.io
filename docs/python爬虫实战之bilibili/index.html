@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>Python爬虫实战之bilibili - Silence Blog</title><meta name="Description" content=""><meta property="og:title" content="Python爬虫实战之bilibili" />
+        <title>Python爬虫实战之bilibili - Silence Blog</title><meta name="Description" content="Silence 的个人博客:记录技术与生活,Python、Web 开发、自部署与 AI 工作流"><meta property="og:title" content="Python爬虫实战之bilibili" />
 <meta property="og:description" content="声明：以下内容均为我个人的理解，如果发现错误或者疑问可以联系我共同探讨 爬虫介绍 网站介绍 本次要爬取的网站为bilibili，它是国内知名的视频" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://silencehuliang.github.io/python%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%E4%B9%8Bbilibili/" />
@@ -26,7 +26,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/silencehuliang.github.io\/python%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%E4%B9%8Bbilibili\/"
-        },"image": ["https:\/\/tva1.sinaimg.cn\/large\/00729CCqgy1gp1qfrpi14j305k05k745.jpg"],"genre": "posts","keywords": "爬虫","wordcount":  1393 ,
+        },"image": ["https:\/\/silencehuliang.github.io\/images\/avatar.png"],"genre": "posts","keywords": "爬虫","wordcount":  1393 ,
         "url": "https:\/\/silencehuliang.github.io\/python%E7%88%AC%E8%99%AB%E5%AE%9E%E6%88%98%E4%B9%8Bbilibili\/","datePublished": "2019-07-20T00:00:00+00:00","dateModified": "2021-03-05T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -157,23 +157,25 @@
 <h3 id="滑动验证码">滑动验证码</h3>
 <p>哔哩哔哩从之前的验证码是滑动验证码，主要思路就是找到缺口确定缺口的坐标，然后通过Selenium操作滑动到指定位置就行。类似的还有阿里系的大部分网页，比如飞猪、淘宝、天猫等，不过阿里系的不是每次都需要验证，得根据实际情况操作。</p>
 <p>这种就是找到最右边的位置信息，然后滑动即可</p>
+<!-- 原图(已失效): https://tvax3.sinaimg.cn/large/00729CCqgy1gp5n2img5yj30iz0bidgz.jpg -->
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://tvax3.sinaimg.cn/large/00729CCqgy1gp5n2img5yj30iz0bidgz.jpg"
-        data-srcset="https://tvax3.sinaimg.cn/large/00729CCqgy1gp5n2img5yj30iz0bidgz.jpg, https://tvax3.sinaimg.cn/large/00729CCqgy1gp5n2img5yj30iz0bidgz.jpg 1.5x, https://tvax3.sinaimg.cn/large/00729CCqgy1gp5n2img5yj30iz0bidgz.jpg 2x"
+        data-src="/images/broken-image.svg"
+        data-srcset="/images/broken-image.svg, /images/broken-image.svg 1.5x, /images/broken-image.svg 2x"
         data-sizes="auto"
-        alt="https://tvax3.sinaimg.cn/large/00729CCqgy1gp5n2img5yj30iz0bidgz.jpg"
-        title="https://tvax3.sinaimg.cn/large/00729CCqgy1gp5n2img5yj30iz0bidgz.jpg" /></p>
+        alt="/images/broken-image.svg"
+        title="图片失效" /></p>
 <p>这种需要先找到整个图片的位置，然后滑动先找到内容的轮廓在进行滑动，都是同一个思路演变的</p>
+<!-- 原图(已失效): https://tva1.sinaimg.cn/large/00729CCqgy1gp5n3tydbaj30k00f8761.jpg -->
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://tva1.sinaimg.cn/large/00729CCqgy1gp5n3tydbaj30k00f8761.jpg"
-        data-srcset="https://tva1.sinaimg.cn/large/00729CCqgy1gp5n3tydbaj30k00f8761.jpg, https://tva1.sinaimg.cn/large/00729CCqgy1gp5n3tydbaj30k00f8761.jpg 1.5x, https://tva1.sinaimg.cn/large/00729CCqgy1gp5n3tydbaj30k00f8761.jpg 2x"
+        data-src="/images/broken-image.svg"
+        data-srcset="/images/broken-image.svg, /images/broken-image.svg 1.5x, /images/broken-image.svg 2x"
         data-sizes="auto"
-        alt="https://tva1.sinaimg.cn/large/00729CCqgy1gp5n3tydbaj30k00f8761.jpg"
-        title="https://tva1.sinaimg.cn/large/00729CCqgy1gp5n3tydbaj30k00f8761.jpg" /></p>
+        alt="/images/broken-image.svg"
+        title="图片失效" /></p>
 <h3 id="看图填答案系列">看图填答案系列</h3>
 <p>包括东方财富网上交易、bigquant等等，这类比较简单。将其下载下来根据验证码的情况进行处理然后交给各大云服务商的ORC服务识别就可以，都有免费试用的额度，根据自己的需求和喜好选择，也可以多试几家进行对比。</p>
 <p><a href="https://cloud.baidu.com/product/ocr_general" target="_blank" rel="noopener noreffer">百度</a>、<a href="https://cloud.tencent.com/act/event/ocrdemo" target="_blank" rel="noopener noreffer">腾讯</a>、<a href="https://ai.aliyun.com/ocr/general" target="_blank" rel="noopener noreffer">阿里</a>、<a href="http://aidemo.youdao.com/ocrdemo" target="_blank" rel="noopener noreffer">有道智云</a></p>
@@ -182,14 +184,15 @@
 <p><a href="http://www.ydaaa.com" target="_blank" rel="noopener noreffer">易云打码</a>、<a href="http://www.kuaishibie.cn" target="_blank" rel="noopener noreffer">快识别网址</a>、<a href="http://www.fateadm.com" target="_blank" rel="noopener noreffer">斐斐打码</a>等等</p>
 <h2 id="bilibili登陆分析">bilibili登陆分析</h2>
 <p>bilibili的最新的验证码属于第三种，在点击登陆按钮就会出现一个验证码的框,我们需要将这个图片下载下来给打码平台去识别，获得坐标信息然后再用Selenium进行点击操作</p>
+<!-- 原图(已失效): https://tvax3.sinaimg.cn/large/00729CCqgy1gp5of2c2b0j307m09oq67.jpg -->
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://tvax3.sinaimg.cn/large/00729CCqgy1gp5of2c2b0j307m09oq67.jpg"
-        data-srcset="https://tvax3.sinaimg.cn/large/00729CCqgy1gp5of2c2b0j307m09oq67.jpg, https://tvax3.sinaimg.cn/large/00729CCqgy1gp5of2c2b0j307m09oq67.jpg 1.5x, https://tvax3.sinaimg.cn/large/00729CCqgy1gp5of2c2b0j307m09oq67.jpg 2x"
+        data-src="/images/broken-image.svg"
+        data-srcset="/images/broken-image.svg, /images/broken-image.svg 1.5x, /images/broken-image.svg 2x"
         data-sizes="auto"
-        alt="https://tvax3.sinaimg.cn/large/00729CCqgy1gp5of2c2b0j307m09oq67.jpg"
-        title="https://tvax3.sinaimg.cn/large/00729CCqgy1gp5of2c2b0j307m09oq67.jpg" /></p>
+        alt="/images/broken-image.svg"
+        title="图片失效" /></p>
 <p>​bilibili验证码</p>
 <h2 id="编写代码">编写代码</h2>
 <h3 id="selenium模拟登陆">Selenium模拟登陆</h3>

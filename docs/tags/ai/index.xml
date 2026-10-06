@@ -1,0 +1,21 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>AI - 标签 - Silence Blog</title>
+        <link>https://silencehuliang.github.io/tags/ai/</link>
+        <description>AI - 标签 - Silence Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 06 Oct 2026 09:00:00 &#43;0800</lastBuildDate><atom:link href="https://silencehuliang.github.io/tags/ai/" rel="self" type="application/rss+xml" /><item>
+    <title>当AI开始帮我写代码:我的AI辅助开发工作流</title>
+    <link>https://silencehuliang.github.io/%E5%BD%93ai%E5%BC%80%E5%A7%8B%E5%B8%AE%E6%88%91%E5%86%99%E4%BB%A3%E7%A0%81-%E6%88%91%E7%9A%84ai%E8%BE%85%E5%8A%A9%E5%BC%80%E5%8F%91%E5%B7%A5%E4%BD%9C%E6%B5%81/</link>
+    <pubDate>Tue, 06 Oct 2026 09:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/%E5%BD%93ai%E5%BC%80%E5%A7%8B%E5%B8%AE%E6%88%91%E5%86%99%E4%BB%A3%E7%A0%81-%E6%88%91%E7%9A%84ai%E8%BE%85%E5%8A%A9%E5%BC%80%E5%8F%91%E5%B7%A5%E4%BD%9C%E6%B5%81/</guid>
+    <description><![CDATA[前言 这个博客停更的五年，正好是 AI 编码工具从无到有、从玩具变成生产力的五年。2026 年回头再看，我的开发方式已经被彻底改变了。这篇文章记录一下]]></description>
+</item><item>
+    <title>我的家庭数字工具箱:2026年给自己家造的软件</title>
+    <link>https://silencehuliang.github.io/%E6%88%91%E7%9A%84%E5%AE%B6%E5%BA%AD%E6%95%B0%E5%AD%97%E5%B7%A5%E5%85%B7%E7%AE%B1-2026%E5%B9%B4%E7%BB%99%E8%87%AA%E5%B7%B1%E5%AE%B6%E9%80%A0%E7%9A%84%E8%BD%AF%E4%BB%B6/</link>
+    <pubDate>Tue, 15 Sep 2026 20:00:00 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://silencehuliang.github.io/%E6%88%91%E7%9A%84%E5%AE%B6%E5%BA%AD%E6%95%B0%E5%AD%97%E5%B7%A5%E5%85%B7%E7%AE%B1-2026%E5%B9%B4%E7%BB%99%E8%87%AA%E5%B7%B1%E5%AE%B6%E9%80%A0%E7%9A%84%E8%BD%AF%E4%BB%B6/</guid>
+    <description><![CDATA[前言 写完 CoinNote(家庭记账小程序)之后，我发现根本停不下来——家里的各种&quot;数字化需求&quot;一个个冒出来。2026 年上]]></description>
+</item></channel>
+</rss>

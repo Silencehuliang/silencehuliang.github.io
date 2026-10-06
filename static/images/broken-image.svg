@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="图片失效">
+  <rect width="800" height="450" rx="24" fill="#f5f5f5"/>
+  <g fill="none" stroke="#c0c4cc" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="330" y="160" width="140" height="110" rx="12"/>
+    <circle cx="368" cy="196" r="10" fill="#c0c4cc" stroke="none"/>
+    <path d="M338 258 L384 212 L416 244 L436 226 L466 258"/>
+    <path d="M390 130 L402 112 L414 130" />
+    <line x1="352" y1="320" x2="448" y2="320"/>
+  </g>
+  <text x="400" y="360" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="24" fill="#909399" text-anchor="middle">原图已失效(外链图床防盗链)</text>
+</svg>

@@ -28,7 +28,8 @@ Scrapy 使用了Twisted\[‘twɪstɪd\]`异步`网络框架，可以加快我们
 
 ## scrapy是工作流程
 
-![](https://tvax2.sinaimg.cn/large/00729CCqgy1gqoofcu1w0j30gl0b4ta0.jpg)
+<!-- 原图(已失效): https://tvax2.sinaimg.cn/large/00729CCqgy1gqoofcu1w0j30gl0b4ta0.jpg -->
+![图片失效](/images/broken-image.svg)
 
 其流程可以描述如下：
 
@@ -46,4 +47,5 @@ Scrapy 使用了Twisted\[‘twɪstɪd\]`异步`网络框架，可以加快我们
 
 ## scrapy中每个模块的具体作用
 
-![](https://tvax2.sinaimg.cn/large/00729CCqgy1gqooiqy6oej30vg0k8qc4.jpg)
+<!-- 原图(已失效): https://tvax2.sinaimg.cn/large/00729CCqgy1gqooiqy6oej30vg0k8qc4.jpg -->
+![图片失效](/images/broken-image.svg)

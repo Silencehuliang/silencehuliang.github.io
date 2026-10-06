@@ -131,7 +131,8 @@ Quit the server with CONTROL-C.
 
 在浏览器中输入网址“127.0.0.1:8000”便可看到效果。
 
-![](https://tvax2.sinaimg.cn/large/006lmzsGgy1gazi40lmx6j31h70s5t9z.jpg)
+<!-- 原图(已失效): https://tvax2.sinaimg.cn/large/006lmzsGgy1gazi40lmx6j31h70s5t9z.jpg -->
+![图片失效](/images/broken-image.svg)
 
 - django默认工作在调式Debug模式下，如果增加、修改、删除文件，服务器会自动重启。
 - 按ctrl+c停止服务器。
@@ -202,7 +203,8 @@ db.sqlite3  demo  manage.py  users
 
 在工程配置文件`settings.py`中的**INSTALLED_APPS**项负责注册安装好的应用，初始工程中的INSTALLED_APPS如下：
 
-![](https://tva3.sinaimg.cn/large/006lmzsGgy1gazjj3xb2dj318s0pun2d.jpg)
+<!-- 原图(已失效): https://tva3.sinaimg.cn/large/006lmzsGgy1gazjj3xb2dj318s0pun2d.jpg -->
+![图片失效](/images/broken-image.svg)
 
 这些默认应用的作用可以看这篇文章：[Django配置文件详解](http://49.235.231.121/2019/Django%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%e8%af%a6%e8%a7%a3)
 
@@ -210,7 +212,8 @@ db.sqlite3  demo  manage.py  users
 
 例如，注册刚创建的users应用，可在INSTALLED_APPS列表中添加\*\*‘users.apps.UsersConfig’\*\*。
 
-![](https://tva3.sinaimg.cn/large/006lmzsGgy1gazjpcuif9j31mq0uq45b.jpg)
+<!-- 原图(已失效): https://tva3.sinaimg.cn/large/006lmzsGgy1gazjpcuif9j31mq0uq45b.jpg -->
+![图片失效](/images/broken-image.svg)
 
 #### 创建视图
 

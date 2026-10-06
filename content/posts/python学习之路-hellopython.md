@@ -63,7 +63,8 @@ Python预装在大多数Linux发行版上，并作为一个包提供给所有其
 
 - 根据需求进行安装包安装
 
-  ![](https://tvax1.sinaimg.cn/large/00729CCqgy1gp9z3w3ik3j30im0bit9r.jpg)
+  <!-- 原图(已失效): https://tvax1.sinaimg.cn/large/00729CCqgy1gp9z3w3ik3j30im0bit9r.jpg -->
+![图片失效](/images/broken-image.svg)
 
 - 安装完毕后将Python解释器的路径添加到系统环境变量中
 

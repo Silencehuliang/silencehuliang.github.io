@@ -98,11 +98,13 @@ python helloflask.py
 
 可以看到以下结果
 
-![](https://tva2.sinaimg.cn/large/00729CCqgy1gewpfqhiujj30ff02tgmp.jpg)
+<!-- 原图(已失效): https://tva2.sinaimg.cn/large/00729CCqgy1gewpfqhiujj30ff02tgmp.jpg -->
+![图片失效](/images/broken-image.svg)
 
 这样就启动了一个非常简单的内建的服务器。这个服务器用于测试应该是足够了，但是 用于生产可能是不够的。现在在浏览器中打开 http://127.0.0.1:5000/ ，应该可以看到 Hello Flask! 字样。
 
-![](https://tva2.sinaimg.cn/large/00729CCqgy1gewpiolwj7j30aq03d0sy.jpg)
+<!-- 原图(已失效): https://tva2.sinaimg.cn/large/00729CCqgy1gewpiolwj7j30aq03d0sy.jpg -->
+![图片失效](/images/broken-image.svg)
 
 ## 相关配置参数
 

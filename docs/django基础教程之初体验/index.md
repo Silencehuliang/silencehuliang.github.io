@@ -261,11 +261,13 @@ Superuser created successfully.
 
 接下来启动项目，并在浏览器中输入http://127.0.0.1:8000/admin，进入后台管理界面
 
-![](https://tvax2.sinaimg.cn/large/006lmzsGgy1gav1o59elyj31h90s7dgw.jpg)
+<!-- 原图(已失效): https://tvax2.sinaimg.cn/large/006lmzsGgy1gav1o59elyj31h90s7dgw.jpg -->
+![图片失效](/images/broken-image.svg)
 
 输入账号密码，点击登录即可
 
-![](https://tvax4.sinaimg.cn/large/006lmzsGgy1gav1on3qmaj31h70s9js7.jpg)
+<!-- 原图(已失效): https://tvax4.sinaimg.cn/large/006lmzsGgy1gav1on3qmaj31h70s9js7.jpg -->
+![图片失效](/images/broken-image.svg)
 
 数据库迁移，需要三步
 
@@ -409,11 +411,13 @@ admin.site.register(Books)
 
 重新运行项目，在地址栏输入：http://127.0.0.1:8000/admin/，输入账号密码登录即可查看到这个模型
 
-![](https://tva4.sinaimg.cn/large/006lmzsGgy1gav1r45uowj31h70s9wfe.jpg)
+<!-- 原图(已失效): https://tva4.sinaimg.cn/large/006lmzsGgy1gav1r45uowj31h70s9wfe.jpg -->
+![图片失效](/images/broken-image.svg)
 
 点进去可以查看该模型的数据，右上角可以添加，动作可以删除，点图书名可以看到更多细节
 
-![](https://tvax3.sinaimg.cn/large/006lmzsGgy1gav1rig51bj31hb0s83zk.jpg)
+<!-- 原图(已失效): https://tvax3.sinaimg.cn/large/006lmzsGgy1gav1rig51bj31hb0s83zk.jpg -->
+![图片失效](/images/broken-image.svg)
 
 ### 视图与模板
 

@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>Python学习之路-Tornado基础:安全应用 - Silence Blog</title><meta name="Description" content=""><meta property="og:title" content="Python学习之路-Tornado基础:安全应用" />
+        <title>Python学习之路-Tornado基础:安全应用 - Silence Blog</title><meta name="Description" content="Silence 的个人博客:记录技术与生活,Python、Web 开发、自部署与 AI 工作流"><meta property="og:title" content="Python学习之路-Tornado基础:安全应用" />
 <meta property="og:description" content="Cookie 对于RequestHandler，除了在初始Tornado中讲到的之外，还提供了操作cookie的方法。 设置 set_cookie(name, value, domain=None, expires=None, path=’/’, expires_days=None) 参" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-tornado%E5%9F%BA%E7%A1%80%E5%AE%89%E5%85%A8%E5%BA%94%E7%94%A8/" />
@@ -26,7 +26,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/silencehuliang.github.io\/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-tornado%E5%9F%BA%E7%A1%80%E5%AE%89%E5%85%A8%E5%BA%94%E7%94%A8\/"
-        },"image": ["https:\/\/tva1.sinaimg.cn\/large\/00729CCqgy1gp1qfrpi14j305k05k745.jpg"],"genre": "posts","keywords": "python学习之路","wordcount":  5039 ,
+        },"image": ["https:\/\/silencehuliang.github.io\/images\/avatar.png"],"genre": "posts","keywords": "python学习之路","wordcount":  5050 ,
         "url": "https:\/\/silencehuliang.github.io\/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-tornado%E5%9F%BA%E7%A1%80%E5%AE%89%E5%85%A8%E5%BA%94%E7%94%A8\/","datePublished": "2021-01-09T00:00:00+00:00","dateModified": "2021-01-10T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -103,7 +103,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Python学习之路-Tornado基础:安全应用</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Silence</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/tornado/"><i class="far fa-folder fa-fw"></i>tornado</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-01-09">2021-01-09</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 5039 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-01-09">2021-01-09</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 5050 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 11 分钟&nbsp;<span id="/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-tornado%E5%9F%BA%E7%A1%80%E5%AE%89%E5%85%A8%E5%BA%94%E7%94%A8/" class="leancloud_visitors" data-flag-title="Python学习之路-Tornado基础:安全应用">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -428,13 +428,15 @@
 </span><span class="lnt">5
 </span><span class="lnt">6
 </span><span class="lnt">7
+</span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">IndexHandler</span><span class="p">(</span><span class="n">RequestHandler</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;&lt;html&gt;&lt;head&gt;&lt;title&gt;被攻击的网站&lt;/title&gt;&lt;/head&gt;&#39;</span>
         <span class="s1">&#39;&lt;body&gt;&lt;h1&gt;此网站的图片链接被修改了&lt;/h1&gt;&#39;</span>
-        <span class="s1">&#39;&lt;img alt=&#34;这应该是图片&#34; src=&#34;http://127.0.0.1:8000/?f=9000/&#34;&gt;&#39;</span>
+        <span class="s1">&#39;&lt;!-- 原图(已失效): http://127.0.0.1:8000/?f=9000/ --&gt;</span>
+<span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">&#34;/images/broken-image.svg&#34;</span> <span class="n">alt</span><span class="o">=</span><span class="s2">&#34;图片失效&#34;</span> <span class="o">/&gt;</span><span class="s1">&#39;</span>
         <span class="s1">&#39;&lt;/body&gt;&lt;/html&gt;&#39;</span>
         <span class="p">)</span>
 </code></pre></td></tr></table>
