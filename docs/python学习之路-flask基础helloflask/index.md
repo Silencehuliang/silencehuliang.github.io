@@ -35,7 +35,7 @@ Flask诞生于2010年，是Armin ronacher（人名）用 Python 语言基于 Wer
 
 - 使用虚拟环境
 
-  ```
+  ```fallback
   pipenv shell
   ```
 
@@ -63,26 +63,26 @@ Flask诞生于2010年，是Armin ronacher（人名）用 Python 语言基于 Wer
 
   ```python
   from flask import Flask
-  
+    
   app = Flask(__name__)
-  
+    
   @app.route('/')
   def index():
       return 'Hello Flask'
-  
+    
   if __name__ == '__main__':
       app.run()              
   ```
 
 - 运行项目
 
-  ```
+  ```fallback
   (hello_flask) % python helloflask.py 
   ```
 
   运行成功时会看到输出的提示信息：
 
-  ```
+  ```fallback
   * Serving Flask app "helloflask" (lazy loading)
    * Environment: production
      WARNING: This is a development server. Do not use it in a production deployment.
@@ -117,8 +117,8 @@ Flask 程序实例在创建的时候，需要默认传入当前 Flask 程序所�
 
 以下演练以设置应用程序的 DEBUG(调试模式) 为例，设置应用为调式模式这后，可以实现以下功能：
 
-1. 程序代码修改后可以自动重启服务器
-2. 在服务器出现相关错误的时候可以直接将错误信息进行抛出到控制台打印
+1.  程序代码修改后可以自动重启服务器
+2.  在服务器出现相关错误的时候可以直接将错误信息进行抛出到控制台打印
 
 #### 使用方式
 
@@ -158,13 +158,9 @@ app.config.from_object(Config)
 
 - 编辑运行的相关配置
 
-  
-
   ![](https://tva2.sinaimg.cn/large/00729CCqgy1gpq164xjkej309t04pmxx.jpg)
 
   ![](https://tvax4.sinaimg.cn/large/00729CCqgy1gpq1a0xbh2j30tt0iraiq.jpg)
-
-  
 
 - 使用代码去加载配置
 
@@ -181,9 +177,7 @@ app.config.from_envvar('FLASKCONFIG')
 - 在视图函数中使用 current_app.config.get()
 
 {{< admonition tip "提示" true >}}
-
 Flask 应用程序将一些常用的配置设置成了应用程序对象的属性，也可以通过属性直接设置/获取某些配置：`app.debug = True`
-
 {{< /admonition >}}
 
 ##### app.run的参数
@@ -193,5 +187,4 @@ Flask 应用程序将一些常用的配置设置成了应用程序对象的属�
 ```python
 app.run(host="0.0.0.0", port=5000, debug = True)
 ```
-
 

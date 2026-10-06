@@ -3,7 +3,6 @@
 
 ## MongoDB和Python交互的模块
 
-
 `pymongo`提供了mongdb和python交互的所有方法 安装方式: `pip install pymongo`
 
 ## 使用pymongo
@@ -80,3 +79,4 @@
    #delete_may删除所有满足条件的数据
    collection.delete_many({"name":"test10010"})
   ```
+

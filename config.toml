@@ -1,0 +1,379 @@
+# ============================================================
+# Silence Blog - Hugo + LoveIt 主题配置
+# 构建产物输出到 docs/(GitHub Pages 从 master 分支 /docs 发布)
+# 本配置由线上生成页面逆向重建,详见 MAINTENANCE.md
+# ============================================================
+
+baseURL = "https://silencehuliang.github.io/"
+# 语言决定使用哪个 i18n 文件
+defaultContentLanguage = "zh-cn"
+languageCode = "zh-CN"
+title = "Silence Blog"
+theme = "LoveIt"
+# GitHub Pages 发布目录
+publishDir = "docs"
+# docs/ 中没有 robots.txt
+enableRobotsTXT = false
+# 文章的 lastmod 已写入 front matter,不依赖 git 历史
+enableGitInfo = false
+enableEmoji = false
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = true
+    lineNumbersInTable = true
+    # LoveIt 要求必须为 false
+    noClasses = false
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+    [markup.goldmark.renderer]
+      # 允许 markdown 中直接写 HTML
+      unsafe = true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 6
+
+[author]
+  name = "Silence"
+  email = ""
+  link = ""
+
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+# 文章 URL 形如 /:filename/(如 /一篇文章学会git/)
+[Permalinks]
+  posts = ":filename"
+
+[privacy]
+  [privacy.googleAnalytics]
+  [privacy.twitter]
+    enableDNT = true
+  [privacy.youtube]
+    privacyEnhanced = true
+
+# 输出 .md 原始文档(文章页"阅读原始文档"链接)
+[mediaTypes]
+  [mediaTypes."text/plain"]
+    suffixes = ["md"]
+
+[outputFormats.MarkDown]
+  mediaType = "text/plain"
+  isPlainText = true
+  isHTML = false
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  page = ["HTML", "MarkDown"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+  taxonomyTerm = ["HTML"]
+
+[languages]
+  [languages.zh-cn]
+    weight = 1
+    languageCode = "zh-CN"
+    languageName = "简体中文"
+    hasCJKLanguage = true
+    # 首页每页文章数
+    paginate = 10
+    # SEO schema 用版权描述
+    copyright = ""
+    [languages.zh-cn.menu]
+      [[languages.zh-cn.menu.main]]
+        identifier = "posts"
+        pre = ""
+        post = ""
+        name = "文章"
+        url = "/posts/"
+        title = ""
+        weight = 1
+      [[languages.zh-cn.menu.main]]
+        identifier = "tags"
+        pre = ""
+        post = ""
+        name = "标签"
+        url = "/tags/"
+        title = ""
+        weight = 2
+      [[languages.zh-cn.menu.main]]
+        identifier = "categories"
+        pre = ""
+        post = ""
+        name = "分类"
+        url = "/categories/"
+        title = ""
+        weight = 3
+      [[languages.zh-cn.menu.main]]
+        identifier = "about"
+        pre = ""
+        post = ""
+        name = "关于"
+        url = "/about/"
+        title = ""
+        weight = 4
+    [languages.zh-cn.params]
+      # 网站描述
+      description = ""
+      # 网站关键词
+      keywords = ["Silence‘s blog"]
+      # 搜索配置(lunr,中文分词)
+      [languages.zh-cn.params.search]
+        enable = true
+        type = "lunr"
+        contentLength = 4000
+        placeholder = ""
+        maxResultLength = 10
+        snippetLength = 50
+        highlightTag = "em"
+        absoluteURL = false
+      # 主页信息设置
+      [languages.zh-cn.params.home]
+        rss = 10
+        [languages.zh-cn.params.home.profile]
+          enable = true
+          gravatarEmail = ""
+          avatarURL = "https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+          # 主页标题
+          title = "Never give up"
+          # 主页副标题(打字机动画)
+          subtitle = "Life is short, you need Python!"
+          typeit = true
+          social = true
+          disclaimer = ""
+        [languages.zh-cn.params.home.posts]
+          enable = true
+          paginate = 10
+      # 主页社交链接
+      [languages.zh-cn.params.social]
+        # 原配置误填完整 URL 导致链接拼成
+        # https://github.com/https://github.com/Silencehuliang,此处已修正为用户名
+        GitHub = "Silencehuliang"
+        Email = "silencehuliang@gmail.com"
+        RSS = true
+
+[params]
+  # LoveIt 版本(用于升级提示)
+  version = "0.2.X"
+  # 默认主题 ("light", "dark", "auto")
+  defaultTheme = "dark"
+  gitRepo = ""
+  # SRI 指纹算法(生成页面的 integrity 属性为 md5)
+  fingerprint = "md5"
+  dateFormat = "2006-01-02"
+  # og/twitter 默认图片,未设置的头图文章回退到 params.seo.image
+  images = []
+
+  [params.header]
+    desktopMode = "fixed"
+    mobileMode = "auto"
+    [params.header.title]
+      logo = ""
+      name = "Silence’s Blog"
+      pre = ""
+      post = ""
+      # 头部标题打字机动画
+      typeit = true
+
+  [params.footer]
+    enable = true
+    custom = ''
+    hugo = true
+    copyright = true
+    author = true
+    # 网站创立年份(页脚显示 2018 - 至今)
+    since = 2018
+    icp = ""
+    license = '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
+
+  # 所有文章列表页
+  [params.section]
+    paginate = 20
+    dateFormat = "01-02"
+    rss = 10
+
+  # 分类/标签列表页
+  [params.list]
+    paginate = 20
+    dateFormat = "01-02"
+    rss = 10
+
+  [params.page]
+    hiddenFromHomePage = false
+    hiddenFromSearch = false
+    twemoji = false
+    lightgallery = false
+    ruby = true
+    fraction = true
+    fontawesome = true
+    # 显示"阅读原始文档"链接
+    linkToMarkdown = true
+    rssFullText = false
+    [params.page.toc]
+      enable = true
+      keepStatic = false
+      auto = true
+    [params.page.code]
+      copy = true
+      maxShownLines = 10
+    # KaTeX 数学公式
+    [params.page.math]
+      enable = true
+      blockLeftDelimiter = ""
+      blockRightDelimiter = ""
+      inlineLeftDelimiter = ""
+      inlineRightDelimiter = ""
+      copyTex = true
+      mhchem = true
+    [params.page.mapbox]
+      accessToken = ""
+      lightStyle = "mapbox://styles/mapbox/light-v10?optimize=true"
+      darkStyle = "mapbox://styles/mapbox/dark-v10?optimize=true"
+      navigation = true
+      geolocate = true
+      scale = true
+      fullscreen = true
+    # 文章分享按钮
+    [params.page.share]
+      enable = true
+      Twitter = true
+      Facebook = true
+      Linkedin = false
+      Whatsapp = true
+      Pinterest = false
+      Tumblr = false
+      HackerNews = false
+      Reddit = false
+      VK = false
+      Buffer = false
+      Xing = false
+      Line = true
+      Instapaper = false
+      Pocket = false
+      Digg = false
+      Stumbleupon = false
+      Flipboard = false
+      Weibo = true
+      Renren = false
+      Myspace = true
+      Blogger = true
+      Baidu = false
+      Odnoklassniki = false
+      Evernote = true
+      Skype = false
+      Trello = false
+      Mix = false
+    # 评论系统: Valine(LeanCloud)
+    [params.page.comment]
+      enable = true
+      [params.page.comment.disqus]
+        enable = false
+        shortname = ""
+      [params.page.comment.gitalk]
+        enable = false
+        owner = ""
+        repo = ""
+        clientId = ""
+        clientSecret = ""
+      [params.page.comment.valine]
+        enable = true
+        appId = "c4VA4R1Xg3drBKSQzNfWnWlF-gzGzoHsz"
+        appKey = "upEyt7esgWCbm0L7EPDH6bhV"
+        placeholder = "说点什么吧..."
+        avatar = "mp"
+        meta = ""
+        pageSize = 10
+        lang = ""
+        visitor = true
+        recordIP = true
+        highlight = true
+        enableQQ = false
+        serverURLs = ""
+        emoji = "google.yml"
+      [params.page.comment.facebook]
+        enable = false
+        width = "100%"
+        numPosts = 10
+        appId = ""
+        languageCode = ""
+      [params.page.comment.telegram]
+        enable = false
+        siteID = ""
+        limit = 5
+        height = ""
+        color = ""
+        colorful = true
+        dislikes = false
+        outlined = false
+      [params.page.comment.commento]
+        enable = false
+      [params.page.comment.utterances]
+        enable = false
+        repo = ""
+        issueTerm = "pathname"
+        label = ""
+        lightTheme = "github-light"
+        darkTheme = "github-dark"
+    [params.page.library]
+      [params.page.library.css]
+      [params.page.library.js]
+    [params.page.seo]
+      images = []
+      [params.page.seo.publisher]
+        name = ""
+        logoUrl = ""
+
+  # TypeIt 打字机动画
+  [params.typeit]
+    speed = 100
+    cursorSpeed = 1000
+    cursorChar = "|"
+    duration = -1
+
+  [params.verification]
+    google = ""
+    bing = ""
+    yandex = ""
+    pinterest = ""
+    baidu = ""
+
+  [params.seo]
+    # 全站默认头图(og:image)
+    image = "https://tva1.sinaimg.cn/large/00729CCqgy1gp1qfrpi14j305k05k745.jpg"
+    thumbnailUrl = ""
+
+  [params.analytics]
+    enable = false
+    [params.analytics.google]
+      id = ""
+      anonymizeIP = true
+    [params.analytics.fathom]
+      id = ""
+      server = ""
+
+  # Cookie 许可横幅(文案走 i18n)
+  [params.cookieconsent]
+    enable = true
+    [params.cookieconsent.content]
+      message = ""
+      dismiss = ""
+      link = ""
+
+  # 第三方库走本地 lib/ 目录,不启用 CDN
+  [params.cdn]
+    data = ""
+
+  [params.compatibility]
+    polyfill = false
+    objectFit = false

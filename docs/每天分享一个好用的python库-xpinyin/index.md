@@ -25,8 +25,6 @@
   pip install xpinyin==0.5.7
   ```
 
-  
-
 ### 简单使用
 
 - 默认分隔符为`-`
@@ -37,7 +35,7 @@
   >>> p.get_pinyin("上海")
   'shang-hai'
   ```
-  
+
 - 显示声调
 
   ```python
@@ -59,7 +57,7 @@
   ```python
   >>> p.get_pinyin("上海", ' ')
   'shang hai'
-  
+    
   ```
 
 - 获取首字母，并修改分隔符
@@ -74,14 +72,14 @@
   >>> p.get_initials("上海", ' ')
   'S H'
   ```
-  
+
 - 获取声母
-  
+
   ```python
   >>> p.get_initials("上海", splitter='-', with_retroflex=True)
   'SH-H'
   ```
-  
+
 - 获取多种读音的组合
 
   ```python
@@ -90,8 +88,6 @@
   >>> p.get_pinyins('模样', splitter=' ', tone_marks='marks')
   ['mó yáng', 'mó yàng', 'mó xiàng', 'mú yáng', 'mú yàng', 'mú xiàng']
   ```
-
-  
 
 ### 作用
 
@@ -102,5 +98,4 @@
 这个库是在大力宣传汉语呀，给想学习汉语的人一个学习的机会吧，要大力支持！
 
 [官方文档地址](https://pypi.org/project/xpinyin/)
-
 

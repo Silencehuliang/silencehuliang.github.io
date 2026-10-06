@@ -9,8 +9,6 @@
 
 **Redis**是一个使用ANSI C编写的开源、支持网络、基于内存、分布式、可选持久性的键值对存储数据库。根据月度排行网站DB-Engines.com的数据，Redis是最流行的键值对存储数据库。
 
-
-
 ## 安装
 
 ### 下载
@@ -125,14 +123,14 @@ redis-5.0.3配置https://blog.csdn.net/suprezheng/article/details/90679790
 
 - 运⾏测试命令：`ping`
 
-  ```redis
+  ```fallback
   127.0.0.1:6379> ping
   PONG
   ```
-  
+
 - 切换数据库，数据库没有名称，默认有16个，通过0-15来标识，连接redis默认选择第一个数据库
 
-  ```redis
+  ```fallback
   > select 2
   OK
   127.0.0.1:6379[2]> 
@@ -143,9 +141,7 @@ redis-5.0.3配置https://blog.csdn.net/suprezheng/article/details/90679790
 redis是key-value的数据结构，每条数据都是⼀个键值对，键的类型是字符串
 
 {{< admonition warning "注意" true >}}
-
 键不能重复
-
 {{< /admonition >}}
 
 值的类型分为五种：
@@ -153,12 +149,10 @@ redis是key-value的数据结构，每条数据都是⼀个键值对，键的类
 - 字符串`string`：字符串类型是`Redis`中最为基础的数据存储类型，一个 key 对应一个 value。
 
   {{< admonition info "提示" true >}}
-
   `string`类型在`Redis`中是二进制安全的。这便意味着该类型可以接受任何格式的数据，比如JPEG图像数据或JSON对象描述信息等。在`Redis`中字符串类型的Value最多可以容纳的数据长度是512M。
-
   {{< /admonition >}}
 
-- 哈希`hash`：是一个键值(key=>value)对集合。特别适合用于存储对象。
+- 哈希`hash`：是一个键值(key=\>value)对集合。特别适合用于存储对象。
 
 - 列表`list`：简单的字符串列表，按照插入顺序排序。可以添加一个元素到列表的头部(左边)或者尾部(右边)。
 
@@ -174,27 +168,28 @@ redis是key-value的数据结构，每条数据都是⼀个键值对，键的类
 
 - 设置键值：`set key value`，例：
 
-  ```redis
+  ```fallback
   127.0.0.1:6379[2]> set name xiaoliang
   OK
   ```
 
 - 设置键值及过期时间，单位为秒：`setex key seconds value`，例：
 
-  ```redis
+  ```fallback
   127.0.0.1:6379[2]> setex name 3 xiaoliang 
   OK
   ```
 
 - 设置多个键值：`mset key1 value1 key2 value2 ...`，例：
-	```redis
-	127.0.0.1:6379[2]> mset name xiaoliang age 18
+
+  ```fallback
+  127.0.0.1:6379[2]> mset name xiaoliang age 18
   OK
   ```
 
 - 追加值：`append key value`，例：
 
-	```redis
+  ```fallback
   127.0.0.1:6379[2]> set name xiaoliang
   OK
   127.0.0.1:6379[2]> append name liang
@@ -207,31 +202,31 @@ redis是key-value的数据结构，每条数据都是⼀个键值对，键的类
 
 - 根据键获取值，如果不存在此键则返回nil：`get key`，例：
 
-  ```redis
+  ```fallback
   127.0.0.1:6379[2]> get name
   "xiaoliang"
   ```
 
 - 根据多个键获取多个值：`mget key1 key2 ...`，例：
 
-  ```
+  ```fallback
   127.0.0.1:6379[2]> mget name age
   1) "xiaoliang"
   2) "18"
   ```
 
-- 查看所有键：keys *
+- 查看所有键：keys \*
 
 - 查找键，参数⽀持正则表达式：`keys pattern`，例：
 
-  ```redis
+  ```fallback
   127.0.0.1:6379[2]> keys n*
   1) "name"
   ```
 
 - 判断键是否存在，如果存在返回1，不存在返回0：`exists key`，例：
 
-  ```redis
+  ```fallback
   127.0.0.1:6379[2]> exists name
   (integer) 1
   127.0.0.1:6379[2]> exists namee
@@ -240,7 +235,7 @@ redis是key-value的数据结构，每条数据都是⼀个键值对，键的类
 
 - 查看键对应的value的类型：`type key`，例：
 
-  ```redis
+  ```fallback
   127.0.0.1:6379[2]> type name
   string
   ```
@@ -249,22 +244,23 @@ redis是key-value的数据结构，每条数据都是⼀个键值对，键的类
 
 - 删除键及对应的值：`del key1 key2 ...`，例：
 
-  ```redis
+  ```fallback
   del name age
   (integer) 2
   ```
-> mget name age
-  1) (nil)
-  2) (nil)
-  
-  ```
-  
-  ```
 
+> mget name age
+
+1.  (nil)
+2.  (nil)
+
+```fallback
+
+```
 
 - 设置过期时间，以秒为单位：`expire key seconds`，例
 
-  ```redis
+  ```fallback
   127.0.0.1:6379[2]> expire name 10
   (integer) 1
   127.0.0.1:6379[2]> ttl name
@@ -272,9 +268,7 @@ redis是key-value的数据结构，每条数据都是⼀个键值对，键的类
   ```
 
   {{< admonition warning "注意" true >}}
-
   如果没有指定过期时间则⼀直存在，直到使⽤DEL移除
-
   {{< /admonition >}}
 
 ### hash
@@ -283,13 +277,12 @@ redis是key-value的数据结构，每条数据都是⼀个键值对，键的类
 
 - 设置单个属性：`hset key field value`，例：
 
-  ```redis
+  ```fallback
   127.0.0.1:6379[2]> hset user name xiaoliang 
   (integer) 1
   ```
 
   {{< admonition info "提示" true >}}
-
   可能会出现错误：MISCONF Redis is configured to save RDB snapshots, but is currently not able to persist on disk. Commands that may modify the data set are disabled. Please check Redis logs for details about the error.
 
   Redis被配置为保存数据库快照，但它目前不能持久化到硬盘。用来修改集合数据的命令不能用
@@ -297,12 +290,11 @@ redis是key-value的数据结构，每条数据都是⼀个键值对，键的类
   原因：强制关闭Redis快照导致不能持久化。
 
   解决方案：运行config set stop-writes-on-bgsave-error no　命令后，关闭配置项stop-writes-on-bgsave-error解决该问题。
-
   {{< /admonition >}}
 
 - 设置多个属性：`hmset key field1 value1 field2 value2 ...`，例：
 
-  ```redis
+  ```fallback
   127.0.0.1:6379[2]> hset user name xiaoliang age 18
   (integer) 1
   ```
@@ -311,7 +303,7 @@ redis是key-value的数据结构，每条数据都是⼀个键值对，键的类
 
 - 获取指定键所有的属性：`hkeys key`，例：
 
-  ```redis
+  ```fallback
   127.0.0.1:6379[2]> hkeys user
   1) "name"
   2) "age"
@@ -319,14 +311,14 @@ redis是key-value的数据结构，每条数据都是⼀个键值对，键的类
 
 - 获取⼀个属性的值：`hget key field`，例：
 
-  ```redis
+  ```fallback
   127.0.0.1:6379[2]> hget user name
   "xiaoliang"
   ```
 
 - 获取多个属性的值：`hmget key field1 field2 ...`，例：
 
-  ```redis
+  ```fallback
   127.0.0.1:6379[2]> hmget user name age
   1) "xiaoliang"
   2) "18"
@@ -334,7 +326,7 @@ redis是key-value的数据结构，每条数据都是⼀个键值对，键的类
 
 - 获取所有属性的值：`hvals key`，例：
 
-  ```redis
+  ```fallback
   127.0.0.1:6379[2]> hvals user
   1) "xiaoliang"
   2) "18"
@@ -346,14 +338,12 @@ redis是key-value的数据结构，每条数据都是⼀个键值对，键的类
 
 - 删除属性，属性对应的值会被⼀起删除：`hdel key field1 field2 ...`，例子：
 
-  ```redis
+  ```fallback
   127.0.0.1:6379[2]> hdel user age
   (integer) 1
   127.0.0.1:6379[2]> hkeys user
   1) "name"
   ```
-
-  
 
 ### list
 
@@ -361,7 +351,7 @@ redis是key-value的数据结构，每条数据都是⼀个键值对，键的类
 
 - 在左侧插⼊数据：`lpush key value1 value2 ...`，例：
 
-  ```redis
+  ```fallback
   127.0.0.1:6379[2]> lpush name si liang
   (integer) 2
   127.0.0.1:6379[2]> lrange name 0 2
@@ -371,7 +361,7 @@ redis是key-value的数据结构，每条数据都是⼀个键值对，键的类
 
 - 在右侧插⼊数据：`rpush key value1 value2 ...`，例：
 
-  ```redis
+  ```fallback
   127.0.0.1:6379[2]> rpush name liang si 
   (integer) 4
   127.0.0.1:6379[2]> lrange name 0 4
@@ -383,7 +373,7 @@ redis是key-value的数据结构，每条数据都是⼀个键值对，键的类
 
 - 在指定元素的前或后插⼊新元素：`linsert key before或after 现有元素 新元素`，例：
 
-  ```redis
+  ```fallback
   127.0.0.1:6379[2]> linsert name before si yao
   (integer) 5
   127.0.0.1:6379[2]> lrange name 0 6
@@ -399,12 +389,10 @@ redis是key-value的数据结构，每条数据都是⼀个键值对，键的类
 - 返回列表⾥指定范围内的元素：`lrange key start stop`()，例：
 
   {{< admonition info "提示" true >}}
-
   start、stop为元素的下标索引，索引从左侧开始，第⼀个元素为0，索引可以是负数，表示从尾部开始计数，如-1表示最后⼀个元素
-
   {{< /admonition >}}
 
-  ```redis
+  ```fallback
   # 获取name列表所有元素
   127.0.0.1:6379[2]> lrange name 0 -1
   1) "liang"
@@ -417,12 +405,10 @@ redis是key-value的数据结构，每条数据都是⼀个键值对，键的类
 - 设置指定索引位置的元素值：`lset key index value`，例：
 
   {{< admonition info "提示" true >}}
-
   索引从左侧开始，第⼀个元素为0。索引可以是负数，表示尾部开始计数，如-1表示最后⼀个元素
-
   {{< /admonition >}}
 
-  ```redis
+  ```fallback
   127.0.0.1:6379[2]> lset name 4 si
   OK
   127.0.0.1:6379[2]> lrange name 0 -1
@@ -438,12 +424,10 @@ redis是key-value的数据结构，每条数据都是⼀个键值对，键的类
   - 删除指定元素：`lrem key count value`，例：
 
     {{< admonition info "提示" true >}}
-
     将列表中前count次出现的值为value的元素移除，count > 0: 从头往尾移除，count < 0: 从尾往头移除，count = 0: 移除所有
-
     {{< /admonition >}}
 
-    ```redis
+    ```fallback
     127.0.0.1:6379[2]> lrem name 0 liang
     (integer) 2
     127.0.0.1:6379[2]> lrange name 0 -1 
@@ -458,7 +442,7 @@ redis是key-value的数据结构，每条数据都是⼀个键值对，键的类
 
     - 添加元素：`sadd key member1 member2 ...`，例：
 
-      ```rediss
+      ```fallback
       127.0.0.1:6379[2]> sadd name liang si
       (integer) 2
       ```
@@ -467,7 +451,7 @@ redis是key-value的数据结构，每条数据都是⼀个键值对，键的类
 
     - 返回所有的元素：`smembers key`，例：
 
-      ```redis
+      ```fallback
       127.0.0.1:6379[2]> smembers name
       1) "si"
       2) "liang"
@@ -477,7 +461,7 @@ redis是key-value的数据结构，每条数据都是⼀个键值对，键的类
 
     - 删除指定元素：`srem key`，例：
 
-      ```redis
+      ```fallback
       127.0.0.1:6379[2]> srem name liang 
       (integer) 1
       127.0.0.1:6379[2]> smembers name
@@ -490,7 +474,7 @@ redis是key-value的数据结构，每条数据都是⼀个键值对，键的类
 
     - 添加：`zadd key score1 member1 score2 member2 ...`，例：
 
-      ```redis
+      ```fallback
       127.0.0.1:6379[2]> zadd name 2 liang 1 si 
       (integer) 2
       ```
@@ -500,12 +484,10 @@ redis是key-value的数据结构，每条数据都是⼀个键值对，键的类
     - 返回指定范围内的元素：`zrange key start stop`，例：
 
       {{< admonition info "提示" true >}}
-
       start、stop为元素的下标索引，索引从左侧开始，第⼀个元素为0，索引可以是负数，表示从尾部开始计数，如-1表示最后⼀个元素
-
       {{< /admonition >}}
 
-      ```redis
+      ```fallback
       127.0.0.1:6379[2]> zrange name 0 -1
       1) "si"
       2) "liang"
@@ -513,7 +495,7 @@ redis是key-value的数据结构，每条数据都是⼀个键值对，键的类
 
     - 返回score值在min和max之间的成员：`zrangebyscore key min max`，例：
 
-      ```redis
+      ```fallback
       127.0.0.1:6379[2]> zrangebyscore name 1 2
       1) "si"
       2) "liang"
@@ -521,7 +503,7 @@ redis是key-value的数据结构，每条数据都是⼀个键值对，键的类
 
     - 返回成员member的score值：`zscore key member`，例：
 
-      ```redis
+      ```fallback
       127.0.0.1:6379[2]> zscore name liang
       "2"
       ```
@@ -530,7 +512,7 @@ redis是key-value的数据结构，每条数据都是⼀个键值对，键的类
 
     - 删除指定元素：`zrem key member1 member2 ...`，例：
 
-      ```redis
+      ```fallback
       127.0.0.1:6379[2]> zrem name liang
       (integer) 1
       127.0.0.1:6379[2]> zrange name 0 -1
@@ -539,11 +521,10 @@ redis是key-value的数据结构，每条数据都是⼀个键值对，键的类
 
     - 删除权重在指定范围的元素：`zremrangebyscore key min max`，例：
 
-      ```redis
+      ```fallback
       127.0.0.1:6379[2]> zremrangebyscore name 0 2
       (integer) 1
       127.0.0.1:6379[2]> zrange name 0 -4
       (empty array)
       ```
 
-      

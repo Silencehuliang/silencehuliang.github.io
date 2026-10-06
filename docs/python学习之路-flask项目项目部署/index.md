@@ -19,7 +19,7 @@
 
 - 利用命令行进行远程服务器登录
 
-  ```
+  ```fallback
   ssh 用户名@ip地址
   ```
 
@@ -123,13 +123,13 @@ Python 项目中可以包含一个 requirements.txt 文件，用于记录所有�
           # 监听80端口
           listen 80 default_server;
           listen [::]:80 default_server;
-  
+    
           root /var/www/html;
-  
+    
           index index.html index.htm index.nginx-debian.html;
-  
+    
           server_name _;
-  
+    
           location / {
                   # 请求转发到gunicorn服务器
                   proxy_pass http://127.0.0.1:5000;
@@ -180,5 +180,4 @@ Python 项目中可以包含一个 requirements.txt 文件，用于记录所有�
   ```bash
   scp -r 本地文件路径 root@39.106.21.198:远程保存路径
   ```
-
 

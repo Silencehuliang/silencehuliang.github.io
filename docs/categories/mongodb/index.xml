@@ -1,10 +1,9 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>MongoDB - 分类 - Silence Blog</title>
+        <title>mongodb - 分类 - Silence Blog</title>
         <link>https://silencehuliang.github.io/categories/mongodb/</link>
-        <description>MongoDB - 分类 - Silence Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>silencehuliang@gmail.com (Silence)</managingEditor>
-            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 17 Jul 2021 13:28:14 &#43;0800</lastBuildDate><atom:link href="https://silencehuliang.github.io/categories/mongodb/" rel="self" type="application/rss+xml" /><item>
+        <description>mongodb - 分类 - Silence Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 17 Jul 2021 13:28:14 &#43;0800</lastBuildDate><atom:link href="https://silencehuliang.github.io/categories/mongodb/" rel="self" type="application/rss+xml" /><item>
     <title>Python学习之路-MongoDB进阶</title>
     <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-mongodb%E8%BF%9B%E9%98%B6/</link>
     <pubDate>Sat, 17 Jul 2021 13:28:14 &#43;0800</pubDate>

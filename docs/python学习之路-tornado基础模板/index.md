@@ -20,7 +20,7 @@ app = tornado.web.Application(
 
 对于静态文件目录的命名，为了便于部署，建议使用static
 
-对于我们提供的静态文件资源，可以通过`http://127.0.0.1/static/html/index.html`来访问。而且在index.html中引用的静态资源文件，我们给定的路径也符合/static/...的格式，故页面可以正常浏览。
+对于我们提供的静态文件资源，可以通过`http://127.0.0.1/static/html/index.html`来访问。而且在index.html中引用的静态资源文件，我们给定的路径也符合/static/…的格式，故页面可以正常浏览。
 
 ```html
 <link href="/static/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -58,9 +58,9 @@ app = tornado.web.Application(
 
 现在，对于静态文件statics/html/index.html，可以通过三种方式进行访问：
 
-1. http://127.0.0.1/static/html/index.html
-2. http://127.0.0.1/
-3. http://127.0.0.1/view/index.html
+1.  http://127.0.0.1/static/html/index.html
+2.  http://127.0.0.1/
+3.  http://127.0.0.1/view/index.html
 
 ## 使用模板
 
@@ -114,8 +114,6 @@ class IndexHandler(RequestHandler):
     def get(self):
         self.render("index.html") # 渲染主页模板，并返回给客户端。
 
-
-
 current_path = os.path.dirname(__file__)
 app = tornado.web.Application(
     [
@@ -131,7 +129,7 @@ app = tornado.web.Application(
 
 #### 变量与表达式
 
-在tornado的模板中使用    作为变量或表达式的占位符，使用render渲染后占位符    会被替换为相应的结果值。
+在tornado的模板中使用 作为变量或表达式的占位符，使用render渲染后占位符 会被替换为相应的结果值。
 
 我们将index.html中的一条房源信息记录
 
@@ -180,7 +178,7 @@ class IndexHandler(RequestHandler):
         self.render("index.html", **house_info)
 ```
 
-​    不仅可以包含变量，还可以是表达式，如：
+​不仅可以包含变量，还可以是表达式，如：
 
 ```html
 <li class="house-item">
@@ -209,7 +207,7 @@ class IndexHandler(RequestHandler):
 
 #### 控制语句
 
-可以在Tornado模板中使用Python条件和循环语句。控制语句以{\%和\    包围，并以类似下面的形式被使用：
+可以在Tornado模板中使用Python条件和循环语句。控制语句以{%和\\ 包围，并以类似下面的形式被使用：
 
 或
 
@@ -289,7 +287,7 @@ class NewHandler(RequestHandler):
 
 写入的js程序并没有运行，而是显示出来了：
 
-我们查看页面源代码，发现<、>、"等被转换为对应的html字符。
+我们查看页面源代码，发现\<、\>、“等被转换为对应的html字符。
 
 ```html
 &lt;script&gt;alert(&quot;hello!&quot;);&lt;/script&gt;
@@ -299,7 +297,7 @@ class NewHandler(RequestHandler):
 
 我们可以通过raw语句来输出不被转义的原始格式，如：
 
-> 注意：在Firefox浏览器中会直接弹出alert窗口，而在Chrome浏览器中，需要set_header("X-XSS-Protection", 0)
+> 注意：在Firefox浏览器中会直接弹出alert窗口，而在Chrome浏览器中，需要set_header(“X-XSS-Protection”, 0)
 
 若要关闭自动转义，一种方法是在Application构造函数中传递**autoescape=None**，另一种方法是在每页模板中修改自动转义行为，添加如下语句：
 

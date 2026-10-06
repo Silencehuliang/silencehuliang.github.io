@@ -51,7 +51,7 @@ sudo cp supervisord.conf /etc/
 
 然后我们在/etc目录下新建子目录supervisor（与配置文件里的选项相同），并在/etc/supervisor/中新建tornado管理的配置文件tornado.conf。
 
-```
+```fallback
 [group:tornadoes]
 programs=tornado-8000,tornado-8001,tornado-8002,tornado-8003
 
@@ -132,7 +132,7 @@ tornadoes:tornado-8003 RUNNING pid 32094, uptime 00:00:02
 
 对于使用ubuntu apt-get 安装nginx，其配置文件位于/etc/nginx/sites-available中，修改default文件如下：
 
-```
+```fallback
 upstream tornadoes {
     server 127.0.0.1:8000;
     server 127.0.0.1:8001;
@@ -188,3 +188,4 @@ service nginx restart # 重启
 停止：sudo sbin/nginx -s stop
 重启：sudo sbin/nginx -s reload
 ```
+

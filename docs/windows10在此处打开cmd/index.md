@@ -55,3 +55,4 @@ Windows Registry Editor Version 5.00
 - 另存为xxx.reg文件
 
 - 双击运行
+

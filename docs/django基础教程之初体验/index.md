@@ -45,22 +45,17 @@
   $ pip install -e django/
   ```
 
-
 安装好Django后可以通过一下命令查看当前Django版本
 
 ```python
 $ python -m django --version
 ```
 
-
-
 ## Django初体验
 
 ### 安装并使用virtualenv
 
-详细过程见[这个链接](http://49.235.231.121/2019/python搭建虚拟环境/)
-
-
+详细过程见[这个链接](http://49.235.231.121/2019/python%e6%90%ad%e5%bb%ba%e8%99%9a%e6%8b%9f%e7%8e%af%e5%a2%83/)
 
 ### 创建Django项目
 
@@ -85,10 +80,15 @@ mysite/
 这些目录和文件的作用：
 
 - mysite/目录：存放项目的容器，他的名字不重要可以更换为你喜欢的任何名字
+
 - manage.py：Django项目的启动文件，他可以让你通过各种方式管理Django项目。
+
 - mysite/mysite/目录：项目目录，里面存放项目相关的文件
+
 - mysite/mysite/settings.py：Django项目的配置文件
+
 - mysite/mysite/urls.py：Django项目的url声明文件,他将url对应相关的app的视图
+
 - mysite/mysite/wsgi.py：Django项目wsgi服务器的入口
 
 - 当输入以下命令，并进入浏览器输入：http://127.0.0.1:8000/看到Django启动成功
@@ -99,111 +99,105 @@ mysite/
 
   这里能启动成功是因为Django自带一个简易的服务器（用纯 Python 写的轻量级的 Web 服务器）。他能帮助我们快速开发。
 
-  
-
 ### 创建一个应用
 
-  - 将当前目录切换到manage.py所在的目录，输入下面的命令创建一个应用:
+- 将当前目录切换到manage.py所在的目录，输入下面的命令创建一个应用:
 
-    ```python
-    $ python manage.py startapp demo
-    ```
+  ```python
+  $ python manage.py startapp demo
+  ```
 
-    该应用的目录结构大致如下
+  该应用的目录结构大致如下
 
-    ```bash
-    demo/
-        __init__.py
-        admin.py
-        apps.py
-        migrations/
-            __init__.py
-        models.py
-        tests.py
-        views.py
-    ```
+  ```bash
+  demo/
+      __init__.py
+      admin.py
+      apps.py
+      migrations/
+          __init__.py
+      models.py
+      tests.py
+      views.py
+  ```
 
-    这些目录和文件的作用：
+  这些目录和文件的作用：
 
-    - admin.py：管理admin后台相关数据库模型
-    - apps.py：该应用的相关配置
-    - migrations/文件夹及其内容：数据库迁移相关的文件夹，里面存放着迁移版本，迁移信息等
-    - models.py：编写模型类的文件
-    - tests.py：用于测试的文件
-    - view.py：编写视图的文件
+  - admin.py：管理admin后台相关数据库模型
+  - apps.py：该应用的相关配置
+  - migrations/文件夹及其内容：数据库迁移相关的文件夹，里面存放着迁移版本，迁移信息等
+  - models.py：编写模型类的文件
+  - tests.py：用于测试的文件
+  - view.py：编写视图的文件
 
-    我们还要在项目配置文件中注册该app，打开settings.py文件，找到INSTALLED_APPS，在列表的最后添加demoapp
+  我们还要在项目配置文件中注册该app，打开settings.py文件，找到INSTALLED_APPS，在列表的最后添加demoapp
 
-    ```python
-    mysite/settings.py
-    INSTALLED_APPS = [
-        'django.contrib.admin',
-        'django.contrib.auth',
-        'django.contrib.contenttypes',
-        'django.contrib.sessions',
-        'django.contrib.messages',
-        'django.contrib.staticfiles',
-        # 注册demo
-        'demo.apps.DemoConfig'
-    ]
-    
-    ```
-
-
+  ```python
+  mysite/settings.py
+  INSTALLED_APPS = [
+      'django.contrib.admin',
+      'django.contrib.auth',
+      'django.contrib.contenttypes',
+      'django.contrib.sessions',
+      'django.contrib.messages',
+      'django.contrib.staticfiles',
+      # 注册demo
+      'demo.apps.DemoConfig'
+  ]
+      
+  ```
 
 ### 编写第一个视图
 
 视图在应用的views.py中编写
 
-  ```python
-  demo/views.py
-  
-  from django.http import HttpResponse
-  
-  def index(request):
-  	return HttpResponse("Hello, world!")
-  ```
+```python
+demo/views.py
 
-  为了能看到效果我们还需要配置一下url，在demo目录下创建一个urls.py，并输入一下代码
+from django.http import HttpResponse
 
-  ```python
-  /demo/urls.py
-  
-  from django.urls import path
-  from . import views
-  
-  urlpatterns = [
-  	path("",views.index,name='index'),
-  ]
-  ```
+def index(request):
+  return HttpResponse("Hello, world!")
+```
 
-  更改项目url，通过修改项目urls.py文件修改路由
+为了能看到效果我们还需要配置一下url，在demo目录下创建一个urls.py，并输入一下代码
 
-  ```python
-  /mysite/urls.py
-  
-  from django.contrib import admin
-  from django.urls import include, path
-  
-  urlpatterns = [
-      path('demo/', include('demo.urls')),
-      path('admin/', admin.site.urls),
-  ]
-  ```
+```python
+/demo/urls.py
 
-  这里include是将demo/的路由转发到demo应用的urls.py里。每当 Django 遇到 include时，它会截断与此项匹配的 URL 的部分，并将剩余的字符串发送到 对应urls.py以供进一步处理。
+from django.urls import path
+from . import views
 
-  path有五个参数：route、view、kwargs、name、Pattern，其中route、view是必须传入的参数
+urlpatterns = [
+  path("",views.index,name='index'),
+]
+```
 
-  - route：匹配url的准则（类似于正则表达式）。当Django响应一个请求时，他会从urlpatterns的第一项开始，按顺序依次匹配，知道找到匹配的项
-  - view：目标视图函数。当route找到匹配的项后，会调用当前的视图函数，并传入一个HttpRequest对象作为第一个参数，route中的参数一关键字参数的形式传入
-  - kwargs：关键字参数。任意个关键字参数可以作为一个字典传递给目标视图函数。
-  - name：为url取的名字。他可以使Django在任意地方引用他
-  - Pattern：匹配模式
+更改项目url，通过修改项目urls.py文件修改路由
+
+```python
+/mysite/urls.py
+
+from django.contrib import admin
+from django.urls import include, path
+
+urlpatterns = [
+    path('demo/', include('demo.urls')),
+    path('admin/', admin.site.urls),
+]
+```
+
+这里include是将demo/的路由转发到demo应用的urls.py里。每当 Django 遇到 include时，它会截断与此项匹配的 URL 的部分，并将剩余的字符串发送到 对应urls.py以供进一步处理。
+
+path有五个参数：route、view、kwargs、name、Pattern，其中route、view是必须传入的参数
+
+- route：匹配url的准则（类似于正则表达式）。当Django响应一个请求时，他会从urlpatterns的第一项开始，按顺序依次匹配，知道找到匹配的项
+- view：目标视图函数。当route找到匹配的项后，会调用当前的视图函数，并传入一个HttpRequest对象作为第一个参数，route中的参数一关键字参数的形式传入
+- kwargs：关键字参数。任意个关键字参数可以作为一个字典传递给目标视图函数。
+- name：为url取的名字。他可以使Django在任意地方引用他
+- Pattern：匹配模式
 
 现在可以启动Django程序来看是否正常工作
-
-
 
 ### 数据库
 
@@ -240,8 +234,6 @@ DATABASES = {
 }
 ```
 
-
-
 #### 数据库迁移
 
 因为Django自带应用已经为我们编写了一些数据模型，即时我们不编写任何模型也可以直接使用数据库迁移命令进行迁移
@@ -265,7 +257,6 @@ Password (again):
 这个密码太常见了。
 Bypass password validation and create user anyway? [y/N]: y
 Superuser created successfully.
-
 ```
 
 接下来启动项目，并在浏览器中输入http://127.0.0.1:8000/admin，进入后台管理界面
@@ -283,8 +274,6 @@ Superuser created successfully.
 - 运行 python manage.py makemigrations为模型的改变生成迁移文件。
 
 - 运行 python manage.py migrate 来应用数据库迁移。
-
-  
 
 #### 创建一个图书模型
 
@@ -369,7 +358,7 @@ $ python manage.py shell
 <QuerySet [<Books: Books object (1)>]>
 ```
 
-这里我们看到<QuerySet [<Books: Books object (1)>]>这个并不能让我们知道这个对象的细节，通过修改Books模型来修复这个问题
+这里我们看到\<QuerySet \[\<Books: Books object (1)\>\]\>这个并不能让我们知道这个对象的细节，通过修改Books模型来修复这个问题
 
 ```python
 /demo/models.py
@@ -382,7 +371,6 @@ class Books(models.Model):
     
 	def __str__(self):
         return self.book_name
-
 ```
 
 修改完成后重新进入交互终端，再次查询就可以显示书名了，这里可以自己定义想显示的字段或内容
@@ -425,7 +413,7 @@ admin.site.register(Books)
 
 点进去可以查看该模型的数据，右上角可以添加，动作可以删除，点图书名可以看到更多细节
 
-![后台管理图书](https://tvax3.sinaimg.cn/large/006lmzsGgy1gav1rig51bj31hb0s83zk.jpg)
+![](https://tvax3.sinaimg.cn/large/006lmzsGgy1gav1rig51bj31hb0s83zk.jpg)
 
 ### 视图与模板
 
@@ -435,7 +423,6 @@ admin.site.register(Books)
 /demo/models.py
 
 from django.db import models
-
 
 class Books(models.Model):
     # 书名
@@ -464,7 +451,6 @@ class Books(models.Model):
 
 from django.http import HttpResponse
 from .models import Books
-
 
 def book_list(request):
     book_list = Books.objects.all()
@@ -522,9 +508,7 @@ from . import views
 urlpatterns = [
     path('', views.book_list, name='index'),
 ]
-
 ```
-
 
 启动项目，访问：http://127.0.0.1:8000/book/
 
@@ -622,9 +606,4 @@ def detail(request, id):
 ```
 
 这里调用的是Django自带的404错误页面，我们需要返回错误说明
-
-
-
-
-
 

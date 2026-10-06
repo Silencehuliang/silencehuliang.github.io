@@ -57,7 +57,7 @@ bilibili的最新的验证码属于第三种，在点击登陆按钮就会出现
 
 ![](https://tvax3.sinaimg.cn/large/00729CCqgy1gp5of2c2b0j307m09oq67.jpg)
 
-​																					bilibili验证码
+​bilibili验证码
 
 ## 编写代码
 
@@ -72,7 +72,6 @@ import requests
 from selenium import webdriver
 from selenium.webdriver import ActionChains
 from selenium.webdriver.chrome.options import Options
-
 
 class Bilibili(object):
     def __init__(self):
@@ -133,9 +132,5 @@ class Bilibili(object):
         else:
             print(result["message"])
             return ""
-
 ```
-
-
-
 

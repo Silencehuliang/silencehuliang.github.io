@@ -88,35 +88,35 @@ Chromedriver 也是一个能够被selenium驱动的浏览器，但是和PhantomJ
 
   ```python
     from selenium import webdriver
-  
+    
     driver =webdriver.Chrome()
-  
+    
     driver.get("https://www.douban.com/")
-  
+    
     ret1 = driver.find_element_by_id("anony-nav")
     print(ret1)
     # 输出为：<selenium.webdriver.remote.webelement.WebElement (session="ea6f94544ac3a56585b2638d352e97f3", element="0.5335773935305805-1")>
-  
+    
     ret2 = driver.find_elements_by_id("anony-nav")
     print(ret2)
     #输出为：[<selenium.webdriver.remote.webelement.WebElement (session="ea6f94544ac3a56585b2638d352e97f3", element="0.5335773935305805-1")>]
-  
+    
     ret3 = driver.find_elements_by_xpath("//*[@id='anony-nav']/h1/a")
     print(len(ret3))
      #输出为：1
-  
+    
     ret4 = driver.find_elements_by_tag_name("h1")
     print(len(ret4))
      #输出为：1
-  
+    
     ret5 = driver.find_elements_by_link_text("下载豆瓣 App")
     print(len(ret5))
      #输出为：1
-  
+    
     ret6 = driver.find_elements_by_partial_link_text("豆瓣")
     print(len(ret6))
      #输出为：28
-  
+    
     driver.close()
   ```
 
@@ -130,19 +130,19 @@ Chromedriver 也是一个能够被selenium驱动的浏览器，但是和PhantomJ
 
   ```python
   from selenium import webdriver
-  
+    
   driver =webdriver.Chrome()
-  
+    
   driver.get("https://www.douban.com/")
-  
+    
   ret4 = driver.find_elements_by_tag_name("h1")
   print(ret4[0].text)
   #输出：豆瓣
-  
+    
   ret5 = driver.find_elements_by_link_text("下载豆瓣 App")
   print(ret5[0].get_attribute("href"))
   #输出：https://www.douban.com/doubanapp/app?channel=nimingye
-  
+    
   driver.close()
   ```
 
@@ -180,3 +180,4 @@ frame是html中常用的一种技术，即一个页面中嵌套了另一个网�
 
 - selenium能够执行页面上的js，对于js渲染的数据和模拟登陆处理起来非常容易
 - selenium由于在获取页面的过程中会发送很多请求，所以效率非常低，所以在很多时候需要酌情使用
+

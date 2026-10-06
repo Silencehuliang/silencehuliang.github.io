@@ -5,9 +5,9 @@
 
 作用：发送网络请求，返回响应数据
 
-中文文档 ： http://docs.python-requests.org/zh_CN/latest/index.html
+中文文档 ： <http://docs.python-requests.org/zh_CN/latest/index.html>
 
-## 为什么学requests而不是urllib
+## 为什么学requests而不是urllib
 
 - requests的底层实现就是urllib
 - requests在python2 和python3中通用，方法完全一样
@@ -27,9 +27,9 @@
 
 获取网页源码的通用方式：
 
-1. `response.content.decode()`
-2. `response.content.decode("GBK")`
-3. `response.text`
+1.  `response.content.decode()`
+2.  `response.content.decode("GBK")`
+3.  `response.text`
 
 以上三种方法从前往后尝试，能够100%的解决所有网页解码的问题
 
@@ -49,13 +49,13 @@
 
 ### header的形式
 
-```
+```fallback
 headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36"}
 ```
 
 ### 用法
 
-```
+```fallback
 requests.get(url,headers=headers)
 ```
 
@@ -63,19 +63,19 @@ requests.get(url,headers=headers)
 
 ### 什么叫做请求参数
 
-错误的列1： http://www.webkaka.com/tutorial/server/2015/021013/
+错误的列1： <http://www.webkaka.com/tutorial/server/2015/021013/>
 
 正确的例2：https://www.baidu.com/s?wd=python&c=b
 
 ### 参数的形式
 
-```
+```fallback
 kw = {'wd':'长城'}
 ```
 
 ### 用法
 
-```
+```fallback
 requests.get(url,params=kw)
 ```
 
@@ -210,7 +210,9 @@ proxies = {
 ### requests处理cookie相关的请求之session
 
 - requests 提供了一个叫做session类，来实现客户端和服务端的`会话保持`
+
 - 会话保持有两个内涵：
+
   - 保存cookie
   - 实现和服务端的长连接
 
@@ -306,7 +308,7 @@ response = requests.get(url)
 
 返回
 
-```
+```fallback
 ssl.CertificateError ...
 ```
 
@@ -327,7 +329,7 @@ response = requests.get(url,verify=False)
 
 使用方法如下：
 
-```
+```fallback
 response = requests.get(url,timeout=3)
 ```
 
@@ -358,13 +360,11 @@ from retrying import retry
 
 headers = {}
 
-
 @retry(stop_max_attempt_number=3) #最大重试3次，3次全部报错，才会报错
 def _parse_url(url)
     response = requests.get(url, headers=headers, timeout=3) #超时的时候回报错并重试
     assert response.status_code == 200 #状态码不是200，也会报错并充实
     return response
-
 
 def parse_url(url)
     try: #进行异常捕获
@@ -402,3 +402,4 @@ def parse_url(url)
 但是很多时候我们并不能保证我们需要的请求是什么类型，特别是我们不清楚一个请求是否为ajax请求的时候，直接选择`all`,从前往后观察即可，其中js，css，图片等不去观察即可
 
 不要被浏览器中的一堆请求吓到了，这些请求中除了js，css，图片的请求外，其他的请求并没有多少个
+

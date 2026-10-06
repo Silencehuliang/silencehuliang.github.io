@@ -35,7 +35,7 @@
 
 - 修改redis/slave.conf文件
 
-  ```
+  ```fallback
   sudo vi slave.conf
   ```
 
@@ -59,15 +59,13 @@
   redis-cli -h 192.168.26.128 info Replication
   ```
 
-  
-
 ### 数据操作
 
-  - 在master和slave分别执⾏info命令，查看输出信息 进入主客户端
+- 在master和slave分别执⾏info命令，查看输出信息 进入主客户端
 
-    ```bash
-    redis-cli -h 192.168.1.1 -p 6379
-    ```
+  ```bash
+  redis-cli -h 192.168.1.1 -p 6379
+  ```
 
 - 进入从的客户端
 
@@ -237,7 +235,7 @@ sudo apt-get install ruby
 
 当前搭建的主服务器为7000、7001、7003，对应的从服务器是7004、7005、7002，在192.168.1.2机器上连接7002，加参数-c表示连接到集群
 
-```
+```fallback
 redis-cli -h 172.16.179.131 -c -p 7002
 ```
 
@@ -277,3 +275,4 @@ if __name__ == '__main__':
   except Exception as e:
     print(e)
 ```
+

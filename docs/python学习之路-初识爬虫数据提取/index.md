@@ -51,11 +51,16 @@ JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式，它�
 - 在preview中观察
 
 - 其中：
+
   - 红色方框部分表示json中的键
   - 蓝色方框部分由于是个列表，展开后，下面的数字表示列表中对应位置的值
+
 - 在线解析工具进行解析
+
   - 比如：https://www.bejson.com/
+
 - pycharm进行reformat code
+
   - 在pycharm中新建一个json文件，把数据存入后，点击code下面的reformat code，但是中文往往显示的是unicode格式
 
 ### json数据的其他来源
@@ -76,10 +81,8 @@ JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式，它�
 #ensure_ascii=False实现让中文写入的时候保持为中文
 json_str = json.dumps(mydict,indent=2,ensure_ascii=False)
 
-
 #json.loads 实现json字符串转化为python类型
 my_dict = json.loads(json_str)
-
 
 #json.dump 实现把python类型写入类文件对象
 with open("temp.txt","w") as f:
@@ -159,10 +162,10 @@ print(ret)
   ```python
     In [19]: len("\n")
     Out[19]: 1
-  
+    
     In [20]: len(r"\n")
     Out[20]: 2
-  
+    
     In [21]: r"\n"[0]
     Out[21]: '\\'
   ```
@@ -172,19 +175,19 @@ print(ret)
   ```python
     In [13]: r"a\nb" == "a\\nb"
     Out[13]: True
-  
+    
     In [14]: re.findall("a\nb","a\nb")
     Out[14]: ['a\nb']
-  
+    
     In [15]: re.findall(r"a\nb","a\nb")
     Out[15]: ['a\nb']
-  
+    
     In [16]: re.findall("a\\nb","a\nb")
     Out[16]: ['a\nb']
-  
+    
     In [17]: re.findall("a\\nb","a\\nb")
     Out[17]: []
-  
+    
     In [18]: re.findall(r"a\\nb","a\\nb")
     Out[18]: ['a\\nb']
   ```
@@ -216,7 +219,7 @@ XPath (XML Path Language) 是一门在 HTML\XML 文档中查找信息的**语言
 ### html和xml的区别
 
 | 数据格式 |      描述      |                   设计目标                   |
-| :------: | :------------: | :------------------------------------------: |
+|:--------:|:--------------:|:--------------------------------------------:|
 |   XML    | 可拓展标记语言 | 被设计为传输与存储数据，其聚焦点是数据的内容 |
 |   HTML   | 超文本标记语言 |        显示数据以及如何更好的显示数据        |
 
@@ -226,7 +229,7 @@ XPath (XML Path Language) 是一门在 HTML\XML 文档中查找信息的**语言
 
 每个XML的标签我们都称之为节点，其中最顶层的节点称为根节点。
 
-####  xpath中节点选择的工具
+#### xpath中节点选择的工具
 
 - Chrome插件 XPath Helper
   - 下载地址：https://pan.baidu.com/s/1UM94dcwgus4SgECuoJ-Jcg 密码:337b
@@ -240,12 +243,12 @@ XPath (XML Path Language) 是一门在 HTML\XML 文档中查找信息的**语言
 
 XPath 使用路径表达式来选取 XML 文档中的节点或者节点集。这些路径表达式和我们在常规的**电脑文件系统中看到的表达式**非常相似。
 
-**使用chrome插件选择标签时候，选中时，选中的标签会添加属性class="xh-highlight"**
+**使用chrome插件选择标签时候，选中时，选中的标签会添加属性class="xh-highlight”**
 
 下面列出了最有用的表达式：
 
 |  表达式  |                            描述                            |
-| :------: | :--------------------------------------------------------: |
+|:--------:|:----------------------------------------------------------:|
 | nodename |                        选中该元素。                        |
 |    /     |          从根节点选取、或者是元素和元素间的过渡。          |
 |    //    | 从匹配选择的当前节点选择文档中的节点，而不考虑它们的位置。 |
@@ -256,15 +259,15 @@ XPath 使用路径表达式来选取 XML 文档中的节点或者节点集。这
 
 #### 查找特定的节点
 
-|             路径表达式              |                             结果                             |
-| :---------------------------------: | :----------------------------------------------------------: |
-|        //title[@lang="eng"]         |              选择lang属性值为eng的所有title元素              |
-|         /bookstore/book[1]          |        选取属于 bookstore 子元素的第一个 book 元素。         |
-|       /bookstore/book[last()]       |       选取属于 bookstore 子元素的最后一个 book 元素。        |
-|      /bookstore/book[last()-1]      |      选取属于 bookstore 子元素的倒数第二个 book 元素。       |
-|    /bookstore/book[position()>1]    |        选择bookstore下面的book元素，从第二个开始选择         |
-| //book/title[text()='Harry Potter'] | 选择所有book下的title元素，仅仅选择文本为Harry Potter的title元素 |
-| /bookstore/book[price>35.00]/title  | 选取 bookstore 元素中的 book 元素的所有 title 元素，且其中的 price 元素的值须大于 35.00。 |
+| 路径表达式 | 结果 |
+|:--:|:--:|
+| //title\[@lang="eng”\] | 选择lang属性值为eng的所有title元素 |
+| /bookstore/book\[1\] | 选取属于 bookstore 子元素的第一个 book 元素。 |
+| /bookstore/book\[last()\] | 选取属于 bookstore 子元素的最后一个 book 元素。 |
+| /bookstore/book\[last()-1\] | 选取属于 bookstore 子元素的倒数第二个 book 元素。 |
+| /bookstore/book\[position()\>1\] | 选择bookstore下面的book元素，从第二个开始选择 |
+| //book/title\[text()='Harry Potter’\] | 选择所有book下的title元素，仅仅选择文本为Harry Potter的title元素 |
+| /bookstore/book\[price\>35.00\]/title | 选取 bookstore 元素中的 book 元素的所有 title 元素，且其中的 price 元素的值须大于 35.00。 |
 
 注意点: 在xpath中，第一个元素的位置是1，最后一个元素的位置是last(),倒数第二个是last()-1
 
@@ -273,9 +276,9 @@ XPath 使用路径表达式来选取 XML 文档中的节点或者节点集。这
 XPath 通配符可用来选取未知的 XML 元素。
 
 | 通配符 |         描述         |
-| :----: | :------------------: |
-|   *    |  匹配任何元素节点。  |
-|   @*   |  匹配任何属性节点。  |
+|:------:|:--------------------:|
+|   \*   |  匹配任何元素节点。  |
+|  @\*   |  匹配任何属性节点。  |
 | node() | 匹配任何类型的节点。 |
 
 ### lxml的认识
@@ -298,3 +301,4 @@ ret_list = html.xpath("xpath字符串")
 ```
 
 把转化后的element对象转化为字符串，返回bytes类型结果 `etree.tostring(element)`
+

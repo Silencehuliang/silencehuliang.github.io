@@ -63,9 +63,7 @@ python manage.py runserver
 在浏览器中输入网址“127.0.0.1:8000”便可看到效果。
 
 {{< admonition tip "提示" true >}}
-
 django默认工作在调式Debug模式下，如果增加、修改、删除文件，服务器会自动重启。按ctrl+c停止服务器。
-
 {{< /admonition >}}
 
 ## 创建子应用
@@ -114,7 +112,7 @@ python manage.py startapp users
 
 **注册安装一个子应用的方法，即是将子应用的配置信息文件apps.py中的Config类添加到INSTALLED_APPS列表中。**
 
-例如，将刚创建的users子应用添加到工程中，可在INSTALLED_APPS列表中添加**'users.apps.UsersConfig'**。
+例如，将刚创建的users子应用添加到工程中，可在INSTALLED_APPS列表中添加\*\*‘users.apps.UsersConfig’\*\*。
 
 ## 创建视图
 
@@ -137,9 +135,7 @@ def index(request):
 ```
 
 {{< admonition tip "说明" true >}}
-
 视图函数的第一个传入参数必须定义，用于接收Django构造的包含了请求数据的**HttpReqeust**对象，通常名为**request**。视图函数的返回值必须为一个响应对象，不能像Flask一样直接返回一个字符串，可以将要返回的字符串数据放到一个**HTTPResponse**对象中。
-
 {{< /admonition >}}
 
 ### 定义路由URL
@@ -174,9 +170,10 @@ def index(request):
       url(r'^users/', include('users.urls')), 
   ]
   ```
-	使用include来将子应用users里的全部路由包含进工程路由中；**r'^users/'** 决定了`users`子应用的所有路由都已**/users/**开头，如我们刚定义的视图index，其最终的完整访问路径为**/users/index/**。
-	
-	**include**函数除了可以传递字符串之外，也可以直接传递应用的urls模块，如
+
+  使用include来将子应用users里的全部路由包含进工程路由中；**r'^users/'** 决定了`users`子应用的所有路由都已\*\*/users/\*\*开头，如我们刚定义的视图index，其最终的完整访问路径为\*\*/users/index/\*\*。
+
+  **include**函数除了可以传递字符串之外，也可以直接传递应用的urls模块，如
 
   ```python
   from django.conf.urls import url, include
@@ -199,3 +196,4 @@ def index(request):
   ```
 
   在浏览器中输入网址**127.0.0.1:8000/users/index/** 可看到返回的信息
+

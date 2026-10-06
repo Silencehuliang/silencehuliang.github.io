@@ -33,37 +33,37 @@
 
 ### 具体需求
 
-1. 首页
-   - 根据近期文章列表展示
-   - 翻页加载更多数据
-   - 点击新窗口跳转到文章详情页
-   - 顶部显示博客各大版块
-   - 右侧显示最新文章、归档、分类、标签云与RSS订阅相关信息
-2. 文章详情
-   - 文章内容 html 数据展示
-   - 可以评论该文章
-   - 右侧显示文章目录、最新文章、归档、分类、标签云与RSS订阅
-3. 关于页
-   - 展示作者相关信息
-4. 联系页
-   - 填写相关信息提供联系作者功能
-5. 后台-登录
-   - 提供后台登录页面
-6. 后台-用户统计
-   - 登录到后台界面之后展示用户统计界面
-   - 显示各类用户访问数据
-   - 展示当前月访问新增人数
-   - 展示当前日访问新增人数
-7. 后台-发布文章
-   - 提供`markdown`编辑器进行文章实时预览
-   - 发布文章
-   - 草稿文章
-8. 文章信息展示
-   - 进入默认展示所有文章数据
-   - 可以根据文章标题搜索文章
-9. 文章分类管理
-   - 展示所有分类列表
-   - 可以添加/修改分类
+1.  首页
+    - 根据近期文章列表展示
+    - 翻页加载更多数据
+    - 点击新窗口跳转到文章详情页
+    - 顶部显示博客各大版块
+    - 右侧显示最新文章、归档、分类、标签云与RSS订阅相关信息
+2.  文章详情
+    - 文章内容 html 数据展示
+    - 可以评论该文章
+    - 右侧显示文章目录、最新文章、归档、分类、标签云与RSS订阅
+3.  关于页
+    - 展示作者相关信息
+4.  联系页
+    - 填写相关信息提供联系作者功能
+5.  后台-登录
+    - 提供后台登录页面
+6.  后台-用户统计
+    - 登录到后台界面之后展示用户统计界面
+    - 显示各类用户访问数据
+    - 展示当前月访问新增人数
+    - 展示当前日访问新增人数
+7.  后台-发布文章
+    - 提供`markdown`编辑器进行文章实时预览
+    - 发布文章
+    - 草稿文章
+8.  文章信息展示
+    - 进入默认展示所有文章数据
+    - 可以根据文章标题搜索文章
+9.  文章分类管理
+    - 展示所有分类列表
+    - 可以添加/修改分类
 
 ## 项目框架搭建
 
@@ -97,13 +97,17 @@ git相关内容可以查看之前的[相关文章](https://learnku.com/articles/
   flaskblog % git init
   Initialized empty Git repository in /Users/huliang/Desktop/flaskblog/.git/
   ```
-  
+
 - 配置当前项目`git`提交信息(可省略此步，如不配置则使用全局配置)
 
   ```bash
   flaskblog % git config user.email xxx@xxx.com
   flaskblog % git config user.name xxxx
-	```
+  ```
+
+  ```fallback
+
+  ```
 
 - 添加忽略文件
 
@@ -158,7 +162,6 @@ class Config(object):
     """工程配置信息"""
     DEBUG = True
 
-
 app.config.from_object(Config)
 ...
 ```
@@ -190,7 +193,7 @@ app.config.from_object(Config)
   ```bash
   mysql> create database flaskblog charset utf8;
   ```
-  
+
   运行测试
 
 #### Redis
@@ -289,15 +292,15 @@ if __name__ == '__main__':
       SECRET_KEY = "EjpNVSNQTyGi1VvWECj9TvC/+kq3oujee2kTfQUs8yCM6xX9Yjq52v54g+HVoknA"
 
       DEBUG = True
-    
+      
       # 数据库的配置信息
       SQLALCHEMY_DATABASE_URI = "mysql://root:mysql@127.0.0.1:3306/flaskblog"
       SQLALCHEMY_TRACK_MODIFICATIONS = True
-    
+      
       # redis配置
       REDIS_HOST = "127.0.0.1"
       REDIS_PORT = 6379
-    
+      
       # session 配置
       SESSION_TYPE = "redis"  # 指定 session 保存到 redis 中
       SESSION_USE_SIGNER = True  # 让 cookie 中的 session_id 被加密签名处理
@@ -365,11 +368,11 @@ if __name__ == '__main__':
   def index():
     return 'index'
 
-  
+    
   if __name__ == '__main__':
       manager.run()
   ```
-  
+
   运行测试
 
 #### 项目多种配置
@@ -378,7 +381,6 @@ if __name__ == '__main__':
 
 ```python
 import redis
-
 
 class Config(object):
     """工程配置信息"""
@@ -399,11 +401,9 @@ class Config(object):
     SESSION_REDIS = redis.StrictRedis(host=REDIS_HOST, port=REDIS_PORT)  # 使用 redis 的实例
     PERMANENT_SESSION_LIFETIME = 86400  # session 的有效期，单位是秒
 
-
 class DevelopementConfig(Config):
     """开发模式下的配置"""
     DEBUG = True
-
 
 class ProductionConfig(Config):
     """生产模式下的配置"""
@@ -418,7 +418,7 @@ class ProductionConfig(Config):
 
 - 在 `config.py` 文件中添加以下代码
 
-  ```
+  ```fallback
   # 定义配置字典
   config = {
       "development": DevelopementConfig,
@@ -447,7 +447,7 @@ class ProductionConfig(Config):
 
   ```python
   from config import config
-  
+    
   # 数据库
   db = SQLAlchemy()
   redis_store = None
@@ -456,7 +456,7 @@ class ProductionConfig(Config):
       """通过传入不同的配置名字，初始化其对应配置的应用实例"""
 
       app = Flask(__name__)
-    
+      
       # 配置
       app.config.from_object(config[config_name])
       # 配置数据库
@@ -468,7 +468,7 @@ class ProductionConfig(Config):
       CSRFProtect(app)
       # 设置session保存位置
       Session(app)
-    
+      
       return app
   ```
 
@@ -516,7 +516,7 @@ Python 自身提供了一个用于记录日志的标准库模块：logging。
 
 logging 模块定义的函数和类为应用程序和库的开发实现了一个灵活的事件日志系统。logging 模块是 Python 的一个标准库模块，由标准库模块提供日志记录 API 的关键好处是所有 Python 模块都可以使用这个日志记录功能。
 
- ##### 日志级别
+##### 日志级别
 
 logging模块默认定义了以下几个日志等级，它允许开发人员自定义其他日志级别，但是这是不被推荐的，尤其是在开发供别人使用的库时，因为这会导致日志级别的混乱。
 
@@ -529,16 +529,17 @@ logging模块默认定义了以下几个日志等级，它允许开发人员自�
 开发应用程序或部署开发环境时，可以使用 DEBUG 或 INFO 级别的日志获取尽可能详细的日志信息来进行开发或部署调试；应用上线或部署生产环境时，应该使用 WARNING 或 ERROR 或 CRITICAL 级别的日志来降低机器的I/O压力和提高获取错误日志信息的效率。
 
 {{< admonition info "提示" true >}}
-
 日志级别的指定通常都是在应用程序的配置文件中进行指定的。
-
 {{< /admonition >}}
 
 ##### 使用方式介绍
 
 - loggers 提供应用程序代码直接使用的接口
+
 - handlers 用于将日志记录发送到指定的目的位置
+
 - filters 提供更细粒度的日志过滤功能，用于决定哪些日志记录将会被输出（其它的日志记录将会被忽略）
+
 - formatters 用于控制日志信息的最终输出格式
 
   ```python
@@ -587,9 +588,7 @@ logging.basicConfig(level=logging.DEBUG)
 ```
 
 {{< admonition warning "切记" true >}}
-
 设置 `Configurations` 中的 **Working directory** 为当前项目
-
 {{< /admonition >}}
 
 ### 集成日志到当前项目
@@ -641,9 +640,7 @@ logging.basicConfig(level=logging.DEBUG)
 - 在项目根目录下创建日志目录文件夹 `logs`
 
   {{< admonition info "提示" true >}}
-
   运行项目，当前项目日志已输出到 `logs` 的目录下自动创建的 log 文件中
-
   {{< /admonition >}}
 
 - 在 logs 文件夹下创建 .gitkeep 文件，以便能将 logs 文件夹添加到远程仓库，并在 .gitignore 文件中添加忽略提交生成的日志文件
@@ -704,9 +701,9 @@ current_app.logger.error('error')
 
   ```python
   from flask import Blueprint
-  
+    
   index_blu = Blueprint("index", __name__)
-  
+    
   from . import views
   ```
 
@@ -719,17 +716,17 @@ current_app.logger.error('error')
   def index():
       return 'index'
   ```
-  
+
 - 将上一步创建出来的蓝图注册到 app 中
 
   ```python
   def create_app(config_name):
       ...
-  
+    
       # 注册蓝图
       from info.modules.index import index_blu
       app.register_blueprint(index_blu)
-  
+    
       return app
   ```
 
@@ -743,39 +740,33 @@ current_app.logger.error('error')
 
 - 文章(Post)：
 
-  |        字段        |      类型       |                条件                |     备注     |
-  | :----------------: | :-------------: | :--------------------------------: | :----------: |
-  |       title        |    CharField    |           max_length=100           |     标题     |
-  |        body        |    TextField    |                 -                  |     正文     |
-  |    created_time    |  DateTimeField  |                 -                  |   创建时间   |
-  | last_modified_time |  DateTimeField  |                 -                  | 最后修改时间 |
-  |      abstract      |    CharField    |     max_length=200, blank=True     |     摘要     |
-  |      category      |   ForeignKey    | Category, on_delete=models.CASCADE |     分类     |
-  |        tags        | ManyToManyField |          Tag, blank=True           |     标签     |
-  |       author       |   ForeignKey    |   User, on_delete=models.CASCADE   |     作者     |
-
-  
+  | 字段 | 类型 | 条件 | 备注 |
+  |:--:|:--:|:--:|:--:|
+  | title | CharField | max_length=100 | 标题 |
+  | body | TextField | \- | 正文 |
+  | created_time | DateTimeField | \- | 创建时间 |
+  | last_modified_time | DateTimeField | \- | 最后修改时间 |
+  | abstract | CharField | max_length=200, blank=True | 摘要 |
+  | category | ForeignKey | Category, on_delete=models.CASCADE | 分类 |
+  | tags | ManyToManyField | Tag, blank=True | 标签 |
+  | author | ForeignKey | User, on_delete=models.CASCADE | 作者 |
 
 - 分类(Category)：
 
   | 字段 |   类型    |      条件      |  备注  |
-  | :--: | :-------: | :------------: | :----: |
+  |:----:|:---------:|:--------------:|:------:|
   | name | CharField | max_length=100 | 分类名 |
-
-  
 
 - 标签(Tag)：
 
   | 字段 |   类型    |      条件      |  备注  |
-  | :--: | :-------: | :------------: | :----: |
+  |:----:|:---------:|:--------------:|:------:|
   | name | CharField | max_length=100 | 标签名 |
-
-  
 
 - 用户(Info)：
 
   |   字段   |   类型    |      条件      |  备注  |
-  | :------: | :-------: | :------------: | :----: |
+  |:--------:|:---------:|:--------------:|:------:|
   |   name   | CharField | max_length=50  | 作者名 |
   | homepage | CharField | max_length=100 |  主页  |
 
@@ -786,13 +777,11 @@ current_app.logger.error('error')
   ```bash
   mysql> use flaskblog;
   ```
-  
+
 - 将 `constants.py` 和 `models.py` 文件拷贝到项目的 `blog` 目录下
 
   {{< admonition info "提示" true >}}
-
   constants.py 是当前项目中要使用的一些常量，预先定义好的，models.py 文件中需要使用到该文件中的一些常量
-
   {{< /admonition >}}
 
 - 并在 `manage.py` 中导入 `models`
@@ -800,11 +789,9 @@ current_app.logger.error('error')
   ```python
   form info import models
   ```
-  
+
   {{< admonition info "提示" true >}}
-  
   在迁移的时候以便能读取到对应模型
-  
   {{< /admonition >}}
 
 - 执行数据库迁移
@@ -826,13 +813,11 @@ current_app.logger.error('error')
   ```bash
   mysql> source info_info_category.sql
   ```
-  
+
   {{< admonition info "提示" true >}}
-  
   生成的迁移文件不需要提交到 git 保存，所以需要在 .gitignore 文件中添加以下内容以便忽略迁移所生成的系列文件
-  
   {{< /admonition >}}
-  
+
   ```bash
   migrations
   ```
@@ -856,6 +841,7 @@ mysql> source 路径/flaskblog_blog.sql
 - 在项目 `blog` 目录下创建 `static` 文件夹
 
 - 将前端人员开发好的 `blog` 和 `admin` 两个静态文件夹拖入到项目
+
   - `news`文件夹内代表新闻前台页面
   - `admin`文件夹内代表新闻的后台页面
 
@@ -865,7 +851,7 @@ mysql> source 路径/flaskblog_blog.sql
 
 ### 创建模板目录
 
-在 **static** 同级目录创建 **templates** 文件夹，并在此目录下创建 **post** 文件夹用于存放新闻前台模板文件。(此步可以省略，只是在 Pycharm 中标识该目录为模板目录)设置 **templates** 目录成模板目录属性，操作方式：右键点击 **templates** 目录，选择 `Mark Directory as` -> `Template Folder`如果没有设置模板语言，会弹出是否设置模板语言，点击 **Yes**，跳转到模板语言设置界面，设置模板语言为 Jinja2
+在 **static** 同级目录创建 **templates** 文件夹，并在此目录下创建 **post** 文件夹用于存放新闻前台模板文件。(此步可以省略，只是在 Pycharm 中标识该目录为模板目录)设置 **templates** 目录成模板目录属性，操作方式：右键点击 **templates** 目录，选择 `Mark Directory as` -\> `Template Folder`如果没有设置模板语言，会弹出是否设置模板语言，点击 **Yes**，跳转到模板语言设置界面，设置模板语言为 Jinja2
 
 ### 添加模板并创建根路由视图函数
 
@@ -874,7 +860,6 @@ mysql> source 路径/flaskblog_blog.sql
 ```python
 from . import index_blu
 from flask import render_template
-
 
 @index_blu.route('/')
 def index():
@@ -892,5 +877,4 @@ def index():
 def favicon():
     return current_app.send_static_file('news/favicon.ico')
 ```
-
 

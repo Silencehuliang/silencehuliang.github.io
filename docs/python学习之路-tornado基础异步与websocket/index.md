@@ -382,7 +382,7 @@ HTTP响应类，其常用属性如下：
 
 1.请求接口（GET）：
 
-http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=json&ip=[ip地址字串]
+<http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=json&ip=%5Bip>地址字串\]
 
 2.响应信息：
 
@@ -582,3 +582,4 @@ ws.onmessage = function (evt) {  // 收到服务器发送的消息后执行的�
    alert(evt.data);  // 接收的消息内容在事件参数evt的data属性中
 };
 ```
+

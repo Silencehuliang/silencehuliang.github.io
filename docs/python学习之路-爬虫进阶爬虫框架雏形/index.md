@@ -9,48 +9,48 @@
 
 先抛开中间件，分析下它们之间的逻辑关系是：
 
-1. 构造spider中start_urls中的请求
-2. 传递给调取器进行保存，之后从中取出
-3. 取出的request对象交给下载的进行下载，返回response
-4. response交给爬虫模块进行解析，提取结果
-5. 如果结果是request对象，重新交给调度器，如果结果是item对象，交给管道处理
+1.  构造spider中start_urls中的请求
+2.  传递给调取器进行保存，之后从中取出
+3.  取出的request对象交给下载的进行下载，返回response
+4.  response交给爬虫模块进行解析，提取结果
+5.  如果结果是request对象，重新交给调度器，如果结果是item对象，交给管道处理
 
 以上的逻辑是在引擎中完成的
 
 ### 设计代码结构
 
-1. 首先给框架起一个名称，如：
+1.  首先给框架起一个名称，如：
 
-   ```
-    scrapy_plus
-   ```
+    ```fallback
+     scrapy_plus
+    ```
 
-2. 继续分类以及解耦的设计思想：
+2.  继续分类以及解耦的设计思想：
 
-   - 把核心模块放置在一起
+    - 把核心模块放置在一起
 
-   - 请求对象模块和响应对象模块统一作为http模块
+    - 请求对象模块和响应对象模块统一作为http模块
 
-   - 数据对象单独作为一个分类
+    - 数据对象单独作为一个分类
 
-     代码结构如下：
+      代码结构如下：
 
-     ```
-     -- scrapy_plus
-       -- __init__.py
-       -- core
-         -- __init__.py
-         -- spider.py
-         -- scheduler.py
-         -- downloader.py
-         -- pipeline.py
-         -- engine.py
-       -- http
-         -- __init__.py
-         -- request.py
-         -- response.py
-       -- item.py
-     ```
+      ```fallback
+      -- scrapy_plus
+        -- __init__.py
+        -- core
+          -- __init__.py
+          -- spider.py
+          -- scheduler.py
+          -- downloader.py
+          -- pipeline.py
+          -- engine.py
+        -- http
+          -- __init__.py
+          -- request.py
+          -- response.py
+        -- item.py
+      ```
 
 到这里，我们完成了框架的大致结构是设计，那么接下来我们就需要实现模块中的具体内容了
 
@@ -99,7 +99,6 @@ class Response(object):
 # scrapy/item.py
 '''item对象'''
 
-
 class Item(object):
     '''框架内置Item对象'''
     def __init__(self, data):
@@ -114,10 +113,10 @@ class Item(object):
 
 其中`property`的理解：
 
-- `property` 能够让调用一个方法和调用一个属性一样容易，即不用打括号
+- `property` 能够让调用一个方法和调用一个属性一样容易，即不用打括号
 - `property` 能够让这个属性的值是只读的，即不能够对其进行重新赋值，达到一定的保护的目的
 
-## spider模块的封装
+## spider模块的封装
 
 ### 爬虫组件功能
 
@@ -134,7 +133,6 @@ class Item(object):
 '''爬虫组件封装'''
 from scrapy_plus.item import Item    # 导入Item对象
 from scrapy_plus.http.request import Request    # 导入Request对象
-
 
 class Spider(object):
     '''
@@ -174,7 +172,6 @@ class Spider(object):
 '''调度器模块封住'''
 # 利用six模块实现py2和py3兼容
 from six.moves.queue import Queue
-
 
 class Scheduler(object):
     '''
@@ -250,7 +247,6 @@ class Downloader(object):
 # scrapy_plus/core/pipeline.py
 '''管道组件封装'''
 
-
 class Pipeline(object):
     '''负责处理数据对象(Item)'''
 
@@ -282,7 +278,6 @@ from .scheduler import Scheduler
 from .downloader import Downloader
 from .pipeline import Pipeline
 from .spider import Spider
-
 
 class Engine(object):
     '''
@@ -384,7 +379,6 @@ from .scheduler import Scheduler
 from .downloader import Downloader
 from .pipeline import Pipeline
 
-
 class Engine(object):
 
     def __init__(self):
@@ -440,3 +434,4 @@ class Engine(object):
 这是爬虫中间件：process_response方法
 item对象: <scrapy_plus.item.Item object at 0x10759eef0>
 ```
+

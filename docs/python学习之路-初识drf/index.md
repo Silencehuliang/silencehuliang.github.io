@@ -24,12 +24,12 @@
 
 ## 简介
 
-1. 在序列化与反序列化时，虽然操作的数据不尽相同，但是执行的过程却是相似的，也就是说这部分代码是可以复用简化编写的。
-2. 在开发REST API的视图中，虽然每个视图具体操作的数据不同，但增、删、改、查的实现流程基本套路化，所以这部分代码也是可以复用简化编写的：
-   - **增**：校验请求数据 -> 执行反序列化过程 -> 保存数据库 -> 将保存的对象序列化并返回
-   - **删**：判断要删除的数据是否存在 -> 执行数据库删除
-   - **改**：判断要修改的数据是否存在 -> 校验请求的数据 -> 执行反序列化过程 -> 保存数据库 -> 将保存的对象序列化并返回
-   - **查**：查询数据库 -> 将数据序列化并返回
+1.  在序列化与反序列化时，虽然操作的数据不尽相同，但是执行的过程却是相似的，也就是说这部分代码是可以复用简化编写的。
+2.  在开发REST API的视图中，虽然每个视图具体操作的数据不同，但增、删、改、查的实现流程基本套路化，所以这部分代码也是可以复用简化编写的：
+    - **增**：校验请求数据 -\> 执行反序列化过程 -\> 保存数据库 -\> 将保存的对象序列化并返回
+    - **删**：判断要删除的数据是否存在 -\> 执行数据库删除
+    - **改**：判断要修改的数据是否存在 -\> 校验请求的数据 -\> 执行反序列化过程 -\> 保存数据库 -\> 将保存的对象序列化并返回
+    - **查**：查询数据库 -\> 将数据序列化并返回
 
 **Django REST framework可以帮助我们简化上述两部分的代码编写，大大提高REST API的开发速度。**
 
@@ -64,10 +64,10 @@ DRF框架是建立在Django框架基础之上，由Tom Christie大牛二次开�
 
 例如对于后端数据库中保存了商品的信息，前端可能需要对商品数据进行增删改查，那相应的每个操作后端都需要提供一个API接口：
 
-1. POST /add-goods 增加商品
-2. POST /delete-goods 删除商品
-3. POST /update-goods 修改商品
-4. GET /get-goods 查询商品信息
+1.  POST /add-goods 增加商品
+2.  POST /delete-goods 删除商品
+3.  POST /update-goods 修改商品
+4.  GET /get-goods 查询商品信息
 
 对于接口的请求方式与路径，每个后端开发人员可能都有自己的定义方式，风格迥异。
 
@@ -89,11 +89,11 @@ Fielding将他对互联网软件的架构原则，定名为**REST**，即**Repre
 
 我们先来具体看下RESTful风格的url,比如我要查询商品信息，那么
 
-- 非REST的url：**http://.../queryGoods?id=1001&type=t01**
+- 非REST的url：**http://…/queryGoods?id=1001&type=t01**
 
-- REST的url: **http://.../t01/goods/1001**
+- REST的url: **http://…/t01/goods/1001**
 
-可以看出**REST特点：url简洁，将参数通过url传到服务器，**而传统的url比较啰嗦，而且现实中浏览器地址栏会拼接一大串字符，想必你们都见过吧。但是采用REST的风格就会好很多，现在很多的网站已经采用这种风格了，这也是潮流方向，典型的就是url的短化转换。
+可以看出\*\*REST特点：url简洁，将参数通过url传到服务器，\*\*而传统的url比较啰嗦，而且现实中浏览器地址栏会拼接一大串字符，想必你们都见过吧。但是采用REST的风格就会好很多，现在很多的网站已经采用这种风格了，这也是潮流方向，典型的就是url的短化转换。
 
 **那么，到底什么是RESTFul架构： 如果一个架构符合REST原则，就称它为RESTful架构。**
 
@@ -107,11 +107,11 @@ Fielding将他对互联网软件的架构原则，定名为**REST**，即**Repre
 
 - **状态转换，** 就是客户端和服务器互动的一个过程，在这个过程中, 势必涉及到数据和状态的变化, 这种变化叫做状态转换。
 
-  互联网通信协议HTTP协议，客户端访问必然使用HTTP协议**，如果客户端想要操作服务器，必须通过某种手段，让服务器端发生"状态转化"（State Transfer）。**
+  互联网通信协议HTTP协议，客户端访问必然使用HTTP协议\*\*，如果客户端想要操作服务器，必须通过某种手段，让服务器端发生"状态转化”（State Transfer）。\*\*
 
   HTTP协议实际上含有4个表示操作方式的动词，分别是 GET,POST,PUT,DELETE,他们分别对应四种操作。GET用于获取资源，POST用于新建资源，PUT用于更新资源，DElETE用于删除资源。GET和POST是表单提交的两种基本方式，比较常见，而PUT和DElETE不太常用。
 
-  而且HTTP协议是一种无状态协议，这样就必须把所有的状态都保存在服务器端**。**因此，如果客户端想要操作服务器，必须通过某种手段，让服务器端发生"状态转化"（State Transfer）
+  而且HTTP协议是一种无状态协议，这样就必须把所有的状态都保存在服务器端\*\*。\*\*因此，如果客户端想要操作服务器，必须通过某种手段，让服务器端发生"状态转化”（State Transfer）
 
 ### 总结
 
@@ -119,7 +119,7 @@ Fielding将他对互联网软件的架构原则，定名为**REST**，即**Repre
 
 - 每一个URL代表一种资源；
 - 客户端和服务器之间，传递这种资源的某种表现层；
-- 客户端通过四个HTTP动词，对服务器端资源进行操作，实现"表现层状态转化"。
+- 客户端通过四个HTTP动词，对服务器端资源进行操作，实现"表现层状态转化”。
 
 ## RESTful设计方法
 
@@ -163,7 +163,7 @@ Accept: vnd.example-com.foo+json; version=2.0
 
 ### 路径（Endpoint）
 
-路径又称"终点"（endpoint），表示API的具体网址，每个网址代表一种资源（resource）
+路径又称"终点”（endpoint），表示API的具体网址，每个网址代表一种资源（resource）
 
 **(1) 资源作为网址，只能有名词，不能有动词，而且所用的名词往往与数据库的表名对应。**
 
@@ -243,21 +243,31 @@ DELETE /zoos/ID/animals/ID：删除某个指定动物园的指定动物
 
 服务器向用户返回的状态码和提示信息，常见的有以下一些（方括号中是该状态码对应的HTTP动词）。
 
-- 200 OK - [GET]：服务器成功返回用户请求的数据
+- 200 OK - \[GET\]：服务器成功返回用户请求的数据
 
-- 201 CREATED - [POST/PUT/PATCH]：用户新建或修改数据成功。
-- 202 Accepted - [*]：表示一个请求已经进入后台排队（异步任务）
-- 204 NO CONTENT - [DELETE]：用户删除数据成功。
-- 400 INVALID REQUEST - [POST/PUT/PATCH]：用户发出的请求有错误，服务器没有进行新建或修改数据的操作
-- 401 Unauthorized - [*]：表示用户没有权限（令牌、用户名、密码错误）。
-- 403 Forbidden - [*] 表示用户得到授权（与401错误相对），但是访问是被禁止的。
-- 404 NOT FOUND - [*]：用户发出的请求针对的是不存在的记录，服务器没有进行操作，该操作是幂等的。
-- 406 Not Acceptable - [GET]：用户请求的格式不可得（比如用户请求JSON格式，但是只有XML格式）。
-- 410 Gone -[GET]：用户请求的资源被永久删除，且不会再得到的。
-- 422 Unprocesable entity - [POST/PUT/PATCH] 当创建一个对象时，发生一个验证错误。
-- 500 INTERNAL SERVER ERROR - [*]：服务器发生错误，用户将无法判断发出的请求是否成功。
+- 201 CREATED - \[POST/PUT/PATCH\]：用户新建或修改数据成功。
 
-状态码的完全列表参见[这里](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)或[这里](https://zh.wikipedia.org/wiki/HTTP状态码)。
+- 202 Accepted - \[\*\]：表示一个请求已经进入后台排队（异步任务）
+
+- 204 NO CONTENT - \[DELETE\]：用户删除数据成功。
+
+- 400 INVALID REQUEST - \[POST/PUT/PATCH\]：用户发出的请求有错误，服务器没有进行新建或修改数据的操作
+
+- 401 Unauthorized - \[\*\]：表示用户没有权限（令牌、用户名、密码错误）。
+
+- 403 Forbidden - \[\*\] 表示用户得到授权（与401错误相对），但是访问是被禁止的。
+
+- 404 NOT FOUND - \[\*\]：用户发出的请求针对的是不存在的记录，服务器没有进行操作，该操作是幂等的。
+
+- 406 Not Acceptable - \[GET\]：用户请求的格式不可得（比如用户请求JSON格式，但是只有XML格式）。
+
+- 410 Gone -\[GET\]：用户请求的资源被永久删除，且不会再得到的。
+
+- 422 Unprocesable entity - \[POST/PUT/PATCH\] 当创建一个对象时，发生一个验证错误。
+
+- 500 INTERNAL SERVER ERROR - \[\*\]：服务器发生错误，用户将无法判断发出的请求是否成功。
+
+状态码的完全列表参见[这里](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)或[这里](https://zh.wikipedia.org/wiki/HTTP%e7%8a%b6%e6%80%81%e7%a0%81)。
 
 ### 错误处理（Error handling）
 
@@ -319,13 +329,13 @@ RESTful API最好做到Hypermedia（即返回结果中提供链接，连向其�
 
 ### 序列化Serialization
 
-[维基百科](https://zh.wikipedia.org/wiki/序列化)中对于序列化的定义：
+[维基百科](https://zh.wikipedia.org/wiki/%e5%ba%8f%e5%88%97%e5%8c%96)中对于序列化的定义：
 
 **序列化**（serialization）在计算机科学的资料处理中，是指将数据结构或物件状态转换成可取用格式（例如存成档案，存于缓冲，或经由网络中传送），以留待后续在相同或另一台计算机环境中，能恢复原先状态的过程。依照序列化格式重新获取字节的结果时，可以利用它来产生与原始物件相同语义的副本。对于许多物件，像是使用大量参照的复杂物件，这种序列化重建的过程并不容易。面向对象中的物件序列化，并不概括之前原始物件所关联的函式。这种过程也称为物件编组（marshalling）。从一系列字节提取数据结构的反向操作，是反序列化（也称为解编组, deserialization, unmarshalling）。
 
 **序列化**在计算机科学中通常有以下定义:
 
- 在数据储存与传送的部分是指将一个[对象](https://zh.wikipedia.org/wiki/对象_(计算机科学))存储至一个[储存媒介](https://zh.wikipedia.org/w/index.php?title=儲存媒介&action=edit&redlink=1)，例如[档案](https://zh.wikipedia.org/wiki/檔案)或是[记亿体缓冲](https://zh.wikipedia.org/w/index.php?title=記億體緩衝&action=edit&redlink=1)等，或者透过网络传送资料时进行编码的过程，可以是[字节](https://zh.wikipedia.org/wiki/字节)或是[XML](https://zh.wikipedia.org/wiki/XML)等格式。而[字节](https://zh.wikipedia.org/wiki/字节)的或[XML](https://zh.wikipedia.org/wiki/XML)编码格式可以还原完全相等的[对象](https://zh.wikipedia.org/wiki/对象_(计算机科学))。这程序被应用在不同[应用程序](https://zh.wikipedia.org/wiki/應用程式)之间传送[对象](https://zh.wikipedia.org/wiki/对象_(计算机科学))，以及服务器将[对象](https://zh.wikipedia.org/wiki/对象_(计算机科学))储存到[档案](https://zh.wikipedia.org/wiki/檔案)或[数据库](https://zh.wikipedia.org/wiki/資料庫)。相反的过程又称为[**反序列化**](https://zh.wikipedia.org/w/index.php?title=反序列化&action=edit&redlink=1)。
+在数据储存与传送的部分是指将一个[对象](https://zh.wikipedia.org/wiki/%e5%af%b9%e8%b1%a1_%28%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%a7%91%e5%ad%a6%29)存储至一个[储存媒介](https://zh.wikipedia.org/w/index.php?title=%e5%84%b2%e5%ad%98%e5%aa%92%e4%bb%8b&action=edit&redlink=1)，例如[档案](https://zh.wikipedia.org/wiki/%e6%aa%94%e6%a1%88)或是[记亿体缓冲](https://zh.wikipedia.org/w/index.php?title=%e8%a8%98%e5%84%84%e9%ab%94%e7%b7%a9%e8%a1%9d&action=edit&redlink=1)等，或者透过网络传送资料时进行编码的过程，可以是[字节](https://zh.wikipedia.org/wiki/%e5%ad%97%e8%8a%82)或是[XML](https://zh.wikipedia.org/wiki/XML)等格式。而[字节](https://zh.wikipedia.org/wiki/%e5%ad%97%e8%8a%82)的或[XML](https://zh.wikipedia.org/wiki/XML)编码格式可以还原完全相等的[对象](https://zh.wikipedia.org/wiki/%e5%af%b9%e8%b1%a1_%28%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%a7%91%e5%ad%a6%29)。这程序被应用在不同[应用程序](https://zh.wikipedia.org/wiki/%e6%87%89%e7%94%a8%e7%a8%8b%e5%bc%8f)之间传送[对象](https://zh.wikipedia.org/wiki/%e5%af%b9%e8%b1%a1_%28%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%a7%91%e5%ad%a6%29)，以及服务器将[对象](https://zh.wikipedia.org/wiki/%e5%af%b9%e8%b1%a1_%28%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%a7%91%e5%ad%a6%29)储存到[档案](https://zh.wikipedia.org/wiki/%e6%aa%94%e6%a1%88)或[数据库](https://zh.wikipedia.org/wiki/%e8%b3%87%e6%96%99%e5%ba%ab)。相反的过程又称为[**反序列化**](https://zh.wikipedia.org/w/index.php?title=%e5%8f%8d%e5%ba%8f%e5%88%97%e5%8c%96&action=edit&redlink=1)。
 
 简而言之，我们可以将**序列化**理解为：
 
@@ -373,3 +383,4 @@ book = BookInfo.objects.create(
 
 - **将数据库数据序列化为前端所需要的格式，并返回；**
 - **将前端发送的数据反序列化为模型类对象，并保存到数据库中。**
+

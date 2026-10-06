@@ -7,17 +7,17 @@
 
 `ORM`全拼`Object-Relation Mapping`，中文意为 `对象-关系映射`。主要实现模型对象到关系数据库数据的映射.
 
-### 优点 
+### 优点
 
 - 只需要面向对象编程, 不需要面向数据库编写代码。对数据库的操作都转化成对类属性和方法的操作，不用编写各种数据库的`sql`语句。
-- 实现了数据模型与数据库的解耦，屏蔽了不同数据库操作上的差异。不在关注用的是`mysql`、`oracle`...等。通过简单的配置就可以轻松更换数据库, 而不需要修改代码.
+- 实现了数据模型与数据库的解耦，屏蔽了不同数据库操作上的差异。不在关注用的是`mysql`、`oracle`…等。通过简单的配置就可以轻松更换数据库, 而不需要修改代码.
 
-### 缺点 
+### 缺点
 
 - 相比较直接使用SQL语句操作数据库,有性能损失。
 - 根据对象的操作转换成SQL语句,根据查询的结果转化成对象, 在映射过程中有性能损失。
 
-### SQLALchemy 
+### SQLALchemy
 
 `SQLALchemy`实际上是对数据库的抽象，让开发者不用直接和`SQL`语句打交道，而是通过`Python`对象来操作数据库，在舍弃一些性能开销的同时，换来的是开发效率的较大提升。`SQLAlchemy`是一个关系型数据库框架，它提供了高层的 `ORM`和底层的原生数据库的操作。`flask-sqlalchemy`是一个简化了`SQLAlchemy`操作的flask扩展。
 
@@ -63,16 +63,16 @@ $ create database test charset utf8;
 
 - 其他配置
 
-| 名字                      | 备注                                                         |
-| :------------------------ | :----------------------------------------------------------- |
-| SQLALCHEMY_DATABASE_URI   | 用于连接的数据库 URI 。例如:sqlite:////tmp/test.dbmysql://username:password@server/db |
-| SQLALCHEMY_BINDS          | 一个映射 binds 到连接 URI 的字典。更多 binds 的信息见[*用 Binds 操作多个数据库*](http://docs.jinkan.org/docs/flask-sqlalchemy/binds.html#binds)。 |
-| SQLALCHEMY_ECHO           | 如果设置为Ture， SQLAlchemy 会记录所有 发给 stderr 的语句，这对调试有用。(打印sql语句) |
+| 名字 | 备注 |
+|:---|:---|
+| SQLALCHEMY_DATABASE_URI | 用于连接的数据库 URI 。例如:sqlite:////tmp/test.dbmysql://username:password@server/db |
+| SQLALCHEMY_BINDS | 一个映射 binds 到连接 URI 的字典。更多 binds 的信息见[*用 Binds 操作多个数据库*](http://docs.jinkan.org/docs/flask-sqlalchemy/binds.html#binds)。 |
+| SQLALCHEMY_ECHO | 如果设置为Ture， SQLAlchemy 会记录所有 发给 stderr 的语句，这对调试有用。(打印sql语句) |
 | SQLALCHEMY_RECORD_QUERIES | 可以用于显式地禁用或启用查询记录。查询记录 在调试或测试模式自动启用。更多信息见get_debug_queries()。 |
 | SQLALCHEMY_NATIVE_UNICODE | 可以用于显式禁用原生 unicode 支持。当使用 不合适的指定无编码的数据库默认值时，这对于 一些数据库适配器是必须的（比如 Ubuntu 上 某些版本的 PostgreSQL ）。 |
-| SQLALCHEMY_POOL_SIZE      | 数据库连接池的大小。默认是引擎默认值（通常 是 5 ）           |
-| SQLALCHEMY_POOL_TIMEOUT   | 设定连接池的连接超时时间。默认是 10 。                       |
-| SQLALCHEMY_POOL_RECYCLE   | 多少秒后自动回收连接。这对 MySQL 是必要的， 它默认移除闲置多于 8 小时的连接。注意如果 使用了 MySQL ， Flask-SQLALchemy 自动设定 这个值为 2 小时。 |
+| SQLALCHEMY_POOL_SIZE | 数据库连接池的大小。默认是引擎默认值（通常 是 5 ） |
+| SQLALCHEMY_POOL_TIMEOUT | 设定连接池的连接超时时间。默认是 10 。 |
+| SQLALCHEMY_POOL_RECYCLE | 多少秒后自动回收连接。这对 MySQL 是必要的， 它默认移除闲置多于 8 小时的连接。注意如果 使用了 MySQL ， Flask-SQLALchemy 自动设定 这个值为 2 小时。 |
 
 #### 连接其他数据库
 
@@ -80,50 +80,50 @@ $ create database test charset utf8;
 
 - Postgres:
 
-```
+```fallback
 postgresql://scott:tiger@localhost/mydatabase
 ```
 
 - MySQL:
 
-```
+```fallback
 mysql://scott:tiger@localhost/mydatabase
 ```
 
 - Oracle:
 
-```
+```fallback
 - oracle://scott:tiger@127.0.0.1:1521/sidname
 ```
 
 - SQLite （注意开头的四个斜线）:
 
-```
+```fallback
 sqlite:////absolute/path/to/foo.db
 ```
 
 #### 常用的字段类型
 
-|    类型名    |   python中类型    |                        说明                         |
-| :----------: | :---------------: | :-------------------------------------------------: |
-|   Integer    |        int        |                普通整数，一般是32位                 |
-| SmallInteger |        int        |            取值范围小的整数，一般是16位             |
-|  BigInteger  |     int或long     |                  不限制精度的整数                   |
-|    Float     |       float       |                       浮点数                        |
-|   Numeric    |  decimal.Decimal  |                普通整数，一般是32位                 |
-|    String    |        str        |                     变长字符串                      |
-|     Text     |        str        |    变长字符串，对较长或不限长度的字符串做了优化     |
-|   Unicode    |      unicode      |                  变长Unicode字符串                  |
-| UnicodeText  |      unicode      | 变长Unicode字符串，对较长或不限长度的字符串做了优化 |
-|   Boolean    |       bool        |                       布尔值                        |
-|     Date     |   datetime.date   |                        时间                         |
-|     Time     | datetime.datetime |                     日期和时间                      |
-| LargeBinary  |        str        |                     二进制文件                      |
+| 类型名 | python中类型 | 说明 |
+|:--:|:--:|:--:|
+| Integer | int | 普通整数，一般是32位 |
+| SmallInteger | int | 取值范围小的整数，一般是16位 |
+| BigInteger | int或long | 不限制精度的整数 |
+| Float | float | 浮点数 |
+| Numeric | decimal.Decimal | 普通整数，一般是32位 |
+| String | str | 变长字符串 |
+| Text | str | 变长字符串，对较长或不限长度的字符串做了优化 |
+| Unicode | unicode | 变长Unicode字符串 |
+| UnicodeText | unicode | 变长Unicode字符串，对较长或不限长度的字符串做了优化 |
+| Boolean | bool | 布尔值 |
+| Date | datetime.date | 时间 |
+| Time | datetime.datetime | 日期和时间 |
+| LargeBinary | str | 二进制文件 |
 
 #### 常用的列选项
 
 |   选项名    |                       说明                        |
-| :---------: | :-----------------------------------------------: |
+|:-----------:|:-------------------------------------------------:|
 | primary_key |             如果为True，代表表的主键              |
 |   unique    |      如果为True，代表这列不允许出现重复的值       |
 |    index    |     如果为True，为这列创建索引，提高查询效率      |
@@ -132,13 +132,13 @@ sqlite:////absolute/path/to/foo.db
 
 #### 常用的关系选项
 
-| 选项名         | 说明                                                         |
-| :------------- | :----------------------------------------------------------- |
-| backref        | 在关系的另一模型中添加反向引用                               |
-| primary join   | 明确指定两个模型之间使用的联结条件                           |
-| uselist        | 如果为False，不使用列表，而使用标量值                        |
-| order_by       | 指定关系中记录的排序方式                                     |
-| secondary      | 指定多对多关系中关系表的名字                                 |
+| 选项名 | 说明 |
+|:---|:---|
+| backref | 在关系的另一模型中添加反向引用 |
+| primary join | 明确指定两个模型之间使用的联结条件 |
+| uselist | 如果为False，不使用列表，而使用标量值 |
+| order_by | 指定关系中记录的排序方式 |
+| secondary | 指定多对多关系中关系表的名字 |
 | secondary join | 在SQLAlchemy中无法自行决定时，指定多对多关系中的二级联结条件 |
 
 #### 数据库基本操作
@@ -151,7 +151,6 @@ sqlite:////absolute/path/to/foo.db
 ```python
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-
 
 app = Flask(__name__)
 
@@ -205,7 +204,7 @@ class User(db.Model):
     role_id = db.Column(db.Integer, db.ForeignKey('roles.id'))
 ```
 
-- 其中realtionship描述了Role和User的关系。在此文中，第一个参数为对应参照的类"User"
+- 其中realtionship描述了Role和User的关系。在此文中，第一个参数为对应参照的类"User”
 - 第二个参数backref为类User申明新属性的方法
 - 第三个参数lazy决定了什么时候SQLALchemy从数据库中加载数据
   - 如果设置为子查询方式(subquery)，则会在加载完Role对象后，就立即加载与其关联的对象，这样会让总查询数量减少，但如果返回的条目数量很多，就会比较慢
@@ -232,7 +231,7 @@ class Student(db.Model):
 #### 常用的查询过滤器
 
 |   过滤器    |                       说明                       |
-| :---------: | :----------------------------------------------: |
+|:-----------:|:------------------------------------------------:|
 |  filter()   |      把过滤器添加到原查询上，返回一个新查询      |
 | filter_by() |    把等值过滤器添加到原查询上，返回一个新查询    |
 |    limit    |         使用指定的值限定原查询返回的结果         |
@@ -243,7 +242,7 @@ class Student(db.Model):
 #### 常用的查询执行器
 
 |      方法      |                     说明                     |
-| :------------: | :------------------------------------------: |
+|:--------------:|:--------------------------------------------:|
 |     all()      |         以列表形式返回查询的所有结果         |
 |    first()     |  返回查询的第一个结果，如果未查到，返回None  |
 | first_or_404() |  返回查询的第一个结果，如果未查到，返回404   |
@@ -254,19 +253,19 @@ class Student(db.Model):
 
 #### 创建表
 
-```
+```fallback
 db.create_all()
 ```
 
 #### 删除表
 
-```
+```fallback
 db.drop_all()
 ```
 
 #### 插入一条数据
 
-```
+```fallback
 ro1 = Role(name='admin')
 db.session.add(ro1)
 db.session.commit()
@@ -291,7 +290,6 @@ us9 = User(name='li',email='li@163.com',password='4526342',role_id=ro2.id)
 us10 = User(name='sun',email='sun@163.com',password='235523',role_id=ro2.id)
 db.session.add_all([us1,us2,us3,us4,us5,us6,us7,us8,us9,us10])
 db.session.commit()
-
 
 """
 查询所有用户数据
@@ -359,7 +357,7 @@ User.query.get()
 User.query.filter(User.name!='wang').all()
 ```
 
-##### not_
+##### not\_
 
 相当于取反，返回条件满足的所有数据，例：返回名字不等于`chen`的所有数据
 
@@ -368,7 +366,7 @@ from sqlalchemy import not_
 User.query.filter(not_(User.name=='chen')).all()
 ```
 
-##### and_
+##### and\_
 
 逻辑与，返回条件满足的所有数据，例：返回名字不等于`wang`且邮箱以`163.com`结尾的所有数据
 
@@ -377,7 +375,7 @@ from sqlalchemy import and_
 User.query.filter(and_(User.name!='wang',User.email.endswith('163.com'))).all()
 ```
 
-##### or_
+##### or\_
 
 逻辑或，返回条件满足的所有数据，例：返回名字不等于`wang`或者邮箱以`163.com`结尾的所有数据
 
@@ -423,25 +421,25 @@ User.query.first()
   ```python
   #coding=utf-8
   from flask import Flask
-  
+    
   from flask_sqlalchemy import SQLAlchemy
   from flask_migrate import Migrate,MigrateCommand
   from flask_script import Shell,Manager
-  
+    
   app = Flask(__name__)
   manager = Manager(app)
-  
+    
   app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:mysql@127.0.0.1:3306/Flask_test'
   app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
   app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
   db = SQLAlchemy(app)
-  
+    
   #第一个参数是Flask的实例，第二个参数是Sqlalchemy数据库实例
   migrate = Migrate(app,db) 
-  
+    
   #manager是Flask-Script的实例，这条语句在flask-Script中添加一个db命令
   manager.add_command('db',MigrateCommand)
-  
+    
   #定义模型Role
   class Role(db.Model):
       # 定义表名
@@ -450,11 +448,11 @@ User.query.first()
       id = db.Column(db.Integer, primary_key=True)
       name = db.Column(db.String(64), unique=True)
       user = db.relationship('User', backref='role')
-  
+    
       #repr()方法显示一个可读字符串，
       def __repr__(self):
           return 'Role:'.format(self.name)
-  
+    
   #定义用户
   class User(db.Model):
       __talbe__ = 'users'
@@ -462,16 +460,15 @@ User.query.first()
       username = db.Column(db.String(64), unique=True, index=True)
       #设置外键
       role_id = db.Column(db.Integer, db.ForeignKey('roles.id'))
-  
+    
       def __repr__(self):
           return 'User:'.format(self.username)
-        
+          
   if __name__ == '__main__':
       manager.run()
   ```
 
 - 创建迁移仓库
-  
 
   ```bash
   #这个命令会创建migrations文件夹，所有迁移文件都放在里面。
@@ -487,7 +484,7 @@ User.query.first()
 
   自动创建的迁移脚本会根据模型定义和数据库当前状态的差异，生成upgrade()和downgrade()函数的内容。对比不一定完全正确，有可能会遗漏一些细节，需要进行检查
 
-  ```
+  ```fallback
   python database.py db migrate -m 'initial migration'
   ```
 
@@ -503,7 +500,7 @@ User.query.first()
 
   ```bash
   python app.py db history
-  
+    
   输出格式：<base> ->  版本号 (head), initial migration
   ```
 
@@ -553,7 +550,7 @@ def track_logins(sender, user, **extra):
 
 在 Flask-SQLAlchemy 模块中，0.10 版本开始支持信号，可以连接到信号来获取到底发生什么了的通知。存在于下面两个信号：
 
-- models_committed：这个信号在修改的模型提交到数据库时发出。发送者是发送修改的应用，模型 和 操作描述符 以 (model, operation) 形式作为元组，这样的元组列表传递给接受者的 changes 参数。该模型是发送到数据库的模型实例，当一个模型已经插入，操作是 'insert' ，而已删除是 'delete' ，如果更新了任何列，会是 'update' 。
+- models_committed：这个信号在修改的模型提交到数据库时发出。发送者是发送修改的应用，模型 和 操作描述符 以 (model, operation) 形式作为元组，这样的元组列表传递给接受者的 changes 参数。该模型是发送到数据库的模型实例，当一个模型已经插入，操作是 ‘insert’ ，而已删除是 ‘delete’ ，如果更新了任何列，会是 ‘update’ 。
 - before_models_committed：除了刚好在提交发送前发生，与 models_committed 完全相同。
 
 ```python
@@ -564,3 +561,4 @@ from flask_sqlalchemy import models_committed
 def models_committed(a, changes):
     print(a, changes)
 ```
+

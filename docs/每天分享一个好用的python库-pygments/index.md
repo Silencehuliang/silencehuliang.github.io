@@ -25,10 +25,10 @@ pip install Pygments
   from pygments import highlight
   from pygments.lexers import PythonLexer
   from pygments.formatters import HtmlFormatter
-  
+    
   code = 'print "Hello World"'
   print(highlight(code, PythonLexer(), HtmlFormatter()))
-  
+    
   # 输出
   <div class="highlight"><pre><span></span><span class="nb">print</span> <span class="s2">&quot;Hello World&quot;</span>
   </pre></div>
@@ -57,9 +57,9 @@ pip install Pygments
   ```bash
   >>> pygmentize test.py
   ```
-  
+
   将使用 ANSI 转义序列（又名终端颜色）突出显示 Python 文件 test.py 并将结果打印到标准输出。
-  
+
 - 要输出 HTML，请使用以下`-f`选项：
 
   ```bash
@@ -76,7 +76,7 @@ pip install Pygments
 
 - 如果需要使用 Pygments CSS 类的现有 HTML 文件的样式表，可以使用以下方法创建：
 
-  ```
+  ```fallback
   >>> pygmentize -S default -f html > style.css
   ```
 
@@ -93,5 +93,4 @@ pip install Pygments
 `Pygments`这个工具可以让我们对代码中的各类语法获得高亮显示，增加了代码的可读性，不过最重要的还是代码整体的质量。
 
 [官方文档地址](https://pygments.org/)
-
 

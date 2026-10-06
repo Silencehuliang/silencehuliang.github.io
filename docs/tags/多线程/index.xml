@@ -3,8 +3,7 @@
         <title>多线程 - 标签 - Silence Blog</title>
         <link>https://silencehuliang.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</link>
         <description>多线程 - 标签 - Silence Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>silencehuliang@gmail.com (Silence)</managingEditor>
-            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 29 Dec 2018 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://silencehuliang.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 29 Dec 2018 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://silencehuliang.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" rel="self" type="application/rss+xml" /><item>
     <title>Python中的多线程</title>
     <link>https://silencehuliang.github.io/python%E4%B8%AD%E7%9A%84%E5%A4%9A%E7%BA%BF%E7%A8%8B/</link>
     <pubDate>Sat, 29 Dec 2018 00:00:00 &#43;0000</pubDate>

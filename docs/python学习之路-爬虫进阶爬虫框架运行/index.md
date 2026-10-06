@@ -21,12 +21,10 @@ from setuptools import (
     setup,
 )
 
-
 def parse_requirements(filename):
     """ load requirements from a pip requirements file """
     lineiter = (line.strip() for line in open(filename))
     return [line for line in lineiter if line and not line.startswith("#")]
-
 
 with open(join(dirname(__file__), './VERSION.txt'), 'rb') as f:
     version = f.read().decode('ascii').strip()
@@ -55,7 +53,7 @@ setup(
 )
 ```
 
-注意： 上面代码中可能会报错需要额外安装packaging模块，更新setuptools
+注意： 上面代码中可能会报错需要额外安装packaging模块，更新setuptools
 
 - `pip install packaging`
 - `pip install --upgrade setuptools`
@@ -129,5 +127,4 @@ if __name__ == '__main__':
 ```shell
 item对象:<scrapy_plus.item.Item object at 0x10759eef0>
 ```
-
 

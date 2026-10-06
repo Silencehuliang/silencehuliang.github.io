@@ -1,6 +1,8 @@
 # 每天分享一个好用的Python库-Levenshtein
 
+
 ## 前言
+
 最近几天处于恢复期间，会不定期更新，感谢大家的关心与支持。今天分享是一个计算字符串相似度的第三方库：`Levenshtein`。
 
 ## Levenshtein
@@ -40,7 +42,8 @@ pip install python-Levenshtein
   >>> distance('Levenshtein', 'Levenshtein')
       0
   ```
-- `ratio`：计算莱文斯坦比。计算公式为  r = (sum - ldist) / sum, 其中sum是指str1 和 str2 字串的长度总和，ldist是类编辑距离。
+
+- `ratio`：计算莱文斯坦比。计算公式为 r = (sum - ldist) / sum, 其中sum是指str1 和 str2 字串的长度总和，ldist是类编辑距离。
 
   ```python
   >>> ratio('Hello world!', 'Holly grail!')  # doctest: +ELLIPSIS
@@ -50,8 +53,7 @@ pip install python-Levenshtein
   ```
 
   {{< admonition warning "注意" true >}}
-  这里的类编辑距离不是2中所说的编辑距离，2中三种操作中每个操作+1，而在此处，删除、插入依然+1，但是替换+2，这样ratio('a', 'c')，sum=2，按2中计算为（2-1）/2 = 0.5，’a'，'c'没有重合，显然不合算，但是替换操作+2，就可以解决这个问题。
-
+  这里的类编辑距离不是2中所说的编辑距离，2中三种操作中每个操作+1，而在此处，删除、插入依然+1，但是替换+2，这样ratio(‘a’, ‘c’)，sum=2，按2中计算为（2-1）/2 = 0.5，’a’，‘c’没有重合，显然不合算，但是替换操作+2，就可以解决这个问题。
   {{< /admonition >}}
 
 - `jaro`：计算两个字符串的 Jaro 字符串相似度度量。
@@ -66,9 +68,7 @@ pip install python-Levenshtein
   ```
 
   {{< admonition info "提示" true >}}
-
   Jaro 字符串相似度度量适用于短字符串，例如个人姓氏。 对于完全不同的字符串，它是 0 并且1 表示相同的字符串。
-
   {{< /admonition >}}
 
 - `jaro_winkler`：计算两个字符串的 Jaro 字符串相似度度量。
@@ -85,11 +85,8 @@ pip install python-Levenshtein
   ```
 
   {{< admonition info "提示" true >}}
-
   Jaro-Winkler 字符串相似度度量是对 Jaro 的修改，度量给予公共前缀更多的权重，因为拼写错误是更可能出现在词尾附近。
-
   {{< /admonition >}}
-
 
 ### 作用
 
@@ -100,3 +97,4 @@ pip install python-Levenshtein
 该项目的作者正在寻找新的维护者，如果对该项目感兴趣的朋友可以联系作者，将该库一直维护下去！
 
 [官方文档地址](https://pypi.org/project/python-Levenshtein/)
+

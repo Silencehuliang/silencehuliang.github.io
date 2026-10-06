@@ -9,7 +9,7 @@
 
 ### 需求分析
 
- 管理员用户进行登录，并且根据不同的情况报出不同的错误信息，如果当前已登录用户是管理员，在访问登录页面时直接跳转到后台管理主页。登录界面可以直接使用 Form 表单提交(也可以采用 ajax 的方式)
+管理员用户进行登录，并且根据不同的情况报出不同的错误信息，如果当前已登录用户是管理员，在访问登录页面时直接跳转到后台管理主页。登录界面可以直接使用 Form 表单提交(也可以采用 ajax 的方式)
 
 ### 代码准备
 
@@ -34,38 +34,38 @@
   def admin_login():
       if request.method == "GET":    
           return render_template('admin/login.html')
-  
+    
       # 取到登录的参数
       username = request.form.get("username")
       password = request.form.get("password")
       if not all([username, password]):
           return render_template('admin/login.html', errmsg="参数不足")
-  
+    
       try:
           user = User.query.filter(User.mobile == username).first()
       except Exception as e:
           current_app.logger.error(e)
           return render_template('admin/login.html', errmsg="数据查询失败")
-  
+    
       if not user:
           return render_template('admin/login.html', errmsg="用户不存在")
-  
+    
       if not user.check_passowrd(password):
           return render_template('admin/login.html', errmsg="密码错误")
-  
+    
       if not user.is_admin:
           return render_template('admin/login.html', errmsg="用户权限错误")
-  
+    
       session["user_id"] = user.id
       session["nick_name"] = user.nick_name
       session["mobile"] = user.mobile
       session["is_admin"] = True
-  
+    
       # TODO 跳转到后台管理主页,暂未实现
       return "登录成功，需要跳转到主页"
   ```
 
- ## 管理后台主页
+## 管理后台主页
 
 ### 需求分析
 
@@ -134,6 +134,7 @@
   ```
 
 - 完善退出登录相关代码，在退出登录时候，也要清空是否是管理员的相关数据，在 `modules/passport/views.py` 中
+
   ```python
   @passport_blu.route("/logout", methods=['POST'])
   def logout():
@@ -145,7 +146,7 @@
       session.pop('nick_name', None)
       session.pop('mobile', None)
       session.pop('is_admin', None)
-  
+    
       # 返回结果
       return jsonify(errno=RET.OK, errmsg="OK")
   ```
@@ -163,9 +164,11 @@
 ### 代码实现
 
 - 实现思路：
+
   - 月新增数：获取到本月第1天0点0分0秒的时间对象，然后查询最后一次登录比其大的所有数据
   - 日新增数：获取到当日0点0分0秒时间对象，然后查询最后一次登录比其大的所有数据
   - 图表查询：遍历查询数据每一天的数据(当前天数，减去某些天)
+
 - 后端查询数据实现
 
   ```python
@@ -177,7 +180,7 @@
           total_count = User.query.filter(User.is_admin == False).count()
       except Exception as e:
           current_app.logger.error(e)
-  
+    
       # 查询月新增数
       mon_count = 0
       try:
@@ -187,7 +190,7 @@
           mon_count = User.query.filter(User.is_admin == False, User.create_time >= mon_begin_date).count()
       except Exception as e:
           current_app.logger.error(e)
-  
+    
       # 查询日新增数
       day_count = 0
       try:
@@ -196,15 +199,15 @@
           day_count = User.query.filter(User.is_admin == False, User.create_time > day_begin_date).count()
       except Exception as e:
           current_app.logger.error(e)
-  
+    
       # 查询图表信息
       # 获取到当天00:00:00时间
-  
+    
       now_date = datetime.strptime(datetime.now().strftime('%Y-%m-%d'), '%Y-%m-%d')
       # 定义空数组，保存数据
       active_date = []
       active_count = []
-  
+    
       # 依次添加数据，再反转
       for i in range(0, 31):
           begin_date = now_date - timedelta(days=i)
@@ -217,13 +220,13 @@
           except Exception as e:
               current_app.logger.error(e)
           active_count.append(count)
-  
+    
       active_date.reverse()
       active_count.reverse()
-  
+    
       data = {"total_count": total_count, "mon_count": mon_count, "day_count": day_count, "active_date": active_date,
               "active_count": active_count}
-  
+    
       return render_template('admin/user_count.html', data=data)
   ```
 
@@ -475,3 +478,4 @@ def get_blog_category():
     # 返回内容
     return render_template('admin/blog_type.html', data={"categories": categories_dicts})
 ```
+

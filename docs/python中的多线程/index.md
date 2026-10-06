@@ -7,11 +7,11 @@
 
 在日常中经常使用多任务操作，多线程通常是使用最多的一种。
 
-### 并发 
+### 并发
 
 指任务数多余cpu核数，通过操作系统的任务调度算法快速切换任务，从而实现多任务
 
-### 并行 
+### 并行
 
 指任务数小于等于cpu核心数，操作系统可以分配不同的核心同时去实现多任务
 
@@ -43,8 +43,6 @@ if __name__ == '__main__':
 
 补充：在python3中主进程会等待子进程结束后再结束
 
-
-
 我们可以通过enumerate方法来查看当前运行的线程数量
 
 ```python
@@ -72,7 +70,6 @@ import time
 
 weight = 130
 
-
 def run():
     """跑步"""
     global weight
@@ -80,14 +77,12 @@ def run():
         print("我要减肥!")
         weight -= 1
 
-
 def eat():
     """吃东西"""
     global weight
     for i in range(3):
         print("我吃了一顿好吃的")
         weight += 2
-
 
 if __name__ == '__main__':
     t_run = threading.Thread(target=run)
@@ -141,7 +136,4 @@ if __name__ == '__main__':
 这里我们可以看到eat方法和sendentariness方法都是加weight，我们想得到两个133，但是最后结果是一个133，一个136.（tips：线程只有在调用了start方法才会开启，这里没有调用run的start方法，所以没有开启run方法的线程）
 
 这时候我们可以加上互斥锁，在一个线程使用全局变量时其他线程不能修改
-
-
-
 

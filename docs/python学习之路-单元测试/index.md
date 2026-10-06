@@ -29,7 +29,7 @@
 
 ## 常用的断言方法
 
-```
+```fallback
 assertEqual     如果两个值相等，则pass
 assertNotEqual  如果两个值不相等，则pass
 assertTrue      判断bool值为True，则pass
@@ -80,5 +80,4 @@ class TestClass(unittest.TestCase):
     def test_app_exists(self):
         pass
 ```
-
 

@@ -171,7 +171,7 @@ class ExampleView(APIView):
 
 对于列表数据可能需要根据字段进行过滤，我们可以通过添加django-fitlter扩展来增强支持。
 
-```shel
+```fallback
 pip insall django-filter
 ```
 
@@ -262,7 +262,7 @@ GET  http://api.example.org/books/?page=4
 可以在子类中定义的属性：
 
 - page_size 每页数目
-- page_query_param 前端发送的页数关键字名，默认为"page"
+- page_query_param 前端发送的页数关键字名，默认为"page”
 - page_size_query_param 前端发送的每页数目关键字名，默认为None
 - max_page_size 前端最多能设置的每页数量
 
@@ -292,8 +292,8 @@ GET http://api.example.org/books/?limit=100&offset=400
 可以在子类中定义的属性：
 
 - default_limit 默认限制，默认值与`PAGE_SIZE`设置一直
-- limit_query_param limit参数名，默认'limit'
-- offset_query_param offset参数名，默认'offset'
+- limit_query_param limit参数名，默认’limit’
+- offset_query_param offset参数名，默认’offset’
 - max_limit 最大limit限制，默认None
 
 ```python
@@ -327,7 +327,7 @@ REST_FRAMEWORK = {
 
 - **DEFAULT_VERSION** 默认版本号，默认值为None
 - **ALLOWED_VERSIONS** 允许请求的版本号，默认值为None
-- **VERSION_PARAM** 识别版本号参数的名称，默认值为'version'
+- **VERSION_PARAM** 识别版本号参数的名称，默认值为’version’
 
 ### 支持的版本处理方式
 
@@ -505,7 +505,7 @@ urlpatterns = [
 ]
 ```
 
-####  文档描述说明的定义位置
+#### 文档描述说明的定义位置
 
 - 单一方法的视图，可直接使用类视图的文档字符串，如
 
@@ -528,6 +528,7 @@ urlpatterns = [
       新建图书.
       """
   ```
+
 - 对于视图集ViewSet，仍在类视图的文档字符串中封开定义，但是应使用action名称区分，如
 
   ```python
@@ -556,5 +557,4 @@ urlpatterns = [
 - 视图集ViewSet中的retrieve名称，在接口文档网站中叫做read
 
 - 参数的Description需要在模型类或序列化器类的字段中以help_text选项定义
-
 

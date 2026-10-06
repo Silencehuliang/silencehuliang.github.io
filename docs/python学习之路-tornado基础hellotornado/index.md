@@ -44,7 +44,7 @@ Tornado全称Tornado Web Server，是一个用Python语言写成的Web服务器�
 
 ### 性能
 
- Tornado有着优异的性能。它试图解决C10k问题，即处理大于或等于一万的并发。Tornado框架和服务器一起组成一个WSGI的全栈替代品。单独在WSGI容器中使用tornado网络框架或者tornaod http服务器，有一定的局限性，为了最大化的利用tornado的性能，推荐同时使用tornaod的网络框架和HTTP服务器
+Tornado有着优异的性能。它试图解决C10k问题，即处理大于或等于一万的并发。Tornado框架和服务器一起组成一个WSGI的全栈替代品。单独在WSGI容器中使用tornado网络框架或者tornaod http服务器，有一定的局限性，为了最大化的利用tornado的性能，推荐同时使用tornaod的网络框架和HTTP服务器
 
 ## 与Django对比
 
@@ -65,3 +65,4 @@ Tornado走的是**少而精**的方向，注重的是**性能优越**，它最�
 - HTTP服务器
 - 异步编程
 - WebSockets
+

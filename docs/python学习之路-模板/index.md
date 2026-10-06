@@ -25,7 +25,6 @@ TEMPLATES = [
 ]
 ```
 
-
 ### 定义
 
 在templates目录中新建一个模板文件，如index.html
@@ -34,8 +33,8 @@ TEMPLATES = [
 
 调用模板分为两步骤：
 
-1. 找到模板 loader.get_template(模板文件在模板目录中的相对路径) -> 返回模板对象
-2. 渲染模板 模板对象.render(context=None, request=None) -> 返回渲染后的html文本字符串 context 为模板变量字典，默认值为None request 为请求对象，默认值为None
+1.  找到模板 loader.get_template(模板文件在模板目录中的相对路径) -\> 返回模板对象
+2.  渲染模板 模板对象.render(context=None, request=None) -\> 返回渲染后的html文本字符串 context 为模板变量字典，默认值为None request 为请求对象，默认值为None
 
 例如，定义一个视图
 
@@ -64,11 +63,6 @@ def index(request):
     return render(request,'index.html',context)
 ```
 
-
-
-
-
-
 ### 模板语法
 
 #### 变量
@@ -77,11 +71,10 @@ def index(request):
 
 语法如下：
 
-
 {{变量}}
 
-
 模板变量可以使python的内建类型，也可以是对象。
+
 ```python
 
 def index(request):
@@ -96,30 +89,27 @@ def index(request):
     return render(request, 'index.html', context)
 ```
 
-
 #### 模板语句
 
 - for循环：
+
 - if条件：
+
 - 比较运算符：
+
 - 布尔运算符：
 
   {{< admonition warning "注意" true >}}
-
   运算符左右两侧不能紧挨变量或常量，必须有空格。
-
   {{< /admonition >}}
-
 
 #### 过滤器
 
 语法如下:
 
-- 使用管道符号|来应用过滤器，用于进行计算、转换操作，可以使用在变量、标签中。
+- 使用管道符号\|来应用过滤器，用于进行计算、转换操作，可以使用在变量、标签中。
 
-- 如果过滤器需要参数，则使用冒号:传递参数。
-  变量|过滤器:参数
-
+- 如果过滤器需要参数，则使用冒号:传递参数。 变量\|过滤器:参数
 
 列举几个如下：
 
@@ -129,9 +119,7 @@ def index(request):
 
 - **default**，默认值，如果变量不存在时则返回默认值。
 
-  
-  data|default:'默认值'
-
+  data\|default:‘默认值’
 
 - **date**，日期，用于对日期类型的值进行字符串格式化，常用的格式化字符如下：
 
@@ -143,16 +131,13 @@ def index(request):
   - i表示分，为0-59。
   - s表示秒，为0-59。
 
-  
-  value|date:"Y年m月j日  H时i分s秒"
-  
+  value\|date:“Y年m月j日 H时i分s秒”
 
 #### 注释
 
 - 单行注释语法如下：
-  
-- 多行注释使用comment标签，语法如下：
 
+- 多行注释使用comment标签，语法如下：
 
 #### 继承
 
@@ -169,7 +154,6 @@ def index(request):
 ##### 子模板
 
 标签extends：继承，写在子模板文件的第一行。
-
 
 子模版不用填充父模版中的所有预留区域，如果子模版没有填充，则使用父模版定义的默认值。
 

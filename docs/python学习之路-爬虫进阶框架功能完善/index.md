@@ -21,8 +21,8 @@
 
 ### 为什么要使用添加日志功能
 
-1. 能够方便的对程序进行调试
-2. 能够记录程序的运行状态，包括错误
+1.  能够方便的对程序进行调试
+2.  能够记录程序的运行状态，包括错误
 
 ### 日志模块简单使用
 
@@ -80,7 +80,7 @@ format格式说明：
 
 - datefmt参数说明：
 
-  ```
+  ```fallback
   %y 两位数的年份表示（00-99）
   %Y 四位数的年份表示（000-9999）
   %m 月份（01-12）
@@ -119,7 +119,6 @@ DEFAULT_LOG_LEVEL = logging.INFO    # 默认等级
 DEFAULT_LOG_FMT = '%(asctime)s %(filename)s [line:%(lineno)d] %(levelname)s: %(message)s'   # 默认日志格式
 DEFUALT_LOG_DATEFMT = '%Y-%m-%d %H:%M:%S'  # 默认时间格式
 DEFAULT_LOG_FILENAME = 'log.log'    # 默认日志文件名称
-
 
 class Logger(object):
 
@@ -181,7 +180,6 @@ from .scheduler import Scheduler
 from .downloader import Downloader
 from .pipeline import Pipeline
 
-
 class Engine(object):
 
     ......
@@ -232,7 +230,6 @@ import sys
 import logging
 
 from scrapy_plus.conf import settings    # 导入框架的settings文件
-
 
 class Logger(object):
 
@@ -286,10 +283,10 @@ from settings import *
   ```python
     # project_dir/spiders.py
     from scrapy_plus.core.spider import Spider
-  
+    
     # 继承框架的爬虫基类
     class BaiduSpider(Spider):
-  
+    
         start_url = 'http://www.baidu.com'    # 设置初始请求url
   ```
 
@@ -298,9 +295,9 @@ from settings import *
   ```python
     # project_dir/main.py
     from scrapy_plus.core.engine import Engine    # 导入引擎
-  
+    
     from spiders import BaiduSpider
-  
+    
     if __name__ == '__main__':
         spider = BaiduSpider()    # 实例化爬虫对象
         engine = Engine(spider)    # 传入爬虫对象
@@ -313,13 +310,13 @@ from settings import *
     # scrapy_plus/core/engine.py
     ...
     class Engine(object):
-  
+    
         def __init__(self, spider):    # 接收外部传入的爬虫对象
             self.spider = spider    # 爬虫对象
             self.scheduler = Scheduler()    # 初始化调度器对象
             self.downloader = Downloader()    # 初始化下载器对象
             self.pipeline = Pipeline()    # 初始化管道对象
-  
+    
             self.spider_mid = SpiderMiddleware()
             self.downloader_mid = DownloaderMiddleware()
     ...
@@ -338,7 +335,6 @@ from settings import *
 '''爬虫组件封装'''
 from scrapy_plus.item import Item    # 导入Item对象
 from scrapy_plus.http.request import Request    # 导入Request对象
-
 
 class Spider(object):
     '''
@@ -413,7 +409,6 @@ class Engine:
         self.total_request_nums = 0
         self.total_response_nums = 0
 
-
     def start(self):
         '''
         提供引擎启动的入口
@@ -427,7 +422,6 @@ class Engine:
         logger.info("爬虫一共运行：{}秒".format((end_time-start_time).total_seconds()))
         logger.info("总的请求数量:{}".format(self.total_request_nums))
         logger.info("总的响应数量:{}".format(self.total_response_nums))
-
 
     def _start_request(self):
         for start_request in self.spider.start_requests():
@@ -493,7 +487,6 @@ class Engine:
 # 利用six模块实现py2和py3兼容
 from six.moves.queue import Queue
 
-
 class Scheduler(object):
     '''
     1. 缓存请求对象(Request)，并为下载器提供请求对象，实现请求的调度
@@ -535,7 +528,6 @@ import re
 import json
 
 from lxml import etree
-
 
 class Response(object):
     '''框架内置Response对象'''
@@ -650,7 +642,7 @@ class Engine(object):
 
 ### 为什么需要优化现有的爬虫结构
 
-当爬虫比较少的时候，我们的项目结构相对合理，但是当要抓取的网站比较多的时候，可以借鉴scrapy的方法，把不同网站的爬虫分别在不同的py文件中编写，之后放在一个目录下；同时，我们很多时候还希望能够有同时启动项目中的所有的爬虫
+当爬虫比较少的时候，我们的项目结构相对合理，但是当要抓取的网站比较多的时候，可以借鉴scrapy的方法，把不同网站的爬虫分别在不同的py文件中编写，之后放在一个目录下；同时，我们很多时候还希望能够有同时启动项目中的所有的爬虫
 
 ### 同时执行多个不同的爬虫
 
@@ -715,7 +707,7 @@ class Engine(object):
 
 ## 实现多个管道
 
-###  为什么需要多个管道
+### 为什么需要多个管道
 
 同爬虫文件一样，不同的爬虫可能需要不同的管道文件，因此管道文件需要在项目中进行实现
 
@@ -753,7 +745,6 @@ class Engine:
         self.total_request_nums = 0
         self.total_response_nums = 0
 
-
     def start(self):
         '''
         提供引擎启动的入口
@@ -767,7 +758,6 @@ class Engine:
         logger.info("爬虫一共运行：{}秒".format((end_time-start_time).total_seconds()))
         logger.info("总的请求数量:{}".format(self.total_request_nums))
         logger.info("总的响应数量:{}".format(self.total_response_nums))
-
 
     def _start_request(self):
         for spider_name,spider in self.spiders.items():
@@ -838,55 +828,52 @@ class Engine:
 
   ```Python
   class TestSpiderMiddleware1(object):
-  
+    
       def process_request(self, request):
           '''处理请求头，添加默认的user-agent'''
           print("TestSpiderMiddleware1: process_request")
           return request
-  
+    
       def process_item(self, item):
           '''处理数据对象'''
           print("TestSpiderMiddleware1: process_item")
           return item
-  
+    
   class TestSpiderMiddleware2(object):
-  
+    
       def process_request(self, request):
           '''处理请求头，添加默认的user-agent'''
           print("TestSpiderMiddleware2: process_request")
           return request
-    
+      
       def process_item(self, item):
           '''处理数据对象'''
           print("TestSpiderMiddleware2: process_item")
           return item
   ```
 
-
-
-
 - 项目文件夹中的downloader_middlewares.py:
 
   ```Python
   class TestDownloaderMiddleware1(object):
-  
+    
       def process_request(self, request):
           '''处理请求头，添加默认的user-agent'''
           print("TestDownloaderMiddleware1: process_request")
           return request
-  
+    
       def process_response(self, item):
           '''处理数据对象'''
           print("TestDownloaderMiddleware1: process_response")
           return item
-  
+    
   class TestDownloaderMiddleware2(object):
-  
+    
       def process_request(self, request):
           '''处理请求头，添加默认的user-agent'''
           print("TestDownloaderMiddleware2: process_request")
           return request
-  
+    
       def process_response(self, item):
           '''处理数据对象'''
           print("TestDownloaderMiddleware2: process_response")
@@ -922,7 +909,6 @@ class Engine:
         self.total_request_nums = 0
         self.total_response_nums = 0
 
-
     def start(self):
         '''
         提供引擎启动的入口
@@ -936,7 +922,6 @@ class Engine:
         logger.info("爬虫一共运行：{}秒".format((end_time-start_time).total_seconds()))
         logger.info("总的请求数量:{}".format(self.total_request_nums))
         logger.info("总的响应数量:{}".format(self.total_response_nums))
-
 
     def _start_request(self):
         for spider_name,spider in self.spiders.items():
@@ -1012,7 +997,7 @@ class Engine:
 
 ### 目前代码存在的问题
 
-通过前面的代码编写，我们已经能够完成大部分的任务，但是在`main.py` 中的代码非常臃肿，对应的我们可以再`settings.py` 配置哪些爬虫，管道，中间件需要开启，能够让整个代码的逻辑更加清晰
+通过前面的代码编写，我们已经能够完成大部分的任务，但是在`main.py` 中的代码非常臃肿，对应的我们可以再`settings.py` 配置哪些爬虫，管道，中间件需要开启，能够让整个代码的逻辑更加清晰
 
 ### 模块动态导入的方法
 
@@ -1092,7 +1077,7 @@ if __name__ == '__main__':
 
 可大致分为：对原始数据比对、对利用原始数据生成的特征值进行比对两种方式
 
-原始数据比对很好理解，就是比对的时候参照值就是原始数据；而利用特征值比对，比如最典型的就是利用原始数据生成一个指纹，比对的参照值就是这个指纹，不是原始数据本身，主要应用于单个原始数据比较大的情况，另外一种常用就是布隆过滤器，这种方式原始利用一种"特征值"，应用场景是海量数据的去重(但具有一定几率的误判)。
+原始数据比对很好理解，就是比对的时候参照值就是原始数据；而利用特征值比对，比如最典型的就是利用原始数据生成一个指纹，比对的参照值就是这个指纹，不是原始数据本身，主要应用于单个原始数据比较大的情况，另外一种常用就是布隆过滤器，这种方式原始利用一种"特征值”，应用场景是海量数据的去重(但具有一定几率的误判)。
 
 ### 爬虫请求去重原理和实现
 
@@ -1114,7 +1099,6 @@ import six
 from scrapy_plus.utils.queue import Queue
 from scrapy_plus.utils.set import RedisFilterContainer,NoramlFilterContainer
 from scrapy_plus.conf.settings import SCHEDULER_PERSIST
-
 
 class Scheduler:
 
@@ -1184,7 +1168,7 @@ class Scheduler:
 
 ### 修改engine模块
 
-现在统计了总的重复数量，所以，在engine中阻塞的位置判断程序结束的条件：成功的响应数+重复的数量>=总的请求数量程序结束
+现在统计了总的重复数量，所以，在engine中阻塞的位置判断程序结束的条件：成功的响应数+重复的数量\>=总的请求数量程序结束
 
 ```python
 #scrapy_plus/core/engine.py
@@ -1208,14 +1192,14 @@ def _start_engine(self):
 
 ### 异步任务分析：
 
-在引擎中，实现的主要功能如下
+在引擎中，实现的主要功能如下
 
 - 上面的方框中是关于start_urls中的请求处理
-- 下面的方框中是一个请求从调度器取出请求，进行下载之后交给爬虫解析再交给管道的过程 在以上两个过程中，他们之间没有直接的联系，都可以通过异步多线程的方式分别实现，加快程序执行的速度 
+- 下面的方框中是一个请求从调度器取出请求，进行下载之后交给爬虫解析再交给管道的过程 在以上两个过程中，他们之间没有直接的联系，都可以通过异步多线程的方式分别实现，加快程序执行的速度
 
-那么具体该如何实现该逻辑
+那么具体该如何实现该逻辑
 
-- multiprocessing.dummy 提供的Pool 类具有apply_async的方法，能够异步的执行让他运行的函数
+- multiprocessing.dummy 提供的Pool 类具有apply_async的方法，能够异步的执行让他运行的函数
 - apply_async方法能够接收一个callback，即其中的函数执行完成之后继续会做的事情，在这里，我们可以定义一个callback，其中让他继续执行上图中下方框的任务，同时给他一个停止条件，
 
 ### 利用回调实现循环
@@ -1235,7 +1219,6 @@ from scrapy_plus.conf import settings
 
 from .scheduler import Scheduler
 from .downloader import Downloader
-
 
 class Engine(object):
     '''
@@ -1447,7 +1430,6 @@ from gevent.pool import Pool as BasePool
 import gevent.monkey
 gevent.monkey.patch_all()    # 打补丁，替换内置的模块
 
-
 class Pool(BasePool):
     '''协程池
     使得具有close方法
@@ -1491,3 +1473,4 @@ from .downloader import Downloader
 class Engine(object):
     ......
 ```
+

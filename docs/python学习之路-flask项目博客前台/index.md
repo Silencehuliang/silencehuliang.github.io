@@ -87,7 +87,7 @@ def index():
 - 参数
 
 |  参数名  |  类型  | 是否必须 |              参数说明              |
-| :------: | :----: | :------: | :--------------------------------: |
+|:--------:|:------:|:--------:|:----------------------------------:|
 |   cid    | string |    是    |               分类id               |
 |   page   |  int   |    否    |       页数，不传即获取第1页        |
 | per_page |  int   |    否    | 每页多少条数据，如果不传，默认10条 |
@@ -95,7 +95,7 @@ def index():
 - 返回类型：JSON
 
 |          参数名          |  类型  | 是否必须 |       参数说明       |
-| :----------------------: | :----: | :------: | :------------------: |
+|:------------------------:|:------:|:--------:|:--------------------:|
 |          errno           |  int   |    是    |        错误码        |
 |          errmsg          | string |    是    |       错误信息       |
 |           cid            | string |    是    | 当前文章数据的分类id |
@@ -107,7 +107,6 @@ def index():
 |     blogList.digest      | string |    是    |         摘要         |
 |   blogList.create_time   | string |    是    |         时间         |
 | blogList.index_image_url | string |    是    |        索引图        |
-
 
 #### 后端实现
 
@@ -187,23 +186,23 @@ def get_blog_list():
       # 注册蓝图
       from blog.modules.index import index_blu
       app.register_blueprint(index_blu)
-  
+    
       from blog.modules.passport import passport_blu
       app.register_blueprint(passport_blu)
-  
+    
       from blog.modules.blog import blog_blu
       app.register_blueprint(blog_blu)
       ...
       return app
   ```
-  
+
 - 提供文章详情页访问的视图函数，将文章详情页界面移动到模板文件夹，视图函数需要接受文章 id 作为参数，以便后续查询文章详情数据
 
-  ```python 
+  ```python
   @blog_blu.route('/<int:blog_id>')
   def blog_detail(blog_id):
       return render_template('blog/detail.html')
- 
+   
   ```
 
 ### 数据展示
@@ -231,8 +230,6 @@ def blog_detail(blog_id):
     }
     return render_template('blog/detail.html', data=data)
 ```
-
-
 
 ### 文章排行
 
@@ -277,7 +274,7 @@ def blog_detail(blog_id):
 - 参数
 
 |  参数名   |  类型  | 是否必须 |    参数说明    |
-| :-------: | :----: | :------: | :------------: |
+|:---------:|:------:|:--------:|:--------------:|
 |  blog_id  |  int   |    是    |     文章id     |
 |  comment  | string |    是    |    评论内容    |
 | parent_id |  int   |    否    | 回复的评论的id |
@@ -285,7 +282,7 @@ def blog_detail(blog_id):
 - 返回类型：JSON
 
 | 参数名 |  类型  | 是否必须 | 参数说明 |
-| :----: | :----: | :------: | :------: |
+|:------:|:------:|:--------:|:--------:|
 | errno  |  int   |    是    |  错误码  |
 | errmsg | string |    是    | 错误信息 |
 
@@ -391,7 +388,7 @@ def blog_detail(blog_id):
 - 参数
 
 |   参数名   |  类型  | 是否必须 |                 参数说明                  |
-| :--------: | :----: | :------: | :---------------------------------------: |
+|:----------:|:------:|:--------:|:-----------------------------------------:|
 | comment_id |  int   |    是    |                  评论id                   |
 |  blog_id   |  int   |    是    |                  文章id                   |
 |   action   | string |    是    | 点赞操作类型：add(点赞)，remove(取消点赞) |
@@ -399,7 +396,7 @@ def blog_detail(blog_id):
 - 返回类型：JSON
 
 | 参数名 |  类型  | 是否必须 | 参数说明 |
-| :----: | :----: | :------: | :------: |
+|:------:|:------:|:--------:|:--------:|
 | errno  |  int   |    是    |  错误码  |
 | errmsg | string |    是    | 错误信息 |
 
@@ -475,6 +472,7 @@ def set_comment_like():
 可以使用 app.errorhandle(code_or_exception) 装饰器
 
 ### 代码实现
+
 - 将 `static/blog/404.html` 文件拖到 `templates/blog/` 目录下，并继承于基类模板
 
 - 在 `blog/__init__.py` 文件中的 `create_app` 函数中添加以下逻辑
@@ -493,3 +491,4 @@ def create_app(config_name):
 ```
 
 在浏览器里面输入网址进行测试
+

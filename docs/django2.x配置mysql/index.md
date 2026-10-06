@@ -7,8 +7,6 @@
 
 在Django中使用mysql数据库是很常见的,但是升级到Django2.0以后，已经不支持Python2.x，mysql的配置也需要随之改变
 
-
-
 ## 配置
 
 ### 配置settings.py
@@ -26,8 +24,6 @@ DATABASES = {
 }
 ```
 
-
-
 ### 使用pymysql
 
 由于安装mysqlclient不支持python3，所以使用pymysql包，安装pymysql并导入
@@ -42,8 +38,6 @@ pip install pymysql
 import pymysql
 pymysql.install_as_MySQLdb()
 ```
-
-
 
 ### 修改源码中的问题
 
@@ -65,7 +59,7 @@ pymysql.install_as_MySQLdb()
       """
       Similar to smart_text, except that lazy instances are resolved to
       strings, rather than kept as lazy objects.
-  
+    
       If strings_only is True, don't convert (some) non-string-like objects.
       """
       # Handle the common case first for performance reasons.
@@ -95,9 +89,4 @@ pymysql.install_as_MySQLdb()
           # MySQLdb returns string, PyMySQL bytes.
           return force_str(getattr(cursor, '_executed', None), errors='replace')
   ```
-
-
-
-
-
 

@@ -1,10 +1,9 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Python学习之路 - 标签 - Silence Blog</title>
+        <title>python学习之路 - 标签 - Silence Blog</title>
         <link>https://silencehuliang.github.io/tags/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/</link>
-        <description>Python学习之路 - 标签 - Silence Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>silencehuliang@gmail.com (Silence)</managingEditor>
-            <webMaster>silencehuliang@gmail.com (Silence)</webMaster><lastBuildDate>Sat, 17 Jul 2021 13:28:14 &#43;0800</lastBuildDate><atom:link href="https://silencehuliang.github.io/tags/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/" rel="self" type="application/rss+xml" /><item>
+        <description>python学习之路 - 标签 - Silence Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 17 Jul 2021 13:28:14 &#43;0800</lastBuildDate><atom:link href="https://silencehuliang.github.io/tags/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/" rel="self" type="application/rss+xml" /><item>
     <title>Python学习之路-MongoDB进阶</title>
     <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-mongodb%E8%BF%9B%E9%98%B6/</link>
     <pubDate>Sat, 17 Jul 2021 13:28:14 &#43;0800</pubDate>
@@ -66,7 +65,7 @@
     <pubDate>Sat, 22 May 2021 09:37:47 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%88%AC%E8%99%AB%E8%BF%9B%E9%98%B6%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6/</guid>
-    <description><![CDATA[了解框架 什么是框架 框架是为了为解决一类问题而开发的程序，框架两个字可以分开理解，框：表示指定解决问题的边界，明确要解决的问题；架：表达的是]]></description>
+    <description><![CDATA[了解框架 什么是框架 框架是为了为解决一类问题而开发的程序，框架两个字可以分开理解，框：表示指定解决问题的边界，明确要解决的问题；架：表达的是能]]></description>
 </item><item>
     <title>Python学习之路-爬虫提高:scrapy_redis</title>
     <link>https://silencehuliang.github.io/python%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF-%E7%88%AC%E8%99%AB%E6%8F%90%E9%AB%98scrapy_redis/</link>

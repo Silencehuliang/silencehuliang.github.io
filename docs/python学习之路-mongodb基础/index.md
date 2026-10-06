@@ -28,6 +28,7 @@ https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
 ### 源码安装
 
 - 解压
+
   ```bash
   tar -zxvf mongodb-linux-x86_64-ubuntu1604-3.4.0.tgz
   ```
@@ -44,7 +45,6 @@ https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
   export PATH=/usr/local/mongodb/bin:$PATH
   ```
 
-
 ## 启动MongoDB
 
 ### 服务端MongoDB的启动
@@ -53,7 +53,7 @@ https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
 - 启动：sudo service mongod start
 - 停止：sudo service mongod stop
 - 重启：sudo service mongod restart
-- 查看是否启动成功：ps -ef|grep mongod
+- 查看是否启动成功：ps -ef\|grep mongod
 - 配置文件的位置：/etc/mongod.conf，
 - 默认端⼝：27017
 - 日志的位置：/var/log/mongodb/mongod.log
@@ -66,7 +66,7 @@ https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
 
 ### 服务端MongoDB无法启动的解决方法
 
-```
+```fallback
 sudo mongod --config /etc/mongod.conf &
 ```
 
@@ -88,8 +88,8 @@ sudo mongod --config /etc/mongod.conf &
 - 不手动创建集合： 向不存在的集合中第⼀次加⼊数据时， 集合会被创建出来
 - 手动创建结合：
   - db.createCollection(name,options)
-  - db.createCollection("stu")
-  - db.createCollection("sub", { capped : true, size : 10 } )
+  - db.createCollection(“stu”)
+  - db.createCollection(“sub”, { capped : true, size : 10 } )
   - 参数capped： 默认值为false表示不设置上限,值为true表示设置上限
   - 参数size： 当capped值为true时， 需要指定此参数， 表示上限⼤⼩,当⽂档达到上限时， 会将之前的数据覆盖， 单位为字节
 - 查看集合：show collections
@@ -112,7 +112,7 @@ sudo mongod --config /etc/mongod.conf &
 
 #### 注意点
 
-- 创建⽇期语句如下 ：参数的格式为YYYY-MM-DD new Date('2017-12-20')
+- 创建⽇期语句如下 ：参数的格式为YYYY-MM-DD new Date(‘2017-12-20’)
 
 - 每个⽂档都有⼀个属性， 为_id， 保证每个⽂档的唯⼀性
 
@@ -126,7 +126,7 @@ sudo mongod --config /etc/mongod.conf &
 
 命令：`db.集合名称.insert(document)`
 
-```
+```fallback
   db.stu.insert({name:'gj',gender:1})
   db.stu.insert({_id:"20170101",name:'gj',gender:1})
 ```
@@ -149,13 +149,13 @@ sudo mongod --config /etc/mongod.conf &
 - 参数update:更新操作符
 - 参数multi:可选， 默认是false，表示只更新找到的第⼀条记录， 值为true表示把满⾜条件的⽂档全部更新
 
-```
+```fallback
 db.stu.update({name:'hr'},{name:'mnc'})   更新一条
 db.stu.update({name:'hr'},{$set:{name:'hys'}})    更新一条
 db.stu.update({},{$set:{gender:0}},{multi:true})   更新全部
 ```
 
-注意："multi update only works with $ operators"
+注意：“multi update only works with \$ operators”
 
 #### MongoDB的删除
 
@@ -194,7 +194,7 @@ db.stu.update({},{$set:{gender:0}},{multi:true})   更新全部
 逻辑运算符主要指与、或逻辑
 
 - and：在json中写多个条件即可
-- or:使⽤$or， 值为数组， 数组中每个元素为json
+- or:使⽤\$or， 值为数组， 数组中每个元素为json
 
 #### 范围运算符
 
@@ -202,7 +202,7 @@ db.stu.update({},{$set:{gender:0}},{multi:true})   更新全部
 
 #### ⽀持正则表达式
 
-使⽤//或$regex编写正则表达式
+使⽤//或\$regex编写正则表达式
 
 #### skip和limit
 
@@ -214,7 +214,7 @@ db.stu.update({},{$set:{gender:0}},{multi:true})   更新全部
 
 #### 自定义查询
 
-由于mongo的shell是一个js的执行环境 使⽤$where后⾯写⼀个函数， 返回满⾜条件的数据
+由于mongo的shell是一个js的执行环境 使⽤\$where后⾯写⼀个函数， 返回满⾜条件的数据
 
 #### 投影
 
@@ -238,8 +238,9 @@ db.stu.update({},{$set:{gender:0}},{multi:true})   更新全部
 
 命令：`db.集合名称.find({条件}).count()` 命令：`db.集合名称.count({条件})`
 
-####  消除重复
+#### 消除重复
 
 ⽅法`distinct()`对数据进⾏去重
 
 命令：`db.集合名称.distinct('去重字段',{条件})`
+

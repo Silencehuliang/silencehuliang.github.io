@@ -56,8 +56,6 @@ class BookListView(APIView):
         return Response(serializer.data)
 ```
 
-
-
 #### GenericAPIView
 
 ##### 简介
@@ -75,7 +73,7 @@ class BookListView(APIView):
   - **pagination_class** 分页控制类
   - **filter_backends** 过滤控制后端
 - 详情页视图使用：
-  - **lookup_field** 查询单一数据库对象时使用的条件字段，默认为'`pk`'
+  - **lookup_field** 查询单一数据库对象时使用的条件字段，默认为'`pk`’
   - **lookup_url_kwarg** 查询单一数据时URL中的参数关键字名称，默认与**look_field**相同
 
 ##### 提供的方法
@@ -103,7 +101,7 @@ class BookListView(APIView):
         return BasicAccountSerializer
     ```
 
-  - ##### get_serializer(self, *args, **kwargs)
+  - ##### get_serializer(self, \*args, \*\*kwargs)
 
     返回序列化器对象，被其他视图或扩展类使用，如果我们在视图中想要获取序列化器对象，可以直接调用此方法。
 
@@ -377,9 +375,8 @@ action装饰器可以接收两个参数：
 
 - **methods**: 该action支持的请求方式，列表传递
 
-- detail
-
-  : 表示是action中要处理的是否是视图资源的对象（即是否通过url路径获取主键）
+- detail  
+  表示是action中要处理的是否是视图资源的对象（即是否通过url路径获取主键）
 
   - True 表示使用通过URL获取的主键对应的数据对象
   - False 表示不使用URL获取主键
@@ -428,7 +425,7 @@ REST framework提供了两个router
   urlpatterns += router.urls
   ```
 
-	或
+  或
 
   ```python
   urlpatterns = [
@@ -464,17 +461,15 @@ class BookInfoViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, GenericV
 
 1） SimpleRouter
 
-![SimpleRouter](https://tvax1.sinaimg.cn/large/00729CCqgy1gq9tfy4swej31940gwdj7.jpg)
+![](https://tvax1.sinaimg.cn/large/00729CCqgy1gq9tfy4swej31940gwdj7.jpg)
 
 2）DefaultRouter
 
-![DefaultRouter](https://tvax3.sinaimg.cn/large/00729CCqgy1gq9tgjblz9j318y0j4wii.jpg)
+![](https://tvax3.sinaimg.cn/large/00729CCqgy1gq9tgjblz9j318y0j4wii.jpg)
 
 DefaultRouter与SimpleRouter的区别是，DefaultRouter会多附带一个默认的API根视图，返回一个包含所有列表视图的超链接响应数据。
 
-
-
-## Request 
+## Request
 
 ### 简介
 
@@ -500,7 +495,7 @@ REST framework 提供了**Parser**解析器，在接收到请求后会自动根�
 
 ### 简介
 
-```
+```fallback
 rest_framework.response.Response
 ```
 
@@ -626,5 +621,4 @@ HTTP_505_HTTP_VERSION_NOT_SUPPORTED
 HTTP_507_INSUFFICIENT_STORAGE
 HTTP_511_NETWORK_AUTHENTICATION_REQUIRED
 ```
-
 

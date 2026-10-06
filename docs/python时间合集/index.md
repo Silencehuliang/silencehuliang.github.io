@@ -5,76 +5,119 @@
 
 ## python3中时间的表示形式
 
-### 格式化时间字符串 
+### 格式化时间字符串
 
-格式化时间字符串（string_time）,指**格式化输出指定输出参数的格式与相对位置的字符串参数**，与python中的format作用类似，常见的格式化时间字符串：**"%Y-%m-%d %H:%M:%S %z,%a,%A,%b,%B,%c,%I,%p"**
+格式化时间字符串（string_time）,指**格式化输出指定输出参数的格式与相对位置的字符串参数**，与python中的format作用类似，常见的格式化时间字符串：**"%Y-%m-%d %H:%M:%S %z,%a,%A,%b,%B,%c,%I,%p”**
 
 - 常用的表
 
-| 名&nbsp;&nbsp;称 |           含&nbsp;&nbsp;义           |                       例&nbsp;&nbsp;子                       |
-| :--------------: | :----------------------------------: | :----------------------------------------------------------: |
-|        %Y        |    有世纪并用0填充的十进制数年份     |           0001, 0002, …, 2013, 2014, …, 9998, 9999           |
-|        %m        |        用零填充十进制数的月份        |                        01, 02, …, 12                         |
-|        %d        |    用零填充十进制数的月中的某一天    |                        01, 02, …, 31                         |
-|        %H        |  24小时格式的用0填充的十进制数小时   |                        00, 01, …, 23                         |
-|        %M        |        用0填充的十进制数分钟         |                        00, 01, …, 59                         |
-|        %S        |         用0填充的十进制数秒          |                        00, 01, …, 59                         |
-|        %z        | 用零填充的十进制小时分钟秒毫秒的时差 |    (empty), +0000, -0400, +1030, +063415, -030712.345216     |
-|        %a        |     根据区域设置的缩写的星期名称     |      Sun, Mon, …, Sat (en_US)<br>So, Mo, …, Sa (de_DE)       |
-|        %A        |      根据区域设置的完整星期名称      | Sunday, Monday, …, Saturday (en_US)<br>Sonntag, Montag, …, Samstag (de_DE) |
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;">名  称</th>
+<th style="text-align: center;">含  义</th>
+<th style="text-align: center;">例  子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">%Y</td>
+<td style="text-align: center;">有世纪并用0填充的十进制数年份</td>
+<td style="text-align: center;">0001, 0002, …, 2013, 2014, …, 9998, 9999</td>
+</tr>
+<tr>
+<td style="text-align: center;">%m</td>
+<td style="text-align: center;">用零填充十进制数的月份</td>
+<td style="text-align: center;">01, 02, …, 12</td>
+</tr>
+<tr>
+<td style="text-align: center;">%d</td>
+<td style="text-align: center;">用零填充十进制数的月中的某一天</td>
+<td style="text-align: center;">01, 02, …, 31</td>
+</tr>
+<tr>
+<td style="text-align: center;">%H</td>
+<td style="text-align: center;">24小时格式的用0填充的十进制数小时</td>
+<td style="text-align: center;">00, 01, …, 23</td>
+</tr>
+<tr>
+<td style="text-align: center;">%M</td>
+<td style="text-align: center;">用0填充的十进制数分钟</td>
+<td style="text-align: center;">00, 01, …, 59</td>
+</tr>
+<tr>
+<td style="text-align: center;">%S</td>
+<td style="text-align: center;">用0填充的十进制数秒</td>
+<td style="text-align: center;">00, 01, …, 59</td>
+</tr>
+<tr>
+<td style="text-align: center;">%z</td>
+<td style="text-align: center;">用零填充的十进制小时分钟秒毫秒的时差</td>
+<td style="text-align: center;">(empty), +0000, -0400, +1030, +063415, -030712.345216</td>
+</tr>
+<tr>
+<td style="text-align: center;">%a</td>
+<td style="text-align: center;">根据区域设置的缩写的星期名称</td>
+<td style="text-align: center;">Sun, Mon, …, Sat (en_US)<br />
+So, Mo, …, Sa (de_DE)</td>
+</tr>
+<tr>
+<td style="text-align: center;">%A</td>
+<td style="text-align: center;">根据区域设置的完整星期名称</td>
+<td style="text-align: center;">Sunday, Monday, …, Saturday (en_US)<br />
+Sonntag, Montag, …, Samstag (de_DE)</td>
+</tr>
+</tbody>
+</table>
 
 吐槽一下官网注释秒的范围是0-59，实测0-61都可以
 
-- 官方的完整表：
-  以下是C标准（1989版）所需的所有格式代码的列表，这些代码适用于具有标准C实现的所有平台。请注意，1999版C标准添加了其他格式代码。  
+- 官方的完整表： 以下是C标准（1989版）所需的所有格式代码的列表，这些代码适用于具有标准C实现的所有平台。请注意，1999版C标准添加了其他格式代码。
 
-| 名&nbsp;&nbsp;称 |                  含&nbsp;&nbsp;义                  |                       例&nbsp;&nbsp;子                       |
-| :--------------: | :------------------------------------------------: | :----------------------------------------------------------: |
-|        %a        |            根据区域设置的缩写的星期名称            |        Sun, Mon, …, Sat (en_US)So, Mo, …, Sa (de_DE)         |
-|        %A        |             根据区域设置的完整星期名称             | Sunday, Monday, …, Saturday (en_US)Sonntag, Montag, …, Samstag (de_DE) |
-|        %w        | 将工作日变成十进制数，其中0表示星期日，6表示星期六 |                          0, 1, …, 6                          |
-|        %d        |           用零填充十进制数的月中的某一天           |                        01, 02, …, 31                         |
-|        %b        |              根据区域设置的缩写月份名              |      Jan, Feb, …, Dec (en_US);Jan, Feb, …, Dez (de_DE)       |
-|        %B        |                根据区域改变月份全称                | January, February, …, December (en_US)Januar, Februar, …, Dezember (de_DE) |
-|        %m        |               用零填充十进制数的月份               |                        01, 02, …, 12                         |
-|        %y        |          没有世纪并用0填充的十进制数年份           |                        00, 01, …, 99                         |
-|        %Y        |           有世纪并用0填充的十进制数年份            |           0001, 0002, …, 2013, 2014, …, 9998, 9999           |
+| 名  称 | 含  义 | 例  子 |
+|:--:|:--:|:--:|
+| %a | 根据区域设置的缩写的星期名称 | Sun, Mon, …, Sat (en_US)So, Mo, …, Sa (de_DE) |
+| %A | 根据区域设置的完整星期名称 | Sunday, Monday, …, Saturday (en_US)Sonntag, Montag, …, Samstag (de_DE) |
+| %w | 将工作日变成十进制数，其中0表示星期日，6表示星期六 | 0, 1, …, 6 |
+| %d | 用零填充十进制数的月中的某一天 | 01, 02, …, 31 |
+| %b | 根据区域设置的缩写月份名 | Jan, Feb, …, Dec (en_US);Jan, Feb, …, Dez (de_DE) |
+| %B | 根据区域改变月份全称 | January, February, …, December (en_US)Januar, Februar, …, Dezember (de_DE) |
+| %m | 用零填充十进制数的月份 | 01, 02, …, 12 |
+| %y | 没有世纪并用0填充的十进制数年份 | 00, 01, …, 99 |
+| %Y | 有世纪并用0填充的十进制数年份 | 0001, 0002, …, 2013, 2014, …, 9998, 9999 |
 
-
-
-### 时间戳 
+### 时间戳
 
 时间戳（Timestamp）,指**字符串或编码信息用于辨识记录下来的时间日期**，维基百科解释的不容易懂，我的个人理解是**从1970年1月1日到现在过去了多少秒**。
 
-
-
-### 时间元祖 
+### 时间元祖
 
 时间元祖(struct_time),**指包含9个特殊元素的元祖**，（tm_year，tm_mon，tm_mday，tm_hour，tm_min，tm_sec，tm_wday，tm_yday，tm_isdst），详情见下表格
 
-| 名&nbsp;&nbsp;称 | 含&nbsp;&nbsp;义 |               值                |
-| :--------------: | :--------------: | :-----------------------------: |
-|     tm_year      |        年        |       具体年份，例：2017        |
-|      tm_mon      |        月        |              1-12               |
-|     tm_mday      |        日        |              1-31               |
-|     tm_hour      |        时        |              1-23               |
-|      tm_min      |        分        |              0-59               |
-|      tm_sec      |        秒        |              0-61               |
-|     tm_wday      |        周        |        0-6（从周末开始）        |
-|     tm_yday      | 在一年中的第几天 |              1-666              |
-|     tm_isdst     |   是否为夏令时   | -1,0,1（能表示true和flase的值） |
-
-
+|  名  称  |      含  义      |               值                |
+|:--------:|:----------------:|:-------------------------------:|
+| tm_year  |        年        |       具体年份，例：2017        |
+|  tm_mon  |        月        |              1-12               |
+| tm_mday  |        日        |              1-31               |
+| tm_hour  |        时        |              1-23               |
+|  tm_min  |        分        |              0-59               |
+|  tm_sec  |        秒        |              0-61               |
+| tm_wday  |        周        |        0-6（从周末开始）        |
+| tm_yday  | 在一年中的第几天 |              1-666              |
+| tm_isdst |   是否为夏令时   | -1,0,1（能表示true和flase的值） |
 
 ### 时间对象
 
 时间对象（time_object）,指**通过某些时间类生成的对象**，例如datetime对象。
 
-
-
 ## python中两大时间库：
 
-### time 
+### time
 
 #### 简介：
 
@@ -87,7 +130,7 @@
   - altzone，-32400
   - daylight，0
   - timezone，-28800
-  - _STRUCT_TM_ITEMS，11
+  - \_STRUCT_TM_ITEMS，11
 
 - variables with complex values，值复杂的变量
 
@@ -134,18 +177,15 @@
   'Tue Jun 11 17:08:44 2017'
   ```
 
-- get_clock_info：获取有关指定时钟的信息作为命名空间对象。支持的时钟名称和读取其值的相应函数是：  
+- get_clock_info：获取有关指定时钟的信息作为命名空间对象。支持的时钟名称和读取其值的相应函数是：
 
-  - 'clock'： time.clock()
-  - 'monotonic'： time.monotonic()
-  - 'perf_counter'： time.perf_counter()
-  - 'process_time'： time.process_time()
-  - 'thread_time'： time.thread_time()
-  - 'time'： time.time()  
-    结果具有以下属性：
-    adjustable：True如果时钟可以自动更改（例如通过NTP守护程序）或由系统管理员手动更改，False否则
-    implementation：用于获取时钟值的基础C函数的名称。有关可能的值，请参阅时钟ID常量。
-    单调：True如果时钟不能倒退， False否则分辨率：时钟的分辨率（秒）（float）
+  - ‘clock’： time.clock()
+  - ‘monotonic’： time.monotonic()
+  - ‘perf_counter’： time.perf_counter()
+  - ‘process_time’： time.process_time()
+  - ‘thread_time’： time.thread_time()
+  - ‘time’： time.time()\
+    结果具有以下属性： adjustable：True如果时钟可以自动更改（例如通过NTP守护程序）或由系统管理员手动更改，False否则 implementation：用于获取时钟值的基础C函数的名称。有关可能的值，请参阅时钟ID常量。 单调：True如果时钟不能倒退， False否则分辨率：时钟的分辨率（秒）（float）
 
 - gmtime：将时间戳转换为时间元祖，当没有传入参数时，返回当前世界标准时间的时间元祖。参数类型：时间戳，返回类型：元祖（但是查看源码只有一个pass）。例如：
 
@@ -209,12 +249,11 @@
   4.40625
   ```
 
-- sleep:将执行延迟数秒。参数类型：int or float ,返回类型：无，这就不演示了...浪费时间
-
+- sleep:将执行延迟数秒。参数类型：int or float ,返回类型：无，这就不演示了…浪费时间
 
 - strftime：根据格式规范将时间元组转换为字符串。有关格式化代码，请参阅库参考手册。当没有传入参数时，使用localtime()返回的当前时间。传入参数：配对字符串,时间元祖（与字符串配对），返回参数：时间字符串,例：
 
-  ```python 
+  ```python
   # 根据前面的格式化字符串来生成对应时间字符串
   >>> time.strftime("%Y-%m-%d %H:%M:%S", (2017, 1, 1, 1, 1, 1, 1, 13, 0))
   '2017-01-01 01:01:01'
@@ -226,11 +265,7 @@
 
 - strptime：根据格式规范将字符串解析为时间元组。有关格式化代码，请参阅库参考手册(与strftime ())。传入参数：时间字符串，配对字符串。返回参数：时间元祖
 
-例：
-    ```python
-    >>> time.strptime("2017-01-01 01:01:02", "%Y-%m-%d %H:%M:%S")
-    time.struct_time(tm_year=2017, tm_mon=1, tm_mday=1, tm_hour=1, tm_min=1, tm_sec=2, tm_wday=1, tm_yday=1, tm_isdst=-1)
-    ```
+例： `python >>> time.strptime("2017-01-01 01:01:02", "%Y-%m-%d %H:%M:%S") time.struct_time(tm_year=2017, tm_mon=1, tm_mday=1, tm_hour=1, tm_min=1, tm_sec=2, tm_wday=1, tm_yday=1, tm_isdst=-1)`
 
 - time：以秒为单位返回从纪元开始的当前时间。如果系统时钟提供这些信息，那么可能只存在几分之一秒。就是我们常说的时间戳。返回参数：浮点数
 
@@ -250,116 +285,116 @@
 
 ##### 类方法
 
-  - fromtimestamp：将时间戳转化为date对象，参数类型：float，int，返回类型：date对象
+- fromtimestamp：将时间戳转化为date对象，参数类型：float，int，返回类型：date对象
 
-    ```python
-    >>> from datetime import date
-    >>> date.fromtimestamp(1560415206)
-    datetime.date(2017, 6, 13)
-    >>> type(date.fromtimestamp(1560415206))
-    <class 'datetime.date'>
-    ```
+  ```python
+  >>> from datetime import date
+  >>> date.fromtimestamp(1560415206)
+  datetime.date(2017, 6, 13)
+  >>> type(date.fromtimestamp(1560415206))
+  <class 'datetime.date'>
+  ```
 
-  - today：获得今天的日期，返回类型：date对象
+- today：获得今天的日期，返回类型：date对象
 
-    ```python
-    >>> date.today()
-    datetime.date(2017, 6, 13)
-    >>> type(date.today())
-    <class 'datetime.date'>
-    ```
+  ```python
+  >>> date.today()
+  datetime.date(2017, 6, 13)
+  >>> type(date.today())
+  <class 'datetime.date'>
+  ```
 
-  - fromordinal：跟fromtimestamp类似
+- fromordinal：跟fromtimestamp类似
 
-    ```python
-    >>> date.fromtimestamp(1560415206)
-    datetime.date(2017, 6, 13)
-    >>> type(date.fromtimestamp(1560415206))
-    <class 'datetime.date'>
-    ```
+  ```python
+  >>> date.fromtimestamp(1560415206)
+  datetime.date(2017, 6, 13)
+  >>> type(date.fromtimestamp(1560415206))
+  <class 'datetime.date'>
+  ```
 
 ##### 实例方法
 
-  - ctime：返回将日期对象转化为标准时间日期的 00:00:00
-    
-    ```python
-    >>> date(2017,6,13).ctime()
-    'Thu Jun 13 00:00:00 2017'
-    ```
-    
-  - strftime，返回将date对象转化为指定格式的date对象
-    
-    ```python
-    >>> d = date(2017,1,1)
-    >>> d.strftime("%d/%m/%y")
-    '01/01/17'
-    >>> type(d)
-    <class 'datetime.date'>
-    ```
-    
-  - isoformat,返回将date对象转化为'YYYY-MM-DD'格式的date对象,
-    
-    ```python
-    >>> d = date(2017,2,2)
-    >>> d.isoformat()
-    '2017-02-02'
-    >>> type(d)
-    <class 'datetime.date'>
-    ```
-    
-  - timetuple,返回与time.localtime()兼容的本地时间元组
-    
-    ```python
-    >>> date(2017,7,7).timetuple()
-    time.struct_time(tm_year=2017, tm_mon=7, tm_mday=7, tm_hour=0, tm_min=0, tm_sec=0, tm_wday=4, tm_yday=188, tm_isdst=-1)
-    ```
-    
-  - toordinal,按年、月、日返回子午线格列高利教序数。返回类型：int
-    
-    ```python
-    >>> d = date(2017,7,7).toordinal()
-    >>> type(d)
-    <class 'int'>
-    ```
-    
-  - replace,根据传入的年月日修改date对象的年月日,参数类型：int,返回类型:date对象
-    
-    ```python
-    >>> d = date(2017,7,7)
-    >>> d.replace(month=8,day=8)
-    datetime.date(2017, 8, 8)
-    ```
-    
-  - weekday,根据date对象，判断该日期为星期几,返回类型：int,0-6分别对应星期一到星期天
-    
-    ```python
-    >>> d = date(2017,6,12)
-    >>> a = d.weekday()
-    0
-    >>> type(a)
-    <class 'int'>
-    ```
-    
-  - isoweekday，根据date对象，判断该日期为星期几,返回类型：int,1-7分别对应星期一到星期天
-    
-    ```python
-    >>> d = date(2017,6,12)
-    >>> a = d.isoweekday()
-    1
-    >>> type(a)
-    <class 'int'>
-    ```
-    
-  - isocalendar,根据date对象，判断该日期为第几周的星期几，返回类型：包含年，第几周，星期几的元祖
-    
-    ```python
-    >>> d = date(2017,6,12)
-    >>> d.isocalendar()
-    (2017, 24, 1)
-    >>> d = date(2017,7,12)
-    >>> d.isocalendar()
-    (2017, 28, 3)
-    ```
+- ctime：返回将日期对象转化为标准时间日期的 00:00:00
+
+  ```python
+  >>> date(2017,6,13).ctime()
+  'Thu Jun 13 00:00:00 2017'
+  ```
+
+- strftime，返回将date对象转化为指定格式的date对象
+
+  ```python
+  >>> d = date(2017,1,1)
+  >>> d.strftime("%d/%m/%y")
+  '01/01/17'
+  >>> type(d)
+  <class 'datetime.date'>
+  ```
+
+- isoformat,返回将date对象转化为’YYYY-MM-DD’格式的date对象,
+
+  ```python
+  >>> d = date(2017,2,2)
+  >>> d.isoformat()
+  '2017-02-02'
+  >>> type(d)
+  <class 'datetime.date'>
+  ```
+
+- timetuple,返回与time.localtime()兼容的本地时间元组
+
+  ```python
+  >>> date(2017,7,7).timetuple()
+  time.struct_time(tm_year=2017, tm_mon=7, tm_mday=7, tm_hour=0, tm_min=0, tm_sec=0, tm_wday=4, tm_yday=188, tm_isdst=-1)
+  ```
+
+- toordinal,按年、月、日返回子午线格列高利教序数。返回类型：int
+
+  ```python
+  >>> d = date(2017,7,7).toordinal()
+  >>> type(d)
+  <class 'int'>
+  ```
+
+- replace,根据传入的年月日修改date对象的年月日,参数类型：int,返回类型:date对象
+
+  ```python
+  >>> d = date(2017,7,7)
+  >>> d.replace(month=8,day=8)
+  datetime.date(2017, 8, 8)
+  ```
+
+- weekday,根据date对象，判断该日期为星期几,返回类型：int,0-6分别对应星期一到星期天
+
+  ```python
+  >>> d = date(2017,6,12)
+  >>> a = d.weekday()
+  0
+  >>> type(a)
+  <class 'int'>
+  ```
+
+- isoweekday，根据date对象，判断该日期为星期几,返回类型：int,1-7分别对应星期一到星期天
+
+  ```python
+  >>> d = date(2017,6,12)
+  >>> a = d.isoweekday()
+  1
+  >>> type(a)
+  <class 'int'>
+  ```
+
+- isocalendar,根据date对象，判断该日期为第几周的星期几，返回类型：包含年，第几周，星期几的元祖
+
+  ```python
+  >>> d = date(2017,6,12)
+  >>> d.isocalendar()
+  (2017, 24, 1)
+  >>> d = date(2017,7,12)
+  >>> d.isocalendar()
+  (2017, 28, 3)
+  ```
 
 ##### 魔法属性
 
@@ -376,8 +411,11 @@ year,month,day：返回年、月、日
 ```
 
 #### time
+
 ##### 简介
+
 表示时间的类。常用的属性有hour, minute, second, microsecond。
+
 ##### 参数
 
 hour=0, minute=0, second=0, microsecond=0, tzinfo=None, fold=0，
@@ -385,7 +423,7 @@ hour=0, minute=0, second=0, microsecond=0, tzinfo=None, fold=0，
 - hour，minute，小时和分钟必须传入，小时为0-23，分钟为0-59
 - second，microsecond，秒和毫秒，默认为0，可以不传，秒为0-59，毫秒为0-999999
 - tzinfo，时区默认为None,可以填你想要的时区
-- fold，在[0,1]。用于消除重复间隔期间的墙壁时间的歧义。(当时钟在夏令时结束时回滚，或由于政治原因降低当前区域的UTC偏移量时，会出现重复间隔。)值0(1)表示具有相同壁面时间表示的两个时刻中较早(较晚)的时刻。
+- fold，在\[0,1\]。用于消除重复间隔期间的墙壁时间的歧义。(当时钟在夏令时结束时回滚，或由于政治原因降低当前区域的UTC偏移量时，会出现重复间隔。)值0(1)表示具有相同壁面时间表示的两个时刻中较早(较晚)的时刻。
 
 ##### 常量
 
@@ -415,7 +453,7 @@ hour=0, minute=0, second=0, microsecond=0, tzinfo=None, fold=0，
 
 ##### 实例方法
 
-- isoformat，返回按ISO格式格式化的时间字符串。完整的格式是'HH:MM:SS.mmmmmm+zz:zz'可选参数：timespec，指定附加的数量所包括的时间条款
+- isoformat，返回按ISO格式格式化的时间字符串。完整的格式是’HH:MM:SS.mmmmmm+zz:zz’可选参数：timespec，指定附加的数量所包括的时间条款
 
   ```python
   >>> t = time(8,8)
@@ -489,14 +527,14 @@ hour=0, minute=0, second=0, microsecond=0, tzinfo=None, fold=0，
 
 year, month, day, hour=0, minute=0, second=0, microsecond=0, tzinfo=None, fold=0，年，月，日参数是必需的。 tzinfo可以是None，或者是tzinfo子类的实例。其余参数可以是整数，在以下范围内：
 
-- MINYEAR <= year <= MAXYEAR，
-- 1 <= month <= 12，
-- 1 <= day <= number of days in the given month and year，
-- 0 <= hour < 24，
-- 0 <= minute < 60，
-- 0 <= second < 60，
-- 0 <= microsecond < 1000000，
-- fold in [0, 1]。
+- MINYEAR \<= year \<= MAXYEAR，
+- 1 \<= month \<= 12，
+- 1 \<= day \<= number of days in the given month and year，
+- 0 \<= hour \< 24，
+- 0 \<= minute \< 60，
+- 0 \<= second \< 60，
+- 0 \<= microsecond \< 1000000，
+- fold in \[0, 1\]。
 
 ##### 魔法属性
 
@@ -613,7 +651,7 @@ hour,minute,second,microsecond,tzinfo,fold.根据datetime对象返回对应的�
 
 - astimezone,返回一个具有tzinfo的datetime对象，如果没有设置tz则为本地的时区信息
 
-  ``` python
+  ```python
   >>> datetime(2018,1,1,14,59).astimezone()
   datetime.datetime(2018, 1, 1, 14, 59, tzinfo=datetime.timezone(datetime.timedelta(0, 28800), '?D1¨²¡À¨º¡Á?¨º¡À??'))
   ```
@@ -625,7 +663,7 @@ hour,minute,second,microsecond,tzinfo,fold.根据datetime对象返回对应的�
   'Mon Jan  1 14:59:00 2018'
   ```
 
-- isoformat,返回一个按iso格式格式化的事件字符串，完整的格式看起来像'YYYY-MM-DD HH:MM:SS.mmmmmm'，如果设置了tzinfo，则UTC偏移量也会被格式化，这时候完整的格式'YYYY-MM-DD HH:MM:SS.mmmmmm+HH:MM'，可选参数sep默认为T，指定日期与时间之间的分隔符
+- isoformat,返回一个按iso格式格式化的事件字符串，完整的格式看起来像’YYYY-MM-DD HH:MM:SS.mmmmmm’，如果设置了tzinfo，则UTC偏移量也会被格式化，这时候完整的格式’YYYY-MM-DD HH:MM:SS.mmmmmm+HH:MM’，可选参数sep默认为T，指定日期与时间之间的分隔符
 
   ```python
   >>> datetime(2018,1,1,14,59).isoformat()
@@ -671,45 +709,44 @@ hour,minute,second,microsecond,tzinfo,fold.根据datetime对象返回对应的�
   此外，datetime支持减去两个datetime对象返回一个时间增量，以及一个datetime的加减法以及给出datetime的时间增量。
 
 ##### 参数
-days=0, seconds=0, microseconds=0,milliseconds=0,     minutes=0, hours=0, weeks=0
+
+days=0, seconds=0, microseconds=0,milliseconds=0, minutes=0, hours=0, weeks=0
 
 ##### 魔法属性
 
-  - days,返回日,不足一日则为0
+- days,返回日,不足一日则为0
 
-    ```python
-    >>> timedelta(hours=1).days
-    0
-    >>> timedelta(hours=25).days
-        1
-    ```
+  ```python
+  >>> timedelta(hours=1).days
+  0
+  >>> timedelta(hours=25).days
+      1
+  ```
 
-  - seconds，[秒]
+- seconds，\[秒\]
 
-    ```python
-    >>> timedelta(hours=1).seconds
-    3600
-    >>> timedelta(hours=2).seconds
-    7200
-    ```
+  ```python
+  >>> timedelta(hours=1).seconds
+  3600
+  >>> timedelta(hours=2).seconds
+  7200
+  ```
 
-  - microseconds
+- microseconds
 
-    ```python
-    >>> timedelta(seconds=1).microseconds
-        0
-    >>> timedelta(microseconds=1).microseconds
-        1
-    ```
+  ```python
+  >>> timedelta(seconds=1).microseconds
+      0
+  >>> timedelta(microseconds=1).microseconds
+      1
+  ```
 
-  - total_seconds，计算timedelta对象的秒数
+- total_seconds，计算timedelta对象的秒数
 
-    ```python
-    >>> timedelta(hours=1).total_seconds()
-    3600.0
-    ```
-
-    
+  ```python
+  >>> timedelta(hours=1).total_seconds()
+  3600.0
+  ```
 
 #### tzinfo
 
@@ -721,7 +758,7 @@ days=0, seconds=0, microseconds=0,milliseconds=0,     minutes=0, hours=0, weeks=
 
 时区信息类，他是一个抽象类，不能直接实例化，需要派生一个具体的子类。
 
-  ```python
+```python
 >>> from datetime import tzinfo, datetime, timedelta
 >>> class UTC(tzinfo):
 ...     def __init__(self,offset = 0):
@@ -735,7 +772,7 @@ days=0, seconds=0, microseconds=0,milliseconds=0,     minutes=0, hours=0, weeks=
 >>> sh = datetime(2017,6,12,0,0,0,tzinfo=UTC)
 >>> sh
 datetime.datetime(2017, 6, 12, 0, 0, tzinfo=<__main__.UTC_add_8 object at 0x0000021499624588>)
-  ```
+```
 
+​
 
-​       

@@ -7,18 +7,18 @@
 
 ### 设置
 
-**set_cookie(name, value, domain=None, expires=None, path='/', expires_days=None)**
+**set_cookie(name, value, domain=None, expires=None, path=’/’, expires_days=None)**
 
 参数说明：
 
-|    参数名    |                             说明                             |
-| :----------: | :----------------------------------------------------------: |
-|     name     |                           cookie名                           |
-|    value     |                           cookie值                           |
-|    domain    |                    提交cookie时匹配的域名                    |
-|     path     |                    提交cookie时匹配的路径                    |
-|   expires    | cookie的有效期，可以是时间戳整数、时间元组或者datetime类型，为**UTC时间** |
-| expires_days |           cookie的有效期，天数，优先级低于expires            |
+| 参数名 | 说明 |
+|:--:|:--:|
+| name | cookie名 |
+| value | cookie值 |
+| domain | 提交cookie时匹配的域名 |
+| path | 提交cookie时匹配的路径 |
+| expires | cookie的有效期，可以是时间戳整数、时间元组或者datetime类型，为**UTC时间** |
+| expires_days | cookie的有效期，天数，优先级低于expires |
 
 ```python
 import datetime
@@ -59,11 +59,11 @@ class IndexHandler(RequestHandler):
 
 ### 清除
 
-**clear_cookie(name, path='/', domain=None)**
+**clear_cookie(name, path=’/’, domain=None)**
 
 删除名为name，并同时匹配domain和path的cookie。
 
-**clear_all_cookies(path='/', domain=None)**
+**clear_all_cookies(path=’/’, domain=None)**
 
 删除同时匹配domain和path的所有cookie。
 
@@ -80,9 +80,7 @@ class ClearAllCookieHandler(RequestHandler):
 ```
 
 {{< admonition warning "注意" true >}}
-
 执行清除cookie操作后，并不是立即删除了浏览器中的cookie，而是给cookie值置空，并改变其有效期使其失效。真正的删除cookie是由浏览器去清理的。
-
 {{< /admonition >}}
 
 ### 安全Cookie
@@ -97,16 +95,12 @@ Cookie是存储在客户端浏览器中的，很容易被篡改。Tornado提供�
 '2hcicVu+TqShDpfsjMWQLZ0Mkq5NPEWSk9fi0zsSt3A='
 ```
 
-
-
 {{< admonition tip "提示" true >}}
-
 Base64是一种基于64个可打印字符来表示二进制数据的表示方法。由于2的6次方等于64，所以每6个比特为一个单元，对应某个可打印字符。三个字节有24个比特，对应于4个Base64单元，即3个字节需要用4个可打印字符来表示。
 
 uuid, 通用唯一识别码（英语：Universally Unique Identifier，简称UUID），是由一组32个16进制数字所构成（两个16进制数是一个字节，总共16字节），因此UUID理论上的总数为16^32=2^128，约等于3.4 x 10^38。也就是说若每纳秒产生1兆个UUID，要花100亿年才会将所有UUID用完。
 
 uuid模块的uuid4()函数可以随机产生一个uuid码，bytes属性将此uuid码作为16字节字符串。
-
 {{< /admonition >}}
 
 将生成的cookie_secret传入Application构造函数：
@@ -149,17 +143,15 @@ class IndexHandler(RequestHandler):
 
 字段说明：
 
-1. 安全cookie的版本，默认使用版本2，不带长度说明前缀
-2. 默认为0
-3. 时间戳
-4. cookie名
-5. base64编码的cookie值
-6. 签名值，不带长度说明前缀
+1.  安全cookie的版本，默认使用版本2，不带长度说明前缀
+2.  默认为0
+3.  时间戳
+4.  cookie名
+5.  base64编码的cookie值
+6.  签名值，不带长度说明前缀
 
 {{< admonition warning "注意" true >}}
-
 Tornado的安全cookie只是一定程度的安全，仅仅是增加了恶意修改的难度。Tornado的安全cookies仍然容易被窃听，而cookie值是签名不是加密，攻击者能够读取已存储的cookie值，并且可以传输他们的数据到任意服务器，或者通过发送没有修改的数据给应用伪造请求。因此，避免在浏览器cookie中存储敏感的用户数据是非常重要的。
-
 {{< /admonition >}}
 
 ## XSRF
@@ -200,9 +192,7 @@ class IndexHandler(RequestHandler):
 ### XSRF保护
 
 {{< admonition tip "提示" true >}}
-
 浏览器有一个很重要的概念——**同源策略**(Same-Origin Policy)。 所谓同源是指，域名，协议，端口相同。 不同源的客户端脚本(javascript、ActionScript)在没明确授权的情况下，不能读写对方的资源。
-
 {{< /admonition >}}
 
 由于第三方站点没有访问cookie数据的权限（同源策略），所以我们可以要求每个请求包括一个特定的参数值作为令牌来匹配存储在cookie中的对应值，如果两者匹配，我们的应用认定请求有效。而第三方站点无法在请求中包含令牌cookie值，这就有效地防止了不可信网站发送未授权的请求。
@@ -409,7 +399,7 @@ class ProfileHandler(RequestHandler):
 
 ### get_current_user()方法
 
-装饰器@tornado.web.authenticated的判断执行依赖于请求处理类中的self.current_user属性，如果current_user值为假（None、False、0、""等），任何GET或HEAD请求都将把访客重定向到应用设置中login_url指定的URL，而非法用户的POST请求将返回一个带有403（Forbidden）状态的HTTP响应。
+装饰器@tornado.web.authenticated的判断执行依赖于请求处理类中的self.current_user属性，如果current_user值为假（None、False、0、““等），任何GET或HEAD请求都将把访客重定向到应用设置中login_url指定的URL，而非法用户的POST请求将返回一个带有403（Forbidden）状态的HTTP响应。
 
 在获取self.current_user属性的时候，tornado会调用get_current_user()方法来返回current_user的值。也就是说，**我们验证用户的逻辑应写在get_current_user()方法中，若该方法返回非假值则验证通过，否则验证失败。**
 
@@ -456,3 +446,4 @@ class LoginHandler(RequestHandler):
         next = self.get_argument("next", "/")
         self.redirect(next+"?name=logined")
 ```
+

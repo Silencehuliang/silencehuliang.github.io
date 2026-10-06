@@ -19,7 +19,7 @@
 
 #### 允许任何域名
 
-在开发和测试的时候可以将这里填为*，后期部署上线后修改为指定域名即可 
+在开发和测试的时候可以将这里填为\*，后期部署上线后修改为指定域名即可
 
 ```python
 ALLOWED_HOSTS = ['*']
@@ -40,7 +40,7 @@ INSTALLED_APPS = [
 ]
 ```
 
-#### 配置模版 
+#### 配置模版
 
 ```python
 TEMPLATES = [
@@ -63,7 +63,7 @@ TEMPLATES = [
 ]
 ```
 
- 注册完后，在项目根目录中（即manage.py所在的目录）创建templates文件夹，使用pycharm创建项目会自动帮我们创建 
+注册完后，在项目根目录中（即manage.py所在的目录）创建templates文件夹，使用pycharm创建项目会自动帮我们创建
 
 #### 配置数据库
 
@@ -84,7 +84,6 @@ DATABASES = {
         'PORT': '3306', 
     }
 }
-
 ```
 
 #### 创建mysql数据库
@@ -112,9 +111,9 @@ mysql> show databases;
 
 接下来进行数据库迁移，并创建django-admin管理员
 
-按照之前的文章：[Django2.0正确配置MySQL](http://49.235.231.121/2019/记django2.x配置mysql/)，配置好MySQL数据库
+按照之前的文章：[Django2.0正确配置MySQL](http://49.235.231.121/2019/%e8%ae%b0django2.x%e9%85%8d%e7%bd%aemysql/)，配置好MySQL数据库
 
-接下来再进行数据库迁移	
+接下来再进行数据库迁移
 
 ```python
  (DjangoBlogEnv) hls-MacBook-Pro:DjangoBlog hl$ python manage.py makemigrations
@@ -142,7 +141,7 @@ mysql> show databases;
    Applying sessions.0001_initial... OK
 ```
 
- 出现Applying sessions.0001_initial... OK 代表mysql数据库已配置完成，接下来创建django-admin管理员 
+出现Applying sessions.0001_initial… OK 代表mysql数据库已配置完成，接下来创建django-admin管理员
 
 ```python
 (DjangoBlogEnv) hls-MacBook-Pro:DjangoBlog hl$ python manage.py createsuperuser
@@ -157,16 +156,16 @@ Bypass password validation and create user anyway? [y/N]: y
 Superuser created successfully.
 ```
 
-出现Superuser created successfully.这一阶段数据库配置已完成，这里产生的数据库是Django自带的一些库 
+出现Superuser created successfully.这一阶段数据库配置已完成，这里产生的数据库是Django自带的一些库
 
 #### 其他设置
 
-- 区域语言设置，防止admin界面乱码 
+- 区域语言设置，防止admin界面乱码
 
   ```python
   # 设置语言为中文
   LANGUAGE_CODE = 'zh-hans' 
-  
+    
   # 设置时区为上海
   TIME_ZONE = 'Asia/Shanghai'
   ```
@@ -176,34 +175,34 @@ Superuser created successfully.
   ```python
   # 设置静态文件目录和名称
   STATIC_URL = '/static/'
-  
+    
   # 设置静态文件夹目录的路径
   STATICFILES_DIRS = (
       os.path.join(BASE_DIR, 'static'),
   )
-  
+    
   # 设置多媒体文件目录和名称
   MEDIA_URL = '/media/'
   # 设置多媒体文件目录的路径
   MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
   ```
 
-   在settings.py里设置完毕后，我们在项目中也创建这两个文件在，在项目根目录中创建static与media这两个文件夹 
+  在settings.py里设置完毕后，我们在项目中也创建这两个文件在，在项目根目录中创建static与media这两个文件夹
 
 #### 配置pycharm运行参数
 
-  ![](http://tva4.sinaimg.cn/large/00729CCqgy1g96lui0oprj30ck07umx4.jpg)
+![](http://tva4.sinaimg.cn/large/00729CCqgy1g96lui0oprj30ck07umx4.jpg)
 
-  ![](http://tvax3.sinaimg.cn/large/00729CCqgy1g96luuhzosj30tx0iy3zp.jpg)
+![](http://tvax3.sinaimg.cn/large/00729CCqgy1g96luuhzosj30tx0iy3zp.jpg)
 
-  配置完成后点击pycharm中的运行按钮，在浏览器中输入127.0.0.1:8000访问，出现小火箭升空表示Django安装成功， 访问Django-admin界面， 在浏览器中输入`127.0.0.1:8000/admin`，看到Django管理，需要输入用户名密码，输入用户名密码后可以跳转到Django管理页面表示Django-admin设置成功
+配置完成后点击pycharm中的运行按钮，在浏览器中输入127.0.0.1:8000访问，出现小火箭升空表示Django安装成功， 访问Django-admin界面， 在浏览器中输入`127.0.0.1:8000/admin`，看到Django管理，需要输入用户名密码，输入用户名密码后可以跳转到Django管理页面表示Django-admin设置成功
 
 ### 数据库表分析
 
 #### 文章表
 
 | 字段        | 类型                 | 备注         |
-| ----------- | -------------------- | ------------ |
+|-------------|----------------------|--------------|
 | id          | PrimaryKey           | 主键         |
 | title       | CharField            | 标题         |
 | create_time | DateTimeField        | 创建时间     |
@@ -216,21 +215,21 @@ Superuser created successfully.
 #### 分类表
 
 | 字段 | 类型       | 备注   |
-| ---- | ---------- | ------ |
+|------|------------|--------|
 | id   | PrimaryKey | 主键   |
 | name | CharField  | 分类名 |
 
 #### 标签表
 
 | 字段 | 类型       | 备注   |
-| ---- | ---------- | ------ |
+|------|------------|--------|
 | id   | PrimaryKey | 主键   |
 | name | CharField  | 标签名 |
 
 #### 用户表
 
 | 字段     | 类型       | 备注   |
-| -------- | ---------- | ------ |
+|----------|------------|--------|
 | id       | PrimaryKey | 主键   |
 | name     | CharField  | 用户名 |
 | password | CharField  | 密码   |
@@ -238,7 +237,7 @@ Superuser created successfully.
 #### 评论表
 
 | 字段        | 类型                 | 备注           |
-| ----------- | -------------------- | -------------- |
+|-------------|----------------------|----------------|
 | id          | PrimaryKey           | 主键           |
 | user_id     | ManyToManyField      | 外键，用户名id |
 | blog_id     | ManyToManyField      | 外键，博客id   |
@@ -266,7 +265,6 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
-
 class Tags(models.Model):
 		"""标签"""
     name = models.CharField('标签', max_length=100)
@@ -277,7 +275,6 @@ class Tags(models.Model):
 
     def __str__(self):
         return self.name
-
 
 class Article(models.Model):
 		"""博客"""
@@ -296,7 +293,6 @@ class Article(models.Model):
     def __str__(self):
         return self.title
 
-
 class User(models.Model):
 		"""用户"""
     name = models.CharField('用户名', max_length=100)
@@ -308,7 +304,6 @@ class User(models.Model):
 
     def __str__(self):
         return self.name
-
 
 class Comment(models.Model):
 		"""评论"""
@@ -356,7 +351,6 @@ Running migrations:
 from django.contrib import admin
 from .models import Article, Category, Tags, User, Comment
 
-
 @admin.register(Article)
 class ArticleAdmin(admin.ModelAdmin):
 		# 在后台显示的字段
@@ -368,21 +362,17 @@ class ArticleAdmin(admin.ModelAdmin):
     # 点击修改的字段
     list_display_links = ('id', 'title')
 
-
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('id', 'name')
-
 
 @admin.register(Tags)
 class TagsAdmin(admin.ModelAdmin):
     list_display = ('id', 'name')
 
-
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'password')
-
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
@@ -391,13 +381,11 @@ class CommentAdmin(admin.ModelAdmin):
 
 登陆Django管理后台，查看模型是否可以被管理，尝试点击添加与修改，没问题就说明注册成功
 
-
-
 ### 集成Markdown
 
 很多人喜欢用markdown格式写博客，我们可以通过集成Django-mdeditor 来实现这个功能
 
- 1.安装django-mdeditor 
+1.安装django-mdeditor
 
 ```python
 pip install django-mdeditor
@@ -451,8 +439,6 @@ class Article(models.Model):
 
 再次进入admin，选择文章修改就可以看到集成的markdown编辑器了
 
-
-
 ### 实现视图
 
 首先找到一套你喜欢的模版，将模版下载下来，html部分放入templates中，其他静态文件放入static中
@@ -460,8 +446,6 @@ class Article(models.Model):
 将重复出现的部分提取出来，这个根据自己的模版抽取，每个都不相同，静态文件加载
 
 如果一次没有提取好，可以慢慢一点点的抽取，对于一个后端程序员来说这个是一个慢工出细活的过程.可以写一个简单的视图，然后开着Django一边抽取一遍调试
-
-
 
 接下来实现首页试图
 
@@ -491,8 +475,6 @@ def index(request):
 
 这样当我们重新访问127.0.0.1:8000时，我们修改的前端代码就被加载了
 
-
-
 接下来我们实现将分类加载,将index视图修改为一下代码
 
 ```python
@@ -511,8 +493,6 @@ def index(request):
     return render(request, 'index.html', context)
 ```
 
-
-
 在前端代码中渲染，我们找到base.html,将ul标签中的除首页以外的代码改为一下代码
 
 ```django
@@ -527,8 +507,5 @@ def index(request):
 </header>
 ```
 
-
-
 这样分类栏就加载出来了，如果没有数据可以通过admin添加数据
-
 

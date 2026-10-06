@@ -13,8 +13,8 @@
 
 利用redis实现队列
 
-1. 注意pickle模块的使用：如果将对象存入redis中，需要先将其序列化为二进制数据，取出后反序列化就可以再得到原始对象
-2. 接口定义一致性：利用redis使用一个Queue，使其接口同python的内置队列接口一致，可以实现无缝转换
+1.  注意pickle模块的使用：如果将对象存入redis中，需要先将其序列化为二进制数据，取出后反序列化就可以再得到原始对象
+2.  接口定义一致性：利用redis使用一个Queue，使其接口同python的内置队列接口一致，可以实现无缝转换
 
 ```python
 # scrapy_plus/queue.py
@@ -29,7 +29,6 @@ REDIS_QUEUE_NAME = 'request_queue'
 REDIS_QUEUE_HOST = 'localhost'
 REDIS_QUEUE_PORT = 6379
 REDIS_QUEUE_DB = 10
-
 
 # 利用redis实现一个Queue，使其接口同python的内置队列接口一致，可以实现无缝转换
 class Queue(object):
@@ -171,7 +170,6 @@ class Scheduler:
 import redis
 from scrapy_plus.conf import settings
 
-
 class BaseFilterContainer(object):
 
     def add_fp(self, fp):
@@ -181,7 +179,6 @@ class BaseFilterContainer(object):
     def exists(self, fp):
         '''判断指纹是否在去重容器中'''
         pass
-
 
 class NoramlFilterContainer(BaseFilterContainer):
     '''利用python的集合类型'''
@@ -268,7 +265,7 @@ class Scheduler(object):
 
 ### 程序结束的条件
 
-在之前的单机版本的代码中，通过：总的响应+总的重复数>=总的请求来判断程序结束，但是在分布式的版本那种，每个服务器的请求数量和响应数量不在相同
+在之前的单机版本的代码中，通过：总的响应+总的重复数\>=总的请求来判断程序结束，但是在分布式的版本那种，每个服务器的请求数量和响应数量不在相同
 
 因为每个服务器存入队列的请求，和成功发送的请求中间可能很多请求被其他的服务器发送了，导致数量不一致，所以可以把总的请求，总的响应，总的重复等信息记录在redis中，那么所有的服务端修改的数据的位置是同一个redis中的内容，所有的服务端判断退出的时候也是通过比较同一个redis中的这些数据来决定
 
@@ -278,13 +275,11 @@ class Scheduler(object):
 import redis
 from scrapy_plus.conf.settings import REDIS_QUEUE_NAME, REDIS_QUEUE_HOST, REDIS_QUEUE_PORT, REDIS_QUEUE_DB
 
-
 # redis队列默认配置
 # REDIS_QUEUE_NAME = 'request_queue'
 # REDIS_QUEUE_HOST = 'localhost'
 # REDIS_QUEUE_PORT = 6379
 # REDIS_QUEUE_DB = 10
-
 
 class StatsCollector(object):
 
@@ -363,7 +358,6 @@ from .scheduler import Scheduler
 from scrapy_plus.http.request import Request
 from scrapy_plus.utils.log import logger
 from scrapy_plus.utils.stats_collector import StatsCollector
-
 
 class Engine:
     def __init__(self):
@@ -499,7 +493,6 @@ class Engine:
 # scrapy/http/reqeust.py
 '''封装Request对象'''
 
-
 class Request(object):
     '''请求对象，设置请求信息'''
 
@@ -514,7 +507,7 @@ class Request(object):
 
 ### 
 
-1. 修改调度器，进行判断
+1.  修改调度器，进行判断
 
 ```python
 # scrapy_plus/core/scheduler.py
@@ -584,7 +577,6 @@ import pickle
 from scrapy_plus.http.request import Request
 from scrapy_plus.conf import settings
 
-
 class RedisBackupRequest(object):
     '''利用hash类型，存储每一个请求对象，key是指纹，值就是请求对象'''
 
@@ -592,7 +584,6 @@ class RedisBackupRequest(object):
     REDIS_BACKUP_HOST = settings.REDIS_BACKUP_HOST
     REDIS_BACKUP_PORT = settings.REDIS_BACKUP_PORT
     REDIS_BACKUP_DB = settings.REDIS_BACKUP_DB
-
 
     def __init__(self):
         self._redis = redis.StrictRedis(host=self.REDIS_BACKUP_HOST, port=self.REDIS_BACKUP_PORT ,db=self.REDIS_BACKUP_DB)
@@ -624,7 +615,7 @@ class RedisBackupRequest(object):
   ```Python
     class Request(object):
         '''框架内置请求对象，设置请求信息'''
-  
+    
         def __init__(self, url, method='GET', headers=None, params=None, data=None, parse='parse', filter=True, meta=None):
             self.url = url    # 请求地址
             self.method = method    # 请求方法
@@ -644,14 +635,14 @@ class RedisBackupRequest(object):
     ......
     from scrapy_plus.redis_hash import RedisBackupRequest
     ......
-  
+    
     class Scheduler(object):
         '''
         缓存请求对象(Request)，并为下载器提供请求对象，实现请求的调度
         对请求对象进行去重判断
         '''
         def __init__(self,collector):
-  
+    
             if SCHEDULER_PERSIST: #如果使用分布式或者是持久化，使用redis的队列
                 self.queue = ReidsQueue()
                 self._filter_container = RedisFilterContainer()
@@ -659,7 +650,7 @@ class RedisBackupRequest(object):
                 self.queue = Queue()
                 self._filter_container = NoramlFilterContainer()
             self.collector = collector
-  
+    
         def add_reqeust(self, request):
             '''存储request对象进入队列
             return： None
@@ -670,7 +661,7 @@ class RedisBackupRequest(object):
                 logger.info("添加请求成功<disable去重>[%s %s]" % (request.method, request.url))
                 self.total_request_number += 1  # 统计请求总数
                 return # 必须return
-  
+    
             # 判断去重，如果重复，就不添加，否则才添加
             fp = self._gen_fp(request)
             if not self.filter_request(fp, request):
@@ -681,11 +672,11 @@ class RedisBackupRequest(object):
                     self._backup_request.save_request(fp, request)   # 对请求进行备份
                 # 如果是新的请求，那么就添加进去重容器，表示请求已经添加到了队列中
                 self._filter_container.add_fp(fp)
-  
+    
                 self.total_request_number += 1
             else:
                 self.repeat_request_number += 1
-  
+    
         def get_request(self):
             '''从队列取出一个请求对象
             return： Request Object
@@ -702,16 +693,16 @@ class RedisBackupRequest(object):
                         self._backup_request.delete_request(fp)    # 如果超过，那么直接删除
                         logger.warnning("出现异常请求，且超过最大尝试的次数：[%s]%s"%(request.method, request.url))
                     request.retry_time += 1   # 重试次数+1
-  
+    
                     self._backup_request.update_request(fp, request)  # 并更新到备份中
                 return request
-  
+    
         def delete_request(self, request):
             '''根据请求从备份删除对应的请求对象'''
             if settings.ROLE in ['master', 'slave']:
                 fp = self._gen_fp(request)
                 self._backup_request.delete_request(fp)
-  
+    
         def add_lost_reqeusts(self):
             '''将丢失的请求对象再添加到队列中'''
             # 从备份容器取出来，放到队列中
@@ -720,3 +711,4 @@ class RedisBackupRequest(object):
                     self.queue.put(request)
         ......
   ```
+

@@ -123,8 +123,6 @@
 
 ![](https://tvax2.sinaimg.cn/large/006lmzsGgy1garhr55hyrj32lc1giwm2.jpg)
 
-
-
 选择升级方式，这里选择不自动升级No automatic updates
 
 ![](https://tva1.sinaimg.cn/large/006lmzsGgy1garhogo0lkj32lc1giqbw.jpg)
@@ -138,7 +136,4 @@
 ![](https://tva4.sinaimg.cn/large/006lmzsGgy1gari9dj5bgj32lc1gijyt.jpg)
 
 ## linux 根目录
-
-
-
 

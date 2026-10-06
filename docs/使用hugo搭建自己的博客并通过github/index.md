@@ -21,7 +21,6 @@ Windows在[github](https://github.com/gohugoio/hugo/releases)上下载解压后�
 Windows安装完毕记得添加环境变量！
 {{< /admonition >}}
 
-
 此外Hugo官方还提供了多种[安装方式](https://gohugo.io/getting-started/installing)，选择自己喜欢的即可
 
 安装完毕后，可以通过查询Hugo版本验证是否安装成功
@@ -59,7 +58,7 @@ echo theme = \"LoveIt\" >> config.toml
 查看主题官方文档，并根据自己的情况进行配置
 
 {{< admonition info "" true >}}
-[LoveIt主题说明](https://github.com/dillonzq/LoveIt/blob/master/README.zh-cn.md)、[主题文档相关配置介绍](https://hugoloveit.com/zh-cn/theme-documentation-basics/)
+<a href="https://github.com/dillonzq/LoveIt/blob/master/README.zh-cn.md" rel="noopener noreffer" target="_blank">LoveIt主题说明</a>、<a href="https://hugoloveit.com/zh-cn/theme-documentation-basics/" rel="noopener noreffer" target="_blank">主题文档相关配置介绍</a>
 {{< /admonition >}}
 
 ### 添加一篇文章并在本地查看效果
@@ -93,15 +92,11 @@ hugo -d 文件路径
 ```
 
 {{< admonition tip "提示" true >}}
-
 默认情况下会保存在./public/目录中
-
 {{< /admonition >}}
 
 {{< admonition info "" true >}}
-
-更详细的内容可以查看[Hugo官方文档](https://gohugo.io/documentation/)
-
+更详细的内容可以查看<a href="https://gohugo.io/documentation/" rel="noopener noreffer" target="_blank">Hugo官方文档</a>
 {{< /admonition >}}
 
 ## 通过GitHub Pages部署
@@ -117,9 +112,7 @@ GitHub Pages 是一种静态网站托管服务，它可以直接从 GitHub 上�
 1.首先我们要创建一个Github 仓库，仓库名必须是`<user>.github.io`的形式，如果是组织则为`<organization>.github.io`。仓库的可见性必须是Public。
 
 {{< admonition tip "提示" true >}}
-
-用户名的大小写不会影响GitHub Pages的部署。例如我的仓库为：[Silencehuliang](https://github.com/Silencehuliang)/**[silencehuliang.github.io](https://github.com/Silencehuliang/silencehuliang.github.io)**
-
+用户名的大小写不会影响GitHub Pages的部署。例如我的仓库为：<a href="https://github.com/Silencehuliang" rel="noopener noreffer" target="_blank">Silencehuliang</a>/**<a href="https://github.com/Silencehuliang/silencehuliang.github.io" rel="noopener noreffer" target="_blank">silencehuliang.github.io</a>**
 {{< /admonition >}}
 
 2.接下来进入仓库的设置页对GitHub Pages进行配置，找到GitHub Pages所在的位置，按下图配置好分支和站点存放路径即可
@@ -139,7 +132,6 @@ GitHub Pages 是一种静态网站托管服务，它可以直接从 GitHub 上�
 ![](https://tvax4.sinaimg.cn/large/00729CCqgy1gp6tx8q1bej30r30jxq6f.jpg)
 
 {{< admonition info "" true >}}
-
-更详细的内容可以查看[Hugo官方部署文档](https://gohugo.io/hosting-and-deployment/hosting-on-github/)或[GitHub Pages入门教程文档](https://docs.github.com/en/pages/getting-started-with-github-pages)
-
+更详细的内容可以查看<a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/" rel="noopener noreffer" target="_blank">Hugo官方部署文档</a>或<a href="https://docs.github.com/en/pages/getting-started-with-github-pages" rel="noopener noreffer" target="_blank">GitHub Pages入门教程文档</a>
 {{< /admonition >}}
+

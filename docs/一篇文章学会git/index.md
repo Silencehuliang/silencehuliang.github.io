@@ -7,13 +7,9 @@
 
 Git是一个免费的开源分布式版本控制系统，也是目前为止世界上最先进的分布式版本控制系统。Git官方有一个视频介绍，可以[点此观看](https://git-scm.com/video/what-is-git)
 
-
-
 #### 什么是版本控制系统？
 
 一种记录一个或若干文件内容变化，以便将来查阅特定版本修订情况的系统。简单点理解就是一个可以帮助我们记录文件修改的系统。Git官方有一个视频介绍，可以[点此观看](https://git-scm.com/video/what-is-version-control)
-
-
 
 #### 什么是分布式版本控制系统？
 
@@ -23,13 +19,9 @@ Git是一个免费的开源分布式版本控制系统，也是目前为止世�
 
 分布式版本控制系统中，每个人电脑都是一个仓库，自己的文件可以在本地管理，当需要多人协同时只需要管理好本地仓库与协同仓库的版本即可
 
-
-
 ### Git有什么作用
 
 进行源代码管理
-
-
 
 ### 为什么要进行源代码管理
 
@@ -37,14 +29,10 @@ Git是一个免费的开源分布式版本控制系统，也是目前为止世�
 
 - 方便代码版本控制
 
-  
-
 ### Git的特点
 
 - 分布式版本控制系统，服务器和客户端都有版本控制能力,都能进行代码的提交、合并等操作。
 - 在使用Git的时候会自动创建一个.git的隐藏文件夹作为本地仓库
-
-
 
 ### Git操作流程
 
@@ -56,15 +44,11 @@ Git是一个免费的开源分布式版本控制系统，也是目前为止世�
 - push：将本地仓库的修改提交到Git服务器
 - pull：将Git服务器中的项目获取到本地仓库
 
-
-
 ### Git仓库
 
 #### 什么是仓库
 
 仓库的英文名是**repository**，又被称为版本库。它是一个被Git管理的文件目录。
-
-
 
 ### 工作区，暂存区和仓库
 
@@ -73,8 +57,6 @@ Git是一个免费的开源分布式版本控制系统，也是目前为止世�
 - 仓库区：即本地仓库区域，会记录完成的操作与历史版本。
 
 ![](https://tva2.sinaimg.cn/large/00729CCqgy1gdbxah8gyzj30k909fgol.jpg)
-
-
 
 ### Git操作
 
@@ -97,7 +79,7 @@ Git是一个免费的开源分布式版本控制系统，也是目前为止世�
   ```bash
   $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   ```
-  
+
   2.安装git
 
   ```bash
@@ -110,9 +92,7 @@ Git是一个免费的开源分布式版本控制系统，也是目前为止世�
 
   2.下载完成后打开安装包，一直下一步安装即可
 
-
-
-##### Linux 
+##### Linux
 
 在Linux发行版上安装GIt，可以通过附带的软件包管理工具来安装
 
@@ -124,8 +104,6 @@ Git是一个免费的开源分布式版本控制系统，也是目前为止世�
 
 其他发行版本见这个[链接](https://git-scm.com/download/linux)
 
-
-
 ##### Windows
 
 - 下载安装包
@@ -134,11 +112,7 @@ Git是一个免费的开源分布式版本控制系统，也是目前为止世�
 
 - 安装默认选项安装即可
 
-
-
 安装完成后通过可以通过`git --version`查看安装版本
-
-
 
 ### 配置Git
 
@@ -152,15 +126,13 @@ Git有一个`git config`的工具，可以设置和获取配置，用来控制Gi
 
 3.`config.git/config`：当前使用存储库的git目录，用于该存储库的配置
 
-如果有相同配置项时，每个级别都会覆盖上一个级别中的值，即：3>2>1
+如果有相同配置项时，每个级别都会覆盖上一个级别中的值，即：3\>2\>1
 
 可以使用一下命令查看所有设置以及设置的所属：
 
 ```bash
 $ git config --list --show-origin
 ```
-
-
 
 #### 常见配置
 
@@ -177,8 +149,6 @@ $ git config --global user.email johndoe@example.com
 
 **使用global后，该信息将会始终作用域Git操作上**
 
-
-
 ##### Git编辑器配置
 
 Git默认的编辑器是系统默认编辑器
@@ -189,20 +159,16 @@ Git默认的编辑器是系统默认编辑器
 $ git config --global core.editor vim
 ```
 
-
-
 ##### 查看配置
 
 如果要查看配置，可以使用`git config --list`命令列出Git可以找到的所有设置
 
 你可能会看到很多配置项，找不到你想要的，这时候你可以通过`git config <key>`来查看特定的配置，例：
 
-```
+```fallback
 $ git config user.name
 silencehuliang
 ```
-
-
 
 ### 帮助
 
@@ -215,8 +181,6 @@ Git获取帮助的方式有三种`git help <verb>`、`git <verb> --help`、`man 
 如果只需要快速了解Git命令的可用选项也可以用`-h`来查看相关帮助
 
 例如`git add -h`
-
-
 
 ### 创建项目
 
@@ -274,19 +238,15 @@ $ git clone https://github.com/Silencehuliang/project
 - `git commit -m "修改描述"`，其中-m参数后面跟的是对本次修改的描述
 - `git commit -am "修改描述"`,可以通过-am来实现添加和提交合并操作
 
-
-
 ### 查看历史版本
 
 通过`git log`或者`git relog`可以查看历史版本
-
-
 
 ### 回退版本
 
 - 通过版本号会退版本
 
-  ```git
+  ```fallback
     git reset --hard 版本号
   ```
 
@@ -294,17 +254,15 @@ $ git clone https://github.com/Silencehuliang/project
 
   当工作区文件发生了意外需要回退到上一个版本时可以通过
 
-  ```git
+  ```fallback
   `git reset --hard HEAD`
   ```
 
   - `HEAD`表示当前最新版本
   - `HEAD^`表示当前最新版本的前一个版本
-  - `HEAD^^`表示当前最新版本的前两个版本，**以此类推...**
+  - `HEAD^^`表示当前最新版本的前两个版本，**以此类推…**
   - `HEAD~1`表示当前最新版本的前一个版本
-  - `HEAD~10`表示当前最新版本的前10个版本，**以此类推...**
-
-
+  - `HEAD~10`表示当前最新版本的前10个版本，**以此类推…**
 
 ### 撤销修改
 
@@ -316,7 +274,7 @@ $ git clone https://github.com/Silencehuliang/project
 
     - 新加代码`num3 = 30`，不`add`到暂存区，保留在工作区
 
-      ```
+      ```fallback
       git checkout 文件名
       ```
 
@@ -324,14 +282,12 @@ $ git clone https://github.com/Silencehuliang/project
 
     - 新加代码`num3 = 30`，并`add`到暂存区
 
-      ```
+      ```fallback
       # 第一步：将暂存区代码撤销到工作区
       git reset HEAD  文件名
       # 第二步：撤销工作区代码
       git checkout 文件名
       ```
-
-
 
 ### 对比版本
 
@@ -345,8 +301,6 @@ $ git clone https://github.com/Silencehuliang/project
 - 新加代码`num3 = 30`，并`add`到暂存区
 - `git diff HEAD HEAD^ -- xxx.py`
 
-
-
 ### 删除文件
 
 删除文件分为确定删除和误删
@@ -355,7 +309,7 @@ $ git clone https://github.com/Silencehuliang/project
 
   - 确定删除处理：
 
-    ```
+    ```fallback
       # 删除文件
       rm 文件名
       # git确定删除文件，对比添加文件git add 
@@ -366,14 +320,12 @@ $ git clone https://github.com/Silencehuliang/project
 
 - 误删处理：撤销修改即可
 
-  ```
+  ```fallback
     # 删除文件
     rm 文件名
     # git撤销修改
     git checkout -- 文件名
   ```
-
-
 
 ### 代码冲突
 
@@ -407,8 +359,6 @@ $ git clone https://github.com/Silencehuliang/project
   - 下班前一定要提交代码,上班第一件事拉取最新代码
   - 一定不要擅自修改同事的代码
 
-
-
 ### 标签
 
 - 当某一个大版本完成之后,需要打一个标签
@@ -418,26 +368,24 @@ $ git clone https://github.com/Silencehuliang/project
 
 #### 在本地打标签
 
-```
+```fallback
 git tag -a 标签名 -m '标签描述'
 ```
 
 #### 推送标签到远程仓库
 
-```
+```fallback
 git push origin 标签名
 ```
 
 删除本地和远程标签
 
-```
+```fallback
   # 删除本地标签
   git tag -d 标签名
   # 删除远程仓库标签
   git push origin --delete tag 标签名
 ```
-
-
 
 ### 分支
 
@@ -452,38 +400,33 @@ git push origin 标签名
 
 #### 查看当前分支
 
-```
+```fallback
   git branch
 ```
 
-
-
 #### 创建并切换到dev分支
 
-```
+```fallback
  git checkout -b dev
 ```
 
-
-
 #### 设置本地分支跟踪远程指定分支（将分支推送到远程）
 
-```
+```fallback
   git push -u origin dev
 ```
-
-
 
 分支合并到master分支
 
 - 先切换到master分支
 
-  ```
+  ```fallback
     git checkout master
   ```
 
 - 分支合并到master分支
 
-  ```
+  ```fallback
     git merge dev
   ```
+

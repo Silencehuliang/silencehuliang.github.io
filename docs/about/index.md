@@ -1,7 +1,7 @@
 # About
 
 
-# 									关于
+# 关于
 
 ## 我
 
@@ -43,3 +43,4 @@
 语言：Java、JavaScript、
 
 技术栈：Docker、Vue.js、Bootstrap、ECharts、TensorFlow
+

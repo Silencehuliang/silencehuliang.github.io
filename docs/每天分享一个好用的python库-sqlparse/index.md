@@ -9,7 +9,7 @@
 
 ### 简介
 
-`sqlparse` 是 Python 的非验证 SQL 解析器。 它提供对 SQL 语句的解析、拆分和格式化的支持。 该模块与 Python 3.5 兼容，并根据新 BSD 许可条款发布。 
+`sqlparse` 是 Python 的非验证 SQL 解析器。 它提供对 SQL 语句的解析、拆分和格式化的支持。 该模块与 Python 3.5 兼容，并根据新 BSD 许可条款发布。
 
 ### 安装
 
@@ -27,7 +27,7 @@ pip install sqlparse
   >>> statements = sqlparse.split(raw)
   >>> statements
   ['select * from blog;', 'select * from post;']
-  
+    
   ```
 
 - 格式化第一条语句并打印出来：
@@ -38,7 +38,7 @@ pip install sqlparse
   SELECT *
   FROM book;
   ```
-  
+
 - 解析一条 SQL 语句：
 
   ```python
@@ -56,3 +56,4 @@ pip install sqlparse
 像`sqlparse`这种工具类的库，可以使我们平时少造轮子，根据具体需求改一改就可以解决我们的问题，大大提高开发效率。
 
 [官方文档地址](https://pypi.org/project/sqlparse/)
+

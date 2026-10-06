@@ -61,4 +61,3 @@ cs.execute("SQL语句")
 
 sql语句的参数化，可以有效防止sql注入
 
-

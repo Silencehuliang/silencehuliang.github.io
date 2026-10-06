@@ -16,15 +16,13 @@ Go官方提供的教程非常丰富：
 [官网](https://golang.google.cn/)、[中文官网](https://go-zh.org/)、[Go指南](https://tour.go-zh.org/welcome/1)
 
 {{< admonition tip "非官方推荐" true >}}
+书籍：<a href="https://learnku.com/docs/the-little-go-book" rel="noopener noreffer" target="_blank">Go 简易教程</a>、<a href="https://learnku.com/docs/the-way-to-go" rel="noopener noreffer" target="_blank">Go 入门指南</a>、<a href="https://draveness.me/golang" rel="noopener noreffer" target="_blank">Go 语言设计与实现</a>
 
-书籍：[Go 简易教程](https://learnku.com/docs/the-little-go-book)、[Go 入门指南](https://learnku.com/docs/the-way-to-go)、[Go 语言设计与实现](https://draveness.me/golang)
+导航：<a href="https://hao.studygolang.com/" rel="noopener noreffer" target="_blank">Go网站导航</a>
 
-导航：[Go网站导航](https://hao.studygolang.com/)
+论坛：<a href="https://learnku.com/go" rel="noopener noreffer" target="_blank">learnku</a>
 
-论坛：[learnku](https://learnku.com/go)
-
-教程：[Go语言学习之路](https://www.liwenzhou.com/posts/Go/go_menu/)
-
+教程：<a href="https://www.liwenzhou.com/posts/Go/go_menu/" rel="noopener noreffer" target="_blank">Go语言学习之路</a>
 {{< /admonition >}}
 
 ## 安装
@@ -33,12 +31,11 @@ Go官方提供了丰富的[安装方法](https://go-zh.org/doc/install)，可以
 
 如果官方网站打开比较慢的话也可以通过[Go语言中文网](https://studygolang.com/dl)提供的包进行安装
 
-{{< admonition warning "警告" true >}}
-
+{{< admonition warning "" true >}}
 安装完毕记得添加环境变量！
-
 {{< /admonition >}}
 
 ### 学习计划
 
 基础：预计两周时间
+

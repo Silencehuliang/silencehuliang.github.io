@@ -32,7 +32,7 @@ virtualenv first_env
 相关参数说明
 
 - -p:选择要使用的Python解释器，默认为安装virtualenv的解释器
-- --prompt=xx:将xx设置为虚拟环境的提示前缀
+- –prompt=xx:将xx设置为虚拟环境的提示前缀
 
 ### 使用虚拟环境
 
@@ -49,8 +49,6 @@ virtualenv first_env
     ```python
     source first_env/bin/activate
     ```
-
-
 
 ### 退出虚拟环境
 
@@ -83,9 +81,7 @@ pip install pipenv
 在项目根目录下执行`pipenv install`，Pipenv会根据项目文件夹的名称创建一个虚拟环境，并且会在项目根目录下生成 Pipfile 和 Pipfile.lock 用于管理项目依赖（以后使用 Pipenv 安装的依赖会自动写入 Pipfile 文件，无需再手动维护 requirements.txt 文件)
 
 {{< admonition tip "提示" true >}}
-
 默认情况下Pipenv会将虚拟环境创建在~/.virtualenvs 目录下，在项目根目录下执行 `pipenv --venv` 可以查看到项目对应的虚拟环境的具体位置
-
 {{< /admonition >}}
 
 #### 激活使用
@@ -94,5 +90,4 @@ pip install pipenv
 
 - 在项目根目录下执行`pipenv shell`
 - 在项目根目录下执行`pipenv run + 命令`
-
 

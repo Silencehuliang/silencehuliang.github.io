@@ -24,7 +24,7 @@
 
 表达式：处理输⼊⽂档并输出 语法：`表达式:'$列名'` 常⽤表达式:
 
-- `$sum`： 计算总和， $sum:1 表示以⼀倍计数
+- `$sum`： 计算总和， \$sum:1 表示以⼀倍计数
 - `$avg`： 计算平均值
 - `$min`： 获取最⼩值
 - `$max`： 获取最⼤值
@@ -95,7 +95,7 @@ for(i=0;i<100000;i++){db.t255.insert({name:'test'+i,age:i})}
 
 创建索引前：
 
-```
+```fallback
 db.t1.find({name:'test10000'})
 db.t1.find({name:'test10000'}).explain('executionStats')
 ```
@@ -144,7 +144,7 @@ db.collection_name.ensureIndex({"name":1},{"unique":true})
 
 备份的语法：
 
-```
+```fallback
 mongodump -h dbhost -d dbname -o dbdirectory
 ```
 
@@ -159,3 +159,4 @@ mongodump -h dbhost -d dbname -o dbdirectory
 - `-h`： 服务器地址
 - `-d`： 需要恢复的数据库实例
 - `--dir`： 备份数据所在位置
+

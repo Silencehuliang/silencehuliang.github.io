@@ -11,10 +11,10 @@ django中内嵌了ORM框架，不需要直接面向数据库编程，而是定�
 
 使用django进行数据库开发的步骤如下：
 
-1. 配置数据库连接信息
-2. 在models.py中定义模型类
-3. 迁移
-4. 通过类和对象完成数据增删改查操作
+1.  配置数据库连接信息
+2.  在models.py中定义模型类
+3.  迁移
+4.  通过类和对象完成数据增删改查操作
 
 ### 配置
 
@@ -35,16 +35,16 @@ django中内嵌了ORM框架，不需要直接面向数据库编程，而是定�
   pip install PyMySQL
   ```
 
-- 在Django的工程同名子目录的__init__.py文件中添加如下语句
+- 在Django的工程同名子目录的\_\_init\_\_.py文件中添加如下语句
 
   ```python
   from pymysql import install_as_MySQLdb
 
   install_as_MySQLdb()
   ```
-  
+
   作用是让Django的ORM能以mysqldb的方式来调用PyMySQL。
-  
+
 - 修改**DATABASES**配置信息
 
   ```python
@@ -130,6 +130,7 @@ class HeroInfo(models.Model):
   默认创建的主键列属性为id，可以使用pk代替，pk全拼为primary key。
 
 - 属性命名限制
+
   - 不能是python的保留关键字。
 
   - 不允许使用连续的下划线，这是由django的查询方式决定的。
@@ -142,34 +143,34 @@ class HeroInfo(models.Model):
 
 - 字段类型
 
-  | 类型             | 说明                                                         |
-  | :--------------- | :----------------------------------------------------------- |
-  | AutoField        | 自动增长的IntegerField，通常不用指定，不指定时Django会自动创建属性名为id的自动增长属性 |
-  | BooleanField     | 布尔字段，值为True或False                                    |
-  | NullBooleanField | 支持Null、True、False三种值                                  |
-  | CharField        | 字符串，参数max_length表示最大字符个数                       |
-  | TextField        | 大文本字段，一般超过4000个字符时使用                         |
-  | IntegerField     | 整数                                                         |
-  | DecimalField     | 十进制浮点数， 参数max_digits表示总位数， 参数decimal_places表示小数位数 |
-  | FloatField       | 浮点数                                                       |
-  | DateField        | 日期， 参数auto_now表示每次保存对象时，自动设置该字段为当前时间，用于"最后一次修改"的时间戳，它总是使用当前日期，默认为False； 参数auto_now_add表示当对象第一次被创建时自动设置当前时间，用于创建的时间戳，它总是使用当前日期，默认为False; 参数auto_now_add和auto_now是相互排斥的，组合将会发生错误 |
-  | TimeField        | 时间，参数同DateField                                        |
-  | DateTimeField    | 日期时间，参数同DateField                                    |
-  | FileField        | 上传文件字段                                                 |
-  | ImageField       | 继承于FileField，对上传的内容进行校验，确保是有效的图片      |
+  | 类型 | 说明 |
+  |:---|:---|
+  | AutoField | 自动增长的IntegerField，通常不用指定，不指定时Django会自动创建属性名为id的自动增长属性 |
+  | BooleanField | 布尔字段，值为True或False |
+  | NullBooleanField | 支持Null、True、False三种值 |
+  | CharField | 字符串，参数max_length表示最大字符个数 |
+  | TextField | 大文本字段，一般超过4000个字符时使用 |
+  | IntegerField | 整数 |
+  | DecimalField | 十进制浮点数， 参数max_digits表示总位数， 参数decimal_places表示小数位数 |
+  | FloatField | 浮点数 |
+  | DateField | 日期， 参数auto_now表示每次保存对象时，自动设置该字段为当前时间，用于"最后一次修改"的时间戳，它总是使用当前日期，默认为False； 参数auto_now_add表示当对象第一次被创建时自动设置当前时间，用于创建的时间戳，它总是使用当前日期，默认为False; 参数auto_now_add和auto_now是相互排斥的，组合将会发生错误 |
+  | TimeField | 时间，参数同DateField |
+  | DateTimeField | 日期时间，参数同DateField |
+  | FileField | 上传文件字段 |
+  | ImageField | 继承于FileField，对上传的内容进行校验，确保是有效的图片 |
 
 - 选项
 
-  | 选项        | 说明                                                         |
-  | :---------- | ------------------------------------------------------------ |
-  | null        | 如果为True，表示允许为空，默认值是False                      |
-  | blank       | 如果为True，则该字段允许为空白，默认值是False                |
-  | db_column   | 字段的名称，如果未指定，则使用属性的名称                     |
-  | db_index    | 若值为True, 则在表中会为此字段创建索引，默认值是False        |
-  | default     | 默认                                                         |
+  | 选项 | 说明 |
+  |:---|----|
+  | null | 如果为True，表示允许为空，默认值是False |
+  | blank | 如果为True，则该字段允许为空白，默认值是False |
+  | db_column | 字段的名称，如果未指定，则使用属性的名称 |
+  | db_index | 若值为True, 则在表中会为此字段创建索引，默认值是False |
+  | default | 默认 |
   | primary_key | 若为True，则该字段会成为模型的主键字段，默认值是False，一般作为AutoField的选项使用 |
-  | unique      | 如果为True, 这个字段在表中必须有唯一值，默认值是False        |
-  
+  | unique | 如果为True, 这个字段在表中必须有唯一值，默认值是False |
+
   **null是数据库范畴的概念，blank是表单验证范畴的**
 
 - 外键
@@ -200,7 +201,7 @@ class HeroInfo(models.Model):
             on_delete=models.SET(get_sentinel_user),
         )
     ```
-    
+
   - **DO_NOTHING** 不做任何操作，如果数据库前置指明级联性，此选项会抛出**IntegrityError**异常
 
 #### 迁移
@@ -318,7 +319,7 @@ class HeroInfo(models.Model):
 
 例：查询编号为1的图书。
 
-```
+```fallback
 BookInfo.objects.filter(id__exact=1)
 可简写为：
 BookInfo.objects.filter(id=1)
@@ -329,12 +330,10 @@ BookInfo.objects.filter(id=1)
 **contains：是否包含。**
 
 {{< admonition tip "说明" true >}}
-
 如果要包含%无需转义，直接写即可。
-
 {{< /admonition >}}
 
-例：查询书名包含'传'的图书。
+例：查询书名包含’传’的图书。
 
 ```python
 BookInfo.objects.filter(btitle__contains='传')
@@ -342,16 +341,14 @@ BookInfo.objects.filter(btitle__contains='传')
 
 **startswith、endswith：以指定值开头或结尾。**
 
-例：查询书名以'部'结尾的图书
+例：查询书名以’部’结尾的图书
 
 ```python
 BookInfo.objects.filter(btitle__endswith='部')
 ```
 
 {{< admonition tip "说明" true >}}
-
 以上运算符都区分大小写，在这些运算符前加上i表示不区分大小写，如iexact、icontains、istartswith、iendswith.
-
 {{< /admonition >}}
 
 ###### 空查询
@@ -417,7 +414,7 @@ BookInfo.objects.filter(bpub_date__gt=date(1990, 1, 1))
 
 语法如下：
 
-```
+```fallback
 F(属性名)
 ```
 
@@ -449,11 +446,11 @@ BookInfo.objects.filter(bread__gt=20,id__lt=3)
 BookInfo.objects.filter(bread__gt=20).filter(id__lt=3)
 ```
 
-**如果需要实现逻辑或or的查询，需要使用Q()对象结合|运算符**，Q对象被义在django.db.models中。
+**如果需要实现逻辑或or的查询，需要使用Q()对象结合\|运算符**，Q对象被义在django.db.models中。
 
 语法如下：
 
-```
+```fallback
 Q(属性名__运算符=值)
 ```
 
@@ -465,7 +462,7 @@ from django.db.models import Q
 BookInfo.objects.filter(Q(bread__gt=20))
 ```
 
-Q对象可以使用&、|连接，&表示逻辑与，|表示逻辑或。
+Q对象可以使用&、\|连接，&表示逻辑与，\|表示逻辑或。
 
 例：查询阅读量大于20，或编号小于3的图书，只能使用Q对象实现
 
@@ -560,17 +557,17 @@ h.hbook_id
 关联模型类名小写__属性名__条件运算符=值
 ```
 
-**注意：如果没有"__运算符"部分，表示等于。**
+**注意：如果没有”\_\_运算符"部分，表示等于。**
 
 例：
 
-查询图书，要求图书英雄为"孙悟空"
+查询图书，要求图书英雄为"孙悟空”
 
 ```python
 BookInfo.objects.filter(heroinfo__hname='孙悟空')
 ```
 
-查询图书，要求图书中英雄的描述包含"八"
+查询图书，要求图书中英雄的描述包含"八”
 
 ```python
 BookInfo.objects.filter(heroinfo__hcomment__contains='八')
@@ -580,11 +577,11 @@ BookInfo.objects.filter(heroinfo__hcomment__contains='八')
 
 语法如下：
 
-```
+```fallback
 一模型类关联属性名__一模型类属性名__条件运算符=值
 ```
 
-**注意：如果没有"__运算符"部分，表示等于。**
+**注意：如果没有”\_\_运算符"部分，表示等于。**
 
 例：
 
@@ -708,14 +705,12 @@ qs=BookInfo.objects.all()
 可以对查询集进行取下标或切片操作，等同于sql中的limit和offset子句。
 
 {{< admonition warning "注意" true >}}
-
 不支持负数索引。
-
 {{< /admonition >}}
 
 **对查询集进行切片后返回一个新的查询集，不会立即执行查询。**
 
-如果获取一个对象，直接使用[0]，等同于[0:1].get()，但是如果没有数据，[0]引发IndexError异常，[0:1].get()如果没有数据引发DoesNotExist异常。
+如果获取一个对象，直接使用\[0\]，等同于\[0:1\].get()，但是如果没有数据，\[0\]引发IndexError异常，\[0:1\].get()如果没有数据引发DoesNotExist异常。
 
 示例：获取第1、2项，运行查看。
 
@@ -736,14 +731,13 @@ qs = BookInfo.objects.all()[0:2]
 我们可以自定义管理器，并应用到我们的模型类上。
 
 {{< admonition warning "注意" true >}}
-
 一旦为模型类指明自定义的过滤器后，Django不再生成默认管理对象objects。
-
 {{< /admonition >}}
 
 自定义管理器类主要用于两种情况：
 
 - 修改原始查询集，重写all()方法。
+
   - 打开booktest/models.py文件，定义类BookInfoManager
 
     ```python
@@ -754,7 +748,7 @@ qs = BookInfo.objects.all()[0:2]
             #调用父类的成员语法为：super().方法名
             return super().filter(is_delete=False)
     ```
-  
+
   - 在模型类BookInfo中定义管理器
 
     ```python
@@ -763,13 +757,14 @@ qs = BookInfo.objects.all()[0:2]
         books = BookInfoManager()
     ```
 
-	- 使用方法
+    - 使用方法
 
     ```python
     BookInfo.books.all()
     ```
 
 - 在管理器类中补充定义新的方法
+
   - 打开booktest/models.py文件，定义方法create。
 
     ```python
@@ -788,7 +783,7 @@ qs = BookInfo.objects.all()[0:2]
             return book
     ```
 
-	- 为模型类BookInfo定义管理器books语法如下
+    - 为模型类BookInfo定义管理器books语法如下
 
     ```python
     class BookInfo(models.Model):
@@ -796,8 +791,9 @@ qs = BookInfo.objects.all()[0:2]
         books = BookInfoManager()
     ```
 
-	- 调用语法如下：
+    - 调用语法如下：
 
     ```python
     book=BookInfo.books.create_book("abc",date(1980,1,1))
     ```
+

@@ -20,7 +20,7 @@
 
   ```python
   url(r'^weather/([a-z]+)/(\d{4})/$', views.weather),
-  
+    
   def weather(request, city, year):
       print('city=%s' % city)
       print('year=%s' % year)
@@ -31,7 +31,7 @@
 
   ```python
   url(r'^weather/(?P<city>[a-z]+)/(?P<year>\d{4})/$', views.weather),
-  
+    
   def weather(request, year, city):
       print('city=%s' % city)
       print('year=%s' % year)
@@ -58,7 +58,7 @@
 
 - getlist()：根据键获取值，值以列表返回，可以获取指定键的所有值
 
-  如果键不存在则返回空列表[]，可以设置默认值进行后续处理
+  如果键不存在则返回空列表\[\]，可以设置默认值进行后续处理
 
   ```python
   dict.getlist('键',默认值)
@@ -82,9 +82,7 @@ def qs(request):
 ```
 
 {{< admonition warning "注意" true >}}
-
 查询字符串不区分请求方式，即假使客户端进行POST方式的请求，依然可以通过request.GET获取请求中的查询字符串数据。
-
 {{< /admonition >}}
 
 ### 请求体
@@ -113,9 +111,7 @@ def get_body(request):
 ```
 
 {{< admonition warning "注意" true >}}
-
 request.POST只能用来获取POST方式的请求体表单数据
-
 {{< /admonition >}}
 
 #### 非表单类型 Non-Form Data
@@ -174,10 +170,14 @@ def get_headers(request):
 
 ### 其他常用HttpRequest对象属性
 
-- **method**：一个字符串，表示请求使用的HTTP方法，常用值包括：'GET'、'POST'。
+- **method**：一个字符串，表示请求使用的HTTP方法，常用值包括：‘GET’、‘POST’。
+
 - **user：请求的用户对象。**
+
 - path：一个字符串，表示请求的页面的完整路径，不包含域名和参数部分。
+
 - encoding：一个字符串，表示提交的数据的编码方式。
+
   - 如果为None则表示使用浏览器的默认设置，一般为utf-8。
   - 这个属性是可写的，可以通过修改它来修改访问表单数据使用的编码，接下来对属性的任何访问将使用新的encoding值。
 
@@ -374,30 +374,26 @@ SESSION_ENGINE='django.contrib.sessions.backends.cached_db'
   SESSION_ENGINE = "django.contrib.sessions.backends.cache"
   SESSION_CACHE_ALIAS = "default"
   ```
-  
+
   {{< admonition warning "注意" true >}}
-  
   如果redis的ip地址不是本地回环127.0.0.1，而是其他地址，访问Django时，可能出现Redis连接错误。
-  
+
   解决方法：修改redis的配置文件，添加特定ip地址。
-  
+
   打开redis的配置文件
-  
+
   ```shell
   sudo vim /etc/redis/redis.conf
   ```
-  
+
   在如下配置项进行修改（如要添加192.168.1.1地址）
-  
+
   重新启动redis服务
-  
+
   ```shell
   sudo service redis-server restart
   ```
-  
   {{< /admonition >}}
-  
-  
 
 ### 操作
 
@@ -405,42 +401,41 @@ SESSION_ENGINE='django.contrib.sessions.backends.cached_db'
 
 - 以键值对的格式写session。
 
-  ```
+  ```fallback
   request.session['键']=值
   ```
 
 - 根据键读取值。
 
-  ```
+  ```fallback
   request.session.get('键',默认值)
   ```
 
 - 清除所有session，在存储中删除值部分。
 
-  ```
+  ```fallback
   request.session.clear()
   ```
 
 - 清除session数据，在存储中删除session的整条数据。
 
-  ```
+  ```fallback
   request.session.flush()
   ```
 
 - 删除session中的指定键及值，在存储中只删除某个键及对应的值。
 
-  ```
+  ```fallback
   del request.session['键']
   ```
 
 - 设置session的有效期
 
-  ```
+  ```fallback
   request.session.set_expiry(value)
   ```
 
   - 如果value是一个整数，session将在value秒没有活动后过期。
   - 如果value为0，那么用户session的Cookie将在用户的浏览器关闭时过期。
   - 如果value为None，那么session有效期将采用系统默认值，**默认为两周**，可以通过在settings.py中设置**SESSION_COOKIE_AGE**来设置全局默认值。
-
 

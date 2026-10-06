@@ -37,41 +37,41 @@ class BookInfoSerializer(serializers.Serializer):
     image = serializers.ImageField(label='图片', required=False)
 ```
 
-**注意：serializer不是只能为数据库模型类定义，也可以为非数据库模型类的数据定义。**serializer是独立于数据库之外的存在。
+\*\*注意：serializer不是只能为数据库模型类定义，也可以为非数据库模型类的数据定义。\*\*serializer是独立于数据库之外的存在。
 
 ### 字段与选项
 
 #### 常用字段类型
 
-|          字段           |                         字段构造方式                         |
-| :---------------------: | :----------------------------------------------------------: |
-|    **BooleanField**     |                        BooleanField()                        |
-|  **NullBooleanField**   |                      NullBooleanField()                      |
-|      **CharField**      | CharField(max_length=None, min_length=None, allow_blank=False, trim_whitespace=True) |
-|     **EmailField**      | EmailField(max_length=None, min_length=None, allow_blank=False) |
-|     **RegexField**      | RegexField(regex, max_length=None, min_length=None, allow_blank=False) |
-|      **SlugField**      | SlugField(max*length=50, min_length=None, allow_blank=False) 正则字段，验证正则模式 [a-zA-Z0-9*-]+ |
-|      **URLField**       | URLField(max_length=200, min_length=None, allow_blank=False) |
-|      **UUIDField**      | UUIDField(format='hex_verbose') format: 1) `'hex_verbose'` 如`"5ce0e9a5-5ffa-654b-cee0-1238041fb31a"` 2） `'hex'` 如 `"5ce0e9a55ffa654bcee01238041fb31a"` 3）`'int'` - 如: `"123456789012312313134124512351145145114"` 4）`'urn'` 如: `"urn:uuid:5ce0e9a5-5ffa-654b-cee0-1238041fb31a"` |
-|   **IPAddressField**    | IPAddressField(protocol='both', unpack_ipv4=False, **options) |
-|    **IntegerField**     |         IntegerField(max_value=None, min_value=None)         |
-|     **FloatField**      |          FloatField(max_value=None, min_value=None)          |
-|    **DecimalField**     | DecimalField(max_digits, decimal_places, coerce_to_string=None, max_value=None, min_value=None) max_digits: 最多位数 decimal_palces: 小数点位置 |
-|    **DateTimeField**    | DateTimeField(format=api_settings.DATETIME_FORMAT, input_formats=None) |
-|      **DateField**      | DateField(format=api_settings.DATE_FORMAT, input_formats=None) |
-|      **TimeField**      | TimeField(format=api_settings.TIME_FORMAT, input_formats=None) |
-|    **DurationField**    |                       DurationField()                        |
-|     **ChoiceField**     |        ChoiceField(choices) choices与Django的用法相同        |
-| **MultipleChoiceField** |                 MultipleChoiceField(choices)                 |
-|      **FileField**      | FileField(max_length=None, allow_empty_file=False, use_url=UPLOADED_FILES_USE_URL) |
-|     **ImageField**      | ImageField(max_length=None, allow_empty_file=False, use_url=UPLOADED_FILES_USE_URL) |
-|      **ListField**      |     ListField(child=, min_length=None, max_length=None)      |
-|      **DictField**      |                      DictField(child=)                       |
+| 字段 | 字段构造方式 |
+|:--:|:--:|
+| **BooleanField** | BooleanField() |
+| **NullBooleanField** | NullBooleanField() |
+| **CharField** | CharField(max_length=None, min_length=None, allow_blank=False, trim_whitespace=True) |
+| **EmailField** | EmailField(max_length=None, min_length=None, allow_blank=False) |
+| **RegexField** | RegexField(regex, max_length=None, min_length=None, allow_blank=False) |
+| **SlugField** | SlugField(max*length=50, min_length=None, allow_blank=False) 正则字段，验证正则模式 \[a-zA-Z0-9*-\]+ |
+| **URLField** | URLField(max_length=200, min_length=None, allow_blank=False) |
+| **UUIDField** | UUIDField(format='hex_verbose’) format: 1) `'hex_verbose'` 如`"5ce0e9a5-5ffa-654b-cee0-1238041fb31a"` 2） `'hex'` 如 `"5ce0e9a55ffa654bcee01238041fb31a"` 3）`'int'` - 如: `"123456789012312313134124512351145145114"` 4）`'urn'` 如: `"urn:uuid:5ce0e9a5-5ffa-654b-cee0-1238041fb31a"` |
+| **IPAddressField** | IPAddressField(protocol='both’, unpack_ipv4=False, \*\*options) |
+| **IntegerField** | IntegerField(max_value=None, min_value=None) |
+| **FloatField** | FloatField(max_value=None, min_value=None) |
+| **DecimalField** | DecimalField(max_digits, decimal_places, coerce_to_string=None, max_value=None, min_value=None) max_digits: 最多位数 decimal_palces: 小数点位置 |
+| **DateTimeField** | DateTimeField(format=api_settings.DATETIME_FORMAT, input_formats=None) |
+| **DateField** | DateField(format=api_settings.DATE_FORMAT, input_formats=None) |
+| **TimeField** | TimeField(format=api_settings.TIME_FORMAT, input_formats=None) |
+| **DurationField** | DurationField() |
+| **ChoiceField** | ChoiceField(choices) choices与Django的用法相同 |
+| **MultipleChoiceField** | MultipleChoiceField(choices) |
+| **FileField** | FileField(max_length=None, allow_empty_file=False, use_url=UPLOADED_FILES_USE_URL) |
+| **ImageField** | ImageField(max_length=None, allow_empty_file=False, use_url=UPLOADED_FILES_USE_URL) |
+| **ListField** | ListField(child=, min_length=None, max_length=None) |
+| **DictField** | DictField(child=) |
 
 #### 选项参数
 
 |      参数名称       |       作用       |
-| :-----------------: | :--------------: |
+|:-------------------:|:----------------:|
 |   **max_length**    |     最大长度     |
 |   **min_lenght**    |     最小长度     |
 |   **allow_blank**   |   是否允许为空   |
@@ -82,7 +82,7 @@ class BookInfoSerializer(serializers.Serializer):
 #### 通用参数
 
 |      参数名称      |                     说明                      |
-| :----------------: | :-------------------------------------------: |
+|:------------------:|:---------------------------------------------:|
 |   **read_only**    |     表明该字段仅用于序列化输出，默认False     |
 |   **write_only**   |    表明该字段仅用于反序列化输入，默认False    |
 |    **required**    |   表明该字段在反序列化时必须输入，默认True    |
@@ -208,7 +208,7 @@ class HeroInfoSerializer(serializers.Serializer):
   # {'id': 6, 'hname': '乔峰', 'hgender': 1, 'hcomment': '降龙十八掌', 'hbook': 2}
   ```
 
-- StringRelatedField，此字段将被序列化为关联对象的字符串表示方式（即__str__方法的返回值）
+- StringRelatedField，此字段将被序列化为关联对象的字符串表示方式（即\_\_str\_\_方法的返回值）
 
   ```python
   hbook = serializers.StringRelatedField(label='图书')
@@ -226,15 +226,15 @@ class HeroInfoSerializer(serializers.Serializer):
   hbook = serializers.HyperlinkedRelatedField(label='图书', read_only=True, view_name='books-detail')
   ```
 
-	必须指明view_name参数，以便DRF根据视图名称寻找路由，进而拼接成完整URL。
+  必须指明view_name参数，以便DRF根据视图名称寻找路由，进而拼接成完整URL。
 
-	使用效果
+  使用效果
 
   ```python
   {'id': 6, 'hname': '乔峰', 'hgender': 1, 'hcomment': '降龙十八掌', 'hbook': 'http://127.0.0.1:8000/books/2/'}
   ```
 
-	我们暂时还没有定义视图，此方式不再演示。
+  我们暂时还没有定义视图，此方式不再演示。
 
 - SlugRelatedField，此字段将被序列化为关联对象的指定字段数据
 
@@ -242,7 +242,7 @@ class HeroInfoSerializer(serializers.Serializer):
   hbook = serializers.SlugRelatedField(label='图书', read_only=True, slug_field='bpub_date')
   ```
 
-	slug_field指明使用关联对象的哪个字段，使用效果
+  slug_field指明使用关联对象的哪个字段，使用效果
 
   ```python
   {'id': 6, 'hname': '乔峰', 'hgender': 1, 'hcomment': '降龙十八掌', 'hbook': datetime.date(1986, 7, 24)}
@@ -254,7 +254,7 @@ class HeroInfoSerializer(serializers.Serializer):
   hbook = BookInfoSerializer()
   ```
 
-	使用效果
+  使用效果
 
   ```python
   {'id': 6, 'hname': '乔峰', 'hgender': 1, 'hcomment': '降龙十八掌', 'hbook': OrderedDict([('id', 2), ('btitle', '天龙八部')te', '1986-07-24'), ('bread', 36), ('bcomment', 40), ('image', None)])}
@@ -266,7 +266,7 @@ class HeroInfoSerializer(serializers.Serializer):
 
   **注意，to_representations方法不仅局限在控制关联对象格式上，适用于各个序列化器字段类型。**
 
-	自定义一个新的关联字段：
+  自定义一个新的关联字段：
 
   ```python
   class BookRelateField(serializers.RelatedField):
@@ -275,7 +275,7 @@ class HeroInfoSerializer(serializers.Serializer):
           return 'Book: %d %s' % (value.id, value.btitle)
   ```
 
-	指明hbook为BookRelateField类型
+  指明hbook为BookRelateField类型
 
   ```python
   hbook = BookRelateField(read_only=True)
@@ -324,7 +324,7 @@ serializer.data
 
 使用序列化器进行反序列化时，需要对数据进行验证后，才能获取验证成功的数据或保存成模型类对象。
 
-在获取反序列化的数据前，必须调用**is_valid()**方法进行验证，验证成功返回True，否则返回False。
+在获取反序列化的数据前，必须调用\*\*is_valid()\*\*方法进行验证，验证成功返回True，否则返回False。
 
 验证失败，可以通过序列化器对象的**errors**属性获取错误信息，返回字典，包含了字段和字段的错误。如果是非字段错误，可以通过修改REST framework配置中的**NON_FIELD_ERRORS_KEY**来控制错误字典中的键名。
 
@@ -385,7 +385,7 @@ serializer.is_valid(raise_exception=True)
           return value
   ```
 
-	测试
+  测试
 
   ```python
   from booktest.serializers import BookInfoSerializer
@@ -411,7 +411,7 @@ serializer.is_valid(raise_exception=True)
           return attrs
   ```
 
-	测试
+  测试
 
   ```python
   from booktest.serializers import BookInfoSerializer
@@ -458,7 +458,7 @@ REST framework提供的validators:
 
   ```python
   from rest_framework.validators import UniqueValidator
-  
+    
   slug = SlugField(
       max_length=100,
       validators=[UniqueValidator(queryset=BlogPost.objects.all())]
@@ -471,7 +471,7 @@ REST framework提供的validators:
 
   ```python
   from rest_framework.validators import UniqueTogetherValidator
-  
+    
   class ExampleSerializer(serializers.Serializer):
       # ...
       class Meta:
@@ -639,7 +639,7 @@ BookInfoSerializer():
           depth = 1
   ```
 
-	形成的序列化器如下：
+  形成的序列化器如下：
 
   ```python
   HeroInfoSerializer():
@@ -700,3 +700,4 @@ class BookInfoSerializer(serializers.ModelSerializer):
 #    bread = IntegerField(label='阅读量', max_value=2147483647, min_value=0, required=True)
 #    bcomment = IntegerField(label='评论量', max_value=2147483647, min_value=0, required=True)
 ```
+

@@ -18,7 +18,7 @@ pip install djangorestframework
 
 ### 添加rest_framework应用
 
-我们利用在Django框架学习中创建的demo工程，在**settings.py**的**INSTALLED_APPS**中添加'rest_framework'。
+我们利用在Django框架学习中创建的demo工程，在**settings.py**的**INSTALLED_APPS**中添加’rest_framework’。
 
 ```python
 INSTALLED_APPS = [
@@ -48,7 +48,7 @@ class BookInfoSerializer(serializers.ModelSerializer):
 ```
 
 - **model** 指明该序列化器处理的数据字段从模型类BookInfo参考生成
-- **fields** 指明该序列化器包含模型类中的哪些字段，'__all__'指明包含所有字段
+- **fields** 指明该序列化器包含模型类中的哪些字段，'**all**‘指明包含所有字段
 
 ### 编写视图
 
@@ -112,3 +112,4 @@ python manage.py runserver
 返回，如下页面：
 
 至此，是不是发现Django REST framework很好用！
+

@@ -62,7 +62,7 @@ urlpatterns = [
 ]
 ```
 
-###  原理
+### 原理
 
 ```python
     @classonlymethod
@@ -86,7 +86,6 @@ urlpatterns = [
 
         # 返回真正的函数视图
         return view
-
 
     def dispatch(self, request, *args, **kwargs):
         # Try to dispatch to the right method; if a method doesn't exist,
@@ -134,12 +133,8 @@ urlpatterns = [
 此种方式最简单，但因装饰行为被放置到了url配置中，单看视图的时候无法知道此视图还被添加了装饰器，不利于代码的完整性，不建议使用。
 
 {{< admonition warning "注意" true >}}
-
 此种方式会为类视图中的所有请求方法都加上装饰器行为（因为是在视图入口处，分发请求方式前）。
-
 {{< /admonition >}}
-
-
 
 ### 在类视图中装饰
 
@@ -156,7 +151,6 @@ class DemoView(View):
     def post(self, request):
         print('post方法')
         return HttpResponse('ok')
-
 
 # 为特定请求方法添加装饰器
 @method_decorator(my_decorator, name='get')
@@ -304,9 +298,7 @@ def demo_view(request):
 执行结果
 
 {{< admonition warning "注意" true >}}
-
 Django运行在调试模式下，中间件init部分有可能被调用两次。
-
 {{< /admonition >}}
 
 ### 多个中间件的执行顺序
@@ -363,3 +355,4 @@ view 视图被调用
 after response 2 被调用
 after response 被调用
 ```
+

@@ -9,10 +9,10 @@
 
 ## 用途
 
-如今，人工智能，大数据离我们越来越近，很多公司在开展相关的业务，但是人工智能和大数据中有一个东西非常重要，那就是数据，但是数据从哪里来呢？这时候爬虫的用途就凸显出来了，他可以做到以下几个方面
+如今，人工智能，大数据离我们越来越近，很多公司在开展相关的业务，但是人工智能和大数据中有一个东西非常重要，那就是数据，但是数据从哪里来呢？这时候爬虫的用途就凸显出来了，他可以做到以下几个方面
 
-- 进行在网页或者是app上进行展示
-- 进行数据分析或者是机器学习相关的项目
+- 进行在网页或者是app上进行展示
+- 进行数据分析或者是机器学习相关的项目
 - 12306抢票
 - 商品价格历史记录
 
@@ -20,7 +20,7 @@
 
 ## 分类
 
-根据被爬网站的数量的不同，我们把爬虫分为：
+根据被爬网站的数量的不同，我们把爬虫分为：
 
 - 通用爬虫 ：通常指搜索引擎的爬虫
 - 聚焦爬虫 ：针对特定网站的爬虫
@@ -47,7 +47,7 @@ Robots协议：网站通过Robots协议告诉搜索引擎哪些页面可以抓�
 
 ## 浏览器发送HTTP请求的过程
 
-浏览器会主动请求js，css等内容，js会修改页面的内容，js也可以重新发送请求，最后浏览器渲染出来的内容在elements中，其中包含css，图片，js，url地址对应的响应等。
+浏览器会主动请求js，css等内容，js会修改页面的内容，js也可以重新发送请求，最后浏览器渲染出来的内容在elements中，其中包含css，图片，js，url地址对应的响应等。
 
 但是在爬虫中，爬虫只会请求url地址，对应的拿到url地址对应的响应
 
@@ -57,7 +57,7 @@ Robots协议：网站通过Robots协议告诉搜索引擎哪些页面可以抓�
 
 ## url的形式
 
-url的形式：scheme://host[:port#]/path/…/[?query-string][#anchor]
+url的形式：scheme://host\[:port#\]/path/…/\[?query-string\]\[#anchor\]
 
 - scheme：协议(例如：http, https, ftp)
 - host：服务器的IP地址或者域名
@@ -70,15 +70,15 @@ Robots协议：网站通过Robots协议告诉搜索引擎哪些页面可以抓�
 
 ## HTTP常见请求头
 
-1. Host (主机和端口号)
-2. Connection (链接类型)
-3. Upgrade-Insecure-Requests (升级为HTTPS请求)
-4. User-Agent (浏览器名称)
-5. Accept (传输文件类型)
-6. Referer (页面跳转处)
-7. Accept-Encoding（文件编解码格式）
-8. Cookie （Cookie）
-9. x-requested-with :XMLHttpRequest (是Ajax 异步请求)
+1.  Host (主机和端口号)
+2.  Connection (链接类型)
+3.  Upgrade-Insecure-Requests (升级为HTTPS请求)
+4.  User-Agent (浏览器名称)
+5.  Accept (传输文件类型)
+6.  Referer (页面跳转处)
+7.  Accept-Encoding（文件编解码格式）
+8.  Cookie （Cookie）
+9.  x-requested-with :XMLHttpRequest (是Ajax 异步请求)
 
 ## 响应状态码(status code)
 
@@ -89,5 +89,4 @@ Robots协议：网站通过Robots协议告诉搜索引擎哪些页面可以抓�
 - 307：临时转移至新的url
 - 404：not found
 - 500：服务器内部错误
-
 

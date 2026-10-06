@@ -5,7 +5,7 @@
 
 Python的设计哲学是“优雅”、“明确”、“简单”。它的重要准则被称为“Python之禅”。**Python之禅**又名[PEP 20](https://www.python.org/dev/peps/pep-0020/)，在Python解释器内运行`import this`可以获得完整的列表，下面是我的翻译与解读：
 
-```
+```fallback
 提姆·彼得斯（Tim Peters）撰写的《 Python之禅 》
 优雅胜于丑陋（以编写优雅的代码为目标）
 明确胜于晦涩（明确的代码增强了程序的可读性）
@@ -26,8 +26,6 @@ Python的设计哲学是“优雅”、“明确”、“简单”。它的重�
 
 Python开发的哲学是“用一种方法，最好是只有一种方法来做一件事”。在设计Python程序时，如果面临多种选择，一般会拒绝花俏的语法，而选择明确没有或者很少有歧义的语法。
 
-
-
 ## 编码规范
 
 PEP 8是由Guido van Rossum , Barry Warsaw , Nick Coghlan三位共同编写的一个Python代码风格规范。可以在[这里](https://www.python.org/dev/peps/pep-0008/)查看具体内容，如果英文不好可以在[Python风格指南](https://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/python_style_rules/)中查看主要的内容
@@ -42,19 +40,19 @@ pylint的最大优势在于其高度的可配置化和可定制化，你可以�
 
 ### 用法示例
 
-```
+```fallback
  pylint.bat --reports=n --include-ids=y --disable-msg=W0122,W0702 xlsconverter.py > lint_result.txt
 ```
 
 其中：
 
-- --reports=n 表示不产生输出报告
-- --include-ids=y 表示输出的错误信息包含错误编号
-- --disable-msg=W0122,W0702 表示W0122和W0702这两个警告信息被过滤掉了
+- –reports=n 表示不产生输出报告
+- –include-ids=y 表示输出的错误信息包含错误编号
+- –disable-msg=W0122,W0702 表示W0122和W0702这两个警告信息被过滤掉了
 - xlsconverter.py 是被检查的脚本
 - 检查的结果被输出到了lint_result.txt中。
 
 {{< admonition tip "提示" true >}}
 任何语言的程序员，编写出符合规范的代码，是开始程序生涯的第一步。PEP 20和PEP 8陪伴我们整个学习和使用Python的过程。
-
 {{< /admonition >}}
+

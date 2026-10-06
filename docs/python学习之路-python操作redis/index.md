@@ -23,7 +23,7 @@
 
 - 第三种：到中⽂官⽹-客户端下载redis包的源码，使⽤源码安装：
 
-  - 下载：执行 wget https://github.com/andymccurdy/redis-py/archive/master.zip
+  - 下载：执行 wget <https://github.com/andymccurdy/redis-py/archive/master.zip>
   - 解压：unzip master.zip
   - 安装：先进入文件夹`cd redis-py-master`通过`setup.py`安装`sudo python setup.py install`
 
@@ -34,9 +34,7 @@
 引⼊模块：`from redis import *`
 
 {{< admonition warning "注意" true >}}
-
 这个模块中提供了StrictRedis对象(Strict严格)，⽤于连接redis服务器，并按照不同类型提供 了不同⽅法，进⾏交互操作
-
 {{< /admonition >}}
 
 ### StrictRedis对象
@@ -50,9 +48,7 @@ sr=StrictRedis()
 ```
 
 {{< admonition info "提示" true >}}
-
 根据不同的类型，拥有不同的实例⽅法可以调⽤，与前⾯学的redis命令对应，⽅法需要的参数与命令的参数⼀致
-
 {{< /admonition >}}
 
 ### 指令
@@ -109,5 +105,4 @@ sr=StrictRedis()
 - zscore
 - zrem
 - zremrangebyscore
-
 

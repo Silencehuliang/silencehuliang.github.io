@@ -35,9 +35,7 @@ def user_info(user_id):
 ```
 
 {{< admonition tip "提示" true >}}
-
 这里指定`int`，尖括号中的内容是动态的，在此暂时可以理解为接受`int`类型的值，实际上`int`代表使用`IntegerConverter`去处理 url 传入的参数
-
 {{< /admonition >}}
 
 #### 指定请求方式
@@ -122,26 +120,26 @@ def user_info(user_id):
       def to_python(self, value):
           return int(value)
   ```
-  
+
   运行测试，在视图函数中可以查看参数的类型，由之前默认的 str 已变成 int 类型的值
-  
+
 - to_url:
 
   在使用 url_for 去获取视图函数所对应的 url 的时候，会调用此方法对 url_for 后面传入的视图函数参数做进一步处理，具体可参见 Flask 的 app.py 中写的示例代码：ListConverter
 
 #### 系统自带转换器
 
-  ```python
-  DEFAULT_CONVERTERS = {
-      'default':          UnicodeConverter,
-      'string':           UnicodeConverter,
-      'any':              AnyConverter,
-      'path':             PathConverter,
-      'int':              IntegerConverter,
-      'float':            FloatConverter,
-      'uuid':             UUIDConverter,
-  }
-  ```
+```python
+DEFAULT_CONVERTERS = {
+    'default':          UnicodeConverter,
+    'string':           UnicodeConverter,
+    'any':              AnyConverter,
+    'path':             PathConverter,
+    'int':              IntegerConverter,
+    'float':            FloatConverter,
+    'uuid':             UUIDConverter,
+}
+```
 
 系统自带的转换器具体使用方式在每种转换器的注释代码中有写，请留意每种转换器初始化的参数。
 
@@ -151,7 +149,7 @@ def user_info(user_id):
 
 Flask有两大核心：Werkzeug和Jinja2
 
-```
+```fallback
 - Werkzeug实现路由、调试和Web服务器网关接口
 - Jinja2实现了模板。
 ```
@@ -160,7 +158,7 @@ Flask有两大核心：Werkzeug和Jinja2
 
 Werkzeug是一个遵循WSGI协议的python函数库
 
-```
+```fallback
 - 其内部实现了很多Web框架底层的东西，比如request和response对象；
 - 与WSGI规范的兼容；支持Unicode；
 - 支持基本的会话管理和签名Cookie；
@@ -194,9 +192,7 @@ def demo3():
 ```
 
 {{< admonition tip "提示" true >}}
-
 不推荐使用`json.dumps`转成 JSON 字符串直接返回，因为返回的数据要符合`HTTP`协议规范，如果是`JSON`需要指定 `content-type:application/json`
-
 {{< /admonition >}}
 
 #### 重定向
@@ -275,20 +271,16 @@ from flask import abort
 
 app = Flask(__name__)
 
-
 # 在第一次请求之前调用，可以在此方法内部做一些初始化操作
 @app.before_first_request
 def before_first_request():
     print("before_first_request")
-
 
 # 在每一次请求之前调用，这时候已经有请求了，可能在这个方法里面做请求的校验
 # 如果请求的校验不成功，可以直接在此方法中进行响应，直接return之后那么就不会执行视图函数
 @app.before_request
 def before_request():
     print("before_request")
-
-
 
 # 在执行完视图函数之后会调用，并且会把视图函数所生成的响应传入,可以在此方法中对响应做最后一步统一的处理
 @app.after_request
@@ -297,12 +289,10 @@ def after_request(response):
     response.headers["Content-Type"] = "application/json"
     return response
 
-
 # 请每一次请求之后都会调用，会接受一个参数，参数是服务器出现的错误信息
 @app.teardown_request
 def teardown_request(e):
     print("teardown_request")
-
 
 @app.route('/')
 def index():
@@ -336,15 +326,15 @@ teardown_request
 request 就是flask中代表当前请求的 request 对象，其中一个请求上下文变量(理解成全局变量，在视图函数中直接使用可以取到当前本次请求)，常用的属性如下：
 
 |  属性   |              说明              |      类型      |
-| :-----: | :----------------------------: | :------------: |
-|  data   | 记录请求的数据，并转换为字符串 |       *        |
+|:-------:|:------------------------------:|:--------------:|
+|  data   | 记录请求的数据，并转换为字符串 |       \*       |
 |  form   |      记录请求中的表单数据      |   MultiDict    |
 |  args   |      记录请求中的查询参数      |   MultiDict    |
 | cookies |     记录请求中的cookie信息     |      Dict      |
 | headers |       记录请求中的报文头       | EnvironHeaders |
 | method  |     记录请求使用的HTTP方法     |    GET/POST    |
 |   url   |       记录请求的URL地址        |     string     |
-|  files  |       记录请求上传的文件       |       *        |
+|  files  |       记录请求上传的文件       |       \*       |
 
 ### 示例
 
@@ -379,9 +369,7 @@ def index():
 - 在服务器端存储信息使用`Session`
 
 {{< admonition tip "提示" true >}}
-
 无状态协议：协议对于事务处理没有记忆能力，对同一个 url 请求没有上下文关系，每次的请求都是独立的，它的执行情况和结果与前面的请求和之后的请求是无直接关系的，它不会受前面的请求应答情况直接影响，也不会直接影响后面的请求应答情况，服务器中没有保存客户端的状态，客户端必须每次带上自己的状态去请求服务器
-
 {{< /admonition >}}
 
 #### Cookie
@@ -391,9 +379,7 @@ def index():
 指某些网站为了辨别用户身份、进行会话跟踪而储存在用户本地的数据（通常经过加密）。Cookie最早是网景公司的前雇员Lou Montulli在1993年3月的发明。Cookie是由服务器端生成，发送给客户端浏览器，浏览器会将Cookie的key/value保存，下次请求同一网站时就发送该Cookie给服务器（前提是浏览器设置为启用cookie）。Cookie的key/value可以由服务器端自己定义。
 
 {{< admonition tip "提示" true >}}
-
 Cookie是存储在浏览器中的一段纯文本信息，建议不要存储敏感信息如密码，因为电脑上的浏览器可能被其它人使用，Cookie基于域名安全，不同域名的Cookie是不能互相访问的，如访问baidu.com时向浏览器中写了Cookie信息，使用同一浏览器访问google.com时，无法访问到baidu.com写的Cookie信息。浏览器的同源策略，当浏览器请求某网站时，会将本网站下所有Cookie信息提交给服务器，所以在request中可以读取Cookie信息
-
 {{< /admonition >}}
 
 ##### 设置
@@ -435,9 +421,7 @@ def resp_cookie():
 对于敏感、重要的信息，建议要存储在服务器端，不能存储在浏览器中，如用户名、余额、等级、验证码等信息。在服务器端进行状态保持的方案就是`Session`
 
 {{< admonition tip "提示" true >}}
-
 Session依赖于Cookie
-
 {{< /admonition >}}
 
 ##### 获取
@@ -468,11 +452,11 @@ def index():
 
 #### request
 
-封装了HTTP请求的内容，针对的是http请求。举例：user = request.args.get('user')，获取的是get请求的参数。
+封装了HTTP请求的内容，针对的是http请求。举例：user = request.args.get(‘user’)，获取的是get请求的参数。
 
 #### session
 
-用来记录请求会话中的信息，针对的是用户信息。举例：session['name'] = user.id，可以记录用户信息。还可以通过session.get('name')获取用户信息。
+用来记录请求会话中的信息，针对的是用户信息。举例：session\[‘name’\] = user.id，可以记录用户信息。还可以通过session.get(‘name’)获取用户信息。
 
 ### 应用上下文(application context)
 
@@ -504,9 +488,7 @@ g.name='abc'
 ```
 
 {{< admonition warning "注意" true >}}
-
 不同的请求，会有不同的全局变量
-
 {{< /admonition >}}
 
 #### 两者区别
@@ -526,7 +508,7 @@ python hello.py runserver -host ip地址
 
 以上代码告诉服务器在哪个网络接口监听来自客户端的连接。默认情况下，服务器只监听来自服务器所在的计算机发起的连接，即localhost连接。
 
-我们可以通过python hello.py runserver --help来查看参数。
+我们可以通过python hello.py runserver –help来查看参数。
 
 ### 代码实现
 
@@ -555,7 +537,6 @@ if __name__ == "__main__":
 ```
 
 {{< admonition tip "提示" true >}}
-
 Flask-Script 还可以为当前应用程序添加脚本命令
-
 {{< /admonition >}}
+

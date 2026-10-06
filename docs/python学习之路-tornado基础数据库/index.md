@@ -37,14 +37,15 @@ class Application(tornado.web.Application):
 ## 使用数据库
 
 - 新建数据库与表
+
 - 执行语句，执行语句主要用来执行非查询语句。
 
-  - execute(query, *parameters, **kwparameters) 返回影响的最后一条自增字段值
-  - execute_rowcount(query, *parameters, **kwparameters) 返回影响的行
+  - execute(query, \*parameters, \*\*kwparameters) 返回影响的最后一条自增字段值
+  - execute_rowcount(query, \*parameters, \*\*kwparameters) 返回影响的行
   - query为要执行的sql语句，parameters与kwparameters为要绑定的参数
+
 - 查询语句
 
-  - get(query, *parameters, **kwparameters) 返回单行结果或None，若出现多行则报错。返回值为torndb.Row类型，是一个类字典的对象，即同时支持字典的关键字索引和对象的属相访问。
-  - query(query, *parameters, **kwparameters) 返回多行结果，torndb.Row的列表。
-
+  - get(query, \*parameters, \*\*kwparameters) 返回单行结果或None，若出现多行则报错。返回值为torndb.Row类型，是一个类字典的对象，即同时支持字典的关键字索引和对象的属相访问。
+  - query(query, \*parameters, \*\*kwparameters) 返回多行结果，torndb.Row的列表。
 

@@ -7,7 +7,7 @@
 
 ### 网站介绍
 
-本次要爬取的网站为*[萝卜投研](https://robo.datayes.com/)*，是利用人工智能、大数据、移动应用技术,建立的股票基本面分析智能投研平台，在进行投资交易的时候可以使用期研报与各类数据进行分析。
+本次要爬取的网站为\*[萝卜投研](https://robo.datayes.com/)\*，是利用人工智能、大数据、移动应用技术,建立的股票基本面分析智能投研平台，在进行投资交易的时候可以使用期研报与各类数据进行分析。
 
 ### 编写爬虫的原因和用途
 
@@ -26,8 +26,6 @@ Scrapy是一个使用了Twisted的异步网络框架，可以大大提高我们�
 Scrapy的相关使用教程可以通过[官方文档](https://docs.scrapy.org/en/latest/)来进行初步入门，了解各模块在框架中的作用，官方文档非常强大，建议先进行系统性的学习之后再开始使用。
 
 学习Scrapy最重要的就是理解Scrapy的工作流程，跟着[官方文档的例子](https://docs.scrapy.org/en/latest/intro/tutorial.html)去详细分析每一步的操作，与之前编写爬虫的流程相关性与区别。
-
-
 
 ## 抓包工具
 
@@ -51,7 +49,7 @@ Scrapy的相关使用教程可以通过[官方文档](https://docs.scrapy.org/en
 
 ### 翻页参数解析
 
-通过观察URL发现timeStamp和feedIds是两个控制翻页的参数，进一步多页进行请求发现20210401170127可以理解为一个时间节点，看到20200228猜测是本次刷新的时间，猜测后6位是当前时间的秒的时间戳，组织一下可以写成`''.join(str(datetime.now())[:10].split('-'))+str(time.clock( )).split('.')[1]` 
+通过观察URL发现timeStamp和feedIds是两个控制翻页的参数，进一步多页进行请求发现20210401170127可以理解为一个时间节点，看到20200228猜测是本次刷新的时间，猜测后6位是当前时间的秒的时间戳，组织一下可以写成`''.join(str(datetime.now())[:10].split('-'))+str(time.clock( )).split('.')[1]`
 
 再进行多页的数据获取后发现feedIds参数中的前四个是第一个响应中前四个数据的id，最后一个数为响应中最后一个数据的id，并且会随着访问变多而增加，每次新增的都是最后一个数据的id，将下一页的URL拼接起来,进行访问发现请求不到下一页的数据。通过复制原来的timeStamp发现可以访问，问题就出现在前面timeStamp的参数，刚刚再进行feedIds字段拼接的时候发现有三个字段是日期形式的，分别为：`"insertTime"`、`updateTime`、`publishTime`，进一步分析发现将其后面三个0去掉就是一个时间戳，对其转换发现就是我们需要的结果
 
@@ -93,7 +91,7 @@ scrapy startproject datayes
 
 ### 创建爬虫
 
-```
+```fallback
 scrapy genspider mammon gw.datayes.com
 ```
 
@@ -186,7 +184,6 @@ PASSWORD = 'PASSWORD',  # 数据库密码
 ```python
 import pymysql
 
-
 class DatayesPipeline:
     # 爬虫开始时执行，只执行一次
     def open_spider(self, spider):
@@ -217,11 +214,4 @@ class DatayesPipeline:
 ```
 
 最后创建数据库，开启爬虫进行数据爬取。
-
-
-
-
-
-
-
 

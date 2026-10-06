@@ -74,11 +74,9 @@ STATICFILES_DIRS = [
 或者我们在static_files目录中添加了一个子目录和文件goods/detail.html，在浏览器中就可以使用127.0.0.1:8000/static/goods/detail.html来访问。
 
 {{< admonition warning "注意" true >}}
-
 Django 仅在调试模式下（DEBUG=True）能对外提供静态文件。
 
 当DEBUG=False工作在生产模式时，Django不再对外提供静态文件，需要是用collectstatic命令来收集静态文件并交由其他静态文件服务器来提供。（详细在部署时会讲）
-
 {{< /admonition >}}
 
 ## 路由说明
@@ -91,7 +89,7 @@ Django的主要路由信息定义在工程同名目录下的urls.py文件中，�
 
 除了上述方式外，也可将工程的全部路由信息都定义在主路由文件中，子应用不再设置urls.py。如：
 
-```
+```fallback
 from django.conf.urls import url
 from django.contrib import admin
 import users.views
@@ -118,9 +116,7 @@ urlpatterns = [
 即使访问sayhello/路径，预期应该进入sayhello视图执行，但实际优先查找到了say路由规则也与sayhello/路径匹配，实际进入了say视图执行。
 
 {{< admonition tip "提示" true >}}
-
 需要注意定义路由的顺序，避免出现屏蔽效应。
-
 {{< /admonition >}}
 
 ### 路由命名
@@ -132,9 +128,9 @@ urlpatterns = [
   ```python
   url(r'^users/', include('users.urls', namespace='users')),
   ```
-  
+
   命名空间表示，凡是users.urls中定义的路由，均属于namespace指明的users名下。
-  
+
   **命名空间的作用：避免不同应用中的路由使用了相同的名字发生冲突，使用命名空间区别开。**
 
 - 在定义普通路由时，可以使用name参数指明路由的名字，如
@@ -150,20 +146,19 @@ urlpatterns = [
 
 使用reverse函数，可以根据路由名称，返回具体的路径，如：
 
-  ```python
-  from django.urls import reverse  # 注意导包路径
-  
-  def index(request):
-      return HttpResponse("hello the world!")
-  
-  def say(request):
-      url = reverse('users:index')  # 返回 /users/index/
-      print(url)
-      return HttpResponse('say')
-  ```
+```python
+from django.urls import reverse  # 注意导包路径
 
-  对于未指明namespace的，reverse(路由name)；对于指明namespace的，reverse(命名空间namespace:路由name)
+def index(request):
+    return HttpResponse("hello the world!")
 
+def say(request):
+    url = reverse('users:index')  # 返回 /users/index/
+    print(url)
+    return HttpResponse('say')
+```
+
+对于未指明namespace的，reverse(路由name)；对于指明namespace的，reverse(命名空间namespace:路由name)
 
 ### 结尾斜线`/`的说明
 
@@ -178,11 +173,8 @@ urlpatterns = [
 用户访问 index 或者 index/ 网址，均能访问到index视图。
 
 {{< admonition tip "说明" true >}}
-
 虽然路由结尾带/能带来上述好处，但是却违背了HTTP中URL表示资源位置路径的设计理念。
 
 是否结尾带/以所属公司定义风格为准。
-
 {{< /admonition >}}
-
 

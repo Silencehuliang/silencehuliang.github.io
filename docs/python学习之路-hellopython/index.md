@@ -20,9 +20,7 @@
 Python是一门跨平台的脚本语言，不同平台的安装过程稍有区别。
 
 {{< admonition info "注意" true >}}
-
-以下安装部分内容仅针对CPython。内容参考Python官方的[安装教程](https://docs.python.org/zh-cn/3.6/using/index.html)，由我摘选出来各平台比较方便快捷的安装方式。如果不符合需求，可以查看官方[安装教程](https://docs.python.org/zh-cn/3.6/using/index.html)搜索需要的内容。
-
+以下安装部分内容仅针对CPython。内容参考Python官方的<a href="https://docs.python.org/zh-cn/3.6/using/index.html" rel="noopener noreffer" target="_blank">安装教程</a>，由我摘选出来各平台比较方便快捷的安装方式。如果不符合需求，可以查看官方<a href="https://docs.python.org/zh-cn/3.6/using/index.html" rel="noopener noreffer" target="_blank">安装教程</a>搜索需要的内容。
 {{< /admonition >}}
 
 ### Linux
@@ -46,15 +44,11 @@ Python预装在大多数Linux发行版上，并作为一个包提供给所有其
   ```
 
 {{< admonition tip "提示" true >}}
-
-特定Unix平台的配置选项和注意事项通常记录在Python源代码的根目录下的 [README.rst](https://github.com/python/cpython/tree/3.9/README.rst) 文件中。
-
+特定Unix平台的配置选项和注意事项通常记录在Python源代码的根目录下的 <a href="https://github.com/python/cpython/tree/3.9/README.rst" rel="noopener noreffer" target="_blank">README.rst</a> 文件中。
 {{< /admonition >}}
 
 {{< admonition warning "" true >}}
-
 `make install` 可以覆盖或伪装 `python3` 二进制文件。因此，建议使用 `make altinstall` 而不是 `make install` ，因为后者只安装了 `*exec_prefix*/bin/python*version*` 。
-
 {{< /admonition >}}
 
 ### Windows
@@ -66,11 +60,9 @@ Python预装在大多数Linux发行版上，并作为一个包提供给所有其
   ![](https://tvax1.sinaimg.cn/large/00729CCqgy1gp9z3w3ik3j30im0bit9r.jpg)
 
 - 安装完毕后将Python解释器的路径添加到系统环境变量中
-  
+
   {{< admonition tip "提示" true >}}
-  
   √上`Add Python 3.x to PATH`后安装程序会自动将PythonPython解释器的路径添加到系统环境变量中)
-  
   {{< /admonition >}}
 
 ### Mac OS X
@@ -78,46 +70,50 @@ Python预装在大多数Linux发行版上，并作为一个包提供给所有其
 通过Homebrew安装
 
 {{< admonition tip "提示" true >}}
-
 使用`brew install python3`默认安装最新版本，可以通过安装pyenv后安装指定版本的Python。根据需求自行选择
-
 {{< /admonition >}}
 
-  - 安装`pyenv`
-    ```bash
-    brew install pyenv
-    ```
+- 安装`pyenv`
 
-  - 将`pyenv`添加到shell中
+  ```bash
+  brew install pyenv
+  ```
 
-    ```bash
-    echo -e 'if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi'>> ~/.bash_profile
-    ```
+- 将`pyenv`添加到shell中
 
-  - 使shell生效
-    ```bash
-    exec "$SHELL"
-    ```
+  ```bash
+  echo -e 'if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi'>> ~/.bash_profile
+  ```
 
-  - 查看可安装的Python版本
-    ```bash
-    pyenv install -l
-    ```
+- 使shell生效
 
-  - 安装需求的Python版本
-    ```bash
-    pyenv install 3.7.1
-    ```
+  ```bash
+  exec "$SHELL"
+  ```
 
-  - 指定全局的Python环境
-    ```bash
-    pyenv global 3.7.1
-    ```
+- 查看可安装的Python版本
 
-  - 查看已安装的Python版本和正在使用的Python版本
-    ```bash
-    pyenv versions
-    ```
+  ```bash
+  pyenv install -l
+  ```
+
+- 安装需求的Python版本
+
+  ```bash
+  pyenv install 3.7.1
+  ```
+
+- 指定全局的Python环境
+
+  ```bash
+  pyenv global 3.7.1
+  ```
+
+- 查看已安装的Python版本和正在使用的Python版本
+
+  ```bash
+  pyenv versions
+  ```
 
 ### 检查
 
@@ -129,8 +125,6 @@ Python 3.7.7
 ```
 
 或者进入Python交互式命令行中查看，在交互式命令行输入`python3`能进入交互式命令行并且版本对则安装成功
-
-
 
 ## 执行程序的方式
 
@@ -154,19 +148,15 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 在交互式命令行中写入`print('Hello Python!')`按回车
 
-  ```python
-  >>> print("Hello Python!")
-  Hello Python!
-  ```
+```python
+>>> print("Hello Python!")
+Hello Python!
+```
 
 这里使用了Python一个内置的print()方法，其作用是将传入的对象在控制台打印出来。就这么简单的完成了学习Python的第一个程序，可以看到Python的语法非常简单易懂。
 
-
-
 {{< admonition tip "提示" true >}}
-
 通过quit()方法退出Python的交互式命令行。
-
 {{< /admonition >}}
 
 ### 通过Python解释器
@@ -185,10 +175,8 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 - 首先打开一个文本编辑器(系统自带的即可)，写入`print("Hello Python!")`
 
-  {{< admonition note "注意" true >}}
-
+  {{< admonition note "" true >}}
   这句话一定要顶格写，Python对缩进的要求非常严格。注意`print`方法名的小写和中英文字符问题！
-
   {{< /admonition >}}
 
 - 将文本保存为`Hello.py`在控制台中切换到当前目录，输入`python3 Hello.py`来运行该程序
@@ -201,7 +189,6 @@ Type "help", "copyright", "credits" or "license" for more information.
   看到`Hello Python!`则第一个程序执行成功。
 
   {{< admonition info "说明" true >}}
-
   Python程序以`.py`结尾。控制台中输入的`python3`为指定的Python解释器
-
   {{< /admonition >}}
+

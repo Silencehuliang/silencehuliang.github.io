@@ -9,13 +9,9 @@
 
 为什么网上有很多Django的学习资料，我还想自己写一个Django的教程呢，一是想通过写教程发现自己的不足，二是想通过自己的总结让那些想学习Django的小伙伴们少走一些弯路，当然我写的内容有可能也是错的，欢迎大家纠正，我们可以共同探讨，共同进步。
 
-
-
 ## 简介
 
 Django是一个高级Python Web框架，可以快速开发和简洁实用的设计。Django负责处理网站开发中遇到的问题，编程人员只需要专注于应用编写，无需重新造轮子。它是免费和开源的。
-
-
 
 ## 特点
 
@@ -31,8 +27,6 @@ Django认真对待安全性，并帮助开发人员避免许多常见的安全�
 
 Django强调代码复用，多个组件可以以"插件"的形式服务于整个框架，Django还有许多功能强大的第三方插件，你也可以开发自己的工具包。
 
-
-
 ## MVT模式
 
 Django采用MVT程序设计模式
@@ -41,13 +35,10 @@ Django采用MVT程序设计模式
 - V全拼为View，用于接收请求，进行业务处理，返回应答。
 - T全拼为Template，用于封装结果，负责封装构造要返回的html。
 
-
-
 ## Django学习资料
 
 - [Django官网](https://www.djangoproject.com/)
 - [Django项目Github](https://github.com/django/django)
 - [Django Book 教程](http://djangobook.com/)
 - [Mozilla Django教程](https://developer.mozilla.org/zh-CN/docs/learn/Server-side/Django)
-
 

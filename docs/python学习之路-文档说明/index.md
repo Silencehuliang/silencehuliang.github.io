@@ -11,6 +11,3 @@ Python 是一种易于学习又功能强大的编程语言。目前网上有许�
 
 Life is short, you need Python。接下来就让我们开始遨游在Python的世界中吧！
 
-
-
-

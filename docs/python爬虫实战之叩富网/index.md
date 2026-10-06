@@ -23,13 +23,13 @@ robots协议以robots.txt文件形式呈现，是网站中给各类爬虫规定�
 
 ### robots协议的构成
 
-由User-agent、Allow、Disallow构成。User-agent后面的内容是具体的爬虫名，如百度爬虫为Baiduspider，*则代表所有爬虫。Allow后面的内容是允许爬取的URL路径，如/*.jpg$表示可以爬取该网站下的所有.jpg图片，/表示所有路径均允许爬取。Disallow后面的内容是不允许爬取的URL路径，同Allow相反。
+由User-agent、Allow、Disallow构成。User-agent后面的内容是具体的爬虫名，如百度爬虫为Baiduspider，*则代表所有爬虫。Allow后面的内容是允许爬取的URL路径，如/*.jpg\$表示可以爬取该网站下的所有.jpg图片，/表示所有路径均允许爬取。Disallow后面的内容是不允许爬取的URL路径，同Allow相反。
 
 ### 常见的规则有哪些
 
 允许爬虫获取所有内容：
 
-```
+```fallback
 User-agent: *
 Disallow:
 # 或者
@@ -39,21 +39,21 @@ Allow: /
 
 禁止爬取所有内容：
 
-```
+```fallback
 User-agent: *
 Disallow: /
 ```
 
 禁止访问网站中所有动态页面
 
-```
+```fallback
 User-agent: *
 Disallow: /*?*
 ```
 
 禁止搜索引擎抓取网站上所有图片
 
-```
+```fallback
 User-agent: *
 
 Disallow: /*.jpg$
@@ -75,15 +75,11 @@ Disallow: /*.bmp$
 
 requests库是学习爬虫入门最适合的一个第三方库，它是将Python内置的urllib进行深度封装的库。是一个非常成熟的HTTP客户端库，当然他也并非完美，我们后期也可以在其基础上进行补充形成适合自己的一个库。
 
-
-
 ### 快速上手
 
 中文文档：https://docs.python-requests.org/zh_CN/latest/index.html
 
 官方示例：https://docs.python-requests.org/zh_CN/latest/user/quickstart.html
-
-
 
 ### 获取robots协议，查看可爬取范围
 
@@ -91,39 +87,23 @@ requests库是学习爬虫入门最适合的一个第三方库，它是将Python
 
 ![](https://tvax3.sinaimg.cn/large/00729CCqgy1gp1wu4ik9uj311v0buwib.jpg)
 
-
-
 ### 登陆叩富网
 
 在Chrome浏览器中通过开发者选项中的Network选项卡中发现，登陆的时候有一个login.html
 
 ![](https://tva4.sinaimg.cn/large/00729CCqgy1gp1x8238bsj31g10muk7t.jpg)
 
-
-
 我们可以在里面看到请求URL、请求方式和Form Data所需要的内容，根据这个编写一个请求查看一下获取到的数据
-
-
 
 ![](https://tvax4.sinaimg.cn/large/00729CCqgy1gp1xsqudg4j310b0ndgrt.jpg)
 
-
-
 由于是字符串格式，所以出现了我们看不懂的字符，通过json转成Python中的字典格式再查看
-
-
 
 ![](https://tva3.sinaimg.cn/large/00729CCqgy1gp1y605naqj31a40oxdmd.jpg)
 
-
-
 可以看到显示登陆成功了，接下来通过获取到的cookie就可以获取到我们需要的各种信息了
 
-
-
 ![](https://tva1.sinaimg.cn/large/00729CCqgy1gp1yph1milj30ys0qadox.jpg)
-
-
 
 接下来我们将代码优化一下变成一个方法，让登陆后的cookie可以在以后任意需要的地方使用
 
@@ -131,7 +111,6 @@ requests库是学习爬虫入门最适合的一个第三方库，它是将Python
 import requests
 import json
 from lxml import etree
-
 
 def login(username, password):
     """
@@ -157,8 +136,6 @@ def login(username, password):
     else:
         raise Exception("登陆失败，原因为：{}".format(content['info']))
 ```
-
-
 
 在出现登录失败的时候抛出异常，并显示错误信息
 
@@ -285,7 +262,6 @@ url = 'http://www.cofool.com/Trade/Stock/tradeItem.html'
             else:
                 temp_dict[col_name[j]].extend(xpath_values)
     return pd.DataFrame(temp_dict)
-
 ```
 
 ### Feeling
@@ -378,8 +354,6 @@ def tradeing(stock_code, tradeing_type, amount=0):
         raise Exception("买入失败，失败原因为：{}".format(json.loads(content, encoding="unicode_escape")["info"]))
 ```
 
-
-
 ### 持仓数量
 
 在卖出交易的时候需要获取账户中持仓的数量
@@ -407,9 +381,7 @@ def get_amount(code):
         return amount
     else:
         raise Exception(content['info'])
-
 ```
 
 到这里叩富网的爬虫基本完成了，最后将转化为类就可以了，完整代码可以在我的GitHub仓库查看最新的代码
-
 

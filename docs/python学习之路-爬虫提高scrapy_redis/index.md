@@ -37,11 +37,11 @@ redis是一个开源的内存型数据库，支持多种数据类型和结构，
 
 ### redis中的常见命令
 
-1. `select 1` 切换db
-2. `keys *` 查看所有的键
-3. `tyep 键` 查看键的类型
-4. `flushdb` 清空db
-5. `flushall` 清空数据库
+1.  `select 1` 切换db
+2.  `keys *` 查看所有的键
+3.  `tyep 键` 查看键的类型
+4.  `flushdb` 清空db
+5.  `flushall` 清空数据库
 
 ## scrapy_redis domz爬虫分析
 
@@ -56,7 +56,6 @@ redis是一个开源的内存型数据库，支持多种数据类型和结构，
 ```python
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Rule
-
 
 class DmozSpider(CrawlSpider):
     """Follow categories and extract links."""
@@ -97,7 +96,7 @@ ITEM_PIPELINES = {
 
 首先我们需要添加redis的地址，程序才能够使用redis
 
-```
+```fallback
  REDIS_URL = "redis://127.0.0.1:6379"
  #或者使用下面的方式
  # REDIS_HOST = "127.0.0.1"
@@ -166,9 +165,9 @@ scrapy_redis调度器的实现了决定什么时候把request对象加入带抓�
 
 编辑：
 
-分		小时	日		月		星期	命令
+分 小时 日 月 星期 命令
 
-0-59	0-23	1-31	1-12	0-6		command
+0-59 0-23 1-31 1-12 0-6 command
 
 注意点：
 
@@ -180,9 +179,9 @@ scrapy_redis调度器的实现了决定什么时候把request对象加入带抓�
 
 ### 使用流程
 
-1. 把爬虫启动命令写入`.sh` 文件
-2. 给`.sh`脚本添加可执行权限
-3. 把`.sh` 添加到crontab脚本正
+1.  把爬虫启动命令写入`.sh` 文件
+2.  给`.sh`脚本添加可执行权限
+3.  把`.sh` 添加到crontab脚本正
 
 ### myspier.sh例子
 
@@ -208,3 +207,4 @@ sh脚本文件也可能会报错，对应的可以把其输出和错误重定向
 ```sh
  0 6 * * * /home/ubuntu/..../myspider.sh >> /home/ubuntu/.../run2.log 2>&1
 ```
+
